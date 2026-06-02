@@ -1,26 +1,250 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: var(--brand-primary, #015435);
+  --color-brand-primary-hover: var(--brand-primary-hover, #015435);
+  --color-brand-secondary: var(--brand-secondary, #33ac7f);
+  --color-brand-tertiary: var(--brand-tertiary, #faa831);
+  --color-brand-bg: var(--brand-bg, #F9F6F0);
+  --color-brand-card: var(--brand-card, rgba(255, 255, 255, 0.9));
+  --color-brand-border: var(--brand-border, rgba(60, 35, 23, 0.08));
+  --color-brand-foreground: var(--brand-foreground, #3C2317);
+  --color-brand-muted: var(--brand-muted, #7A5E53);
+  
+  /* Legacy aliases mapped to main parameters */
+  --color-brand-indigo: var(--brand-primary, #015435);
+  --color-brand-indigo-hover: var(--brand-primary-hover, #015435);
+  --color-brand-cyan: var(--brand-tertiary, #faa831);
+  --color-brand-violet: var(--brand-secondary, #33ac7f);
+  
+  --font-sans: var(--font-geist-sans), Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Scaled up font-size theme variables for enhanced readability for elderly users */
+  --font-size-xs: 0.875rem;
+  --font-size-xs--line-height: 1.25rem;
+  --font-size-sm: 1rem;
+  --font-size-sm--line-height: 1.5rem;
+  --font-size-base: 1.125rem;
+  --font-size-base--line-height: 1.75rem;
+  --font-size-lg: 1.25rem;
+  --font-size-lg--line-height: 1.875rem;
+  --font-size-xl: 1.5rem;
+  --font-size-xl--line-height: 2rem;
+  --font-size-2xl: 1.875rem;
+  --font-size-2xl--line-height: 2.25rem;
+  --font-size-3xl: 2.25rem;
+  --font-size-3xl--line-height: 2.5rem;
+  --font-size-4xl: 3rem;
+  --font-size-4xl--line-height: 1.1;
+  --font-size-5xl: 3.75rem;
+  --font-size-5xl--line-height: 1.1;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  color-scheme: light !important;
+  --background: var(--color-brand-bg) !important;
+  --foreground: var(--color-brand-foreground) !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-brand-bg) !important;
+  color: var(--color-brand-foreground) !important;
+  overflow-x: hidden;
+}
+
+/* Disable Tailwind v4 automatic dark mode variant */
+@custom-variant dark (&:not(*));
+
+/* Glassmorphism utility animations and glows for light mode */
+.glass-panel {
+  background: var(--color-brand-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--color-brand-border) !important;
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(129, 154, 145, 0.4) !important;
+  box-shadow: 0 10px 30px rgba(129, 154, 145, 0.15) !important;
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #1c2722 30%, #3e4d46 100%);
+}
+
+.text-gradient-accent {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #819A91 0%, #a7c1a8 100%);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 55s linear infinite;
+}
+
+.marquee-container:hover .animate-marquee,
+.marquee-container:hover .animate-marquee-reverse {
+  animation-play-state: paused;
+}
+
+
+/* ── Lead Section Aurora Animation ── */
+@keyframes aurora1 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15) rotate(120deg);
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9) rotate(240deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes aurora2 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50px, 50px) scale(1.2) rotate(-180deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(-360deg);
+  }
+}
+
+@keyframes aurora3 {
+  0% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(60px, -40px) scale(0.85) rotate(180deg);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(360deg);
+  }
+}
+
+.animate-aurora-slow-1 {
+  animation: aurora1 30s infinite alternate ease-in-out;
+}
+
+.animate-aurora-slow-2 {
+  animation: aurora2 35s infinite alternate ease-in-out;
+}
+
+.animate-aurora-slow-3 {
+  animation: aurora3 27s infinite alternate ease-in-out;
+}
+
+.lead-gradient {
+  background-color: #EEEFE0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Alternating Section Backgrounds ── */
+.section-bg-cream {
+  background-color: #EEEFE0;
+}
+
+.section-bg-tertiary {
+  background: linear-gradient(180deg, rgba(209, 216, 190, 0.25) 0%, rgba(238, 239, 224, 0.4) 100%);
+}
+
+.section-bg-secondary {
+  background: linear-gradient(180deg, rgba(167, 193, 168, 0.12) 0%, rgba(209, 216, 190, 0.18) 100%);
+}
+
+.section-bg-primary-mist {
+  background: linear-gradient(180deg, rgba(129, 154, 145, 0.08) 0%, rgba(167, 193, 168, 0.1) 100%);
+}
+
+/* Soft masked edge fade for marquee */
+.mask-gradient {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #1c2722 5%, #1c2722 95%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #1c2722 5%, #1c2722 95%, transparent 100%);
+}
+
+/* Modal Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    110deg,
+    var(--color-brand-primary) 35%,
+    color-mix(in srgb, var(--color-brand-tertiary) 35%, var(--color-brand-primary)) 45%,
+    color-mix(in srgb, var(--color-brand-tertiary) 80%, var(--color-brand-primary)) 50%,
+    color-mix(in srgb, var(--color-brand-tertiary) 35%, var(--color-brand-primary)) 55%,
+    var(--color-brand-primary) 65%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3.5s infinite linear;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
