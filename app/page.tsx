@@ -1467,41 +1467,6 @@ export default function Home() {
       <section id="logos-gallery" className="w-full py-16 lg:py-24 bg-white border-t border-slate-200/50 overflow-hidden relative z-10">
         <div className="w-full mx-auto">
           
-          {/* 3 Logos Row */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-10 md:gap-16 lg:gap-24 mb-16 px-6">
-            {/* Logo 1: 60 Years Emblem (Custom Inline SVG representing wheat & milling experience) */}
-            <div className="flex items-center justify-center p-2 select-none">
-              <svg className="h-[50px] sm:h-[65px] w-auto" viewBox="0 0 180 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 35 45 C 35 25, 80 20, 90 45 C 100 20, 145 25, 145 45 C 145 75, 90 85, 90 85 C 90 85, 35 75, 35 45 Z" stroke="#E0901A" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                <circle cx="65" cy="45" r="16" stroke="#E0901A" strokeWidth="3" fill="none"/>
-                <circle cx="115" cy="45" r="16" stroke="#E0901A" strokeWidth="3" fill="none"/>
-                <path d="M 50 35 C 55 38, 55 52, 50 55" stroke="#E0901A" strokeWidth="2"/>
-                <path d="M 130 35 C 125 38, 125 52, 130 55" stroke="#E0901A" strokeWidth="2"/>
-                <text x="90" y="55" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="900" fontSize="30" fill="#E0901A" textAnchor="middle">60</text>
-                <text x="90" y="80" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="7" fill="#3e4d46" letterSpacing="0.8" textAnchor="middle">YEARS OF EXPERIENCE</text>
-                <text x="90" y="90" fontFamily="system-ui, -apple-system, sans-serif" fontWeight="800" fontSize="7" fill="#3e4d46" letterSpacing="2.2" textAnchor="middle">IN MILLING</text>
-              </svg>
-            </div>
-
-            {/* Logo 2: RS Choyal Group Logo */}
-            <div className="bg-white p-3 rounded-2xl border border-slate-200/50 shadow-xs inline-flex items-center justify-center select-none">
-              <img 
-                src="/rschoyal-logo.svg" 
-                alt="RS Choyal Group Logo" 
-                className="h-[40px] sm:h-[50px] w-auto object-contain"
-              />
-            </div>
-
-            {/* Logo 3: Choyal Grinding Solution Logo */}
-            <div className="bg-white p-3 rounded-2xl border border-slate-200/50 shadow-xs inline-flex items-center justify-center select-none">
-              <img 
-                src="/choyal-logo.png" 
-                alt="Choyal Grinding Solution Logo" 
-                className="h-[40px] sm:h-[50px] w-auto object-contain"
-              />
-            </div>
-          </div>
-
           {/* 2-Row Media Gallery Marquee */}
           <div className="relative w-full space-y-6 marquee-container mask-gradient">
             
