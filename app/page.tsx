@@ -715,61 +715,87 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- About Us Section --- */}
-      <section className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10 border-b border-slate-200/50">
-        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      {/* --- Legacy & History Grid Section --- */}
+      <section id="legacy" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-20 relative z-10 bg-[#F5F2EB] border-t border-slate-200/50">
+        <div className="w-full max-w-[1440px] mx-auto space-y-12">
           
-          <div className="space-y-6">
+          <div className="text-center space-y-4 max-w-3xl mx-auto">
             <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-              About Us
+              Our Legacy
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              A Globally Trusted Name in Flour Milling
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
+              Six Decades of Milling Excellence
             </h2>
-            <div className="space-y-4 text-[#3e4d46] text-sm sm:text-base leading-relaxed">
-              <p>
-                For over 60 years, we have been proud industry leaders in the Flour Mills and Emery Stones Manufacturing industry. What began as a small-scale operation has grown into a globally trusted name, known for innovation, quality, and commitment to excellence.
-              </p>
-              <p>
-                Under the leadership of Mr. R.S. Choyal, the company has successfully delivered over 250 turnkey solutions in the past decade alone. Our relentless pursuit of progress led to the development of 6 patented technologies, a testament to our pioneering R&D efforts.
-              </p>
-              <p>
-                CHOYAL has set benchmarks in global markets, exporting Flour Mills, Emery Stones & turnkey solutions to more than 25 countries across Europe, France, United Kingdom, Africa, the Middle East, Australia, Canada, Brazil, Zambia, Hong Kong, Sri Lanka, South Africa, and prominent Gulf nations like the United Arab Emirates, Saudi Arabia, Oman and Qatar. We have proudly received the "Certificate for Excellence in Export" year after year.
-              </p>
-            </div>
-            
-            <div className="pt-2">
-              <Link 
-                href="/about"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-primary text-white font-bold text-sm hover:bg-brand-primary/95 transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
-              >
-                <span>Discover Our Legacy</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
+            <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed">
+              Explore the key eras that shaped RS Choyal into a global leader in heavy food engineering and smart milling automation.
+            </p>
           </div>
 
-          <div className="relative aspect-square sm:aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-slate-200/50 group">
-            <Image 
-              src="/images/about-unit-2.jpg" 
-              alt="RS Choyal Unit 2 Manufacturing Facility" 
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute bottom-6 left-6 right-6">
-              <div className="bg-white/95 backdrop-blur px-5 py-3 rounded-xl shadow-lg border border-white/20 inline-block">
-                <span className="text-brand-primary font-black text-lg block">60+ Years</span>
-                <span className="text-slate-600 text-xs font-bold uppercase tracking-wider">of Manufacturing Excellence</span>
+          {/* 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                era: "1965 – 1975",
+                title: "Founding & Global Exports",
+                highlights: [
+                  "Founded in Ajmer, India, by Mr. B.M. Choyal and Mr. R.D. Sharma.",
+                  "Pioneered local flour mill and abrasive emery stone manufacturing.",
+                  "First Indian company to export milling systems to East Africa, Europe, & Middle East."
+                ]
+              },
+              {
+                era: "1978 – 2012",
+                title: "Infrastructure & Expansion",
+                highlights: [
+                  "Incorporated formally as Shri Vishvakarma Industries Private Limited.",
+                  "Built heavy engineering & fabrication works facilities in Arjunpura-Khalsa.",
+                  "Established Ajmer's first dedicated R&D Centre for advanced product testing."
+                ]
+              },
+              {
+                era: "Present Era",
+                title: "Digital Grinding & Automation",
+                highlights: [
+                  "Pioneered smart mill automation (Miller Lite, iQuadra) for energy-saving controls.",
+                  "Remote GUI dashboard & PLC controller integrations for whole grain plants.",
+                  "Launched the Choyal School of Milling Technology for professional industry training."
+                ]
+              }
+            ].map((item, idx) => (
+              <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+                {/* Visual Number Watermark */}
+                <div className="absolute top-4 right-6 text-slate-100 font-black text-6xl select-none pointer-events-none group-hover:text-slate-200 transition-colors">
+                  0{idx + 1}
+                </div>
+                
+                <div className="space-y-6 z-10 relative">
+                  <span className="inline-block bg-brand-tertiary text-slate-900 font-extrabold text-xs px-3.5 py-1.5 rounded-lg tracking-wide uppercase">
+                    {item.era}
+                  </span>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-xl font-black text-slate-800 tracking-tight leading-snug">
+                      {item.title}
+                    </h3>
+                    <ul className="space-y-3 pt-2">
+                      {item.highlights.map((highlight, hIdx) => (
+                        <li key={hIdx} className="flex gap-2.5 items-start text-slate-600 text-sm leading-relaxed">
+                          <span className="text-brand-primary font-bold text-base select-none mt-0.5">•</span>
+                          <span>{highlight}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
 
         </div>
       </section>
 
       {/* --- Product Category Grid Section --- */}
-      <section id="categories" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-20 relative z-10 section-bg-cream">
+      <section id="categories" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-20 relative z-10 bg-white border-t border-slate-200/50">
         <div className="w-full max-w-[1440px] mx-auto space-y-12">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -868,169 +894,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Featured Products Section --- */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-slate-50 border-t border-b border-slate-200/50">
-        <div className="w-full max-w-[1440px] mx-auto space-y-12">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-4 max-w-2xl">
-              <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-                Flagship Machinery
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-                Featured Innovation Solutions
-              </h2>
-              <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed">
-                Pioneering the future of flour milling with our industry-leading smart automated mills, electronic feeders, and energy-saving systems.
-              </p>
-            </div>
-            
-            <Link 
-              href="/catalog"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-brand-primary text-white font-bold text-sm hover:bg-brand-primary/95 transition-all duration-300 shadow-xs cursor-pointer whitespace-nowrap self-start md:self-auto"
-            >
-              <span>View Full Catalog</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </div>
-
-          {/* Product Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {featuredProducts.map((product) => {
-              if (!product) return null;
-              const categoryInfo = categoriesData[product.category as keyof typeof categoriesData];
-              return (
-                <div 
-                  key={product.slug}
-                  className="flex flex-col h-full bg-white border border-slate-200/80 rounded-[28px] overflow-hidden shadow-xs hover:shadow-md hover:border-slate-350 transition-all duration-300 group"
-                >
-                  {/* Image container */}
-                  <div className="relative aspect-square w-full bg-[#fcfbf9] border-b border-slate-100 overflow-hidden flex items-center justify-center p-6">
-                    <img 
-                      src={product.image} 
-                      alt={product.title}
-                      className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  
-                  {/* Info */}
-                  <div className="p-6 flex-1 flex flex-col justify-between space-y-6">
-                    <div className="space-y-3">
-                      {categoryInfo && (
-                        <span className="text-[10px] font-bold text-brand-primary tracking-wider uppercase bg-brand-primary/5 px-2.5 py-1 rounded-md inline-block">
-                          {categoryInfo.name}
-                        </span>
-                      )}
-                      
-                      <h3 className="font-extrabold text-slate-800 text-base sm:text-lg tracking-tight line-clamp-2 min-h-[3rem] group-hover:text-brand-primary transition-colors">
-                        {product.title}
-                      </h3>
-                      
-                      <p className="text-slate-500 text-xs sm:text-sm leading-relaxed line-clamp-3">
-                        {product.shortDescription || "High-performance milling machinery manufactured under strict quality standards."}
-                      </p>
-                    </div>
-
-                    <div className="pt-2">
-                      <Link 
-                        href={`/catalog/${product.slug}`}
-                        className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-50 hover:bg-brand-primary hover:text-white border border-slate-200/60 font-bold text-xs text-slate-700 transition-all duration-300 cursor-pointer"
-                      >
-                        <span>View Details</span>
-                        <ArrowRight className="h-3 w-3" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-        </div>
-      </section>
-
-      {/* --- Prestigious Clients Section --- */}
-      <section className="w-full py-16 bg-[#F5F2EB] border-b border-slate-200/50 overflow-hidden relative z-10">
-        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 mb-10 space-y-4">
-          <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-            Global Footprint
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-            Our Prestigious Clients
-          </h2>
-          <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed max-w-3xl">
-            Trusted by the world's leading grain processors, food brands, and agro-exporters across the globe and pan-India.
-          </p>
-        </div>
-
-        {/* Marquee Wrapper Container */}
-        <div className="space-y-8 marquee-container">
-          
-          {/* INTERNATIONAL ROW */}
-          <div className="space-y-2">
-            <div className="px-6 sm:px-12 lg:px-16 xl:px-24">
-              <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase block mb-3">
-                — International Partners
-              </span>
-            </div>
-            
-            <div className="flex overflow-hidden w-full select-none gap-8 relative">
-              {/* Fade Left/Right overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
-
-              <div className="flex shrink-0 animate-marquee items-center gap-8 min-w-full">
-                {internationalClients.map((client, idx) => (
-                  <div key={`intl-1-${idx}`} className="shrink-0">
-                    {renderClientLogo(client)}
-                  </div>
-                ))}
-              </div>
-              <div className="flex shrink-0 animate-marquee items-center gap-8 min-w-full" aria-hidden="true">
-                {internationalClients.map((client, idx) => (
-                  <div key={`intl-2-${idx}`} className="shrink-0">
-                    {renderClientLogo(client)}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* PAN INDIA ROW */}
-          <div className="space-y-4">
-            <div className="px-6 sm:px-12 lg:px-16 xl:px-24">
-              <span className="text-xs font-bold text-slate-400 tracking-widest uppercase block mb-3">
-                — Pan India Brands
-              </span>
-            </div>
-            
-            <div className="flex overflow-hidden w-full select-none gap-8 relative">
-              {/* Fade Left/Right overlays */}
-              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
-              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
-
-              <div className="flex shrink-0 animate-marquee-reverse items-center gap-8 min-w-full">
-                {indianClients.map((client, idx) => (
-                  <div key={`ind-1-${idx}`} className="shrink-0">
-                    {renderClientLogo(client)}
-                  </div>
-                ))}
-              </div>
-              <div className="flex shrink-0 animate-marquee-reverse items-center gap-8 min-w-full" aria-hidden="true">
-                {indianClients.map((client, idx) => (
-                  <div key={`ind-2-${idx}`} className="shrink-0">
-                    {renderClientLogo(client)}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
       {/* --- Divisions Bento Grid Section --- */}
-      <section id="brands" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 section-bg-cream">
+      <section id="brands" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 section-bg-cream border-b border-slate-200/50">
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -1068,262 +933,96 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- Turnkey Solutions Section --- */}
-      <section id="turnkey-solutions-feature" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-white border-t border-b border-slate-200/50">
+      {/* --- Milling Ecosystem Section --- */}
+      <section id="milling-ecosystem" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-white border-t border-slate-200/50">
         <div className="w-full max-w-[1440px] mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Left Side Content - Text and Details */}
-            <div className="lg:col-span-7 space-y-8">
-              <div className="space-y-4">
-                <span className="text-xs font-bold text-brand-primary tracking-widest uppercase bg-brand-primary/5 px-3 py-1.5 rounded-lg inline-block">
-                  Turnkey Engineering
-                </span>
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-                  Turnkey Solutions
-                </h2>
-                <p className="text-[#3e4d46] text-sm sm:text-base lg:text-lg leading-relaxed">
-                  At RS Choyal Group, we specialize in providing turnkey solutions tailored to meet your exact requirements. From micro-mini modules to large-scale plants (20 TPD to 2000 TPD), our services encompass:
+          
+          {/* Ecosystem Header */}
+          <div className="space-y-4 max-w-4xl mb-12">
+            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase bg-brand-primary/5 px-3 py-1.5 rounded-lg inline-block">
+              End-to-End Milling Partner
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#3e4d46] leading-tight">
+              Complete Milling Ecosystem Under One Roof
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
+              An easy way to do business with Milling Ecosystem. Just plan your business while we help you manage your operations with ease. Managing formalities can take time and energy; our complete ecosystem helps you save time and get started in no time.
+            </p>
+          </div>
+
+          {/* Ecosystem Services Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {[
+              {
+                icon: <Workflow className="h-5 w-5" />,
+                title: "Project Development",
+                desc: "We will develop complete projects for you starting from 2D/3D drawings, site selection, land development, designing, fabrication, commissioning of plant, recipe development, and packaging design."
+              },
+              {
+                icon: <Activity className="h-5 w-5" />,
+                title: "Operations",
+                desc: "We will provide consultancy on how to maximize your operations for maximum output, efficient plant operations, maintenance, quality control, fumigation, MIS, and overall project management after setup."
+              },
+              {
+                icon: <Cpu className="h-5 w-5" />,
+                title: "Automation",
+                desc: "Controlling and optimizing all processes like sampling of raw material, pre-cleaning, storing, blending, cleaning, grinding, and packaging will help in creating long term growth of the plant."
+              },
+              {
+                icon: <BookOpen className="h-5 w-5" />,
+                title: "Training",
+                desc: "We will provide comprehensive professional training to your staff so they are fully ready to operate your complete plant operations."
+              },
+              {
+                icon: <ShieldCheck className="h-5 w-5" />,
+                title: "Licensing",
+                desc: "We will help you get necessary licensing required to start your operations like FSSAI, APEDA, IEC, and other international/local certificates."
+              },
+              {
+                icon: <Award className="h-5 w-5" />,
+                title: "Government Registrations",
+                desc: "We will help you secure the necessary licenses, legal registries, and regulatory clearances required to start your milling operations."
+              },
+              {
+                icon: <Settings className="h-5 w-5" />,
+                title: "Design & Engineering",
+                desc: "We will develop 2D and 3D mechanical drawings, detailed packaging designs, and optimized field layouts for efficient plant commissioning."
+              },
+              {
+                icon: <Layers className="h-5 w-5" />,
+                title: "Technology Upgradation",
+                desc: "We can help you modernize and upgrade your existing milling setup with today's market requirements and energy-efficient systems easily."
+              },
+              {
+                icon: <Database className="h-5 w-5" />,
+                title: "Project Reports",
+                desc: "We will provide high-quality detailed project reports and bankable feasibility/viability project reports to secure funding."
+              },
+              {
+                icon: <Globe className="h-5 w-5" />,
+                title: "Subsidies & Policies",
+                desc: "We will guide you step-by-step on applicable subsidies, financial grants, and government policies for your agribusiness."
+              }
+            ].map((item, idx) => (
+              <div 
+                key={idx} 
+                className="bg-slate-50/50 p-6 rounded-3xl border border-slate-200/50 hover:bg-white hover:shadow-md hover:border-brand-primary/10 transition-all duration-300 flex flex-col justify-between space-y-4"
+              >
+                <div className="space-y-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#E0901A]/10 text-[#E0901A] flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <h4 className="font-extrabold text-slate-800 text-sm sm:text-base leading-snug tracking-tight">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
+                  {item.desc}
                 </p>
               </div>
-
-              {/* 6 Key Areas */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  {
-                    title: "Concept Development and Layouts",
-                    desc: "Customized designs optimized for efficiency and space utilization."
-                  },
-                  {
-                    title: "Detailed Engineering",
-                    desc: "Precision engineering ensuring seamless integration and operation."
-                  },
-                  {
-                    title: "Automation Solutions",
-                    desc: "Advanced technologies to enhance productivity and reduce operational costs."
-                  },
-                  {
-                    title: "Training Programs",
-                    desc: "Comprehensive training for your team to operate and maintain the facility effectively."
-                  },
-                  {
-                    title: "Design & Engineering Services",
-                    desc: "2D/3D mechanical drawings, packaging designs, and field layouts for efficient plant commissioning."
-                  },
-                  {
-                    title: "Technology Upgradation",
-                    desc: "Modernizing existing plants to meet current market demands."
-                  }
-                ].map((item, idx) => (
-                  <div key={idx} className="flex gap-3">
-                    <span className="text-brand-primary font-black mt-0.5 text-base select-none">•</span>
-                    <div>
-                      <h4 className="font-extrabold text-slate-800 text-sm sm:text-base leading-snug">{item.title}</h4>
-                      <p className="text-slate-500 text-xs sm:text-sm mt-1 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Call to Action Button */}
-              <div className="pt-2">
-                <Link 
-                  href="/turnkey-projects"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-brand-primary text-white font-bold text-sm hover:bg-brand-primary/95 transition-all duration-300 shadow-xs cursor-pointer"
-                >
-                  <span>Explore Turnkey Projects</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-
-            {/* Right Side Content - Visual Image and Badge Details */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <div className="relative aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-md border border-slate-200/50 group bg-slate-50">
-                <Image 
-                  src="/images/plants/turnkey_solutions.webp" 
-                  alt="Turnkey Solutions Plant Layout" 
-                  fill 
-                  className="object-cover !scale-[1.28] transition-transform duration-500 group-hover:!scale-[1.35]"
-                />
-              </div>
-
-              {/* Turnkey highlight details box matching yellow/amber and dark green */}
-              <div className="bg-gradient-to-br from-[#E0901A]/10 to-[#F5A623]/25 border border-[#E0901A]/35 p-6 sm:p-8 rounded-3xl space-y-6 text-[#1c2722]">
-                <div className="text-center space-y-1">
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E0901A] block">
-                    We Offer Turnkey Solutions For
-                  </span>
-                  <div className="text-xl sm:text-2xl font-black text-brand-primary tracking-tight">
-                    2 Ton/Day <span className="text-[#E0901A]">To</span> 2000 Ton/Day
-                  </div>
-                  <span className="text-xs font-bold text-slate-600 block">Capacities</span>
-                </div>
-
-                <div className="w-full h-px bg-[#E0901A]/20"></div>
-
-                <div className="text-center space-y-1">
-                  <div className="text-3xl sm:text-4xl font-black text-brand-primary tracking-tight">
-                    250+ Projects
-                  </div>
-                  <span className="text-xs font-extrabold uppercase tracking-wider text-[#E0901A] block">
-                    Done In A Span Of 10 Years
-                  </span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* --- Turnkey Range Section --- */}
-      <section id="turnkey-range" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-slate-50 border-b border-slate-200/50">
-        <div className="w-full max-w-[1440px] mx-auto space-y-12">
-          
-          {/* Section Header */}
-          <div className="space-y-4 max-w-3xl">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase bg-brand-primary/5 px-3 py-1.5 rounded-lg inline-block">
-              Turnkey Projects Portfolio
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              Wide Range of Turnkey Project Solutions
-            </h2>
-            <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed">
-              We design, build, and commission custom industrial systems tailored to your target output. Explore our comprehensive setups across processing categories.
-            </p>
+            ))}
           </div>
 
-          {/* Interactive Showcase Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            {/* Left Side: Navigation Tabs */}
-            <div className="lg:col-span-4 flex lg:flex-col gap-3 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 snap-x [-ms-overflow-style:none] [scrollbar-width:none] &::-webkit-scrollbar:hidden">
-              {turnkeyRangeData.map((tab, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setActiveTurnkeyTab(idx)}
-                  className={`flex items-center gap-4 px-6 py-4 rounded-2xl text-left font-bold text-sm sm:text-base transition-all duration-300 cursor-pointer snap-start shrink-0 lg:shrink w-auto lg:w-full select-none ${
-                    activeTurnkeyTab === idx
-                      ? "bg-brand-primary text-white shadow-md shadow-brand-primary/10 translate-x-0 lg:translate-x-2"
-                      : "bg-white border border-slate-200/60 hover:bg-slate-50 hover:border-slate-350 text-slate-700"
-                  }`}
-                >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
-                    activeTurnkeyTab === idx ? "bg-white/20 text-white" : "bg-[#E0901A]/10 text-[#E0901A]"
-                  }`}>
-                    {renderTurnkeyIcon(tab.icon)}
-                  </div>
-                  <span>{tab.title}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Right Side: Showcase Content Panel */}
-            <div className="lg:col-span-8 bg-white border border-slate-200/65 rounded-[32px] p-6 sm:p-8 md:p-10 shadow-xs min-h-[420px]">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                
-                {/* Panel Information */}
-                <div className="md:col-span-7 space-y-6">
-                  <div className="space-y-3">
-                    <h3 className="text-xl sm:text-2xl font-black text-slate-800 tracking-tight">
-                      {turnkeyRangeData[activeTurnkeyTab].title}
-                    </h3>
-                    <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                      {turnkeyRangeData[activeTurnkeyTab].description}
-                    </p>
-                  </div>
-
-                  <div className="w-full h-px bg-slate-100"></div>
-
-                  {/* Sub-items List as checked tags */}
-                  <div className="space-y-3">
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#E0901A] block">
-                      Key Plants & Setups Included
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {turnkeyRangeData[activeTurnkeyTab].items.map((sub, sIdx) => (
-                        <div 
-                          key={sIdx} 
-                          className="flex items-center gap-2 bg-slate-50 border border-slate-200/50 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700 hover:border-brand-primary/10 transition-colors"
-                        >
-                          <Check className="h-3 w-3 text-brand-primary shrink-0" />
-                          <span>{sub}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Panel Graphic Preview */}
-                <div className="md:col-span-5 space-y-4">
-                  <div className="relative aspect-video w-full rounded-2xl overflow-hidden shadow-sm border border-slate-100 group bg-slate-50">
-                    <Image 
-                      src={turnkeyRangeData[activeTurnkeyTab].image} 
-                      alt={turnkeyRangeData[activeTurnkeyTab].title} 
-                      fill 
-                      className={`object-cover transition-transform duration-500 ${
-                        turnkeyRangeData[activeTurnkeyTab].image.includes('turnkey_solutions')
-                          ? '!scale-[1.28] group-hover:!scale-[1.35]'
-                          : 'group-hover:scale-103'
-                      }`}
-                    />
-                  </div>
-                  <div className="bg-[#E0901A]/5 border border-[#E0901A]/10 p-4 rounded-2xl flex items-start gap-3">
-                    <span className="text-[#E0901A] font-extrabold text-lg leading-none select-none">✦</span>
-                    <p className="text-[11px] sm:text-xs text-[#E0901A] font-semibold leading-relaxed">
-                      All installations are fully compliant with ISO certification guidelines and feature custom IoT control integration.
-                    </p>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      {/* --- Global Footprint Banner --- */}
-      <section id="global" className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-brand-primary text-white relative z-10 overflow-hidden">
-        {/* Background glow overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(51,172,127,0.15),transparent_60%)] pointer-events-none"></div>
-        
-        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-6 space-y-6">
-            <span className="text-xs font-bold text-brand-tertiary tracking-widest uppercase">
-              Global Presence
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
-              Trusted by Mill Owners Across 20+ Countries
-            </h2>
-            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
-              From our headquarters in Ajmer to installations in Africa, the Middle East, and Asia, we supply custom-built industrial solutions and support them through proactive AMC partners.
-            </p>
-            <div className="space-y-4 pt-2">
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
-                <span className="text-sm font-semibold text-slate-200">State-of-the-art Atta processing setups in Qatar & GCC</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
-                <span className="text-sm font-semibold text-slate-200">High-capacity automated plants across East and West Africa</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
-                <span className="text-sm font-semibold text-slate-200">Extensive domestic layout operations inside major Indian food hubs</span>
-              </div>
-            </div>
-          </div>
-          <div className="lg:col-span-6 relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-            <Image 
-              src="/images/qatar.webp" 
-              alt="RS Choyal Qatar Global Installation" 
-              fill
-              className="object-cover"
-            />
-          </div>
         </div>
       </section>
 
@@ -1438,182 +1137,6 @@ export default function Home() {
         </div>
       </section>
 
-
-
-      {/* --- Legacy & History Grid Section --- */}
-      <section id="legacy" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-20 relative z-10 bg-[#F5F2EB] border-t border-slate-200/50">
-        <div className="w-full max-w-[1440px] mx-auto space-y-12">
-          
-          <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-              Our Legacy
-            </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              Six Decades of Milling Excellence
-            </h2>
-            <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed">
-              Explore the key eras that shaped RS Choyal into a global leader in heavy food engineering and smart milling automation.
-            </p>
-          </div>
-
-          {/* 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                era: "1965 – 1975",
-                title: "Founding & Global Exports",
-                highlights: [
-                  "Founded in Ajmer, India, by Mr. B.M. Choyal and Mr. R.D. Sharma.",
-                  "Pioneered local flour mill and abrasive emery stone manufacturing.",
-                  "First Indian company to export milling systems to East Africa, Europe, & Middle East."
-                ]
-              },
-              {
-                era: "1978 – 2012",
-                title: "Infrastructure & Expansion",
-                highlights: [
-                  "Incorporated formally as Shri Vishvakarma Industries Private Limited.",
-                  "Built heavy engineering & fabrication works facilities in Arjunpura-Khalsa.",
-                  "Established Ajmer's first dedicated R&D Centre for advanced product testing."
-                ]
-              },
-              {
-                era: "Present Era",
-                title: "Digital Grinding & Automation",
-                highlights: [
-                  "Pioneered smart mill automation (Miller Lite, iQuadra) for energy-saving controls.",
-                  "Remote GUI dashboard & PLC controller integrations for whole grain plants.",
-                  "Launched the Choyal School of Milling Technology for professional industry training."
-                ]
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-white border border-slate-200/80 shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
-                {/* Visual Number Watermark */}
-                <div className="absolute top-4 right-6 text-slate-100 font-black text-6xl select-none pointer-events-none group-hover:text-slate-200 transition-colors">
-                  0{idx + 1}
-                </div>
-                
-                <div className="space-y-6 z-10 relative">
-                  <span className="inline-block bg-brand-tertiary text-slate-900 font-extrabold text-xs px-3.5 py-1.5 rounded-lg tracking-wide uppercase">
-                    {item.era}
-                  </span>
-                  
-                  <div className="space-y-3">
-                    <h3 className="text-xl font-black text-slate-800 tracking-tight leading-snug">
-                      {item.title}
-                    </h3>
-                    <ul className="space-y-3 pt-2">
-                      {item.highlights.map((highlight, hIdx) => (
-                        <li key={hIdx} className="flex gap-2.5 items-start text-slate-600 text-sm leading-relaxed">
-                          <span className="text-brand-primary font-bold text-base select-none mt-0.5">•</span>
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
-
-
-      {/* --- Milling Ecosystem Section --- */}
-      <section id="milling-ecosystem" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-white border-t border-slate-200/50">
-        <div className="w-full max-w-[1440px] mx-auto">
-          
-          {/* Ecosystem Header */}
-          <div className="space-y-4 max-w-4xl mb-12">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase bg-brand-primary/5 px-3 py-1.5 rounded-lg inline-block">
-              End-to-End Milling Partner
-            </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#3e4d46] leading-tight">
-              Complete Milling Ecosystem Under One Roof
-            </h2>
-            <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
-              An easy way to do business with Milling Ecosystem. Just plan your business while we help you manage your operations with ease. Managing formalities can take time and energy; our complete ecosystem helps you save time and get started in no time.
-            </p>
-          </div>
-
-          {/* Ecosystem Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
-            {[
-              {
-                icon: <Workflow className="h-5 w-5" />,
-                title: "Project Development",
-                desc: "We will develop complete projects for you starting from 2D/3D drawings, site selection, land development, designing, fabrication, commissioning of plant, recipe development, and packaging design."
-              },
-              {
-                icon: <Activity className="h-5 w-5" />,
-                title: "Operations",
-                desc: "We will provide consultancy on how to maximize your operations for maximum output, efficient plant operations, maintenance, quality control, fumigation, MIS, and overall project management after setup."
-              },
-              {
-                icon: <Cpu className="h-5 w-5" />,
-                title: "Automation",
-                desc: "Controlling and optimizing all processes like sampling of raw material, pre-cleaning, storing, blending, cleaning, grinding, and packaging will help in creating long term growth of the plant."
-              },
-              {
-                icon: <BookOpen className="h-5 w-5" />,
-                title: "Training",
-                desc: "We will provide comprehensive professional training to your staff so they are fully ready to operate your complete plant operations."
-              },
-              {
-                icon: <ShieldCheck className="h-5 w-5" />,
-                title: "Licensing",
-                desc: "We will help you get necessary licensing required to start your operations like FSSAI, APEDA, IEC, and other international/local certificates."
-              },
-              {
-                icon: <Award className="h-5 w-5" />,
-                title: "Government Registrations",
-                desc: "We will help you secure the necessary licenses, legal registries, and regulatory clearances required to start your milling operations."
-              },
-              {
-                icon: <Settings className="h-5 w-5" />,
-                title: "Design & Engineering",
-                desc: "We will develop 2D and 3D mechanical drawings, detailed packaging designs, and optimized field layouts for efficient plant commissioning."
-              },
-              {
-                icon: <Layers className="h-5 w-5" />,
-                title: "Technology Upgradation",
-                desc: "We can help you modernize and upgrade your existing milling setup with today's market requirements and energy-efficient systems easily."
-              },
-              {
-                icon: <Database className="h-5 w-5" />,
-                title: "Project Reports",
-                desc: "We will provide high-quality detailed project reports and bankable feasibility/viability project reports to secure funding."
-              },
-              {
-                icon: <Globe className="h-5 w-5" />,
-                title: "Subsidies & Policies",
-                desc: "We will guide you step-by-step on applicable subsidies, financial grants, and government policies for your agribusiness."
-              }
-            ].map((item, idx) => (
-              <div 
-                key={idx} 
-                className="bg-slate-50/50 p-6 rounded-3xl border border-slate-200/50 hover:bg-white hover:shadow-md hover:border-brand-primary/10 transition-all duration-300 flex flex-col justify-between space-y-4"
-              >
-                <div className="space-y-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#E0901A]/10 text-[#E0901A] flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <h4 className="font-extrabold text-slate-800 text-sm sm:text-base leading-snug tracking-tight">
-                    {item.title}
-                  </h4>
-                </div>
-                <p className="text-slate-500 text-xs sm:text-sm leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-        </div>
-      </section>
-
       {/* --- Why RS Choyal Group Section --- */}
       <section id="why-choyal" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-slate-50 border-t border-slate-200/50">
         <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -1697,8 +1220,130 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- Global Footprint Banner --- */}
+      <section id="global" className="w-full py-16 lg:py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-brand-primary text-white relative z-10 overflow-hidden">
+        {/* Background glow overlay */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(51,172,127,0.15),transparent_60%)] pointer-events-none"></div>
+        
+        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-6 space-y-6">
+            <span className="text-xs font-bold text-brand-tertiary tracking-widest uppercase">
+              Global Presence
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight leading-tight">
+              Trusted by Mill Owners Across 20+ Countries
+            </h2>
+            <p className="text-slate-300 text-sm sm:text-base leading-relaxed">
+              From our headquarters in Ajmer to installations in Africa, the Middle East, and Asia, we supply custom-built industrial solutions and support them through proactive AMC partners.
+            </p>
+            <div className="space-y-4 pt-2">
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
+                <span className="text-sm font-semibold text-slate-200">State-of-the-art Atta processing setups in Qatar & GCC</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
+                <span className="text-sm font-semibold text-slate-200">High-capacity automated plants across East and West Africa</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-5 h-5 rounded-full bg-brand-secondary/30 flex items-center justify-center text-brand-secondary text-xs">✔</div>
+                <span className="text-sm font-semibold text-slate-200">Extensive domestic layout operations inside major Indian food hubs</span>
+              </div>
+            </div>
+          </div>
+          <div className="lg:col-span-6 relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            <Image 
+              src="/images/qatar.webp" 
+              alt="RS Choyal Qatar Global Installation" 
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* --- Prestigious Clients Section --- */}
+      <section className="w-full py-16 bg-[#F5F2EB] border-b border-slate-200/50 overflow-hidden relative z-10">
+        <div className="w-full max-w-[1440px] mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 mb-10 space-y-4">
+          <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
+            Global Footprint
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
+            Our Prestigious Clients
+          </h2>
+          <p className="text-[#3e4d46] text-sm sm:text-base leading-relaxed max-w-3xl">
+            Trusted by the world's leading grain processors, food brands, and agro-exporters across the globe and pan-India.
+          </p>
+        </div>
+
+        {/* Marquee Wrapper Container */}
+        <div className="space-y-8 marquee-container">
+          
+          {/* INTERNATIONAL ROW */}
+          <div className="space-y-2">
+            <div className="px-6 sm:px-12 lg:px-16 xl:px-24">
+              <span className="text-[10px] font-bold text-slate-400 tracking-widest uppercase block mb-3">
+                — International Partners
+              </span>
+            </div>
+            
+            <div className="flex overflow-hidden w-full select-none gap-8 relative">
+              {/* Fade Left/Right overlays */}
+              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
+
+              <div className="flex shrink-0 animate-marquee items-center gap-8 min-w-full">
+                {internationalClients.map((client, idx) => (
+                  <div key={`intl-1-${idx}`} className="shrink-0">
+                    {renderClientLogo(client)}
+                  </div>
+                ))}
+              </div>
+              <div className="flex shrink-0 animate-marquee items-center gap-8 min-w-full" aria-hidden="true">
+                {internationalClients.map((client, idx) => (
+                  <div key={`intl-2-${idx}`} className="shrink-0">
+                    {renderClientLogo(client)}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* PAN INDIA ROW */}
+          <div className="space-y-4">
+            <div className="px-6 sm:px-12 lg:px-16 xl:px-24">
+              <span className="text-xs font-bold text-slate-400 tracking-widest uppercase block mb-3">
+                — Pan India Brands
+              </span>
+            </div>
+            
+            <div className="flex overflow-hidden w-full select-none gap-8 relative">
+              {/* Fade Left/Right overlays */}
+              <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
+              <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#F5F2EB] to-transparent z-20 pointer-events-none"></div>
+
+              <div className="flex shrink-0 animate-marquee-reverse items-center gap-8 min-w-full">
+                {indianClients.map((client, idx) => (
+                  <div key={`ind-1-${idx}`} className="shrink-0">
+                    {renderClientLogo(client)}
+                  </div>
+                ))}
+              </div>
+              <div className="flex shrink-0 animate-marquee-reverse items-center gap-8 min-w-full" aria-hidden="true">
+                {indianClients.map((client, idx) => (
+                  <div key={`ind-2-${idx}`} className="shrink-0">
+                    {renderClientLogo(client)}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* --- Testimonials Section --- */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 section-bg-cream border-t border-slate-200/50">
+      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 bg-white border-t border-slate-200/50">
         <div className="w-full max-w-[1440px] mx-auto space-y-12">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
@@ -1771,10 +1416,8 @@ export default function Home() {
         </div>
       </section>
 
-
-
       {/* --- Accordion FAQ Section --- */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 section-bg-cream">
+      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10 section-bg-cream border-t border-slate-200/50">
         <div className="w-full max-w-4xl mx-auto space-y-12">
           
           <div className="text-center space-y-3">

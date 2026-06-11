@@ -3,13 +3,70 @@
 import Link from "next/link";
 import { Phone, Mail, Globe, MapPin, ShieldCheck } from "lucide-react";
 
+const groupLogos = [
+  { name: "RS Choyal Group", src: "/images/logos/rsc_group.jpg" },
+  { name: "Choyal Grinding Solutions", src: "/images/logos/choyal_grinding.png" },
+  { name: "CHARGE Milling Institute", src: "/images/logos/charge.jpg" },
+  { name: "Shri Agro Industries", src: "/images/logos/shri_agro.png" },
+  { name: "Floura", src: "/images/logos/floura.png" },
+  { name: "Mavian", src: "/images/logos/mavian.png" },
+  { name: "Shrihit", src: "/images/logos/shrihit.png" },
+  { name: "Brains Trust Society", src: "/images/logos/brains_trust.jpg" },
+  { name: "R. S. Choyal Branding", src: "/images/logos/rs_choyal.jpg" },
+];
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer className="w-full pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f3f4f1] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
-      <div className="w-full mx-auto space-y-16">
+      <div className="w-full mx-auto space-y-12">
         
+        {/* Group Companies Marquee Slider */}
+        <div className="w-full pb-10 border-b border-slate-300/40 space-y-6 marquee-container">
+          <div className="text-center md:text-left">
+            <span className="text-[10px] sm:text-xs font-black text-[#1c2722] tracking-widest uppercase">
+              Our Group Companies &amp; Ventures
+            </span>
+          </div>
+
+          <div className="flex overflow-hidden w-full select-none gap-6 relative py-2">
+            {/* Fade Left/Right overlays */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f3f4f1] to-transparent z-20 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f3f4f1] to-transparent z-20 pointer-events-none"></div>
+
+            <div className="flex shrink-0 animate-marquee items-center gap-6 min-w-full">
+              {groupLogos.map((logo, idx) => (
+                <div 
+                  key={`group-logo-1-${idx}`} 
+                  className="w-[185px] h-[95px] bg-white rounded-2xl border border-slate-200/50 shadow-xs flex items-center justify-center p-2 shrink-0 hover:shadow-md hover:border-slate-300/80 transition-all duration-300"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    className="w-full h-full object-contain transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="flex shrink-0 animate-marquee items-center gap-6 min-w-full" aria-hidden="true">
+              {groupLogos.map((logo, idx) => (
+                <div 
+                  key={`group-logo-2-${idx}`} 
+                  className="w-[185px] h-[95px] bg-white rounded-2xl border border-slate-200/50 shadow-xs flex items-center justify-center p-2 shrink-0 hover:shadow-md hover:border-slate-300/80 transition-all duration-300"
+                >
+                  <img 
+                    src={logo.src} 
+                    alt={logo.name} 
+                    className="w-full h-full object-contain transition-all duration-300"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Corporate Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
           
@@ -28,7 +85,7 @@ export default function Footer() {
 
           {/* Col 2: Product Ranges */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase border-l-2 border-brand-primary pl-2">
+            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
               Product Range
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
@@ -62,7 +119,7 @@ export default function Footer() {
 
           {/* Col 3: Quick Links */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase border-l-2 border-brand-primary pl-2">
+            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
               Corporate Info
             </h4>
             <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
@@ -96,7 +153,7 @@ export default function Footer() {
 
           {/* Col 4: Contact & Locations */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase border-l-2 border-brand-primary pl-2">
+            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
               Locations & Contact
             </h4>
             

@@ -63,16 +63,16 @@ export default function Header({ onRequestCallback }: HeaderProps) {
   };
 
   const aboutItems = [
-    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/#about", icon: Info },
-    { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/#about", icon: Users },
-    { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/#about", icon: Eye },
-    { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/#about", icon: Heart },
-    { name: "Research & Development", desc: "Advanced metallurgy labs and automation test divisions.", href: "/#infrastructure", icon: Milestone },
-    { name: "Social Responsibility", desc: "Community empowerment and ecological sustainability.", href: "/#about", icon: Landmark },
-    { name: "Why RSC Group", desc: "Trusted by commercial mill owners across 20+ countries.", href: "/#global", icon: HelpCircle },
-    { name: "Our Network", desc: "Worldwide sales office, AMCs, and distribution network.", href: "/#global", icon: Network },
-    { name: "Our Infrastructure", desc: "Two heavy engineering works facilities at Ajmer.", href: "/#infrastructure", icon: Building },
-    { name: "Our Innovations", desc: "Digital systems, computerized chakkis, and IoT solutions.", href: "/#infrastructure", icon: Lightbulb },
+    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/about#about-us", icon: Info },
+    { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/about#leadership", icon: Users },
+    { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/about#mission-vision", icon: Eye },
+    { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/about#philosophy", icon: Heart },
+    { name: "Research & Development", desc: "Advanced metallurgy labs and automation test divisions.", href: "/about#research-development", icon: Milestone },
+    { name: "Social Responsibility", desc: "Community empowerment and ecological sustainability.", href: "/about#social-responsibility", icon: Landmark },
+    { name: "Why RSC Group", desc: "Trusted by commercial mill owners across 20+ countries.", href: "/about#why-rsc", icon: HelpCircle },
+    { name: "Our Network", desc: "Worldwide sales office, AMCs, and distribution network.", href: "/about#network", icon: Network },
+    { name: "Our Infrastructure", desc: "Two heavy engineering works facilities at Ajmer.", href: "/about#infrastructure", icon: Building },
+    { name: "Our Innovations", desc: "Digital systems, computerized chakkis, and IoT solutions.", href: "/about#innovations", icon: Lightbulb },
   ];
 
   const productCategories = [
@@ -88,13 +88,13 @@ export default function Header({ onRequestCallback }: HeaderProps) {
   ];
 
   const serviceItems = [
-    { name: "Grain 360", desc: "End-to-end consulting for complete mill setup and auditing.", href: "/#brands", icon: Briefcase },
-    { name: "Facility Centre", desc: "Custom trial runs and manufacturing scale tests.", href: "/#infrastructure", icon: Shield },
-    { name: "Job Grinding", desc: "Contract flour grinding and abrasive dressing services.", href: "/#infrastructure", icon: RefreshCw },
-    { name: "Consultancy", desc: "Expert advisory for efficiency and capacity expansions.", href: "/#brands", icon: Handshake },
-    { name: "Training", desc: "On-site operator certification and maintenance guidance.", href: "/#infrastructure", icon: GraduationCap },
-    { name: "Web Solutions", desc: "Digital systems design, IoT monitoring, and cloud telemetry.", href: "/#infrastructure", icon: Globe },
-    { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/#infrastructure", icon: Palette },
+    { name: "Grain 360", desc: "End-to-end consulting for complete mill setup and auditing.", href: "/choyal-360", icon: Briefcase },
+    { name: "Facility Centre", desc: "Custom trial runs and manufacturing scale tests.", href: "/facility-centre", icon: Shield },
+    { name: "Job Grinding", desc: "Contract flour grinding and abrasive dressing services.", href: "/job-grinding", icon: RefreshCw },
+    { name: "Consultancy", desc: "Expert advisory for efficiency and capacity expansions.", href: "/consultancy", icon: Handshake },
+    { name: "Training", desc: "On-site operator certification and maintenance guidance.", href: "/training", icon: GraduationCap },
+    { name: "Web Solutions", desc: "Digital systems design, IoT monitoring, and cloud telemetry.", href: "/web-solutions", icon: Globe },
+    { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/design-media", icon: Palette },
   ];
 
   return (
@@ -165,7 +165,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         Pioneering advanced abrasive casting and industrial mill solutions since 1968.
                       </p>
                     </div>
-                    <Link href="/#about" className="text-xs font-bold text-brand-primary flex items-center gap-1 mt-6 hover:underline">
+                    <Link href="/about#about-us" className="text-xs font-bold text-brand-primary flex items-center gap-1 mt-6 hover:underline">
                       <span>Learn More</span>
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
@@ -296,13 +296,13 @@ export default function Header({ onRequestCallback }: HeaderProps) {
           </div>
 
           <Link 
-            href="/#news" 
+            href="/news" 
             className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
           >
             News
           </Link>
           <Link 
-            href="/turnkey-projects" 
+            href="/projects" 
             className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
           >
             Our Projects
@@ -438,14 +438,14 @@ export default function Header({ onRequestCallback }: HeaderProps) {
 
             {/* Direct Links */}
             <Link
-              href="/#news"
+              href="/news"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-bold text-slate-800 hover:text-brand-primary transition-colors"
             >
               News
             </Link>
             <Link
-              href="/turnkey-projects"
+              href="/projects"
               onClick={() => setMobileMenuOpen(false)}
               className="text-base font-bold text-slate-800 hover:text-brand-primary transition-colors"
             >
