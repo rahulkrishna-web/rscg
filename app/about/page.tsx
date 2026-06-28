@@ -127,6 +127,64 @@ const benchmarkGoals = [
   }
 ];
 
+const timelineMilestones = [
+  {
+    year: "1960",
+    title: "Foundation of Choyal Group",
+    desc: "B.M. Choyal along with R.D. Sharma lays the foundation of our legacy by starting the company with a vision to revolutionize the grain milling industry in India."
+  },
+  {
+    year: "1965",
+    title: "Our Journey Begins",
+    desc: "The company is formally incorporated as “Shri Vishvakarma Industries”, marking the beginning of a new chapter in industrial excellence and innovation."
+  },
+  {
+    year: "1970",
+    title: "International Outreach",
+    desc: "We became the first company from India in the grain milling sector to export emery stone globally. Our commitment to quality and innovation was recognized with the 'Certificate for Excellence in Export', which we proudly received year after year."
+  },
+  {
+    year: "1978",
+    title: "Inauguration of First Factory Unit",
+    desc: "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, later known as SVIPL, marking a key step in our industrial journey."
+  },
+  {
+    year: "2000",
+    title: "Fully Automated Emery Stone Plant",
+    desc: "We launched our automatic modeling workshop, kickstarting a new era of innovation in emery stone manufacturing. This milestone enhanced precision, consistency, and efficiency in our production process."
+  },
+  {
+    year: "2010",
+    title: "World’s First Patented Digital Flour Mill",
+    desc: "After years of dedicated R&D, we developed the world’s first fully automatic digital stone mill, redefining precision and revolutionizing traditional stone milling."
+  },
+  {
+    year: "2011",
+    title: "Turnkey Solutions for Every Need",
+    desc: "We launched our complete turnkey solutions, offering end-to-end services in milling. To date, we’ve successfully delivered 250+ turnkey projects worldwide."
+  },
+  {
+    year: "2013",
+    title: "Patented Emery Stone Dressing Machine",
+    desc: "We introduced a patented emery stone dressing machine, combining innovation and efficiency to transform stone maintenance."
+  },
+  {
+    year: "2018",
+    title: "Venturing into Groceries",
+    desc: "We ventured into the grocery sector, embracing new opportunities and learning valuable lessons that continue to shape our growth and resilience."
+  },
+  {
+    year: "2021",
+    title: "World’s First Patented Digital Fresh Flour Grinding Machine",
+    desc: "We introduced the world’s first patented digital fresh flour grinding machine, powered by smart technology to make fresh flour easily accessible worldwide."
+  },
+  {
+    year: "2025",
+    title: "A New Chapter Begins",
+    desc: "The Choyal legacy evolves into two independent entities, allowing each to focus on specialized innovation and targeted growth. Introducing Choyal Grinding Solutions Pvt. Ltd., a new company under the R.S. Choyal Group, dedicated to advancing cutting-edge grinding technologies."
+  }
+];
+
 export default function AboutPage() {
   const { setIsDrawerOpen } = useQuote();
   const [activeTab, setActiveTab] = useState("about-us");
@@ -345,6 +403,42 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
+            </div>
+          </div>
+
+          {/* Chronological Timeline */}
+          <div className="mt-20 pt-16 border-t border-slate-100">
+            <div className="text-center space-y-3 max-w-2xl mx-auto mb-16">
+              <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
+                Chronological Journey
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-tight">
+                Our History & Milestones
+              </h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Key events and technological breakthroughs that shaped Choyal Group into a global leader.
+              </p>
+            </div>
+
+            {/* Timeline Tree */}
+            <div className="relative border-l border-slate-200 ml-4 md:ml-0 md:before:absolute md:before:left-1/2 md:before:top-0 md:before:bottom-0 md:before:w-0.5 md:before:bg-slate-200 space-y-12">
+              {timelineMilestones.map((item, idx) => (
+                <div key={idx} className="relative flex flex-col md:flex-row items-start md:justify-between group">
+                  {/* Circle Pin */}
+                  <div className="absolute -left-[9px] md:left-1/2 md:-translate-x-1/2 top-2.5 w-4 h-4 rounded-full bg-white border-4 border-brand-primary group-hover:scale-125 transition-all duration-300 shadow-sm z-10" />
+
+                  {/* Date Panel */}
+                  <div className="pl-6 md:pl-0 md:w-[calc(50%-2rem)] md:text-right flex items-center md:justify-end gap-3 order-1 md:group-odd:order-1 md:group-even:order-2">
+                    <span className="text-2xl font-black text-brand-primary tracking-tight md:group-odd:text-right md:group-even:text-left w-full">{item.year}</span>
+                  </div>
+
+                  {/* Content Panel */}
+                  <div className="pl-6 md:pl-0 md:w-[calc(50%-2rem)] order-2 md:group-odd:order-2 md:group-even:order-1 bg-slate-50 border border-slate-100 p-6 rounded-2xl group-hover:shadow-md transition-shadow duration-300">
+                    <h4 className="font-extrabold text-slate-800 text-base sm:text-lg mb-2">{item.title}</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
@@ -589,7 +683,7 @@ export default function AboutPage() {
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Late Mr. B. M. Choyal */}
-                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start hover:shadow-md transition-shadow">
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-center hover:shadow-md transition-shadow">
                   <div className="w-full md:w-48 shrink-0 aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-200 shadow-sm">
                     <img 
                       src="/images/founders/bm_choyal.jpg" 
@@ -597,25 +691,26 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="space-y-3 flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h4 className="font-extrabold text-slate-900 text-xl">Late Mr. B. M. Choyal</h4>
                       <span className="text-brand-primary font-bold text-xs uppercase tracking-wider block mt-1">Co-Founder &amp; Ex-Chairman</span>
                       <span className="text-slate-400 font-medium text-[11px] block mt-0.5">July 28, 1926 – Ex-Chairman</span>
                     </div>
-                    <div className="text-slate-600 text-sm leading-relaxed space-y-2">
-                      <p>
-                        Late Mr. B. M. Choyal assumed family responsibility at just 16, starting work in wood pattern making and artificial emery stones.
-                      </p>
-                      <p>
-                        Entering the emery mill stone business in 1959, he co-founded <strong>Shri Vishvakarma Industries</strong> in 1965. As Chairman, he oversaw quality and manufacturing innovations, while leading philanthropic activities in girls&apos; education, medical support, and community welfare.
-                      </p>
+                    <div className="pt-2">
+                      <Link 
+                        href="/ex-chairman" 
+                        className="inline-flex items-center gap-1.5 text-xs font-black text-brand-primary hover:text-brand-primary/85 uppercase tracking-wider transition-all hover:translate-x-1"
+                      >
+                        Know More
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>
 
                 {/* Late Shri R. D. Sharma */}
-                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start hover:shadow-md transition-shadow">
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-center hover:shadow-md transition-shadow">
                   <div className="w-full md:w-48 shrink-0 aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-200 shadow-sm">
                     <img 
                       src="/images/founders/rd_sharma.jpg" 
@@ -623,36 +718,37 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="space-y-3 flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h4 className="font-extrabold text-slate-900 text-xl">Late Shri R. D. Sharma</h4>
                       <span className="text-brand-primary font-bold text-xs uppercase tracking-wider block mt-1">Co-Founder &amp; Ex-Managing Director</span>
                       <span className="text-slate-400 font-medium text-[11px] block mt-0.5">January 5, 1939 – Ex-MD</span>
                     </div>
-                    <div className="text-slate-600 text-sm leading-relaxed space-y-2">
-                      <p>
-                        Late Mr. R. D. Sharma co-founded the group in 1965 and became Managing Director in 1977. He was a pioneer in exporting emery stones and flour mills internationally.
-                      </p>
-                      <p>
-                        A true visionary leader, he amended labor policies to provide maximum benefits to employees. He also won a landmark lawsuit establishing emery stones as a core tax-exempt milling product, benefiting the entire Indian milling sector.
-                      </p>
+                    <div className="pt-2">
+                      <Link 
+                        href="/ex-md" 
+                        className="inline-flex items-center gap-1.5 text-xs font-black text-brand-primary hover:text-brand-primary/85 uppercase tracking-wider transition-all hover:translate-x-1"
+                      >
+                        Know More
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Board of Directors & Current Leadership */}
+            {/* Leadership */}
             <div className="space-y-8 pt-8">
               <div className="border-b border-slate-100 pb-4">
                 <h3 className="text-lg font-black uppercase text-brand-primary tracking-widest">
-                  Board of Directors
+                  Leadership
                 </h3>
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                 {/* Mr. R. S. Choyal */}
-                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start hover:shadow-md transition-shadow">
+                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-center hover:shadow-md transition-shadow lg:col-span-2">
                   <div className="w-full md:w-48 shrink-0 aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-200 shadow-sm">
                     <img 
                       src="/images/founders/rs_choyal.jpg" 
@@ -660,79 +756,47 @@ export default function AboutPage() {
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="space-y-3 flex-grow">
+                  <div className="space-y-4 flex-grow">
                     <div>
                       <h4 className="font-extrabold text-slate-900 text-xl">Mr. R. S. Choyal</h4>
                       <span className="text-brand-primary font-bold text-xs uppercase tracking-wider block mt-1">Chairman &amp; Managing Director</span>
                     </div>
-                    <div className="text-slate-600 text-sm leading-relaxed space-y-2">
-                      <p>
-                        CMD of Choyal Grinding Solution. He has spent over three decades modernizing flour milling and expanding exports to 20+ countries. He pioneered automated stone mill systems, turnkey installations, and sustainable energy-efficient milling.
-                      </p>
-                      <p>
-                        Dedicated to preserving the natural nutrition and aroma of flour, he also runs the Brains Trust Society to share insights on leadership, emotional intelligence, and human development.
-                      </p>
+                    
+                    <div className="flex flex-wrap items-center gap-6 pt-2">
+                      <Link 
+                        href="/leadership-ed" 
+                        className="inline-flex items-center gap-1.5 text-xs font-black text-brand-primary hover:text-brand-primary/85 uppercase tracking-wider transition-all hover:translate-x-1"
+                      >
+                        Know More
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+
+                      {/* Social Links */}
+                      <div className="flex gap-3">
+                        <a href="https://www.facebook.com/radhey.choyal.2025" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-brand-primary hover:border-brand-primary flex items-center justify-center transition-all">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                        <a href="https://www.instagram.com/radheychoyal/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-brand-primary hover:border-brand-primary flex items-center justify-center transition-all">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/rschoyal/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-brand-primary hover:border-brand-primary flex items-center justify-center transition-all">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                          </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@rschoyal.official" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-lg bg-white border border-slate-200 text-slate-400 hover:text-brand-primary hover:border-brand-primary flex items-center justify-center transition-all">
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fillRule="evenodd" d="M19.812 5.418c.861.23 1.538.907 1.768 1.768C21.998 8.746 22 12 22 12s0 3.255-.418 4.814a2.504 2.504 0 0 1-1.768 1.768c-1.56.419-7.814.419-7.814.419s-6.255 0-7.814-.419a2.505 2.505 0 0 1-1.768-1.768C2 15.255 2 12 2 12s0-3.255.417-4.814a2.507 2.507 0 0 1 1.768-1.768C5.744 5 11.998 5 11.998 5s6.255 0 7.814.418ZM15.194 12 10 15V9l5.194 3Z" clipRule="evenodd" />
+                          </svg>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Mr. Shrigopal Sharma */}
-                <div className="bg-slate-50 p-6 sm:p-8 rounded-3xl border border-slate-100 flex flex-col md:flex-row gap-6 md:gap-8 items-start hover:shadow-md transition-shadow">
-                  <div className="w-full md:w-48 shrink-0 aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm flex items-center justify-center text-slate-300">
-                    <UserCheck className="h-20 w-20 stroke-[1]" />
-                  </div>
-                  <div className="space-y-3 flex-grow">
-                    <div>
-                      <h4 className="font-extrabold text-slate-900 text-xl">Mr. Shrigopal Sharma</h4>
-                      <span className="text-brand-primary font-bold text-xs uppercase tracking-wider block mt-1">Managing Director</span>
-                    </div>
-                    <div className="text-slate-600 text-sm leading-relaxed space-y-2">
-                      <p>
-                        Oversees manufacturing operations, heavy fabrication facilities, and factory automation at the Ajmer engineering units.
-                      </p>
-                      <p>
-                        A key architect of the group&apos;s corporate infrastructure scaling, industrial partnerships, and capacity expansions across both domestic and international markets.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Next Generation */}
-            <div className="space-y-8 pt-8">
-              <div className="border-b border-slate-100 pb-4">
-                <h3 className="text-lg font-black uppercase text-brand-primary tracking-widest">
-                  Third Generation Integration
-                </h3>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                {[
-                  {
-                    name: "Mr. Yash Vardhan Choyal",
-                    role: "Additional Director",
-                    desc: "Heads the digital automation, PLC software development, and the integration of IoT sensors for cloud telemetry and iQuadra smart systems."
-                  },
-                  {
-                    name: "Ms. Vibhuti Choyal",
-                    role: "Communications & Outreach",
-                    desc: "Leads brand strategy, marketing campaigns, public relations, international trade exhibitions, and academic partnerships for CSMT."
-                  },
-                  {
-                    name: "Mr. Aniruddha Sharma",
-                    role: "Technical Operations",
-                    desc: "Manages heavy workshop logistics, material procurement, fabrication quality controls, and handles on-site commissioning of turnkey mill layouts."
-                  }
-                ].map((leader, idx) => (
-                  <div key={idx} className="bg-white p-8 rounded-3xl border border-slate-200/80 shadow-xs space-y-4">
-                    <div className="space-y-1">
-                      <h4 className="font-extrabold text-slate-800 text-base sm:text-lg tracking-tight">{leader.name}</h4>
-                      <span className="text-brand-primary text-xs font-bold uppercase tracking-wider block">{leader.role}</span>
-                    </div>
-                    <p className="text-slate-500 text-sm leading-relaxed">{leader.desc}</p>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

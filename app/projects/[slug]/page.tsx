@@ -107,6 +107,9 @@ export default function ProjectDetailPage() {
                     src={currentImage}
                     alt={`${currentProject.title} photo ${activeImageIdx + 1}`}
                     className="object-cover w-full h-full select-none"
+                    onError={(e) => {
+                      e.currentTarget.src = "/images/plants/turnkey_solutions.webp";
+                    }}
                   />
                   
                   {/* Slider controls (only if more than 1 image) */}

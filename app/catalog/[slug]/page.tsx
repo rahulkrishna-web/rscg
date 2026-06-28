@@ -67,7 +67,7 @@ export default function ProductDetailsPage() {
     addToQuote({
       id: `${product.slug}-${selectedVariantIndex}`,
       name: `${product.title} - ${variant.name}`,
-      image: product.image,
+      image: variant.image || product.image,
       category: categoriesData[product.category as keyof typeof categoriesData]?.name || "Products",
       size: variant.size
     }, quantity);
@@ -120,7 +120,7 @@ export default function ProductDetailsPage() {
           <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
             <div className="bg-white rounded-[32px] border border-slate-200/60 p-8 shadow-xs flex items-center justify-center aspect-square relative overflow-hidden">
               <img 
-                src={product.image} 
+                src={product.variants[selectedVariantIndex]?.image || product.image} 
                 alt={product.title}
                 className="object-contain max-h-full max-w-full hover:scale-105 transition-transform duration-300"
               />

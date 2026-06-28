@@ -3,6 +3,7 @@ export interface ProductVariant {
   name: string;
   size: string;
   specs: string;
+  image?: string;
 }
 
 export interface ProductItem {
@@ -62,9 +63,22 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/wonder-mill-with-wonder-miller/",
     "variants": [
       {
-        "name": "Wonder Mill with Wonder Miller - 750 mm (30\")",
+        "name": "Wonder Mill - 600 mm (24\")",
+        "size": "600 MM",
+        "specs": "Available with Hydraulic/Pneumatic Pressure System",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
+      },
+      {
+        "name": "Wonder Mill - 750 mm (30\")",
         "size": "750MM",
-        "specs": "Fully automated touch screen integrated"
+        "specs": "Available with Hydraulic Pressure System",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
+      },
+      {
+        "name": "Wonder Mill - 1200 mm (48\")",
+        "size": "1200MM",
+        "specs": "Available with Hydraulic/Pneumatic Pressure System",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -81,9 +95,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/wonder-mill-neo/",
     "variants": [
       {
-        "name": "Wonder Mill Neo - 750 mm (30\")",
+        "name": "750 mm (30\")",
         "size": "750MM",
-        "specs": "Available with Pneumatic Pressure System"
+        "specs": "Available with Pneumatic Pressure System",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-Mill-Neo-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -121,19 +136,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-traditional-hopper/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\") - Square frame mill with Traditional Hopper - with V-belt pulley and manual presuure system",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-TRADITIONAL-HOPPER-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -150,19 +156,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-magnet/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\") - Square frame mill with magnet with V-belt pulley and manual pressure system",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-MAGNET-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -179,19 +176,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-feeding-conveyor-hopper/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "Square frame mill with Feeding Conveyor hopper",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-FEEDING-HOPPER-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -208,19 +196,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/mini-ultra-advance-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "350 mm (14\") With Covered Cabinet",
+        "size": "350 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Mini-Ultra-Advance-Horizontal-Chakki-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -237,19 +216,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/mini-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "350 mm (14\")",
+        "size": "350 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/14-inch-mini-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -295,19 +265,34 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/standard-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "400 mm (16\") (without motor)",
+        "size": "400 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") (without motor)",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
+        "name": "600 mm (24\") (without motor)",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
       },
       {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "500 mm (20\") (without motor)",
+        "size": "500 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
+      },
+      {
+        "name": "350 mm (14\") (without motor)",
+        "size": "350 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -324,19 +309,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/basic-standard-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\") (with 25 HP motor)",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "750 mm (30\") (with 20 HP motor)",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -353,19 +335,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/regular-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\")",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Regular-Horizontal-Chakki-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -382,19 +355,40 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/vertical-flour-mill-danish-type/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "name": "Vertical Flour Mill (Danish Type)\t600 mm (24\") (without motor)",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
+        "name": "Vertical Flour Mill (Danish Type)\t500 mm (20\") (without motor)",
+        "size": "500 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
       },
       {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "Vertical Flour Mill (Danish Type)\t450 mm (18\") (without motor)",
+        "size": "450 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
+      },
+      {
+        "name": "Vertical Flour Mill (Danish Type)\t400 mm (16\") (without motor)",
+        "size": "400 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
+      },
+      {
+        "name": "Vertical Flour Mill (Danish Type)\t350 mm (14\") (without motor)",
+        "size": "350 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
+      },
+      {
+        "name": "Vertical Flour Mill (Danish Type)\t300 mm (12\") (without motor)",
+        "size": "300 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -456,14 +450,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/wonder-miller/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
+        "name": "Digital control system for 6 Wonder Mill",
+        "size": "WMLR-6",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Wonder-miller-510x510.jpg"
       },
       {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "Digital control system for 4 Wonder Mill",
+        "size": "WMLR-4",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Wonder-miller-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -480,14 +476,28 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/pre-cleaner/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "1000 mm Single Deck",
+        "size": "1000 mm Single Deck",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "1200 mm Single Deck",
+        "size": "1200 mm Single Deck",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
+      },
+      {
+        "name": "1500 mm Double Deck",
+        "size": "1500 mm Double Deck",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
+      },
+      {
+        "name": "1500 mm Single Deck",
+        "size": "1500 mm Single Deck",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -504,14 +514,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/drum-sieve/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "700 mm Dia Capacity 2 to 4 TPH",
+        "size": "700 mm",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "900 mm Dia - Capacity 4 to 6 TPH",
+        "size": "900 mm",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -528,14 +540,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/vibro-separator-classifier-separator/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "1000&#215;2000(Double deck) - Capacity 2-3 TPH",
+        "size": "1000x2000(Double deck)",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-Separator-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "700&#215;1400(Double deck) - Capacity 2-3 TPH",
+        "size": "700x1400(Double deck)",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-Separator-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -552,14 +566,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/destoner-gravity-selector/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "900 x 1200 mm - Capacity 4 - 6 TPH",
+        "size": "900x1200",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/De-stoner-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "1100 mm x 1200 mm Capacity 6 - 8 TPH",
+        "size": "1100X1200",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/De-stoner-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -576,19 +592,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/sheller-type-horizontal-flour-mill-with-gear-drive/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "Sheller Type Horizontal Flour Mill-1200  mm (48\") with Gear Drive",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/1200mm-atta-expert-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -605,14 +612,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/emery-polisher/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Capacity - 2-2.5 TPH",
+        "size": "12’’x30’’",
+        "specs": "Power -   20+3 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 1.5-2 TPH",
+        "size": "12’’x30’’",
+        "specs": "Power -  15+3 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -629,14 +638,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/horizontal-scourer/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Capacity - 8-10 TPH",
+        "size": "S-2400",
+        "specs": "Power - 15-20 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 5-6 TPH",
+        "size": "S-1800",
+        "specs": "Power - 10-15 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -653,14 +664,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/bin-discharger/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "SVBD-2-900-MM",
+        "size": "SVBD-2 900 mm",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bin-discharger-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "SVBD-1-600-MM",
+        "size": "SVBD-1 600 mm",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bin-discharger-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -677,14 +690,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/entoletor/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "10 HP",
+        "size": "10 HP",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Entolater-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "7.5 HP",
+        "size": "7.5 HP",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Entolater-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -722,14 +737,46 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/centrifugal-sifter/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Capacity - 1000-1200 KGH",
+        "size": "SVPS 36”X192”",
+        "specs": "Power - 12.5-15 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 800-1000 KGH",
+        "size": "SVPS 36”X168”",
+        "specs": "Power - 10-12.5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 700-800  KGH",
+        "size": "SVPS 30”X144”",
+        "specs": "Power - 5-7.5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 600-750  KGH",
+        "size": "SVPS 30”X120”",
+        "specs": "Power - 5HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 400-450 KGH",
+        "size": "SVPS 30”X96”",
+        "specs": "Power - 3-5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 250-300 KGH",
+        "size": "SVPS 30”X72”",
+        "specs": "Power - 1.5 - 2 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 200-250   KGH",
+        "size": "SVPS 30”X48”",
+        "specs": "Power -  1 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -746,14 +793,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/intensive-dampener/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Capacity - 6-8 TPH",
+        "size": "SVID -SS-2400",
+        "specs": "Power  12.5 HP/960 RPM",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 4-6 TPH",
+        "size": "SVID -SS- 1800",
+        "specs": "Power -  10 HP/960 RPM",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -770,14 +819,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/magnetic-separator/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
-      },
-      {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 2-4TPH",
+        "size": "100x1000",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/MAGNETIC-SEPARATOR-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -794,14 +839,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/vibro-purifier/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "PURIFIER-INDIAN",
+        "size": "PURIFIER – INDIAN",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/VIVRO-PURIFIER-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "PURIFIER-IMPORTED",
+        "size": "PURIFIER – IMPORTED",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/VIVRO-PURIFIER-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -818,14 +865,22 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/reel-machine/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "4 Sieve - Capacity 8 - 10 TPH",
+        "size": "4 SEIVE",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "3 Sieve - Capacity 4 - 6 TPH",
+        "size": "3 SEIVE",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
+      },
+      {
+        "name": "2 Sieve - Capacity 2 - 3  TPH",
+        "size": "2 SEIVE",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -866,14 +921,34 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/plan-sifter-with-bolting-clothe-and-motor/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Capacity - 6-8 TPH",
+        "size": "8X20",
+        "specs": "Power - 5 - 7.5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Capacity - 4-6 TPH",
+        "size": "8X16",
+        "specs": "Power - 5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 4-5 TPH",
+        "size": "4X16",
+        "specs": "Power - 3 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 3-4 TPH",
+        "size": "4X12",
+        "specs": "Power - 3 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
+      },
+      {
+        "name": "Capacity - 1-2 TPH",
+        "size": "2X12",
+        "specs": "Power - 2 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -890,14 +965,28 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/vibro-sifter-with-anti-chocking-system/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "Double Deck",
+        "size": "SVBS-2 1200",
+        "specs": "Capacity - 2 TPH | Power - 2 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "Single Deck",
+        "size": "SVBS-1 1200",
+        "specs": "Capacity - 1.5 TPH | Power -  1.5 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
+      },
+      {
+        "name": "Single Deck 90 mm",
+        "size": "SVBS-1 900",
+        "specs": "Capacity - 800 - 1000 KGH | Power - 1 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
+      },
+      {
+        "name": "Double Deck 90 mm",
+        "size": "SVBS-2 900",
+        "specs": "Capacity - 1 TPH | Power - 1 HP",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -914,19 +1003,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/emery-roll/",
     "variants": [
       {
-        "name": "30 inch (750 mm) Danish Type Pair",
-        "size": "30\"",
-        "specs": "Premium emery mix, optimized grain"
+        "name": "Capacity - 3 -3.5 TPH",
+        "size": "16’’X33’’",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll-510x510.jpg"
       },
       {
-        "name": "36 inch (900 mm) Danish Type Pair",
-        "size": "36\"",
-        "specs": "Premium emery mix, heavy duty"
-      },
-      {
-        "name": "42 inch (1050 mm) High Capacity Pair",
-        "size": "42\"",
-        "specs": "Premium emery mix, commercial"
+        "name": "Capacity - 2-2.5 TPH",
+        "size": "14’’X33’’",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -943,14 +1029,70 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/grain-silo/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "100-TON",
+        "size": "100 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "80-TON",
+        "size": "80 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "60-TON",
+        "size": "60 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "50-TON",
+        "size": "50 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "40-TON",
+        "size": "40 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "30-TON",
+        "size": "30 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "25-TON",
+        "size": "25 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "20-TON",
+        "size": "20 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "15-TON",
+        "size": "15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "10-TON",
+        "size": "10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
+      },
+      {
+        "name": "5-TON",
+        "size": "5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -967,14 +1109,136 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/conditioning-silo/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "SS-100-TON",
+        "size": "SS - 100 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "SS-80-TON",
+        "size": "SS - 80 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-60-TON",
+        "size": "SS - 60 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-50-TON",
+        "size": "SS - 50 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-40-TON",
+        "size": "SS - 40 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-30-TON",
+        "size": "SS - 30 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-25-TON",
+        "size": "SS - 25 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-20-TON",
+        "size": "SS - 20 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-15-TON",
+        "size": "SS - 15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-10-TON",
+        "size": "SS - 10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "SS-5-TON",
+        "size": "SS - 5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-100-TON",
+        "size": "MS - 100 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-80-TON",
+        "size": "MS - 80 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-60-TON",
+        "size": "MS - 60 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-50-TON",
+        "size": "MS - 50 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-40-TON",
+        "size": "MS - 40 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-30-TON",
+        "size": "MS - 30 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-25-TON",
+        "size": "MS - 25 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-20-TON",
+        "size": "MS - 20 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-15-TON",
+        "size": "MS - 15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-10-TON",
+        "size": "MS - 10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
+      },
+      {
+        "name": "MS-5-TON",
+        "size": "MS - 5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -991,14 +1255,100 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/atta-silo/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "SS-50-TON",
+        "size": "SS - 50 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "SS-40-TON",
+        "size": "SS - 40 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-30-TON",
+        "size": "SS - 30 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-25-TON",
+        "size": "SS - 25 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-20-TON",
+        "size": "SS - 20 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-15-TON",
+        "size": "SS - 15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-10-TON",
+        "size": "SS - 10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "SS-5-TON",
+        "size": "SS - 5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-50-TON",
+        "size": "MS - 50 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-40-TON",
+        "size": "MS - 40 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-30-TON",
+        "size": "MS - 30 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-25-TON",
+        "size": "MS - 25 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-20-TON",
+        "size": "MS - 20 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-15-TON",
+        "size": "MS - 15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-10-TON",
+        "size": "MS - 10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
+      },
+      {
+        "name": "MS-5-TON",
+        "size": "MS - 5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1015,19 +1365,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/sheller-type-horizontal-flour-mill/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "Sheller Type Horizontal Flour Mill- 1200  mm (48\") with V-Belt Drive",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Sheller-Type-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1044,19 +1385,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/long-frame-regular-horizontal-chakki-with-feeding-hopper/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\")",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Long-Frame-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "600 mm (24\")",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Long-Frame-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1073,19 +1411,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/heavy-duty-standard-horizontal-chakki/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "750 mm (30\")",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Heavy-Duty-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "600 mm (24\")",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Heavy-Duty-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1102,14 +1437,34 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/bran-silo/",
     "variants": [
       {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
+        "name": "MS-15-TON",
+        "size": "MS - 15 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
       },
       {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
+        "name": "MS-10-TON",
+        "size": "MS - 10 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
+      },
+      {
+        "name": "MS-5-TON",
+        "size": "MS - 5 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
+      },
+      {
+        "name": "MS-2-TON",
+        "size": "MS - 2 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
+      },
+      {
+        "name": "MS-1-TON",
+        "size": "MS - 1 TON",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1150,14 +1505,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/iquadra-mill-2/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
-      },
-      {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "1200 mm/48\" Sheller Type",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/Quadra-Mill-Sheller-Typre-1200mm-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1174,14 +1525,82 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/load-cell-with-silo/",
     "variants": [
       {
-        "name": "Wonder Drop Control Panel",
+        "name": "Load Cell with Silo",
         "size": "Standard",
-        "specs": "VFD Screw Feeder Integration"
+        "specs": "Weight: 100 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
       },
       {
-        "name": "Flow Balancer Set",
+        "name": "Load Cell with Silo",
         "size": "Standard",
-        "specs": "Volumetric Flow sensors"
+        "specs": "Weight: 80 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 70 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 60 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 50 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 40 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 30 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 25 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 20 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 15 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 10 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 5 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
+      },
+      {
+        "name": "Load Cell with Silo",
+        "size": "Standard",
+        "specs": "Weight: 2 ton",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1198,14 +1617,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/sampoorna-domestic-flour-mill/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
+        "name": "Sampoorna Prime: Fully Automatic Talky",
+        "size": "Standard",
+        "specs": "Article type: dfm talky prime",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/05/DFM-PRIME-TALKY-510x510.jpg"
       },
       {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "Sampoorna Prime: Fully Automatic",
+        "size": "Standard",
+        "specs": "Article type: dfm prime",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/05/DFM-PRIME-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1245,19 +1666,40 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/atta-expert-mill/",
     "variants": [
       {
-        "name": "750 mm Standard Chakki",
+        "name": "600 mm (24\") - Hydraulic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
+      },
+      {
+        "name": "600 mm (24\") - Pneumatic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") - Hydraulic Pressure System",
         "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
       },
       {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
+        "name": "750 mm (30\") - Pneumatic Pressure System",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
       },
       {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
+        "name": "1200 mm (48\") - Hydraulic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
+      },
+      {
+        "name": "1200 mm (48\") - Pneumatic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1274,14 +1716,40 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/iquadra-mill/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
+        "name": "600 mm (24\") - Hydraulic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
       },
       {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "600 mm (24\") - Pneumatic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") - Hydraulic Pressure System",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") - Pneumatic Pressure System",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
+      },
+      {
+        "name": "1200 mm (48\") - Hydraulic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
+      },
+      {
+        "name": "1200 mm (48\") - Pneumatic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1298,14 +1766,40 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/wonder-mill/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
+        "name": "600 mm (24\") - Hydraulic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
       },
       {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "600 mm (24\") - Pneumatic Pressure System",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") - Hydraulic Pressure System",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
+      },
+      {
+        "name": "750 mm (30\") - Pneumatic Pressure System",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
+      },
+      {
+        "name": "1200 mm (48\") - Hydraulic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
+      },
+      {
+        "name": "1200 mm (48\") - Pneumatic Pressure System",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1322,14 +1816,28 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/floura/",
     "variants": [
       {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
+        "name": "Floura Prime H500 uses 20 inch- 500mm horizontal mill. It has auto feeding system.",
+        "size": "Standard",
+        "specs": "Article type: floura prime h500",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
       },
       {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
+        "name": "Floura Prime V400 uses 16 inch- 400mm vertical mill. It has auto feeding system.",
+        "size": "Standard",
+        "specs": "Article type: floura prime v400",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
+      },
+      {
+        "name": "Floura Gold H500 uses 20inch- 500mm horizontal mill. It has manual feeding system.",
+        "size": "Standard",
+        "specs": "Article type: floura gold h500",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
+      },
+      {
+        "name": "Floura Gold V400 uses 16 inch- 400mm vertical mill. It has manual feeding system.",
+        "size": "Standard",
+        "specs": "Article type: floura gold v400",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
       }
     ],
     "additionalInfo": {
@@ -1347,19 +1855,34 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/horizontal-emery-stone-daniya-type/",
     "variants": [
       {
-        "name": "30 inch (750 mm) Danish Type Pair",
-        "size": "30\"",
-        "specs": "Premium emery mix, optimized grain"
+        "name": "Horizontal Emery Stone Daniya Type - 750 mm - 30 inch",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
       },
       {
-        "name": "36 inch (900 mm) Danish Type Pair",
-        "size": "36\"",
-        "specs": "Premium emery mix, heavy duty"
+        "name": "Horizontal Emery Stone Daniya Type - 400 mm - 16 inch",
+        "size": "400 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
       },
       {
-        "name": "42 inch (1050 mm) High Capacity Pair",
-        "size": "42\"",
-        "specs": "Premium emery mix, commercial"
+        "name": "Horizontal Emery Stone Daniya Type - 450 mm - 18 inch",
+        "size": "450 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
+      },
+      {
+        "name": "Horizontal Emery Stone Daniya Type - 600 mm - 24 inch",
+        "size": "600 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
+      },
+      {
+        "name": "Horizontal Emery Stone Daniya Type - 750 mm - 30 inch",
+        "size": "350 MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
       }
     ],
     "additionalInfo": {
@@ -1376,19 +1899,10 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/vertical-emery-stones-danish-type/",
     "variants": [
       {
-        "name": "30 inch (750 mm) Danish Type Pair",
-        "size": "30\"",
-        "specs": "Premium emery mix, optimized grain"
-      },
-      {
-        "name": "36 inch (900 mm) Danish Type Pair",
-        "size": "36\"",
-        "specs": "Premium emery mix, heavy duty"
-      },
-      {
-        "name": "42 inch (1050 mm) High Capacity Pair",
-        "size": "42\"",
-        "specs": "Premium emery mix, commercial"
+        "name": "These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products.",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/sheller-emery-stones-510x590.jpg"
       }
     ],
     "additionalInfo": {
@@ -1469,19 +1983,16 @@ export const productsData: ProductItem[] = [
     "url": "https://rschoyalgroup.com/product/emery-stone-dresser/",
     "variants": [
       {
-        "name": "30 inch (750 mm) Danish Type Pair",
-        "size": "30\"",
-        "specs": "Premium emery mix, optimized grain"
+        "name": "Emery Stone dressing Machine for Groove Making -750 mm",
+        "size": "750MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Stone-Dresser-510x510.jpg"
       },
       {
-        "name": "36 inch (900 mm) Danish Type Pair",
-        "size": "36\"",
-        "specs": "Premium emery mix, heavy duty"
-      },
-      {
-        "name": "42 inch (1050 mm) High Capacity Pair",
-        "size": "42\"",
-        "specs": "Premium emery mix, commercial"
+        "name": "Emery Stone dressing Machine for Groove Making -1200 mm",
+        "size": "1200MM",
+        "specs": "Heavy-Duty Commercial Grade",
+        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Stone-Dresser-510x510.jpg"
       }
     ],
     "additionalInfo": {

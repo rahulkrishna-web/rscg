@@ -107,6 +107,9 @@ export default function ProjectsPage() {
                         alt={project.title}
                         className="object-cover w-full h-full group-hover:scale-[1.02] transition-transform duration-500"
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = "/images/plants/turnkey_solutions.webp";
+                        }}
                       />
                       <div className="absolute top-4 left-4 bg-brand-primary text-white text-[9px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
                         Reference Plant

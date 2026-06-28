@@ -255,5 +255,111 @@ export const projectsData: ProjectItem[] = [
         text: "We take pride in supplying the prestigious group a fully automatic chakki atta unit after a series of meetings and discussions of the highly qualified technical staff of Prima at the Choyal facility centre. Choyal School of Milling Technology also serves the honor of training the technical personnel of Prima Ceylon at its own facility centre at Arjunpura, Ajmer, Rajasthan, INDIA."
       }
     ]
+  },
+  {
+    slug: "winnies-pure-health-kenya",
+    title: "Winnie’s Pure Health, Kenya",
+    subtitle: "40 TPD Multi-Flour Plant",
+    client: "Winnie's Pure Health Ltd",
+    location: "Nairobi, Kenya",
+    capacity: "40 TPD Multi-Flour Plant",
+    technology: "Turnkey Multi-Flour Solution",
+    commissioned: "2018",
+    images: [
+      "/images/clients/winnies.jpg",
+      "/images/plants/img20250123074554.webp"
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Winnie's Pure Health is a family-run business led by a mother-daughter duo from Nairobi, Kenya. They approached Choyal Group looking for a custom, comprehensive turnkey solution for multigrain flour."
+      },
+      {
+        type: "paragraph",
+        text: "We are pleased to say that their search successfully ended at our Choyal Facility Centre, where they visited our active pilot plant in India. Following their visit, we developed a fully automatic, hassle-free, ultra-modern, and hygienic turnkey plant designed specifically for processing multigrain flour, whole wheat flour, maize flour, and gluten-free flour."
+      },
+      {
+        type: "paragraph",
+        text: "As part of our commitment to local food security and adaptation, we also helped develop unique recipes for gluten-free flour blends tailored for their regional market in Kenya."
+      },
+      {
+        type: "paragraph",
+        text: "The project was completed well within the designated deadlines. Our engineering team traveled to their site in Nairobi to execute successful trial runs and hand over operations to Ms. Tara Kitao of Winnie’s Pure Health, Nairobi, Kenya."
+      }
+    ]
+  },
+  {
+    slug: "eminent-group-australia",
+    title: "Eminent Group, Australia",
+    subtitle: "40-TPD Atta & Besan Plant",
+    client: "Eminent Group",
+    location: "Australia",
+    capacity: "40 TPD Atta & Besan Plant",
+    technology: "Fully Automatic Digital Grinding",
+    commissioned: "2023",
+    images: [
+      "/images/eminent_group.webp",
+      "/images/plants/40_tpd_milling.webp",
+      "/images/plants/40_tpd_milling_1.webp"
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Eminent Group, Australia commissioned a 40-TPD Atta & Besan Plant designed to meet the growing demand for stone-ground whole wheat and chickpea flour across the Australian continent."
+      },
+      {
+        type: "paragraph",
+        text: "The plant is equipped with advanced milling technologies from Choyal Group, allowing it to produce high-quality whole wheat flour and gram flour (besan) while consuming 30% less power than traditional mills."
+      },
+      {
+        type: "paragraph",
+        text: "Key features of the plant include: a fully automatic digital operation managed via a touchscreen interface, an integrated cleaning section, an advanced grinding section, and a precise sifting and packing section."
+      },
+      {
+        type: "paragraph",
+        text: "The system is fully mobile, Wi-Fi, and Ethernet-enabled, allowing operators to monitor and control all aspects of the mill remotely from a smartphone, tablet, or computer from anywhere in the world."
+      },
+      {
+        type: "paragraph",
+        text: "This game-changing innovation stands as a testament to Choyal Group’s continuous growth and commitment to excellence across borders. Executive Director Mr. R.S. Choyal expressed pride in the project, noting that the plant showcases the brand's innovation capability internationally while contributing directly to Australia's agro-processing sector."
+      }
+    ]
+  },
+  {
+    slug: "qatar-flour-mills-doha",
+    title: "Qatar Flour Mills, Doha",
+    subtitle: "40-TPD Fully Digital Whole Wheat Flour Mill Plant",
+    client: "Qatar Flour Mills",
+    location: "Doha, Qatar",
+    capacity: "40 TPD Whole Wheat Plant",
+    technology: "Fully Digital Whole Wheat Turnkey Solution",
+    commissioned: "2022",
+    images: [
+      "/images/qatar.webp",
+      "/images/plants/dubai_plant.webp",
+      "/images/plants/tablet_controlled_plant.webp"
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Qatar Flour Mills is a prominent and highly respected name in the flour milling industry in Qatar. They are renowned for providing premium flour products that cater to the diverse culinary and commercial needs of consumers across the region."
+      },
+      {
+        type: "paragraph",
+        text: "Their commitment to safety, operational excellence, and quality is backed by international certifications including ISO 9001:2008, ISO 22000:2005, and HACCP compliance. Boasting one of the largest distribution networks in Qatar, they have fostered long-term relationships by delivering products that reflect modern efficiency rooted in traditional values."
+      },
+      {
+        type: "paragraph",
+        text: "In their pursuit of production innovation, Qatar Flour Mills partnered with Choyal Group to build a state-of-the-art whole wheat turnkey facility. The result of this collaboration is the 40-TPD Fully Digital Whole Wheat Qatar Flour Mill Plant, commissioned in Doha."
+      },
+      {
+        type: "paragraph",
+        text: "This compact, highly integrated plant is designed to fit easily into any facility footprint. It features Wi-Fi and Ethernet connectivity, supporting remote control and operational monitoring via Android and iOS devices."
+      },
+      {
+        type: "paragraph",
+        text: "Advanced alarm systems are integrated throughout the system to ensure immediate notification and response to any process variations, and an automated data logging system provides comprehensive reports and yield analysis."
+      }
+    ]
   }
 ];
