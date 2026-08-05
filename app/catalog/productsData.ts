@@ -13,11 +13,12 @@ export interface ProductItem {
   specifications?: Record<string, string>;
   slug: string;
   title: string;
+  subtitle?: string;
   description: string; // Can contain HTML tags
   shortDescription: string; // Plain text short description for search, cards, and SEO
   image: string;
   category: string;
-  url: string;
+  url?: string;
   variants: ProductVariant[];
   additionalInfo?: Record<string, string>;
 }

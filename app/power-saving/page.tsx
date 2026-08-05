@@ -193,7 +193,6 @@ export default function PowerSavingPage() {
                     onClick={() => addToQuote({ 
                       id: product.code, 
                       name: product.name, 
-                      qty: 1, 
                       image: product.img 
                     })}
                     className="flex items-center gap-2 text-sm font-bold border border-slate-300 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"

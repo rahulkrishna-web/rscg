@@ -5,8 +5,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 export interface QuoteItem {
   id: string;
   name: string;
-  image: string;
-  category: string;
+  image?: string;
+  category?: string;
   size?: string;
   qty: number;
 }

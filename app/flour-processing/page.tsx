@@ -127,7 +127,6 @@ export default function FlourProcessingPage() {
                       onClick={() => addToQuote({ 
                         id: product.slug, 
                         name: product.title, 
-                        qty: 1, 
                         image: product.image 
                       })}
                       className="flex items-center gap-1.5 text-xs font-bold border border-slate-300 text-slate-700 px-3 py-1.5 rounded-full hover:bg-slate-50 transition-colors"
