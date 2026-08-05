@@ -20,69 +20,46 @@ export interface NewsItem {
 
 export const newsData: NewsItem[] = [
   {
-    "title": "3rd Annual Edition of International SME Convention, 2023",
+    "title": "3rd Annual Exhibition of SME",
     "slug": "3rd-annual-edition-of-international-sme-convention-2023",
     "date": "2023-03-21",
     "images": [
       {
-        "original_url": "https://rschoyalgroup.com/wp-content/uploads/2023/03/ISF-Event.jpg",
-        "local_path": "/images/news/3rd-annual-edition-of-international-sme-convention-2023.jpg"
+        "original_url": "",
+        "local_path": "/images/news-page/smeconvention.jpg"
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "Recently, Mr. Radhey Shyam Choyal was invited to attend a panel discussion at the 3rd Edition of the International SME Convention 2023 held on 21 March 2023. Mr. Choyal was invited to share his experience and expertise on the topic of \"Opportunities in India: Rural, Agro, Food Processing & Services\". The event was organized by The India SME Forum, the largest non-profit organization for Small & Medium Enterprises in India."
+        "text": "Mr. Radhey Shyam Choyal participated as a panelist at the 3rd International SME Convention 2023, held on 21 March 2023 and organized by the India SME Forum. He shared his expertise on 'Opportunities in India: Rural, Agro, Food Processing & Services'."
       },
       {
         "type": "paragraph",
-        "text": "Mr. Choyal discussed the following:"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Public-private partnership model for farmers' growth"
+        "text": "During the discussion, Mr. Choyal highlighted the role of public-private partnerships in empowering farmers through farm-level value addition, efficient rural marketing, and integrated supply chains to enhance both domestic and export opportunities."
       },
       {
         "type": "paragraph",
-        "text": "The panel discussion focused on the challenges faced by grain farmers in India and how the public-private partnership model can be utilized to create opportunities in rural areas for agro, food processing, and services. Mr. Choyal emphasized the importance of value addition at the farm level, which can help in creating new opportunities in rural India. The panel also discussed strategies for effective rural marketing of these products and how forward and backward integration can be utilized to tap into the opportunities in rural India and create products that cater to both domestic and export markets."
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Importance of R&D"
+        "text": "He also emphasized the importance of research and development (R&D) in achieving global quality standards. Choyal Group's continued investment in innovation has resulted in six patented technologies, enabling the company to meet international quality benchmarks and serve customers in over 20 countries."
       },
       {
         "type": "paragraph",
-        "text": "Mr. Choyal also discussed the importance of R&D in maintaining quality standards and how companies can make their R&D infrastructure more globally suited to meet national standards across all manufacturing industries. He highlighted the fact that the Choyal Group has given high importance to R&D, which has resulted in six patented technologies that have helped the company meet the quality standards in more than 20 countries."
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Focus on innovation, quality, and customer satisfaction"
+        "text": "Addressing the growth potential of India's food processing sector, Mr. Choyal encouraged SMEs to prioritize innovation, quality, and customer satisfaction to strengthen competitiveness and drive sustainable growth."
       },
       {
         "type": "paragraph",
-        "text": "Finally, the panelists shared their views on the opportunities in the food processing industry in India and how SMEs can leverage these opportunities to grow their businesses and contribute to the country's economic development. Mr. Choyal emphasized the need for SMEs to focus on innovation, quality, and customer satisfaction, which can help them to stand out in the competitive market."
-      },
-      {
-        "type": "paragraph",
-        "text": "Choyal Group has been at the forefront of innovation in the food processing industry in India. We have successfully completed various projects using innovative milling technologies and have installed nearly 200 turnkey projects, and developed more than 45 milling innovations. The company has received several awards and recognitions for its contributions to the food processing industry in India."
-      },
-      {
-        "type": "paragraph",
-        "text": "In conclusion, Mr. Radhey Shyam Choyal's participation in the panel discussion at the International SME Convention 2023 highlighted the importance of creating new opportunities in rural India for agro, food processing, and services. It also emphasized the need for companies to focus on innovation, quality, and customer satisfaction to grow their businesses and contribute to the country's economic development. The Choyal Group's commitment to R&D and quality standards has made it one of the leading companies in the food processing industry in India."
+        "text": "As a pioneer in milling technology, Choyal Group has successfully executed more than 200 turnkey projects and developed 45+ milling innovations, earning widespread recognition for its contributions to India's food processing industry. The company's commitment to innovation and quality continues to support the advancement of the sector and contribute to the nation's economic development."
       }
     ]
   },
   {
-    "title": "GRAINTECH INDIA EXHIBITION 2015",
+    "title": "Graintech India 2015",
     "slug": "graintech-india-exhibition-2015",
     "date": "2015-08-15",
     "images": [
       {
-        "original_url": "https://rschoyalgroup.com/wp-content/uploads/2021/03/grain-tech-india-e1615885880898.jpg",
-        "local_path": "/images/news/graintech-india-exhibition-2015.jpg"
+        "original_url": "",
+        "local_path": "/images/news-page/graintech2019.jpg"
       }
     ],
     "content": [
@@ -100,7 +77,7 @@ export const newsData: NewsItem[] = [
       },
       {
         "type": "paragraph",
-        "text": "“Wonder Mill” a patented product of Choyal's and the 1st automatic chakki of India was the center of attraction for its power saving features, fully-automatic operations, solid and robust build quality and its unique design."
+        "text": "\u201cWonder Mill\u201d a patented product of Choyal's and the 1st automatic chakki of India was the center of attraction for its power saving features, fully-automatic operations, solid and robust build quality and its unique design."
       },
       {
         "type": "paragraph",
@@ -118,63 +95,97 @@ export const newsData: NewsItem[] = [
     "date": "2014-10-29",
     "images": [
       {
-        "original_url": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Africa1.jpg",
-        "local_path": "/images/news/grain-africa-congress.jpg"
+        "original_url": "",
+        "local_path": "/images/news-page/grainafrica2014.jpg"
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "Grain Africa Congress began in Addis Ababa, Ethiopia. \"GRAIN AFRICA – Africa Grain, Pulses and Technologies Congress\", which Parantez Group organized with the cooperation of the Ethiopian Ministry of Agriculture and Addis Ababa University, began on 29th October 2014."
+        "text": "Mr. R.S. Choyal represented India at the Grain Africa \u2013 Africa Grain, Pulses and Technologies Congress, held from 29\u201331 October 2014 in Addis Ababa, Ethiopia. Organized by Parantez Group in collaboration with the Ethiopian Ministry of Agriculture and Addis Ababa University, the congress brought together government leaders, policymakers, industry experts, and global technology providers from across 54 African countries."
       },
       {
         "type": "paragraph",
-        "text": "The opening of the congress was performed by H.E. President of the FDR of Ethiopia Dr. Mulatu TESHOME, Tefera DEREBEW, H.E. Ambassador of Republic of Turkey Mr. Osman Rıza YAVUZALP, Scientific Director of AAiT of Addis Ababa University Prof. Young Kyun KIM and General Director of Parantez Group Mrs. Zübeyde Kavraz."
+        "text": "During the congress, Mr. Choyal delivered a technical presentation on Organic Milling and Emerging Technologies in Stone Ground Flour Milling. He introduced the digitally operated Wonder Mill and advanced stone dressing technology, highlighting innovations that improve milling efficiency, product quality, and sustainability. He also discussed the differences between modern and conventional milling practices, emphasizing the importance of technological advancement in the grain processing industry."
       },
       {
         "type": "paragraph",
-        "text": "AFRICA GRAIN, PULSES AND TECHNOLOGIES CONGRESS aimed to bring together senior officials and ministers in 54 African countries and grain sector representatives with the world's leading technology companies. It was held in the African Union Conference Hall from 29th October 2014 until 31st October 2014."
+        "text": "Mr. Choyal further addressed the significance of skill development and entrepreneurship in strengthening rural economies. As part of a cultural exchange initiative, he invited African millers, researchers, and students to the Choyal School of Milling Technology for knowledge sharing and technical training."
       },
       {
         "type": "paragraph",
-        "text": "During the intense participation at the African Grain Congress, Mr. R.S. Choyal from India presented a discourse on Organic Milling and the new technology developments in organic stone-ground Flour mills. He presented the new digitally operated stone mill \"Wonder Mill\" and stone dressing machine."
-      },
-      {
-        "type": "paragraph",
-        "text": "Mr. Choyal explained the various issues regarding modern Milling versus conventional Milling. He enlightened the house on the issues of skill development as well as small business entrepreneurship. He invited African millers and research fellows to the Choyal School of Milling Technology under a cultural exchange program. Many participants greeted Mr. Choyal for a most practical presentation for farmers and youth."
+        "text": "His practical and innovation-driven presentation was highly appreciated by delegates, particularly for its relevance to farmers, young entrepreneurs, and the future of Africa's grain processing sector."
       }
     ]
   },
   {
-    "title": "In-Bound Trade Mission – Australia",
+    "title": "Inbound Trade Mission Australia",
     "slug": "in-bound-trade-mission-australia",
     "date": "2016-01-24",
     "images": [
       {
-        "original_url": "https://rschoyalgroup.com/wp-content/uploads/2021/03/aust-e1615884993976.jpg",
-        "local_path": "/images/news/in-bound-trade-mission-australia.jpg"
+        "original_url": "",
+        "local_path": "/images/news-page/inbound-trade-mission.jpg"
       }
     ],
     "content": [
       {
         "type": "paragraph",
-        "text": "The Government of South Australia hosted an In-Bound Trade Mission with the Government of India starting from 24th January, 2016. Mr. R.S. Choyal, executive director and Mr. Yash Vardhan Choyal, management trainee, represented CHOYAL in this mission."
+        "text": "Government of South Australia hosted an In-Bound Trade Mission with Government of India from 24th January, 2016. Our team went as part of the mission. They had meetings and technical discussions about organic and chakki milling with Flinders Ranges Premium Grain Pvt. Ltd. to mark new footsteps of Indian milling in South Australia including various other flour mills."
       },
       {
         "type": "paragraph",
-        "text": "They had meetings and technical discussions about organic and chakki milling with Flinders Ranges Premium Grain Pvt. Ltd. to mark new footsteps of Indian milling in South Australia, including various other flour mills."
+        "text": "The Australia India Business Council SA Chapter is working with the Department of State Development in organizing an inbound India Trade Mission to South Australia. The visit was timed to coincide with the Australia-India T20 cricket match at the Adelaide Oval on 26 January 2016, which was also attended by His Excellency Mr Navdeep Suri, High Commissioner of India. The inbound mission provides an ideal opportunity for AIBC members and others interested in fostering business links between South Australia and India to take part in business matching programs which are being organised by DSD."
+      }
+    ]
+  },
+  {
+    "title": "Graintech 2025",
+    "slug": "graintech-india-2025",
+    "date": "2025-08-01",
+    "images": [
+      {
+        "original_url": "",
+        "local_path": "/images/news-page/graintech-2025.jpg"
+      }
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Choyal Group participated in GrainTech India 2025, held from 1\u20133 August 2025 at the Bangalore International Exhibition Centre (BIEC), Bengaluru. The exhibition brought together leading manufacturers, technology providers, millers, and industry professionals from across the global grain processing sector."
       },
       {
         "type": "paragraph",
-        "text": "The Australia India Business Council SA Chapter worked with the Department of State Development in organizing this inbound India Trade Mission to South Australia."
+        "text": "Choyal Group showcased its latest innovations in digital flour milling and turnkey grain processing solutions. A key attraction was an immersive Virtual Reality (VR) plant tour, allowing visitors to experience the company's advanced flour mill installations and visualize customized milling projects in an interactive environment."
       },
       {
         "type": "paragraph",
-        "text": "The visit was timed to coincide with the Australia-India T20 cricket match at the Adelaide Oval on 26 January 2016, which was also attended by His Excellency Mr. Navdeep Suri, High Commissioner of India."
+        "text": "The Choyal team also demonstrated its Wonder Mill technology and other smart milling solutions, engaging with mill owners, entrepreneurs, and industry professionals on topics including automation, energy-efficient milling, process optimization, and complete turnkey plant solutions. The exhibition provided a valuable platform to strengthen customer relationships, explore new business opportunities, and reinforce Choyal Group's commitment to innovation in the global milling industry."
+      }
+    ]
+  },
+  {
+    "title": "Grainex 2026",
+    "slug": "grainex-india-2026",
+    "date": "2026-02-06",
+    "images": [
+      {
+        "original_url": "",
+        "local_path": "/images/news-page/grainex2026.png"
+      }
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Choyal Group participated in GrainEx India 2026, held from 6\u20138 February 2026 in Indore, Madhya Pradesh, reaffirming its position as a leading innovator in grain processing and milling technology. The company showcased its comprehensive portfolio of advanced grinding and processing solutions, attracting mill owners, entrepreneurs, food processors, and industry professionals from across India."
       },
       {
         "type": "paragraph",
-        "text": "The inbound mission provided an ideal opportunity for AIBC members and others interested in fostering business links between South Australia and India to take part in business matching programs organized by DSD."
+        "text": "The exhibition featured Choyal's integrated solutions for Digital Chakki Atta Plants, Pulse (Dal) Processing Plants, Spice Processing Plants, Grain Storage & Handling Systems, and complete Turnkey Milling Projects. Visitors explored the company's patented technologies, including the Wonder Mill, Wonder Miller, Automatic Stone Dresser, and Miller Lite automation platform, which deliver enhanced productivity, lower energy consumption, improved product consistency, and intelligent plant control through PLC-based automation."
+      },
+      {
+        "type": "paragraph",
+        "text": "GrainEx India 2026 also served as a strategic platform for Choyal Group to strengthen relationships with existing customers, develop new business partnerships, and demonstrate its continued commitment to innovation, research, and customer-centric engineering."
       }
     ]
   }

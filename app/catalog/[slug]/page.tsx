@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Plus, Minus, Send, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Plus, Minus, Send, ChevronLeft, ChevronRight, CheckCircle2, Factory, Wheat, Headset, Settings } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
@@ -91,6 +91,179 @@ export default function ProductDetailsPage() {
   const sameCategoryProducts = productsData.filter((p) => p.category === product.category && p.slug !== product.slug);
   const otherProducts = productsData.filter((p) => p.category !== product.category && p.slug !== product.slug);
   const relatedProducts = [...sameCategoryProducts, ...otherProducts].slice(0, 8);
+
+  if (product.overview) {
+    return (
+      <div className="min-h-screen bg-[#F7F9F6] text-brand-foreground font-sans">
+        <Header />
+
+        {/* Breadcrumb Area */}
+        <div className="w-full py-6 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full max-w-6xl mx-auto flex items-center justify-between border-b border-slate-300 pb-4">
+            <h1 className="text-3xl font-heading font-black text-[#134e4a]">
+              {product.title}
+            </h1>
+            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:flex items-center gap-2">
+              <Link href="/" className="hover:text-brand-primary">Home</Link> /
+              <Link href="/catalog" className="hover:text-brand-primary">Products</Link> /
+              <Link href="/catalog" className="hover:text-brand-primary">{activeCategory?.name}</Link> /
+              <span className="text-[#134e4a]">{product.title}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Top Area: Overview + Image */}
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-4">
+          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            {/* Left: Overview and Features */}
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-2xl font-heading font-bold text-[#134e4a]">Overview</h2>
+                <p className="text-slate-700 leading-relaxed text-sm whitespace-pre-wrap">
+                  {product.overview}
+                </p>
+              </div>
+
+              {product.features && product.features.length > 0 && (
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-heading font-bold text-[#134e4a]">Key Features</h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
+                    {product.features.map((f, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />
+                        <span className="text-sm text-slate-700 font-medium">{f}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Right: Image */}
+            <div className="bg-white/50 rounded-lg flex items-center justify-center p-8 aspect-[4/3] border border-slate-200 shadow-sm relative overflow-hidden">
+              <img src={product.variants?.[0]?.image || product.image} alt={product.title} className="max-w-full max-h-full object-contain drop-shadow-lg z-10" />
+            </div>
+
+          </div>
+        </div>
+
+        {/* Middle Banner */}
+        <div className="w-full py-6 mt-8">
+          <div className="w-full max-w-6xl mx-auto border-t border-b border-slate-300 py-4 flex flex-col sm:flex-row items-center justify-end gap-6 text-xs font-bold text-slate-700 uppercase tracking-wider">
+             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> 1-Year Warranty</div>
+             <div className="hidden sm:block text-slate-300">|</div>
+             <div className="flex items-center gap-2"><Factory className="w-4 h-4 text-emerald-600" /> Pan India Delivery</div>
+             <div className="hidden sm:block text-slate-300">|</div>
+             <div className="flex items-center gap-2"><Headset className="w-4 h-4 text-emerald-600" /> After Sales Support</div>
+          </div>
+        </div>
+
+        {/* Bottom Area: Specs and Applications */}
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 mb-12">
+          <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+            
+            {/* Left: Technical Specs Table */}
+            <div className="lg:col-span-7 space-y-4">
+              <div className="flex items-center border-b border-slate-300 pb-2">
+                 <h2 className="text-2xl font-heading font-bold text-[#134e4a] pr-4 bg-[#F7F9F6]">Technical Specifications</h2>
+              </div>
+              <div className="bg-slate-100/50 rounded-xl overflow-hidden border border-slate-200">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="bg-slate-200/60 text-[#134e4a] text-left">
+                      <th className="px-4 py-3 font-bold w-1/2">Parameter</th>
+                      <th className="px-4 py-3 font-bold w-1/2 border-l border-white/50">≡ Specification</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-white/50">
+                    {product.specifications && Object.keys(product.specifications).length > 0 ? (
+                      Object.entries(product.specifications).map(([key, value], idx) => (
+                        <tr key={idx} className="hover:bg-white/50 transition-colors">
+                          <td className="px-4 py-3 flex items-center gap-3 font-medium text-slate-800">
+                            <span className="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px] shrink-0 font-bold">{idx + 1}</span>
+                            {key}
+                          </td>
+                          <td className="px-4 py-3 font-medium text-slate-700 border-l border-white/50 bg-white/30">{value}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan={2} className="px-4 py-8 text-center text-slate-500 font-medium">No specifications available.</td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Right: Applications & Buttons */}
+            <div className="lg:col-span-5 space-y-8">
+              {product.applications && product.applications.length > 0 && (
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-heading font-bold text-[#134e4a]">Applications</h2>
+                  <div className="space-y-3 bg-white/50 p-6 rounded-2xl border border-slate-200">
+                    {product.applications.map((app, idx) => (
+                      <div key={idx} className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-emerald-600/10 flex items-center justify-center shrink-0">
+                          <Wheat className="w-4 h-4 text-emerald-700" />
+                        </div>
+                        <span className="text-sm font-medium text-slate-700">{app}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 border-t border-slate-200">
+                <button 
+                  onClick={handleAddToQuote}
+                  className={`px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-all w-full sm:w-auto ${
+                    addedMessage 
+                      ? "bg-brand-secondary text-white scale-[0.98]" 
+                      : "bg-[#134e4a] hover:bg-[#0f3d3a] text-white hover:scale-105"
+                  }`}
+                >
+                  {addedMessage ? (
+                     <>
+                       <Check className="h-4 w-4" /> Added!
+                     </>
+                   ) : (
+                     "Request Quote"
+                   )}
+                </button>
+                <button className="bg-slate-400 hover:bg-slate-500 text-white px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 w-full sm:w-auto">
+                  Download Data Sheet
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* CTA Banner */}
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-12">
+           <div className="w-full max-w-6xl mx-auto rounded-xl overflow-hidden bg-gradient-to-r from-[#0a3118] to-[#14532d] flex items-center justify-between p-6 lg:px-12 shadow-xl relative">
+             <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern.png')] bg-cover" />
+             <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left">
+                <div className="w-12 h-12 rounded-full border-2 border-emerald-500/30 flex items-center justify-center shrink-0">
+                  <Settings className="w-6 h-6 text-[#eab308]" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-heading font-black text-white">Smart Milling. Smarter Business.</h3>
+                  <p className="text-emerald-100/80 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
+                </div>
+             </div>
+             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#eab308] hover:bg-[#ca8a04] text-[#0a3118] font-bold px-6 py-3 rounded-lg hidden sm:flex items-center gap-2 transition-all hover:scale-105 whitespace-nowrap">
+                Get a Quote <ArrowRight className="w-4 h-4" />
+             </button>
+           </div>
+        </div>
+
+        <Footer />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">

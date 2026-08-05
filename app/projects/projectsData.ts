@@ -12,6 +12,8 @@ export interface ProjectItem {
   client: string;
   location: string;
   capacity?: string;
+  projectType?: string;
+  clientLogo?: string;
   technology?: string;
   commissioned?: string;
   images: string[];
@@ -22,343 +24,452 @@ export interface ProjectItem {
 
 export const projectsData: ProjectItem[] = [
   {
-    slug: "al-ghurair-foods-dubai-uae",
-    title: "Al Ghurair Foods, Dubai, UAE",
-    subtitle: "14-Chakki Digital Whole Wheat Flour Mill Plant",
-    client: "Al Ghurair Foods",
-    location: "Dubai, United Arab Emirates",
-    capacity: "14-Chakki Digital Plant",
-    technology: "Choyal Wondermills Technology",
-    commissioned: "2025",
-    images: [
-      "/images/projects/al-ghurair-foods-1.jpg",
-      "/images/projects/al-ghurair-foods-2.jpg",
-      "/images/projects/al-ghurair-foods-3.jpg",
-      "/images/projects/al-ghurair-foods-4.jpg",
-      "/images/projects/al-ghurair-foods-5.jpg",
-      "/images/projects/al-ghurair-foods-6.jpg",
-      "/images/projects/al-ghurair-foods-7.jpg",
-      "/images/projects/al-ghurair-foods-8.jpg"
+    "slug": "al-ghurair-foods",
+    "title": "Al Ghurair Foods",
+    "subtitle": "120 TPD Atta Plant",
+    "client": "Al Ghurair Foods",
+    "location": "Dubai, UAE",
+    "capacity": "120 TPD Atta Plant",
+    "projectType": "Flour milling plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/al-ghurair-foods/mainimg.jpg",
+      "/images/projects/case_studies/al-ghurair-foods/galleryimg1.jpg",
+      "/images/projects/case_studies/al-ghurair-foods/galleryimg2.jpg",
+      "/images/projects/case_studies/al-ghurair-foods/galleryimg3.jpg",
+      "/images/projects/case_studies/al-ghurair-foods/galleryimg.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "Al Ghurair Foods, one of the most renowned food manufacturing companies in the Middle East, has further strengthened its production capabilities with the installation of a state-of-the-art 14-Chakki Digital Whole Wheat Flour Mill Plant at its Dubai facility."
+        "type": "paragraph",
+        "text": "Project Overview:"
       },
       {
-        type: "paragraph",
-        text: "This advanced milling plant is equipped with a fully automated process control system and reflects Al Ghurair's commitment to innovation, quality, and efficiency in food production. With the ability to monitor and control operations remotely via mobile, the facility offers unmatched convenience and precision."
+        "type": "paragraph",
+        "text": "Al Ghurair Foods, one of the premier food manufacturing giants in the Middle East, has further elevated its industrial milling capacity with the commissioning of a modern 14-Chakki Digital Whole Wheat Flour Mill Plant at its main production facility in Dubai, UAE."
       },
       {
-        type: "paragraph",
-        text: "Supplied and commissioned by Choyal, the project is a significant leap in smart milling technology, reinforcing our long-standing partnership with leading global food brands."
+        "type": "paragraph",
+        "text": "Designed for high throughput and supreme flour quality, this 120 TPD (Tonnes Per Day) facility integrates Choyal\u2019s cutting-edge Wondermills Technology. The project highlights a joint commitment to innovation, process precision, and global food safety standards."
       },
       {
-        type: "paragraph",
-        text: "Our association included multiple technical discussions with Al Ghurair's expert team, culminating in a tailored milling solution powered by Choyal Wondermills Technology. The Choyal School of Milling Technology also proudly supports skill development with hands-on training for operators and technical teams."
+        "type": "paragraph",
+        "text": "Smart Automation & Technical Features"
       },
       {
-        type: "paragraph",
-        text: "Together, we are setting new benchmarks in whole wheat flour production across the Gulf and beyond."
-      }
-    ],
-    keyFeatures: [
-      "Automated Process Control System",
-      "Remote Monitoring and Control via Mobile Devices",
-      "Optimized Whole Wheat Cleaning System",
-      "Precision Milling with Patented Wonder Mill Technology",
-      "Advanced Grain Storage and Handling Solutions",
-      "User-Friendly Interface for Seamless Operations"
-    ]
-  },
-  {
-    slug: "carrs-flour-uk",
-    title: "Carrs Flour - UK",
-    subtitle: "Fully Automatic Chakki Atta Plant in Maldon",
-    client: "Carr's Flour Mills Ltd",
-    location: "Maldon, United Kingdom",
-    capacity: "High-Capacity Automatic Atta Line",
-    technology: "Automatic Chakki Atta Milling",
-    commissioned: "2021",
-    images: [
-      "/images/projects/carrs-flour-1.jpg",
-      "/images/projects/carrs-flour-2.jpg",
-      "/images/projects/carrs-flour-3.jpg",
-      "/images/projects/carrs-flour-4.jpg",
-      "/images/projects/carrs-flour-5.jpg",
-      "/images/projects/carrs-flour-6.jpg",
-      "/images/projects/carrs-flour-7.jpg",
-      "/images/projects/carrs-flour-8.jpg"
-    ],
-    content: [
-      {
-        type: "paragraph",
-        text: "Carr's Flour is the leading flour milling company in the United Kingdom, having a 180-year-long history with its annual milling capacity over 300,000 tonnes of wheat per year, and continuously expanding its operations. The team at Carr's felt the evolving market shift of increase in the demand of chakki atta and were looking for a perfect solution for the chakki atta production matching their high quality standards."
-      },
-      {
-        type: "paragraph",
-        text: "We take pleasure in saying that their search for a fully automatic, hassle-free, ultra-modern, and hygienic chakki atta plant ended at the Choyal Facility Centre when the representatives from Carr's Flour, Maldon visited us. The Carr's team stayed for a week testing each and every aspect of chakki milling at our facility centre, reviewing minute details of chakki maintenance, automation, plant operations, and efficiency."
-      },
-      {
-        type: "paragraph",
-        text: "After their complete satisfaction and having developed full confidence in our technology, we are immensely delighted to have received their valuable order."
-      },
-      {
-        type: "paragraph",
-        text: "The Carr's project was completed well within the competent deadlines for the project. Choyal's Head of Design, Aniruddha Sharma, and Head of Automation, Mr. Deepak Mahawar, along with the Executive Director RS Choyal and team, went to the Maldon site and conducted successful trials before handing over the plant to Mr. Matthew Chick of Carr's Flour, Maldon."
+        "type": "list",
+        "items": [
+          "Automated Process Control: Centralized PLC/SCADA control for maximum batch consistency.",
+          "Remote Mobile Management: Real-time diagnostics and plant control via secure mobile app.",
+          "Advanced Cleaning & Milling: High-efficiency grain cleaning paired with Choyal\u2019s patented stone-milling for optimal flour texture.",
+          "Integrated Bulk Handling: Automated material transfer that minimizes dusting and manual labor."
+        ]
       }
     ]
   },
   {
-    slug: "bakhresa-group-tanzania",
-    title: "Bakhresa Group – Tanzania",
-    subtitle: "Dar Es Salaam Fully Automatic Chakki Atta Plant",
-    client: "Said Salim Bakhresa & Co Ltd (SSB)",
-    location: "Dar Es Salaam, Tanzania",
-    capacity: "Automatic Wondermills Plant",
-    technology: "Fully Automatic Wondermills System",
-    commissioned: "2013",
-    images: [
-      "/images/projects/bakhresa-group-1.jpg",
-      "/images/projects/bakhresa-group-2.jpg",
-      "/images/projects/bakhresa-group-3.jpg",
-      "/images/projects/bakhresa-group-4.jpg"
+    "slug": "bakhresa-group",
+    "title": "Bakhresa Group",
+    "subtitle": "40 TPD Atta Plant",
+    "client": "Bakhresa Group",
+    "location": "",
+    "capacity": "40 TPD Atta Plant",
+    "projectType": "Flour milling plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/bakhresa-group/mainimg.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "Bakhresa Group is one of the leading Industrial Houses in Tanzania, East Africa. It is now recognized as one of the prominent family-owned business groups in the region. The Group has its operations spread in Tanzania Mainland & Zanzibar, Kenya, Uganda, Malawi, Mozambique, Zambia, Rwanda, Burundi, and in South Africa, with plans in place to expand to other countries. The Group boasts a turnover of more than 800 Million USD and is a proud employer of more than 8,000 people. There are a range of companies under its umbrella, with investments primarily in the Food and Beverage Sector, Packaging, Logistics, Marine Passenger Services, Petroleum, and Entertainment."
+        "type": "paragraph",
+        "text": "Location:Tanzania,East Africa"
       },
       {
-        type: "paragraph",
-        text: "Said Salim Bakhresa & Co Ltd is the flagship Company of the Bakhresa Group. Established in 1983 in the city of Dar Es Salaam, Tanzania, SSB has the largest wheat milling and storage capacity in East Africa. SSB has wheat mills in Dar Es Salaam with a combined milling capacity of 2,500 tons per day and storage capacity of 160,000 tons. It also has a maize mill of 100 tons per day and a rice mill of 50 tons per day capacity."
+        "type": "heading",
+        "level": 3,
+        "text": "Project Overview"
       },
       {
-        type: "paragraph",
-        text: "SSB supplies consistent high-quality products to its customers and is a leading exporter of flour and by-products. Their product range consists of Wheat Flours, Wheat Bran Pellets, Semolina, Maize Flour, Maize Bran, and Rice for domestic and international markets. SSB enjoys more than 60% market share in Tanzania and also exports wheat products to DRC, Burundi, Rwanda, the Middle East, and Far East."
+        "type": "paragraph",
+        "text": "Bakhresa Group is one of East Africa\u2019s largest industrial conglomerates, with a turnover exceeding USD 800 Million and operations spanning Tanzania, Kenya, Uganda, Rwanda, and beyond. Its flagship enterprise, Said Salim Bakhresa & Co Ltd (SSB), commands over 60% market share in Tanzania and stands as the region's leading producer and exporter of premium wheat and grain products."
       },
       {
-        type: "paragraph",
-        text: "Choyal takes immense pride in having associated with such a reputed group. We have supplied a fully automatic chakki atta plant consisting of fully automatic Wondermills at Dar-es-Salaam. Team Choyal was responsible for successful trial and production at their site in 2013, and the plant has been running successfully since then."
+        "type": "paragraph",
+        "text": "To fulfill expanding market demand with consistent quality, SSB partnered with Choyal to install a modern, high-capacity Chakki milling facility at their primary hub in Dar Es Salaam, Tanzania."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Technical Highlights & Automation"
+      },
+      {
+        "type": "paragraph",
+        "text": "Engineered for reliable continuous production and superior flour quality, the plant incorporates:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Capacity: 40 Tonnes Per Day (TPD) dedicated Chakki Atta production line.",
+          "Core Technology: Powered by Choyal\u2019s fully automatic Wondermills stone-milling technology.",
+          "Automated Operations: Complete closed-loop process automation ensuring uniform texture, minimal heat generation, and optimal nutrient retention.",
+          "Hygiene & Efficiency: Designed to strict international food safety standards with reduced energy consumption and minimal manual handling."
+        ]
       }
     ]
   },
   {
-    slug: "patanjali-ayurveda-haridwar",
-    title: "Patanjali Ayurveda, Haridwar",
-    subtitle: "200 TPD Digitally Operated Multi-Grain Atta Mill",
-    client: "Patanjali Ayurved Limited",
-    location: "Haridwar, Uttarakhand, India",
-    capacity: "200 TPD Atta + 50 TPD Dalia + 30 TPD Besan + 20 TPD Spices",
-    technology: "Digitally Operated Wonder Mills Plant",
-    commissioned: "2010",
-    images: [
-      "/images/projects/patanjali-ayurveda-1.jpg",
-      "/images/projects/patanjali-ayurveda-2.jpg",
-      "/images/projects/patanjali-ayurveda-3.jpg",
-      "/images/projects/patanjali-ayurveda-4.jpg",
-      "/images/projects/patanjali-ayurveda-5.jpg",
-      "/images/projects/patanjali-ayurveda-6.jpg"
+    "slug": "carrs-flour",
+    "title": "Carr's Flour Green Meldon",
+    "subtitle": "40 TPD Atta plant",
+    "client": "Carr's Flour Green Meldon",
+    "location": "UK",
+    "capacity": "40 TPD Atta plant",
+    "projectType": "Flour milling plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/carrs-flour/mainimg.jpg",
+      "/images/projects/case_studies/carrs-flour/galleryimg1.jpg",
+      "/images/projects/case_studies/carrs-flour/galleryimg2.jpg",
+      "/images/projects/case_studies/carrs-flour/galleryimg3.jpg",
+      "/images/projects/case_studies/carrs-flour/galleryimg.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "PATANJALI AYURVED LIMITED, a Company registered under the Company's Act, 1956 having its Registered Office at Delhi and Works: 1. Unit-I at Haridwar; 2. Unit-II at Yogpeeth, Haridwar; and 3. Unit-III at Padartha, Haridwar, Uttarakhand, India. The Company was originally formed as a Private Limited Company on 13th January, 2006 and subsequently converted into a Public Limited Company on 25th June, 2007. Presently, the Board of Directors of the Company is managed by Sri Acharya Balkrishnaji as its Managing Director along with Swami Muktanandji."
+        "type": "paragraph",
+        "text": "Project Overview"
       },
       {
-        type: "paragraph",
-        text: "The Vision of Respected Swami Ramdevji Maharaj, the renowned Yoga Guru, and Sri Acharya Balkrishnaji, brought the concept into reality through the formation of 'PATANJALI AYURVED LIMITED'. A holistic approach to improve the quality of life of all beings, world over, is the purpose behind their being. Getting rid of the pollutants in the food we consume (in the form of poisonous pesticides and chemical fertilizers that farmers use) is a goal they strive to achieve by providing eatables cultivated with organic and natural manures. The combination of Ayurvedic medicines, Yoga, pure food, and natural drinks is a package the world was waiting for, brought forward by the two saints."
+        "type": "paragraph",
+        "text": "heading:Carr's Flour UK"
       },
       {
-        type: "paragraph",
-        text: "The Flour Mill unit at Patanjali Ayurved Limited consists of the following production setups:"
+        "type": "paragraph",
+        "text": "Carr's Flour UK"
       },
       {
-        type: "list",
-        items: [
-          "200 TPD Multi Grain Atta (Digitally Operated Wonder Mills Plant)",
-          "50 TPD Wheat Daliya and Multi Grain Daliya Plant (Digitally Operated Plant)",
-          "30 TPD Pulse and Besan Plant",
-          "20 TPD Spice Plant"
+        "type": "paragraph",
+        "text": "With a 180-year legacy and an annual milling capacity exceeding 300,000 tonnes, Carr\u2019s Flour (UK) partnered with Choyal to meet the growing demand for authentic Chakki Atta. To achieve their high quality standards, Carr\u2019s selected Choyal\u2019s fully automated, ultra-modern, and hygienic stone-milling solution."
+      },
+      {
+        "type": "paragraph",
+        "text": "Smart Automation & Technical Features"
+      },
+      {
+        "type": "list",
+        "items": [
+          "PLC-Based Process Automation: Centralized control system ensuring precise process management, consistent flour quality, and efficient plant operation.",
+          "Intelligent Plant Monitoring: Real-time monitoring with automated alarms, diagnostics, and performance tracking for maximum uptime.",
+          "Compact Turnkey Plant Design: Engineered 3D layout with optimized equipment placement for smooth material flow, space efficiency, and easy maintenance.",
+          "Hygienic Production System: Food-grade construction and enclosed processing lines designed to maintain high hygiene standards throughout production."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "eminent-group",
+    "title": "Eminent Group",
+    "subtitle": "40 TPD Fully Automatic Atta & Besan Plant",
+    "client": "Eminent Group",
+    "location": "Australia",
+    "capacity": "40 TPD Fully Automatic Atta & Besan Plant",
+    "projectType": "Atta & Besan Milling Plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/eminent-group/eminent_mainimg.png",
+      "/images/projects/case_studies/eminent-group/galleryimg1.png",
+      "/images/projects/case_studies/eminent-group/galleryimg2.png",
+      "/images/projects/case_studies/eminent-group/galleryimg3.png",
+      "/images/projects/case_studies/eminent-group/galleryimg4.png",
+      "/images/projects/case_studies/eminent-group/galleryimg5.png"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Project Overview:"
+      },
+      {
+        "type": "paragraph",
+        "text": "Eminent Group, Australia commissioned a 40 TPD Fully Automatic Atta & Besan Plant to cater to the increasing demand for premium-quality stone-ground whole wheat flour and gram flour (besan) across the Australian market. Designed and supplied by Choyal Group, the plant incorporates advanced milling technology to deliver superior product quality, enhanced operational efficiency, and sustainable performance."
+      },
+      {
+        "type": "paragraph",
+        "text": "The facility combines automated process control with energy-efficient milling systems, enabling high-capacity production while reducing power consumption by approximately 30% compared to conventional milling plants. The project reflects Choyal Group's commitment to delivering innovative, digitally enabled milling solutions for international markets."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Technical Features"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Capacity: 40 TPD Fully Automatic Atta & Besan Plant.",
+          "Fully automatic digital operation with touchscreen-based control system.",
+          "Integrated cleaning, grinding, sifting, and packing sections.",
+          "Choyal Wonder Mills technology with approximately 30% lower power consumption.",
+          "Wi-Fi and Ethernet-enabled remote monitoring and control.",
+          "Smartphone, tablet, and computer-based plant operation from any location.",
+          "High-quality production of stone-ground whole wheat flour and gram flour (besan)."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "patanjali-ayurveda",
+    "title": "Patanjali Ayurved Ltd",
+    "subtitle": "200 TPD Multi-Grain Atta | 50 TPD Wheat & Multi-Grain Daliya | 30 TPD Pulse & Besan plant | 20 TPD Spice plant",
+    "client": "Patanjali Ayurved Ltd",
+    "location": "Haridwar,Uttarakhand, India",
+    "capacity": "200 TPD Multi-Grain Atta | 50 TPD Wheat & Multi-Grain Daliya | 30 TPD Pulse & Besan plant | 20 TPD Spice plant",
+    "projectType": "Flour Milling & Food Processing Plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/patanjali-ayurveda/mainimg.jpg",
+      "/images/projects/case_studies/patanjali-ayurveda/galleryimg1.jpg",
+      "/images/projects/case_studies/patanjali-ayurveda/galleryimg2.jpg",
+      "/images/projects/case_studies/patanjali-ayurveda/galleryimg3.jpg",
+      "/images/projects/case_studies/patanjali-ayurveda/galleryimg.jpg"
+    ],
+    "content": [
+      {
+        "type": "paragraph",
+        "text": "Project Overview"
+      },
+      {
+        "type": "paragraph",
+        "text": "Patanjali Ayurved Limited, one of India's leading FMCG and Ayurvedic product manufacturers, established a state-of-the-art integrated flour milling and food processing facility at its Haridwar manufacturing campus under the Mega Food Park initiative. The project was envisioned to develop a technologically advanced processing infrastructure capable of producing high-quality multi-grain flour, daliya, pulses, besan, and spices through digitally controlled operations."
+      },
+      {
+        "type": "paragraph",
+        "text": "Mega Food Park"
+      },
+      {
+        "type": "paragraph",
+        "text": "The project forms part of the Mega Food Park initiative, which aims to establish world-class infrastructure for food processing by creating an integrated farm-to-fork supply chain. The initiative focuses on minimizing post-harvest losses, promoting value addition, enhancing processing efficiency, and improving market access for agricultural produce."
+      },
+      {
+        "type": "paragraph",
+        "text": "The Mega Food Park provides centralized processing, storage, and logistics infrastructure, enabling efficient utilization of raw materials while supporting employment generation, rural development, and sustainable growth in the food processing sector."
+      },
+      {
+        "type": "paragraph",
+        "text": "The scope of work"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Preparation of technical details of the project.",
+          "Selection of Machines, Material and Man Power.",
+          "Erection and Fabrication",
+          "Technical know- how",
+          "Final Trails"
         ]
       },
       {
-        type: "paragraph",
-        text: "The Mega Food Park (MFP) has been envisaged to help in creation of enabling infrastructure for food processing and a comprehensive 'farm-to-plate' supply chain system. These Parks provide state-of-the-art infrastructure for food processing on a pre-identified cluster basis. This is aimed at reducing waste and ensuring value addition, especially in perishables like fruits and vegetables, while reviving the agricultural sector by increasing returns for farmers and generating rural employment."
+        "type": "heading",
+        "level": 3,
+        "text": "Technical Features"
       },
       {
-        type: "heading",
-        level: 3,
-        text: "Project Breakdown & Highlights"
+        "type": "heading",
+        "level": 3,
+        "text": "200 TPD Multi-Grain Atta Plant"
       },
       {
-        type: "paragraph",
-        text: "Multi Grain Atta (Digitally Operated Wonder Mills Plant) - Capacity of the plant is 200 TPD. This is the world's first digitally operated Chakki Atta Plant fitted with 20 Wondermills with a digital controller. Cleaning of all 9 grains is fully integrated, and the blending system of all grains is digitally controlled."
+        "type": "list",
+        "items": [
+          "World's first Digitally Operated Wonder Mills Chakki Atta Plant equipped with 20 Wonder Mills.",
+          "Fully automated digital control system for process monitoring and operation.",
+          "Integrated cleaning system for all nine grains.",
+          "Automatic grain blending with digitally controlled recipe management.",
+          "Designed for high production efficiency while maintaining consistent flour quality."
+        ]
       },
       {
-        type: "paragraph",
-        text: "Wheat Dalia and Multi Grain Dalia Plant (Digitally Operated Plant) - Capacity of the plant is 50 TPD. Wheat Dalia is made by the Wonder Mill section, and the rest of the multi-grains are cleaned and blended by a separate system incorporated in the digital controller."
+        "type": "heading",
+        "level": 3,
+        "text": "50 TPD Wheat & Multi-Grain Daliya Plant"
       },
       {
-        type: "paragraph",
-        text: "Pulse and Besan Plant - The flour mill unit also consists of a Chickpea Pulse plant. Raw chickpea cleaning and processing are done here to make high-quality pulses, alongside a besan grinding plant with Wondermills, Pin Mills, and Pulverizers for manufacturing all types of Gram Flour (Besan)."
+        "type": "list",
+        "items": [
+          "Digitally operated processing line with automated control.",
+          "Wheat Daliya produced through Wonder Mill technology.",
+          "Separate cleaning, grading, and blending system for multi-grain daliya.",
+          "Digital recipe control ensures uniform product quality and operational accuracy."
+        ]
       },
       {
-        type: "paragraph",
-        text: "Spice Plant - The Spice Section came into continuation with the purchase order on 9th March 2010. It was the fastest completed plant that came into running condition; it was first tested on 31st March 2010 and successfully commissioned in just 13 days. More than 30 spices are processed as solo or pre-mix recipes, with a digitally operated weighing and mixing solution provided by us to make over 30 types of pre-mixed masalas."
-      }
-    ],
-    scopeOfWork: [
-      "Preparation of technical details of the project",
-      "Selection of Machines, Material, and Manpower",
-      "Erection and Fabrication of processing lines",
-      "Transfer of Technical know-how",
-      "Final Trials and commissioning"
-    ]
-  },
-  {
-    slug: "prima-group-sri-lanka",
-    title: "Prima Group, Sri Lanka",
-    subtitle: "40 TPD Chakki Atta Plant in Trincomalee",
-    client: "Prima Ceylon Ltd",
-    location: "Trincomalee, Sri Lanka",
-    capacity: "40 TPD Chakki Atta Unit",
-    technology: "Choyal Wondermills Technology",
-    commissioned: "2016",
-    images: [
-      "/images/projects/prima-group-1.jpg",
-      "/images/projects/prima-group-2.jpg",
-      "/images/projects/prima-group-3.jpg",
-      "/images/projects/prima-group-4.jpg",
-      "/images/projects/prima-group-5.jpg"
-    ],
-    content: [
-      {
-        type: "paragraph",
-        text: "Prima Group is a leader in the South Asian market in the field of Wheat products, having one of their major production units at Trincomalee, Sri Lanka. The highly strategic harbour of Trincomalee is the location of Prima Ceylon Ltd.'s unique flour milling complex. Completely self-contained, it provides modern facilities for the loading and unloading of wheat grain, flour, and by-products directly onto and from the ships docking at its private wharf/jetty. A modern transport network serves the fully-integrated mill, with road, rail, and sea access."
+        "type": "heading",
+        "level": 3,
+        "text": "30 TPD Pulse & Besan Plant"
       },
       {
-        type: "paragraph",
-        text: "When completed in 1980, the flour milling complex in Trincomalee was the world's largest flourmill under one roof. Its milling capacity has now expanded to 3,600 MT of wheat per day and silo capacity to over 200,000 MT. The extended and upgraded jetty can now berth up to 100,000 MT of 'Cape-size' bulk carriers. Prima's newly completed inner, multi-purpose wharf can handle containerised vessels to help increase South Asian trade. Its fleet of more than 20 state-of-the-art prime movers is ready to be deployed for island-wide distribution."
+        "type": "list",
+        "items": [
+          "Integrated chickpea cleaning and pulse processing system.",
+          "High-quality pulse production through advanced cleaning and grading operations.",
+          "Besan manufacturing using Wonder Mills, Pin Mills, and Pulverizers.",
+          "Suitable for production of premium-quality gram flour with consistent particle size."
+        ]
       },
       {
-        type: "heading",
-        level: 3,
-        text: "Milling Technologies & Standards"
+        "type": "heading",
+        "level": 3,
+        "text": "20 TPD Spice Processing Plant"
       },
       {
-        type: "paragraph",
-        text: "The fully automated milling process is operated by the latest milling technology. Prima imports state-of-the-art milling equipment from Buhler (Switzerland) and Choyal Wondermills (India), the most reputable names in their respective fields. The plant has received ISO9001:2000 and ISO22000:2005 certifications."
-      },
-      {
-        type: "paragraph",
-        text: "We take pride in supplying the prestigious group a fully automatic chakki atta unit after a series of meetings and discussions of the highly qualified technical staff of Prima at the Choyal facility centre. Choyal School of Milling Technology also serves the honor of training the technical personnel of Prima Ceylon at its own facility centre at Arjunpura, Ajmer, Rajasthan, INDIA."
+        "type": "list",
+        "items": [
+          "Designed for processing over 30 varieties of spices and customized spice blends.",
+          "Digitally operated weighing, batching, and mixing system.",
+          "Automated recipe management for production of pre-mixed masalas.",
+          "Successfully commissioned within 13 days, making it one of the fastest executed spice processing plants of its scale."
+        ]
       }
     ]
   },
   {
-    slug: "winnies-pure-health-kenya",
-    title: "Winnie’s Pure Health, Kenya",
-    subtitle: "40 TPD Multi-Flour Plant",
-    client: "Winnie's Pure Health Ltd",
-    location: "Nairobi, Kenya",
-    capacity: "40 TPD Multi-Flour Plant",
-    technology: "Turnkey Multi-Flour Solution",
-    commissioned: "2018",
-    images: [
-      "/images/clients/winnies.jpg",
-      "/images/plants/img20250123074554.webp"
+    "slug": "prima-group",
+    "title": "Prima Ceylon Limited (Prima Group)",
+    "subtitle": "40 TPD Fully Automatic Chakki Atta Plant",
+    "client": "Prima Ceylon Limited (Prima Group)",
+    "location": "Trincomalee, Sri Lanka",
+    "capacity": "40 TPD Fully Automatic Chakki Atta Plant",
+    "projectType": "Flour Milling Plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/prima-group/prima_mainimg.jpg",
+      "/images/projects/case_studies/prima-group/galleryimg1.jpg",
+      "/images/projects/case_studies/prima-group/galleryimg.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "Winnie's Pure Health is a family-run business led by a mother-daughter duo from Nairobi, Kenya. They approached Choyal Group looking for a custom, comprehensive turnkey solution for multigrain flour."
+        "type": "paragraph",
+        "text": "Project Overview:"
       },
       {
-        type: "paragraph",
-        text: "We are pleased to say that their search successfully ended at our Choyal Facility Centre, where they visited our active pilot plant in India. Following their visit, we developed a fully automatic, hassle-free, ultra-modern, and hygienic turnkey plant designed specifically for processing multigrain flour, whole wheat flour, maize flour, and gluten-free flour."
+        "type": "paragraph",
+        "text": "Prima Group is one of South Asia's leading manufacturers of wheat-based food products, with its flagship flour milling complex located at Trincomalee, Sri Lanka. The integrated facility is recognized as one of the region's most advanced flour milling operations, featuring modern port infrastructure, large-scale grain storage, and world-class logistics connectivity through road, rail, and sea."
       },
       {
-        type: "paragraph",
-        text: "As part of our commitment to local food security and adaptation, we also helped develop unique recipes for gluten-free flour blends tailored for their regional market in Kenya."
+        "type": "paragraph",
+        "text": "The Trincomalee complex has an installed wheat milling capacity of 3,600 MT per day with storage facilities exceeding 200,000 MT. Equipped with advanced milling technologies and certified under ISO 9001:2000 and ISO 22000:2005, the facility represents international standards in food processing, quality assurance, and operational excellence."
       },
       {
-        type: "paragraph",
-        text: "The project was completed well within the designated deadlines. Our engineering team traveled to their site in Nairobi to execute successful trial runs and hand over operations to Ms. Tara Kitao of Winnie’s Pure Health, Nairobi, Kenya."
+        "type": "paragraph",
+        "text": "As part of the plant expansion, Choyal successfully designed, supplied, and commissioned a 40 TPD Fully Automatic Chakki Atta Plant, integrating modern Indian milling technology into Prima's highly automated production environment. The project was executed following extensive technical discussions and engineering collaboration with Prima's technical team."
+      },
+      {
+        "type": "heading",
+        "level": 3,
+        "text": "Technical Features"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Capacity: 40 TPD Fully Automatic Chakki Atta Plant.",
+          "Fully automated milling process with minimal manual intervention.",
+          "Integrated grain feeding, milling, and product handling system.",
+          "Choyal Wonder Mills technology for consistent flour quality.",
+          "Energy-efficient and reliable plant operation.",
+          "Designed for seamless integration with Prima's existing automated flour milling facility.",
+          "Technical training provided to Prima's operating personnel at Choyal School of Milling Technology, Ajmer."
+        ]
       }
     ]
   },
   {
-    slug: "eminent-group-australia",
-    title: "Eminent Group, Australia",
-    subtitle: "40-TPD Atta & Besan Plant",
-    client: "Eminent Group",
-    location: "Australia",
-    capacity: "40 TPD Atta & Besan Plant",
-    technology: "Fully Automatic Digital Grinding",
-    commissioned: "2023",
-    images: [
-      "/images/eminent_group.webp",
-      "/images/plants/40_tpd_milling.webp",
-      "/images/plants/40_tpd_milling_1.webp"
+    "slug": "qatar-flour-mills",
+    "title": "Qatar Flour Mills Co.",
+    "subtitle": "40 TPD Fully Automatic Chakki Atta Plant",
+    "client": "Qatar Flour Mills Co.",
+    "location": "Doha, Qatar",
+    "capacity": "40 TPD Fully Automatic Chakki Atta Plant",
+    "projectType": "Flour Milling Plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/qatar-flour-mills/qatar_mainimg.jpg",
+      "/images/projects/case_studies/qatar-flour-mills/galleryimg1.jpg",
+      "/images/projects/case_studies/qatar-flour-mills/galleryimg.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "Eminent Group, Australia commissioned a 40-TPD Atta & Besan Plant designed to meet the growing demand for stone-ground whole wheat and chickpea flour across the Australian continent."
+        "type": "paragraph",
+        "text": "Project Overview:"
       },
       {
-        type: "paragraph",
-        text: "The plant is equipped with advanced milling technologies from Choyal Group, allowing it to produce high-quality whole wheat flour and gram flour (besan) while consuming 30% less power than traditional mills."
+        "type": "paragraph",
+        "text": "Qatar Flour Mills Co. is one of the leading flour milling companies in the State of Qatar, supplying high-quality wheat flour and related products to the domestic market. As part of its product diversification and capacity enhancement initiatives, the company commissioned a 40 TPD Fully Automatic Chakki Atta Plant to produce premium-quality whole wheat flour using advanced milling technology."
       },
       {
-        type: "paragraph",
-        text: "Key features of the plant include: a fully automatic digital operation managed via a touchscreen interface, an integrated cleaning section, an advanced grinding section, and a precise sifting and packing section."
+        "type": "paragraph",
+        "text": "The project was designed to integrate seamlessly with the existing flour milling infrastructure, ensuring efficient operations, consistent product quality, and reliable production. The plant incorporates modern automation and process control systems to achieve high operational efficiency while maintaining stringent food quality standards."
       },
       {
-        type: "paragraph",
-        text: "The system is fully mobile, Wi-Fi, and Ethernet-enabled, allowing operators to monitor and control all aspects of the mill remotely from a smartphone, tablet, or computer from anywhere in the world."
+        "type": "paragraph",
+        "text": "Technical Features"
       },
       {
-        type: "paragraph",
-        text: "This game-changing innovation stands as a testament to Choyal Group’s continuous growth and commitment to excellence across borders. Executive Director Mr. R.S. Choyal expressed pride in the project, noting that the plant showcases the brand's innovation capability internationally while contributing directly to Australia's agro-processing sector."
+        "type": "list",
+        "items": [
+          "Capacity: 40 TPD Fully Automatic Chakki Atta Plant.",
+          "Fully automated grain feeding, milling, and product handling system.",
+          "Choyal Wonder Mills technology for premium-quality Chakki Atta.",
+          "Energy-efficient and low-maintenance plant design.",
+          "Consistent flour quality through automated process control.",
+          "Designed for seamless integration with the existing flour milling facility."
+        ]
       }
     ]
   },
   {
-    slug: "qatar-flour-mills-doha",
-    title: "Qatar Flour Mills, Doha",
-    subtitle: "40-TPD Fully Digital Whole Wheat Flour Mill Plant",
-    client: "Qatar Flour Mills",
-    location: "Doha, Qatar",
-    capacity: "40 TPD Whole Wheat Plant",
-    technology: "Fully Digital Whole Wheat Turnkey Solution",
-    commissioned: "2022",
-    images: [
-      "/images/qatar.webp",
-      "/images/plants/dubai_plant.webp",
-      "/images/plants/tablet_controlled_plant.webp"
+    "slug": "winnies-pure-health",
+    "title": "Winnie's Pure Health",
+    "subtitle": "40 TPD Atta plant",
+    "client": "Winnie's pure heath",
+    "location": "Kenya, East Africa",
+    "capacity": "40 TPD Atta plant",
+    "projectType": "Flour Milling plant",
+    "commissioned": "",
+    "images": [
+      "/images/projects/case_studies/winnies-pure-health/mainimg.jpg",
+      "/images/projects/case_studies/winnies-pure-health/galleryimg1.jpg",
+      "/images/projects/case_studies/winnies-pure-health/galleryimg2.jpg",
+      "/images/projects/case_studies/winnies-pure-health/galleryimg3.jpg",
+      "/images/projects/case_studies/winnies-pure-health/galleryimg.jpg",
+      "/images/projects/case_studies/winnies-pure-health/logo_winnie.jpg"
     ],
-    content: [
+    "content": [
       {
-        type: "paragraph",
-        text: "Qatar Flour Mills is a prominent and highly respected name in the flour milling industry in Qatar. They are renowned for providing premium flour products that cater to the diverse culinary and commercial needs of consumers across the region."
+        "type": "heading",
+        "level": 3,
+        "text": "Overview"
       },
       {
-        type: "paragraph",
-        text: "Their commitment to safety, operational excellence, and quality is backed by international certifications including ISO 9001:2008, ISO 22000:2005, and HACCP compliance. Boasting one of the largest distribution networks in Qatar, they have fostered long-term relationships by delivering products that reflect modern efficiency rooted in traditional values."
+        "type": "paragraph",
+        "text": "Winnie\u2019s Pure Health is a prominent family-owned enterprise founded by a mother-daughter duo in Nairobi, Kenya. Dedicated to promoting healthy living through nutritious foods, they sought an ultra-modern, versatile turnkey solution to expand their production of health-focused flours for the East African market."
       },
       {
-        type: "paragraph",
-        text: "In their pursuit of production innovation, Qatar Flour Mills partnered with Choyal Group to build a state-of-the-art whole wheat turnkey facility. The result of this collaboration is the 40-TPD Fully Digital Whole Wheat Qatar Flour Mill Plant, commissioned in Doha."
+        "type": "paragraph",
+        "text": "Their search for an advanced manufacturing setup led them to the Choyal Facility Centre in India, where they evaluated our pilot plant and collaborated with our technical team."
       },
       {
-        type: "paragraph",
-        text: "This compact, highly integrated plant is designed to fit easily into any facility footprint. It features Wi-Fi and Ethernet connectivity, supporting remote control and operational monitoring via Android and iOS devices."
+        "type": "heading",
+        "level": 3,
+        "text": "Tailored Solution & Recipe Development"
       },
       {
-        type: "paragraph",
-        text: "Advanced alarm systems are integrated throughout the system to ensure immediate notification and response to any process variations, and an automated data logging system provides comprehensive reports and yield analysis."
+        "type": "paragraph",
+        "text": "Choyal engineered a comprehensive, fully automatic, and hygienic turnkey facility custom-built for high-volume specialty milling:"
+      },
+      {
+        "type": "list",
+        "items": [
+          "Multi-Product Milling Capability: Designed to process Multigrain Flour, Whole Wheat Flour, Maize Flour, and Gluten-Free Flour on a single versatile line.",
+          "Custom Recipe Formulation: Development of tailored recipes specifically optimized for gluten-free products suited to the local Kenyan market.",
+          "Full Process Automation: Closed-loop, hassle-free processing ensuring strict hygiene, particle size uniformity, and maximum nutrient retention."
+        ]
       }
     ]
   }

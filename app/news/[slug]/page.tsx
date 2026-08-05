@@ -66,67 +66,68 @@ export default function NewsDetailPage() {
         </div>
 
         {/* Article Body Section */}
-        <section className="w-full py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="space-y-8">
+        <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
             
-            {/* Meta Information & Title */}
-            <div className="space-y-4 text-center sm:text-left">
-              <div className="inline-flex items-center gap-2 text-xs font-semibold text-brand-muted bg-white/60 border border-slate-200/50 px-3.5 py-1.5 rounded-full shadow-xs">
-                <Calendar className="h-3.5 w-3.5" />
-                <span>{formatDate(currentPost.date)}</span>
-              </div>
-              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-slate-900 tracking-tight leading-tight">
+            {/* Title (Mobile: Top, Desktop: Left Col Row 1) */}
+            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
+              <h1 className="text-3xl sm:text-[40px] font-heading font-medium text-[#133020] leading-tight">
                 {currentPost.title}
               </h1>
+              <div className="w-12 h-[3px] bg-[#D3994B] mt-5" />
             </div>
 
-            {/* Featured Image */}
+            {/* Featured Image (Mobile: Middle, Desktop: Right Col Row 1 & 2) */}
             {currentPost.images.length > 0 && (
-              <div className="rounded-[24px] overflow-hidden aspect-[16/9] bg-slate-100 relative w-full flex items-center justify-center">
-                <img
-                  src={currentPost.images[0].local_path}
-                  alt={currentPost.title}
-                  className="object-cover w-full h-full hover:scale-[1.01] transition-transform duration-300"
-                />
+              <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2">
+                <div className="rounded-[24px] overflow-hidden bg-slate-100 relative w-full h-full min-h-[300px]">
+                  <img
+                    src={currentPost.images[0].local_path}
+                    alt={currentPost.title}
+                    className="absolute inset-0 object-cover w-full h-full hover:scale-[1.01] transition-transform duration-300"
+                  />
+                </div>
               </div>
             )}
 
-            {/* Structured Content Block */}
-            <div className="space-y-6">
-              {currentPost.content.map((block, idx) => {
-                if (block.type === 'heading') {
-                  const headingLevel = block.level || 2;
-                  if (headingLevel === 3) {
+            {/* Structured Content Block (Mobile: Bottom, Desktop: Left Col Row 2) */}
+            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
+              <div className="space-y-6 pt-4 lg:pt-0">
+                {currentPost.content.map((block, idx) => {
+                  if (block.type === 'heading') {
+                    const headingLevel = block.level || 2;
+                    if (headingLevel === 3) {
+                      return (
+                        <h3 key={idx} className="text-lg font-heading font-black text-[#133020] mt-8 mb-3 leading-snug">
+                          {block.text}
+                        </h3>
+                      );
+                    }
                     return (
-                      <h3 key={idx} className="text-lg font-heading font-black text-slate-800 mt-8 mb-3 leading-snug">
+                      <h2 key={idx} className="text-xl font-heading font-black text-[#133020] mt-8 mb-4 leading-snug">
                         {block.text}
-                      </h3>
+                      </h2>
                     );
                   }
+
+                  if (block.type === 'list') {
+                    return (
+                      <ul key={idx} className="list-disc pl-6 space-y-2.5 mb-6 text-slate-700 font-medium text-[15px] sm:text-base leading-relaxed">
+                        {block.items?.map((item, itemIdx) => (
+                          <li key={itemIdx}>{item}</li>
+                        ))}
+                      </ul>
+                    );
+                  }
+
+                  // Default paragraph
                   return (
-                    <h2 key={idx} className="text-xl font-heading font-black text-slate-800 mt-8 mb-4 leading-snug">
+                    <p key={idx} className="text-[15px] sm:text-base text-slate-700 leading-relaxed mb-6">
                       {block.text}
-                    </h2>
+                    </p>
                   );
-                }
-
-                if (block.type === 'list') {
-                  return (
-                    <ul key={idx} className="list-disc pl-6 space-y-2.5 mb-6 text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
-                      {block.items?.map((item, itemIdx) => (
-                        <li key={itemIdx}>{item}</li>
-                      ))}
-                    </ul>
-                  );
-                }
-
-                // Default paragraph
-                return (
-                  <p key={idx} className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium mb-6">
-                    {block.text}
-                  </p>
-                );
-              })}
+                })}
+              </div>
             </div>
 
           </div>

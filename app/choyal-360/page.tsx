@@ -1,236 +1,241 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle, FileText, Phone, ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowRight, CheckCircle2, Building2, ChevronRight, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-interface ServiceStream {
-  title: string;
-  desc: string;
-  iconPath: string;
-}
-
-const serviceStreams: ServiceStream[] = [
+const workflowSteps = [
   {
-    title: "Project Development",
-    desc: "We develop complete projects starting from 2D and 3D mechanical drawings, site selection, land development, designing, fabrication, commissioning of the plant, recipe development, and packaging design.",
-    iconPath: "/images/services/project-dev.png"
+    title: "Plan",
+    desc: "Reports, approvals, layouts, feasibility, and business planning.",
+    iconPath: "/images/services/grain360/how 360 helps/plan.png"
   },
   {
-    title: "Operations & Consultancy",
-    desc: "We provide expert consultancy on how to maximize your operations for maximum output, efficient plant operations, maintenance checklists, quality control, fumigations, MIS, and overall post-setup project management.",
-    iconPath: "/images/services/operations.png"
+    title: "Build",
+    desc: "Plant setup, engineering, automation, and execution.",
+    iconPath: "/images/services/grain360/how 360 helps/build.png"
   },
   {
-    title: "Process Automation",
-    desc: "Control and optimize key mill processes like raw material sampling, pre-cleaning, storing, blending, cleaning, grinding, and automated packaging to ensure long-term, stable growth of the plant.",
-    iconPath: "/images/services/automation.png"
-  },
-  {
-    title: "Licensing & Certifications",
-    desc: "We help you acquire all necessary licensing required to start your operations legally and smoothly, including FSSAI, APEDA, IEC (Import Export Code), and other standard regulatory clearances.",
-    iconPath: "/images/services/licensing.png"
-  },
-  {
-    title: "Staff & Operator Training",
-    desc: "We provide specialized on-site and classroom training to your operating staff, ensuring they are fully ready to manage, run, and maintain the complete milling plant and automation machinery.",
-    iconPath: "/images/services/training.png"
-  },
-  {
-    title: "Government Registrations",
-    desc: "We assist in securing all essential administrative registrations required for your business setup, such as Udyam, GST, PAN, PMEGP, and other enterprise declarations.",
-    iconPath: "/images/services/gov-regis.png"
-  },
-  {
-    title: "Design & Engineering",
-    desc: "Our engineering team designs full-scale 2D and 3D mechanical models, plant flow diagrams, and optimized site layouts for efficient, space-saving plant erection and commissioning.",
-    iconPath: "/images/services/design-engg.png"
-  },
-  {
-    title: "Technology Upgradation",
-    desc: "We analyze, modify, and upgrade your existing conventional mills to match modern industrial standards, integrating smart controllers and digital features easily.",
-    iconPath: "/images/services/tech-upgrad.png"
-  },
-  {
-    title: "Project & Bankable Reports",
-    desc: "We prepare detailed project reports, feasibility studies, and bankable financial projections to assist in securing business loans, funding, and corporate approvals.",
-    iconPath: "/images/services/project-reports.png"
-  },
-  {
-    title: "Subsidies & Policies Guidance",
-    desc: "We guide you through the maze of applicable state and central subsidies, capital grants, and government industrial policies to maximize your financial savings.",
-    iconPath: "/images/services/subsd.png"
+    title: "Launch",
+    desc: "Training, operational support, and growth guidance.",
+    iconPath: "/images/services/grain360/how 360 helps/launch.png"
   }
 ];
 
-export default function Choyal360Page() {
+const coreServices = [
+  {
+    title: "Project Development",
+    desc: "Concept development, plant planning, layout support, feasibility, and project execution guidance.",
+    iconPath: "/images/services/grain360/our core services/project-deveopment.png"
+  },
+  {
+    title: "Licensing & Certifications",
+    desc: "Support for registrations, approvals, certifications, and statutory compliance.",
+    iconPath: "/images/services/grain360/our core services/licensing.png"
+  },
+  {
+    title: "Design & Engineering",
+    desc: "Plant layouts, technical detailing, system planning, and engineering coordination.",
+    iconPath: "/images/services/grain360/our core services/design-and-engineering.png"
+  },
+  {
+    title: "Operations & Consultancy",
+    desc: "Support for process optimization, quality improvement, and day-to-day plant operations.",
+    iconPath: "/images/services/grain360/our core services/operations-and-consulatncy.png"
+  },
+  {
+    title: "Staff & Operator Training",
+    desc: "Hands-on training for teams operating, managing, and maintaining the plant.",
+    iconPath: "/images/services/grain360/our core services/staff-and-operator-training.png"
+  },
+  {
+    title: "Technology Upgradation",
+    desc: "Modernization of existing plants with improved systems, automation, and digital capabilities.",
+    iconPath: "/images/services/grain360/our core services/technology-upgrade.png"
+  }
+];
+
+const additionalServices = [
+  { title: "Government Registrations", iconPath: "/images/services/grain360/additional services/govt-register.png" },
+  { title: "Project & Bankable Reports", iconPath: "/images/services/grain360/additional services/project-report.png" },
+  { title: "Subsidies & Policies Guidance", iconPath: "/images/services/grain360/additional services/subsidies.png" },
+  { title: "Process Automation", iconPath: "/images/services/grain360/additional services/process-automation.png" },
+];
+
+export default function Grain360Page() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9F6F0] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[240px] sm:h-[300px] overflow-hidden flex items-center bg-slate-900">
-          <div className="absolute inset-0 bg-[url('/images/services/banner.jpg')] bg-cover bg-center opacity-35" />
-          <div className="absolute inset-0 bg-slate-900/60" />
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
-            <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Services & Solutions
+        <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden flex items-center bg-[#133020]">
+          <div className="absolute inset-0 bg-[url('/images/services/grain360/grain_hero.jpg')] bg-cover bg-center opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#133020] via-[#133020]/90 to-transparent z-10" />
+          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20">
+            <div className="space-y-4 max-w-2xl">
+              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase">
+                SERVICES & SOLUTIONS
               </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
-                Choyal 360
+              <h1 className="text-4xl sm:text-5xl lg:text-[64px] font-heading font-black text-white tracking-tight leading-none drop-shadow-md">
+                Grain360
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
-                Grain 360 offers you all the services required for starting your food business today, under one roof.
+              <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed font-medium pt-2">
+                End-to-end services to help you plan, launch, and grow your grain or flour processing business under one roof.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Content & Overview Section */}
-        <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24">
-          {/* Breadcrumbs */}
-          <div className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 mb-8">
-            <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-slate-600">Services</span>
-            <span>/</span>
-            <span className="text-slate-600">Choyal 360</span>
-          </div>
-
-          {/* Intro Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-            <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
-                End-To-End Business Enablement
-              </span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-950 leading-tight">
-                Plan Your Operations, We Get Your Business Started
-              </h2>
-              <div className="text-slate-600 font-medium space-y-4 text-sm sm:text-base leading-relaxed">
+        <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+          
+          {/* Intro Section: One Partner */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start mb-24">
+            <div className="space-y-6">
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-[#1A3A29]/10 flex items-center justify-center shrink-0">
+                  <Building2 className="w-7 h-7 text-[#1A3A29]" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#1A3A29] leading-tight">
+                  One partner for setting up your business
+                </h2>
+              </div>
+              <div className="text-slate-600 space-y-4 text-sm sm:text-base leading-relaxed pl-[72px]">
                 <p>
-                  Starting a business can be overwhelming with so many requirements to fulfill. 
-                  <strong> Grain 360</strong> takes the stress out of the equation by providing you all the 
-                  solutions under one roof. We guide you through preparing your project reports, obtaining 
-                  government and export registrations, and taking advantage of applicable subsidies and policies.
+                  Starting a food or flour business involves many moving parts—from project planning and plant setup to licensing, training, and operations support. <strong>Grain360 brings all of these services together under one roof.</strong>
                 </p>
                 <p>
-                  From there, we handle turnkey plant setup, design and engineering, packaging design, 
-                  operations advisory, web/IoT telemetry integration, and operator training. 
-                  Managing so many separate vendors and formalities takes immense time and energy—Grain 360 
-                  helps you bypass those complexities and get started in no time.
+                  Instead of coordinating multiple vendors, you get a single partner to guide your journey from idea to commissioning and beyond.
                 </p>
               </div>
             </div>
 
-            {/* Quick highlight banner info */}
-            <div className="lg:col-span-5 bg-slate-50 border border-slate-200/60 p-8 rounded-[32px] space-y-6">
-              <h3 className="text-lg font-heading font-black text-slate-800">
-                Why Choose Grain 360?
+            {/* Why Grain360 Card */}
+            <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60">
+              <h3 className="text-xl font-heading font-black text-slate-800 mb-6">
+                Why Grain360?
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-4">
                 {[
-                  "Single point of contact for setup & launch",
-                  "Government subsidy & bankable report design",
-                  "Turnkey mechanical & electrical fabrication",
-                  "ISO-compliant regulatory registration support",
-                  "Comprehensive post-commissioning audits"
+                  "Single point of contact",
+                  "Project & bankable reports",
+                  "Licensing & registrations support",
+                  "Plant setup & commissioning",
+                  "Post-launch guidance"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm font-bold text-slate-600">
-                    <span className="w-5 h-5 bg-brand-primary/10 text-brand-primary rounded-full flex items-center justify-center font-bold text-xs mt-0.5 flex-shrink-0">✓</span>
+                  <li key={idx} className="flex items-center gap-3 text-sm font-bold text-slate-700">
+                    <CheckCircle2 className="w-5 h-5 text-[#2E6B4A] shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
-              
-              <div className="pt-2">
-                <Link
-                  href="/contact"
-                  className="w-full flex items-center justify-center gap-1.5 bg-brand-primary text-white hover:bg-brand-primary/95 py-3 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer text-center"
-                >
-                  Consult an Expert
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
-              </div>
             </div>
           </div>
 
-          {/* Services Streams Title */}
-          <div className="text-center max-w-xl mx-auto mb-12 space-y-2">
-            <h3 className="text-2xl font-heading font-black text-slate-900">
-              Our Services Streams
+          {/* Workflow Section: How Grain360 helps */}
+          <div className="mb-24">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-12">
+              How Grain360 helps
             </h3>
-            <p className="text-sm text-slate-500 font-semibold">
-              Explore the ten core focus areas covered under the Choyal 360 setup package.
-            </p>
+            
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 lg:gap-8">
+              {workflowSteps.map((step, idx) => (
+                <div key={idx} className="flex items-center w-full md:w-auto">
+                  
+                  {/* Step Card */}
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-sm border border-slate-200/50 flex-1 min-w-[280px] max-w-[340px]">
+                    <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center shrink-0 border border-slate-100 shadow-sm overflow-hidden p-1.5">
+                      <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
+                    </div>
+                    <div>
+                      <h4 className="font-heading font-black text-lg text-slate-800 mb-1">{step.title}</h4>
+                      <p className="text-xs text-slate-500 font-medium leading-relaxed">{step.desc}</p>
+                    </div>
+                  </div>
+
+                  {/* Arrow (hidden on mobile, shown between steps on md+) */}
+                  {idx < workflowSteps.length - 1 && (
+                    <div className="hidden md:flex items-center justify-center w-12 shrink-0">
+                      <ArrowRight className="w-6 h-6 text-slate-300" />
+                    </div>
+                  )}
+
+                  {/* Down Arrow for mobile */}
+                  {idx < workflowSteps.length - 1 && (
+                    <div className="flex md:hidden items-center justify-center w-full py-4 shrink-0">
+                      <ArrowRight className="w-6 h-6 text-slate-300 rotate-90" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
-          {/* Services Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {serviceStreams.map((stream, idx) => (
-              <div 
-                key={idx}
-                className="group bg-white border border-slate-200/60 rounded-[28px] p-6 hover:shadow-md hover:border-brand-primary/20 transition-all duration-300 flex flex-col justify-between h-full"
-              >
-                <div className="space-y-4">
-                  {/* Icon Block */}
-                  <div className="w-14 h-14 bg-slate-50 rounded-2xl flex items-center justify-center border border-slate-100 group-hover:scale-105 transition-transform duration-300 overflow-hidden">
-                    <img 
-                      src={stream.iconPath} 
-                      alt={stream.title} 
-                      className="w-8 h-8 object-contain"
-                    />
+          {/* Core Services Section */}
+          <div className="mb-24">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-12">
+              Our Core Services
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              {coreServices.map((service, idx) => (
+                <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 flex gap-5 shadow-[0_4px_20px_rgb(0,0,0,0.02)] border border-slate-100 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
+                  <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center shrink-0 border border-slate-100 shadow-sm overflow-hidden p-1">
+                    <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>
-
-                  {/* Title & Description */}
-                  <div className="space-y-2">
-                    <h4 className="text-lg font-heading font-black text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
-                      {stream.title}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-medium">
-                      {stream.desc}
-                    </p>
+                  <div>
+                    <h4 className="font-heading font-black text-[15px] text-slate-800 mb-2 leading-tight">{service.title}</h4>
+                    <p className="text-[13px] text-slate-500 font-medium leading-relaxed">{service.desc}</p>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
 
-                <div className="pt-4 flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 uppercase tracking-wider cursor-pointer mt-4">
-                  <span>Enquire</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
+          {/* Additional Support Areas */}
+          <div className="mb-20">
+            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-10">
+              Additional support areas
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {additionalServices.map((service, idx) => (
+                <div key={idx} className="flex items-center gap-3 bg-white px-5 py-3.5 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors">
+                  <img src={service.iconPath} alt={service.title} className="w-5 h-5 object-contain" />
+                  <span className="text-[13px] font-bold text-slate-700">{service.title}</span>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom CTA Banner */}
+          <div className="w-full bg-[#0D301F] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="absolute inset-0 bg-[url('/images/services/grain360/grain_hero.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+            
+            <div className="relative z-10 flex items-center gap-6 max-w-2xl">
+              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
+                <Phone className="w-8 h-8 text-white" />
               </div>
-            ))}
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
+                  Planning to start or upgrade your plant?
+                </h3>
+                <p className="text-slate-300 text-sm font-medium">
+                  Talk to our team for end-to-end business, technical, and operational support.
+                </p>
+              </div>
+            </div>
+
+            <div className="relative z-10 shrink-0 w-full md:w-auto">
+              <Link 
+                href="/contact"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-white text-[#133020] hover:bg-slate-100 px-8 py-4 rounded-xl text-sm font-black tracking-wide transition-transform hover:-translate-y-0.5 shadow-lg"
+              >
+                Contact Us <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
 
-        </section>
-
-        {/* CTA/Request Block */}
-        <section className="w-full bg-slate-950 text-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black tracking-tight max-w-xl mx-auto leading-tight">
-            Ready to Start Your Food Processing Business?
-          </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto font-medium">
-            Contact us today to receive customized layout suggestions, bankable project templates, and technical consulting parameters.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a
-              href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20the%20Choyal%20360%20Service%20to%20setup%20a%20new%20milling%20business."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-brand-secondary text-brand-foreground hover:bg-brand-secondary/90 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
-            >
-              <Phone className="w-4 h-4" />
-              Discuss via WhatsApp
-            </a>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
-            >
-              Request Quote
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
         </section>
       </div>
 

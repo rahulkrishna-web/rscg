@@ -21,13 +21,7 @@ export default function AgateShellerTypeStones() {
   const [quantities, setQuantities] = useState<Record<string, number>>({});
 
   const sizes: StoneSize[] = [
-    { name: "1200 mm / 48\"", code: "1200MM", thickness: "260 mm", weight: "approx. 495 kg", recommendation: "High capacity split pulse mill systems" },
-    { name: "1050 mm / 42\"", code: "1050MM", thickness: "230 mm", weight: "approx. 410 kg", recommendation: "Industrial gram / besan mills" },
-    { name: "900 mm / 36\"", code: "900MM", thickness: "210 mm", weight: "approx. 310 kg", recommendation: "Standard commercial shelling setups" },
-    { name: "750 mm / 30\"", code: "750MM", thickness: "190 mm", weight: "approx. 195 kg", recommendation: "Sheller chakki pre-cleaning systems" },
-    { name: "600 mm / 24\"", code: "600MM", thickness: "160 mm", weight: "approx. 130 kg", recommendation: "Pulse splitting grocery retail outlets" },
-    { name: "450 mm / 18\"", code: "450MM", thickness: "135 mm", weight: "approx. 80 kg", recommendation: "General pulse split small grinders" },
-    { name: "350 mm / 14\"", code: "350MM", thickness: "110 mm", weight: "approx. 45 kg", recommendation: "Micro de-husking test setups" }
+    { name: "1200 mm / 30\"", code: "1200MM", thickness: "260 mm", weight: "approx. 495 kg", recommendation: "Large-Scale Soybean Milling" }
   ];
 
   const handleQtyChange = (key: string, val: number) => {
@@ -64,61 +58,63 @@ export default function AgateShellerTypeStones() {
 
       <Header />
 
-      {/* Mini Breadcrumb Hero */}
-      <section className="w-full bg-brand-primary text-white py-12 lg:py-16 relative z-10 border-b border-white/5">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 max-w-[1440px] mx-auto space-y-4">
-          <Link 
-            href="/emery-stones"
-            className="inline-flex items-center gap-2 text-xs font-bold text-brand-secondary hover:text-brand-tertiary transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            <span>Back to Emery Stones</span>
+      {/* Top Breadcrumb */}
+      <div className="w-full bg-white/50 py-6 relative z-10 border-b border-slate-200/50">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col sm:flex-row sm:items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest gap-4">
+          <Link href="/emery-stones" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+            <ArrowLeft className="w-4 h-4" />
+            Back to Emery Stones
           </Link>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black tracking-tight leading-none">
-            Horizontal Emery Stones - Agate/Sheller Type
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-200 max-w-2xl font-medium">
-            Specialized hard-bonded stones engineered for de-husking, grain shelling, and pulse-splitting applications with minimal dusting.
-          </p>
+          <div className="flex items-center gap-2">
+            <span>Emery Stones</span>
+            <span className="text-slate-400">/</span>
+            <span className="text-brand-primary">Agate / Sheller Type</span>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Main Content Section */}
-      <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/50 relative z-10">
-        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16 flex-1 relative z-10">
+        
+        {/* Hero Product Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mt-8 mb-16">
           
-          {/* Left Side: Product Profile & Specs */}
-          <div className="lg:col-span-6 space-y-8">
-            <div className="relative w-full aspect-[4/3] bg-white border border-slate-200/60 rounded-3xl overflow-hidden p-10 flex items-center justify-center shadow-xs">
+          {/* Left: Images */}
+          <div className="flex flex-col gap-6 lg:sticky lg:top-32 h-fit">
+            <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8 border border-slate-100 shadow-xs">
+              <span className="absolute top-6 left-6 z-10 bg-slate-100 text-[10px] font-black uppercase text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
+                Emery Stones
+              </span>
               <img 
                 src="/images/sheller-emery-stones.jpg" 
                 alt="Agate/Sheller Type Horizontal Emery Stones" 
-                className="object-contain max-h-full max-w-full"
+                className="w-full h-full object-contain mix-blend-multiply" 
               />
             </div>
+          </div>
 
-            <div className="space-y-4">
-              <h2 className="text-xl sm:text-2xl font-heading font-extrabold text-slate-800">
-                Product Overview
-              </h2>
-              <p className="text-sm text-slate-600 leading-relaxed font-medium">
-                Choyal Agate/Sheller Type Emery Stones are engineered with unique composite binder systems and hard-grained abrasives. These are specifically optimized for pulse de-husking, splitting, and shelling of hard legume seeds (like chickpea/gram into besan, lentils, and peas) with maximum yield recovery and minimum dusting losses.
-              </p>
-            </div>
+          {/* Right: Info */}
+          <div className="flex flex-col justify-start">
+            <h1 className="text-4xl sm:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight mb-2">
+              Horizontal Emery Stones
+            </h1>
+            <h2 className="text-xl sm:text-2xl font-bold text-[#14663a] mb-6">
+              Agate / Sheller Type
+            </h2>
+            <p className="text-slate-600 leading-relaxed mb-10 text-sm sm:text-base font-medium">
+              These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products. Choyal Emery Stones are designed and manufactured with high quality emery & grain to maintain aroma & taste of the flour. Our Emery stones are made on an automatic casting plant to maintain standards and quality. Our high quality emery stones are globally accepted and have been exported to over 20 countries for five decades.
+            </p>
 
-            {/* Specifications list */}
-            <div className="space-y-4 pt-4">
+            {/* Key Performance Advantages */}
+            <div className="space-y-4 mb-10 pb-10 border-b border-slate-200/60">
               <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
                 Key Performance Advantages
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {[
-                  "Optimized hard bond mix for pulse shelling",
-                  "Reduces bran/husk powdering and dusting losses",
-                  "Aggressive grain shear for clean splits",
-                  "Perfect balance limits structural vibration",
-                  "Resistant to high friction temperatures",
-                  "Engineered to fit standard sheller chakkis"
+                  "Preserves grain aroma and vital proteins",
+                  "Perfect mechanical balancing reduces noise",
+                  "Premium hard binders for extreme longevity"
                 ].map((item, idx) => (
                   <li key={idx} className="flex gap-2 text-xs text-slate-600 font-medium">
                     <CheckCircle className="h-4 w-4 text-brand-primary flex-shrink-0 mt-0.5" />
@@ -127,20 +123,19 @@ export default function AgateShellerTypeStones() {
                 ))}
               </ul>
             </div>
-          </div>
 
-          {/* Right Side: Quote Add Table */}
-          <div className="lg:col-span-6 space-y-8 bg-white border border-slate-200/60 rounded-3xl p-6 sm:p-8 shadow-xs">
-            <div>
-              <h2 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800">
-                Select Size & Options
-              </h2>
-              <p className="text-xs text-slate-400 mt-1 font-medium">
-                Select your required sheller stone size parameters to add to your enquiry list.
-              </p>
-            </div>
+            {/* Select Size & Options */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800">
+                  Select Size & Options
+                </h2>
+                <p className="text-xs text-slate-400 mt-1 font-medium">
+                  Select your required sheller stone size parameters to add to your enquiry list.
+                </p>
+              </div>
 
-            <div className="space-y-3 max-h-[500px] overflow-y-auto pr-1">
+              <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
               {sizes.map((sizeItem) => {
                 const qtyKey = `emery-stone-agate-${sizeItem.code.toLowerCase()}`;
                 const qty = quantities[qtyKey] || 1;
@@ -195,34 +190,63 @@ export default function AgateShellerTypeStones() {
                   </div>
                 );
               })}
+              </div>
             </div>
           </div>
-
         </div>
-      </section>
+      </div>
 
       {/* Link to Contact CTA Banner */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 bg-slate-50 border-t border-slate-200/50 relative z-10 text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-            Specialized Applications
-          </span>
-          <h2 className="text-3xl font-heading font-extrabold text-slate-800 tracking-tight">
-            Need Layout Offers for Specialized De-husking Plants?
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            We design complete grain pre-cleaning and de-husking plants incorporating custom sheller mill grids. 
-            Share details about your input grain characteristics and target throughput.
-          </p>
-          <div className="pt-2">
-            <Link 
-              href="/contact"
-              className="inline-flex bg-brand-primary hover:bg-brand-primary/95 text-white font-bold px-8 py-3.5 rounded-xl shadow-md hover:-translate-y-0.5 transition-all duration-200 text-sm gap-2 items-center"
-            >
-              <span>Submit Plant Requirements</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+      <section className="w-full bg-[#0a3118] relative z-10 flex flex-col lg:flex-row overflow-hidden">
+        
+        {/* Content Left (Aligned to screen bounds) */}
+        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:pl-16 xl:pl-24 lg:pr-12 xl:pr-16 py-16 lg:py-24 flex flex-col justify-center">
+            <h2 className="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight mb-6">
+              Built for Consistent Performance.
+            </h2>
+            <p className="text-base sm:text-lg text-slate-200 mb-10 max-w-lg font-medium">
+              Engineered for precise grinding, dependable flour quality, and long-lasting durability.
+            </p>
+            
+            <div className="flex flex-col gap-6 items-start">
+              {/* Primary CTA */}
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea580c] text-white font-bold px-8 py-3.5 rounded shadow-lg transition-colors text-lg"
+              >
+                ENQUIRE NOW <ArrowRight className="w-5 h-5" />
+              </Link>
+              
+              <div className="flex flex-col gap-3 w-full sm:w-auto">
+                {/* Secondary CTA 1 */}
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center justify-between sm:justify-start gap-3 bg-[#1a5b8f] hover:bg-[#154872] text-white font-bold px-6 py-2.5 rounded shadow-sm transition-colors text-sm w-full sm:w-max"
+                >
+                  REQUEST A QUOTE <ArrowRight className="w-4 h-4" />
+                </Link>
+                
+                {/* Secondary CTA 2 */}
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center justify-between sm:justify-start gap-3 bg-[#333333] hover:bg-[#222222] text-white font-bold px-6 py-2.5 rounded shadow-sm transition-colors text-sm w-full sm:w-max"
+                >
+                  TALK TO OUR EMERY STONE EXPERT <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
+        
+        {/* Image Right (Stretches to edge) */}
+        <div className="w-full lg:w-1/2 relative h-72 sm:h-96 lg:h-auto min-h-[400px]">
+          <Image 
+            src="/images/last_section.png"
+            alt="Emery stone performance"
+            fill
+            className="object-cover object-left"
+          />
+          {/* Gradient Overlay for seamless blending with left side */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3118] via-[#0a3118]/60 to-transparent w-full sm:w-2/3 lg:w-1/2"></div>
         </div>
       </section>
 

@@ -7,6 +7,10 @@ export interface ProductVariant {
 }
 
 export interface ProductItem {
+  overview?: string;
+  features?: string[];
+  applications?: string[];
+  specifications?: Record<string, string>;
   slug: string;
   title: string;
   description: string; // Can contain HTML tags
@@ -54,6 +58,49 @@ export const categoriesData = {
 };
 
 export const productsData: ProductItem[] = [
+  {
+    "slug": "vibro-sifter",
+    "title": "Vibro Sifter",
+    "subtitle": "",
+    "overview": "Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.",
+    "features": ["High-precision screening and grading", "Compact and hygienic design", "Low noise and vibration operation", "Quick screen changing and easy maintenance", "Suitable for continuous industrial operation"],
+    "applications": ["Flour mills", "Food processing", "Spice & powder screening", "Grain processing", "Chemical & pharmaceutical industries"],
+    "specifications": {"900 MM": "300-500 kg/hr  500-800 kg/hr", "1200 MM": "600-900 kg/hr", "1500 MM": "1000-1200 kg/hr"},
+    "category": "processing",
+    "image": "/images/flour-processing/vibrosifter.png",
+    "description": "<p>Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.</p>",
+    "shortDescription": "Efficient screening machine used for grading and separating flour.",
+    "variants": [],
+  },
+  {
+    "slug": "entoleter",
+    "title": "Entoleter",
+    "subtitle": "High-Impact Insect Control for Grain and Flour",
+    "overview": "The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing. Its high-speed impact action helps improve hygiene, protect product quality, and reduce the risk of infestation in downstream storage and packing.\nBuilt for reliable continuous operation, it is suitable for flour mills, grain-processing plants, and food-production lines where consistent sanitation and product safety are essential.",
+    "features": ["Eliminates insects at all stages of the life cycle", "Helps remove eggs, larvae, and adult insects", "Supports hygienic grain and flour processing", "Improves food safety and product quality", "Reduces the risk of downstream infestation", "Suitable for continuous commercial operation", "Engineered for dependable, high-speed performance", "Integrates easily into processing lines", "Improved product hygiene", "Better protection during storage", "Reduced infestation risk", "Consistent flour quality", "Lower product rejection and contamination risk", "Reliable continuous performance"],
+    "applications": ["Flour-milling plants", "Grain-processing facilities", "Finished-flour treatment lines", "Pre-packing flour sanitation", "Storage and infestation-control systems", "Food-processing plants"],
+    "specifications": {},
+    "category": "processing",
+    "image": "/images/flour-processing/entoleter.jpg",
+    "description": "<p>The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing.</p>",
+    "shortDescription": "High-Impact Insect Control for Grain and Flour.",
+    "variants": [],
+  },
+  {
+    "slug": "plan-sifter",
+    "title": "Plan Sifter",
+    "subtitle": "",
+    "overview": "Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials. It ensures uniform particle size, high screening efficiency, and consistent product quality for modern flour milling operations.",
+    "features": ["High screening efficiency with accurate particle separation", "Precision gyratory motion for uniform material distribution", "Heavy-duty, industrial-grade construction", "Smooth and low-vibration operation", "Easy maintenance with long service life"],
+    "applications": ["Flour mills", "Wheat, rice & maize flour processing", "Grain grading", "Powder classification", "Food processing industries"],
+    "specifications": {"2x12": "1800 MM", "4x12": "2000 MM", "4x16": "2000 MM", "8x16": "2400 MM", "8x20": "2400 MM"},
+    "category": "processing",
+    "image": "/images/flour-processing/plansifter.png",
+    "description": "<p>Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials.</p>",
+    "shortDescription": "Precision sieving machine designed for efficient grading.",
+    "variants": [],
+  },
+
   {
     "slug": "wonder-mill-with-wonder-miller",
     "title": "Wonder Mill with Wonder Miller",
@@ -507,6 +554,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "drum-sieve",
+    "overview": "The **Drum Sieve** is a high\\-performance pre\\-cleaning machine designed to efficiently remove large impurities from raw grains before the milling process. It effectively separates unwanted materials such as straw, sticks, stones, clods, paper, and other oversized foreign particles, ensuring a cleaner and safer grain flow.\nBuilt with a robust rotating cylindrical screen, the Drum Sieve delivers continuous, high\\-capacity operation with minimal maintenance requirements. By eliminating coarse contaminants at the initial stage, it protects downstream milling equipment from damage, reduces wear and tear, and improves overall plant efficiency.",
+    "features": ["Efficient removal of large and coarse impurities", "High cleaning efficiency for multiple grain varieties", "Heavy\\-duty rotating drum with durable perforated screen", "Continuous operation with high throughput capacity", "Low power consumption and minimal maintenance"],
+    "applications": ["Wheat flour milling plants", "Chakki atta processing units", "Rice milling plants", "Maize and corn processing facilities", "Pulses and grain processing industries"],
+    "specifications": {},
     "title": "Drum Sieve",
     "description": "<p>Drum sieve is designed to clean raw grains in wheat milling plant, mainly removing the large impurities such as stalk, clods, fragments of a brick and stone so as to ensure the quality of material and prevent the equipment from be damaged or fault, which has high efficiency in cleaning paddy, corn, soybean, wheat, sorghum and other types of grains.</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve.jpg",
@@ -605,6 +656,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "emery-polisher",
+    "overview": "The Emery Polisher is designed for efficient de\\-hulling and surface polishing of wheat and other grains. It is especially suitable for whole wheat atta plants, where controlled polishing helps improve grain cleanliness, finish, and overall product quality.\nThe polishing intensity can be adjusted externally through a slide\\-control mechanism, allowing operators to fine\\-tune the processing effect according to the grain type and required output.",
+    "features": ["Efficient de\\-hulling of wheat and other grains", "Ideal for whole wheat atta milling plants", "Adjustable polishing intensity", "External slide\\-control mechanism", "Uniform grain finishing", "Improved grain cleanliness and product quality", "Durable construction for commercial operation", "Designed for continuous and consistent performance"],
+    "applications": ["Whole wheat atta plants", "Wheat\\-cleaning and preparation sections", "Grain de\\-hulling systems", "Grain polishing lines", "Commercial flour\\-milling plants", "Better grain surface finish", "Improved flour quality", "Controlled removal of outer layers", "More consistent processing results", "Flexible adjustment for different grains", "Reliable continuous operation"],
+    "specifications": {},
     "title": "Emery Polisher",
     "description": "<p>This is an ideal machine used to for de –hulling of wheat &amp; other grains<br /> Highly sophisticated, this machine is mostly used in whole meal Atta plant.<br /> The processing effect of the machine can be adjusted from outside by means of slide control device</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher.jpg",
@@ -631,6 +686,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "horizontal-scourer",
+    "overview": "The Horizontal Scourer is designed to remove adhering dust, husk, and surface impurities from grain before further processing.\nIts gentle yet effective scouring action helps reduce bacterial contamination, remove insect fragments, and improve grain hygiene without damaging grain quality. Powered by an electric motor, the machine is built for reliable and continuous operation in commercial grain\\-processing and flour\\-milling plants.",
+    "features": ["Removes adhering dust and husk", "Improves grain surface cleanliness", "Helps reduce bacterial contamination", "Removes insect fragments through gentle scouring", "Preserves grain quality", "Supports consistent downstream processing", "Suitable for continuous commercial operation", "Powered by a high\\-performance electric motor"],
+    "applications": ["Wheat\\-cleaning sections", "Flour\\-milling plants", "Grain\\-processing line", "Pre\\-conditioning grain cleaning", "Commercial grain hygiene systems", "Cleaner grain surface", "Improved grain hygiene", "Reduced dust and husk contamination", "Lower bacterial load", "Better preparation for conditioning and milling", "Reliable continuous performance"],
+    "specifications": {},
     "title": "Horizontal Scourer",
     "description": "<p>This high efficiency machine is used to remove adhering dust or husk item to the grain.<br />  Effectively reduces the bacteria content.<br />  Through very gentle scouring it also helps eliminate insect fragments.<br />  with Electric motor</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer.jpg",
@@ -709,6 +768,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "bran-finisher",
+    "overview": "The Bran Finisher is designed to recover flour particles still adhering to bran after milling. By separating this residual flour from the bran, it helps increase overall flour yield, reduce product loss, and improve milling efficiency.\nSuitable for common wheat, durum wheat, and rye mills, the machine delivers cleaner bran while supporting reliable and continuous plant operation.",
+    "features": ["Recovers adhering flour particles from bran", "Increases overall flour yield", "Reduces flour loss in the bran stream", "Produces cleaner and more uniform bran", "Improves overall milling efficiency", "Suitable for continuous commercial operation", "Designed for dependable, low\\-intervention performance"],
+    "applications": ["Common wheat flour mills", "Durum wheat mills", "Rye mills", "Bran\\-processing sections", "Flour\\-recovery systems", "High\\-capacity milling plants"],
+    "specifications": {},
     "title": "Bran Finisher",
     "description": "<p>bran finisher removes adhering flour particles from the bran, thus increasing flour yield at the mill. The bran<br /> finisher&#8217;s field of application covers mills for common wheat, durum and rye.</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-finisher.jpg",
@@ -786,6 +849,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "intensive-dampener",
+    "overview": "The Intensive Dampener is engineered for precise and uniform grain conditioning before milling. It ensures consistent water distribution across the grain, helping achieve the required moisture level for improved milling performance and product quality.\nThe machine supports water addition of up to 8% and features a self\\-emptying design that reduces residual material, cleaning requirements, and routine maintenance. A high\\-performance electric motor ensures reliable and continuous operation.",
+    "features": ["Precise and uniform grain dampening", "Consistent water distribution", "Supports moisture addition of up to 8%", "Improves grain conditioning and milling efficiency", "Self\\-emptying design", "Reduced sanitation and maintenance requirements", "Suitable for continuous processing", "Powered by a high\\-performance electric motor"],
+    "applications": ["Wheat\\-conditioning sections", "Flour\\-milling plants", "Grain\\-processing lines", "Pre\\-milling moisture adjustment", "Automated conditioning systems"],
+    "specifications": {},
     "title": "Intensive Dampener",
     "description": "<p>This high end machine is used for the uniform dampening of grain.<br />  It ensures extremely uniform water distribution<br />  Large volume of water addition (up to 8% ) is possible<br />  Unique self-emptying system ensures lesser need of sanitation &amp; maintenance.<br />  with Electric motor</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER.jpg",
@@ -812,6 +879,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "magnetic-separator",
+    "overview": "The Permanent Drum\\-Type Magnetic Separator is designed to remove tramp iron and ferrous contamination from free\\-flowing bulk materials such as grain, flour, food products, and other processed materials.\nIt helps improve end\\-product purity, recover valuable metal contaminants, and protect downstream machinery from damage. A vibratory hopper regulates material feeding for consistent flow, while the geared drive supports reliable continuous operation.",
+    "features": ["High\\-intensity permanent magnetic drum", "Magnetic strength up to 10,000 gauss", "Removes tramp iron and ferrous contamination", "Improves product purity", "Protects downstream machinery", "Vibratory hopper for controlled feeding", "Suitable for continuous bulk processing"],
+    "applications": ["Grain cleaning plants", "Flour mills", "Food\\-processing plants", "Seed\\-processing lines", "Bulk\\-material handling systems", "Protection of downstream processing equipment"],
+    "specifications": {"Magnetic Roll Size": "100 mm \u00d7 1000 mm", "Magnetic Strength": "Up to 10,000 Gauss", "Capacity": "2\u20134 TPH", "Drive Motor": "1 HP Geared Motor", "Feeding System": "Vibratory Hopper", "Separator Type": "Permanent Drum\\-Type"},
     "title": "Magnetic Separator",
     "description": "<p>Magnetic Roll dia 100mm x 1000mm (10000 Gausse Power). Permanent Drum type Magnetic Separator<br /> is most useful for separating tramp iron from non magnetic material processed in bulk quantity, for the<br /> purity of end products, recovery of metal having commercial value and protection of processing plant<br /> and machinery. These are widely used in all the processing industry for separation of iron<br /> contamination from Food, Flour, Grain and many other products. with Vibrated hopper to control the<br /> free flow of feeding . Machine drive with 1Hp geared Motor.</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/MAGNETIC-SEPARATOR.jpg",
@@ -996,6 +1067,10 @@ export const productsData: ProductItem[] = [
   },
   {
     "slug": "emery-roll",
+    "overview": "The Emery Roll is a high\\-performance de\\-hulling machine designed for efficient removal of bran and outer husk from wheat and other grains. It ensures uniform processing, improves flour quality, and enhances milling efficiency. The machine is widely used in whole wheat atta plants and dal processing units for consistent and reliable grain conditioning.",
+    "features": ["Efficient de\\-hulling of wheat and other grains", "Adjustable processing effect through external slide control", "Heavy\\-duty and durable construction", "High\\-capacity operation with consistent performance", "Suitable for continuous industrial applications"],
+    "applications": ["Wheat de\\-hulling", "Whole Wheat Atta Plants", "Dal Processing Plants", "Grain Cleaning &amp; Conditioning", "Flour Milling Industries"],
+    "specifications": {"Length": "2100 MM", "Width": "750 mm", "Height": "1200 MM", "Capacity": "5\\-6 Ton/hr", "Power": "15\\-20 kW", "Air Qty": "35\\-40 M3/Min", "Size": "16x33\""},
     "title": "Emery Roll",
     "description": "<p>This is an ideal machine used to for de –hulling of wheat &amp; other grains  Highly sophisticated ,this machine is mostly used in whole meal Atta plant and Dal plant  The processing effect of the machine can be adjusted from outside by means of slide control device  The processing effect of the machine can be adjusted from outside by means of slide control device.</p>",
     "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll.jpg",

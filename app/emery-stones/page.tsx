@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { ArrowRight, Target, Disc, ShieldCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -12,42 +13,84 @@ export default function EmeryStones() {
       <Header />
 
       {/* Hero Banner Section */}
-      <section className="w-full relative h-[380px] sm:h-[420px] lg:h-[480px] overflow-hidden bg-slate-900">
+      <section className="w-full relative h-[600px] lg:h-[700px] overflow-hidden bg-[#061a10]">
         {/* Background Image */}
         <Image 
-          src="/images/emery-stones-banner.jpg" 
-          alt="RS Choyal Emery Stones Banner" 
+          src="/images/emerystone_hero.png" 
+          alt="Emery Stones Division" 
           fill
           priority
-          className="object-cover object-center opacity-90"
+          className="object-cover object-center lg:object-right opacity-80"
         />
         
-        {/* Banner Content Container */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/25 to-transparent"></div>
+        {/* Banner Content Container (Gradient Overlay) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#041a10] via-[#041a10]/95 md:via-[#041a10]/80 to-transparent"></div>
         
         <div className="relative w-full h-full px-6 sm:px-12 lg:px-16 xl:px-24 max-w-[1440px] mx-auto flex flex-col justify-center">
-          <div className="max-w-2xl space-y-6">
-            {/* Gold Title Box */}
-            <div className="inline-block bg-[#f5a623] px-6 py-4 rounded-xs shadow-md">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-950 tracking-tight">
-                Emery Stones
-              </h1>
-            </div>
+          <div className="max-w-2xl space-y-8 mt-12">
             
-            {/* White Subtext */}
-            <p className="text-base sm:text-lg lg:text-xl text-white font-medium drop-shadow-md leading-relaxed max-w-lg">
-              Emery Stones are high in quality maintaining the aroma & taste of the flour.
-            </p>
-          </div>
-        </div>
+            {/* Eyebrow */}
+            <div className="flex items-center gap-4">
+              <span className="text-[#cba460] font-bold text-xs tracking-[0.2em] uppercase">
+                Emery Stones Division
+              </span>
+              <div className="h-px w-12 bg-[#cba460]/40"></div>
+            </div>
 
-        {/* Choyal Branding Logo on Top Right */}
-        <div className="absolute top-6 right-6 sm:right-12 lg:right-16 bg-white/90 backdrop-blur-xs px-4 py-2 rounded-xl shadow-md hidden sm:block border border-white/20">
-          <img 
-            src="/choyal-logo.png" 
-            alt="Choyal Grinding Solution Logo" 
-            className="h-10 w-auto object-contain"
-          />
+            {/* Title */}
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white tracking-tight leading-none">
+              Emery Stones.
+            </h1>
+            
+            {/* Supporting Text */}
+            <p className="text-base sm:text-lg text-slate-300 font-medium leading-relaxed max-w-lg">
+              High-performance emery stones engineered for precision grinding, consistent flour quality, and long service life across commercial stone mills.
+            </p>
+
+            {/* CTA */}
+            <div className="pt-2">
+              <Link 
+                href="#categories" 
+                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 border border-[#cba460] hover:bg-[#cba460]/10 text-[#cba460] font-bold text-sm tracking-widest uppercase transition-colors rounded-sm"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Explore Emery Stones
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+
+            {/* Feature Highlights */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8 pt-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full border border-[#cba460]/40 flex items-center justify-center">
+                  <Target className="w-5 h-5 text-[#cba460]" />
+                </div>
+                <span className="text-white text-xs font-bold tracking-wider leading-tight w-20">PRECISION<br/>GRINDING</span>
+              </div>
+              
+              <div className="hidden sm:block w-px h-8 bg-slate-700"></div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full border border-[#cba460]/40 flex items-center justify-center">
+                  <Disc className="w-5 h-5 text-[#cba460]" />
+                </div>
+                <span className="text-white text-xs font-bold tracking-wider leading-tight w-20">CONSISTENT<br/>FINISH</span>
+              </div>
+
+              <div className="hidden sm:block w-px h-8 bg-slate-700"></div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full border border-[#cba460]/40 flex items-center justify-center">
+                  <ShieldCheck className="w-5 h-5 text-[#cba460]" />
+                </div>
+                <span className="text-white text-xs font-bold tracking-wider leading-tight w-28">LONG-LASTING<br/>PERFORMANCE</span>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -61,7 +104,7 @@ export default function EmeryStones() {
       </section>
 
       {/* Select Category Grid */}
-      <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10">
+      <section id="categories" className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10">
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight">

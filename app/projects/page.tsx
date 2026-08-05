@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Search, MapPin, ArrowRight, Factory, Box } from "lucide-react";
 import Header from "@/components/Header";
@@ -9,13 +9,35 @@ import { projectsData } from "./projectsData";
 
 export default function ProjectsPage() {
   const [searchQuery, setSearchQuery] = useState("");
+  const [currentHeroIndex, setCurrentHeroIndex] = useState(0);
+
+  const heroImages = [
+    '/images/projects/hero/hero1.jpg',
+    '/images/projects/hero/hero2.jpg',
+    '/images/projects/hero/hero3.jpg',
+    '/images/projects/hero/hero4.png'
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroIndex((prev) => (prev + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   // Helper to extract first paragraph as excerpt
   const getExcerpt = (contentArray: any[]) => {
-    const firstParagraph = contentArray.find(c => c.type === 'paragraph');
-    if (firstParagraph && firstParagraph.text) {
-      const text = firstParagraph.text;
-      return text.length > 150 ? text.substring(0, 147) + "..." : text;
+    // Find the first paragraph that has actual content and isn't just a label
+    const validParagraphs = contentArray.filter(c => 
+      c.type === 'paragraph' && 
+      c.text && 
+      c.text.length > 30 &&
+      !c.text.toLowerCase().includes('project overview:')
+    );
+    
+    if (validParagraphs.length > 0) {
+      const text = validParagraphs[0].text;
+      return text.length > 130 ? text.substring(0, 127) + "..." : text;
     }
     return "";
   };
@@ -39,21 +61,30 @@ export default function ProjectsPage() {
       <div>
         <Header />
 
-        {/* Header Hero Banner */}
-        <section className="relative w-full h-[200px] sm:h-[240px] overflow-hidden flex items-center bg-slate-900">
-          <div className="absolute inset-0 bg-[url('/images/infrastructure/factory.jpg')] bg-cover bg-center opacity-30" />
-          <div className="absolute inset-0 bg-slate-900/60" />
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
-            <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Case Studies & References
+        {/* Hero Section */}
+        <section className="relative w-full h-[350px] sm:h-[450px] overflow-hidden flex flex-col justify-center bg-[#0D301F]">
+          {/* Background Slideshow */}
+          {heroImages.map((src, index) => (
+            <div 
+              key={src}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentHeroIndex ? 'opacity-100' : 'opacity-0'}`}
+              style={{ backgroundImage: `url(${src})` }}
+            />
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          
+          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
+            <div className="space-y-4 max-w-xl">
+              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase block">
+                CASE STUDIES & PROJECTS
               </span>
-              <h1 className="text-3xl sm:text-4xl font-heading font-extrabold text-white tracking-tight">
-                Our Global Installations
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-[1.1]">
+                Transforming Ideas into Reality
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
-                Explore real-world references of Choyal's milling plants and advanced industrial installations worldwide.
+              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium pt-2">
+                From concept to completion, discover the projects we've successfully executed with precision and expertise.
               </p>
+              <div className="w-10 h-0.5 bg-[#D3994B] mt-6" />
             </div>
           </div>
         </section>
@@ -111,33 +142,30 @@ export default function ProjectsPage() {
                           e.currentTarget.src = "/images/plants/turnkey_solutions.webp";
                         }}
                       />
-                      <div className="absolute top-4 left-4 bg-brand-primary text-white text-[9px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-md">
-                        Reference Plant
-                      </div>
                     </div>
 
                     {/* Metadata and Content */}
-                    <div className="flex-1 flex flex-col justify-between space-y-3">
-                      <div className="space-y-2.5">
-                        <div className="flex items-center gap-2 text-xs font-semibold text-brand-muted">
+                    <div className="flex-1 flex flex-col justify-between space-y-4">
+                      <div className="space-y-3.5">
+                        <div className="flex items-center gap-2 text-[11px] font-bold text-brand-muted uppercase tracking-wider">
                           <MapPin className="h-3.5 w-3.5 text-brand-primary" />
-                          <span>{project.location}</span>
+                          <span>{project.location || "Global"}</span>
                         </div>
-                        <h3 className="text-xl font-heading font-black text-slate-800 group-hover:text-brand-primary transition-colors line-clamp-2 leading-snug">
+                        <h3 className="text-2xl font-heading font-black text-slate-800 group-hover:text-brand-primary transition-colors line-clamp-2 leading-tight">
                           {project.title}
                         </h3>
                         {project.capacity && (
-                          <div className="text-xs font-bold text-brand-primary flex items-center gap-1">
-                            <Box className="w-3.5 h-3.5" />
-                            <span>{project.capacity}</span>
+                          <div className="text-xs font-bold text-[#133020] flex items-start gap-1.5 bg-slate-100/50 p-2.5 rounded-lg border border-slate-100">
+                            <Box className="w-4 h-4 text-brand-primary flex-shrink-0" />
+                            <span className="leading-snug">{project.capacity}</span>
                           </div>
                         )}
-                        <p className="text-sm text-slate-500 leading-relaxed line-clamp-3 font-medium">
+                        <p className="text-[14px] text-slate-500 leading-relaxed line-clamp-3 font-medium">
                           {getExcerpt(project.content)}
                         </p>
                       </div>
 
-                      <div className="pt-2 flex items-center gap-1.5 text-xs font-black text-brand-primary group-hover:text-brand-secondary transition-colors uppercase tracking-wider">
+                      <div className="pt-3 flex items-center gap-1.5 text-xs font-black text-brand-primary group-hover:text-[#D3994B] transition-colors uppercase tracking-widest">
                         <span>View Case Study</span>
                         <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                       </div>

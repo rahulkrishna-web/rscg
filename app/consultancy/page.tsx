@@ -1,208 +1,208 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Phone, Award, ShieldAlert, Users, TrendingUp, Cpu } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-interface ConsultService {
-  title: string;
-  desc: string;
-  iconPath: string;
-}
-
-const consultServices: ConsultService[] = [
-  {
-    title: "How to Start Your Own Agri Business",
-    desc: "If you are looking to get into the agriculture business by starting your own company, we have the right team to help you secure financing, acquire licenses, prep land, design market entry paths, and fully support your launch.",
-    iconPath: "/images/consultancy/icon_1.png"
-  },
-  {
-    title: "How to Start Your Flour, Pulse or Spice Mill",
-    desc: "Our expert team helps you coordinate land development, facility layout, production schedules, bankable reports, machinery selection, operations insights/MIS, and process optimization to run your mill successfully.",
-    iconPath: "/images/consultancy/icon_2.png"
-  },
-  {
-    title: "How to Optimise & Make Your Mill Profitable",
-    desc: "We help you control and optimize every process—from raw material sampling, pre-cleaning, and storage, to blending, grinding, sifting, and packaging—to drive long-term plant growth and higher margins.",
-    iconPath: "/images/consultancy/icon_3.png"
-  },
-  {
-    title: "Custom Machinery & Product Development",
-    desc: "Different agri-businesses have unique specifications. Our Technical & Design team designs custom products, machinery specs, and layout parameters tailored directly to your specific milling goals.",
-    iconPath: "/images/consultancy/icon_4.png"
-  },
-  {
-    title: "Future of Food Business & Digitisation",
-    desc: "The food processing industry is digitizing rapidly. We help you integrate IoT telemetry, cloud reporting, and automation lines so your processing facility remains competitive and future-ready.",
-    iconPath: "/images/consultancy/icon_5.png"
-  }
-];
-
 export default function ConsultancyPage() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9F6F0] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[240px] sm:h-[300px] overflow-hidden flex items-center bg-slate-900">
-          <div className="absolute inset-0 bg-[url('/images/consultancy/banner.jpg')] bg-cover bg-center opacity-30" />
-          <div className="absolute inset-0 bg-slate-900/60" />
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
-            <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Services
-              </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
-                Consultancy Services
-              </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
-                Get our expert team to help you in building your dream agri business.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Main Content */}
-        <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24">
+        <section className="relative w-full h-[500px] sm:h-[600px] overflow-hidden flex flex-col justify-end bg-[#0D301F]">
+          <div className="absolute inset-0 bg-[url('/images/consultancy/hero-banner/consultancy_hero.png')] bg-cover bg-center" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C1C] via-[#0B2C1C]/60 to-transparent z-10 h-1/2 mt-auto" />
           
-          {/* Breadcrumbs */}
-          <div className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 mb-10">
-            <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-            <span>/</span>
-            <span className="text-slate-600">Services</span>
-            <span>/</span>
-            <span className="text-slate-600">Consultancy</span>
-          </div>
-
-          {/* Intro Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
-            <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
-                60+ Years of Milling Lineage
+          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-between pt-16 pb-12 sm:pb-16">
+            
+            <div className="space-y-4 max-w-2xl mt-8">
+              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase flex items-center gap-2">
+                <div className="w-1.5 h-1.5 bg-[#D3994B] rounded-sm transform rotate-45" /> SERVICES
               </span>
-              <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-950 leading-tight">
-                Expert Advisory for Agriculture & Food Businesses
-              </h2>
-              <div className="text-slate-600 font-medium space-y-4 text-sm sm:text-base leading-relaxed">
-                <p>
-                  As one of the leading companies in the agriculture sector with over 60 years of technical expertise, 
-                  our consulting team helps you navigate the entire journey of setting up and optimizing a food processing plant.
-                </p>
-                <p>
-                  We work side-by-side with you, building your institutional capabilities to better understand your budget 
-                  constraints, uncover critical operational insights, and construct highly sustainable, profitable mills.
-                </p>
-                <p>
-                  Entering the food business is a multi-step journey. We guide you through essential phases including land 
-                  development feasibility, facility layout planning, capital projections, regulatory licensing, recipe creation, 
-                  and product trials.
-                </p>
+              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-heading font-black text-white tracking-tight leading-[1.1] drop-shadow-md">
+                Consultancy<br/>
+                <span className="text-white font-normal">for </span><span className="text-[#D3994B]">Flour Milling</span><span className="text-white font-normal"> Success</span>
+              </h1>
+              <div className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium pt-4 max-w-lg space-y-3">
+                <p>Expert guidance to help you enter, scale and excel in the flour milling industry.</p>
+                <p>From concept to continuous improvement, we are your strategic partner at every step.</p>
               </div>
             </div>
 
-            {/* Spec Highlights Card */}
-            <div className="lg:col-span-5 bg-slate-50 border border-slate-200/60 p-8 rounded-[32px] space-y-6">
-              <h3 className="text-lg font-heading font-black text-slate-850">
-                Consultancy Deliverables
-              </h3>
-              <ul className="space-y-4">
-                {[
-                  { icon: Award, title: "Industry Heritage", desc: "Advisory backed by 6+ decades of milling expertise" },
-                  { icon: Users, title: "Capability Building", desc: "Operational training for staff and managers" },
-                  { icon: TrendingUp, title: "Profit Optimization", desc: "Detailed audits targeting yield & power savings" }
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3">
-                    <div className="w-9 h-9 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary flex-shrink-0 mt-0.5">
-                      <item.icon className="w-4 h-4" />
-                    </div>
-                    <div className="space-y-0.5">
-                      <h4 className="text-sm font-extrabold text-slate-800">{item.title}</h4>
-                      <p className="text-xs text-slate-500 font-semibold leading-normal">{item.desc}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* Services Offered Grid */}
-          <div className="space-y-12">
-            <div className="text-center max-w-xl mx-auto space-y-2">
-              <h3 className="text-2xl font-heading font-black text-slate-900">
-                Services Offered
-              </h3>
-              <p className="text-sm text-slate-500 font-semibold">
-                Explore our designated consulting streams designed to ensure your agri-business is future-ready.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {consultServices.map((service, idx) => (
-                <div 
-                  key={idx}
-                  className="group bg-white border border-slate-200/60 rounded-[28px] p-6 hover:shadow-md hover:border-brand-primary/20 transition-all duration-300 flex flex-col justify-between h-full"
-                >
-                  <div className="space-y-4">
-                    <img 
-                      src={service.iconPath} 
-                      alt={service.title} 
-                      className="w-16 h-16 object-contain group-hover:scale-105 transition-transform duration-300"
-                    />
-
-                    {/* Title & Description */}
-                    <div className="space-y-2">
-                      <h4 className="text-lg font-heading font-black text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
-                        {service.title}
-                      </h4>
-                      <p className="text-xs sm:text-sm text-slate-500 leading-relaxed font-medium">
-                        {service.desc}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="pt-4 flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 uppercase tracking-wider cursor-pointer mt-4">
-                    <span>Enquire Now</span>
-                    <ArrowRight className="h-3.5 w-3.5" />
+            {/* Hero Highlights - Bottom Row */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-10 mt-12 border-t border-white/10 pt-8">
+              {[
+                { icon: "/images/consultancy/hero-banner-icons/industry-expertise.png", title: "Industry Expertise", desc: "Decades of experience in flour milling" },
+                { icon: "/images/consultancy/hero-banner-icons/data-driven-approach.png", title: "Data Driven Approach", desc: "Practical solutions backed by analysis" },
+                { icon: "/images/consultancy/hero-banner-icons/end-to-end-support.png", title: "End-to-End Support", desc: "From planning to performance improvement" },
+                { icon: "/images/consultancy/hero-banner-icons/sustainable-growth.png", title: "Sustainable Growth", desc: "Build efficient, future-ready milling businesses" }
+              ].map((highlight, idx) => (
+                <div key={idx} className="flex flex-col items-start gap-3">
+                  <img src={highlight.icon} alt={highlight.title} className="w-8 h-8 sm:w-10 sm:h-10 object-contain" />
+                  <div className="space-y-1">
+                    <h4 className="text-white font-bold text-xs sm:text-sm">{highlight.title}</h4>
+                    <p className="text-slate-400 text-[10px] sm:text-xs leading-tight pr-4">{highlight.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
-          </div>
 
+          </div>
         </section>
 
-        {/* CTA */}
-        <section className="w-full bg-slate-950 text-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 text-center space-y-6">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black tracking-tight max-w-xl mx-auto leading-tight">
-            Consult With Our Milling Engineers
-          </h2>
-          <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto font-medium">
-            Contact us to request feasibility reports, budget breakdowns, machinery specifications, and layout designs.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <a
-              href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20your%20Consultancy%20services%20to%2520start%20or%20improve%20my%20milling%20business."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-brand-secondary text-brand-foreground hover:bg-brand-secondary/90 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
-            >
-              <Phone className="w-4 h-4" />
-              Discuss via WhatsApp
-            </a>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
-            >
-              Request Advisory
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+        {/* How We Add Value Section */}
+        <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="text-center max-w-xl mx-auto space-y-3 mb-16 flex flex-col items-center">
+            <h3 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
+              How We Add Value
+            </h3>
+            <div className="flex items-center justify-center gap-1">
+              <div className="w-8 h-px bg-[#D3994B]" />
+              <div className="w-1.5 h-1.5 rounded-sm bg-[#D3994B] transform rotate-45" />
+              <div className="w-8 h-px bg-[#D3994B]" />
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Market Entry Strategy",
+                desc: "Assess opportunities, demand, competition and regulations to build a winning entry strategy.",
+                icon: "/images/consultancy/how-we-add-value/market-entry-and-strategy.png"
+              },
+              {
+                title: "Plant Planning & Design",
+                desc: "Optimize plant layout, capacity, machinery selection and material flow for maximum efficiency.",
+                icon: "/images/consultancy/how-we-add-value/plant-planning-and-design.png"
+              },
+              {
+                title: "Process Optimization",
+                desc: "Improve yield, quality, capacity and energy efficiency through process improvements.",
+                icon: "/images/consultancy/how-we-add-value/process-optimization.png"
+              },
+              {
+                title: "Raw Material & Sourcing",
+                desc: "Guidance on wheat quality, sourcing strategy and inventory management for consistent production.",
+                icon: "/images/consultancy/how-we-add-value/raw-material-and-sourcing.png"
+              },
+              {
+                title: "Cost & Financial Management",
+                desc: "Control costs, reduce wastage and improve profitability with smart financial planning.",
+                icon: "/images/consultancy/how-we-add-value/sustainable-growth.png"
+              },
+              {
+                title: "Operations & People",
+                desc: "Streamline operations, SOPs and workforce management for higher productivity.",
+                icon: "/images/consultancy/how-we-add-value/operations-and-people.png"
+              }
+            ].map((service, idx) => (
+              <div key={idx} className="bg-white border border-slate-100 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center gap-6 shadow-sm hover:shadow-md transition-shadow">
+                <div className="w-16 h-16 shrink-0 bg-slate-50 rounded-full flex items-center justify-center border border-slate-100 p-3">
+                  <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
+                </div>
+                <div className="space-y-1.5">
+                  <h4 className="font-heading font-black text-[#133020] text-[15px] sm:text-base">{service.title}</h4>
+                  <div className="w-6 h-[2px] bg-[#D3994B] mb-2" />
+                  <p className="text-[11px] sm:text-xs text-slate-500 font-medium leading-relaxed">{service.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Why Work With Us Banner */}
+        <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-8">
+          <div className="bg-[#0B2C1C] rounded-[24px] p-8 sm:p-12 shadow-lg flex flex-col lg:flex-row items-center justify-between gap-10">
+            <div className="lg:w-1/2 space-y-4">
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">Why Work With Us?</h3>
+              <p className="text-sm text-slate-300 leading-relaxed font-medium">
+                We combine our deep domain knowledge with hands-on industry experience to deliver practical, result-oriented solutions tailored to your business goals.
+              </p>
+            </div>
+            
+            <div className="lg:w-1/2 flex items-center justify-between gap-4 w-full">
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl sm:text-5xl font-black text-[#D3994B] font-heading">60+</span>
+                <span className="text-white text-[10px] sm:text-[11px] font-bold mt-2 uppercase tracking-wide">Years of Milling<br/>Excellence</span>
+              </div>
+              <div className="w-px h-16 bg-white/20"></div>
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl sm:text-5xl font-black text-[#D3994B] font-heading">20+</span>
+                <span className="text-white text-[10px] sm:text-[11px] font-bold mt-2 uppercase tracking-wide">Countries<br/>Served</span>
+              </div>
+              <div className="w-px h-16 bg-white/20"></div>
+              <div className="flex flex-col items-center text-center">
+                <span className="text-3xl sm:text-5xl font-black text-[#D3994B] font-heading">500+</span>
+                <span className="text-white text-[10px] sm:text-[11px] font-bold mt-2 uppercase tracking-wide">Projects<br/>Supported</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* From Vision to Value Section */}
+        <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-12">
+          <div className="bg-white rounded-[24px] overflow-hidden shadow-sm border border-slate-100 flex flex-col md:flex-row items-stretch">
+            
+            <div className="md:w-1/2 p-8 sm:p-12 flex flex-col justify-center space-y-6">
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#133020]">From Vision to Value</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">
+                Whether you are setting up your first mill, expanding capacity, or looking to improve performance, our consultancy helps you make the right decisions and achieve measurable results.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+                <Link
+                  href="/contact"
+                  className="flex items-center justify-center gap-2 bg-[#0B2C1C] text-white hover:bg-[#0B2C1C]/90 px-6 py-3.5 rounded-xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto"
+                >
+                  DISCUSS YOUR PROJECT <ArrowRight className="w-4 h-4" />
+                </Link>
+                <button
+                  className="flex items-center justify-center gap-2 bg-transparent hover:bg-slate-50 text-[#0B2C1C] border border-[#0B2C1C]/20 px-6 py-3.5 rounded-xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto"
+                >
+                  DOWNLOAD BROCHURE <Download className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+
+            <div className="md:w-1/2 relative min-h-[300px]">
+              <div className="absolute inset-0 bg-[url('/images/consultancy/vision-to-value/vision-to-value.png')] bg-cover bg-center" />
+            </div>
+            
+          </div>
+        </section>
+
+        {/* Who We Work With Section */}
+        <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-20">
+          <div className="bg-[#F0F4F2] rounded-[24px] p-8 sm:p-10 border border-[#E1EAE5]">
+            <div className="text-center mb-8">
+              <h3 className="text-xl font-heading font-black text-[#133020]">Who We Work With</h3>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 text-center">
+              {[
+                { label: "New Entrants", icon: "/images/consultancy/who-we-work-with/new-entrants.png" },
+                { label: "Existing Millers", icon: "/images/consultancy/who-we-work-with/existing-flour-mill-owners.png" },
+                { label: "Investors", icon: "/images/consultancy/who-we-work-with/investors-and-entrepreneurs.png" },
+                { label: "Cooperatives", icon: "/images/consultancy/who-we-work-with/farmer-groups-and-cooperatives.png" },
+                { label: "Agri Businesses", icon: "/images/consultancy/who-we-work-with/agribusinesses.png" },
+                { label: "Food Brands", icon: "/images/consultancy/who-we-work-with/food-brands.png" }
+              ].map((item, idx) => (
+                <div key={idx} className="flex flex-col items-center gap-3 group">
+                  <div className="w-12 h-12 flex items-center justify-center group-hover:-translate-y-1 transition-transform">
+                    <img src={item.icon} alt={item.label} className="w-full h-full object-contain" />
+                  </div>
+                  <span className="text-[10px] sm:text-xs font-bold text-[#133020]">{item.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
       </div>
-
       <Footer />
     </div>
   );

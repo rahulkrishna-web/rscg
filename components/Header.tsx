@@ -77,13 +77,14 @@ export default function Header({ onRequestCallback }: HeaderProps) {
 
   const productCategories = [
     { name: "Turnkey Solutions", desc: "Complete customized flour milling plants from design to commissioning.", href: "/turnkey-projects", icon: Factory },
-    { name: "Flour Mill", desc: "Digital, automatic, vertical, and traditional chakki mills.", href: "/flour-mills", icon: Workflow },
-    { name: "Emery Stones", desc: "Daniya and Danish style emery stones for premium cold-grinding.", href: "/emery-stones", icon: Layers },
+    { name: "Flour Mill", desc: "Digital, automatic, vertical, and traditional chakki mills.", href: "/flour-mills", icon: Workflow, imgIcon: "/icons/products/flourmill_logo.png" },
+    { name: "Emery Stones", desc: "Daniya and Danish style emery stones for premium cold-grinding.", href: "/emery-stones", icon: Layers, imgIcon: "/icons/products/emerystone_logo.png" },
     { name: "Automation", desc: "Wonder Miller PLC system and computerized plant controllers.", href: "/automation", icon: Cpu },
     { name: "Power Saving", desc: "iQuadra smart mills and energy-efficient conveying systems.", href: "/power-saving", icon: Zap },
-    { name: "Grain Storage & Handling", desc: "Heavy-duty steel silos, load cells, and distribution networks.", href: "/grain-storage-handling", icon: Database },
-    { name: "Grain Processing", desc: "High-efficiency scourers, polishers, and entoletors.", href: "/grain-processing", icon: Filter },
-    { name: "Vending Machines", desc: "Floura fresh stone-ground flour on-demand vending machines.", href: "/vending-machines", icon: ShoppingBag },
+    { name: "Grain Storage & Handling", desc: "Heavy-duty steel silos, load cells, and distribution networks.", href: "/grain-storage-handling", icon: Database, imgIcon: "/icons/products/grainstorage_logo.png" },
+    { name: "Grain Processing", desc: "High-efficiency scourers, polishers, and entoletors.", href: "/grain-processing", icon: Filter, imgIcon: "/icons/products/grainprocessing_logo.png" },
+    { name: "Flour Processing", desc: "Engineered flour processing solutions.", href: "/flour-processing", icon: Workflow, imgIcon: "/icons/products/flourmill_logo.png" },
+    { name: "Vending Machines", desc: "Floura fresh stone-ground flour on-demand vending machines.", href: "/vending-machines", icon: ShoppingBag, imgIcon: "/icons/products/vendingmachine_logo.png" },
     { name: "Books", desc: "Industry-standard guides and publications by RS Choyal.", href: "/books", icon: BookOpen },
   ];
 
@@ -93,12 +94,11 @@ export default function Header({ onRequestCallback }: HeaderProps) {
     { name: "Job Grinding", desc: "Contract flour grinding and abrasive dressing services.", href: "/job-grinding", icon: RefreshCw },
     { name: "Consultancy", desc: "Expert advisory for efficiency and capacity expansions.", href: "/consultancy", icon: Handshake },
     { name: "Training", desc: "On-site operator certification and maintenance guidance.", href: "/training", icon: GraduationCap },
-    { name: "Web Solutions", desc: "Digital systems design, IoT monitoring, and cloud telemetry.", href: "/web-solutions", icon: Globe },
     { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/design-media", icon: Palette },
   ];
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-brand-bg/60 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300 relative">
+    <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200/80 transition-all duration-300 relative">
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-20 sm:h-24">
         
         {/* Brand Logos */}
@@ -132,7 +132,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                 className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
-                  <div className="col-span-9 grid grid-cols-3 gap-6">
+                  <div className="col-span-12 grid grid-cols-3 lg:grid-cols-4 gap-6">
                     {aboutItems.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -156,20 +156,6 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                       );
                     })}
                   </div>
-                  {/* Feature highlight box */}
-                  <div className="col-span-3 bg-white/80 border border-brand-primary/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-black text-brand-primary tracking-widest uppercase">RSC Group Heritage</span>
-                      <h5 className="font-bold text-slate-800 text-base leading-snug">60+ Years of Grinding Excellence</h5>
-                      <p className="text-xs text-slate-400 leading-relaxed">
-                        Pioneering advanced abrasive casting and industrial mill solutions since 1968.
-                      </p>
-                    </div>
-                    <Link href="/about#about-us" className="text-xs font-bold text-brand-primary flex items-center gap-1 mt-6 hover:underline">
-                      <span>Learn More</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
-                  </div>
                 </div>
               </div>
             )}
@@ -192,7 +178,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                 className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
-                  <div className="col-span-9 grid grid-cols-3 gap-6">
+                  <div className="col-span-12 grid grid-cols-3 gap-6">
                     {productCategories.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -202,7 +188,11 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
                           <div className="p-2.5 rounded-lg bg-brand-primary/10 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 flex-shrink-0">
-                            <Icon className="h-5 w-5" />
+                            {item.imgIcon ? (
+                              <img src={item.imgIcon} alt={item.name} className="h-5 w-5 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
+                            ) : (
+                              <Icon className="h-5 w-5" />
+                            )}
                           </div>
                           <div>
                             <h4 className="font-bold text-slate-800 text-sm group-hover:text-brand-primary transition-colors">
@@ -215,20 +205,6 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         </Link>
                       );
                     })}
-                  </div>
-                  {/* Feature highlight box */}
-                  <div className="col-span-3 bg-white/80 border border-brand-primary/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-black text-brand-primary tracking-widest uppercase">Smart Grinding</span>
-                      <h5 className="font-bold text-slate-800 text-base leading-snug">Wonder Miller Automation</h5>
-                      <p className="text-xs text-slate-400 leading-relaxed">
-                        Transforming manual mills with computerized smart controllers and load sensors.
-                      </p>
-                    </div>
-                    <Link href="/catalog" className="text-xs font-bold text-brand-primary flex items-center gap-1 mt-6 hover:underline">
-                      <span>View Full Catalog</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -252,7 +228,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                 className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
-                  <div className="col-span-9 grid grid-cols-3 gap-6">
+                  <div className="col-span-12 grid grid-cols-3 gap-6">
                     {serviceItems.map((item) => {
                       const Icon = item.icon;
                       return (
@@ -275,20 +251,6 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         </Link>
                       );
                     })}
-                  </div>
-                  {/* Feature highlight box */}
-                  <div className="col-span-3 bg-white/80 border border-brand-primary/10 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
-                    <div className="space-y-3">
-                      <span className="text-[10px] font-black text-brand-primary tracking-widest uppercase">Expert Consulting</span>
-                      <h5 className="font-bold text-slate-800 text-base leading-snug">Turnkey 360 Milling Support</h5>
-                      <p className="text-xs text-slate-400 leading-relaxed">
-                        Custom design layouts, operator certification, and system audit checks.
-                      </p>
-                    </div>
-                    <Link href="/turnkey-projects" className="text-xs font-bold text-brand-primary flex items-center gap-1 mt-6 hover:underline">
-                      <span>Contact Us</span>
-                      <ArrowRight className="h-3.5 w-3.5" />
-                    </Link>
                   </div>
                 </div>
               </div>
@@ -396,9 +358,13 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <Icon className="h-4 w-4 text-brand-primary" />
+                        {item.imgIcon ? (
+                          <img src={item.imgIcon} alt={item.name} className="h-4 w-4 object-contain" />
+                        ) : (
+                          <Icon className="h-4 w-4 text-brand-primary" />
+                        )}
                         <span>{item.name}</span>
                       </Link>
                     );
