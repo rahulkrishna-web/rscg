@@ -52,7 +52,7 @@ export default function FlourProcessingPage() {
           />
         </div>
         {/* Dark Tint Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a3118] via-[#0a3118]/90 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0a3118] from-0% via-[#0a3118]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
         
         {/* Banner Text Content */}
         <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 z-20 h-full flex flex-col justify-center">

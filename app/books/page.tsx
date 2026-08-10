@@ -51,7 +51,7 @@ export default function BooksPage() {
           </div>
           
           {/* Tint Overlay for gradient blend if needed */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#133020] via-[#133020]/90 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#133020] from-0% via-[#133020]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           
           {/* Banner Text Content */}
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">

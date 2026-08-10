@@ -56,7 +56,7 @@ export default function FacilityCentrePage() {
         <section className="relative w-full h-[400px] sm:h-[480px] overflow-hidden flex items-center bg-[#0D301F]">
           <div className="absolute inset-0 bg-[url('/images/facility-centre/hero-image/turnkey_projects_hero.png')] bg-cover bg-right sm:bg-center" />
           {/* A gradient overlay that is solid green on the left, fading to transparent on the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center pb-8 sm:pb-0">
             <div className="space-y-4 max-w-2xl">

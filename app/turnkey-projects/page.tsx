@@ -121,7 +121,7 @@ export default function TurnkeyProjects() {
       location: "United Kingdom",
       image: "/images/projects/case_studies/thumbnails/carr_flourmill.jpg",
       logo: "/images/projects/case_studies/logos/carr_flour_mill.png",
-      slug: "carrs-flour-uk"
+      slug: "carrs-flour"
     },
     {
       title: "Al Ghurair Foods",
@@ -129,7 +129,7 @@ export default function TurnkeyProjects() {
       location: "Dubai, UAE",
       image: "/images/projects/case_studies/thumbnails/Alghuriar.jpg",
       logo: "/images/projects/case_studies/logos/al_ghurair.png",
-      slug: "al-ghurair-foods-dubai-uae"
+      slug: "al-ghurair-foods"
     },
     {
       title: "Bakhresa Group",
@@ -137,7 +137,7 @@ export default function TurnkeyProjects() {
       location: "Tanzania, East Africa",
       image: "/images/projects/case_studies/thumbnails/bakhresa.jpg",
       logo: "/images/projects/case_studies/logos/bakhresa.png",
-      slug: "bakhresa-group-tanzania"
+      slug: "bakhresa-group"
     },
     {
       title: "Winnie's pure health",
@@ -145,7 +145,7 @@ export default function TurnkeyProjects() {
       location: "Kenya, East Africa",
       image: "/images/projects/case_studies/thumbnails/winnie_pure_health.jpg",
       logo: "/images/projects/case_studies/logos/winnie_pure_health.png",
-      slug: "winnies-pure-health-kenya"
+      slug: "winnies-pure-health"
     }
   ];
 
@@ -161,17 +161,17 @@ export default function TurnkeyProjects() {
 
       {/* Hero Section */}
       <section className="w-full relative z-10 bg-[#06331C] text-white py-20 lg:py-28 overflow-hidden">
-        {/* Full-bleed Right Image with Gradient Mask */}
-        <div className="absolute top-0 right-0 w-full lg:w-[60%] h-full opacity-40 lg:opacity-100">
-          <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#06331C] via-[#06331C]/90 to-transparent z-10"></div>
+        {/* Full-bleed Background Image with Gradient Mask */}
+        <div className="absolute inset-0 z-0 opacity-40 lg:opacity-100">
           <Image 
-            src="/images/plants/turnkey_solutions.webp" 
+            src="/images/plants/turnkey_solutions_upscaled.png" 
             alt="RS Choyal Turnkey Plant Rendering" 
             fill
-            className="object-cover object-left scale-[1.15] origin-left"
+            className="object-cover object-[center_75%]"
             priority
           />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#06331C] from-0% via-[#06331C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full"></div>
 
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20">
           <div className="max-w-2xl space-y-8">
@@ -242,7 +242,7 @@ export default function TurnkeyProjects() {
             Engineering the Future of Smart Flour Milling
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            At RS Choyal, our turnkey projects are designed with state-of-the-art technologies that set new benchmarks in the milling industry. We combine **60+ years of grinding heritage** with modern electronics to engineer plants that achieve up to **30% electricity savings**, optimized layout flows, low maintenance, and exceptionally clean, dust-free operations.
+            At RS Choyal, our turnkey projects are designed with state-of-the-art technologies that set new benchmarks in the milling industry. We combine <span className="font-bold">60+ years of grinding heritage</span> with modern electronics to engineer plants that achieve up to <span className="font-bold">30% electricity savings</span>, optimized layout flows, low maintenance, and exceptionally clean, dust-free operations.
           </p>
         </div>
       </section>
@@ -347,8 +347,9 @@ export default function TurnkeyProjects() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {highlightedProjects.map((proj, idx) => (
-              <div 
+              <Link 
                 key={idx} 
+                href={`/projects/${proj.slug}`}
                 className="group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="sm:w-[40%] h-48 sm:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
@@ -375,19 +376,16 @@ export default function TurnkeyProjects() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between">
-                    <div className="h-8 relative w-24">
+                  <div className="mt-6 flex items-center justify-between">
+                    <div className="h-16 relative w-48">
                       <Image src={proj.logo} alt={proj.title} fill className="object-contain object-left" />
                     </div>
-                    <Link 
-                      href={`/projects/${proj.slug}`} 
-                      className="text-xs font-black text-brand-primary uppercase tracking-wider flex items-center gap-1.5 hover:text-brand-secondary transition-colors"
-                    >
-                      Learn More <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    <div className="text-xs font-black text-brand-primary uppercase tracking-wider flex items-center gap-1.5 group-hover:text-brand-secondary transition-colors">
+                      Learn More <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 

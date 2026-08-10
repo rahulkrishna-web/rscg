@@ -154,7 +154,7 @@ export default function BatchProductionPage() {
           </div>
           
           {/* Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#111111] from-0% via-[#111111]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
 
           {/* Hero Content */}
           <div className="relative z-20 w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24">

@@ -14,7 +14,7 @@ export default function ConsultancyPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[500px] sm:h-[600px] overflow-hidden flex flex-col justify-end bg-[#0D301F]">
           <div className="absolute inset-0 bg-[url('/images/consultancy/hero-banner/consultancy_hero.png')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C1C] via-[#0B2C1C]/60 to-transparent z-10 h-1/2 mt-auto" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-between pt-16 pb-12 sm:pb-16">

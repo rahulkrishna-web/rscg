@@ -71,7 +71,7 @@ export default function ProjectsPage() {
               style={{ backgroundImage: `url(${src})` }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
             <div className="space-y-4 max-w-xl">
@@ -124,7 +124,7 @@ export default function ProjectsPage() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {filteredProjects.map((project) => {
-                const coverImage = project.images.length > 0 ? project.images[0] : "/images/plants/turnkey_solutions.webp";
+                const coverImage = project.images.length > 0 ? project.images[0] : "/images/plants/turnkey_solutions_cropped.webp";
                 return (
                   <Link
                     key={project.slug}

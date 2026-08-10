@@ -72,7 +72,7 @@ export default function Grain360Page() {
         {/* Hero Section */}
         <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden flex items-center bg-[#133020]">
           <div className="absolute inset-0 bg-[url('/images/services/grain360/grain_hero.jpg')] bg-cover bg-center opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#133020] via-[#133020]/90 to-transparent z-10" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#133020] from-0% via-[#133020]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20">
             <div className="space-y-4 max-w-2xl">
               <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase">

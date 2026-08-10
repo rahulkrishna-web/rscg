@@ -14,7 +14,7 @@ export default function DesignMediaPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[500px] sm:h-[600px] overflow-hidden flex flex-col justify-end bg-[#0D301F]">
           <div className="absolute inset-0 bg-[url('/images/design-media/hero-image/design_hero.png')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C] via-[#0B2C1C]/90 to-transparent z-10 w-full sm:w-2/3 lg:w-3/5" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0B2C1C] via-[#0B2C1C]/60 to-transparent z-10 h-1/2 mt-auto" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-between pt-16 pb-12 sm:pb-16">
@@ -61,92 +61,92 @@ export default function DesignMediaPage() {
 
         {/* Technical Design Section */}
         <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 max-w-lg">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-6 lg:space-y-8 lg:pr-8">
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
                   <img src="/images/design-media/icons/technical-design.png" alt="Technical Design" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#133020]">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
                   Technical Design
                 </h2>
               </div>
-              <div className="w-12 h-0.5 bg-slate-300" />
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+              <div className="w-16 h-1 bg-slate-300" />
+              <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">
                 Our engineers translate complex requirements into practical, manufacturable solutions.
               </p>
               
-              <ul className="space-y-3 pt-4">
+              <ul className="space-y-4 pt-4">
                 {[
                   "CAD design",
                   "Design for manufacture and assembly",
                   "Material and process selection",
                   "Cost reduction and value engineering"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-sm text-slate-700 font-medium">
-                    <CheckCircle2 className="w-5 h-5 text-slate-400 stroke-1" />
+                  <li key={idx} className="flex items-center gap-4 text-base lg:text-lg text-slate-700 font-medium">
+                    <CheckCircle2 className="w-6 h-6 text-slate-400 stroke-[1.5]" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="rounded-[24px] overflow-hidden shadow-lg border border-slate-100 relative h-64 sm:h-[400px]">
+            <div className="rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 relative h-[300px] sm:h-[450px] lg:h-[550px]">
               <img src="/images/design-media/images/technicaldesign_supplementalimg.png" alt="Technical Design Software" className="w-full h-full object-cover" />
             </div>
           </div>
         </section>
 
         {/* Design for Manufacturing Section */}
-        <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/50">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="rounded-[24px] overflow-hidden shadow-lg border border-slate-100 relative h-64 sm:h-[400px] order-2 lg:order-1">
+        <section className="w-full py-24 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white/50">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 relative h-[300px] sm:h-[450px] lg:h-[550px] order-2 lg:order-1">
               <img src="/images/design-media/images/designformanufacture_supplementalimg.png" alt="Design for Manufacturing Factory" className="w-full h-full object-cover" />
             </div>
 
-            <div className="space-y-6 max-w-lg order-1 lg:order-2">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
+            <div className="space-y-6 lg:space-y-8 lg:pl-8 order-1 lg:order-2">
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
                   <img src="/images/design-media/icons/design-for-manufacturing.png" alt="Design for Manufacturing" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#133020]">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
                   Design for Manufacturing
                 </h2>
               </div>
-              <div className="w-12 h-0.5 bg-slate-300" />
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+              <div className="w-16 h-1 bg-slate-300" />
+              <p className="text-base sm:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">
                 We design plants and machinery that are not only efficient to operate, but also reliable and economical to manufacture.
               </p>
 
               {/* Metrics */}
-              <div className="flex items-center gap-8 pt-4 pb-2">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#E1EAE5] flex items-center justify-center text-[#133020]">
-                    <ClipboardCheck className="w-6 h-6 stroke-[1.5]" />
+              <div className="flex flex-col sm:flex-row sm:items-center gap-8 lg:gap-12 pt-6 pb-4">
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-[#E1EAE5] flex items-center justify-center text-[#133020]">
+                    <ClipboardCheck className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-black font-heading text-[#133020]">265+</h4>
-                    <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide leading-tight">Turnkey Projects<br/>Designed & Delivered</p>
+                    <h4 className="text-3xl lg:text-4xl font-black font-heading text-[#133020]">265+</h4>
+                    <p className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wide leading-tight mt-1">Turnkey Projects<br/>Designed & Delivered</p>
                   </div>
                 </div>
-                <div className="w-px h-12 bg-slate-200" />
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-[#F9F6F0] flex items-center justify-center text-[#D3994B]">
-                    <Lightbulb className="w-6 h-6 stroke-[1.5]" />
+                <div className="hidden sm:block w-px h-16 bg-slate-200" />
+                <div className="flex items-center gap-5">
+                  <div className="w-14 h-14 rounded-full bg-[#F9F6F0] flex items-center justify-center text-[#D3994B]">
+                    <Lightbulb className="w-7 h-7 stroke-[1.5]" />
                   </div>
                   <div>
-                    <h4 className="text-2xl font-black font-heading text-[#133020]">42+</h4>
-                    <p className="text-[10px] sm:text-xs font-bold text-slate-500 uppercase tracking-wide leading-tight">Innovations<br/>Developed</p>
+                    <h4 className="text-3xl lg:text-4xl font-black font-heading text-[#133020]">42+</h4>
+                    <p className="text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wide leading-tight mt-1">Innovations<br/>Developed</p>
                   </div>
                 </div>
               </div>
 
               {/* Contact Prompt */}
-              <div className="flex items-start gap-4 pt-4 border-t border-slate-100">
-                <div className="w-10 h-10 rounded-full bg-[#133020] flex items-center justify-center text-white shrink-0 mt-1">
-                  <Headset className="w-5 h-5 stroke-[1.5]" />
+              <div className="flex items-start gap-5 pt-6 border-t border-slate-200">
+                <div className="w-12 h-12 rounded-full bg-[#133020] flex items-center justify-center text-white shrink-0 mt-1 shadow-md">
+                  <Headset className="w-6 h-6 stroke-[1.5]" />
                 </div>
-                <p className="text-[13px] text-slate-600 font-medium leading-relaxed">
+                <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
                   If you would like to discuss your requirement with our experts, fill out our <Link href="/contact" className="text-[#D3994B] font-bold hover:underline">contact form</Link> and we will reach out to you.
                 </p>
               </div>
@@ -155,19 +155,19 @@ export default function DesignMediaPage() {
         </section>
 
         {/* Packaging Design Section */}
-        <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6 max-w-lg">
-              <div className="flex items-center gap-4">
-                <div className="w-16 h-16 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
+        <section className="w-full py-24 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <div className="space-y-6 lg:space-y-8 lg:pr-8">
+              <div className="flex items-center gap-6">
+                <div className="w-20 h-20 shrink-0 rounded-2xl overflow-hidden bg-[#0B2C1C]">
                   <img src="/images/design-media/icons/packaging-design.png" alt="Packaging Design" className="w-full h-full object-cover" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-black text-[#133020]">
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
                   Packaging Design
                 </h2>
               </div>
-              <div className="w-12 h-0.5 bg-slate-300" />
-              <div className="space-y-4 text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
+              <div className="w-16 h-1 bg-slate-300" />
+              <div className="space-y-5 text-base sm:text-lg lg:text-xl text-slate-600 font-medium leading-relaxed">
                 <p>
                   We create packaging that helps products stand out, communicate trust, and build a consistent brand presence.
                 </p>
@@ -177,7 +177,7 @@ export default function DesignMediaPage() {
               </div>
             </div>
             
-            <div className="rounded-[24px] overflow-hidden shadow-lg border border-slate-100 relative h-64 sm:h-[350px]">
+            <div className="rounded-[32px] overflow-hidden shadow-2xl border border-slate-100 relative h-[300px] sm:h-[450px] lg:h-[550px]">
               <img src="/images/design-media/images/packagingdesign.png" alt="Packaging Design Examples" className="w-full h-full object-cover" />
             </div>
           </div>
