@@ -150,19 +150,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               {product.desc}
             </p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2.5 mb-10">
-              {product.keyHighlights.map((tag, idx) => (
-                <span key={tag} className={`px-3.5 py-1.5 ${tagColors[idx % tagColors.length]} text-white text-xs font-bold rounded-md whitespace-nowrap shadow-sm`}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+
 
             {/* Capacity Stats Grid */}
-            <div className="grid grid-cols-3 gap-x-6 gap-y-8 mb-8 border-b border-slate-100 pb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
               {product.heroStats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center">
+                <div key={idx} className="flex flex-col items-center text-center bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm">
                   <p className="text-xl sm:text-2xl font-black text-[#0a4c2a]">{stat.value}</p>
                   <p className="text-xs font-medium text-slate-500 mt-1">{stat.label}</p>
                   {stat.sublabel && (
@@ -176,29 +169,42 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             {product.models && product.models.length > 1 && (
               <div className="mb-8 border-b border-slate-100 pb-8">
                 <h4 className="text-sm font-bold text-slate-800 mb-3">Select Model</h4>
-                <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col gap-3">
                   {product.models.map((mod, idx) => (
                     <button
                       key={idx}
                       onClick={() => setSelectedModelIndex(idx)}
-                      className={`text-left p-3 rounded-xl border transition-all ${
+                      className={`text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${
                         selectedModelIndex === idx 
                           ? 'border-brand-primary bg-brand-primary/5 ring-1 ring-brand-primary/20 shadow-sm' 
                           : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
-                      <div className={`font-semibold text-sm mb-1 ${selectedModelIndex === idx ? 'text-brand-primary' : 'text-slate-800'}`}>
+                      <div className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${selectedModelIndex === idx ? 'border-brand-primary bg-brand-primary' : 'border-slate-300 bg-white'}`}>
+                        {selectedModelIndex === idx && <div className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />}
+                      </div>
+                      <div className="flex-1">
+                        <div className={`font-semibold text-sm mb-1.5 ${selectedModelIndex === idx ? 'text-brand-primary' : 'text-slate-800'}`}>
                         {mod.name}
                       </div>
-                      {mod.tableData && (mod.tableData['Size'] || mod.tableData['Size Available']) && (
-                        <div className="text-[11px] text-slate-500">Size: {mod.tableData['Size'] || mod.tableData['Size Available']}</div>
-                      )}
-                      {mod.tableData && mod.tableData['Capacity'] && (
-                        <div className="text-[11px] text-slate-500">Cap: {mod.tableData['Capacity']}</div>
-                      )}
-                      {mod.tableData && mod.tableData['Power Load'] && (
-                        <div className="text-[11px] text-slate-500">Power: {mod.tableData['Power Load']}</div>
-                      )}
+                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                        {mod.tableData && (mod.tableData['Size'] || mod.tableData['Size Available']) && (
+                          <div className="text-[11px] text-slate-500">
+                            <span className="font-semibold text-slate-400">Size:</span> {mod.tableData['Size'] || mod.tableData['Size Available']}
+                          </div>
+                        )}
+                        {mod.tableData && mod.tableData['Capacity'] && (
+                          <div className="text-[11px] text-slate-500">
+                            <span className="font-semibold text-slate-400">Cap:</span> {mod.tableData['Capacity']}
+                          </div>
+                        )}
+                        {mod.tableData && mod.tableData['Power Load'] && (
+                          <div className="text-[11px] text-slate-500">
+                            <span className="font-semibold text-slate-400">Power:</span> {mod.tableData['Power Load']}
+                          </div>
+                        )}
+                      </div>
+                    </div>
                     </button>
                   ))}
                 </div>
@@ -248,10 +254,19 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6 text-[11px] font-bold text-slate-500 mt-2">
-              <span className="flex items-center gap-1.5"><ShieldCheck className="w-4 h-4 text-[#1eb557]" /> 1 Year Warranty</span>
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#1eb557]" /> Pan India Delivery</span>
-              <span className="flex items-center gap-1.5"><CheckCircle className="w-4 h-4 text-[#1eb557]" /> After Sales Support</span>
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4 pt-4">
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">Pan India Delivery</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+              </div>
             </div>
             
           </div>
