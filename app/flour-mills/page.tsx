@@ -110,7 +110,7 @@ export default function FlourMills() {
         </div>
       </section>
 
-      <section ref={productsSectionRef} className="py-24 bg-slate-50 relative">
+      <section className="py-24 bg-slate-50 relative">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -152,7 +152,7 @@ export default function FlourMills() {
         </div>
       </section>
 
-      <section className="py-24 bg-white border-t border-slate-100">
+      <section ref={productsSectionRef} className="py-24 bg-white border-t border-slate-100 scroll-mt-20">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 space-y-12">
           
           {/* Tab Filter bar */}
