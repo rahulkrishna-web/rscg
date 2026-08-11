@@ -17,7 +17,7 @@ export default function PowerSavingPage() {
       tag: "Save up to 30%",
       desc: "A high-efficiency automated stone mill engineered for improved output, consistent flour quality, and lower power usage.",
       img: "/images/power-saving/wondermill_supplementimg.png",
-      href: "/flour-mills/wonder-mill",
+      href: "/catalog/wonder-mill",
       code: "WONDERMILL"
     },
     {
@@ -25,7 +25,7 @@ export default function PowerSavingPage() {
       tag: "Save up to 30%",
       desc: "An intelligent PLC-based automation system designed to optimize stone milling, maximize productivity, and ensure consistent grinding performance.",
       img: "/images/power-saving/wondermiller_supplementalimg.jpg",
-      href: "/automation/wonder-miller",
+      href: "/catalog/wonder-miller",
       code: "WONDERMILLER"
     },
     {
@@ -33,7 +33,7 @@ export default function PowerSavingPage() {
       tag: "Save up to 30%",
       desc: "A smart mill solution engineered to deliver up to 30% power savings, higher productivity, and precision-controlled flour production.",
       img: "/images/power-saving/quadra_supplementalimg.png",
-      href: "/flour-mills/iquadra",
+      href: "/catalog/iquadra-mill",
       code: "IQUADRA"
     },
     {
@@ -41,7 +41,7 @@ export default function PowerSavingPage() {
       tag: "Save 15-30%",
       desc: "A versatile stone flour milling solution designed for reliable grinding, superior flour quality, and efficient daily operation.",
       img: "/images/power-saving/floura_supplementalimg.png",
-      href: "/flour-mills/floura",
+      href: "/catalog/floura",
       code: "FLOURA"
     },
     {
@@ -49,7 +49,7 @@ export default function PowerSavingPage() {
       tag: "3-4 min per groove dressed",
       desc: "A precision stone dressing machine engineered to restore grinding efficiency, extend stone life, and minimize production downtime.",
       img: "/images/power-saving/emerydresser_supplementalimg.jpg",
-      href: "/products/emery-stone-dresser",
+      href: "/catalog/emery-stone-dresser",
       code: "STONEDRESSER"
     },
     {
@@ -57,7 +57,7 @@ export default function PowerSavingPage() {
       tag: "Save 10-30%",
       desc: "A fully automated pneumatic conveying system designed for efficient material handling, reliable operation, and reduced energy consumption.",
       img: "/images/power-saving/neomatic_supplementimg.png",
-      href: "/products/neomatic",
+      href: "/catalog",
       code: "NEOMATIC"
     }
   ];
