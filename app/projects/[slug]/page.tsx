@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Factory, MapPin, Calendar, Box, Cpu, FileText, CheckCircle, ChevronLeft, ChevronRight, Phone } from "lucide-react";
@@ -8,13 +8,31 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { projectsData } from "../projectsData";
 
+const HERO_BANNER_IMAGES = [
+  "/case-studies/herobanner/herobanner.jpg",
+  "/case-studies/herobanner/herobanner.png",
+  "/case-studies/herobanner/herobanner(1).jpg",
+  "/case-studies/herobanner/herobanner(2).jpg",
+];
+
 export default function ProjectDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
   const currentProject = projectsData.find((project) => project.slug === slug);
 
-  // Carousel state for images
+  // Carousel state for project gallery images
   const [activeImageIdx, setActiveImageIdx] = useState(0);
+
+  // Hero slider state
+  const [heroSlide, setHeroSlide] = useState(0);
+
+  // Auto-rotate hero slider
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setHeroSlide((prev) => (prev + 1) % HERO_BANNER_IMAGES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   if (!currentProject) {
     return (
@@ -70,33 +88,59 @@ export default function ProjectDetailPage() {
           </div>
         </div>
 
-        {/* New Hero Section */}
-        <section className="w-full relative lg:h-[500px] xl:h-[600px] flex flex-col lg:block overflow-hidden bg-[#0a2313]">
-           {/* Desktop/Global Background Image */}
-           <div className="absolute inset-0 w-full h-full">
-             <img src={currentImage} alt={currentProject.title} className="w-full h-full object-cover lg:object-right opacity-40 lg:opacity-100" />
-           </div>
+        {/* Hero Section — Full-background image slider */}
+        <section className="w-full relative h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[600px] overflow-hidden bg-[#0B1510]">
+           {/* Slider images with crossfade */}
+           {HERO_BANNER_IMAGES.map((src, idx) => (
+             <div
+               key={src}
+               className="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out"
+               style={{ opacity: idx === heroSlide ? 1 : 0 }}
+             >
+               <img src={src} alt={`Plant showcase ${idx + 1}`} className="w-full h-full object-cover" />
+             </div>
+           ))}
 
-           {/* Green Overlay - Diagonal on Desktop, Full on Mobile */}
-           <div 
-             className="relative lg:absolute top-0 left-0 bottom-0 w-full lg:w-[70%] xl:w-[60%] bg-[#0a2313]/90 lg:bg-[#0a2313] z-10 lg:h-full flex items-center [clip-path:polygon(0_0,100%_0,100%_100%,0_100%)] lg:[clip-path:polygon(0_0,100%_0,75%_100%,0_100%)]"
-           >
-             <div className="w-full p-8 sm:p-12 lg:p-16 xl:pl-24 max-w-2xl space-y-4 sm:space-y-6">
-                <span className="text-xl sm:text-3xl font-bold font-heading text-white">Case Study</span>
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#A6CE39] leading-tight">
-                  Real Projects.<br/>Real Impact.
+           {/* Dark overlay for text contrast */}
+           <div className="absolute inset-0 bg-[#0B1510]/60 z-10" />
+
+           {/* Hero content */}
+           <div className="relative z-20 h-full flex flex-col items-start justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
+             <div className="max-w-3xl space-y-5 sm:space-y-6">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight font-heading">
+                  Transforming Ideas into<br/>Reality
                 </h1>
-                <p className="text-sm sm:text-base text-white/80 leading-relaxed font-medium max-w-md lg:max-w-xl">
-                  Explore how our engineering, technology, and turnkey solutions have helped clients build efficient, reliable, and future-ready flour milling plants.
+                <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-relaxed font-medium max-w-2xl">
+                  From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
                 </p>
+                <div className="pt-2">
+                  <Link
+                    href="/projects"
+                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] px-8 py-3.5 rounded-xl font-black uppercase tracking-widest text-xs transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)]"
+                  >
+                    Explore Projects <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+             </div>
+
+             {/* Dot indicators */}
+             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+               {HERO_BANNER_IMAGES.map((_, idx) => (
+                 <button
+                   key={idx}
+                   onClick={() => setHeroSlide(idx)}
+                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === heroSlide ? "bg-[#A6CE39] scale-110" : "bg-white/40 hover:bg-white/60"}`}
+                   aria-label={`Go to slide ${idx + 1}`}
+                 />
+               ))}
              </div>
            </div>
         </section>
 
-        {/* Quick Facts Bar */}
-        <div className="relative z-30 -mt-16 sm:-mt-24 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
+        {/* Quick Facts Bar — straddles hero boundary 50/50 */}
+        <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-100">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-100">
                <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
                   <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
                     <Factory className="w-5 h-5 text-brand-primary" />
@@ -133,21 +177,12 @@ export default function ProjectDetailPage() {
                     <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.projectType || "N/A"}</span>
                   </div>
                </div>
-               <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left px-4 gap-4">
-                  <div className="bg-slate-50 p-3 rounded-full flex-shrink-0">
-                    <Calendar className="w-5 h-5 text-brand-primary" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Completion</span>
-                    <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.commissioned || "N/A"}</span>
-                  </div>
-               </div>
             </div>
           </div>
         </div>
 
         {/* Project Overview */}
-        <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24">
+        <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 pt-4 sm:pt-6 lg:pt-12 pb-16 lg:pb-24 -mt-8 sm:-mt-10 lg:-mt-12">
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16">
              <div className="space-y-6 lg:order-1 order-2">
                 <div className="mb-8">
@@ -171,11 +206,6 @@ export default function ProjectDetailPage() {
                   })}
                 </div>
 
-                <div className="pt-8">
-                  <Link href="/contact" className="inline-flex items-center gap-2 bg-[#06331C] hover:bg-[#0a4526] text-white px-8 py-3.5 rounded-xl font-bold transition-colors shadow-sm text-xs tracking-widest uppercase">
-                    Discuss Your Project <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
              </div>
              
              <div className="lg:order-2 order-1 relative">

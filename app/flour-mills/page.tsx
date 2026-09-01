@@ -20,19 +20,19 @@ export default function FlourMills() {
   const categories = [
     {
       name: "Digital Mills",
-      image: "/images/plants/tablet_controlled_plant.webp",
+      image: "/category-selection-img/digital_supplementimg.png",
       desc: "Touch screen PLC-driven smart grinders.",
       filter: "Digital Mills"
     },
     {
       name: "Semi-Automatic",
-      image: "/images/plants/03.webp",
+      image: "/category-selection-img/semiautomatic_supplementalimg.png",
       desc: "Sensor-controlled modern mill plants.",
       filter: "Semi-Automatic"
     },
     {
       name: "Horizontal Mills / Sheller",
-      image: "/images/plants/2_1.webp",
+      image: "/category-selection-img/horizontalmill_supplementimg.png",
       desc: "High capacity gear and pulley drive experts.",
       filter: "Horizontal Mills / Sheller"
     }
@@ -58,22 +58,20 @@ export default function FlourMills() {
             src="/images/plants/flourmill_hero.png" 
             alt="Flour Milling Plants" 
             fill
-            className="object-cover object-center"
+            className="object-cover object-right lg:object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/95 via-[#0B1510]/80 to-transparent"></div>
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="w-full max-w-2xl">
-            <span className="inline-block py-1.5 px-3 rounded-lg bg-brand-primary/20 text-brand-primary font-bold text-xs tracking-wider uppercase mb-6 backdrop-blur-sm border border-brand-primary/20">
+            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-6 shadow-sm border border-[#f7b032]">
               Commercial Milling
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-6 tracking-tight">
               Flour Mills & <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-emerald-400">
-                Grinding Plants
-              </span>
+              Grinding Plants
             </h1>
             <p className="text-lg sm:text-xl text-slate-200 mb-10 leading-relaxed font-light max-w-xl">
               Advanced stone milling technology engineered for high-capacity continuous production, uniform flour quality, and long-term reliability.
@@ -82,35 +80,40 @@ export default function FlourMills() {
             <div className="flex flex-wrap gap-4">
               <button 
                 onClick={() => productsSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-brand-primary hover:bg-brand-secondary text-white font-bold px-8 py-3.5 rounded-xl transition-all duration-300 shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:-translate-y-0.5 text-sm sm:text-base flex items-center gap-2 cursor-pointer"
+                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
               >
-                <span>View Products</span>
+                <span>Explore Products</span>
                 <ArrowRight className="h-4 w-4" />
               </button>
             </div>
           </div>
         </div>
 
-        {/* Bottom Info Bar - Only visible on desktop */}
-        <div className="absolute bottom-0 left-0 w-full bg-slate-900/80 backdrop-blur-md border-t border-white/10 hidden md:block">
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-4 flex justify-between items-center text-sm font-medium">
-            <div className="flex items-center gap-2 text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
-              Digital Mills
-            </div>
-            <div className="flex items-center gap-2 text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
-              Semi-Automatic Mills
-            </div>
-            <div className="flex items-center gap-2 text-slate-300">
-              <span className="w-2 h-2 rounded-full bg-brand-primary"></span>
-              Operate from Anywhere
-            </div>
-          </div>
-        </div>
       </section>
 
-      <section className="py-24 bg-slate-50 relative">
+      {/* Key Proof Points Bar */}
+      <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
+        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
+          
+          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
+          </div>
+
+          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-Automatic & Sheller Mills</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
+          </div>
+
+          <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate From Anywhere</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Track status and remote working easily with connected milling technology.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <section className="pt-4 sm:pt-8 lg:pt-12 pb-24 bg-slate-50 relative -mt-8 sm:-mt-12 lg:-mt-16">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
@@ -129,12 +132,12 @@ export default function FlourMills() {
                 onClick={() => handleCategorySelect(cat.filter)}
                 className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/50 shadow-xs hover:shadow-xl hover:border-brand-primary/20 hover:-translate-y-1 transition-all duration-300 text-center cursor-pointer"
               >
-                <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-slate-50 border-b border-slate-100">
+                <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100">
                   <Image 
                     src={cat.image} 
                     alt={cat.name}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6 sm:p-8 w-full flex flex-col items-center">
@@ -180,16 +183,16 @@ export default function FlourMills() {
                 href={`/flour-mills/${prod.id}`}
                 className="group flex flex-col bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
-                <div className="relative aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100">
+                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100">
                   <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black uppercase text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
                     {prod.category}
                   </span>
-                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10"></div>
+                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
                   <Image 
                     src={prod.heroImage} 
                     alt={prod.title} 
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" 
                   />
                 </div>
 

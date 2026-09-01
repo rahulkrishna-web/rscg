@@ -160,89 +160,95 @@ export default function TurnkeyProjects() {
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="w-full relative z-10 bg-[#06331C] text-white py-20 lg:py-28 overflow-hidden">
-        {/* Full-bleed Background Image with Gradient Mask */}
-        <div className="absolute inset-0 z-0 opacity-40 lg:opacity-100">
+      <section className="w-full relative z-10 bg-[#0B1510] text-white pt-16 pb-12 lg:pt-20 lg:pb-16">
+        {/* Full-bleed Background Image with High Visibility */}
+        <div className="absolute inset-0 z-0 opacity-95 overflow-hidden">
           <Image 
-            src="/images/plants/turnkey_solutions_upscaled.png" 
+            src="/turnkey_projects_hero.png" 
             alt="RS Choyal Turnkey Plant Rendering" 
             fill
-            className="object-cover object-[center_75%]"
+            className="object-cover object-[center_right]"
             priority
           />
+          {/* Dark-charcoal gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510] via-[#0B1510]/75 via-35% to-black/20 z-10 w-full"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#06331C] from-0% via-[#06331C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full"></div>
 
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20">
-          <div className="max-w-2xl space-y-8">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 space-y-12">
+          
+          <div className="max-w-2xl space-y-6">
             
-            <div className="flex items-center gap-4">
-              <span className="text-brand-tertiary font-bold text-xs tracking-widest uppercase">
-                Turnkey Projects Division
-              </span>
-              <div className="h-[1px] w-12 bg-brand-tertiary"></div>
+            {/* Pill Badge */}
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 border border-amber-400/50 text-amber-300 text-[11px] font-bold tracking-widest uppercase backdrop-blur-md">
+              <Building className="h-3.5 w-3.5 text-amber-400" />
+              <span>Turnkey Projects Division</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[68px] font-bold tracking-tight leading-[1.1] text-white">
-              Turnkey <span className="text-brand-tertiary">Projects.</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-bold tracking-tight leading-[1.1] text-white">
+              Turnkey Projects.
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-xl font-normal">
               Customized and automated solutions for grain cleaning, grinding, and sorting plants up to 1000 TPD capacity, delivered end-to-end.
             </p>
             
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 px-6 py-3.5 border border-brand-tertiary text-brand-tertiary hover:bg-brand-tertiary hover:text-slate-900 rounded text-sm font-bold uppercase tracking-wider transition-all duration-300"
+                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#D99B26] hover:bg-[#c4891e] text-slate-950 rounded-full text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-[0_0_30px_rgba(217,155,38,0.7)] hover:scale-[1.02] transition-all duration-300"
               >
                 <span>Request a Project Quote</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
 
-            {/* Feature Icons Row */}
-            <div className="pt-10 flex flex-wrap items-center gap-y-6 gap-x-6 sm:gap-x-8 lg:gap-x-12 border-t border-white/10 mt-8">
-              
-              <div className="flex items-center gap-3 sm:gap-4">
-                <Maximize2 className="h-5 w-5 sm:h-6 sm:w-6 text-brand-tertiary" />
-                <span className="text-[10px] sm:text-xs font-bold text-slate-300 tracking-wider leading-tight uppercase">
-                  From Concept<br/>To Commissioning
-                </span>
-              </div>
-              
-              <div className="hidden sm:block w-[1px] h-8 bg-white/10"></div>
-              
-              <div className="flex items-center gap-3 sm:gap-4">
-                <BarChart3 className="h-5 w-5 sm:h-6 sm:w-6 text-brand-tertiary" />
-                <span className="text-[10px] sm:text-xs font-bold text-slate-300 tracking-wider leading-tight uppercase">
-                  Up To<br/>1000 TPD
-                </span>
-              </div>
-              
-              <div className="hidden sm:block w-[1px] h-8 bg-white/10"></div>
-              
-              <div className="flex items-center gap-3 sm:gap-4">
-                <RefreshCw className="h-5 w-5 sm:h-6 sm:w-6 text-brand-tertiary" />
-                <span className="text-[10px] sm:text-xs font-bold text-slate-300 tracking-wider leading-tight uppercase">
-                  End-To-End<br/>Plant Solutions
-                </span>
-              </div>
-              
-            </div>
-
           </div>
+
+          {/* Proof Points White Container Overlapping Section 1 and Section 2 - Exactly 50/50 Centered */}
+          <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80 relative z-30 translate-y-1/2 -mb-16 sm:-mb-20 lg:-mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
+              
+              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
+                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
+                  From Concept to Commissioning
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Complete project support from initial planning through installation and plant start-up.
+                </p>
+              </div>
+
+              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
+                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
+                  Up to 1000 TPD
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Scalable plant solutions designed for a wide range of production capacities.
+                </p>
+              </div>
+
+              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
+                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
+                  End-to-End Plant Solutions
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  Integrated engineering, fabrication, automation, installation, and commissioning.
+                </p>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* Intro details */}
-      <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-32 sm:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c2722]">
             Engineering the Future of Smart Flour Milling
           </h2>
           <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
-            At RS Choyal, our turnkey projects are designed with state-of-the-art technologies that set new benchmarks in the milling industry. We combine <span className="font-bold">60+ years of grinding heritage</span> with modern electronics to engineer plants that achieve up to <span className="font-bold">30% electricity savings</span>, optimized layout flows, low maintenance, and exceptionally clean, dust-free operations.
+            At RS Choyal, our turnkey projects are designed with state-of-the-art technologies that set new benchmarks in the milling industry. We combine <span className="font-bold">60+ years of grinding heritage</span> with modern electronics to engineer plants that achieve up to <span className="font-bold">30% electricity savings</span>, optimized layout flows, low maintenance, and exceptionally clean operations.
           </p>
         </div>
       </section>
