@@ -20,12 +20,13 @@ export interface HeroStat {
   value: string;
   label: string;
   sublabel?: string;
+  topLabel?: string;
 }
 
 export interface DetailedProduct {
   id: string; // slug
   title: string;
-  category: "Digital Mills" | "Semi-Automatic" | "Horizontal Mills / Sheller";
+  category: "Digital Mills" | "Semi-Automatic" | "Horizontal Mills / Sheller" | "Accessories";
   subtitle: string;
   desc: string;
   heroImage: string;
@@ -37,6 +38,11 @@ export interface DetailedProduct {
   keyComponents: KeyComponent[];
   models: ProductModel[];
   
+  componentsTitle?: string;
+  showThumbnails?: boolean;
+  showDetailedModels?: boolean;
+  detailedModelsTitle?: string;
+
   technicalSpecs?: Record<string, string>;
   productDisclaimer?: string;
 }
@@ -367,7 +373,7 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Atta Expert (Manual)",
         image: "/images/plants/flour-mills/products/semi automatic/manual_supplementalimg.png",
         tableData: {
-          "Size": "600 mm / 24\"",
+          "Size": "600mm / 750mm / 1200 mm",
           "Capacity": "150–200 kg/hr",
           "Power Load": "15 HP",
           "Speed": "960 RPM",
@@ -380,7 +386,7 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Atta Expert (Hydraulic)",
         image: "/images/plants/flour-mills/products/semi automatic/hydraulicattaexpert.png",
         tableData: {
-          "Size": "750 mm / 30\"",
+          "Size": "600mm / 750mm / 1200 mm",
           "Capacity": "400–450 kg/hr",
           "Power Load": "25 HP",
           "Speed": "960 RPM",
@@ -393,7 +399,7 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Atta Expert (Pneumatic)",
         image: "/images/plants/flour-mills/products/semi automatic/pneumatic_expert.png",
         tableData: {
-          "Size": "1200 mm / 48\"",
+          "Size": "600mm / 750mm / 1200 mm",
           "Capacity": "600–650 kg/hr",
           "Power Load": "40 HP",
           "Speed": "960 RPM",
@@ -411,7 +417,10 @@ export const flourMillsProducts: DetailedProduct[] = [
     category: "Horizontal Mills / Sheller",
     subtitle: "Compact flour mill and sheller engineered for precision grinding.",
     desc: "A compact flour mill and sheller engineered for precision grinding, controlled grain feeding, and dependable commercial performance. Suited for small plants, it delivers flour quality through a manual pressure system and flexible hopper configurations.",
-    heroImage: "/images/plants/flour-mills/products/horizontal mills/squaremagnet_supplementalimg.png",
+    heroImage: "/horizontal-mills/squaremagnet_supplementalimg.png",
+    showThumbnails: false,
+    componentsTitle: "Models Available",
+    showDetailedModels: false,
     keyHighlights: [
       "Compact",
       "Best for small quantity production",
@@ -450,28 +459,28 @@ export const flourMillsProducts: DetailedProduct[] = [
       {
         title: "Square Mill with Magnet",
         description: "Compact footprint and robust design.",
-        image: "/images/plants/flour-mills/products/horizontal mills/squaremagnet_supplementalimg.png"
+        image: "/horizontal-mills/squaremagnet_supplementalimg.png"
       },
       {
         title: "Square Mill with Traditional Hopper",
         description: "Classic feeding configuration.",
-        image: "/images/plants/flour-mills/products/horizontal mills/traditionalhopper_supplementalimg.png"
+        image: "/horizontal-mills/traditionalhopper_supplementalimg.png"
       },
       {
         title: "Square Mill with VFD Feeder",
         description: "Controlled grain feeding.",
-        image: "/images/plants/flour-mills/products/horizontal mills/vfdfeeder_supplementlimg.png"
+        image: "/horizontal-mills/vfdfeeder_supplementlimg.png"
       },
       {
         title: "Sheller",
         description: "High capacity processing.",
-        image: "/images/plants/flour-mills/products/horizontal mills/sheller_supplementimg.png"
+        image: "/horizontal-mills/sheller_supplementimg.png"
       }
     ],
     models: [
       {
         name: "Square Mill with Magnet",
-        image: "/images/plants/flour-mills/products/horizontal mills/squaremagnet_supplementalimg.png",
+        image: "/horizontal-mills/squaremagnet_supplementalimg.png",
         tableData: {
           "Capacity": "600–800 kg/hr",
           "Power Load": "15 or 40 HP",
@@ -480,7 +489,7 @@ export const flourMillsProducts: DetailedProduct[] = [
       },
       {
         name: "Square Mill with Traditional Hopper",
-        image: "/images/plants/flour-mills/products/horizontal mills/traditionalhopper_supplementalimg.png",
+        image: "/horizontal-mills/traditionalhopper_supplementalimg.png",
         tableData: {
           "Capacity": "600–800 kg/hr",
           "Power Load": "15 or 40 HP",
@@ -489,7 +498,7 @@ export const flourMillsProducts: DetailedProduct[] = [
       },
       {
         name: "Square Mill with VFD Feeder",
-        image: "/images/plants/flour-mills/products/horizontal mills/vfdfeeder_supplementlimg.png",
+        image: "/horizontal-mills/vfdfeeder_supplementlimg.png",
         tableData: {
           "Capacity": "600–800 kg/hr",
           "Power Load": "15 or 40 HP",
@@ -498,7 +507,7 @@ export const flourMillsProducts: DetailedProduct[] = [
       },
       {
         name: "Sheller",
-        image: "/images/plants/flour-mills/products/horizontal mills/sheller_supplementimg.png",
+        image: "/horizontal-mills/sheller_supplementimg.png",
         tableData: {
           "Capacity": "600–800 kg/hr",
           "Power Load": "15 or 40 HP",
@@ -513,12 +522,14 @@ export const flourMillsProducts: DetailedProduct[] = [
     title: "Ultra Mini Horizontal Mill",
     category: "Horizontal Mills / Sheller",
     subtitle: "A compact flour mill designed for precision grinding.",
-    desc: "A compact flour mill designed for precision grinding and continuous performance. Built with premium components and an easy-to-operate system for consistent flour quality and reliable daily operation.",
-    heroImage: "/images/plants/flour-mills/products/horizontal mills/ultramini_supplementalimg.png",
+    desc: "A compact flour mill designed for precision grinding and continuous performance, built with premium components and an easy-to-operate system for consistent flour quality and reliable daily operation.",
+    heroImage: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
+    showThumbnails: false,
+    detailedModelsTitle: "Models Available",
     keyHighlights: [
-      "1-Year Warranty",
-      "Worldwide Delivery",
-      "After-Sales Support"
+      "20–25 kg/hr Capacity",
+      "2 HP Power Load",
+      "Compact Design"
     ],
     heroStats: [
       { value: "20–25", label: "Kg/Hr Grinding Capacity" },
@@ -528,10 +539,10 @@ export const flourMillsProducts: DetailedProduct[] = [
       {
         title: "Grinding Performance & Efficiency",
         items: [
-          "Consistent flour grinding quality",
+          "Consistent fine grinding quality",
           "Optimized grinding performance",
-          "Low-vibration operation",
-          "Suitable for continuous small capacity use"
+          "Low vibration operation",
+          "Suitable for continuous small-capacity use"
         ]
       },
       {
@@ -548,52 +559,127 @@ export const flourMillsProducts: DetailedProduct[] = [
         items: [
           "SKF quality bearings",
           "High-performance motor",
-          "Durable starter system"
+          "Durable internal system"
         ]
       },
       {
         title: "Smart Design & Engineering",
         items: [
           "Enhanced machine efficiency",
-          "Balanced mechanical structure",
-          "Improved operational stability",
+          "Advanced mechanical structure",
+          "Optimized operational stability",
           "Heavy-duty construction"
         ]
       }
     ],
-    keyComponents: [
-      {
-        title: "Ultra Mini Model",
-        description: "Compact and powerful design.",
-        image: "/images/plants/flour-mills/products/horizontal mills/mini_supplementalimg.png"
-      }
-    ],
+    keyComponents: [],
     models: [
       {
         name: "Mini",
-        image: "/images/plants/flour-mills/products/horizontal mills/mini_supplementalimg.png",
+        image: "/horizontal-mills/ultramini/mini_supplementalimg.png",
         tableData: {
-          "Size of Mill": "350mm (14\")",
-          "RPM": "600",
+          "Size in MM": "300 x 100",
+          "Size in Inch": "12 x 4",
+          "Capacity": "20–25 kg/hr",
           "Required HP Single Phase": "2",
-          "Diameter of Pulley": "250 mm",
-          "Stone Thickness": "200 mm",
-          "Gross Weight Approx": "128kg"
+          "Required HP Three Phase": "2",
+          "RPM of Mill": "650",
+          "Stone RPM": "450 rpm",
+          "Motor RPM": "1440",
+          "Gross Weight Approx": "60 kg"
         }
       },
       {
         name: "Ultra Mini",
-        image: "/images/plants/flour-mills/products/horizontal mills/mini_supplementalimg.png",
+        image: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
         tableData: {
-          "Size of Mill": "350mm (14\")",
-          "RPM": "600",
-          "Required HP Single Phase": "2",
-          "Diameter of Pulley": "250 mm",
-          "Stone Thickness": "200 mm",
-          "Gross Weight Approx": "135kg"
+          "Size in MM": "350 x 100",
+          "Size in Inch": "14 x 4",
+          "Capacity": "25–30 kg/hr",
+          "Required HP Single Phase": "3",
+          "Required HP Three Phase": "3",
+          "RPM of Mill": "600",
+          "Stone RPM": "400 rpm",
+          "Motor RPM": "1440",
+          "Gross Weight Approx": "80 kg"
         }
       }
     ],
     productDisclaimer: "Specifications are based on standard models and may vary based on configuration. Contact our team for customized solutions."
+  },
+  {
+    id: "emery-stone-dresser",
+    title: "Emery Stone Dresser",
+    category: "Accessories",
+    subtitle: "Engineered to restore and maintain the cutting profile of emery stones.",
+    desc: "The Emery Stone Dresser is engineered to restore and maintain the cutting profile of emery stones, ensuring consistent grinding performance, improved flour quality, and longer stone life. Designed with manual and pneumatic dressing options, it delivers accurate groove formation, reduced maintenance time, and reliable operation for commercial milling plants.",
+    heroImage: "/images/stone_dresser_hero.png",
+    showThumbnails: false,
+    showDetailedModels: true,
+    componentsTitle: "Select Model",
+    detailedModelsTitle: "Models Available",
+    keyHighlights: [
+      "3-4 Mins Per Groove",
+      "Precision Cutting",
+      "Pneumatic & Manual"
+    ],
+    heroStats: [
+      { value: "3-4", label: "Mins Per Groove" },
+      { value: "50-100", label: "mm Groove Width", sublabel: "Options Available" }
+    ],
+    technicalSpecs: {
+      "Power Supply": "3 Phase, 415V, 50Hz",
+      "Groove Width Options": "50 / 75 / 100 mm",
+      "Stone Compatibility": "500 / 600 / 750 / 1200 mm",
+      "Pressure System": "Pneumatic & Manual Options"
+    },
+    coreCapabilities: [
+      {
+        title: "Energy Efficiency & Performance",
+        items: [
+          "Precision groove cutting for consistent grinding",
+          "Smooth and accurate dressing operation",
+          "Reduces stone maintenance time",
+          "Supports improved milling efficiency"
+        ]
+      },
+      {
+        title: "Automation & Control",
+        items: [
+          "Adjustable groove depth for precise dressing",
+          "Manual and pneumatic pressure options",
+          "Emergency stop for enhanced safety",
+          "Simple and operator-friendly controls"
+        ]
+      },
+      {
+        title: "Productivity & Reliability",
+        items: [
+          "Heavy-duty industrial construction",
+          "Faster and more efficient dressing process",
+          "Low maintenance requirements",
+          "Long-lasting electrical and mechanical components"
+        ]
+      }
+    ],
+    keyComponents: [],
+    models: [
+      {
+        name: "Pneumatic Stone Dresser",
+        image: "/images/stone_dresser_hero.png",
+        tableData: {
+          "Pressure System": "Pneumatic",
+          "Power Supply": "3 Phase, 415V, 50Hz"
+        }
+      },
+      {
+        name: "Manual Stone Dresser",
+        image: "/images/stone_dresser_hero.png",
+        tableData: {
+          "Pressure System": "Manual",
+          "Power Supply": "3 Phase, 415V, 50Hz"
+        }
+      }
+    ]
   }
 ];

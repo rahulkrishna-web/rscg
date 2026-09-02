@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ArrowLeft, ShoppingBag, CheckCircle, HelpCircle, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import EmeryCTASection from "@/components/EmeryCTASection";
 import { useQuote } from "@/components/QuoteContext";
 
 interface StoneSize {
@@ -197,58 +198,7 @@ export default function AgateShellerTypeStones() {
       </div>
 
       {/* Link to Contact CTA Banner */}
-      <section className="w-full bg-[#0a3118] relative z-10 flex flex-col lg:flex-row overflow-hidden">
-        
-        {/* Content Left (Aligned to screen bounds) */}
-        <div className="w-full lg:w-1/2 px-6 sm:px-12 lg:pl-16 xl:pl-24 lg:pr-12 xl:pr-16 py-16 lg:py-24 flex flex-col justify-center">
-            <h2 className="text-4xl sm:text-5xl font-heading font-extrabold text-white tracking-tight mb-6">
-              Built for Consistent Performance.
-            </h2>
-            <p className="text-base sm:text-lg text-slate-200 mb-10 max-w-lg font-medium">
-              Engineered for precise grinding, dependable flour quality, and long-lasting durability.
-            </p>
-            
-            <div className="flex flex-col gap-6 items-start">
-              {/* Primary CTA */}
-              <Link 
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f97316] hover:bg-[#ea580c] text-white font-bold px-8 py-3.5 rounded shadow-lg transition-colors text-lg"
-              >
-                ENQUIRE NOW <ArrowRight className="w-5 h-5" />
-              </Link>
-              
-              <div className="flex flex-col gap-3 w-full sm:w-auto">
-                {/* Secondary CTA 1 */}
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-between sm:justify-start gap-3 bg-[#1a5b8f] hover:bg-[#154872] text-white font-bold px-6 py-2.5 rounded shadow-sm transition-colors text-sm w-full sm:w-max"
-                >
-                  REQUEST A QUOTE <ArrowRight className="w-4 h-4" />
-                </Link>
-                
-                {/* Secondary CTA 2 */}
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center justify-between sm:justify-start gap-3 bg-[#333333] hover:bg-[#222222] text-white font-bold px-6 py-2.5 rounded shadow-sm transition-colors text-sm w-full sm:w-max"
-                >
-                  TALK TO OUR EMERY STONE EXPERT <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        
-        {/* Image Right (Stretches to edge) */}
-        <div className="w-full lg:w-1/2 relative h-72 sm:h-96 lg:h-auto min-h-[400px]">
-          <Image 
-            src="/images/last_section.png"
-            alt="Emery stone performance"
-            fill
-            className="object-cover object-left"
-          />
-          {/* Gradient Overlay for seamless blending with left side */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a3118] via-[#0a3118]/60 to-transparent w-full sm:w-2/3 lg:w-1/2"></div>
-        </div>
-      </section>
+      <EmeryCTASection />
 
       <Footer />
 

@@ -63,12 +63,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       {/* Top Breadcrumb */}
       <div className="w-full bg-[#f9fafb] py-6">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest">
-          <Link href="/flour-mills" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+          <Link href={product.category === "Accessories" ? "/emery-stones" : "/flour-mills"} className="flex items-center gap-2 hover:text-brand-primary transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Catalog
           </Link>
           <div className="flex items-center gap-2">
-            <span>Flour Mills</span>
+            <span>{product.category === "Accessories" ? "Emery Stones" : "Flour Mills"}</span>
             <span className="text-slate-400">/</span>
             <span className="text-brand-primary">{product.title}</span>
           </div>
@@ -94,38 +94,40 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             </div>
             
             {/* Component Thumbnails */}
-            <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
-              <button 
-                onClick={() => setActiveImage(product.heroImage)}
-                className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
-              >
-                <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === product.heroImage ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
-                  <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain mix-blend-multiply" />
-                </div>
-                <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
-                  {product.title}
-                </span>
-              </button>
-
-              {product.keyComponents.slice(0, 5).map((comp, idx) => (
+            {product.showThumbnails !== false && product.keyComponents.length > 0 && (
+              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <button 
-                  key={idx}
-                  onClick={() => comp.image && setActiveImage(comp.image)}
+                  onClick={() => setActiveImage(product.heroImage)}
                   className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
                 >
-                  <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === comp.image ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
-                    {comp.image ? (
-                      <img src={comp.image} alt={comp.title} className="w-full h-full object-contain mix-blend-multiply" />
-                    ) : (
-                      <Settings className="w-6 h-6 text-slate-300" />
-                    )}
+                  <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === product.heroImage ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
+                    <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain mix-blend-multiply" />
                   </div>
                   <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
-                    {comp.title}
+                    {product.title}
                   </span>
                 </button>
-              ))}
-            </div>
+
+                {product.keyComponents.slice(0, 5).map((comp, idx) => (
+                  <button 
+                    key={idx}
+                    onClick={() => comp.image && setActiveImage(comp.image)}
+                    className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
+                  >
+                    <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === comp.image ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
+                      {comp.image ? (
+                        <img src={comp.image} alt={comp.title} className="w-full h-full object-contain mix-blend-multiply" />
+                      ) : (
+                        <Settings className="w-6 h-6 text-slate-300" />
+                      )}
+                    </div>
+                    <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
+                      {comp.title}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            )}
 
             {/* Disclaimer */}
             {product.productDisclaimer && (
@@ -153,14 +155,21 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
 
             {/* Capacity Stats Grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-10">
+            <div className={`grid gap-4 mb-10 ${product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
               {product.heroStats.map((stat, idx) => (
-                <div key={idx} className="flex flex-col items-center text-center bg-slate-50 border border-slate-100 rounded-2xl p-6 shadow-sm">
-                  <p className="text-xl sm:text-2xl font-black text-[#0a4c2a]">{stat.value}</p>
-                  <p className="text-xs font-medium text-slate-500 mt-1">{stat.label}</p>
-                  {stat.sublabel && (
-                    <p className="text-[11px] text-slate-400 mt-0.5">{stat.sublabel}</p>
+                <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
+                  {stat.topLabel && (
+                    <div className="pb-3 mb-3 border-b border-slate-100">
+                      <p className="text-[10px] sm:text-[11px] text-slate-500 font-bold uppercase tracking-wider">{stat.topLabel}</p>
+                    </div>
                   )}
+                  <div className="flex flex-col items-center justify-center flex-1">
+                    <p className="text-xl sm:text-2xl font-black text-[#0a4c2a]">{stat.value}</p>
+                    <p className="text-[11px] sm:text-xs font-medium text-slate-500 mt-1">{stat.label}</p>
+                    {stat.sublabel && (
+                      <p className="text-[10px] sm:text-[11px] text-slate-400 mt-1">{stat.sublabel}</p>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -312,7 +321,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {/* Key Components */}
         {product.keyComponents.length > 0 && (
           <div className="mb-16">
-            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">Key Components</h3>
+            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.componentsTitle || "Key Components"}</h3>
             <div className={`grid grid-cols-2 gap-4 ${
               product.keyComponents.length === 1 ? 'lg:grid-cols-1 max-w-sm' :
               product.keyComponents.length === 2 ? 'lg:grid-cols-2 max-w-2xl' :
@@ -327,7 +336,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 <div key={idx} className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full">
                   {comp.image && (
                     <div className="relative w-full aspect-[3/2] bg-white border-b border-slate-100 flex items-center justify-center overflow-hidden">
-                      <img src={comp.image} alt={comp.title} className={`w-full h-full mix-blend-multiply ${isCover ? 'object-cover object-top' : 'object-cover object-center'}`} />
+                      <img src={comp.image} alt={comp.title} className={`w-full h-full mix-blend-multiply p-4 ${isCover ? 'object-cover object-top' : 'object-contain object-center'}`} />
                     </div>
                   )}
                   <div className="p-4 flex-1 flex flex-col items-center justify-center">
@@ -341,8 +350,11 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         )}
 
         {/* Available Models */}
-        {product.models.length > 0 && (
+        {product.showDetailedModels !== false && product.models.length > 0 && (
           <div className="mb-16">
+            {product.detailedModelsTitle && (
+              <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.detailedModelsTitle}</h3>
+            )}
             <div className={`grid gap-6 ${
               product.models.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' :
               product.models.length === 2 ? 'grid-cols-1 lg:grid-cols-2' :

@@ -67,43 +67,87 @@ export default function PowerSavingPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0a3118] overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/power-saving/powersaving_hero.png"
-            alt="Power Saving Control System"
-            fill
-            priority
-            className="object-cover object-right lg:object-center"
-          />
+      <section className="relative w-full pb-20 lg:pb-0">
+        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/power-saving/powersaving_hero.png"
+              alt="Power Saving Control System"
+              fill
+              priority
+              className="object-cover object-right lg:object-center"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510] from-0% via-[#0B1510]/80 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
+
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
+            <div className="max-w-2xl space-y-6">
+              <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
+                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <span>/</span>
+                <span className="text-white">Power Saving</span>
+              </div>
+
+              <div className="inline-block bg-[#eab308] text-[#0a3118] text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+                Power Saving
+              </div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
+                Innovative Energy Solutions for Modern Mill Operations
+              </h1>
+              
+              <p className="text-lg text-slate-200 font-medium max-w-xl">
+                Engineered systems and intelligent controls that reduce power consumption, improve efficiency, and lower operating costs across the complete milling plant.
+              </p>
+              
+              <div className="pt-4">
+                <Link 
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide"
+                >
+                  ENQUIRE NOW <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0a3118] from-0% via-[#0a3118]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
-
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20">
-          <div className="max-w-2xl space-y-6">
-            <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-white">Power Saving</span>
+        
+        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
+        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-5xl">
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Smart Systems</h4>
+                <p className="text-xs text-slate-500">Intelligent Controls</p>
+              </div>
             </div>
-
-            <div className="inline-block bg-[#eab308] text-[#0a3118] text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
-              Power Saving
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Lower Consumption</h4>
+                <p className="text-xs text-slate-500">Up to 30% Savings</p>
+              </div>
             </div>
-            
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
-              Innovative Energy Solutions for Modern Mill Operations
-            </h1>
-            
-            <p className="text-lg text-slate-200 font-medium max-w-xl">
-              Engineered systems and intelligent controls that reduce power consumption, improve efficiency, and lower operating costs across the complete milling plant.
-            </p>
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Higher Performance</h4>
+                <p className="text-xs text-slate-500">Maximized Output</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Optimize Energy Consumption */}
-      <section className="w-full py-20 lg:py-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-32 lg:pt-40 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}
@@ -169,12 +213,12 @@ export default function PowerSavingPage() {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
-              <div className="relative h-56 w-full overflow-hidden bg-slate-100">
+              <div className="relative h-[280px] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
                 <Image 
                   src={product.img} 
                   alt={product.name} 
                   fill 
-                  className="object-cover group-hover:scale-105 transition-transform duration-500" 
+                  className="object-contain p-6 mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
                 />
                 <div className="absolute top-4 right-4 bg-[#F9F6F0] text-[#0a3118] text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm z-10">
                   {product.tag}
@@ -260,8 +304,8 @@ export default function PowerSavingPage() {
             }
           ].map((benefit, idx) => (
             <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex gap-6 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 rounded-full bg-[#0a3118]/5 flex items-center justify-center flex-shrink-0 relative p-4">
-                <Image src={benefit.icon} alt={benefit.title} fill className="object-contain p-4" />
+              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0 relative transform group-hover:-translate-y-2 transition-transform duration-300">
+                <Image src={benefit.icon} alt={benefit.title} fill className="object-contain drop-shadow-sm" />
               </div>
               <div>
                 <h4 className="text-lg font-heading font-extrabold text-[#0a3118] mb-3">{benefit.title}</h4>
