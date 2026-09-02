@@ -63,12 +63,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       {/* Top Breadcrumb */}
       <div className="w-full bg-[#f9fafb] py-6">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest">
-          <Link href={product.category === "Accessories" ? "/emery-stones" : "/flour-mills"} className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+          <Link href={product.parentUrl || (product.category === "Accessories" ? "/emery-stones" : "/flour-mills")} className="flex items-center gap-2 hover:text-brand-primary transition-colors">
             <ArrowLeft className="w-4 h-4" />
             Back to Catalog
           </Link>
           <div className="flex items-center gap-2">
-            <span>{product.category === "Accessories" ? "Emery Stones" : "Flour Mills"}</span>
+            <span>{product.parentName || (product.category === "Accessories" ? "Emery Stones" : "Flour Mills")}</span>
             <span className="text-slate-400">/</span>
             <span className="text-brand-primary">{product.title}</span>
           </div>

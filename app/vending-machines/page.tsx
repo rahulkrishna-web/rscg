@@ -21,7 +21,7 @@ import {
   PackageCheck,
   Zap,
   Info,
-  CheckCircle2,
+  Target, Minus, Plus, CheckCircle2, MessageCircle,
   ListFilter
 } from "lucide-react";
 import Header from "@/components/Header";
@@ -139,60 +139,74 @@ export default function BatchProductionPage() {
     <div className="min-h-screen bg-[#F8F9FA] text-brand-foreground font-sans">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative w-full overflow-hidden flex flex-col bg-[#1A1A1A]">
-        {/* Background Image Container */}
-        <div className="relative w-full h-[550px] lg:h-[650px]">
+      {/* Hero Banner Section */}
+      <section className="relative w-full pb-20 lg:pb-0">
+        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
+          {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/images/vending-machines/floura_hero.png"
               alt="Batch Production Systems"
               fill
               priority
-              className="object-cover object-right-bottom lg:object-center"
+              className="object-cover object-right lg:object-center"
             />
           </div>
+          {/* Dark Tint Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510] from-0% via-[#0B1510]/80 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
           
-          {/* Gradient Overlay for Text Readability */}
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#111111] from-0% via-[#111111]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
-
-          {/* Hero Content */}
-          <div className="relative z-20 w-full h-full flex flex-col justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
             <div className="max-w-2xl space-y-6">
-              <span className="inline-block bg-[#F4B724] text-slate-900 font-extrabold text-xs sm:text-sm px-4 py-2 rounded-full tracking-widest shadow-md">
+              <div className="flex items-center gap-3 text-sm font-bold text-[#f7b032] uppercase tracking-widest mb-4">
+                <span className="w-10 h-[3px] bg-[#f7b032]"></span>
                 BATCH PRODUCTION
-              </span>
+              </div>
               <h1 className="text-5xl sm:text-6xl lg:text-[72px] font-heading font-black text-white leading-[1.1] tracking-tight">
                 Batch Production <br />
-                <span className="text-[#F4B724]">Systems</span>
+                <span className="text-[#f7b032]">Systems</span>
               </h1>
-              <p className="text-base sm:text-lg text-slate-300 font-medium max-w-lg leading-relaxed pt-2">
+              <p className="text-base sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 Engineered solutions for efficient, hygienic, and scalable batch processing in modern flour and food operations.
               </p>
-              <div className="pt-6">
-                <button className="inline-flex items-center gap-2 bg-[#F4B724] hover:bg-[#E5A813] text-slate-900 font-extrabold px-8 py-3.5 rounded shadow-lg transition-transform hover:-translate-y-0.5">
-                  EXPLORE SOLUTIONS <ArrowRight className="w-5 h-5" />
+              <div className="pt-4">
+                <button className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide">
+                  EXPLORE SOLUTIONS <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Feature Highlights Bar */}
-        <div className="w-full bg-[#18311B] border-t-2 border-[#F4B724]/20 relative z-30">
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto py-6">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-white/10">
-              <div className="flex items-center gap-4 text-[#C1C9C3] font-medium text-sm sm:text-base flex-1 justify-center md:justify-start pt-4 md:pt-0 w-full">
-                <BarChart3 className="w-8 h-8 text-[#F4B724]" />
-                Consistent Batch Output
+        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
+        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-[1400px]">
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <BarChart3 className="w-6 h-6" />
               </div>
-              <div className="flex items-center gap-4 text-[#C1C9C3] font-medium text-sm sm:text-base flex-1 justify-center py-4 md:py-0 w-full">
-                <ShieldCheck className="w-8 h-8 text-[#F4B724]" />
-                Hygienic Processing
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Consistent Batch Output</h4>
+                <p className="text-xs text-slate-500">Uncompromised quality.</p>
               </div>
-              <div className="flex items-center gap-4 text-[#C1C9C3] font-medium text-sm sm:text-base flex-1 justify-center md:justify-end pb-4 md:pb-0 w-full">
-                <Settings className="w-8 h-8 text-[#F4B724]" />
-                Built for Commercial Operations
+            </div>
+            
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Hygienic Processing</h4>
+                <p className="text-xs text-slate-500">Sanitary design standards.</p>
+              </div>
+            </div>
+
+            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+                <Settings className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="text-sm font-bold text-slate-800">Built for Commercial Operations</h4>
+                <p className="text-xs text-slate-500">Robust and dependable.</p>
               </div>
             </div>
           </div>
@@ -200,7 +214,7 @@ export default function BatchProductionPage() {
       </section>
 
       {/* Main Interactive Configurator Section */}
-      <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
+      <section className="w-full pt-32 lg:pt-40 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         {/* Breadcrumb equivalent / header */}
         <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-10">
           <span>Home</span> <ArrowRight className="w-3 h-3 text-slate-300" />
@@ -210,51 +224,36 @@ export default function BatchProductionPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           
-          {/* Left Column: Product Presentation */}
-          <div className="flex flex-col bg-white rounded-3xl border border-slate-100 p-8 sm:p-12 shadow-sm relative h-full">
-            <div className="space-y-4 relative z-10">
-              <h2 className="text-slate-500 font-bold text-lg">Batch Production System</h2>
-              <h3 className="text-6xl sm:text-7xl font-heading font-black text-[#154627] tracking-tighter">
-                {activeModel}
-              </h3>
-              <p className="text-slate-600 leading-relaxed text-sm max-w-[280px] pt-4">
-                {currentModelData.description}
+          {/* Left Column: Product Image & Note */}
+          <div className="flex flex-col gap-6">
+            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-square p-8">
+              <Image
+                src={currentVariantData.image}
+                alt={`${activeModel} ${activeVariant}`}
+                fill
+                className="object-contain mix-blend-multiply contrast-[1.05] p-8"
+              />
+            </div>
+            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">
+              <Info className="w-5 h-5 text-[#4a5f36] flex-shrink-0 mt-0.5" />
+              <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
+                * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
               </p>
-            </div>
-
-            {/* Feature Label box */}
-            <div className="mt-8 bg-slate-50 rounded-2xl p-5 border border-slate-100 max-w-[280px] relative z-10">
-              <div className="flex items-start gap-3">
-                <Leaf className="w-6 h-6 text-[#154627] mt-1 shrink-0" />
-                <div>
-                  <h4 className="font-extrabold text-slate-800 leading-snug">Efficient. Hygienic. Scalable.</h4>
-                  <p className="text-xs text-slate-500 mt-1">Built for modern flour & food operations.</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Product Image Overlay */}
-            <div className="absolute right-0 bottom-10 w-[70%] sm:w-[60%] lg:w-[65%] h-[80%] z-0 flex items-end justify-end overflow-visible pointer-events-none">
-              <div className="relative w-full h-full">
-                <Image
-                  src={currentVariantData.image}
-                  alt={`${activeModel} ${activeVariant}`}
-                  fill
-                  className="object-contain object-right-bottom scale-110 origin-bottom-right"
-                />
-              </div>
-            </div>
-
-            <div className="mt-auto pt-48 relative z-10">
-              <div className="flex items-center gap-2 text-xs text-slate-400 font-medium bg-white/80 backdrop-blur inline-flex px-3 py-1.5 rounded-full shadow-sm border border-slate-100">
-                <Info className="w-4 h-4" /> Image shown: {activeModel} {activeVariant}
-              </div>
             </div>
           </div>
 
           {/* Right Column: Interactive Selection */}
-          <div className="flex flex-col space-y-12 py-4">
+          <div className="flex flex-col space-y-10 py-4 justify-start">
             
+            <div className="space-y-4">
+              <h3 className="text-4xl sm:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight">
+                Floura
+              </h3>
+              <p className="text-slate-600 text-sm leading-relaxed max-w-xl">
+                Floura is a high-performance flour mill with batch production designed for efficient commercial grinding, high flour extraction, and effortless operation. Built for modern atta mills, Floura combines robust engineering with user-friendly operation to provide reliable performance and better control over the milling process.
+              </p>
+            </div>
+
             {/* Model Selection */}
             <div className="space-y-5">
               <div className="flex items-center gap-3">
@@ -346,6 +345,44 @@ export default function BatchProductionPage() {
               </div>
             </div>
             
+            {/* Actions */}
+            <div className="space-y-6 pt-4">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                <div className="flex items-center items-stretch border border-slate-200 rounded-lg h-12 bg-white">
+                  <button 
+                    type="button"
+                    className="w-10 sm:w-12 flex items-center justify-center text-slate-500 hover:text-brand-primary hover:bg-slate-50 rounded-l-lg transition-colors border-r border-slate-200"
+                  >
+                    <Minus className="w-4 h-4" />
+                  </button>
+                  <div className="w-12 sm:w-16 flex items-center justify-center font-black text-slate-800 text-sm">
+                    1
+                  </div>
+                  <button 
+                    type="button"
+                    className="w-10 sm:w-12 flex items-center justify-center text-slate-500 hover:text-brand-primary hover:bg-slate-50 rounded-r-lg transition-colors border-l border-slate-200"
+                  >
+                    <Plus className="w-4 h-4" />
+                  </button>
+                </div>
+                
+                <button 
+                  type="button"
+                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#0B1510] hover:bg-[#1a2e23] text-white px-6 sm:px-8 rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all"
+                >
+                  <PackageCheck className="w-4 h-4" />
+                  Add to Quote List
+                </button>
+                
+                <button 
+                  type="button"
+                  className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp Enquiry
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

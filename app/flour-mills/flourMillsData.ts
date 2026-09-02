@@ -26,8 +26,10 @@ export interface HeroStat {
 export interface DetailedProduct {
   id: string; // slug
   title: string;
-  category: "Digital Mills" | "Semi-Automatic" | "Horizontal Mills / Sheller" | "Accessories";
+  category: "Digital Mills" | "Semi-Automatic" | "Horizontal Mills / Sheller" | "Accessories" | "Power Saving Components";
   subtitle: string;
+  parentUrl?: string;
+  parentName?: string;
   desc: string;
   heroImage: string;
   
@@ -681,5 +683,143 @@ export const flourMillsProducts: DetailedProduct[] = [
         }
       }
     ]
+    },
+  {
+    id: "wonder-miller",
+    title: "Wonder Miller",
+    showThumbnails: false,
+    category: "Power Saving Components",
+    parentUrl: "/power-saving",
+    parentName: "Power Saving",
+    subtitle: "Intelligent Control System",
+    desc: "Wonder Miller is the intelligent control system that automates and monitors Wonder Mill operations. It significantly reduces dependence on skilled manpower while ensuring consistent flour quality and high production efficiency.",
+    keyHighlights: [
+      "Digital PLC-based control system",
+      "7-inch TFT HMI touch screen",
+      "Controls up to 2, 4, or 6 Wonder Mills",
+      "30 preset grinding recipes"
+    ],
+    heroStats: [],
+    keyComponents: [],
+    models: [],
+    heroImage: "/images/products-images/wondermiller_supplementalimg.jpg",
+    coreCapabilities: [
+      {
+        title: "Control Panel Features",
+        items: [
+          "Digital PLC-based control system",
+          "7-inch TFT HMI touch screen",
+          "Controls up to 2, 4, or 6 Wonder Mills",
+          "30 preset grinding recipes",
+          "Intelligent power-saving parameters",
+          "Three-step operation with alarm and automatic shutdown",
+          "Real-time data logging and monitoring",
+          "Easy-to-use interface for operators",
+          "Reduced dependence on skilled manpower",
+          "Remote monitoring support"
+        ]
+      }
+    ],
+    technicalSpecs: {
+      "Control System": "Digital PLC-based",
+      "Display": "7-inch TFT HMI touch screen",
+      "Capacity": "Controls up to 2, 4, or 6 Wonder Mills",
+      "Recipes": "30 preset grinding recipes"
+    }
+  },
+  {
+    id: "neomatic",
+    title: "Neomatic",
+    showThumbnails: false,
+    category: "Power Saving Components",
+    parentUrl: "/power-saving",
+    parentName: "Power Saving",
+    subtitle: "Pneumatic engineering for precision",
+    desc: "Neomatic is an innovative, digitally operated pneumatic conveying system designed for efficient and power-saving transfer of flour, grains, and other dry food products.\n\nIt enables controlled material movement through enclosed pipelines while reducing conveying power, product damage, maintenance requirements, and overall operating costs.",
+    keyHighlights: [
+      "Significant power savings",
+      "Fully automated operation",
+      "Long-distance conveying",
+      "Space-saving construction"
+    ],
+    heroStats: [],
+    models: [],
+    heroImage: "/images/products-images/neomatic_supplementimg.png",
+    coreCapabilities: [
+      {
+        title: "Energy Efficiency",
+        items: [
+          "Significant power savings",
+          "High milling capacity",
+          "Intelligent power control",
+          "Reduced operating costs",
+          "Higher production efficiency"
+        ]
+      },
+      {
+        title: "Smart Automation",
+        items: [
+          "Fully automated operation",
+          "Digital touchscreen control",
+          "Intelligent process monitoring",
+          "Automated material handling",
+          "Consistent milling performance"
+        ]
+      },
+      {
+        title: "High-Performance Conveying",
+        items: [
+          "Long-distance conveying",
+          "Smaller diameter pipelines",
+          "High conveying efficiency",
+          "Smooth material transfer",
+          "Suitable for high capacities"
+        ]
+      },
+      {
+        title: "Compact & Sustainable Design",
+        items: [
+          "Space-saving construction",
+          "Low noise operation",
+          "Optimized product layout",
+          "Reliable performance",
+          "Energy-conscious design"
+        ]
+      },
+      {
+        title: "Low Maintenance & Reliability",
+        items: [
+          "Durable components",
+          "Reduced downtime",
+          "Lower equipment maintenance",
+          "Robust construction",
+          "Long service life"
+        ]
+      }
+    ],
+    keyComponents: [
+      {
+        title: "Master Control Panel",
+        description: "Centralized digital control interface."
+      },
+      {
+        title: "Vibro-Discharge Flow Control",
+        description: "Ensures smooth and consistent material flow."
+      },
+      {
+        title: "Wi-Fi Enabled Touchscreen",
+        description: "Allows remote monitoring and easy operation."
+      },
+      {
+        title: "Pneumatic Gates for Free Flow",
+        description: "Automated gates for seamless conveying."
+      }
+    ],
+    technicalSpecs: {
+      "Operation": "Digitally operated pneumatic",
+      "Application": "Flour, grains, and dry food products",
+      "Pipeline Size": "Smaller diameter pipelines",
+      "Noise Level": "Low noise operation"
+    }
   }
 ];

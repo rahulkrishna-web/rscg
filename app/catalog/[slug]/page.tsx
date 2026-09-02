@@ -15,6 +15,46 @@ export default function ProductDetailsPage() {
   const { addToQuote } = useQuote();
   
   const slug = params.slug as string;
+  
+  useEffect(() => {
+    const flourProcessingSlugs = [
+      "entoleter", "vibro-sifter", "plan-sifter"
+    ];
+    if (flourProcessingSlugs.includes(slug)) {
+      router.replace(`/flour-processing/${slug}`);
+      return;
+    }
+
+    const grainProcessingSlugs = [
+      "magnetic-separator", "intensive-dampener", "horizontal-scourer", 
+      "bran-finisher", "emery-polisher", "emery-roll", "drum-sieve"
+    ];
+    if (grainProcessingSlugs.includes(slug)) {
+      router.replace(`/grain-processing/${slug}`);
+      return;
+    }
+
+    const siloMap: Record<string, string> = {
+      "grain-silo": "grain-silo-ms",
+      "conditioning-silo": "conditioning-silo",
+      "atta-silo": "atta-flour-silo",
+      "bran-silo": "bran-refraction-silo"
+    };
+    if (siloMap[slug]) {
+      router.replace(`/grain-storage-handling/${siloMap[slug]}`);
+      return;
+    }
+
+    const powerSavingSlugs = [
+      "wonder-miller", "iquadra-smart-mill", "neomatic", 
+      "floura", "emery-stone-dresser"
+    ];
+    if (powerSavingSlugs.includes(slug)) {
+      router.replace(`/power-saving/${slug}`);
+      return;
+    }
+  }, [slug, router]);
+
   const product = productsData.find((p) => p.slug === slug);
 
   const [selectedVariantIndex, setSelectedVariantIndex] = useState<number>(0);

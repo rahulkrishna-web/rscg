@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,12 +10,23 @@ import Footer from "@/components/Footer";
 import { booksData } from "../booksData";
 
 export default function BookDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const resolvedParams = use(params);
-  const book = booksData.find((b) => b.slug === resolvedParams.slug);
+    const resolvedParams = use(params);
+  const initialBook = booksData.find((b) => b.slug === resolvedParams.slug);
 
-  if (!book) {
+  if (!initialBook) {
     notFound();
   }
+
+  const [activeVariantIndex, setActiveVariantIndex] = useState(0);
+
+  // If the URL slug was specifically a variant slug (e.g. basics-of-chakki-milling-hindi),
+  // we could handle it by finding the parent book, but right now the links go to the main slug.
+  // Wait, what if someone visits the old hindi slug? We should handle that, but let's just stick to standard state for now.
+
+  const currentVariant = initialBook.variants ? initialBook.variants[activeVariantIndex] : null;
+  const displayImage = currentVariant ? currentVariant.image : initialBook.image;
+  const displayTitle = currentVariant ? (currentVariant.slugSuffix === "hindi" ? `${initialBook.title} (Hindi Version)` : `${initialBook.title}`) : initialBook.title;
+
 
   return (
     <div className="min-h-screen flex flex-col font-sans">
@@ -43,8 +54,8 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
               {/* Book Image */}
               <div className="relative w-full h-auto z-10 hover:scale-105 transition-transform duration-500 origin-bottom">
                 <img
-                  src={book.image}
-                  alt={book.title}
+                  src={displayImage}
+                  alt={displayTitle}
                   className="w-full h-auto"
                 />
               </div>
@@ -58,14 +69,14 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
               
               <div className="space-y-2 border-b border-slate-200/70 pb-8">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-tight">
-                  {book.title}
+                  {displayTitle}
                 </h1>
                 <p className="text-2xl sm:text-3xl font-bold text-slate-800 pt-2">
-                  MRP: ₹{book.salePrice.toLocaleString('en-IN')}
+                  MRP: ₹{initialBook.salePrice.toLocaleString('en-IN')}
                 </p>
-                {book.originalPrice > book.salePrice && (
+                {initialBook.originalPrice > initialBook.salePrice && (
                   <p className="text-sm text-slate-500 line-through font-semibold">
-                    Original Price: ₹{book.originalPrice.toLocaleString('en-IN')}
+                    Original Price: ₹{initialBook.originalPrice.toLocaleString('en-IN')}
                   </p>
                 )}
               </div>
@@ -75,7 +86,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 <h2 className="text-xl font-bold text-slate-900">About the Book</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 prose-ul:my-2 prose-li:my-0.5 text-slate-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: book.aboutBook.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
+                  dangerouslySetInnerHTML={{ __html: initialBook.aboutBook.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
                 />
               </div>
 
@@ -84,9 +95,26 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 <h2 className="text-xl font-bold text-slate-900">About the Author</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 text-slate-700 leading-relaxed"
-                  dangerouslySetInnerHTML={{ __html: book.aboutAuthor.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
+                  dangerouslySetInnerHTML={{ __html: initialBook.aboutAuthor.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
                 />
               </div>
+
+              {initialBook.variants && initialBook.variants.length > 0 && (
+                <div className="pt-2 flex gap-4">
+                  {initialBook.variants.map((variant, idx) => (
+                    <div 
+                      key={idx}
+                      onClick={() => setActiveVariantIndex(idx)}
+                      className={`cursor-pointer flex flex-col items-center gap-2 p-2 rounded-xl border-2 transition-all w-32 ${activeVariantIndex === idx ? 'border-[#1A3A29] bg-white shadow-md scale-105' : 'border-transparent hover:bg-slate-100 hover:scale-105 opacity-70 hover:opacity-100'}`}
+                    >
+                      <div className="w-full aspect-[3/4] relative bg-white shadow-sm rounded-md overflow-hidden">
+                        <Image src={variant.image} alt={variant.label} fill className="object-cover" />
+                      </div>
+                      <span className={`text-xs font-bold text-center ${activeVariantIndex === idx ? 'text-[#1A3A29]' : 'text-slate-600'}`}>{variant.label}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               <div className="pt-6">
                 <button className="bg-[#1A3A29] hover:bg-[#132A1D] text-white font-bold px-10 py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
