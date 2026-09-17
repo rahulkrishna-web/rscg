@@ -52,7 +52,7 @@ export default function FlourMills() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative w-full h-[60vh] sm:h-[70vh] flex items-center overflow-hidden">
+      <section className="relative w-full h-[450px] md:h-[500px] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
             src="/images/plants/flourmill_hero.png" 
@@ -61,7 +61,7 @@ export default function FlourMills() {
             className="object-cover object-right lg:object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/95 via-[#0B1510]/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">

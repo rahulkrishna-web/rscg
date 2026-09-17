@@ -160,21 +160,21 @@ export default function TurnkeyProjects() {
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
       {/* Hero Section */}
-      <section className="w-full relative z-10 bg-[#0B1510] text-white pt-16 pb-12 lg:pt-20 lg:pb-16">
+      <section className="w-full relative z-10 bg-[#0B1510] text-white h-[450px] md:h-[500px] flex flex-col justify-center">
         {/* Full-bleed Background Image with High Visibility */}
-        <div className="absolute inset-0 z-0 opacity-95 overflow-hidden">
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <Image 
             src="/turnkey_projects_hero.png" 
             alt="RS Choyal Turnkey Plant Rendering" 
             fill
-            className="object-cover object-[center_right]"
+            className="object-cover object-center"
             priority
           />
           {/* Dark-charcoal gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510] via-[#0B1510]/75 via-35% to-black/20 z-10 w-full"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10 w-full"></div>
         </div>
 
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 space-y-12">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
           
           <div className="max-w-2xl space-y-6">
             
@@ -205,7 +205,7 @@ export default function TurnkeyProjects() {
           </div>
 
           {/* Proof Points White Container Overlapping Section 1 and Section 2 - Exactly 50/50 Centered */}
-          <div className="w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80 relative z-30 translate-y-1/2 -mb-16 sm:-mb-20 lg:-mb-24">
+          <div className="absolute bottom-0 left-0 right-0 w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80 z-30 translate-y-1/2">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
               
               <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">

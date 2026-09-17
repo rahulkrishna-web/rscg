@@ -152,7 +152,27 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               {product.desc}
             </p>
 
+            {product.keyHighlights && product.keyHighlights.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product Highlights</h3>
+                <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
+                  {product.keyHighlights.map((highlight, idx) => (
+                    <li key={idx} className="pl-1">{highlight}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
+            {product.technicalSpecs && Object.keys(product.technicalSpecs).length > 0 && (
+              <div className="mb-10">
+                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Key Specifications</h3>
+                <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
+                  {Object.entries(product.technicalSpecs).map(([key, val], idx) => (
+                    <li key={idx} className="pl-1"><span className="font-semibold text-slate-800">{key}:</span> {val}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* Capacity Stats Grid */}
             <div className={`grid gap-4 mb-10 ${product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
@@ -170,6 +190,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                       <p className="text-[10px] sm:text-[11px] text-slate-400 mt-1">{stat.sublabel}</p>
                     )}
                   </div>
+                  {(stat.bottomValue || stat.bottomLabel) && (
+                    <div className="pt-3 mt-3 border-t border-slate-100 flex flex-col items-center justify-center">
+                      {stat.bottomValue && <p className="text-[15px] sm:text-base font-black text-slate-800">{stat.bottomValue}</p>}
+                      {stat.bottomLabel && <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5">{stat.bottomLabel}</p>}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -202,14 +228,19 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                             <span className="font-semibold text-slate-400">Size:</span> {mod.tableData['Size'] || mod.tableData['Size Available']}
                           </div>
                         )}
-                        {mod.tableData && mod.tableData['Capacity'] && (
+                        {mod.tableData && mod.tableData['Capacity'] && !mod.tableData['Hopper Capacity'] && (
                           <div className="text-[11px] text-slate-500">
                             <span className="font-semibold text-slate-400">Cap:</span> {mod.tableData['Capacity']}
                           </div>
                         )}
-                        {mod.tableData && mod.tableData['Power Load'] && (
+                        {mod.tableData && mod.tableData['Hopper Capacity'] && (
                           <div className="text-[11px] text-slate-500">
-                            <span className="font-semibold text-slate-400">Power:</span> {mod.tableData['Power Load']}
+                            <span className="font-semibold text-slate-400">Hopper Cap:</span> {mod.tableData['Hopper Capacity']}
+                          </div>
+                        )}
+                        {mod.tableData && (mod.tableData['Power Load'] || (mod.tableData['Power (600 mm)'] && mod.tableData['Power (750 mm)'])) && (
+                          <div className="text-[11px] text-slate-500">
+                            <span className="font-semibold text-slate-400">Power:</span> {mod.tableData['Power Load'] || "15 HP / 25 HP / 40 HP"}
                           </div>
                         )}
                       </div>
@@ -270,7 +301,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Pan India Delivery</span>
+                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
@@ -335,12 +366,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 return (
                 <div key={idx} className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full">
                   {comp.image && (
-                    <div className="relative w-full aspect-[3/2] bg-white border-b border-slate-100 flex items-center justify-center overflow-hidden">
-                      <img src={comp.image} alt={comp.title} className={`w-full h-full mix-blend-multiply p-4 ${isCover ? 'object-cover object-top' : 'object-contain object-center'}`} />
+                    <div className="relative w-full aspect-[3/2] bg-[#f8f9fa] border-b border-slate-100 flex items-center justify-center overflow-hidden">
+                      <img src={comp.image} alt={comp.title} className={`w-full h-full mix-blend-multiply object-contain object-center p-0`} />
                     </div>
                   )}
                   <div className="p-4 flex-1 flex flex-col items-center justify-center">
-                    <h4 className="font-semibold text-slate-700 text-[11px] text-center leading-snug">{comp.title}</h4>
+                    <h4 className="font-semibold text-slate-800 text-sm md:text-base text-center leading-snug px-1">{comp.title}</h4>
                   </div>
                 </div>
                 );
@@ -353,7 +384,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {product.showDetailedModels !== false && product.models.length > 0 && (
           <div className="mb-16">
             {product.detailedModelsTitle && (
-              <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.detailedModelsTitle}</h3>
+              <h3 className={`text-2xl font-heading font-extrabold mb-8 tracking-tight ${product.modelsLayout === 'zigzag' ? 'text-center uppercase text-slate-900 tracking-wider' : 'text-[#0a4c2a]'}`}>{product.detailedModelsTitle}</h3>
             )}
             <div className={`grid gap-6 ${
               product.models.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' :
@@ -361,56 +392,108 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               product.models.length === 4 ? 'grid-cols-1 lg:grid-cols-2' :
               'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
             }`}>
-              {product.models.map((model, idx) => {
-                const isBlue = model.name.toLowerCase().includes("miller");
-                const colorTitle = isBlue ? "text-[#0070f3]" : "text-red-500";
+              {product.modelsLayout === 'zigzag' ? (
+                product.models.map((model, idx) => {
+                  const isReverse = idx % 2 !== 0;
+                  // Split name for the special "Emery" styling if applicable
+                  let namePrefix = "";
+                  let namePill = model.name;
+                  if (model.name.startsWith("Emery ")) {
+                    namePrefix = "Emery ";
+                    namePill = model.name.substring(6);
+                  }
 
-                return (
-                  <div key={idx} className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full">
-                    <div className="p-6 text-center border-b border-slate-100">
-                      <h4 className={`text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
-                        {model.name}
-                      </h4>
-                    </div>
-                    <div className="flex-1 flex flex-col sm:flex-row p-6 gap-6">
-                      
+                  return (
+                    <div key={idx} className={`bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col sm:flex-row ${isReverse ? 'sm:flex-row-reverse' : ''} h-full p-6 items-center`}>
                       {model.image && (
-                        <div className="w-full sm:w-1/3 flex-shrink-0 flex items-start justify-center overflow-hidden pt-2">
-                          <img src={model.image} alt={model.name} className="w-full max-w-[160px] scale-110 object-contain mix-blend-multiply" />
+                        <div className="w-full sm:w-1/2 flex-shrink-0 flex items-center justify-center p-4">
+                          <img src={model.image} alt={model.name} className="w-full max-w-[220px] object-contain mix-blend-multiply" />
                         </div>
                       )}
-                      
-                      <div className="flex-1 w-full text-[11px]">
-                        {model.tableData && (
-                          <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden">
-                            {Object.entries(model.tableData).map(([key, val], i) => (
-                              <div key={key} className={`flex border-b border-slate-200 last:border-b-0 ${i % 2 === 0 ? 'bg-[#f8f9fa]' : 'bg-white'}`}>
-                                <div className="w-1/2 p-2 border-r border-slate-200 font-semibold text-slate-600 flex items-center">
-                                  {key}
-                                </div>
-                                <div className="w-1/2 p-2 font-medium text-slate-800 flex items-center">
-                                  {val}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-
-                        {model.featuresList && (
-                          <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white">
-                            {model.featuresList.map((feat, i) => (
-                              <div key={i} className="flex border-b border-slate-200 last:border-b-0 p-2.5">
-                                <span className="font-medium text-slate-700">{feat}</span>
-                              </div>
-                            ))}
+                      <div className="w-full sm:w-1/2 flex flex-col p-4 justify-center">
+                        <h4 className="text-2xl font-bold tracking-tight mb-4 flex flex-wrap items-center gap-2">
+                          {namePrefix ? (
+                            <>
+                              <span className="text-[#c1121f] italic">{namePrefix.trim()}</span>
+                              <span className="bg-[#f5a623] text-white text-sm md:text-base px-3 py-1 rounded-md italic shadow-sm">{namePill}</span>
+                            </>
+                          ) : (
+                            <span className="text-red-600">{model.name}</span>
+                          )}
+                        </h4>
+                        {model.description && (
+                          <div className="text-base text-slate-700 font-medium leading-relaxed">
+                            {model.description}
                           </div>
                         )}
                       </div>
-
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })
+              ) : (
+                product.models.map((model, idx) => {
+                  const isBlue = model.name.toLowerCase().includes("miller");
+                  const colorTitle = isBlue ? "text-[#0070f3]" : "text-red-500";
+
+                  return (
+                    <div key={idx} className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full">
+                      <div className="p-6 text-center border-b border-slate-100">
+                        <h4 className={`text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
+                          {model.name}
+                        </h4>
+                      </div>
+                      <div className="flex-1 flex flex-col sm:flex-row p-6 gap-6">
+                        
+                        {model.image && (
+                          <div className="w-full sm:w-1/3 flex-shrink-0 flex items-start justify-center overflow-hidden pt-2">
+                            <img src={model.image} alt={model.name} className="w-full max-w-[160px] scale-110 object-contain mix-blend-multiply" />
+                          </div>
+                        )}
+                        
+                        <div className="flex-1 w-full text-[11px]">
+                          {model.description && (
+                            <div className="text-[13px] text-slate-600 mb-4 font-medium leading-relaxed">
+                              {model.description}
+                            </div>
+                          )}
+                          {model.tableData && (
+                            <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden">
+                              {Object.entries(model.tableData).map(([key, val], i) => (
+                                <div key={key} className={`flex border-b border-slate-200 last:border-b-0 ${i % 2 === 0 ? 'bg-[#f8f9fa]' : 'bg-white'}`}>
+                                  <div className="w-1/2 p-2 border-r border-slate-200 font-semibold text-slate-600 flex items-center">
+                                    {key}
+                                  </div>
+                                  <div className="w-1/2 p-2 font-medium text-slate-800 flex items-center">
+                                    {val}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+
+                          {model.featuresList && (
+                            <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white mt-4">
+                              {model.featuresList.map((feat, i) => (
+                                <div key={i} className={`flex border-b border-slate-200 last:border-b-0 p-2.5 items-start ${i % 2 === 0 ? 'bg-white' : 'bg-[#f8f9fa]'}`}>
+                                  <div className="text-[#0a4c2a] mt-0.5 mr-2">
+                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                    </svg>
+                                  </div>
+                                  <div className="font-medium text-slate-700 leading-snug">
+                                    {feat}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+
+                      </div>
+                    </div>
+                  );
+                })
+              )}
             </div>
           </div>
         )}

@@ -193,7 +193,7 @@ export default function ProductDetailsPage() {
           <div className="w-full max-w-6xl mx-auto border-t border-b border-slate-300 py-4 flex flex-col sm:flex-row items-center justify-end gap-6 text-xs font-bold text-slate-700 uppercase tracking-wider">
              <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> 1-Year Warranty</div>
              <div className="hidden sm:block text-slate-300">|</div>
-             <div className="flex items-center gap-2"><Factory className="w-4 h-4 text-emerald-600" /> Pan India Delivery</div>
+             <div className="flex items-center gap-2"><Factory className="w-4 h-4 text-emerald-600" /> Worldwide Delivery</div>
              <div className="hidden sm:block text-slate-300">|</div>
              <div className="flex items-center gap-2"><Headset className="w-4 h-4 text-emerald-600" /> After Sales Support</div>
           </div>

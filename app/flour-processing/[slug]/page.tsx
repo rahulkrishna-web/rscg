@@ -147,7 +147,7 @@ export default function FlourProcessingProductPage() {
                   <ShieldCheck className="w-4 h-4 text-[#16a34a]" /> 1 Year Warranty
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
-                  <Truck className="w-4 h-4 text-[#16a34a]" /> Pan India Delivery
+                  <Truck className="w-4 h-4 text-[#16a34a]" /> Worldwide Delivery
                 </div>
                 <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
                   <Headphones className="w-4 h-4 text-[#16a34a]" /> After Sales Support

@@ -42,7 +42,7 @@ export default function GrainStorageHandlingPage() {
 
       {/* Hero Banner Section */}
       <section className="relative w-full pb-20 lg:pb-0">
-        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
+        <div className="relative w-full h-[450px] md:h-[500px] flex items-center bg-[#0B1510]">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -54,9 +54,9 @@ export default function GrainStorageHandlingPage() {
             />
           </div>
           {/* Dark Tint Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510] from-0% via-[#0B1510]/80 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510]/85 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[60%] z-10 w-full" />
           
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20">
             <div className="max-w-2xl space-y-6">
               <div className="flex items-center gap-3 text-sm font-bold text-[#f7b032] uppercase tracking-widest mb-4">
                 <span className="w-10 h-[3px] bg-[#f7b032]"></span>

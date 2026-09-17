@@ -14,6 +14,7 @@ export interface ProductModel {
   image?: string;
   tableData?: Record<string, string>;
   featuresList?: string[];
+  description?: string;
 }
 
 export interface HeroStat {
@@ -21,6 +22,8 @@ export interface HeroStat {
   label: string;
   sublabel?: string;
   topLabel?: string;
+  bottomValue?: string;
+  bottomLabel?: string;
 }
 
 export interface DetailedProduct {
@@ -44,6 +47,7 @@ export interface DetailedProduct {
   showThumbnails?: boolean;
   showDetailedModels?: boolean;
   detailedModelsTitle?: string;
+  modelsLayout?: "default" | "zigzag";
 
   technicalSpecs?: Record<string, string>;
   productDisclaimer?: string;
@@ -311,9 +315,14 @@ export const flourMillsProducts: DetailedProduct[] = [
       "High Performance"
     ],
     heroStats: [
-      { value: "150–650", label: "Kg/Hr Grinding Capacity" },
-      { value: "15 / 25 / 40 HP", label: "Power Load Options" },
-      { value: "15%", label: "Power Saving" }
+      { topLabel: 'Size - 600 mm/24"', value: "150-200", label: "(Kg/Hr) Grinding Capacity" },
+      { topLabel: 'Size - 750 mm/30"', value: "400-450", label: "(Kg/Hr) Grinding Capacity" },
+      { topLabel: 'Size - 1200 mm/48"', value: "600-650", label: "(Kg/Hr) Grinding Capacity" },
+      { value: "15%", label: "Power Saving" },
+      { value: "15 HP", label: "Power Load" },
+      { value: "25 HP", label: "Power Load" },
+      { value: "40 HP", label: "Power Load" },
+      { value: "3", label: "Models Available" }
     ],
     coreCapabilities: [
       {
@@ -375,39 +384,39 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Atta Expert (Manual)",
         image: "/images/plants/flour-mills/products/semi automatic/manual_supplementalimg.png",
         tableData: {
-          "Size": "600mm / 750mm / 1200 mm",
-          "Capacity": "150–200 kg/hr",
-          "Power Load": "15 HP",
-          "Speed": "960 RPM",
-          "Hopper Capacity": "100–150 kg",
+          "Size Available": "600mm/750mm/1200mm",
+          "Hopper Capacity": "100-150 Kg",
           "Pressure Type": "Manual",
-          "Screw Feeder": "0.5 HP, VFD controlled"
+          "Screw Feeder": "0.5 HP, VFD Controlled",
+          "Power (600 mm)": "15 HP 960 RPM",
+          "Power (750 mm)": "25 HP 960 RPM",
+          "Power (1200 mm)": "40 HP 960 RPM"
         }
       },
       {
         name: "Atta Expert (Hydraulic)",
         image: "/images/plants/flour-mills/products/semi automatic/hydraulicattaexpert.png",
         tableData: {
-          "Size": "600mm / 750mm / 1200 mm",
-          "Capacity": "400–450 kg/hr",
-          "Power Load": "25 HP",
-          "Speed": "960 RPM",
-          "Hopper Capacity": "100–150 kg",
+          "Size Available": "600mm/750mm/1200mm",
+          "Hopper Capacity": "100-150 Kg",
           "Pressure Type": "Hydraulic",
-          "Screw Feeder": "0.5 HP, VFD controlled"
+          "Screw Feeder": "0.5 HP, VFD Controlled",
+          "Power (600 mm)": "15 HP 960 RPM",
+          "Power (750 mm)": "25 HP 960 RPM",
+          "Power (1200 mm)": "40 HP 960 RPM"
         }
       },
       {
         name: "Atta Expert (Pneumatic)",
         image: "/images/plants/flour-mills/products/semi automatic/pneumatic_expert.png",
         tableData: {
-          "Size": "600mm / 750mm / 1200 mm",
-          "Capacity": "600–650 kg/hr",
-          "Power Load": "40 HP",
-          "Speed": "960 RPM",
-          "Hopper Capacity": "100–150 kg",
+          "Size Available": "600mm/750mm/1200mm",
+          "Hopper Capacity": "100-150 Kg",
           "Pressure Type": "Pneumatic",
-          "Screw Feeder": "0.5 HP, VFD controlled"
+          "Screw Feeder": "0.5 HP, VFD Controlled",
+          "Power (600 mm)": "15 HP 960 RPM",
+          "Power (750 mm)": "25 HP 960 RPM",
+          "Power (1200 mm)": "40 HP 960 RPM"
         }
       }
     ],
@@ -528,6 +537,7 @@ export const flourMillsProducts: DetailedProduct[] = [
     heroImage: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
     showThumbnails: false,
     detailedModelsTitle: "Models Available",
+    modelsLayout: "zigzag",
     keyHighlights: [
       "20–25 kg/hr Capacity",
       "2 HP Power Load",
@@ -580,30 +590,26 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Mini",
         image: "/horizontal-mills/ultramini/mini_supplementalimg.png",
         tableData: {
-          "Size in MM": "300 x 100",
-          "Size in Inch": "12 x 4",
+          "Size of Mill (mm)": "350mm (14\")",
           "Capacity": "20–25 kg/hr",
+          "RPM": "600",
           "Required HP Single Phase": "2",
-          "Required HP Three Phase": "2",
-          "RPM of Mill": "650",
-          "Stone RPM": "450 rpm",
-          "Motor RPM": "1440",
-          "Gross Weight Approx": "60 kg"
+          "Diameter of Pulley (mm)": "250",
+          "Stone Thickness (mm)": "200",
+          "Gross Weight Approx": "128kg"
         }
       },
       {
         name: "Ultra Mini",
         image: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
         tableData: {
-          "Size in MM": "350 x 100",
-          "Size in Inch": "14 x 4",
-          "Capacity": "25–30 kg/hr",
-          "Required HP Single Phase": "3",
-          "Required HP Three Phase": "3",
-          "RPM of Mill": "600",
-          "Stone RPM": "400 rpm",
-          "Motor RPM": "1440",
-          "Gross Weight Approx": "80 kg"
+          "Size of Mill (mm)": "350mm (14\")",
+          "Capacity": "20–25 kg/hr",
+          "RPM": "600",
+          "Required HP Single Phase": "2",
+          "Diameter of Pulley (mm)": "250",
+          "Stone Thickness (mm)": "200",
+          "Gross Weight Approx": "135kg"
         }
       }
     ],
@@ -613,27 +619,28 @@ export const flourMillsProducts: DetailedProduct[] = [
     id: "emery-stone-dresser",
     title: "Emery Stone Dresser",
     category: "Accessories",
-    subtitle: "Engineered to restore and maintain the cutting profile of emery stones.",
-    desc: "The Emery Stone Dresser is engineered to restore and maintain the cutting profile of emery stones, ensuring consistent grinding performance, improved flour quality, and longer stone life. Designed with manual and pneumatic dressing options, it delivers accurate groove formation, reduced maintenance time, and reliable operation for commercial milling plants.",
-    heroImage: "/images/stone_dresser_hero.png",
+    subtitle: "Pneumatic engineering for precision",
+    desc: "The Emery Stone Dresser is engineered to restore and maintain the cutting profile of emery stones, ensuring consistent grinding performance, improved flour quality, and longer stone life.",
+    heroImage: "/images/emery-stone-dresser/stone-dresser-neo.png",
     showThumbnails: false,
     showDetailedModels: true,
     componentsTitle: "Select Model",
     detailedModelsTitle: "Models Available",
+    modelsLayout: "zigzag",
     keyHighlights: [
-      "3-4 Mins Per Groove",
-      "Precision Cutting",
-      "Pneumatic & Manual"
+      "3–4 Mins Per Groove Dressing",
+      "Precision Groove Cutting",
+      "Smooth & Accurate Operation",
+      "3 Phase, 415V, 50Hz"
     ],
     heroStats: [
-      { value: "3-4", label: "Mins Per Groove" },
-      { value: "50-100", label: "mm Groove Width", sublabel: "Options Available" }
+      { value: "3-4 min", label: "Per groove dressed" },
+      { value: "3 Phase 415V 50Hz", label: "Power Load" }
     ],
     technicalSpecs: {
       "Power Supply": "3 Phase, 415V, 50Hz",
       "Groove Width Options": "50 / 75 / 100 mm",
-      "Stone Compatibility": "500 / 600 / 750 / 1200 mm",
-      "Pressure System": "Pneumatic & Manual Options"
+      "Stone Compatibility": "500 / 600 / 750 / 1200 mm"
     },
     coreCapabilities: [
       {
@@ -667,20 +674,14 @@ export const flourMillsProducts: DetailedProduct[] = [
     keyComponents: [],
     models: [
       {
-        name: "Pneumatic Stone Dresser",
-        image: "/images/stone_dresser_hero.png",
-        tableData: {
-          "Pressure System": "Pneumatic",
-          "Power Supply": "3 Phase, 415V, 50Hz"
-        }
+        name: "Emery Stone Dresser Neo",
+        image: "/images/emery-stone-dresser/stone-dresser-neo.png",
+        description: "Pneumatic stone holding system"
       },
       {
-        name: "Manual Stone Dresser",
-        image: "/images/stone_dresser_hero.png",
-        tableData: {
-          "Pressure System": "Manual",
-          "Power Supply": "3 Phase, 415V, 50Hz"
-        }
+        name: "Emery Stone Dresser",
+        image: "/images/emery-stone-dresser/emery-stone-dresser.png",
+        description: "Manual stone holding system"
       }
     ]
     },
@@ -800,18 +801,22 @@ export const flourMillsProducts: DetailedProduct[] = [
     keyComponents: [
       {
         title: "Master Control Panel",
+        image: "/images/neomatic-key-components/master-control-panel.png",
         description: "Centralized digital control interface."
       },
       {
         title: "Vibro-Discharge Flow Control",
+        image: "/images/neomatic-key-components/vibro-discharge-flow-control.png",
         description: "Ensures smooth and consistent material flow."
       },
       {
         title: "Wi-Fi Enabled Touchscreen",
+        image: "/images/neomatic-key-components/wifi-enabled-touchscreen.png",
         description: "Allows remote monitoring and easy operation."
       },
       {
         title: "Pneumatic Gates for Free Flow",
+        image: "/images/neomatic-key-components/pneumatic-gates-for-free-flow.png",
         description: "Automated gates for seamless conveying."
       }
     ],

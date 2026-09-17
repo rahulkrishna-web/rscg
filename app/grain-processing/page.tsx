@@ -109,32 +109,32 @@ export default function GrainProcessingPage() {
 
         {/* Key Proof Points Bar (Straddling Hero Boundary) */}
         <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-[1400px]">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-start justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
+            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
               </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Cleaner</h4>
-                <p className="text-xs text-slate-500">Separation</p>
+              <div className="flex-1">
+                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Cleaner Separation</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Advanced separators, destoners, and multistage screening</p>
               </div>
             </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
               </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Maximum</h4>
-                <p className="text-xs text-slate-500">Yield</p>
+              <div className="flex-1">
+                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Maximum Yield</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Optimized processing to ensure minimal grain loss</p>
               </div>
             </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
                 <Settings className="w-6 h-6" />
               </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Precision</h4>
-                <p className="text-xs text-slate-500">Engineering</p>
+              <div className="flex-1">
+                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Precision Engineering</h4>
+                <p className="text-xs text-slate-500 leading-relaxed">Heavy duty build with automated controls for seamless mill flow</p>
               </div>
             </div>
           </div>
