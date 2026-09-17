@@ -13,6 +13,7 @@ export interface Book {
   aboutBook: string;
   aboutAuthor: string;
   variants?: BookVariant[];
+  comingSoon?: boolean;
 }
 
 export const booksData: Book[] = [
@@ -33,8 +34,8 @@ export const booksData: Book[] = [
     slug: "wholesome-flour",
     title: "Wholesome Flour",
     image: "/images/books/wholesome_flour.png",
-    originalPrice: 9900,
-    salePrice: 6900,
+    originalPrice: 1500,
+    salePrice: 1000,
     aboutBook: `**Wholesome Flour: A Guide to Nourishing & Tasty Flours** is an essential resource for understanding the nutritional benefits, milling techniques, and culinary applications of various flours. It explores traditional and modern milling practices, focusing on stone grinding, cold milling, and specialized formulations that preserve nutrients, fiber, and authentic taste.\nThe book provides deep insights into wheat, millets, gluten-free grains, and multigrain blends, offering scientific knowledge and practical recipes for creating healthy, high-quality flour products. Ideal for millers, bakers, food technologists, entrepreneurs, and health-conscious consumers, it bridges the gap between milling science and nutritious baking, promoting sustainable and wholesome dietary choices.`,
     aboutAuthor: `**Prof. R.S. Choyal** is a distinguished industrialist, innovator, educator, and thought leader with over three decades of experience in industry, technology, entrepreneurship, and management. He is the **Chairman & Managing Director of the R.S. Choyal Group**, a globally recognized organization specializing in flour milling technologies, food processing solutions, automation, engineering, and sustainable industrial innovation.\nA visionary leader, Prof. Choyal has driven the transformation of traditional milling through innovation, automation, and digital technologies, leading the development of several patented solutions that enhance productivity, quality, and sustainability.\nA **Doctorate in Business Administration** and **Professor of Practice**, he actively bridges academia and industry by mentoring students, researchers, startups, and entrepreneurs.\nProf. Choyal is also a **TEDx Speaker, author, and leadership mentor**, inspiring audiences through his talks on entrepreneurship, innovation, leadership, and personal development. His notable books include *Basics of Chakki Milling*, *Marvel Treasure*, and *Main, Mera Mann, Meri Manzil*.\nThrough his contributions to education, industry, and social development, Prof. R.S. Choyal continues to inspire innovation, entrepreneurship, and sustainable growth while empowering future generations to create meaningful impact.`
   },
@@ -53,6 +54,7 @@ export const booksData: Book[] = [
     image: "/images/books/insights_flourmilling.png",
     originalPrice: 9900,
     salePrice: 6900,
+    comingSoon: true,
     variants: [
       { label: "English Version", image: "/images/books/insights_flourmilling.png", slugSuffix: "english" },
       { label: "Hindi Version", image: "/images/books/flourmilling_hindi.png", slugSuffix: "hindi" }

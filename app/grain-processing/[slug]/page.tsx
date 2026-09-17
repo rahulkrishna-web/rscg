@@ -20,6 +20,7 @@ export default function GrainProcessingProductPage() {
 
   const { addToQuote } = useQuote();
   const [qty, setQty] = React.useState(1);
+  const [activeModelTab, setActiveModelTab] = React.useState(0);
 
   const handleQtyChange = (delta: number) => {
     setQty(prev => Math.max(1, prev + delta));
@@ -98,7 +99,7 @@ export default function GrainProcessingProductPage() {
             {product.stats && product.stats.length > 0 && (
               <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                 {product.stats.map((stat, idx) => (
-                  <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== product.stats.length - 1 ? 'border-r border-slate-100' : ''}`}>
+                  <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== (product.stats?.length ?? 0) - 1 ? 'border-r border-slate-100' : ''}`}>
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
                     <span className="text-sm font-black text-[#0B1510]">{stat.value}</span>
                   </div>
@@ -181,6 +182,58 @@ export default function GrainProcessingProductPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        )}
+
+        {/* Available Models Section */}
+        {product.models && product.models.length > 0 && (
+          <div className="mb-24 max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 pb-4 border-b border-slate-100">
+              <h3 className="text-2xl font-heading font-black text-[#0B1510]">Available Models</h3>
+              
+              <div className="flex p-1 bg-slate-50 rounded-lg border border-slate-200 self-stretch md:self-auto shrink-0 overflow-x-auto">
+                {product.models.map((model, mIdx) => (
+                  <button
+                    key={mIdx}
+                    onClick={() => setActiveModelTab(mIdx)}
+                    className={`flex-1 md:flex-none whitespace-nowrap px-4 py-2 text-xs md:text-sm font-bold rounded-md transition-all duration-200 ${activeModelTab === mIdx ? 'bg-[#0f2e1a] text-white shadow-sm' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'}`}
+                  >
+                    {model.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+            
+            <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
+              <div className="bg-slate-50 px-6 py-5 border-b border-slate-100 flex items-center justify-between">
+                <div>
+                  <h4 className="font-bold text-slate-800 text-lg">{product.models[activeModelTab]?.name}</h4>
+                  <p className="text-xs text-slate-500 mt-1">Compact and efficient milling model</p>
+                </div>
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#0a4c2a] bg-green-50 px-3 py-1.5 rounded-full border border-green-100">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#0a4c2a]"></div>
+                  Available Model
+                </div>
+              </div>
+              <table className="w-full text-left text-sm">
+                <thead className="bg-white border-b border-slate-50 text-slate-500 uppercase tracking-widest text-[10px] font-black">
+                  <tr>
+                    <th className="px-6 py-4 w-16 text-center">#</th>
+                    <th className="px-6 py-4">PARAMETER</th>
+                    <th className="px-6 py-4">SPECIFICATION</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-50">
+                  {product.models[activeModelTab]?.specs.map((spec, idx) => (
+                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                      <td className="px-6 py-4 text-center text-slate-300 font-medium text-xs">{(idx + 1).toString().padStart(2, '0')}</td>
+                      <td className="px-6 py-4 w-1/3 font-bold text-slate-700">{spec.parameter}</td>
+                      <td className="px-6 py-4 text-[#0a4c2a] font-medium">{spec.specification}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         )}

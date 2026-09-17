@@ -98,7 +98,7 @@ export default function FlourProcessingProductPage() {
             {product.stats && product.stats.length > 0 && (
               <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                 {product.stats.map((stat, idx) => (
-                  <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== product.stats.length - 1 ? 'border-r border-slate-100' : ''}`}>
+                  <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== (product.stats?.length ?? 0) - 1 ? 'border-r border-slate-100' : ''}`}>
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
                     <span className="text-sm font-black text-[#0B1510]">{stat.value}</span>
                   </div>
@@ -198,8 +198,23 @@ export default function FlourProcessingProductPage() {
                 <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 uppercase tracking-widest text-[10px] font-black">
                   <tr>
                     <th className="px-6 py-4 w-16 text-center">#</th>
-                    <th className="px-6 py-4">PARAMETER</th>
-                    <th className="px-6 py-4">SPECIFICATION</th>
+                    <th className="px-6 py-4">
+                      {product.slug === 'vibro-sifter' ? 'VIBRO SIFTER SIZE' : 
+                       product.slug === 'plan-sifter' ? 'PLAN SIFTER SIZE' : 'PARAMETER'}
+                    </th>
+                    <th className="px-6 py-4">
+                      {product.slug === 'vibro-sifter' ? 'CAPACITY' : 
+                       product.slug === 'plan-sifter' ? 'LENGTH' : 'SPECIFICATION'}
+                    </th>
+                    {product.slug === 'vibro-sifter' && <th className="px-6 py-4">DECK TYPE</th>}
+                    {product.slug === 'plan-sifter' && (
+                      <>
+                        <th className="px-6 py-4">WIDTH</th>
+                        <th className="px-6 py-4">HEIGHT</th>
+                        <th className="px-6 py-4">CAPACITY</th>
+                        <th className="px-6 py-4">POWER</th>
+                      </>
+                    )}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -208,6 +223,15 @@ export default function FlourProcessingProductPage() {
                       <td className="px-6 py-4 text-center text-slate-400 font-medium">{idx + 1}</td>
                       <td className="px-6 py-4 font-bold text-slate-700">{spec.parameter}</td>
                       <td className="px-6 py-4 text-slate-600">{spec.specification}</td>
+                      {product.slug === 'vibro-sifter' && <td className="px-6 py-4 text-slate-600 capitalize">{spec.extra}</td>}
+                      {product.slug === 'plan-sifter' && (
+                        <>
+                          <td className="px-6 py-4 text-slate-600">{spec.col3}</td>
+                          <td className="px-6 py-4 text-slate-600">{spec.col4}</td>
+                          <td className="px-6 py-4 text-slate-600">{spec.col5}</td>
+                          <td className="px-6 py-4 text-slate-600">{spec.col6}</td>
+                        </>
+                      )}
                     </tr>
                   ))}
                 </tbody>

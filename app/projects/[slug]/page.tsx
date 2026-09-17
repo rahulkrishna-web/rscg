@@ -251,19 +251,19 @@ export default function ProjectDetailPage() {
                  <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
                    <CheckCircle className="text-[#f7b032] w-5 h-5" />
                  </div>
-                 <span>60+ Years<br/>of Experience</span>
+                 <span>60+ Years of<br/>Engineering Excellence</span>
                </div>
                <div className="flex flex-col items-center gap-3">
                  <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
                    <Factory className="text-[#f7b032] w-5 h-5" />
                  </div>
-                 <span>1000+ Plants<br/>Delivered</span>
+                 <span>1200+ Digital<br/>Mills Installed</span>
                </div>
                <div className="flex flex-col items-center gap-3">
                  <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
                    <MapPin className="text-[#f7b032] w-5 h-5" />
                  </div>
-                 <span>60+ Countries<br/>Worldwide</span>
+                 <span>25+ Countries<br/>Covered</span>
                </div>
                <div className="flex flex-col items-center gap-3">
                  <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">

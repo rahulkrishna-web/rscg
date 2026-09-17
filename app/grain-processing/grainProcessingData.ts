@@ -11,6 +11,11 @@ export interface FeatureInfo {
   icon: any;
 }
 
+export interface GrainModel {
+  name: string;
+  specs: SpecInfo[];
+}
+
 export interface SpecInfo {
   parameter: string;
   specification: string;
@@ -27,9 +32,10 @@ export interface GrainProcessingProduct {
   subtitle: string;
   description: string;
   image: string;
-  stats: StatInfo[];
+  stats?: StatInfo[];
   keyFeatures: FeatureInfo[];
-  specs: SpecInfo[];
+  specs?: SpecInfo[];
+  models?: GrainModel[];
   applications: AppInfo[];
 }
 
@@ -75,30 +81,45 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     slug: "intensive-dampener",
     title: "Intensive Dampener",
     subtitle: "Precision Grain Conditioning System",
-    description: "The Intensive Dampener is engineered for precise and uniform grain conditioning before milling. It ensures consistent water distribution across the grain, helping achieve the required moisture level for improved milling performance and product quality.\n\nThe machine supports water addition of up to 8% and features a self-emptying design that reduces residual material, cleaning requirements, and routine maintenance.",
+    description: "The Intensive Dampener is engineered for precise and uniform grain conditioning before milling. It ensures consistent water distribution across the grain, helping achieve the required moisture level for improved milling performance and product quality.\n\nThe machine supports water addition of up to 8% and features a self-emptying design that reduces residual material, cleaning requirements, and routine maintenance. A high-performance electric motor ensures reliable and continuous operation.",
     image: "/images/grain-processing/intensivedampener_supplementimg.jpg",
-    stats: [
-      { label: "WATER ADDITION", value: "Up to 8%" },
-      { label: "ROTOR SPEED", value: "550 RPM" },
-      { label: "DRIVE MOTOR", value: "7.5 HP" }
-    ],
     keyFeatures: [
-      { title: "Uniform water distribution across grain", icon: "Droplets" },
-      { title: "Water addition capacity up to 8%", icon: "Zap" },
-      { title: "High-performance rotor (550 RPM)", icon: "RotateCw" },
+      { title: "Precise and uniform grain dampening", icon: "Droplets" },
+      { title: "Consistent water distribution", icon: "Droplets" },
+      { title: "Supports moisture addition of up to 8%", icon: "Zap" },
+      { title: "Improves grain conditioning and milling efficiency", icon: "TrendingUp" },
       { title: "Self-emptying design", icon: "Replace" },
-      { title: "Improves milling performance", icon: "TrendingUp" }
+      { title: "Reduced sanitation and maintenance requirements", icon: "Settings2" },
+      { title: "Suitable for continuous processing", icon: "RotateCw" },
+      { title: "High-performance rotor (960 RPM)", icon: "RotateCw" },
+      { title: "Powered by a high-performance electric motor", icon: "Zap" }
     ],
-    specs: [
-      { parameter: "Water Addition", specification: "Up to 8%" },
-      { parameter: "Rotor Speed", specification: "550 RPM" },
-      { parameter: "Drive Motor", specification: "5.5 kW / 7.5 HP" },
-      { parameter: "Maintenance", specification: "Self-emptying, reduced residue" }
+    models: [
+      {
+        name: "SVID-SS-2400",
+        specs: [
+          { parameter: "Capacity", specification: "6–8 TPH" },
+          { parameter: "Power", specification: "12.5 HP" },
+          { parameter: "Speed", specification: "960 RPM" },
+          { parameter: "Drive", specification: "Electric Motor" }
+        ]
+      },
+      {
+        name: "SVID-SS-1800",
+        specs: [
+          { parameter: "Capacity", specification: "4–6 TPH" },
+          { parameter: "Power", specification: "10 HP" },
+          { parameter: "Speed", specification: "960 RPM" },
+          { parameter: "Drive", specification: "Electric Motor" }
+        ]
+      }
     ],
     applications: [
-      { label: "Flour mills", icon: "Factory" },
-      { label: "Grain conditioning", icon: "Droplets" },
-      { label: "Milling performance", icon: "TrendingUp" }
+      { label: "Wheat-conditioning sections", icon: "Factory" },
+      { label: "Flour-milling plants", icon: "Factory" },
+      { label: "Grain-processing lines", icon: "Settings2" },
+      { label: "Pre-milling moisture adjustment", icon: "Droplets" },
+      { label: "Automated conditioning systems", icon: "Cog" }
     ]
   },
   {
@@ -107,28 +128,40 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     subtitle: "High-Efficiency Grain Surface Cleaning",
     description: "The Horizontal Scourer is designed to remove adhering dust, husk, and surface impurities from grain before further processing.\n\nIts gentle yet effective scouring action helps reduce bacterial contamination, remove insect fragments, and improve grain hygiene without damaging grain quality. Powered by an electric motor, the machine is built for reliable and continuous operation in commercial grain-processing and flour-milling plants.",
     image: "/images/grain-processing/scourer_supplementimg.jpg",
-    stats: [
-      { label: "CAPACITY", value: "2-4 TPH" },
-      { label: "DRIVE MOTOR", value: "7.5 HP" },
-      { label: "SCREEN HOLE", value: "2 mm" }
-    ],
     keyFeatures: [
-      { title: "Removes adhering dust, husk, and impurities", icon: "Fan" },
-      { title: "Reduces bacterial contamination", icon: "ShieldCheck" },
-      { title: "Removes insect fragments", icon: "Shield" },
-      { title: "Improves grain hygiene", icon: "Heart" },
-      { title: "Continuous operation", icon: "RotateCw" }
+      { title: "Removes adhering dust and husk", icon: "Fan" },
+      { title: "Improves grain surface cleanliness", icon: "Replace" },
+      { title: "Helps reduce bacterial contamination", icon: "ShieldCheck" },
+      { title: "Removes insect fragments through gentle scouring", icon: "Shield" },
+      { title: "Preserves grain quality", icon: "CheckCircle2" },
+      { title: "Supports consistent downstream processing", icon: "TrendingUp" },
+      { title: "Suitable for continuous commercial operation", icon: "RotateCw" },
+      { title: "Powered by a high-performance electric motor", icon: "Zap" }
     ],
-    specs: [
-      { parameter: "Capacity", specification: "2–4 TPH" },
-      { parameter: "Drive Motor", specification: "5.5 kW / 7.5 HP" },
-      { parameter: "Screen Hole Size", specification: "2 mm" },
-      { parameter: "Applications", specification: "Commercial grain-processing" }
+    models: [
+      {
+        name: "S-1800",
+        specs: [
+          { parameter: "Capacity", specification: "5–6 TPH" },
+          { parameter: "Power", specification: "10–15 HP" },
+          { parameter: "Drive", specification: "Electric Motor" }
+        ]
+      },
+      {
+        name: "S-2400",
+        specs: [
+          { parameter: "Capacity", specification: "8–10 TPH" },
+          { parameter: "Power", specification: "15–20 HP" },
+          { parameter: "Drive", specification: "Electric Motor" }
+        ]
+      }
     ],
     applications: [
-      { label: "Grain surface cleaning", icon: "Replace" },
-      { label: "Flour milling plants", icon: "Factory" },
-      { label: "Hygiene improvement", icon: "Heart" }
+      { label: "Wheat-cleaning sections", icon: "Factory" },
+      { label: "Flour-milling plants", icon: "Factory" },
+      { label: "Grain-processing line", icon: "TrendingUp" },
+      { label: "Pre-conditioning grain cleaning", icon: "Heart" },
+      { label: "Commercial grain hygiene systems", icon: "Shield" }
     ]
   },
   {
@@ -137,23 +170,12 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     subtitle: "Efficient Flour Recovery from Bran",
     description: "The Bran Finisher is designed to recover flour particles still adhering to bran after milling. By separating this residual flour from the bran, it helps increase overall flour yield, reduce product loss, and improve milling efficiency.\n\nSuitable for common wheat, durum wheat, and rye mills, the machine delivers cleaner bran while supporting reliable and continuous plant operation.",
     image: "/images/grain-processing/branfinisher_supplementimg.jpg",
-    stats: [
-      { label: "MOTOR", value: "7.5 HP" },
-      { label: "LENGTH", value: "800 mm" },
-      { label: "WIDTH", value: "350 mm" }
-    ],
     keyFeatures: [
       { title: "Recovers adhering flour from bran", icon: "TrendingUp" },
       { title: "Increases flour yield", icon: "CheckCircle2" },
       { title: "Reduces product loss", icon: "ShieldCheck" },
       { title: "Delivers cleaner bran", icon: "Replace" },
       { title: "Suitable for wheat and rye", icon: "Box" }
-    ],
-    specs: [
-      { parameter: "Motor", specification: "7.5 HP" },
-      { parameter: "Rotor Length", specification: "800 mm" },
-      { parameter: "Width", specification: "350 mm" },
-      { parameter: "Application", specification: "Flour Recovery" }
     ],
     applications: [
       { label: "Common wheat mills", icon: "Factory" },
@@ -165,29 +187,44 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     slug: "emery-polisher",
     title: "Emery Polisher",
     subtitle: "Precision De-Hulling and Grain Polishing",
-    description: "The Emery Polisher is designed for efficient de-hulling and surface polishing of wheat and other grains. It is especially suitable for whole wheat atta plants, where controlled polishing helps improve grain cleanliness, finish, and overall product quality.\n\nThe polishing intensity can be adjusted externally through a slide-control mechanism, allowing operators to fine-tune the processing effect.",
+    description: "The Emery Polisher is designed for efficient de-hulling and surface polishing of wheat and other grains. It is especially suitable for whole wheat atta plants, where controlled polishing helps improve grain cleanliness, finish, and overall product quality.\n\nThe polishing intensity can be adjusted externally through a slide-control mechanism, allowing operators to fine-tune the processing effect according to the grain type and required output.",
     image: "/images/grain-processing/emerypolisher_supplementimg.jpg",
-    stats: [
-      { label: "CAPACITY", value: "Up to 5 TPH" },
-      { label: "MOTOR", value: "7.5 HP" },
-      { label: "DIAMETER", value: "410 mm" }
-    ],
     keyFeatures: [
-      { title: "Efficient de-hulling and polishing", icon: "RotateCw" },
-      { title: "Improves grain cleanliness and finish", icon: "CheckCircle2" },
+      { title: "Efficient de-hulling of wheat and other grains", icon: "RotateCw" },
+      { title: "Ideal for whole wheat atta milling plants", icon: "Factory" },
       { title: "Adjustable polishing intensity", icon: "Settings2" },
-      { title: "Ideal for whole wheat atta plants", icon: "Factory" }
+      { title: "External slide-control mechanism", icon: "Settings2" },
+      { title: "Uniform grain finishing", icon: "CheckCircle2" },
+      { title: "Improved grain cleanliness and product quality", icon: "CheckCircle2" },
+      { title: "Durable construction for commercial operation", icon: "Hammer" },
+      { title: "Designed for continuous and consistent performance", icon: "TrendingUp" }
     ],
-    specs: [
-      { parameter: "Capacity", specification: "Up to 5 TPH" },
-      { parameter: "Motor", specification: "7.5 HP" },
-      { parameter: "Diameter", specification: "410 mm" },
-      { parameter: "Mechanism", specification: "Slide-control" }
+    models: [
+      {
+        name: "Model 12\" × 30\" — High Capacity",
+        specs: [
+          { parameter: "Capacity", specification: "2–2.5 TPH" },
+          { parameter: "Main Motor Power", "specification": "20 HP" },
+          { parameter: "Auxiliary Motor Power", "specification": "3 HP" },
+          { parameter: "Machine Size", "specification": "12\" × 30\"" }
+        ]
+      },
+      {
+        name: "Model 12\" × 30\" — Standard Capacity",
+        specs: [
+          { parameter: "Capacity", specification: "1.5–2 TPH" },
+          { parameter: "Main Motor Power", "specification": "15 HP" },
+          { parameter: "Auxiliary Motor Power", "specification": "3 HP" },
+          { parameter: "Machine Size", "specification": "12\" × 30\"" }
+        ]
+      }
     ],
     applications: [
       { label: "Whole wheat atta plants", icon: "Factory" },
-      { label: "Grain de-hulling", icon: "Replace" },
-      { label: "Surface polishing", icon: "RotateCw" }
+      { label: "Wheat-cleaning and preparation sections", icon: "Settings2" },
+      { label: "Grain de-hulling systems", icon: "Replace" },
+      { label: "Grain polishing lines", icon: "RotateCw" },
+      { label: "Commercial flour-milling plants", icon: "Factory" }
     ]
   },
   {
@@ -196,26 +233,43 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     subtitle: "High-Performance De-Hulling",
     description: "The Emery Roll is a high-performance de-hulling machine designed for efficient removal of bran and outer husk from wheat and other grains. It ensures uniform processing, improves flour quality, and enhances milling efficiency. The machine is widely used in whole wheat atta plants and dal processing units for consistent and reliable grain conditioning.",
     image: "/images/grain-processing/emeryroll_supplementalimg.jpg",
-    stats: [
-      { label: "CAPACITY", value: "4-5 TPH" },
-      { label: "MOTOR", value: "7.5 HP" },
-      { label: "LENGTH", value: "31.5 in" }
-    ],
     keyFeatures: [
-      { title: "Efficient de-hulling of wheat and grains", icon: "Hammer" },
-      { title: "Improves flour quality", icon: "TrendingUp" },
-      { title: "Uniform processing", icon: "CheckCircle2" },
-      { title: "Enhances milling efficiency", icon: "Zap" }
+      { title: "Efficient de-hulling of wheat and other grains", icon: "Hammer" },
+      { title: "Adjustable processing effect through external slide control", icon: "Settings2" },
+      { title: "Heavy-duty and durable construction", icon: "Shield" },
+      { title: "High-capacity operation with consistent performance", icon: "TrendingUp" },
+      { title: "Suitable for continuous industrial applications", icon: "RotateCw" }
     ],
-    specs: [
-      { parameter: "Capacity", specification: "4-5 TPH" },
-      { parameter: "Motor", specification: "7.5 HP" },
-      { parameter: "Length", specification: "31.5 inches" }
+    models: [
+      {
+        name: "SVCS-1",
+        specs: [
+          { parameter: "Length", specification: "1143 mm" },
+          { parameter: "Width", specification: "610 mm" },
+          { parameter: "Height", specification: "1143 mm" },
+          { parameter: "Capacity", specification: "4-5 TPH" },
+          { parameter: "Power", specification: "10 HP" },
+          { parameter: "Weight", specification: "450 Kg" }
+        ]
+      },
+      {
+        name: "SVER-1",
+        specs: [
+          { parameter: "Length", specification: "915 mm" },
+          { parameter: "Width", specification: "760 mm" },
+          { parameter: "Height", specification: "1143 mm" },
+          { parameter: "Capacity", specification: "3-4 TPH" },
+          { parameter: "Power", specification: "7.5 HP" },
+          { parameter: "Weight", specification: "350 Kg" }
+        ]
+      }
     ],
     applications: [
-      { label: "Whole wheat atta plants", icon: "Factory" },
-      { label: "Dal processing units", icon: "Factory" },
-      { label: "Grain conditioning", icon: "Droplets" }
+      { label: "Wheat de-hulling", icon: "Replace" },
+      { label: "Whole Wheat Atta Plants", icon: "Factory" },
+      { label: "Dal Processing Plants", icon: "Factory" },
+      { label: "Grain Cleaning & Conditioning", icon: "Droplets" },
+      { label: "Flour Milling Industries", icon: "Factory" }
     ]
   },
   {

@@ -71,7 +71,7 @@ export default function ProjectsPage() {
               style={{ backgroundImage: `url(${src})` }}
             />
           ))}
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C]/80 from-0% via-[#0B2C1C]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
             <div className="space-y-4 max-w-xl">

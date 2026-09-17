@@ -437,8 +437,7 @@ export const projectsData: ProjectItem[] = [
       "/images/projects/case_studies/winnies-pure-health/galleryimg1.jpg",
       "/images/projects/case_studies/winnies-pure-health/galleryimg2.jpg",
       "/images/projects/case_studies/winnies-pure-health/galleryimg3.jpg",
-      "/images/projects/case_studies/winnies-pure-health/galleryimg.jpg",
-      "/images/projects/case_studies/winnies-pure-health/logo_winnie.jpg"
+      "/images/projects/case_studies/winnies-pure-health/galleryimg.jpg"
     ],
     "content": [
       {

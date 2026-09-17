@@ -51,7 +51,7 @@ export default function BooksPage() {
           </div>
           
           {/* Tint Overlay for gradient blend if needed */}
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510] from-0% via-[#0B1510]/80 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
           
           {/* Banner Text Content */}
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
@@ -160,9 +160,15 @@ export default function BooksPage() {
                     className="group bg-white border border-slate-100 rounded-2xl border-none overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col relative shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] snap-start"
                   >
                     {/* Sale Tag */}
-                    <span className="absolute top-4 right-4 z-10 bg-[#D3994B] text-[#133020] text-[11px] font-black uppercase tracking-wider px-3 py-1 shadow-sm rounded-sm">
-                      SALE
-                    </span>
+                    {book.comingSoon ? (
+                      <span className="absolute top-4 right-4 z-10 bg-slate-800 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 shadow-sm rounded-sm">
+                        COMING SOON
+                      </span>
+                    ) : (
+                      <span className="absolute top-4 right-4 z-10 bg-[#D3994B] text-[#133020] text-[11px] font-black uppercase tracking-wider px-3 py-1 shadow-sm rounded-sm">
+                        SALE
+                      </span>
+                    )}
 
                     {/* Image Container */}
                     <div className="aspect-[4/5] w-full flex items-center justify-center p-6 relative overflow-hidden bg-white/50 border-b border-slate-200/50 backdrop-blur-sm">
@@ -185,8 +191,14 @@ export default function BooksPage() {
                         </p>
                         {/* Price Section */}
                         <div className="flex items-center gap-2 pt-1">
-                          <span className="text-sm text-slate-500 line-through font-semibold">₹{book.originalPrice.toLocaleString('en-IN')}.00</span>
-                          <span className="text-base text-slate-900 font-black">₹{book.salePrice.toLocaleString('en-IN')}.00</span>
+                          {book.comingSoon ? (
+                            <span className="text-base text-slate-500 font-bold italic">Coming Soon</span>
+                          ) : (
+                            <>
+                              <span className="text-sm text-slate-500 line-through font-semibold">₹{book.originalPrice.toLocaleString('en-IN')}.00</span>
+                              <span className="text-base text-slate-900 font-black">₹{book.salePrice.toLocaleString('en-IN')}.00</span>
+                            </>
+                          )}
                         </div>
                       </div>
 

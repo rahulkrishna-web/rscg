@@ -39,7 +39,7 @@ export default function NewsPage() {
         {/* Hero Section */}
         <section className="relative w-full h-[350px] sm:h-[450px] overflow-hidden flex flex-col justify-center bg-[#0D301F]">
           <div className="absolute inset-0 bg-[url('/images/news-page/news_hero.png')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B2C1C] from-0% via-[#0B2C1C]/70 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C]/80 from-0% via-[#0B2C1C]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
           
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
             <div className="space-y-4 max-w-xl">
@@ -66,15 +66,7 @@ export default function NewsPage() {
           </div>
 
           <div className="relative z-10 px-6 sm:px-12 lg:px-16 xl:px-24 w-full">
-            {/* Header */}
-            <div className="text-center space-y-2 mb-16">
-              <h2 className="text-3xl sm:text-4xl font-heading text-slate-900">
-                News & Events
-              </h2>
-              <p className="text-sm sm:text-base text-slate-600 font-medium">
-                Industry News, Upcoming Exhibitions, and Corporate Updates
-              </p>
-            </div>
+
 
             {/* News Cards Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">

@@ -78,7 +78,7 @@ export default function PowerSavingPage() {
               className="object-cover object-right lg:object-center"
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510] from-0% via-[#0B1510]/80 via-[30%] to-transparent lg:to-[60%] z-10 w-full" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
 
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
             <div className="max-w-2xl space-y-6">

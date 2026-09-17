@@ -71,13 +71,21 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-tight">
                   {displayTitle}
                 </h1>
-                <p className="text-2xl sm:text-3xl font-bold text-slate-800 pt-2">
-                  MRP: ₹{initialBook.salePrice.toLocaleString('en-IN')}
-                </p>
-                {initialBook.originalPrice > initialBook.salePrice && (
-                  <p className="text-sm text-slate-500 line-through font-semibold">
-                    Original Price: ₹{initialBook.originalPrice.toLocaleString('en-IN')}
+                {initialBook.comingSoon ? (
+                  <p className="text-2xl sm:text-3xl font-bold text-slate-500 italic pt-2">
+                    Coming Soon
                   </p>
+                ) : (
+                  <>
+                    <p className="text-2xl sm:text-3xl font-bold text-slate-800 pt-2">
+                      MRP: ₹{initialBook.salePrice.toLocaleString('en-IN')}
+                    </p>
+                    {initialBook.originalPrice > initialBook.salePrice && (
+                      <p className="text-sm text-slate-500 line-through font-semibold">
+                        Original Price: ₹{initialBook.originalPrice.toLocaleString('en-IN')}
+                      </p>
+                    )}
+                  </>
                 )}
               </div>
 

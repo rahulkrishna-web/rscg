@@ -13,6 +13,11 @@ export interface FeatureInfo {
 export interface SpecInfo {
   parameter: string;
   specification: string;
+  extra?: string;
+  col3?: string;
+  col4?: string;
+  col5?: string;
+  col6?: string;
 }
 
 export interface AppInfo {
@@ -26,7 +31,7 @@ export interface FlourProcessingProduct {
   subtitle: string;
   description: string;
   image: string;
-  stats: StatInfo[];
+  stats?: StatInfo[];
   keyFeatures: FeatureInfo[];
   productBenefits?: FeatureInfo[];
   specs: SpecInfo[];
@@ -79,30 +84,25 @@ export const flourProcessingData: FlourProcessingProduct[] = [
     subtitle: "Efficient Screening and Grading",
     description: "Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.",
     image: "/images/flour-processing/vibrosifter.png",
-    stats: [
-      { label: "ACCURACY", value: "High-Precision" },
-      { label: "OPERATION", value: "Low Noise" },
-      { label: "DESIGN", value: "Compact & Hygienic" }
-    ],
     keyFeatures: [
       { title: "High-precision screening and grading", icon: "Settings2" },
       { title: "Compact and hygienic design", icon: "Box" },
       { title: "Low noise and vibration operation", icon: "VolumeX" },
-      { title: "Quick screen changing", icon: "Replace" },
-      { title: "Suitable for continuous operation", icon: "RotateCw" }
+      { title: "Quick screen changing and easy maintenance", icon: "Replace" },
+      { title: "Suitable for continuous industrial operation", icon: "RotateCw" }
     ],
     specs: [
-      { parameter: "900 MM (Single Deck)", specification: "300-500 kg/hr | 500-800 kg/hr" },
-      { parameter: "1200 MM (Single Deck)", specification: "500-800 kg/hr" },
-      { parameter: "1200 MM (Double Deck)", specification: "600-900 kg/hr" },
-      { parameter: "1500 MM (Double Deck)", specification: "1000-1200 kg/hr" }
+      { parameter: "900 MM", specification: "300-500 kg/hr", extra: "single" },
+      { parameter: "1200 MM", specification: "500-800 kg/hr", extra: "single" },
+      { parameter: "1200 MM", specification: "600-900 kg/hr", extra: "double" },
+      { parameter: "1500 MM", specification: "1000-1200 kg/hr", extra: "double" }
     ],
     applications: [
       { label: "Flour mills", icon: "Factory" },
       { label: "Food processing", icon: "Heart" },
       { label: "Spice & powder screening", icon: "Settings2" },
       { label: "Grain processing", icon: "LayoutTemplate" },
-      { label: "Chemical & pharma industries", icon: "Box" }
+      { label: "Chemical & pharmaceutical industries", icon: "Box" }
     ]
   },
   {
