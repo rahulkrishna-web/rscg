@@ -51,29 +51,49 @@ export default function FlourMills() {
     <main className="min-h-screen bg-white selection:bg-brand-primary/20">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative w-full h-[450px] md:h-[500px] flex items-center overflow-hidden">
+      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[16/9] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/plants/flourmill_hero.png" 
-            alt="Flour Milling Plants" 
-            fill
-            className="object-cover object-right lg:object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          {/* Desktop Background Image (1920x1080 -> 16:9) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/flourmill/flourmill_desktop.png" 
+              alt="Flour Milling Plants" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          </div>
+
+          {/* Mobile Background Image (1080x1920 -> 9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/flourmill/flourmill_mobile.png" 
+              alt="Flour Milling Plants" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          </div>
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="w-full max-w-2xl">
-            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-6 shadow-sm border border-[#f7b032]">
+            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
               Commercial Milling
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
               Flour Mills & <br className="hidden sm:block" />
               Grinding Plants
             </h1>
-            <p className="text-lg sm:text-xl text-slate-200 mb-10 leading-relaxed font-light max-w-xl">
+            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
               Advanced stone milling technology engineered for high-capacity continuous production, uniform flour quality, and long-term reliability.
             </p>
             
@@ -91,9 +111,9 @@ export default function FlourMills() {
 
       </section>
 
-      {/* Key Proof Points Bar */}
-      <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
+      {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
+        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
@@ -113,7 +133,29 @@ export default function FlourMills() {
         </div>
       </div>
 
-      <section className="pt-4 sm:pt-8 lg:pt-12 pb-24 bg-slate-50 relative -mt-8 sm:-mt-12 lg:-mt-16">
+      {/* Mobile Key Proof Points Bar (In Document Flow - Prevents Overlapping Next Section) */}
+      <div className="block md:hidden relative z-30 px-5 -mt-10 w-full mx-auto max-w-xl">
+        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
+          
+          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-bold text-slate-800 mb-1 text-base">Digital Mills</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
+          </div>
+
+          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-bold text-slate-800 mb-1 text-base">Semi-Automatic & Sheller Mills</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
+          </div>
+
+          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-bold text-slate-800 mb-1 text-base">Operate From Anywhere</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Track status and remote working easily with connected milling technology.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <section className="pt-10 sm:pt-14 md:pt-16 pb-24 bg-slate-50 relative md:-mt-12 lg:-mt-16">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

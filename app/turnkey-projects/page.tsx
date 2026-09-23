@@ -33,6 +33,21 @@ import Footer from "@/components/Footer";
 export default function TurnkeyProjects() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const statPoints = [
+    {
+      title: "From Concept to Commissioning",
+      desc: "Complete project support from initial planning through installation and plant start-up."
+    },
+    {
+      title: "Up to 1000 TPD",
+      desc: "Scalable plant solutions designed for a wide range of production capacities."
+    },
+    {
+      title: "End-to-End Plant Solutions",
+      desc: "Integrated engineering, fabrication, automation, installation, and commissioning."
+    }
+  ];
+
   const projectCapabilities = [
     {
       id: 1,
@@ -159,19 +174,37 @@ export default function TurnkeyProjects() {
       {/* Header */}
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
-      {/* Hero Section */}
-      <section className="w-full relative z-10 bg-[#0B1510] text-white h-[450px] md:h-[500px] flex flex-col justify-center">
-        {/* Full-bleed Background Image with High Visibility */}
+      {/* Hero Section - Exactly matches image aspect ratio so images are never cropped */}
+      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1079/1920] md:aspect-[16/9] flex flex-col justify-center">
+        {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          <Image 
-            src="/turnkey_projects_hero.png" 
-            alt="RS Choyal Turnkey Plant Rendering" 
-            fill
-            className="object-cover object-center"
-            priority
-          />
-          {/* Dark-charcoal gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10 w-full"></div>
+          {/* Desktop Background Image (1920x1080 -> 16:9) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/turnkey/turnkey_desktop.png" 
+              alt="RS Choyal Turnkey Plant" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10 w-full"></div>
+          </div>
+
+          {/* Mobile Background Image (1079x1920) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/turnkey/turnkey_mobile.png" 
+              alt="RS Choyal Turnkey Plant" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Dark-charcoal gradient overlay for mobile */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10 w-full"></div>
+          </div>
         </div>
 
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
@@ -204,45 +237,47 @@ export default function TurnkeyProjects() {
 
           </div>
 
-          {/* Proof Points White Container Overlapping Section 1 and Section 2 - Exactly 50/50 Centered */}
-          <div className="absolute bottom-0 left-0 right-0 w-full max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80 z-30 translate-y-1/2">
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200">
-              
-              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
-                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
-                  From Concept to Commissioning
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Complete project support from initial planning through installation and plant start-up.
-                </p>
+          {/* Desktop Proof Points White Container - 50/50 Overlapping Hero Bottom */}
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 w-full max-w-5xl mx-auto px-6 lg:px-8 z-30 translate-y-1/2">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80">
+              <div className="grid grid-cols-3 divide-x divide-slate-200">
+                {statPoints.map((stat, idx) => (
+                  <div key={idx} className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-left space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
+                      {stat.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      {stat.desc}
+                    </p>
+                  </div>
+                ))}
               </div>
-
-              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
-                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
-                  Up to 1000 TPD
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Scalable plant solutions designed for a wide range of production capacities.
-                </p>
-              </div>
-
-              <div className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-center md:text-left space-y-1.5">
-                <h3 className="text-base sm:text-lg font-bold text-[#0B1510] leading-snug">
-                  End-to-End Plant Solutions
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Integrated engineering, fabrication, automation, installation, and commissioning.
-                </p>
-              </div>
-
             </div>
           </div>
 
         </div>
       </section>
 
+      {/* Mobile Proof Points - In Document Flow so it NEVER overlaps or messes with the next section text */}
+      <div className="block md:hidden relative z-30 px-5 -mt-10 max-w-5xl mx-auto w-full">
+        <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100/80">
+          <div className="grid grid-cols-1 divide-y divide-slate-200">
+            {statPoints.map((stat, idx) => (
+              <div key={idx} className="p-4 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 text-left space-y-1">
+                <h3 className="text-base font-bold text-[#0B1510] leading-snug">
+                  {stat.title}
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  {stat.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Intro details */}
-      <section className="w-full pt-32 sm:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-10 sm:pt-14 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c2722]">
             Engineering the Future of Smart Flour Milling
