@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Mail, MapPin, Shield, Layers, Settings, ShoppingCart } from "lucide-react";
+import { ArrowRight, Phone, Mail, MapPin, Shield, Layers, Settings, ShoppingCart, Filter, TrendingUp } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
@@ -16,49 +16,49 @@ export default function GrainProcessingPage() {
       id: 1,
       title: "Magnetic Separator",
       slug: "magnetic-separator",
-      image: "/images/grain-processing/magneticseparator_supplementimg_.jpg",
+      image: "/images/grain-processing/magnetic-separator.png",
       description: "Removes all ferrous impurities from grain streams with powerful rare-earth magnets, ensuring product purity and equipment safety."
     },
     {
       id: 2,
       title: "Intensive Dampener",
       slug: "intensive-dampener",
-      image: "/images/grain-processing/intensivedampener_supplementimg.jpg",
+      image: "/images/grain-processing/intensive-dampener.png",
       description: "Achieves uniform and efficient moisture addition for precise grain conditioning, optimizing the milling process."
     },
     {
       id: 3,
       title: "Bran Finisher",
       slug: "bran-finisher",
-      image: "/images/grain-processing/branfinisher_supplementimg.jpg",
+      image: "/images/grain-processing/bran-finisher.png",
       description: "Effectively separates remaining endosperm from bran particles, increasing flour yield and reducing waste."
     },
     {
       id: 4,
       title: "Horizontal Scourer",
       slug: "horizontal-scourer",
-      image: "/images/grain-processing/scourer_supplementimg.jpg",
+      image: "/images/grain-processing/horizontal-scourer.png",
       description: "Uses high-speed abrasive action to scour and polish grain surfaces, removing dust, dirt, and mold for cleaner grain."
     },
     {
       id: 5,
       title: "Emery Polisher",
       slug: "emery-polisher",
-      image: "/images/grain-processing/emerypolisher_supplementimg.jpg",
+      image: "/images/grain-processing/emery-polisher.png",
       description: "An advanced machine for high-precision polishing of grains, enhancing visual appearance and value."
     },
     {
-      id: 8,
+      id: 6,
       title: "Emery Roll",
       slug: "emery-roll",
-      image: "/images/grain-processing/emeryroll_supplementalimg.jpg",
+      image: "/images/grain-processing/emery-roll.png",
       description: "A key component featuring precision-machined emery segments for aggressive grain scouring and hulling."
     },
     {
-      id: 9,
+      id: 7,
       title: "Drum Sieve",
       slug: "drum-sieve",
-      image: "/images/grain-processing/drumsieve_supplementimg.jpg",
+      image: "/images/grain-processing/drum-sieve.png",
       description: "A rotating drum with screens for large-scale, continuous sifting and separation of materials."
     }
   ];
@@ -67,82 +67,137 @@ export default function GrainProcessingPage() {
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
       <Header />
 
-      {/* Hero Banner Section */}
-      <section className="relative w-full pb-20 lg:pb-0">
-        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/grain-processing/grainprocess_hero.png"
-              alt="Grain Processing Solutions"
+      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Background Image (1920x820) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/grain-processing/grain_process_desktop_cropped.png" 
+              alt="Grain Processing Solutions" 
               fill
+              className="object-cover object-center"
               priority
-              className="object-cover object-right lg:object-center"
+              sizes="100vw"
             />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
-          {/* Dark Tint Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
-          
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
-            <div className="max-w-2xl space-y-6">
-              <div className="flex items-center gap-3 text-sm font-bold text-[#f7b032] uppercase tracking-widest mb-4">
-                <span className="w-10 h-[3px] bg-[#f7b032]"></span>
-                GRAIN PROCESSING
-              </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-black text-white leading-[1] tracking-tight">
-                Grain<br/>Processing<br/>Solutions
-              </h1>
-              <p className="text-base sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-                High-performance machines for cleaner grain, better separation, and optimized milling efficiency.
-              </p>
-              <div className="pt-4">
-                <Link 
-                  href="#products" 
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide"
-                >
-                  EXPLORE MACHINES <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+
+          {/* Mobile Background Image (9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/grain-processing/grain_process_mobile.png" 
+              alt="Grain Processing Solutions" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
         </div>
 
-        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
-        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-[1400px]">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-start justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Cleaner Separation</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Advanced separators, destoners, and multistage screening</p>
-              </div>
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              GRAIN PROCESSING
             </div>
-            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
-              </div>
-              <div className="flex-1">
-                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Maximum Yield</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Optimized processing to ensure minimal grain loss</p>
-              </div>
-            </div>
-            <div className="w-full flex items-start gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Settings className="w-6 h-6" />
-              </div>
-              <div className="flex-1">
-                <h4 className="text-[15px] font-bold text-slate-800 mb-1">Precision Engineering</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">Heavy duty build with automated controls for seamless mill flow</p>
-              </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Grain <br />
+              Processing <br />
+              <span className="text-white">Solutions</span>
+            </h1>
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+              High-performance machines for cleaner grain, better separation, and optimized milling efficiency.
+            </p>
+            <div className="pt-2 sm:pt-4">
+              <Link 
+                href="#products"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+              >
+                EXPLORE MACHINES <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Filter className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Cleaner Separation</h4>
+              <p className="text-xs text-slate-500">Advanced separators, destoners, and multistage screening.</p>
+            </div>
+          </div>
+          
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Maximum Yield</h4>
+              <p className="text-xs text-slate-500">Optimized processing to ensure minimal grain loss.</p>
+            </div>
+          </div>
+
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Precision Engineering</h4>
+              <p className="text-xs text-slate-500">Heavy-duty build with automated controls for seamless mill flow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Key Proof Points Bar (In natural document flow) */}
+      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
+          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Filter className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Cleaner Separation</h4>
+              <p className="text-xs text-slate-500">Advanced separators, destoners, and multistage screening.</p>
+            </div>
+          </div>
+          
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Maximum Yield</h4>
+              <p className="text-xs text-slate-500">Optimized processing to ensure minimal grain loss.</p>
+            </div>
+          </div>
+
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Precision Engineering</h4>
+              <p className="text-xs text-slate-500">Heavy-duty build with automated controls for seamless mill flow.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Intro Description Section */}
-      <section className="w-full pt-32 lg:pt-40 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10">
+      <section className="w-full pt-12 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative z-10">
         <div className="w-full mx-auto space-y-6">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
             A cleaning section plays the main role

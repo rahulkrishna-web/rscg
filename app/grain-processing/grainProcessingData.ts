@@ -19,6 +19,7 @@ export interface GrainModel {
 export interface SpecInfo {
   parameter: string;
   specification: string;
+  col3?: string;
 }
 
 export interface AppInfo {
@@ -45,12 +46,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Magnetic Separator",
     subtitle: "High-Intensity Magnetic Separation for Grain Processing",
     description: "The Permanent Drum-Type Magnetic Separator is designed to remove tramp iron and ferrous contamination from free-flowing bulk materials such as grain, flour, food products, and other processed materials.\n\nIt helps improve end-product purity, recover valuable metal contaminants, and protect downstream machinery from damage. A vibratory hopper regulates material feeding for consistent flow, while the geared drive supports reliable continuous operation.",
-    image: "/images/grain-processing/magneticseparator_supplementimg_.jpg",
-    stats: [
-      { label: "MAGNETIC POWER", value: "10,000 Gauss" },
-      { label: "CAPACITY", value: "2-4 TPH" },
-      { label: "DRIVE TYPE", value: "1 HP Geared" }
-    ],
+    image: "/images/grain-processing/magnetic-separator.png",
     keyFeatures: [
       { title: "High-intensity permanent magnetic drum", icon: "Zap" },
       { title: "Magnetic strength up to 10,000 gauss", icon: "Settings2" },
@@ -82,7 +78,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Intensive Dampener",
     subtitle: "Precision Grain Conditioning System",
     description: "The Intensive Dampener is engineered for precise and uniform grain conditioning before milling. It ensures consistent water distribution across the grain, helping achieve the required moisture level for improved milling performance and product quality.\n\nThe machine supports water addition of up to 8% and features a self-emptying design that reduces residual material, cleaning requirements, and routine maintenance. A high-performance electric motor ensures reliable and continuous operation.",
-    image: "/images/grain-processing/intensivedampener_supplementimg.jpg",
+    image: "/images/grain-processing/intensive-dampener.png",
     keyFeatures: [
       { title: "Precise and uniform grain dampening", icon: "Droplets" },
       { title: "Consistent water distribution", icon: "Droplets" },
@@ -127,7 +123,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Horizontal Scourer",
     subtitle: "High-Efficiency Grain Surface Cleaning",
     description: "The Horizontal Scourer is designed to remove adhering dust, husk, and surface impurities from grain before further processing.\n\nIts gentle yet effective scouring action helps reduce bacterial contamination, remove insect fragments, and improve grain hygiene without damaging grain quality. Powered by an electric motor, the machine is built for reliable and continuous operation in commercial grain-processing and flour-milling plants.",
-    image: "/images/grain-processing/scourer_supplementimg.jpg",
+    image: "/images/grain-processing/horizontal-scourer.png",
     keyFeatures: [
       { title: "Removes adhering dust and husk", icon: "Fan" },
       { title: "Improves grain surface cleanliness", icon: "Replace" },
@@ -169,7 +165,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Bran Finisher",
     subtitle: "Efficient Flour Recovery from Bran",
     description: "The Bran Finisher is designed to recover flour particles still adhering to bran after milling. By separating this residual flour from the bran, it helps increase overall flour yield, reduce product loss, and improve milling efficiency.\n\nSuitable for common wheat, durum wheat, and rye mills, the machine delivers cleaner bran while supporting reliable and continuous plant operation.",
-    image: "/images/grain-processing/branfinisher_supplementimg.jpg",
+    image: "/images/grain-processing/bran-finisher.png",
     keyFeatures: [
       { title: "Recovers adhering flour from bran", icon: "TrendingUp" },
       { title: "Increases flour yield", icon: "CheckCircle2" },
@@ -188,7 +184,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Emery Polisher",
     subtitle: "Precision De-Hulling and Grain Polishing",
     description: "The Emery Polisher is designed for efficient de-hulling and surface polishing of wheat and other grains. It is especially suitable for whole wheat atta plants, where controlled polishing helps improve grain cleanliness, finish, and overall product quality.\n\nThe polishing intensity can be adjusted externally through a slide-control mechanism, allowing operators to fine-tune the processing effect according to the grain type and required output.",
-    image: "/images/grain-processing/emerypolisher_supplementimg.jpg",
+    image: "/images/grain-processing/emery-polisher.png",
     keyFeatures: [
       { title: "Efficient de-hulling of wheat and other grains", icon: "RotateCw" },
       { title: "Ideal for whole wheat atta milling plants", icon: "Factory" },
@@ -232,7 +228,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Emery Roll",
     subtitle: "High-Performance De-Hulling",
     description: "The Emery Roll is a high-performance de-hulling machine designed for efficient removal of bran and outer husk from wheat and other grains. It ensures uniform processing, improves flour quality, and enhances milling efficiency. The machine is widely used in whole wheat atta plants and dal processing units for consistent and reliable grain conditioning.",
-    image: "/images/grain-processing/emeryroll_supplementalimg.jpg",
+    image: "/images/grain-processing/emery-roll.png",
     keyFeatures: [
       { title: "Efficient de-hulling of wheat and other grains", icon: "Hammer" },
       { title: "Adjustable processing effect through external slide control", icon: "Settings2" },
@@ -244,23 +240,25 @@ export const grainProcessingData: GrainProcessingProduct[] = [
       {
         name: "SVCS-1",
         specs: [
-          { parameter: "Length", specification: "1143 mm" },
-          { parameter: "Width", specification: "610 mm" },
-          { parameter: "Height", specification: "1143 mm" },
-          { parameter: "Capacity", specification: "4-5 TPH" },
-          { parameter: "Power", specification: "10 HP" },
-          { parameter: "Weight", specification: "450 Kg" }
+          { parameter: "Length", specification: "1730 MM" },
+          { parameter: "Width", specification: "650 MM" },
+          { parameter: "Height", specification: "1100 MM" },
+          { parameter: "Capacity", specification: "2-3 Ton/hr" },
+          { parameter: "Power", specification: "10 kW" },
+          { parameter: "Air Qty", specification: "25-30 M3/Min" },
+          { parameter: "Size", specification: "14X33\"" }
         ]
       },
       {
         name: "SVER-1",
         specs: [
-          { parameter: "Length", specification: "915 mm" },
-          { parameter: "Width", specification: "760 mm" },
-          { parameter: "Height", specification: "1143 mm" },
-          { parameter: "Capacity", specification: "3-4 TPH" },
-          { parameter: "Power", specification: "7.5 HP" },
-          { parameter: "Weight", specification: "350 Kg" }
+          { parameter: "Length", specification: "2100 MM" },
+          { parameter: "Width", specification: "750 mm" },
+          { parameter: "Height", specification: "1200 MM" },
+          { parameter: "Capacity", specification: "5-6 Ton/hr" },
+          { parameter: "Power", specification: "15-20 kW" },
+          { parameter: "Air Qty", specification: "35-40 M3/Min" },
+          { parameter: "Size", specification: "16x33\"" }
         ]
       }
     ],
@@ -277,12 +275,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     title: "Drum Sieve",
     subtitle: "Continuous Sifting and Separation",
     description: "A rotating drum with screens for large-scale, continuous sifting and separation of materials.\n\nDesigned for durable, heavy-duty processing in mills, this sieve separates large impurities like straw, wood, and stones from the grain stream effectively.",
-    image: "/images/grain-processing/drumsieve_supplementimg.jpg",
-    stats: [
-      { label: "CAPACITY", value: "High" },
-      { label: "TYPE", value: "Rotating Drum" },
-      { label: "SCREEN", value: "Interchangeable" }
-    ],
+    image: "/images/grain-processing/drum-sieve.png",
     keyFeatures: [
       { title: "Continuous sifting and separation", icon: "RotateCw" },
       { title: "Removes large impurities", icon: "ShieldCheck" },
@@ -290,9 +283,8 @@ export const grainProcessingData: GrainProcessingProduct[] = [
       { title: "Interchangeable screens", icon: "Settings2" }
     ],
     specs: [
-      { parameter: "Capacity", specification: "High Capacity" },
-      { parameter: "Mechanism", specification: "Rotating Drum" },
-      { parameter: "Application", specification: "Large impurity removal" }
+      { parameter: "Diameter", specification: "700 mm", col3: "900 mm" },
+      { parameter: "Capacity", specification: "6–8 TPH", col3: "10–12 TPH" }
     ],
     applications: [
       { label: "Flour mills", icon: "Factory" },

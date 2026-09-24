@@ -671,14 +671,14 @@ export const flourMillsProducts: DetailedProduct[] = [
     keyComponents: [],
     models: [
       {
+        name: "Emery Stone Dresser",
+        image: "/emery-stone-dresser/emery_stone_dresser.png",
+        description: "Manual stone holding system"
+      },
+      {
         name: "Emery Stone Dresser Neo",
         image: "/images/emery-stone-dresser/stone-dresser-neo.png",
         description: "Pneumatic stone holding system"
-      },
-      {
-        name: "Emery Stone Dresser",
-        image: "/images/emery-stone-dresser/emery-stone-dresser.png",
-        description: "Manual stone holding system"
       }
     ]
     },

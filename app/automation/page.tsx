@@ -12,98 +12,156 @@ export default function AutomationPage() {
     <div className="flex flex-col min-h-screen bg-white font-sans text-slate-800">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative w-full pb-20 lg:pb-0">
-        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/automation/automation_hero.png"
-              alt="Automation Control System"
+      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Background Image (1920x820) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/automation/automation_desktop_cropped.png" 
+              alt="Automation Control System" 
               fill
+              className="object-cover object-center"
               priority
-              className="object-cover object-right lg:object-center"
+              sizes="100vw"
             />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
 
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
-            <div className="max-w-2xl space-y-6">
-              <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                <span>/</span>
-                <span className="text-white">Automation</span>
-              </div>
-
-              <div className="inline-block bg-[#f97316] text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
-                Automation
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
-                Advanced control systems for modern mill operations
-              </h1>
-              
-              <p className="text-lg text-slate-200 font-medium max-w-xl">
-                Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance.
-              </p>
-              <div className="pt-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide"
-                >
-                  ENQUIRE NOW <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+          {/* Mobile Background Image (9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/automation/automation-mobile.png" 
+              alt="Automation Control System" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
         </div>
-        
-        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
-        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-[1400px]">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <Settings2 className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Logical Screen</h4>
-                <p className="text-xs text-slate-500">Architecture</p>
-              </div>
+
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest">
+              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+              <span>/</span>
+              <span className="text-white">Automation</span>
             </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <MonitorSmartphone className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Standard HMI</h4>
-                <p className="text-xs text-slate-500">Screen Development</p>
-              </div>
+
+            <div className="inline-block bg-[#f97316] text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+              Automation
             </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <Database className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Strong Architecture</h4>
-                <p className="text-xs text-slate-500">Scalable & Secure</p>
-              </div>
-            </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Safety Module</h4>
-                <p className="text-xs text-slate-500">Enhanced Protections</p>
-              </div>
+            
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
+              Advanced control systems for modern mill operations
+            </h1>
+            
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl">
+              Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance.
+            </p>
+            <div className="pt-2 sm:pt-4">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide"
+              >
+                ENQUIRE NOW <ChevronRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-[1400px]">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings2 className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Logical Screen</h4>
+              <p className="text-xs text-slate-500">Architecture</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <MonitorSmartphone className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Standard HMI</h4>
+              <p className="text-xs text-slate-500">Screen Development</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Strong Architecture</h4>
+              <p className="text-xs text-slate-500">Scalable & Secure</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Safety Module</h4>
+              <p className="text-xs text-slate-500">Enhanced Protections</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Key Proof Points Bar (In natural document flow) */}
+      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
+          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings2 className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Logical Screen</h4>
+              <p className="text-xs text-slate-500">Architecture</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <MonitorSmartphone className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Standard HMI</h4>
+              <p className="text-xs text-slate-500">Screen Development</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Strong Architecture</h4>
+              <p className="text-xs text-slate-500">Scalable & Secure</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Safety Module</h4>
+              <p className="text-xs text-slate-500">Enhanced Protections</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Future-Proof Flour Milling */}
-      <section className="w-full pt-32 lg:pt-40 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-12 md:pt-24 lg:pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}

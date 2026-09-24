@@ -82,7 +82,7 @@ export const productsData: ProductItem[] = [
     "applications": ["Flour-milling plants", "Grain-processing facilities", "Finished-flour treatment lines", "Pre-packing flour sanitation", "Storage and infestation-control systems", "Food-processing plants"],
     "specifications": {},
     "category": "processing",
-    "image": "/images/flour-processing/entoleter.jpg",
+    "image": "/images/flour-processing/entoleter.png",
     "description": "<p>The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing.</p>",
     "shortDescription": "High-Impact Insect Control for Grain and Flour.",
     "variants": [],

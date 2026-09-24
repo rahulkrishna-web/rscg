@@ -44,12 +44,7 @@ export const flourProcessingData: FlourProcessingProduct[] = [
     title: "Entoleter",
     subtitle: "High-Impact Insect Control for Grain and Flour",
     description: "The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing. Its high-speed impact action helps improve hygiene, protect product quality, and reduce the risk of infestation in downstream storage and packing.\n\nBuilt for reliable continuous operation, it is suitable for flour mills, grain-processing plants, and food-production lines where consistent sanitation and product safety are essential.",
-    image: "/images/flour-processing/entoleter.jpg",
-    stats: [
-      { label: "ACTION", value: "High-Speed Impact" },
-      { label: "TARGET", value: "Insects & Larvae" },
-      { label: "OPERATION", value: "Continuous" }
-    ],
+    image: "/images/flour-processing/entoleter.png",
     keyFeatures: [
       { title: "Eliminates insects at all stages", icon: "ShieldCheck" },
       { title: "Removes eggs, larvae, and adult insects", icon: "Replace" },
@@ -111,11 +106,6 @@ export const flourProcessingData: FlourProcessingProduct[] = [
     subtitle: "Precision Sieving and Classification",
     description: "Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials. It ensures uniform particle size, high screening efficiency, and consistent product quality for modern flour milling operations.",
     image: "/images/flour-processing/plansifter.png",
-    stats: [
-      { label: "EFFICIENCY", value: "High Screening" },
-      { label: "MOTION", value: "Precision Gyratory" },
-      { label: "CONSTRUCTION", value: "Industrial-Grade" }
-    ],
     keyFeatures: [
       { title: "High screening efficiency with accurate separation", icon: "CheckCircle2" },
       { title: "Precision gyratory motion for uniform distribution", icon: "RotateCw" },
@@ -124,11 +114,11 @@ export const flourProcessingData: FlourProcessingProduct[] = [
       { title: "Easy maintenance with long service life", icon: "ShieldCheck" }
     ],
     specs: [
-      { parameter: "2x12 Size", specification: "1800x1200x2500 MM | 1-1.5 Ton/hr | 2 HP" },
-      { parameter: "4x12 Size", specification: "2000x1800x3600 MM | 2.5-3 Ton/hr | 3 HP" },
-      { parameter: "4x16 Size", specification: "2000x1800x3600 MM | 3-4 Ton/hr | 3 HP" },
-      { parameter: "8x16 Size", specification: "2400x2200x3600 MM | 4-6 Ton/hr | 3 HP" },
-      { parameter: "8x20 Size", specification: "2400x2200x3800 MM | 6-8 Ton/hr | 3 HP" }
+      { parameter: "2×12", specification: "1800 MM", col3: "1200 MM", col4: "2500 MM", col5: "1-1.5 Ton/hr", col6: "2 HP" },
+      { parameter: "4×12", specification: "2000 MM", col3: "1800 MM", col4: "3600 MM", col5: "2.5-3 Ton/hr", col6: "3 HP" },
+      { parameter: "4×16", specification: "2000 MM", col3: "1800 MM", col4: "3600 MM", col5: "3-4 Ton/hr", col6: "3 HP" },
+      { parameter: "8×16", specification: "2400 MM", col3: "2200 MM", col4: "3600 MM", col5: "4-6 Ton/hr", col6: "3 HP" },
+      { parameter: "8×20", specification: "2400 MM", col3: "2200 MM", col4: "3800 MM", col5: "6-8 Ton/hr", col6: "3 HP" }
     ],
     applications: [
       { label: "Flour mills", icon: "Factory" },

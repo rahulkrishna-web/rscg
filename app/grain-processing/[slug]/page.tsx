@@ -69,7 +69,7 @@ export default function GrainProcessingProductPage() {
               <img 
                 src={product.image} 
                 alt={product.title} 
-                className="object-contain w-full h-full mix-blend-multiply contrast-[1.05]"
+                className="object-contain w-full h-full p-6"
               />
             </div>
             <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">
@@ -247,24 +247,34 @@ export default function GrainProcessingProductPage() {
             </div>
             
             <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 uppercase tracking-widest text-[10px] font-black">
-                  <tr>
-                    <th className="px-6 py-4 w-16 text-center">#</th>
-                    <th className="px-6 py-4">PARAMETER</th>
-                    <th className="px-6 py-4">SPECIFICATION</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-50">
-                  {product.specs.map((spec, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                      <td className="px-6 py-4 text-center text-slate-400 font-medium">{idx + 1}</td>
-                      <td className="px-6 py-4 font-bold text-slate-700">{spec.parameter}</td>
-                      <td className="px-6 py-4 text-slate-600">{spec.specification}</td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm">
+                  <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 uppercase tracking-widest text-[10px] font-black">
+                    <tr>
+                      <th className="px-6 py-4 w-16 text-center">#</th>
+                      <th className="px-6 py-4">PARAMETER</th>
+                      <th className="px-6 py-4">
+                        {product.slug === 'drum-sieve' ? 'DIA 700 MM' : 'SPECIFICATION'}
+                      </th>
+                      {product.slug === 'drum-sieve' && (
+                        <th className="px-6 py-4">DIA 900 MM</th>
+                      )}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-50">
+                    {product.specs.map((spec, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4 text-center text-slate-400 font-medium">{idx + 1}</td>
+                        <td className="px-6 py-4 font-bold text-slate-700">{spec.parameter}</td>
+                        <td className="px-6 py-4 text-slate-600">{spec.specification}</td>
+                        {product.slug === 'drum-sieve' && (
+                          <td className="px-6 py-4 text-slate-600">{spec.col3}</td>
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}

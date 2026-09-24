@@ -125,9 +125,15 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
               )}
 
               <div className="pt-6">
-                <button className="bg-[#1A3A29] hover:bg-[#132A1D] text-white font-bold px-10 py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
-                  Add to Cart
-                </button>
+                {initialBook.comingSoon ? (
+                  <button disabled className="bg-slate-300 text-slate-500 font-bold px-10 py-4 rounded-xl cursor-not-allowed w-full sm:w-auto">
+                    Coming Soon
+                  </button>
+                ) : (
+                  <button className="bg-[#1A3A29] hover:bg-[#132A1D] text-white font-bold px-10 py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 w-full sm:w-auto">
+                    Add to Cart
+                  </button>
+                )}
               </div>
 
             </div>

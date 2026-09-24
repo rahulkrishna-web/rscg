@@ -65,11 +65,11 @@ export default function FlourProcessingProductPage() {
           {/* Left Column: Image & Note */}
           <div className="flex flex-col gap-6">
             <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-square">
-              <img 
-                src={product.image} 
-                alt={product.title} 
-                className="object-contain w-full h-full mix-blend-multiply contrast-[1.05]"
-              />
+                <img 
+                  src={product.image} 
+                  alt={product.title} 
+                  className="object-contain w-full h-full p-6"
+                />
             </div>
             <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">
               <Info className="w-5 h-5 text-[#4a5f36] flex-shrink-0 mt-0.5" />
@@ -187,55 +187,68 @@ export default function FlourProcessingProductPage() {
 
         {/* Technical Specifications Section */}
         {product.specs && product.specs.length > 0 && (
-          <div className="mb-24 max-w-4xl mx-auto">
-            <div className="text-center space-y-2 mb-10">
-              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Technical Specifications</h3>
-              <p className="text-slate-500 font-medium">Standard engineering configuration and parameters</p>
+          <div className="mb-24 max-w-5xl mx-auto">
+            <div className="mb-6">
+              <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#0a4c2a]">
+                Technical Specifications
+              </h3>
             </div>
             
-            <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
-              <table className="w-full text-left text-sm">
-                <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 uppercase tracking-widest text-[10px] font-black">
-                  <tr>
-                    <th className="px-6 py-4 w-16 text-center">#</th>
-                    <th className="px-6 py-4">
-                      {product.slug === 'vibro-sifter' ? 'VIBRO SIFTER SIZE' : 
-                       product.slug === 'plan-sifter' ? 'PLAN SIFTER SIZE' : 'PARAMETER'}
-                    </th>
-                    <th className="px-6 py-4">
-                      {product.slug === 'vibro-sifter' ? 'CAPACITY' : 
-                       product.slug === 'plan-sifter' ? 'LENGTH' : 'SPECIFICATION'}
-                    </th>
-                    {product.slug === 'vibro-sifter' && <th className="px-6 py-4">DECK TYPE</th>}
-                    {product.slug === 'plan-sifter' && (
-                      <>
-                        <th className="px-6 py-4">WIDTH</th>
-                        <th className="px-6 py-4">HEIGHT</th>
-                        <th className="px-6 py-4">CAPACITY</th>
-                        <th className="px-6 py-4">POWER</th>
-                      </>
-                    )}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-50">
-                  {product.specs.map((spec, idx) => (
-                    <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                      <td className="px-6 py-4 text-center text-slate-400 font-medium">{idx + 1}</td>
-                      <td className="px-6 py-4 font-bold text-slate-700">{spec.parameter}</td>
-                      <td className="px-6 py-4 text-slate-600">{spec.specification}</td>
-                      {product.slug === 'vibro-sifter' && <td className="px-6 py-4 text-slate-600 capitalize">{spec.extra}</td>}
+            <div className="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden">
+              <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
+                <h4 className="font-bold text-slate-900 text-base sm:text-lg">
+                  {product.title} Specifications
+                </h4>
+                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0a4c2a] bg-[#f0fdf4] px-3 py-1.5 rounded-full border border-green-200">
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></div>
+                  Available Models
+                </div>
+              </div>
+
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-sm whitespace-nowrap">
+                  <thead className="bg-white border-b border-slate-100 text-slate-400 uppercase tracking-wider text-[11px] font-bold">
+                    <tr>
+                      <th className="px-6 py-4 w-12 text-center">#</th>
+                      <th className="px-6 py-4">
+                        {product.slug === 'vibro-sifter' ? 'VIBRO SIFTER SIZE' : 
+                         product.slug === 'plan-sifter' ? 'PLAN SIFTER SIZE' : 'PARAMETER'}
+                      </th>
+                      <th className="px-6 py-4">
+                        {product.slug === 'vibro-sifter' ? 'CAPACITY' : 
+                         product.slug === 'plan-sifter' ? 'LENGTH' : 'SPECIFICATION'}
+                      </th>
+                      {product.slug === 'vibro-sifter' && <th className="px-6 py-4">DECK TYPE</th>}
                       {product.slug === 'plan-sifter' && (
                         <>
-                          <td className="px-6 py-4 text-slate-600">{spec.col3}</td>
-                          <td className="px-6 py-4 text-slate-600">{spec.col4}</td>
-                          <td className="px-6 py-4 text-slate-600">{spec.col5}</td>
-                          <td className="px-6 py-4 text-slate-600">{spec.col6}</td>
+                          <th className="px-6 py-4">WIDTH</th>
+                          <th className="px-6 py-4">HEIGHT</th>
+                          <th className="px-6 py-4">CAPACITY</th>
+                          <th className="px-6 py-4">POWER</th>
                         </>
                       )}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {product.specs.map((spec, idx) => (
+                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
+                        <td className="px-6 py-4 text-center text-slate-400 font-medium text-xs">{idx + 1}</td>
+                        <td className="px-6 py-4 font-bold text-slate-800">{spec.parameter}</td>
+                        <td className="px-6 py-4 text-slate-600 font-medium">{spec.specification}</td>
+                        {product.slug === 'vibro-sifter' && <td className="px-6 py-4 text-slate-600 capitalize">{spec.extra}</td>}
+                        {product.slug === 'plan-sifter' && (
+                          <>
+                            <td className="px-6 py-4 text-slate-600 font-medium">{spec.col3}</td>
+                            <td className="px-6 py-4 text-slate-600 font-medium">{spec.col4}</td>
+                            <td className="px-6 py-4 text-slate-600 font-medium">{spec.col5}</td>
+                            <td className="px-6 py-4 text-slate-600 font-medium">{spec.col6}</td>
+                          </>
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}

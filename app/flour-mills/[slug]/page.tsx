@@ -208,7 +208,10 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   {product.models.map((mod, idx) => (
                     <button
                       key={idx}
-                      onClick={() => setSelectedModelIndex(idx)}
+                      onClick={() => {
+                        setSelectedModelIndex(idx);
+                        if (mod.image) setActiveImage(mod.image);
+                      }}
                       className={`text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${
                         selectedModelIndex === idx 
                           ? 'border-brand-primary bg-brand-primary/5 ring-1 ring-brand-primary/20 shadow-sm' 

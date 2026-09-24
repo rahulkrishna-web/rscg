@@ -10,25 +10,25 @@ const handlingCards = [
   {
     title: "Atta Flour Silo",
     slug: "atta-flour-silo",
-    image: "/images/silos/attasilo_supplementimg.jpg",
+    image: "/images/silos/atta-silo.png",
     sub: "Flour Storage Silo"
   },
   {
     title: "Bran / Refraction Silo",
     slug: "bran-refraction-silo",
-    image: "/images/silos/bransilo_supplementimg.jpg",
+    image: "/images/silos/bran-silo.png",
     sub: "Mild-Steel Storage Silo"
   },
   {
     title: "Conditioning Silo",
     slug: "conditioning-silo",
-    image: "/images/silos/conditioningsilo_supplementimg.jpg",
+    image: "/images/silos/conditioning-silo.png",
     sub: "Conditioned Grain Holding"
   },
   {
     title: "Grain Silo - MS",
     slug: "grain-silo-ms",
-    image: "/images/silos/grainsilo_supplementimg.jpg",
+    image: "/images/silos/grain-silo.png",
     sub: "Heavy-Duty Storage Silo"
   }
 ];
@@ -41,81 +41,130 @@ export default function GrainStorageHandlingPage() {
       <Header />
 
       {/* Hero Banner Section */}
-      <section className="relative w-full pb-20 lg:pb-0">
-        <div className="relative w-full h-[450px] md:h-[500px] flex items-center bg-[#0B1510]">
-          {/* Background Image */}
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/silos/silo_hero.png"
-              alt="Silos Storage and Handling"
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Background Image (1920x820) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/silo/silo_hero_desktop_cropped.png" 
+              alt="Silos Storage and Handling" 
               fill
+              className="object-cover object-center"
               priority
-              className="object-cover object-right lg:object-center"
+              sizes="100vw"
             />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
-          {/* Dark Tint Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r lg:bg-gradient-to-r from-[#0B1510]/85 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[60%] z-10 w-full" />
-          
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20">
-            <div className="max-w-2xl space-y-6">
-              <div className="flex items-center gap-3 text-sm font-bold text-[#f7b032] uppercase tracking-widest mb-4">
-                <span className="w-10 h-[3px] bg-[#f7b032]"></span>
-                SILOS DIVISION
-              </div>
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-black text-white leading-[1] tracking-tight">
-                Silos.
-              </h1>
-              <p className="text-base sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-                Storage and handling silos engineered for reliable material flow, controlled conditioning, and efficient plant performance. Explore bran, atta, conditioning, and grain silos designed for smooth mill operations.
-              </p>
-              <div className="pt-4">
-                <Link 
-                  href="#products" 
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide"
-                >
-                  EXPLORE SILOS <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+
+          {/* Mobile Background Image (9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/silo/silo_hero_mobile.png" 
+              alt="Silos Storage and Handling" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
         </div>
 
-        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
-        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-[1400px]">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <Database className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Bran, Atta &</h4>
-                <p className="text-xs text-slate-500">Conditioning Silos</p>
-              </div>
-            </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <RefreshCw className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Controlled</h4>
-                <p className="text-xs text-slate-500">Storage & Flow</p>
-              </div>
-            </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <Factory className="w-6 h-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Built for</h4>
-                <p className="text-xs text-slate-500">Milling Plants</p>
-              </div>
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full max-w-2xl">
+            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
+              Silos Division
+            </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+              Silos.
+            </h1>
+            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
+              Storage and handling silos engineered for reliable material flow, controlled conditioning, and efficient plant performance. Explore bran, atta, conditioning, and grain silos designed for smooth mill operations.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="#products" 
+                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+              >
+                <span>Explore Silos</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Bran, Atta &</h4>
+              <p className="text-xs text-slate-500">Conditioning Silos</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <RefreshCw className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Controlled</h4>
+              <p className="text-xs text-slate-500">Storage & Flow</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Factory className="w-6 h-6" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Built for</h4>
+              <p className="text-xs text-slate-500">Milling Plants</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Key Proof Points Bar (In natural document flow) */}
+      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
+          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Bran, Atta &</h4>
+              <p className="text-xs text-slate-500">Conditioning Silos</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <RefreshCw className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Controlled</h4>
+              <p className="text-xs text-slate-500">Storage & Flow</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Factory className="w-5 h-5" />
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Built for</h4>
+              <p className="text-xs text-slate-500">Milling Plants</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Intro Description Section */}
-      <section className="w-full pt-32 lg:pt-40 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-12 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full mx-auto space-y-6">
           <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
             Grain storage &amp; handling is crucial for maintaining the quality of grain
@@ -132,7 +181,7 @@ export default function GrainStorageHandlingPage() {
       </section>
 
       {/* Products Grid Section */}
-      <section className="w-full py-8 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section id="products" className="w-full py-8 px-6 sm:px-12 lg:px-16 xl:px-24 scroll-mt-24">
         <div className="w-full mx-auto space-y-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {handlingCards.map((card) => (
@@ -142,15 +191,12 @@ export default function GrainStorageHandlingPage() {
                 className="group bg-white rounded-[32px] border border-slate-200/60 overflow-hidden shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col"
               >
                 {/* Image Area */}
-                <div className="aspect-square bg-white flex items-center justify-center relative overflow-hidden">
+                <div className="aspect-square bg-white flex items-center justify-center relative overflow-hidden p-6">
                   <img 
                     src={card.image} 
                     alt={card.title} 
-                    className="object-cover w-full h-full mix-blend-multiply contrast-[1.05] group-hover:scale-105 transition-transform duration-300"
+                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 right-4 bg-brand-primary text-white p-2 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-sm">
-                    <Database className="h-4 w-4" />
-                  </div>
                 </div>
 
                 {/* Details Area */}

@@ -36,7 +36,7 @@ export const silosData: SiloProduct[] = [
     title: "Bran / Refraction Silo",
     subtitle: "Mild-Steel Storage Silo",
     description: "A durable mild-steel silo designed for the storage and controlled discharge of bran and refraction material in flour milling plants.\n\nBuilt for long service life, the silo supports intelligent level monitoring, efficient material flow, and low-residue discharge. Its modular construction allows customization across different capacities, plant layouts, and future expansion requirements.",
-    image: "/images/silo-images/bransilo_supplementimg.jpg",
+    image: "/images/silos/bran-silo.png",
     keyFeatures: [
       { title: "Durable Construction", description: "Heavy-duty mild-steel construction provides reliable performance and long operational life in demanding milling environments.", icon: "ShieldCheck" },
       { title: "Intelligent Monitoring", description: "Compatible with level sensors and monitoring systems to reduce manual checking, labour dependency, and the risk of overflow or material shortage.", icon: "Settings2" },
@@ -62,7 +62,7 @@ export const silosData: SiloProduct[] = [
     title: "Atta Flour Silo",
     subtitle: "Mild-Steel & Stainless-Steel Flour Storage Silo",
     description: "A high-capacity storage silo designed for hygienic holding, controlled discharge, and reliable handling of finished atta flour in commercial milling plants.\n\nAvailable in both mild-steel and stainless-steel configurations, the silo can be customized to suit different plant capacities, material-handling systems, hygiene requirements, and future expansion plans.",
-    image: "/images/silo-images/atta silo.png",
+    image: "/images/silos/atta-silo.png",
     keyFeatures: [
       { title: "Reliable Flour Storage", description: "Designed to safely store finished atta while supporting consistent quality and uninterrupted downstream operations.", icon: "Box" },
       { title: "Mild-Steel & Stainless-Steel Options", description: "Choose mild steel for durable and cost-effective bulk storage or stainless steel for enhanced hygiene, corrosion resistance, and food-contact applications.", icon: "LayoutTemplate" },
@@ -106,7 +106,7 @@ export const silosData: SiloProduct[] = [
     title: "Conditioning Silo",
     subtitle: "Controlled Moisture Distribution",
     description: "A purpose-built silo designed for holding conditioned grain for a controlled resting period before milling. It supports uniform moisture absorption across the grain kernel, helping improve grinding performance, flour quality, and process consistency.\n\nAvailable in mild-steel and stainless-steel configurations, the silo can be customized for different plant capacities, conditioning times, material-handling systems, and hygiene requirements.",
-    image: "/images/silo-images/conditioning silo.png",
+    image: "/images/silos/conditioning-silo.png",
     keyFeatures: [
       { title: "Uniform Moisture Distribution", description: "Provides controlled holding time after water addition, allowing moisture to penetrate the grain more evenly before milling.", icon: "CheckCircle2" },
       { title: "Improved Milling Performance", description: "Proper conditioning helps soften the bran layer, improve separation, support smoother grinding, and reduce unnecessary process stress.", icon: "TrendingUp" },
@@ -156,7 +156,7 @@ export const silosData: SiloProduct[] = [
     title: "Grain Silo",
     subtitle: "Heavy-Duty Storage Silo",
     description: "A heavy-duty mild-steel silo designed for the safe storage and controlled handling of wheat and other grains in commercial milling plants.\n\nBuilt for dependable bulk storage, the silo supports smooth filling and discharge, efficient use of plant space, and integration with grain-cleaning, conditioning, conveying, and automation systems.",
-    image: "/images/silo-images/attta silo.png",
+    image: "/images/silos/grain-silo.png",
     keyFeatures: [
       { title: "Durable Mild-Steel Construction", description: "Heavy-duty MS construction provides reliable performance, structural strength, and long service life in demanding milling environments.", icon: "ShieldCheck" },
       { title: "Safe Bulk Grain Storage", description: "Designed to hold grain securely while supporting organized inventory management and continuous plant operation.", icon: "Box" },
