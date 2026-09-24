@@ -537,7 +537,6 @@ export const flourMillsProducts: DetailedProduct[] = [
     heroImage: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
     showThumbnails: false,
     detailedModelsTitle: "Models Available",
-    modelsLayout: "zigzag",
     keyHighlights: [
       "20–25 kg/hr Capacity",
       "2 HP Power Load",
@@ -590,8 +589,7 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Mini",
         image: "/horizontal-mills/ultramini/mini_supplementalimg.png",
         tableData: {
-          "Size of Mill (mm)": "350mm (14\")",
-          "Capacity": "20–25 kg/hr",
+          "Size of Mill": "350mm (14\")",
           "RPM": "600",
           "Required HP Single Phase": "2",
           "Diameter of Pulley (mm)": "250",
@@ -603,8 +601,7 @@ export const flourMillsProducts: DetailedProduct[] = [
         name: "Ultra Mini",
         image: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
         tableData: {
-          "Size of Mill (mm)": "350mm (14\")",
-          "Capacity": "20–25 kg/hr",
+          "Size of Mill": "350mm (14\")",
           "RPM": "600",
           "Required HP Single Phase": "2",
           "Diameter of Pulley (mm)": "250",

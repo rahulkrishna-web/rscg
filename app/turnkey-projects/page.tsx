@@ -175,13 +175,13 @@ export default function TurnkeyProjects() {
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
       {/* Hero Section - Exactly matches image aspect ratio so images are never cropped */}
-      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1079/1920] md:aspect-[16/9] flex flex-col justify-center">
+      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1079/1920] md:aspect-[1920/820] flex flex-col justify-center">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0 overflow-hidden">
-          {/* Desktop Background Image (1920x1080 -> 16:9) */}
+          {/* Desktop Background Image (1920x820) */}
           <div className="hidden md:block absolute inset-0">
             <Image 
-              src="/hero/turnkey/turnkey_desktop.png" 
+              src="/hero/turnkey/turnkey_desktop_cropped.png" 
               alt="RS Choyal Turnkey Plant" 
               fill
               className="object-cover object-center"

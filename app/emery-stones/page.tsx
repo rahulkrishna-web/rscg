@@ -12,23 +12,41 @@ export default function EmeryStones() {
       
       <Header />
 
-      {/* Hero Banner Section */}
-      <section className="w-full relative h-[450px] md:h-[500px] flex items-center overflow-hidden bg-[#061a10]">
-        {/* Background Image */}
+      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/emerystone_hero.png" 
-            alt="Emery Stones Division" 
-            fill
-            priority
-            className="object-cover object-center lg:object-right opacity-100"
-          />
-          {/* Banner Content Container (Gradient Overlay) */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          {/* Desktop Background Image (1920x820) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/emerystone/emerystone_desktop_cropped.png" 
+              alt="Emery Stones Division" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          </div>
+
+          {/* Mobile Background Image (1080x1920 -> 9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/emerystone/emerystone_mobile.png" 
+              alt="Emery Stones Division" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+          </div>
         </div>
         
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 max-w-[1440px] mx-auto">
-          <div className="max-w-2xl space-y-8 mt-12">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="max-w-2xl space-y-8">
             
             {/* Eyebrow */}
             <div className="flex items-center gap-4">

@@ -436,36 +436,32 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   const colorTitle = isBlue ? "text-[#0070f3]" : "text-red-500";
 
                   return (
-                    <div key={idx} className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden flex flex-col h-full">
-                      <div className="p-6 text-center border-b border-slate-100">
-                        <h4 className={`text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
+                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-6 sm:p-7">
+                      <div className="pb-4 text-center">
+                        <h4 className={`text-xl sm:text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
                           {model.name}
                         </h4>
                       </div>
-                      <div className="flex-1 flex flex-col sm:flex-row p-6 gap-6">
+                      <div className="flex-1 flex flex-col sm:flex-row gap-6 sm:gap-8 items-center">
                         
                         {model.image && (
-                          <div className="w-full sm:w-1/3 flex-shrink-0 flex items-start justify-center overflow-hidden pt-2">
-                            <img src={model.image} alt={model.name} className="w-full max-w-[160px] scale-110 object-contain mix-blend-multiply" />
+                          <div className="w-full sm:w-[42%] flex-shrink-0 flex items-center justify-center p-2">
+                            <img src={model.image} alt={model.name} className="w-full max-w-[200px] max-h-[220px] object-contain mix-blend-multiply" />
                           </div>
                         )}
                         
-                        <div className="flex-1 w-full text-[11px]">
+                        <div className="flex-1 w-full">
                           {model.description && (
                             <div className="text-[13px] text-slate-600 mb-4 font-medium leading-relaxed">
                               {model.description}
                             </div>
                           )}
                           {model.tableData && (
-                            <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden">
+                            <div className="flex flex-col border border-slate-200/80 rounded-xl overflow-hidden shadow-xs">
                               {Object.entries(model.tableData).map(([key, val], i) => (
-                                <div key={key} className={`flex border-b border-slate-200 last:border-b-0 ${i % 2 === 0 ? 'bg-[#f8f9fa]' : 'bg-white'}`}>
-                                  <div className="w-1/2 p-2 border-r border-slate-200 font-semibold text-slate-600 flex items-center">
-                                    {key}
-                                  </div>
-                                  <div className="w-1/2 p-2 font-medium text-slate-800 flex items-center">
-                                    {val}
-                                  </div>
+                                <div key={key} className={`flex items-center justify-between border-b border-slate-200/60 last:border-b-0 px-3.5 py-2.5 text-xs sm:text-[13px] ${i % 2 === 0 ? 'bg-[#f8fafd]' : 'bg-white'}`}>
+                                  <span className="font-medium text-slate-600 pr-2">{key}</span>
+                                  <span className="font-semibold text-slate-800 shrink-0 text-right">{val}</span>
                                 </div>
                               ))}
                             </div>

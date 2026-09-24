@@ -38,9 +38,21 @@ export default function FlourMills() {
     }
   ];
 
+  const allowedProductIds = [
+    "wonder-mill",
+    "horizontal-mill",
+    "ultra-mini-horizontal-mill",
+    "iquadra-mill",
+    "atta-expert"
+  ];
+
+  const flourMillsMainProducts = allowedProductIds
+    .map(id => flourMillsProducts.find(p => p.id === id))
+    .filter((p): p is (typeof flourMillsProducts)[0] => Boolean(p));
+
   const filteredProducts = activeTab === "All" 
-    ? flourMillsProducts 
-    : flourMillsProducts.filter(p => p.category === activeTab);
+    ? flourMillsMainProducts 
+    : flourMillsMainProducts.filter(p => p.category === activeTab);
 
   const handleCategorySelect = (categoryFilter: string) => {
     setActiveTab(categoryFilter);
@@ -52,13 +64,13 @@ export default function FlourMills() {
       <Header />
 
       {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[16/9] flex items-center overflow-hidden">
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
-          {/* Desktop Background Image (1920x1080 -> 16:9) */}
+          {/* Desktop Background Image (1920x820) */}
           <div className="hidden md:block absolute inset-0">
             <Image 
-              src="/hero/flourmill/flourmill_desktop.png" 
+              src="/hero/flourmill/flourmill_desktop_cropped.png" 
               alt="Flour Milling Plants" 
               fill
               className="object-cover object-center"
