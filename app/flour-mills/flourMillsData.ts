@@ -618,7 +618,7 @@ export const flourMillsProducts: DetailedProduct[] = [
     category: "Accessories",
     subtitle: "Pneumatic engineering for precision",
     desc: "The Emery Stone Dresser is engineered to restore and maintain the cutting profile of emery stones, ensuring consistent grinding performance, improved flour quality, and longer stone life.",
-    heroImage: "/images/emery-stone-dresser/stone-dresser-neo.png",
+    heroImage: "/emery-stone-dresser/emery_stone_dresser.png",
     showThumbnails: false,
     showDetailedModels: true,
     componentsTitle: "Select Model",

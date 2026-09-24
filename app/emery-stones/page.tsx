@@ -127,11 +127,11 @@ export default function EmeryStones() {
               href="/emery-stones/daniya-type"
               className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-8">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
                 <img 
-                  src="/images/emery-stone-daniya.jpg" 
+                  src="/emery-stone-dresser/daniya_emery_stone.png" 
                   alt="Horizontal Emery Stones - Daniya Type"
-                  className="object-contain max-h-full max-w-full group-hover:scale-103 transition-transform duration-300 mix-blend-multiply"
+                  className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 text-center">
@@ -149,11 +149,11 @@ export default function EmeryStones() {
               href="/emery-stones/agate-sheller-type"
               className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-8">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
                 <img 
-                  src="/images/sheller-emery-stones.jpg" 
+                  src="/emery-stone-dresser/agate_emery_stone.png" 
                   alt="Horizontal Emery Stones - Agate/Sheller Type"
-                  className="object-contain max-h-full max-w-full group-hover:scale-103 transition-transform duration-300 mix-blend-multiply"
+                  className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 text-center">
@@ -171,11 +171,11 @@ export default function EmeryStones() {
               href="/emery-stones/emery-stone-dresser"
               className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-8">
+              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
                 <img 
-                  src="/images/stone_dresser_hero.png" 
+                  src="/emery-stone-dresser/emery_stone_dresser.png" 
                   alt="Emery Stone Dresser"
-                  className="object-contain max-h-full max-w-full group-hover:scale-103 transition-transform duration-300 mix-blend-multiply"
+                  className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <div className="p-6 text-center flex flex-col h-full justify-between">

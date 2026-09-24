@@ -43,7 +43,7 @@ export default function DaniyaTypeStones() {
     addToQuote({
       id: itemKey,
       name: `Horizontal Emery Stones - Daniya Type (${sizeItem.name})`,
-      image: "/images/emery-stone-daniya.jpg",
+      image: "/emery-stone-dresser/daniya_emery_stone.png",
       category: "Emery Stones",
       size: sizeItem.code
     }, qty);
@@ -91,9 +91,9 @@ export default function DaniyaTypeStones() {
                 Emery Stones
               </span>
               <img 
-                src="/images/emery-stone-daniya.jpg" 
+                src="/emery-stone-dresser/daniya_emery_stone.png" 
                 alt="Horizontal Emery Stones - Daniya Type" 
-                className="w-full h-full object-contain mix-blend-multiply" 
+                className="w-full h-full object-contain" 
               />
             </div>
           </div>
@@ -152,11 +152,7 @@ export default function DaniyaTypeStones() {
                   >
                     <div className="space-y-1">
                       <h4 className="text-xs sm:text-sm font-bold text-slate-800">{sizeItem.name} Grinder Pair</h4>
-                      <div className="flex flex-wrap gap-2 text-[10px] text-slate-400 font-medium">
-                        <span className="bg-slate-100 px-2 py-0.5 rounded-md">Thickness: {sizeItem.thickness}</span>
-                        <span className="bg-slate-100 px-2 py-0.5 rounded-md">Weight: {sizeItem.weight}</span>
-                      </div>
-                      <span className="text-[10px] text-brand-primary font-black uppercase tracking-wider block pt-1">
+                      <span className="text-[10px] text-brand-primary font-black uppercase tracking-wider block pt-0.5">
                         Best For: {sizeItem.recommendation}
                       </span>
                     </div>

@@ -39,7 +39,7 @@ export default function AgateShellerTypeStones() {
     addToQuote({
       id: itemKey,
       name: `Horizontal Emery Stones - Agate/Sheller Type (${sizeItem.name})`,
-      image: "/images/sheller-emery-stones.jpg",
+      image: "/emery-stone-dresser/agate_emery_stone.png",
       category: "Emery Stones",
       size: sizeItem.code
     }, qty);
@@ -87,9 +87,9 @@ export default function AgateShellerTypeStones() {
                 Emery Stones
               </span>
               <img 
-                src="/images/sheller-emery-stones.jpg" 
+                src="/emery-stone-dresser/agate_emery_stone.png" 
                 alt="Agate/Sheller Type Horizontal Emery Stones" 
-                className="w-full h-full object-contain mix-blend-multiply" 
+                className="w-full h-full object-contain" 
               />
             </div>
           </div>
