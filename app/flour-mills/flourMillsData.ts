@@ -700,7 +700,7 @@ export const flourMillsProducts: DetailedProduct[] = [
     heroStats: [],
     keyComponents: [],
     models: [],
-    heroImage: "/images/products-images/wondermiller_supplementalimg.jpg",
+    heroImage: "/images/power-saving/wondermiller.png",
     coreCapabilities: [
       {
         title: "Control Panel Features",
@@ -742,7 +742,7 @@ export const flourMillsProducts: DetailedProduct[] = [
     ],
     heroStats: [],
     models: [],
-    heroImage: "/images/products-images/neomatic_supplementimg.png",
+    heroImage: "/images/power-saving/neomatic.png",
     coreCapabilities: [
       {
         title: "Energy Efficiency",

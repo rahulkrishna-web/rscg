@@ -16,7 +16,7 @@ export default function PowerSavingPage() {
       name: "Wonder Mill",
       tag: "Save up to 30%",
       desc: "A high-efficiency automated stone mill engineered for improved output, consistent flour quality, and lower power usage.",
-      img: "/images/power-saving/wondermill_supplementimg.png",
+      img: "/images/power-saving/wondermill.png",
       href: "/flour-mills/wonder-mill",
       code: "WONDERMILL"
     },
@@ -24,7 +24,7 @@ export default function PowerSavingPage() {
       name: "Wonder Miller",
       tag: "Save up to 30%",
       desc: "An intelligent PLC-based automation system designed to optimize stone milling, maximize productivity, and ensure consistent grinding performance.",
-      img: "/images/power-saving/wondermiller_supplementalimg.jpg",
+      img: "/images/power-saving/wondermiller.png",
       href: "/power-saving/wonder-miller",
       code: "WONDERMILLER"
     },
@@ -32,7 +32,7 @@ export default function PowerSavingPage() {
       name: "iQuadra",
       tag: "Save up to 30%",
       desc: "A smart mill solution engineered to deliver up to 30% power savings, higher productivity, and precision-controlled flour production.",
-      img: "/images/power-saving/quadra_supplementalimg.png",
+      img: "/images/power-saving/iquadra.png",
       href: "/flour-mills/iquadra-mill",
       code: "IQUADRA"
     },
@@ -40,7 +40,7 @@ export default function PowerSavingPage() {
       name: "Floura",
       tag: "Save 15-30%",
       desc: "A versatile stone flour milling solution designed for reliable grinding, superior flour quality, and efficient daily operation.",
-      img: "/images/power-saving/floura_supplementalimg.png",
+      img: "/images/power-saving/floura.png",
       href: "/vending-machines",
       code: "FLOURA"
     },
@@ -48,7 +48,7 @@ export default function PowerSavingPage() {
       name: "Emery Stone Dresser",
       tag: "3-4 min per groove dressed",
       desc: "A precision stone dressing machine engineered to restore grinding efficiency, extend stone life, and minimize production downtime.",
-      img: "/images/power-saving/emerydresser_supplementalimg.jpg",
+      img: "/images/power-saving/emery-stone-dresser.png",
       href: "/emery-stones/emery-stone-dresser",
       code: "STONEDRESSER"
     },
@@ -56,7 +56,7 @@ export default function PowerSavingPage() {
       name: "Neomatic",
       tag: "Save 10-30%",
       desc: "A fully automated pneumatic conveying system designed for efficient material handling, reliable operation, and reduced energy consumption.",
-      img: "/images/power-saving/neomatic_supplementimg.png",
+      img: "/images/power-saving/neomatic.png",
       href: "/power-saving/neomatic",
       code: "NEOMATIC"
     }
@@ -66,88 +66,131 @@ export default function PowerSavingPage() {
     <div className="flex flex-col min-h-screen bg-white font-sans text-slate-800">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative w-full pb-20 lg:pb-0">
-        <div className="relative w-full h-[600px] lg:h-[700px] flex items-center bg-[#0B1510]">
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/images/power-saving/powersaving_hero.png"
-              alt="Power Saving Control System"
+      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Full-bleed Background Images */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop Background Image (1920x820) */}
+          <div className="hidden md:block absolute inset-0">
+            <Image 
+              src="/hero/power-saving/power-saving-desktop-cropped.png" 
+              alt="Power Saving Control System" 
               fill
+              className="object-cover object-center"
               priority
-              className="object-cover object-right lg:object-center"
+              sizes="100vw"
             />
+            {/* Dark-charcoal gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/80 from-0% via-[#0B1510]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
 
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 -mt-16 lg:-mt-24">
-            <div className="max-w-2xl space-y-6">
-              <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest mb-8">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
-                <span>/</span>
-                <span className="text-white">Power Saving</span>
-              </div>
-
-              <div className="inline-block bg-[#eab308] text-[#0a3118] text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
-                Power Saving
-              </div>
-              
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
-                Innovative Energy Solutions for Modern Mill Operations
-              </h1>
-              
-              <p className="text-lg text-slate-200 font-medium max-w-xl">
-                Engineered systems and intelligent controls that reduce power consumption, improve efficiency, and lower operating costs across the complete milling plant.
-              </p>
-              
-              <div className="pt-4">
-                <Link 
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-sm uppercase tracking-wide"
-                >
-                  ENQUIRE NOW <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+          {/* Mobile Background Image (9:16) */}
+          <div className="block md:hidden absolute inset-0">
+            <Image 
+              src="/hero/power-saving/power-saving-mobile.png" 
+              alt="Power Saving Control System" 
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="100vw"
+            />
+            {/* Mobile gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
           </div>
         </div>
-        
-        {/* Key Proof Points Bar (Straddling Hero Boundary) */}
-        <div className="relative z-30 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:translate-y-1/2 px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto max-w-5xl">
-          <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Smart Systems</h4>
-                <p className="text-xs text-slate-500">Intelligent Controls</p>
-              </div>
-            </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Lower Consumption</h4>
-                <p className="text-xs text-slate-500">Up to 30% Savings</p>
-              </div>
-            </div>
-            <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-              <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-slate-800">Higher Performance</h4>
-                <p className="text-xs text-slate-500">Maximized Output</p>
-              </div>
+
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full max-w-2xl">
+            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
+              Power Saving
+            </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+              Innovative Energy Solutions for Modern Mill Operations
+            </h1>
+            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
+              Engineered systems and intelligent controls that reduce power consumption, improve efficiency, and lower operating costs across the complete milling plant.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link 
+                href="#products" 
+                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+              >
+                <span>Explore Products</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Smart Systems</h4>
+              <p className="text-xs text-slate-500">Intelligent Controls</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Lower Consumption</h4>
+              <p className="text-xs text-slate-500">Up to 30% Savings</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Higher Performance</h4>
+              <p className="text-xs text-slate-500">Maximized Output</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Key Proof Points Bar (In natural document flow) */}
+      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
+          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Smart Systems</h4>
+              <p className="text-xs text-slate-500">Intelligent Controls</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Lower Consumption</h4>
+              <p className="text-xs text-slate-500">Up to 30% Savings</p>
+            </div>
+          </div>
+          <div className="w-full flex items-center gap-4 pt-3 group">
+            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <div>
+              <h4 className="text-sm font-bold text-slate-800">Higher Performance</h4>
+              <p className="text-xs text-slate-500">Maximized Output</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Optimize Energy Consumption */}
-      <section className="w-full pt-32 lg:pt-40 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-12 md:pt-20 lg:pt-24 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}
@@ -200,7 +243,7 @@ export default function PowerSavingPage() {
       </section>
 
       {/* Our Advanced Milling Products */}
-      <section className="w-full py-20 bg-slate-50 border-t border-slate-200/60 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section id="products" className="w-full py-20 bg-slate-50 border-t border-slate-200/60 px-6 sm:px-12 lg:px-16 xl:px-24 scroll-mt-24">
         <div className="w-full text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118] mb-4">
             Our Advanced Milling Products
@@ -218,11 +261,8 @@ export default function PowerSavingPage() {
                   src={product.img} 
                   alt={product.name} 
                   fill 
-                  className="object-contain p-6 mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
+                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-500" 
                 />
-                <div className="absolute top-4 right-4 bg-[#F9F6F0] text-[#0a3118] text-xs font-bold px-3 py-1.5 rounded-lg border border-slate-200 shadow-sm z-10">
-                  {product.tag}
-                </div>
               </div>
               <div className="p-6 flex-1 flex flex-col">
                 <h4 className="text-xl font-heading font-extrabold text-[#0a3118] mb-3">{product.name}</h4>

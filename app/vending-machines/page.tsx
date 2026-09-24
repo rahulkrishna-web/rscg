@@ -288,7 +288,7 @@ export default function BatchProductionPage() {
                 src={currentVariantData.image}
                 alt={`${activeModel} ${activeVariant}`}
                 fill
-                className="object-contain mix-blend-multiply contrast-[1.05] p-8"
+                className="object-contain p-8"
               />
             </div>
             <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">

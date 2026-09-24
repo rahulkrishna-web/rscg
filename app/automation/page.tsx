@@ -46,30 +46,23 @@ export default function AutomationPage() {
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
-            <div className="flex items-center gap-2 text-xs font-bold text-white/70 uppercase tracking-widest">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-white">Automation</span>
-            </div>
-
-            <div className="inline-block bg-[#f97316] text-white text-xs font-black uppercase tracking-widest px-3 py-1 rounded">
+          <div className="w-full max-w-2xl">
+            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
               Automation
-            </div>
-            
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white leading-[1.1] tracking-tight">
+            </span>
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
               Advanced control systems for modern mill operations
             </h1>
-            
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl">
+            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
               Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance.
             </p>
-            <div className="pt-2 sm:pt-4">
+            <div className="flex flex-wrap gap-4">
               <Link 
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide"
+                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
               >
-                ENQUIRE NOW <ChevronRight className="w-4 h-4" />
+                <span>Enquire Now</span>
+                <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -77,7 +70,7 @@ export default function AutomationPage() {
       </section>
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
-      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-[1400px]">
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
           <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
             <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">

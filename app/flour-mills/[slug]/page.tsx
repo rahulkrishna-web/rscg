@@ -89,7 +89,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               <img 
                 src={activeImage} 
                 alt={product.title} 
-                className="w-full h-full object-contain mix-blend-multiply" 
+                className="w-full h-full object-contain" 
               />
             </div>
             
@@ -101,7 +101,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
                 >
                   <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === product.heroImage ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
-                    <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain mix-blend-multiply" />
+                    <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain" />
                   </div>
                   <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
                     {product.title}
