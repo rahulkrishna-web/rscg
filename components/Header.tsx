@@ -105,7 +105,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
         <div className="flex flex-row items-center select-none h-full">
           <Link href="/" className="inline-flex hover:scale-102 transition-transform">
             <img 
-              src="/rschoyal-logo.svg" 
+              src="/rscg.png" 
               alt="RS Choyal Group Logo" 
               className="h-[56px] sm:h-[70px] w-auto object-contain"
             />
