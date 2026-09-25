@@ -128,18 +128,18 @@ export default function FlourMills() {
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
+            <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-Automatic & Sheller Mills</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-Automatic & Sheller Mills</h3>
+            <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate From Anywhere</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Track status and remote working easily with connected milling technology.</p>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate From Anywhere</h3>
+            <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
         </div>
@@ -149,19 +149,19 @@ export default function FlourMills() {
       <div className="block md:hidden relative z-30 px-5 -mt-10 w-full mx-auto max-w-xl">
         <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
           
-          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-bold text-slate-800 mb-1 text-base">Digital Mills</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
+          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Digital Mills</h3>
+            <p className="text-sm text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
-          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-bold text-slate-800 mb-1 text-base">Semi-Automatic & Sheller Mills</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
+          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Semi-Automatic & Sheller Mills</h3>
+            <p className="text-sm text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
-          <div className="p-5 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-bold text-slate-800 mb-1 text-base">Operate From Anywhere</h3>
-            <p className="text-xs text-slate-500 leading-relaxed">Track status and remote working easily with connected milling technology.</p>
+          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Operate From Anywhere</h3>
+            <p className="text-sm text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
         </div>

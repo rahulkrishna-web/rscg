@@ -89,12 +89,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
   ];
 
   const serviceItems = [
-    { name: "Grain 360", desc: "End-to-end consulting for complete mill setup and auditing.", href: "/choyal-360", icon: Briefcase },
-    { name: "Facility Centre", desc: "Custom trial runs and manufacturing scale tests.", href: "/facility-centre", icon: Shield },
-    { name: "Job Grinding", desc: "Contract flour grinding and abrasive dressing services.", href: "/job-grinding", icon: RefreshCw },
-    { name: "Consultancy", desc: "Expert advisory for efficiency and capacity expansions.", href: "/consultancy", icon: Handshake },
-    { name: "Training", desc: "On-site operator certification and maintenance guidance.", href: "/training", icon: GraduationCap },
-    { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/design-media", icon: Palette },
+    { name: "Grain 360", desc: "End-to-end consulting for complete mill setup and auditing.", href: "/choyal-360", icon: Briefcase, imgIcon: "/icons/services/grain360.png" },
+    { name: "Facility Centre", desc: "Custom trial runs and manufacturing scale tests.", href: "/facility-centre", icon: Shield, imgIcon: "/icons/services/facilitycenter.png" },
+    { name: "Job Grinding", desc: "Contract flour grinding and abrasive dressing services.", href: "/job-grinding", icon: RefreshCw, imgIcon: "/icons/services/jobgrinding.png" },
+    { name: "Consultancy", desc: "Expert advisory for efficiency and capacity expansions.", href: "/consultancy", icon: Handshake, imgIcon: "/icons/services/consultancy.png" },
+    { name: "Training", desc: "On-site operator certification and maintenance guidance.", href: "/training", icon: GraduationCap, imgIcon: "/icons/services/training.png" },
+    { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/design-media", icon: Palette, imgIcon: "/icons/services/design_and_media.png" },
   ];
 
   return (
@@ -237,8 +237,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="p-2.5 rounded-lg bg-brand-primary/10 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 flex-shrink-0">
-                            <Icon className="h-5 w-5" />
+                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                            {item.imgIcon ? (
+                              <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
+                            ) : (
+                              <Icon className="h-6 w-6 text-brand-primary group-hover:text-white transition-colors duration-300" />
+                            )}
                           </div>
                           <div>
                             <h4 className="font-bold text-slate-800 text-sm group-hover:text-brand-primary transition-colors">
@@ -393,9 +397,15 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <Icon className="h-4 w-4 text-brand-primary" />
+                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                          {item.imgIcon ? (
+                            <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
+                          ) : (
+                            <Icon className="h-5 w-5 text-brand-primary group-hover:text-white" />
+                          )}
+                        </div>
                         <span>{item.name}</span>
                       </Link>
                     );

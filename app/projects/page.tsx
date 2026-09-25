@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Search, MapPin, ArrowRight, Factory, Box } from "lucide-react";
 import Header from "@/components/Header";
@@ -61,30 +62,41 @@ export default function ProjectsPage() {
       <div>
         <Header />
 
-        {/* Hero Section */}
-        <section className="relative w-full h-[350px] sm:h-[450px] overflow-hidden flex flex-col justify-center bg-[#0D301F]">
-          {/* Background Slideshow */}
-          {heroImages.map((src, index) => (
-            <div 
-              key={src}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${index === currentHeroIndex ? 'opacity-100' : 'opacity-0'}`}
-              style={{ backgroundImage: `url(${src})` }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C]/80 from-0% via-[#0B2C1C]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
-          
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
-            <div className="space-y-4 max-w-xl">
-              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase block">
-                CASE STUDIES & PROJECTS
+        {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden bg-[#0B1510]">
+          {/* Full-bleed Background Slideshow */}
+          <div className="absolute inset-0 z-0 overflow-hidden">
+            {heroImages.map((src, index) => (
+              <div 
+                key={src}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentHeroIndex ? 'opacity-100' : 'opacity-0'}`}
+              >
+                <Image 
+                  src={src} 
+                  alt="Case Studies & Projects" 
+                  fill
+                  className="object-cover object-center"
+                  priority={index === 0}
+                  sizes="100vw"
+                />
+              </div>
+            ))}
+            {/* Dark-charcoal gradient overlay */}
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10"></div>
+            <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent z-10"></div>
+          </div>
+
+          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+            <div className="w-full max-w-2xl">
+              <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
+                Case Studies &amp; Projects
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-[1.1]">
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
                 Transforming Ideas into Reality
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium pt-2">
-                From concept to completion, discover the projects we've successfully executed with precision and expertise.
+              <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-8 leading-relaxed font-light max-w-xl">
+                From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
               </p>
-              <div className="w-10 h-0.5 bg-[#D3994B] mt-6" />
             </div>
           </div>
         </section>
@@ -93,10 +105,10 @@ export default function ProjectsPage() {
         <section className="w-full py-12 px-6 sm:px-12 lg:px-16 xl:px-24 z-10">
           {/* Breadcrumbs & Search bar */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10 pb-6 border-b border-slate-200/50">
-            <div className="text-xs font-semibold text-slate-400 flex items-center gap-1.5">
+            <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
               <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-slate-600">Our Projects</span>
+              <span className="text-slate-400">/</span>
+              <span className="text-slate-800 font-semibold">Our Projects</span>
             </div>
 
             {/* Search Input */}
@@ -118,8 +130,8 @@ export default function ProjectsPage() {
           {filteredProjects.length === 0 ? (
             <div className="bg-white rounded-3xl border border-slate-200/50 p-16 text-center text-slate-500 space-y-4 max-w-lg mx-auto">
               <Factory className="h-12 w-12 mx-auto text-slate-300" />
-              <h3 className="text-lg font-bold text-slate-800">No installations found</h3>
-              <p className="text-sm text-slate-400">No project case studies matched your query. Try searching for a different region or client.</p>
+              <h3 className="text-xl font-bold text-slate-800">No installations found</h3>
+              <p className="text-base text-slate-500">No project case studies matched your query. Try searching for a different region or client.</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -147,27 +159,27 @@ export default function ProjectsPage() {
                     {/* Metadata and Content */}
                     <div className="flex-1 flex flex-col justify-between space-y-4">
                       <div className="space-y-3.5">
-                        <div className="flex items-center gap-2 text-[11px] font-bold text-brand-muted uppercase tracking-wider">
-                          <MapPin className="h-3.5 w-3.5 text-brand-primary" />
+                        <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider">
+                          <MapPin className="h-4 w-4 text-brand-primary" />
                           <span>{project.location || "Global"}</span>
                         </div>
                         <h3 className="text-2xl font-heading font-black text-slate-800 group-hover:text-brand-primary transition-colors line-clamp-2 leading-tight">
                           {project.title}
                         </h3>
                         {project.capacity && (
-                          <div className="text-xs font-bold text-[#133020] flex items-start gap-1.5 bg-slate-100/50 p-2.5 rounded-lg border border-slate-100">
-                            <Box className="w-4 h-4 text-brand-primary flex-shrink-0" />
+                          <div className="text-sm font-bold text-[#133020] flex items-start gap-2 bg-slate-100/60 p-3 rounded-xl border border-slate-100">
+                            <Box className="w-4 h-4 text-brand-primary flex-shrink-0 mt-0.5" />
                             <span className="leading-snug">{project.capacity}</span>
                           </div>
                         )}
-                        <p className="text-[14px] text-slate-500 leading-relaxed line-clamp-3 font-medium">
+                        <p className="text-base text-slate-600 leading-relaxed line-clamp-3 font-normal">
                           {getExcerpt(project.content)}
                         </p>
                       </div>
 
-                      <div className="pt-3 flex items-center gap-1.5 text-xs font-black text-brand-primary group-hover:text-[#D3994B] transition-colors uppercase tracking-widest">
+                      <div className="pt-3 flex items-center gap-2 text-sm font-black text-brand-primary group-hover:text-[#D3994B] transition-colors uppercase tracking-widest">
                         <span>View Case Study</span>
-                        <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Link>

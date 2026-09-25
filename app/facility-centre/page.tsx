@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Factory, Settings, Users } from "lucide-react";
 import Header from "@/components/Header";
@@ -14,10 +15,10 @@ const facilitySpecs = [
 ];
 
 const capabilities = [
-  { title: "Machinery in Action", desc: "See a wide range of milling machines running live.", iconPath: "/images/facility-centre/icons/highlighted-/machinery-demo.png" },
-  { title: "Research & Development", desc: "Conduct trials, optimize processes, and innovate with our expertise.", iconPath: "/images/facility-centre/icons/highlighted-/randd.png" },
-  { title: "Operator Training", desc: "Hands-on training to build skills and improve operational excellence.", iconPath: "/images/facility-centre/icons/highlighted-/operator-training.png" },
-  { title: "Process Evaluation", desc: "Evaluate performance and economics to make the right investment decision.", iconPath: "/images/facility-centre/icons/highlighted-/process-evaluation.png" },
+  { title: "Machinery in Action", desc: "See a wide range of milling machines running live.", iconPath: "/images/services/facility-center/icons/machinery_demo.png" },
+  { title: "Research & Development", desc: "Conduct trials, optimize processes, and innovate with our expertise.", iconPath: "/images/services/facility-center/icons/research_and_development.png" },
+  { title: "Operator Training", desc: "Hands-on training to build skills and improve operational excellence.", iconPath: "/images/services/facility-center/icons/operator_training.png" },
+  { title: "Process Evaluation", desc: "Evaluate performance and economics to make the right investment decision.", iconPath: "/images/services/facility-center/icons/process_evaluation.png" },
 ];
 
 const supports = [
@@ -52,70 +53,119 @@ export default function FacilityCentrePage() {
       <div>
         <Header />
 
-        {/* Hero Section */}
-        <section className="relative w-full h-[400px] sm:h-[480px] overflow-hidden flex items-center bg-[#0D301F]">
-          <div className="absolute inset-0 bg-[url('/images/facility-centre/hero-image/turnkey_projects_hero.png')] bg-cover bg-right sm:bg-center" />
-          {/* A gradient overlay that is solid green on the left, fading to transparent on the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C]/80 from-0% via-[#0B2C1C]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
-          
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center pb-8 sm:pb-0">
-            <div className="space-y-4 max-w-2xl">
-              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase">
-                INFRASTRUCTURE
-              </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-[52px] font-heading font-black text-white tracking-tight leading-[1.1] drop-shadow-md">
-                Experience 40 TPD <br className="hidden sm:block" /> Flour Milling Facility Centre
-              </h1>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium pt-2 max-w-xl">
-                A hands-on experience centre where you can see machinery in action, validate solutions, 
-                conduct R&D, and build operator capability through practical training.
-              </p>
+        {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+          {/* Full-bleed Background Images */}
+          <div className="absolute inset-0 z-0">
+            {/* Desktop Background Image (1920x820) */}
+            <div className="hidden md:block absolute inset-0">
+              <Image 
+                src="/hero/facility-center/facility-center-desktop-cropped.png" 
+                alt="40 TPD Flour Milling Facility Centre" 
+                fill
+                className="object-cover object-center"
+                priority
+                sizes="100vw"
+              />
+              {/* Dark-charcoal gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
             </div>
 
-            {/* Hero Highlights */}
-            <div className="flex flex-wrap items-center gap-6 sm:gap-10 mt-8 lg:mt-12">
-              <div className="flex items-center gap-3">
-                <Factory className="w-6 h-6 sm:w-8 sm:h-8 text-[#D3994B]" />
-                <div className="leading-tight">
-                  <p className="text-white font-bold text-sm sm:text-base">40 TPD</p>
-                  <p className="text-slate-400 text-xs sm:text-sm">Pilot Plant Capacity</p>
-                </div>
-              </div>
+            {/* Mobile Background Image (1079x1920 -> 9:16) */}
+            <div className="block md:hidden absolute inset-0">
+              <Image 
+                src="/hero/facility-center/facility-center-mobile.png" 
+                alt="40 TPD Flour Milling Facility Centre" 
+                fill
+                className="object-cover object-center"
+                priority
+                sizes="100vw"
+              />
+              {/* Mobile gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            </div>
+          </div>
+
+          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+            <div className="w-full max-w-3xl">
+              <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
+                Infrastructure
+              </span>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                Experience Our <span className="whitespace-nowrap">40 TPD</span> <br className="hidden sm:block" /> Flour Milling Facility Centre
+              </h1>
+              <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
+                A hands-on experience centre where you can see machinery in action, validate solutions, conduct R&amp;D, and build operator capability through practical training.
+              </p>
               
-              <div className="hidden sm:block w-px h-10 bg-white/20"></div>
-
-              <div className="flex items-center gap-3">
-                <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-[#D3994B]" />
-                <div className="leading-tight">
-                  <p className="text-white font-bold text-sm sm:text-base">Machinery in Action</p>
-                  <p className="text-slate-400 text-xs sm:text-sm">Live Demonstrations</p>
-                </div>
-              </div>
-
-              <div className="hidden sm:block w-px h-10 bg-white/20"></div>
-
-              <div className="flex items-center gap-3">
-                <Users className="w-6 h-6 sm:w-8 sm:h-8 text-[#D3994B]" />
-                <div className="leading-tight">
-                  <p className="text-white font-bold text-sm sm:text-base">Train. Test. Validate.</p>
-                  <p className="text-slate-400 text-xs sm:text-sm">All in One Place</p>
-                </div>
+              <div className="flex flex-wrap gap-4">
+                <button 
+                  onClick={() => document.getElementById('facility-overview')?.scrollIntoView({ behavior: "smooth" })}
+                  className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+                >
+                  <span>Explore The Facility</span>
+                  <ArrowRight className="h-4 w-4" />
+                </button>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+        {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
+        <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-5xl">
+          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
+            
+            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">40 TPD</h3>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Pilot Plant Capacity</p>
+            </div>
+
+            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Machinery in Action</h3>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Live Machine Demonstrations</p>
+            </div>
+
+            <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Train. Test. Validate.</h3>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">All In One Place</p>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Mobile Key Proof Points Bar (In Document Flow - Prevents Overlapping Next Section) */}
+        <div className="block md:hidden relative z-30 px-5 -mt-10 w-full mx-auto max-w-xl">
+          <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
+            
+            <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">40 TPD</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Pilot Plant Capacity</p>
+            </div>
+
+            <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Machinery in Action</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Live Machine Demonstrations</p>
+            </div>
+
+            <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Train. Test. Validate.</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">All In One Place</p>
+            </div>
+
+          </div>
+        </div>
+
+        <section id="facility-overview" className="w-full pt-10 sm:pt-14 md:pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative md:-mt-12 lg:-mt-16">
           
           {/* See, Test & Learn Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
             <div className="space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-heading font-black text-[#133020] leading-tight pb-4 border-b-2 border-[#D3994B]/30 inline-block">
+              <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-[#133020] leading-tight pb-4 border-b-2 border-[#D3994B]/30 inline-block">
                 See, Test & Learn Before You Invest
               </h2>
-              <div className="text-slate-600 space-y-4 text-sm leading-relaxed">
+              <div className="text-slate-600 space-y-5 text-base sm:text-lg leading-relaxed font-normal">
                 <p>
-                  Our 40 TPD Flour Milling Facility Centre in Ajmer is more than a pilot plant—it is an experience centre designed to help you make confident, informed investment decisions.
+                  Our <span className="whitespace-nowrap font-bold text-slate-800">40 TPD</span> Flour Milling Facility Centre in Ajmer is more than a pilot plant—it is an experience centre designed to help you make confident, informed investment decisions.
                 </p>
                 <p>
                   See a wide range of flour-milling machines operating in real conditions, assess process performance, conduct research and development trials, and provide practical training to your operators and technical teams.
@@ -133,9 +183,9 @@ export default function FacilityCentrePage() {
                   <li key={idx} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6 pb-5 border-b border-slate-100 last:border-0 last:pb-0">
                     <div className="flex items-center gap-3 sm:w-48 shrink-0">
                       <img src={spec.iconPath} alt={spec.label} className="w-5 h-5 object-contain opacity-80" />
-                      <span className="text-[13px] font-bold text-slate-600">{spec.label}</span>
+                      <span className="text-sm sm:text-base font-bold text-slate-700">{spec.label}</span>
                     </div>
-                    <span className="text-[13px] font-black text-[#133020]">{spec.value}</span>
+                    <span className="text-sm sm:text-base font-black text-[#133020]">{spec.value}</span>
                   </li>
                 ))}
               </ul>
@@ -143,16 +193,16 @@ export default function FacilityCentrePage() {
           </div>
 
           {/* Capabilities Highlight Banner */}
-          <div className="w-full bg-[#0D301F] rounded-[32px] p-8 sm:p-10 mb-16 shadow-lg">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div className="w-full bg-[#0D301F] rounded-[32px] p-6 sm:p-8 lg:p-10 mb-16 shadow-lg border border-white/5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
               {capabilities.map((cap, idx) => (
-                <div key={idx} className={`flex items-start gap-4 ${idx > 0 ? "pt-6 sm:pt-0 sm:pl-6 lg:pl-6" : ""}`}>
-                  <div className="w-12 h-12 rounded-full bg-[#D3994B]/10 flex items-center justify-center shrink-0 border border-[#D3994B]/20">
-                    <img src={cap.iconPath} alt={cap.title} className="w-6 h-6 object-contain" />
+                <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "pt-6 sm:pt-0 sm:pl-5 lg:pl-6" : ""}`}>
+                  <div className="w-14 h-14 rounded-full bg-[#16442F] border border-[#f7b032]/40 flex items-center justify-center p-3 shrink-0 shadow-sm">
+                    <img src={cap.iconPath} alt={cap.title} className="w-full h-full object-contain" />
                   </div>
                   <div>
-                    <h4 className="text-white font-bold text-[15px] mb-1 leading-tight">{cap.title}</h4>
-                    <p className="text-[11px] text-white/70 leading-snug">{cap.desc}</p>
+                    <h4 className="text-white font-bold text-sm sm:text-base mb-1 leading-tight">{cap.title}</h4>
+                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">{cap.desc}</p>
                   </div>
                 </div>
               ))}
@@ -179,7 +229,7 @@ export default function FacilityCentrePage() {
                     <h4 className="font-heading font-black text-[#133020] text-lg whitespace-pre-line leading-tight">
                       {item.title}
                     </h4>
-                    <p className="text-[12px] text-slate-500 leading-relaxed font-medium">
+                    <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {item.desc}
                     </p>
                     <ArrowRight className="w-4 h-4 text-[#D3994B] group-hover:translate-x-1 transition-transform mt-2" />
@@ -200,7 +250,7 @@ export default function FacilityCentrePage() {
                   <img src={item.imgPath} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4">
-                    <h4 className="text-[10px] sm:text-xs text-white font-bold leading-tight">
+                    <h4 className="text-xs sm:text-sm text-white font-bold leading-tight">
                       {item.title}
                     </h4>
                   </div>
@@ -210,28 +260,30 @@ export default function FacilityCentrePage() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-[#0D301F] rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-md border border-white/5">
-            <div className="flex items-center gap-5">
-              <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                <img src="/images/facility-centre/icons/highlighted-/schedule-visit.png" alt="Schedule a Visit" className="w-7 h-7 object-contain" />
+          <div className="w-full bg-[#0D301F] rounded-3xl p-8 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl border border-white/5">
+            <div className="flex items-center gap-6 max-w-2xl">
+              <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 p-3.5">
+                <img src="/images/services/facility-center/icons/schedule_visit.png" alt="Schedule a Visit" className="w-full h-full object-contain brightness-0 invert" />
               </div>
               <div className="space-y-1">
-                <h3 className="text-xl sm:text-2xl font-heading font-black text-white">
+                <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
                   Want to Visit Our Facility Centre?
                 </h3>
-                <p className="text-slate-300 text-xs sm:text-sm">
+                <p className="text-slate-200 text-base font-normal">
                   Book a guided visit to explore machinery, evaluate performance, and train your team.
                 </p>
               </div>
             </div>
 
-            <Link 
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-[#D3994B] text-white hover:bg-[#D3994B]/90 px-8 py-3.5 rounded-xl text-sm font-black tracking-wide transition-transform hover:-translate-y-0.5 shadow-md w-full md:w-auto shrink-0"
-            >
-              <img src="/images/facility-centre/icons/highlighted-/schedule-visit.png" alt="" className="w-4 h-4 brightness-0 invert" />
-              Schedule a Visit <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="relative z-10 shrink-0 w-full md:w-auto">
+              <Link 
+                href="/contact"
+                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center justify-center gap-2 cursor-pointer w-full md:w-auto"
+              >
+                <span>Schedule a Visit</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
 
         </section>

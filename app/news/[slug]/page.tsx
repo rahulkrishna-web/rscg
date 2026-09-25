@@ -10,7 +10,9 @@ import { newsData } from "../newsData";
 export default function NewsDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
-  const currentPost = newsData.find((post) => post.slug === slug);
+  const currentPost = newsData.find(
+    (post) => post.slug === slug || (slug === "graintech-india-exhibition-2015" && post.slug === "graintech-india-exhibition-2019")
+  );
 
   // Helper to format date into readable text
   const formatDate = (dateString: string) => {
@@ -71,6 +73,10 @@ export default function NewsDetailPage() {
             
             {/* Title (Mobile: Top, Desktop: Left Col Row 1) */}
             <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
+              <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
+                <Calendar className="w-3.5 h-3.5 text-brand-primary" />
+                <span>{currentPost.displayDate || formatDate(currentPost.date)}</span>
+              </div>
               <h1 className="text-3xl sm:text-[40px] font-heading font-medium text-[#133020] leading-tight">
                 {currentPost.title}
               </h1>
@@ -160,7 +166,7 @@ export default function NewsDetailPage() {
                       <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                         <div className="space-y-1.5">
                           <span className="text-[10px] text-brand-muted font-bold">
-                            {formatDate(p.date)}
+                            {p.displayDate || formatDate(p.date)}
                           </span>
                           <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-sm sm:text-base transition-colors leading-snug line-clamp-2">
                             {p.title}

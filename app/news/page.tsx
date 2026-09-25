@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import Header from "@/components/Header";
@@ -32,39 +33,60 @@ export default function NewsPage() {
   };
 
   return (
-    <div className="min-h-screen font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-white font-sans flex flex-col justify-between">
       <div>
         <Header />
 
-        {/* Hero Section */}
-        <section className="relative w-full h-[350px] sm:h-[450px] overflow-hidden flex flex-col justify-center bg-[#0D301F]">
-          <div className="absolute inset-0 bg-[url('/images/news-page/news_hero.png')] bg-cover bg-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2C1C]/80 from-0% via-[#0B2C1C]/40 via-[40%] to-transparent lg:to-[70%] z-10 w-full" />
-          
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 h-full flex flex-col justify-center">
-            <div className="space-y-4 max-w-xl">
-              <span className="text-[11px] font-black text-[#D3994B] tracking-[0.2em] uppercase block">
-                NEWS & UPDATES
+        {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+          {/* Full-bleed Background Images */}
+          <div className="absolute inset-0 z-0">
+            {/* Desktop Background Image (1920x820) */}
+            <div className="hidden md:block absolute inset-0">
+              <Image 
+                src="/hero/news/news_desktop_cropped.png" 
+                alt="News & Updates" 
+                fill
+                className="object-cover object-center"
+                priority
+                sizes="100vw"
+              />
+              {/* Dark-charcoal gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            </div>
+
+            {/* Mobile Background Image (1080x1920 -> 9:16) */}
+            <div className="block md:hidden absolute inset-0">
+              <Image 
+                src="/hero/news/news_mobile.png" 
+                alt="News & Updates" 
+                fill
+                className="object-cover object-center"
+                priority
+                sizes="100vw"
+              />
+              {/* Mobile gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-[#0B1510]/85 via-[#0B1510]/40 to-transparent"></div>
+            </div>
+          </div>
+
+          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
+            <div className="w-full max-w-2xl">
+              <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
+                News &amp; Updates
               </span>
-              <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-bold text-white tracking-tight leading-[1.1]">
-                News & Updates
+              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+                News &amp; Updates
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-medium pt-2">
+              <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-8 leading-relaxed font-light max-w-xl">
                 Stay informed with the latest announcements, product launches, industry insights, and milestones from RS Choyal Group.
               </p>
-              <div className="w-10 h-0.5 bg-[#D3994B] mt-6" />
             </div>
           </div>
         </section>
 
         {/* Main Section */}
-        <section className="relative w-full py-20 z-10">
-          {/* Split Background: Top White, Bottom Beige */}
-          <div className="absolute inset-0 z-0 flex flex-col">
-            <div className="flex-1 bg-white" />
-            <div className="flex-1 bg-[#F9F6F0]" />
-          </div>
-
+        <section className="relative w-full py-20 z-10 bg-white">
           <div className="relative z-10 px-6 sm:px-12 lg:px-16 xl:px-24 w-full">
 
 
@@ -91,19 +113,19 @@ export default function NewsPage() {
                     {/* Content */}
                     <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                       <div className="space-y-3">
-                        <div className="text-[11px] font-bold text-slate-500 tracking-wide uppercase">
-                          {formatDate(item.date)} <span className="mx-1 text-slate-300">|</span> Expositions
+                        <div className="text-xs sm:text-sm font-bold text-slate-500 tracking-wide uppercase">
+                          {item.displayDate || formatDate(item.date)} <span className="mx-1.5 text-slate-300">|</span> Expositions
                         </div>
                         <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-brand-primary transition-colors leading-snug line-clamp-2">
                           {item.title}
                         </h3>
-                        <p className="text-[13px] text-slate-600 leading-relaxed line-clamp-2 font-medium">
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed line-clamp-3 font-normal">
                           {getExcerpt(item.content)}
                         </p>
                       </div>
 
                       <div className="pt-6 mt-auto">
-                        <div className="inline-flex items-center gap-1 text-[13px] font-bold text-[#4A7264] hover:text-[#133020] transition-colors border-b border-transparent hover:border-[#133020]">
+                        <div className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-[#4A7264] hover:text-[#133020] transition-colors border-b border-transparent hover:border-[#133020]">
                           Read More <ArrowUpRight className="h-4 w-4" />
                         </div>
                       </div>
