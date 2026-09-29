@@ -248,3 +248,43 @@ body {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* FAQ Floating & Swaying Animations */
+@keyframes faqFloat1 {
+  0%, 100% {
+    transform: translateY(0px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-1.5deg);
+  }
+}
+
+@keyframes faqFloat2 {
+  0%, 100% {
+    transform: translateY(0px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(4deg);
+  }
+}
+
+@keyframes faqWheatSway {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-6px) rotate(4deg);
+  }
+}
+
+.animate-faq-float-1 {
+  animation: faqFloat1 6s ease-in-out infinite;
+}
+
+.animate-faq-float-2 {
+  animation: faqFloat2 7s ease-in-out infinite 0.9s;
+}
+
+.animate-faq-sway {
+  animation: faqWheatSway 4.5s ease-in-out infinite 0.3s;
+}

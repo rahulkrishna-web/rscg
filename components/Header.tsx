@@ -274,6 +274,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
             Our Projects
           </Link>
           <Link 
+            href="/downloads" 
+            className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
+          >
+            Downloads
+          </Link>
+          <Link 
             href="/contact" 
             className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
           >
@@ -428,6 +434,13 @@ export default function Header({ onRequestCallback }: HeaderProps) {
               className="text-base font-bold text-slate-800 hover:text-brand-primary transition-colors"
             >
               Our Projects
+            </Link>
+            <Link
+              href="/downloads"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-base font-bold text-slate-800 hover:text-brand-primary transition-colors"
+            >
+              Downloads
             </Link>
             <Link
               href="/contact"

@@ -1,198 +1,155 @@
 "use client";
 
 import Link from "next/link";
-import { Phone, Mail, Globe, MapPin, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, Factory } from "lucide-react";
 
-const groupLogos = [
-  { name: "RS Choyal Group", src: "/images/logos/rsc_group.jpg" },
-  { name: "Choyal Grinding Solutions", src: "/images/logos/choyal_grinding.png" },
-  { name: "CHARGE Milling Institute", src: "/images/logos/charge.jpg" },
-  { name: "Shri Agro Industries", src: "/images/logos/shri_agro.png" },
-  { name: "Floura", src: "/images/logos/floura.png" },
-  { name: "Mavian", src: "/images/logos/mavian.png" },
-  { name: "Shrihit", src: "/images/logos/shrihit.png" },
-  { name: "Brains Trust Society", src: "/images/logos/brains_trust.jpg" },
-  { name: "R. S. Choyal Branding", src: "/images/logos/rs_choyal.jpg" },
+const aboutLinks = [
+  { name: "About Us", href: "/about#about-us" },
+  { name: "Leadership", href: "/about#leadership" },
+  { name: "Mission & Vision", href: "/about#mission-vision" },
+  { name: "Our Philosophy", href: "/about#philosophy" },
+  { name: "Research & Development", href: "/about#research-development" },
+  { name: "Social Responsibility", href: "/about#social-responsibility" },
+  { name: "Our Network", href: "/about#network" },
+];
+
+const productLinks = [
+  { name: "Turnkey Solutions", href: "/turnkey-projects" },
+  { name: "Flour Mills", href: "/flour-mills" },
+  { name: "Automations", href: "/automation" },
+  { name: "Power Saving", href: "/power-saving" },
+  { name: "Emery Stones", href: "/emery-stones" },
+  { name: "Grain Storage & Handling", href: "/grain-storage-handling" },
+  { name: "Grain Processing", href: "/grain-processing" },
+  { name: "Abrasive Tools", href: "/emery-stones" },
+];
+
+const serviceLinks = [
+  { name: "Choyal 360", href: "/choyal-360" },
+  { name: "Facility Centre", href: "/facility-centre" },
+  { name: "Job Grinding", href: "/job-grinding" },
+  { name: "Consultancy", href: "/consultancy" },
+  { name: "Training", href: "/training" },
+  { name: "Web Solutions", href: "/web-solutions" },
+];
+
+const certBadges = [
+  { name: "Certified", src: "/images/footer/icons/certified.png" },
+  { name: "ISO 9001:2008 Certified", src: "/images/footer/icons/ISO 9001_2008 certified.png" },
+  { name: "Enabled", src: "/images/footer/icons/enabled.png" },
+  { name: "ISO 9001:2015", src: "/images/footer/icons/ISO 9001_2015.png" },
+  { 
+    name: "Touch", 
+    src: "/images/footer/icons/touch.png",
+    cardBg: "bg-[#1c2722] border-[#1c2722] shadow-sm",
+  },
+  { name: "Solar Energy", src: "/images/footer/icons/solar energy.png" },
+  { name: "Energy Saver", src: "/images/footer/icons/energy saver.png" },
+  { name: "ISO 22000:200", src: "/images/footer/icons/ISO 22000_200.png" },
 ];
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="w-full pt-16 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f3f4f1] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
+    <footer className="w-full pt-14 pb-12 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] text-[#3e4d46] border-t border-slate-300/80 relative z-10">
       <div className="w-full mx-auto space-y-12">
         
-        {/* Group Companies Marquee Slider */}
-        <div className="w-full pb-10 border-b border-slate-300/40 space-y-6 marquee-container">
-          <div className="text-center md:text-left">
-            <span className="text-[10px] sm:text-xs font-black text-[#1c2722] tracking-widest uppercase">
-              Our Group Companies &amp; Ventures
-            </span>
-          </div>
-
-          <div className="flex overflow-hidden w-full select-none gap-6 relative py-2">
-            {/* Fade Left/Right overlays */}
-            <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#f3f4f1] to-transparent z-20 pointer-events-none"></div>
-            <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#f3f4f1] to-transparent z-20 pointer-events-none"></div>
-
-            <div className="flex shrink-0 animate-marquee items-center gap-6 min-w-full">
-              {groupLogos.map((logo, idx) => (
-                <div 
-                  key={`group-logo-1-${idx}`} 
-                  className="w-[185px] h-[95px] bg-white rounded-2xl border border-slate-200/50 shadow-xs flex items-center justify-center p-2 shrink-0 hover:shadow-md hover:border-slate-300/80 transition-all duration-300"
-                >
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    className="w-full h-full object-contain transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="flex shrink-0 animate-marquee items-center gap-6 min-w-full" aria-hidden="true">
-              {groupLogos.map((logo, idx) => (
-                <div 
-                  key={`group-logo-2-${idx}`} 
-                  className="w-[185px] h-[95px] bg-white rounded-2xl border border-slate-200/50 shadow-xs flex items-center justify-center p-2 shrink-0 hover:shadow-md hover:border-slate-300/80 transition-all duration-300"
-                >
-                  <img 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    className="w-full h-full object-contain transition-all duration-300"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Corporate Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12">
+        {/* ================= 5-COLUMN MAIN GRID ================= */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-12 gap-8 lg:gap-10">
           
-          {/* Col 1: Profile & Accreditations */}
-          <div className="lg:col-span-4 space-y-6">
-
-            <p className="text-slate-600 text-xs sm:text-sm leading-relaxed max-w-sm font-medium">
-              RS Choyal Group is a global leader in manufacturing stone grinding mills, premium emery stones, and turnkey milling plants. Pioneering smart IoT milling solutions since 1966.
-            </p>
-
-            <div className="flex items-center gap-2.5 text-xs text-slate-600 bg-white px-4 py-2.5 rounded-xl border border-slate-200 inline-block w-fit shadow-xs">
-              <ShieldCheck className="h-4.5 w-4.5 text-brand-primary flex-shrink-0" />
-              <span className="font-semibold">ISO 9001:2015 Certified Manufacturing Plant</span>
-            </div>
-          </div>
-
-          {/* Col 2: Product Ranges */}
+          {/* Col 1: About Us (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
-              Product Range
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+              About Us
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
-              <li>
-                <Link href="/turnkey-projects" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Turnkey Plant Solutions
-                </Link>
-              </li>
-              <li>
-                <Link href="/flour-mills" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Chakki Flour Mills
-                </Link>
-              </li>
-              <li>
-                <Link href="/emery-stones" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Daniya Emery Stones
-                </Link>
-              </li>
-              <li>
-                <Link href="/emery-stones/agate-sheller-type" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Agate / Sheller Stones
-                </Link>
-              </li>
-              <li>
-                <a href="#brands" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Wonder Mill (Smart PLC)
-                </a>
-              </li>
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+              {aboutLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-brand-primary transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 3: Quick Links */}
+          {/* Col 2: Products (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
-              Corporate Info
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+              Products
             </h4>
-            <ul className="space-y-2.5 text-xs sm:text-sm font-medium">
-              <li>
-                <a href="#about" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  About the Group
-                </a>
-              </li>
-              <li>
-                <a href="#infrastructure" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Infrastructure & R&D
-                </a>
-              </li>
-              <li>
-                <a href="#global" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Global Export Network
-                </a>
-              </li>
-              <li>
-                <a href="https://rschoyalgroup.com/charge/" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  CHARGE Milling Institute
-                </a>
-              </li>
-              <li>
-                <a href="#faq" className="text-slate-600 hover:text-brand-primary transition-colors">
-                  Milling FAQs & Guide
-                </a>
-              </li>
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+              {productLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-brand-primary transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Col 4: Contact & Locations */}
-          <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-black text-[#1c2722] tracking-widest uppercase">
-              Locations & Contact
+          {/* Col 3: Services (2 cols) */}
+          <div className="lg:col-span-2 space-y-4">
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+              Services
+            </h4>
+            <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
+              {serviceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="hover:text-brand-primary transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Col 4: Locations & Contact (3.5 cols) */}
+          <div className="lg:col-span-3 xl:col-span-3 space-y-4">
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+              Locations &amp; Contact
             </h4>
             
-            <div className="space-y-4 text-xs font-medium text-slate-600">
-              {/* Corporate Tower */}
-              <div className="flex items-start gap-2.5">
-                <MapPin className="h-4.5 w-4.5 text-brand-primary mt-0.5 flex-shrink-0" />
+            <div className="space-y-4 text-sm font-medium text-slate-600">
+              {/* Corporate Headquarters */}
+              <div className="flex items-start gap-3">
+                <MapPin className="h-4.5 w-4.5 text-emerald-700 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="font-bold text-[#1c2722] block">Corporate Headquarters</span>
-                  <span>Choyal Tower, Shalimar Colony, Adarsh Nagar, Ajmer – 305008, Rajasthan, India</span>
+                  <span className="font-bold text-[#1c2722] text-sm sm:text-base block">Corporate Headquarters</span>
+                  <span className="text-slate-600 leading-relaxed text-sm">
+                    Choyal Tower, Shalimar Colony, Adarsh Nagar, Ajmer – 305008, Rajasthan, India
+                  </span>
                 </div>
               </div>
               
-              {/* Manufacturing Plant */}
-              <div className="flex items-start gap-2.5">
-                <MapPin className="h-4.5 w-4.5 text-brand-primary mt-0.5 flex-shrink-0" />
+              {/* Factory Unit */}
+              <div className="flex items-start gap-3">
+                <Factory className="h-4.5 w-4.5 text-emerald-700 mt-0.5 flex-shrink-0" />
                 <div>
-                  <span className="font-bold text-[#1c2722] block">Palra Manufacturing Unit</span>
-                  <span>Plot No. 11-12, RIICO Industrial Area, Palra, Ajmer – 305025, Rajasthan, India</span>
+                  <span className="font-bold text-[#1c2722] text-sm sm:text-base block">Factory Unit</span>
+                  <span className="text-slate-600 leading-relaxed text-sm">
+                    Arjunpura – Khalsa, NH 58, District Ajmer, Rajasthan ,India
+                  </span>
                 </div>
               </div>
 
-              {/* Call & Mail */}
-              <div className="pt-2 space-y-2 border-t border-slate-200">
-                <div className="flex items-center gap-2">
-                  <Phone className="h-4.5 w-4.5 text-brand-primary flex-shrink-0" />
-                  <a href="tel:+919240289259" className="text-[#1c2722] hover:text-brand-primary font-bold transition-colors">
+              {/* Call, Mail & Web */}
+              <div className="pt-2 space-y-2.5">
+                <div className="flex items-center gap-3">
+                  <Phone className="h-4.5 w-4.5 text-emerald-700 flex-shrink-0" />
+                  <a href="tel:+919240289259" className="text-slate-800 hover:text-brand-primary font-bold text-sm sm:text-base transition-colors">
                     +91 92402 89259
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="h-4.5 w-4.5 text-brand-primary flex-shrink-0" />
-                  <a href="mailto:info@rschoyalgroup.com" className="text-slate-600 hover:text-brand-primary transition-colors">
+                <div className="flex items-center gap-3">
+                  <Mail className="h-4.5 w-4.5 text-emerald-700 flex-shrink-0" />
+                  <a href="mailto:info@rschoyalgroup.com" className="text-slate-600 hover:text-brand-primary text-sm sm:text-base transition-colors">
                     info@rschoyalgroup.com
                   </a>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Globe className="h-4.5 w-4.5 text-brand-primary flex-shrink-0" />
-                  <a href="https://www.rschoyalgroup.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-brand-primary transition-colors">
+                <div className="flex items-center gap-3">
+                  <Globe className="h-4.5 w-4.5 text-emerald-700 flex-shrink-0" />
+                  <a href="https://www.rschoyalgroup.com" target="_blank" rel="noopener noreferrer" className="text-slate-600 hover:text-brand-primary text-sm sm:text-base transition-colors">
                     www.rschoyalgroup.com
                   </a>
                 </div>
@@ -200,17 +157,113 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Col 5: Social Media (2.5 cols) */}
+          <div className="lg:col-span-3 xl:col-span-3 space-y-4">
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+              Social Media
+            </h4>
+            <p className="text-sm text-slate-600 font-medium">
+              Connect with us on official channels:
+            </p>
+            <div className="flex items-center gap-2.5 pt-1">
+              {/* Facebook */}
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Facebook"
+                className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z" />
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="Instagram"
+                className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
+              >
+                <svg className="w-4.5 h-4.5 fill-none stroke-current stroke-2 stroke-linecap-round stroke-linejoin-round" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="LinkedIn"
+                className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26z" />
+                </svg>
+              </a>
+
+              {/* YouTube */}
+              <a 
+                href="https://youtube.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label="YouTube"
+                className="w-10 h-10 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-slate-600 hover:text-brand-primary hover:border-brand-primary/40 transition-all duration-200 hover:scale-105"
+              >
+                <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
         </div>
 
-        {/* Bottom copyright segment */}
-        <div className="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs text-slate-500 font-medium">
-          <p>
-            © {currentYear} RS Choyal Group. All rights reserved. 
-            <span className="block sm:inline sm:ml-2">· CIN: U29191RJ1999PTC015792 ·</span>
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <span className="italic">Wonder Mill®, Emery Stone Dresser®, and Choyal® are registered trademarks.</span>
+        {/* ================= BOTTOM DIVIDER & CERTIFICATIONS ================= */}
+        <div className="border-t border-slate-200/80 pt-8 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+          
+          {/* Left: Copyright & Tagline */}
+          <div className="space-y-1.5">
+            <div className="flex items-center gap-2 text-sm font-bold text-slate-700 tracking-wider">
+              <Link href="/contact" className="hover:text-brand-primary transition-colors">FAQS</Link>
+              <span>•</span>
+              <Link href="/contact" className="hover:text-brand-primary transition-colors">CONTACT US</Link>
+            </div>
+            <p className="text-sm sm:text-base font-bold text-slate-800">
+              Copyright 2026 © RS Choyal Group
+            </p>
+            <p className="text-sm text-slate-500 italic">
+              We never forget how much you rely on Choyal
+            </p>
           </div>
+
+          {/* Right: 8 Certification & Feature Badges */}
+          <div className="flex flex-wrap items-start justify-start lg:justify-end gap-3 sm:gap-4">
+            {certBadges.map((badge) => (
+              <div key={badge.name} className="flex flex-col items-center group w-18 sm:w-20">
+                <div
+                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl border flex items-center justify-center p-2.5 group-hover:shadow-md transition-all duration-200 ${
+                    badge.cardBg || "bg-white border-slate-200/80 shadow-xs group-hover:border-slate-300"
+                  }`}
+                >
+                  <img
+                    src={encodeURI(badge.src)}
+                    alt={badge.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                <span className="text-xs sm:text-sm text-slate-700 font-semibold text-center mt-2 leading-tight line-clamp-2">
+                  {badge.name}
+                </span>
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>
