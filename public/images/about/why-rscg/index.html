@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why RSC - A Legacy Built, A Future Evolving</title>
+  
+  <!-- Google Font: Geist with 900 weight support -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'Geist Fallback', 'Arial', 'sans-serif'],
+          },
+          colors: {
+            'primary-green': '#0E3321',
+            'dark-green': '#09271A',
+            'accent-yellow': '#FFAA17',
+            'heading-black': '#0F172A',
+            'body-grey': '#475569',
+            'muted-grey': '#94A3B8',
+            'light-grey': '#F3F4F2',
+            'border-grey': '#E2E8F0',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Geist', 'Geist Fallback', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Font Size and Weight Rules */
+    .hero-heading {
+      font-size: clamp(30px, 4vw, 36px);
+      line-height: 1.15;
+      font-weight: 900 !important;
+    }
+
+    .card-title-text {
+      font-size: clamp(22px, 2.5vw, 28px);
+      line-height: 1.25;
+    }
+
+    .card-body-text {
+      font-size: 15.5px;
+      line-height: 1.65;
+    }
+
+    .number-tag {
+      font-size: 13.5px;
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+
+<body class="bg-light-grey text-body-grey min-h-screen py-10 sm:py-16 px-4 sm:px-8 lg:px-12 selection:bg-accent-yellow/20 selection:text-primary-green">
+
+  <!-- Thoda Right shift kiya gaya container (ml-8 sm:ml-16 lg:ml-24) -->
+  <main class="w-full max-w-6xl ml-8 sm:ml-16 lg:ml-24 text-left">
+    
+    <!-- Left-aligned Header -->
+    <header class="mb-10 sm:mb-14 text-left">
+      <!-- Eyebrow: Pure normal text, primary green, no badge, no dot, left-aligned -->
+      <span class="block text-primary-green font-bold text-[13px] sm:text-[14px]  tracking-[0.16em] mb-3 text-left">
+        Why RSC
+      </span>
+
+      <!-- 2-Line Layout Heading with font-weight 900 and 2 words in accent yellow -->
+      <h1 class="hero-heading tracking-tight text-heading-black max-w-2xl text-left">
+        <span class="block">
+          A legacy built a
+        </span>
+        <span class="block text-primary-green">
+          future <span class="text-accent-yellow">evolving</span>.
+        </span>
+      </h1>
+    </header>
+
+    <!-- Cards Grid Container with visible card borders -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+
+      <!-- Card 01: Trust -->
+      <article class="bg-white rounded-2xl border border-border-grey p-8 sm:p-10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-border-grey/80 text-left">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="number-tag text-accent-yellow font-bold">01</span>
+        </div>
+        <h2 class="card-title-text font-bold text-primary-green mb-3.5 tracking-tight">
+          Trust
+        </h2>
+        <p class="card-body-text text-body-grey">
+          Trust is indispensable to Choyal. We believe in fair and transparent business, giving our clients peace of mind.
+        </p>
+      </article>
+
+      <!-- Card 02: Quality -->
+      <article class="bg-white rounded-2xl border border-border-grey p-8 sm:p-10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-border-grey/80 text-left">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="number-tag text-accent-yellow font-bold">02</span>
+        </div>
+        <h2 class="card-title-text font-bold text-primary-green mb-3.5 tracking-tight">
+          Quality
+        </h2>
+        <p class="card-body-text text-body-grey">
+          Quality and excellence define our product range. We provide solutions built to deliver dependable performance.
+        </p>
+      </article>
+
+      <!-- Card 03: Innovation -->
+      <article class="bg-white rounded-2xl border border-border-grey p-8 sm:p-10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-border-grey/80 text-left">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="number-tag text-accent-yellow font-bold">03</span>
+        </div>
+        <h2 class="card-title-text font-bold text-primary-green mb-3.5 tracking-tight">
+          Innovation
+        </h2>
+        <p class="card-body-text text-body-grey">
+          Driven by rigorous R&amp;D, we develop advanced milling solutions for different budgets and industrial scales.
+        </p>
+      </article>
+
+      <!-- Card 04: Economical Solutions -->
+      <article class="bg-white rounded-2xl border border-border-grey p-8 sm:p-10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-border-grey/80 text-left">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="number-tag text-accent-yellow font-bold">04</span>
+        </div>
+        <h2 class="card-title-text font-bold text-primary-green mb-3.5 tracking-tight">
+          Economical Solutions
+        </h2>
+        <p class="card-body-text text-body-grey">
+          We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.
+        </p>
+      </article>
+
+      <!-- Card 05: Experience (Centered underneath across the 2-column grid) -->
+      <div class="md:col-span-2 flex justify-center w-full">
+        <article class="w-full md:w-[calc(50%-0.75rem)] bg-white rounded-2xl border border-border-grey p-8 sm:p-10 shadow-sm transition-all duration-200 hover:shadow-md hover:border-border-grey/80 text-left">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="number-tag text-accent-yellow font-bold">05</span>
+          </div>
+          <h2 class="card-title-text font-bold text-primary-green mb-3.5 tracking-tight">
+            Experience
+          </h2>
+          <p class="card-body-text text-body-grey">
+            With 60+ years of experience, we bring deep milling expertise, proven technology, and skilled teams to every project.
+          </p>
+        </article>
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

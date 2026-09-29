@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Journey — R.S. Choyal Group</title>
+
+    <style>
+        :root {
+            --primary-green: #0E3321;
+            --dark-green: #09271A;
+            --accent-yellow: #FFAA17;
+            --heading-black: #0F172A;
+            --body-grey: #475569;
+            --muted-grey: #94A3B8;
+            --light-grey: #F3F4F2;
+            --border-grey: #E2E8F0;
+            --white: #FFFFFF;
+
+            --font-main: "Geist", "Geist Fallback", Arial, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--light-grey);
+            color: var(--heading-black);
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           SCROLL TRACK (STICKY CONTAINER)
+        ========================================= */
+
+        .journey-scroll-track {
+            position: relative;
+            width: 100%;
+            height: 380vh;
+            background: var(--light-grey);
+        }
+
+        /* =========================================
+           STICKY VIEWPORT SECTION
+        ========================================= */
+
+        .journey-section {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            min-height: 600px;
+            background: var(--light-grey);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .journey-wrapper {
+            width: 100%;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            padding-left: clamp(40px, 8vw, 130px);
+            padding-right: clamp(16px, 3vw, 40px);
+            position: relative;
+        }
+
+        /* =========================================
+           HEADER WITH EYEBROW
+        ========================================= */
+
+        .journey-top {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 36px;
+        }
+
+        .journey-heading {
+            max-width: 820px;
+        }
+
+        /* Eyebrow: Our Heritage & Legacy */
+        .journey-eyebrow {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .journey-heading h2 {
+            font-size: 36px;
+            font-weight: 900;
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+            color: var(--primary-green);
+            margin-bottom: 12px;
+        }
+
+        .journey-heading h2 .highlight-orange {
+            color: var(--accent-yellow);
+        }
+
+        .journey-heading p {
+            max-width: 640px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.55;
+            color: var(--body-grey);
+        }
+
+        /* =========================================
+           TIMELINE STAGE
+        ========================================= */
+
+        .timeline-stage {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 130px minmax(0, 1fr);
+            gap: 85px;
+            min-height: 460px;
+            position: relative;
+        }
+
+        /* =========================================
+           YEAR NAVIGATION
+        ========================================= */
+
+        .year-navigation {
+            position: relative;
+            height: 460px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 13px;
+            overflow: hidden;
+        }
+
+        .year-navigation::before {
+            content: "";
+            position: absolute;
+            left: 6px;
+            top: 5%;
+            bottom: 5%;
+            width: 1px;
+            background: var(--border-grey);
+        }
+
+        .year-button {
+            position: relative;
+            z-index: 2;
+            width: max-content;
+            padding-left: 26px;
+            border: none;
+            background: transparent;
+            font-family: var(--font-main);
+            font-size: 13px;
+            line-height: 1;
+            color: var(--muted-grey);
+            cursor: pointer;
+            transition: color .4s ease, transform .4s ease, font-size .4s ease;
+        }
+
+        .year-button::before {
+            content: "";
+            position: absolute;
+            left: 2px;
+            top: 50%;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--light-grey);
+            border: 1px solid var(--border-grey);
+            transform: translateY(-50%);
+            transition: background .4s ease, border-color .4s ease, transform .4s ease;
+        }
+
+        .year-button:hover {
+            color: var(--primary-green);
+        }
+
+        .year-button.active {
+            color: var(--primary-green);
+            font-size: 14px;
+            font-weight: 600;
+            transform: translateX(4px);
+        }
+
+        .year-button.active::before {
+            background: var(--accent-yellow);
+            border-color: var(--accent-yellow);
+            transform: translateY(-50%) scale(1.25);
+        }
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .timeline-content {
+            position: relative;
+            width: 100%;
+            min-width: 0;
+            min-height: 460px;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .timeline-content::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            opacity: .3;
+            background-image:
+                linear-gradient(to right, var(--border-grey) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--border-grey) 1px, transparent 1px);
+            background-size: 85px 85px;
+            pointer-events: none;
+            mask-image: linear-gradient(to right, black 0%, black 50%, transparent 100%);
+        }
+
+        .timeline-inner {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            min-height: 460px;
+            display: grid;
+            grid-template-columns: minmax(320px, 0.95fr) minmax(380px, 1.05fr);
+            align-items: center;
+            gap: 6vw;
+            padding: 10px 0 20px;
+        }
+
+        /* =========================================
+           YEAR 3D DIGIT FLIP (UNTOUCHED)
+        ========================================= */
+
+        .milestone-copy {
+            position: relative;
+            min-width: 0;
+            padding-left: 20px;
+        }
+
+        .milestone-year {
+            font-size: clamp(75px, 8vw, 125px);
+            font-weight: 600;
+            line-height: .85;
+            letter-spacing: -.065em;
+            color: var(--primary-green);
+            margin-bottom: 22px;
+            white-space: nowrap;
+            display: inline-flex;
+            perspective: 800px;
+        }
+
+        .digit-slot {
+            display: inline-block;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .digit-slot span {
+            display: inline-block;
+            backface-visibility: hidden;
+            transform-origin: center center;
+            will-change: transform, opacity, filter;
+        }
+
+        .digit-slot.flip-out span {
+            animation: flipOutDigit 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        .digit-slot.flip-in span {
+            animation: flipInDigit 0.45s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes flipOutDigit {
+            0% {
+                transform: rotateY(0deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+            100% {
+                transform: rotateY(-90deg);
+                opacity: 0.1;
+                filter: blur(3px);
+            }
+        }
+
+        @keyframes flipInDigit {
+            0% {
+                transform: rotateY(90deg);
+                opacity: 0.1;
+                filter: blur(3px);
+            }
+            100% {
+                transform: rotateY(0deg);
+                opacity: 1;
+                filter: blur(0px);
+            }
+        }
+
+        /* =========================================
+           CLEAN FADE-IN (HEADING & DESC)
+        ========================================= */
+
+        .milestone-title {
+            max-width: 520px;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 1.15;
+            letter-spacing: -.03em;
+            color: var(--heading-black);
+            margin-bottom: 16px;
+            will-change: opacity;
+        }
+
+        .milestone-description {
+            max-width: 520px;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--body-grey);
+            will-change: opacity;
+        }
+
+        .text-fading-out .milestone-title,
+        .text-fading-out .milestone-description {
+            opacity: 0;
+            transition: opacity 0.2s ease-out;
+        }
+
+        .text-fading-in .milestone-title {
+            animation: pureFadeIn 0.8s ease-in-out forwards;
+        }
+
+        .text-fading-in .milestone-description {
+            animation: pureFadeIn 0.8s ease-in-out 0.1s forwards;
+        }
+
+        @keyframes pureFadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* =========================================
+           IMAGE SIDE
+        ========================================= */
+
+        .milestone-visual {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            overflow: hidden;
+            background: var(--white);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+            border: 1px solid var(--border-grey);
+        }
+
+        .milestone-image {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity .5s ease, transform .85s cubic-bezier(.22, 1, .36, 1);
+        }
+
+        .milestone-image.image-changing {
+            opacity: 0;
+            transform: scale(1.03);
+        }
+
+        .horizontal-hint {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--muted-grey);
+            font-size: 13px;
+            letter-spacing: .04em;
+            z-index: 5;
+        }
+
+        .hint-line {
+            width: 32px;
+            height: 1px;
+            background: var(--border-grey);
+        }
+
+        /* =========================================
+           RESPONSIVE BREAKPOINTS
+        ========================================= */
+
+        @media (max-width: 1100px) {
+            .journey-wrapper {
+                padding-left: 36px;
+                padding-right: 24px;
+            }
+
+            .timeline-stage {
+                grid-template-columns: 80px minmax(0, 1fr);
+                gap: 40px;
+            }
+
+            .timeline-inner {
+                grid-template-columns: minmax(280px, .95fr) minmax(320px, 1.05fr);
+                gap: 30px;
+            }
+
+            .milestone-copy { padding-left: 10px; }
+            .milestone-year { font-size: 80px; }
+            .milestone-title { font-size: 28px; }
+            .milestone-visual { height: 350px; }
+        }
+
+        @media (max-width: 760px) {
+            .journey-scroll-track { height: auto; }
+            .journey-section {
+                position: relative;
+                height: auto;
+                min-height: auto;
+            }
+            .journey-wrapper {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 40px;
+                padding-bottom: 48px;
+            }
+            .journey-top { margin-bottom: 24px; }
+            
+            .timeline-stage {
+                display: block;
+                min-height: auto;
+            }
+
+            .year-navigation {
+                width: 100%;
+                height: auto;
+                min-height: 48px;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 18px;
+                overflow-x: auto;
+                padding: 4px 0 10px;
+                scrollbar-width: none;
+                border-bottom: 1px solid var(--border-grey);
+                margin-bottom: 20px;
+            }
+
+            .year-navigation::-webkit-scrollbar { display: none; }
+            .year-navigation::before { display: none; }
+
+            .year-button {
+                padding-left: 0;
+                flex-shrink: 0;
+            }
+            .year-button::before { display: none; }
+
+            .milestone-copy { padding-left: 0; }
+            .timeline-inner {
+                min-height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 10px 0 30px;
+                gap: 25px;
+            }
+
+            .milestone-year { font-size: 64px; margin-bottom: 14px; }
+            .milestone-title { font-size: 24px; margin-bottom: 10px; }
+            .milestone-visual { height: 270px; }
+            .horizontal-hint { display: none; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="journey-scroll-track" id="journeyTrack">
+
+    <section class="journey-section" id="journey">
+        <div class="journey-wrapper">
+
+            <!-- HEADER WITH EYEBROW -->
+            <div class="journey-top">
+                <div class="journey-heading">
+                    <!-- Eyebrow inserted here -->
+                    <span class="journey-eyebrow">Our Heritage & Legacy</span>
+                    <h2>
+                        Six Decades of Innovation.<br>
+                        One Continuous <span class="highlight-orange">Milling Evolution.</span>
+                    </h2>
+                    <p>
+                        Our journey has never been about replacing tradition. It has been about building upon it, one innovation, one generation, and one breakthrough at a time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TIMELINE STAGE -->
+            <div class="timeline-stage">
+
+                <!-- LEFT YEAR NAVIGATION -->
+                <nav class="year-navigation" id="yearNavigation"></nav>
+
+                <!-- MAIN CONTENT -->
+                <div class="timeline-content" id="timelineContent">
+
+                    <!-- TOP RIGHT HINT -->
+                    <div class="horizontal-hint">
+                        <div class="hint-line"></div>
+                    </div>
+
+                    <!-- INNER CONTENT -->
+                    <div class="timeline-inner">
+
+                        <!-- TEXT SIDE -->
+                        <div class="milestone-copy">
+                            <!-- Year with 3D individual digit flip (UNTOUCHED) -->
+                            <div class="milestone-year" id="milestoneYear" aria-label="1960"></div>
+                            
+                            <!-- Pure Fade-in Container for Title and Description -->
+                            <div id="milestoneTextWrap">
+                                <h3 class="milestone-title" id="milestoneTitle">Foundation of Choyal Group</h3>
+                                <p class="milestone-description" id="milestoneDescription">
+                                    B.M. Choyal along with R.D. Sharma lays the foundation of our legacy by starting the company with a vision to revolutionize the grain milling industry in India.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- IMAGE SIDE -->
+                        <div class="milestone-visual" id="milestoneVisual">
+                            <img src="1960.png" class="milestone-image" id="milestoneImage" alt="R.S. Choyal Group milestone">
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+</div>
+
+<script>
+/* =========================================
+   JOURNEY DATA
+========================================= */
+const milestones = [
+    {
+        year: "1960",
+        title: "Foundation of Choyal Group",
+        description: "B.M. Choyal along with R.D. Sharma lays the foundation of our legacy by starting the company with a vision to revolutionize the grain milling industry in India.",
+        image: "1960.png"
+    },
+    {
+        year: "1965",
+        title: "Our Journey Begins",
+        description: 'The company is formally incorporated as "Shri Vishvakarma Industries", marking the beginning of a new chapter in industrial excellence and innovation.',
+        image: "1965.png"
+    },
+    {
+        year: "1970",
+        title: "International Outreach",
+        description: 'Became the first company from India in the grain milling sector to export emery stone globally. Our commitment to quality earned multiple accolades.',
+        image: "1970.png"
+    },
+    {
+        year: "1978",
+        title: "Inauguration of First Factory Unit",
+        description: "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, marking a key milestone in our industrial footprint.",
+        image: "1978.png"
+    },
+    {
+        year: "2000",
+        title: "Fully Automated Emery Stone Plant",
+        description: "We launched our automatic modeling workshop, kickstarting an era of high-precision manufacturing, consistency, and operational scale.",
+        image: "2000.png"
+    },
+    {
+        year: "2010",
+        title: "World's First Patented Digital Flour Mill",
+        description: "Developed the world's first fully automatic digital stone mill, redefining precision and setting global benchmarks for stone milling.",
+        image: "2010.png"
+    },
+    {
+        year: "2011",
+        title: "Turnkey Solutions for Every Need",
+        description: "Launched end-to-end milling turnkey solutions. To date, we have successfully engineered and delivered 265+ turnkey plants globally.",
+        image: "2011.png"
+    },
+    {
+        year: "2013",
+        title: "Patented Emery Stone Dressing Machine",
+        description: "Introduced a patented stone dressing mechanism, combining automation and precision to revolutionize stone maintenance.",
+        image: "2013.png"
+    },
+    {
+        year: "2018",
+        title: "Venturing into Groceries",
+        description: "Diversified into the grocery retail segment, gaining critical consumer insights that continue to sharpen our end-to-end food processing expertise.",
+        image: "2018.png"
+    },
+    {
+        year: "2021",
+        title: "World's 1st Patented Digital Fresh Flour Grinder",
+        description: "Introduced a smart digital grinder designed to make fresh, nutrient-dense flour easily accessible across community touchpoints.",
+        image: "2021.png"
+    },
+    {
+        year: "2025",
+        title: "A New Chapter Begins",
+        description: "The Choyal legacy evolves into specialized entities, launching Choyal Grinding Solutions Pvt. Ltd. dedicated to cutting-edge grinding technologies.",
+        image: "2025.png"
+    },
+    {
+        year: "2026",
+        title: "Launch of Promiller",
+        description: "Introducing Promiller, expanding our technology footprint to deliver next-generation, high-performance milling solutions for modern operations.",
+        image: "2026.png"
+    }
+];
+
+/* =========================================
+   DOM ELEMENTS
+========================================= */
+const track = document.getElementById("journeyTrack");
+const yearNavigation = document.getElementById("yearNavigation");
+const milestoneYear = document.getElementById("milestoneYear");
+const milestoneTextWrap = document.getElementById("milestoneTextWrap");
+const milestoneTitle = document.getElementById("milestoneTitle");
+const milestoneDescription = document.getElementById("milestoneDescription");
+const milestoneImage = document.getElementById("milestoneImage");
+
+let currentIndex = 0;
+let isAnimating = false;
+let isManualClick = false;
+
+/* =========================================
+   POPULATE BUTTONS
+========================================= */
+milestones.forEach((item, index) => {
+    const button = document.createElement("button");
+    button.className = "year-button";
+    button.textContent = item.year;
+    button.dataset.index = index;
+
+    button.addEventListener("click", () => {
+        isManualClick = true;
+        goToMilestone(index);
+
+        if (window.innerWidth > 760) {
+            const trackRect = track.getBoundingClientRect();
+            const trackTop = window.scrollY + trackRect.top;
+            const scrollDistance = track.offsetHeight - window.innerHeight;
+            const targetScroll = trackTop + (index / (milestones.length - 1)) * scrollDistance;
+
+            window.scrollTo({
+                top: targetScroll,
+                behavior: "smooth"
+            });
+        }
+
+        setTimeout(() => {
+            isManualClick = false;
+        }, 900);
+    });
+
+    yearNavigation.appendChild(button);
+});
+
+const yearButtons = [...document.querySelectorAll(".year-button")];
+
+/* =========================================
+   YEAR 3D DIGIT ROTATION LOGIC (UNTOUCHED)
+========================================= */
+function renderYearDigits(newYearStr, animate = true) {
+    const currentDigits = milestoneYear.querySelectorAll(".digit-slot");
+    const newChars = newYearStr.split("");
+
+    if (!animate || currentDigits.length === 0) {
+        milestoneYear.innerHTML = "";
+        newChars.forEach(ch => {
+            const slot = document.createElement("div");
+            slot.className = "digit-slot";
+            slot.innerHTML = `<span>${ch}</span>`;
+            milestoneYear.appendChild(slot);
+        });
+        return;
+    }
+
+    newChars.forEach((newCh, i) => {
+        const slot = currentDigits[i];
+        if (!slot) return;
+        const currentSpan = slot.querySelector("span");
+        const oldVal = currentSpan ? currentSpan.textContent : "";
+
+        if (oldVal !== newCh) {
+            slot.classList.remove("flip-in");
+            slot.classList.add("flip-out");
+
+            setTimeout(() => {
+                slot.innerHTML = `<span>${newCh}</span>`;
+                slot.classList.remove("flip-out");
+                slot.classList.add("flip-in");
+            }, 260);
+        }
+    });
+}
+
+/* =========================================
+   CONTENT HANDLERS (FADE IN/OUT HEADING & DESC)
+========================================= */
+function updateContent(index, animate = true) {
+    const item = milestones[index];
+    currentIndex = index;
+
+    // Years untouched
+    renderYearDigits(item.year, animate);
+
+    if (animate) {
+        milestoneTextWrap.classList.remove("text-fading-in");
+        milestoneTextWrap.classList.add("text-fading-out");
+        milestoneImage.classList.add("image-changing");
+
+        setTimeout(() => {
+            milestoneTitle.textContent = item.title;
+            milestoneDescription.textContent = item.description;
+            milestoneImage.src = item.image;
+            milestoneImage.alt = `${item.year} — R.S. Choyal Group`;
+
+            milestoneTextWrap.classList.remove("text-fading-out");
+            milestoneTextWrap.classList.add("text-fading-in");
+
+            setTimeout(() => {
+                milestoneImage.classList.remove("image-changing");
+            }, 70);
+        }, 200);
+    } else {
+        milestoneTitle.textContent = item.title;
+        milestoneDescription.textContent = item.description;
+        milestoneImage.src = item.image;
+        milestoneImage.alt = `${item.year} — R.S. Choyal Group`;
+    }
+
+    yearButtons.forEach((btn, idx) => {
+        btn.classList.toggle("active", idx === index);
+    });
+
+    if (window.innerWidth <= 760) {
+        yearButtons[index].scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center"
+        });
+    }
+}
+
+function goToMilestone(index) {
+    if (index < 0) index = 0;
+    if (index > milestones.length - 1) index = milestones.length - 1;
+    if (index === currentIndex || isAnimating) return;
+
+    isAnimating = true;
+    updateContent(index, true);
+
+    setTimeout(() => {
+        isAnimating = false;
+    }, 600);
+}
+
+// Initial render
+updateContent(0, false);
+
+/* =========================================
+   SCROLL SYNCHRONIZATION
+========================================= */
+function handleScroll() {
+    if (window.innerWidth <= 760 || isManualClick) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const totalDist = track.offsetHeight - window.innerHeight;
+
+    if (totalDist <= 0) return;
+
+    const scrolled = -trackRect.top;
+    const progress = Math.min(Math.max(scrolled / totalDist, 0), 1);
+    const targetIndex = Math.floor(progress * (milestones.length - 1) + 0.5);
+
+    if (targetIndex !== currentIndex) {
+        goToMilestone(targetIndex);
+    }
+}
+
+window.addEventListener("scroll", handleScroll, { passive: true });
+
+/* =========================================
+   KEYBOARD SUPPORT
+========================================= */
+document.addEventListener("keydown", (e) => {
+    if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+    if (e.key === "ArrowRight" || e.key === "ArrowDown") goToMilestone(currentIndex + 1);
+    if (e.key === "ArrowLeft" || e.key === "ArrowUp") goToMilestone(currentIndex - 1);
+});
+</script>
+
+</body>
+</html>

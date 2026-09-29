@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R&D Centre | R.S. Choyal Group</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Geist Font CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Geist', 'Geist Fallback', 'Arial', 'sans-serif'],
+            mono: ['Geist Mono', 'monospace'],
+          },
+          colors: {
+            'brand-green': '#0E3321',
+            'dark-green': '#09271A',
+            'accent-yellow': '#FFAA17',
+            'heading-black': '#0F172A',
+            'body-grey': '#475569',
+            'muted-grey': '#94A3B8',
+            'light-grey': '#F3F4F2',
+            'border-grey': '#E2E8F0',
+          },
+          fontSize: {
+            'brand-heading': ['36px', { lineHeight: '1.2', letterSpacing: '-0.025em', fontWeight: '800' }],
+            'brand-subheading': ['32px', { lineHeight: '1.3', letterSpacing: '-0.02em', fontWeight: '600' }],
+            'brand-text': ['15.5px', { lineHeight: '1.65', fontWeight: '400' }],
+            'brand-num': ['13.5px', { lineHeight: '1.2', fontWeight: '700' }],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Geist', 'Geist Fallback', Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="bg-light-grey text-heading-black selection:bg-brand-green selection:text-white">
+
+  <!-- R&D Section -->
+  <section class="w-full bg-light-grey py-16 sm:py-24 border-b border-border-grey">
+    <div class="max-w-[1360px] mx-auto px-5 sm:px-8 lg:px-12">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        
+        <!-- Left Column: Eyebrow, Heading & Updated Context -->
+        <div class="lg:col-span-6 lg:sticky lg:top-12">
+          
+          <!-- Eyebrow -->
+          <p class="text-xs sm:text-[13px] font-bold tracking-[0.18em] text-brand-green  mb-3 sm:mb-4">
+            Research &amp; Innovation
+          </p>
+
+          <!-- Main Heading -->
+   <h2 class="text-3xl sm:text-4xl lg:text-[40px] font-extrabold tracking-tight text-brand-green leading-[1.2] mb-6">
+  Where Ideas Become <br />
+  <span class="text-accent-yellow">Practical Solutions.</span>
+</h2>
+          <!-- Left Body Paragraphs -->
+          <div class="space-y-4 text-brand-text text-body-grey max-w-xl">
+            <p>
+              At R.S. Choyal Group, R&amp;D combines abrasive science, engineering, automation and plant operations. We test ideas rigorously to understand what works and refine it into reliable milling solutions.
+            </p>
+            <p>
+              Established in 2012 at Arjunpura, Ajmer, our dedicated R&amp;D Centre works closely with manufacturing teams. From material behaviour and machine controls to plant-scale performance, every idea is practically evaluated.
+            </p>
+            <!-- <p class="text-heading-black font-medium">
+              Proven developments are refined into repeatable, reliable solutions for modern milling.
+            </p> -->
+          </div>
+
+        </div>
+
+        <!-- Right Column: Principles / Capabilities List -->
+        <div class="lg:col-span-6 flex flex-col">
+          
+          <!-- Item 01 -->
+          <div class="border-t border-border-grey py-7 sm:py-8 first:border-t-0 lg:first:border-t">
+            <div class="grid grid-cols-12 gap-4 sm:gap-6 items-baseline">
+              <div class="col-span-2 sm:col-span-1">
+                <span class="text-brand-num font-mono text-accent-yellow font-bold tracking-wider">01</span>
+              </div>
+              <div class="col-span-10 sm:col-span-11">
+                <h3 class="text-lg sm:text-[20px] font-bold text-heading-black mb-2 tracking-tight">
+                  Abrasive &amp; Material Testing
+                </h3>
+                <p class="text-brand-text text-body-grey leading-relaxed">
+                  Studying wear, strength, surface behaviour and material performance for demanding grinding applications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 02 -->
+          <div class="border-t border-border-grey py-7 sm:py-8">
+            <div class="grid grid-cols-12 gap-4 sm:gap-6 items-baseline">
+              <div class="col-span-2 sm:col-span-1">
+                <span class="text-brand-num font-mono text-accent-yellow font-bold tracking-wider">02</span>
+              </div>
+              <div class="col-span-10 sm:col-span-11">
+                <h3 class="text-lg sm:text-[20px] font-bold text-heading-black mb-2 tracking-tight">
+                  Controls &amp; Automation
+                </h3>
+                <p class="text-brand-text text-body-grey leading-relaxed">
+                  Testing PLC and HMI systems, machine logic, recipes, diagnostics and automated responses before deployment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 03 -->
+          <div class="border-t border-border-grey py-7 sm:py-8">
+            <div class="grid grid-cols-12 gap-4 sm:gap-6 items-baseline">
+              <div class="col-span-2 sm:col-span-1">
+                <span class="text-brand-num font-mono text-accent-yellow font-bold tracking-wider">03</span>
+              </div>
+              <div class="col-span-10 sm:col-span-11">
+                <h3 class="text-lg sm:text-[20px] font-bold text-heading-black mb-2 tracking-tight">
+                  Flow &amp; Process Engineering
+                </h3>
+                <p class="text-brand-text text-body-grey leading-relaxed">
+                  Evaluating feeding, conveying, discharge and material movement to improve consistency across the milling process.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="border-t border-border-grey py-7 sm:py-8">
+            <div class="grid grid-cols-12 gap-4 sm:gap-6 items-baseline">
+              <div class="col-span-2 sm:col-span-1">
+                <span class="text-brand-num font-mono text-accent-yellow font-bold tracking-wider">04</span>
+              </div>
+              <div class="col-span-10 sm:col-span-11">
+                <h3 class="text-lg sm:text-[20px] font-bold text-heading-black mb-2 tracking-tight">
+                  Plant-Scale Validation
+                </h3>
+                <p class="text-brand-text text-body-grey leading-relaxed">
+                  Taking concepts beyond the laboratory and testing them under real operating conditions before they become part of a working solution.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

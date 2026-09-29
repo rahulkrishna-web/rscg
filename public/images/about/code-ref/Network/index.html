@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Reach Section</title>
+  
+  <!-- Geist font import from Google Fonts CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+      background-color: #FFFFFF;
+      color: #475569; /* Body Grey */
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Main Section */
+    .global-reach-section {
+      width: 100%;
+      background-color: #FFFFFF;
+      padding: 80px 24px 40px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Top Left Content Box */
+    .content-wrapper {
+      max-width: 760px;
+      text-align: left;
+    }
+
+    /* Eyebrow - Primary Green */
+    .eyebrow {
+      font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+      font-size: 13px; /* Numbers/Labels: 13-14px */
+      font-weight: 600;
+      color: #0E3321; /* Primary Green */
+      margin-bottom: 12px;
+      display: inline-block;
+      letter-spacing: 0.5px;
+    }
+
+    /* Heading: 36px - Exact 2-Line Layout */
+    .section-heading {
+      font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+      font-size: 36px; /* Heading: 36px */
+      line-height: 1.25;
+      font-weight: 900;
+      color: #0E3321; /* Primary Green */
+      letter-spacing: -0.4px;
+      margin-bottom: 20px;
+    }
+
+    .section-heading .heading-line {
+      display: block; /* Guarantees strict 2-line break */
+    }
+
+    /* Last word accent highlight */
+    .heading-highlight {
+      color: #FFAA17; /* Accent Yellow */
+    }
+
+    /* Body Text */
+    .description-text {
+      font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+      font-size: 16px; /* Text: 15-16px */
+      line-height: 1.7;
+      color: #475569; /* Body Grey */
+      font-weight: 400;
+    }
+
+    .description-text p + p {
+      margin-top: 12px;
+    }
+
+    /* Numbers highlight */
+    .highlight-number {
+      font-size: 16px;
+      font-weight: 600;
+      color: #09271A; /* Dark Green */
+    }
+
+    /* Map Image Area */
+    .map-image-wrapper {
+      width: 100%;
+      margin-top: 48px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-image-wrapper img {
+      width: 100%;
+      max-width: 1100px;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .global-reach-section {
+        padding: 48px 18px 24px;
+      }
+
+      .section-heading {
+        font-size: 30px;
+        margin-bottom: 16px;
+      }
+
+      .description-text {
+        font-size: 15px;
+      }
+
+      .map-image-wrapper {
+        margin-top: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="global-reach-section">
+    <div class="container">
+      
+      <!-- Top Left Text Content -->
+      <div class="content-wrapper">
+        <span class="eyebrow">Global Network</span>
+        
+        <h2 class="section-heading">
+          <span class="heading-line">Global reach</span>
+          <span class="heading-line">Trusted <span class="heading-highlight">worldwide</span></span>
+        </h2>
+
+        <div class="description-text">
+          <p>
+            For over <span class="highlight-number">60</span> years, R.S. Choyal Group has built a strong global presence in flour milling and emery stone technology. It is serving quality-conscious markets across <span class="highlight-number">25+</span> countries, including the Middle East, Gulf and international markets.
+          </p>
+          <p>
+            Built on consistent quality, engineering expertise and trusted performance, Choyal remains a reliable Indian name in global flour milling.
+          </p>
+        </div>
+      </div>
+
+      <!-- Bottom Map Image -->
+      <div class="map-image-wrapper">
+        <img src="map.png" alt="global presence map">
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>

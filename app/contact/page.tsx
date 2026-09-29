@@ -1,127 +1,327 @@
 "use client";
 
-import { Phone, Mail, Building, MapPin } from "lucide-react";
+import React, { useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { MapPin, Mail, Phone, ExternalLink, ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import LeadForm from "@/components/LeadForm";
 
 export default function ContactPage() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    subject: "Select enquiry type",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      router.push("/thank-you?success=true");
+    }, 1000);
+  };
+
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
+    <div className="min-h-screen bg-[#f6f6f4] text-slate-800 font-sans flex flex-col">
       <Header />
 
       {/* Hero Banner Section */}
-      <section className="relative w-full h-[320px] sm:h-[400px] overflow-hidden flex items-center">
+      <section className="relative w-full pt-20 sm:pt-28 pb-44 sm:pb-56 overflow-hidden flex flex-col items-center justify-center text-center">
         {/* Background Image */}
-        <div className="absolute inset-0 bg-[url('/images/plants/srivari_1.webp')] bg-cover bg-center animate-pulse-slow" />
+        <Image
+          src="/images/contact/factory.png"
+          alt="RS Choyal Factory Facility"
+          fill
+          priority
+          className="object-cover object-center"
+        />
         {/* Dark Tint Overlay */}
-        <div className="absolute inset-0 bg-slate-900/65" />
-        
+        <div className="absolute inset-0 bg-black/45" />
+
         {/* Banner Text Content */}
-        <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10 flex flex-col justify-center">
-          <div className="max-w-3xl space-y-5">
-            <span className="inline-block bg-brand-tertiary text-slate-900 font-black text-xs sm:text-sm px-5 py-2.5 uppercase tracking-widest shadow-md">
-              Contact &amp; Inquiries
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight leading-tight">
-              Connect With Our Milling Experts
-            </h1>
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed max-w-2xl font-medium">
-              Have questions about plant layouts, pricing, upgrading legacy systems, or custom emery stones? Our engineering team is here to help. Reach out directly or submit the inquiry form.
-            </p>
-          </div>
+        <div className="relative z-10 px-6 sm:px-12 max-w-3xl mx-auto space-y-3 pb-6">
+          <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white tracking-tight leading-tight font-heading">
+            Contact Us
+          </h1>
+          <p className="text-slate-100 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
+            Have a question, project or milling requirement? Our team is here to
+            help you find the right solution.
+          </p>
         </div>
       </section>
 
-      {/* Main Contact Section */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 lg:py-24 relative z-10">
-        <div className="w-full max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 xl:gap-20 items-start">
-          
-          {/* Left Side: Contact details & Map */}
-          <div className="lg:col-span-7 space-y-8">
-            <div className="space-y-4">
-              <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-                Locations & Details
-              </span>
-              <h2 className="text-3xl font-heading font-black text-slate-900 tracking-tight leading-tight">
-                RS Choyal &amp; Co. (Pvt) Ltd.
-              </h2>
-              <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                Our design and engineering teams operate from our heavy industrial works facilities at Ajmer, India. 
-                Get in touch for customized layouts, structural designs, and installation planning.
-              </p>
+      {/* Main Overlapping Card Section */}
+      <section className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-36 sm:-mt-44 pb-20 sm:pb-28 flex-1">
+        <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-8 sm:p-12 lg:p-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Column: Contact Details & Map */}
+            <div className="lg:col-span-5 space-y-8">
+              <div>
+                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider uppercase block mb-1">
+                  Contact
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+                  Get in touch
+                </h2>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Reach out to our team for enquiries, support, project
+                  discussions or milling solutions.
+                </p>
+              </div>
+
+              {/* Contact Items */}
+              <div className="space-y-6">
+                {/* Corporate Headquarters */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                      Corporate Headquarters
+                    </span>
+                    <p className="text-sm font-semibold text-slate-800 leading-snug">
+                      Choyal Tower, 1180/28, Shalimar Colony, Adarsh Nagar Ajmer –
+                      305 008, Rajasthan, India
+                    </p>
+                  </div>
+                </div>
+
+                {/* Factory Unit */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                      Factory Unit
+                    </span>
+                    <p className="text-sm font-semibold text-slate-800 leading-snug">
+                      Choyal Grinding Solution Pvt. Ltd. Arjunpura – Khalsa,
+                      Distt. Ajmer (Raj.) - 305203, India
+                    </p>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Mail className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                      Email
+                    </span>
+                    <a
+                      href="mailto:info@rschoyalgroup.com"
+                      className="text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug"
+                    >
+                      info@rschoyalgroup.com
+                    </a>
+                  </div>
+                </div>
+
+                {/* Phone */}
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Phone className="w-5 h-5 text-white" />
+                  </div>
+                  <div className="space-y-0.5">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                      Phone
+                    </span>
+                    <a
+                      href="tel:+919240289259"
+                      className="text-sm font-semibold text-slate-800 hover:text-[#0E3321] transition-colors block leading-snug"
+                    >
+                      +91 9240289259
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* Map Embed Box */}
+              <div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm mt-8">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1121.2328852168694!2d74.5342179!3d26.3016254!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39696185f6ccf15b%3A0x3c82ebb0ad52417e!2sChoyal!5e1!3m2!1sen!2sin!4v1790678363898!5m2!1sen!2sin"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="w-full h-full"
+                />
+                {/* Floating "Open in Maps" pill badge */}
+                <a
+                  href="https://maps.app.goo.gl/tj15BXMmUybbqV47"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute top-3 left-3 bg-white/95 hover:bg-white text-slate-800 text-xs font-bold px-3 py-1.5 rounded-lg shadow-md border border-slate-200/80 flex items-center gap-1.5 transition-all hover:scale-105 active:scale-95 z-10"
+                >
+                  <span>Open in Maps</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-slate-600" />
+                </a>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 border-t border-slate-200/60">
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary flex-shrink-0">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-slate-900 text-sm">Call/WhatsApp</h4>
-                  <a href="tel:+919240289259" className="text-brand-primary font-bold hover:text-brand-primary-hover transition-colors block text-sm">
-                    +91 92402 89259
-                  </a>
-                  <span className="text-xs text-slate-400">Mon - Sat: 9:00 AM - 6:00 PM IST</span>
-                </div>
+            {/* Right Column: Enquiry Form */}
+            <div className="lg:col-span-7 space-y-6 lg:pl-6">
+              <div>
+                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider uppercase block mb-1">
+                  Enquiry
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
+                  Send us a message
+                </h2>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  Tell us a little about your requirement and our team will get
+                  back to you shortly.
+                </p>
               </div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary flex-shrink-0">
-                  <Mail className="h-5 w-5" />
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-4 sm:space-y-5 pt-2"
+              >
+                {/* Row 1: Name & Company */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 block">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) =>
+                        setFormData({ ...formData, name: e.target.value })
+                      }
+                      placeholder="Your name"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 block">
+                      Company
+                    </label>
+                    <input
+                      type="text"
+                      value={formData.company}
+                      onChange={(e) =>
+                        setFormData({ ...formData, company: e.target.value })
+                      }
+                      placeholder="Company name"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all"
+                    />
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-slate-900 text-sm">General Support Email</h4>
-                  <a href="mailto:info@rschoyalgroup.com" className="text-slate-600 font-semibold hover:text-slate-900 transition-colors block text-sm">
-                    info@rschoyalgroup.com
-                  </a>
-                  <span className="text-xs text-slate-400">Response within 24 hours</span>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary flex-shrink-0">
-                  <MapPin className="h-5 w-5" />
+                {/* Row 2: Email & Phone */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 block">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData({ ...formData, email: e.target.value })
+                      }
+                      placeholder="Your email"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label className="text-xs font-bold text-slate-700 block">
+                      Phone
+                    </label>
+                    <input
+                      type="tel"
+                      required
+                      value={formData.phone}
+                      onChange={(e) =>
+                        setFormData({ ...formData, phone: e.target.value })
+                      }
+                      placeholder="Phone number"
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all"
+                    />
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-slate-900 text-sm">Corporate Headquarters</h4>
-                  <span className="text-xs sm:text-sm text-slate-600 block leading-relaxed">
-                    Choyal Tower, 1180/28, Shalimar Colony, Adarsh Nagar, Ajmer – 305 008, Rajasthan, India
-                  </span>
-                </div>
-              </div>
 
-              <div className="flex gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center text-brand-primary flex-shrink-0">
-                  <Building className="h-5 w-5" />
+                {/* Row 3: Subject */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-slate-700 block">
+                    Subject
+                  </label>
+                  <div className="relative">
+                    <select
+                      value={formData.subject}
+                      onChange={(e) =>
+                        setFormData({ ...formData, subject: e.target.value })
+                      }
+                      className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all appearance-none cursor-pointer pr-10"
+                    >
+                      <option value="Select enquiry type" disabled>
+                        Select enquiry type
+                      </option>
+                      <option value="New flour mill setup">
+                        New flour mill setup
+                      </option>
+                      <option value="Plant upgrade or improvement">
+                        Plant upgrade or improvement
+                      </option>
+                      <option value="Flour Mill Automation">
+                        Flour Mill Automation
+                      </option>
+                      <option value="Consultancy Services">
+                        Consultancy Services
+                      </option>
+                    </select>
+                    <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  </div>
                 </div>
-                <div className="space-y-1">
-                  <h4 className="font-bold text-slate-900 text-sm">Palra Manufacturing Unit</h4>
-                  <span className="text-xs sm:text-sm text-slate-600 block leading-relaxed">
-                    Plot No. 11-12, RIICO Industrial Area, Palra, Ajmer – 305025, Rajasthan, India
-                  </span>
-                </div>
-              </div>
-            </div>
 
-            {/* Interactive Map Box */}
-            <div className="w-full aspect-[16/9] rounded-[32px] overflow-hidden border border-slate-200/80 shadow-xs relative">
-              <iframe
-                title="RS Choyal Location Map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3572.247164993874!2d74.606277!3d26.447547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be71e16f39cd5%3A0xe5a3c9b7de283995!2sR%20S%20Choyal%20%26%20Co%20Pvt%20Ltd!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-                className="absolute inset-0 w-full h-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
+                {/* Row 4: Message */}
+                <div className="space-y-1.5">
+                  <label className="text-xs font-bold text-slate-700 block">
+                    Message
+                  </label>
+                  <textarea
+                    rows={5}
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    placeholder="Tell us about your requirement..."
+                    className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-slate-50/50 text-slate-900 text-sm placeholder:text-slate-400 focus:bg-white focus:border-[#133a25] focus:ring-1 focus:ring-[#133a25] outline-none transition-all resize-y"
+                  />
+                </div>
+
+                {/* Submit Button */}
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full bg-[#133a25] hover:bg-[#0c2417] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
+                >
+                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                </button>
+
+                <p className="text-xs text-slate-400 text-center pt-1 font-normal">
+                  By submitting this form, you agree to our terms and policies.
+                </p>
+              </form>
             </div>
           </div>
-
-          {/* Right Side: Consultation Form */}
-          <div className="lg:col-span-5 lg:sticky lg:top-28">
-            <LeadForm />
-          </div>
-
         </div>
       </section>
 

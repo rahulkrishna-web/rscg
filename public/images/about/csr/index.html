@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge & Social Responsibility Initiatives</title>
+
+  <!-- Google Fonts: Geist -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-green: #0E3321;
+      --dark-green: #09271A;
+      --accent-yellow: #FFAA17;
+      --heading-black: #0F172A;
+      --body-grey: #475569;
+      --muted-grey: #94A3B8;
+      --light-grey: #F3F4F2;
+      --border-grey: #E2E8F0;
+      --white: #FFFFFF;
+      --font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--white);
+      color: var(--body-grey);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Compact container width */
+    .section-wrapper {
+      max-width: 980px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .header-content {
+      max-width: 720px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+
+    .main-heading {
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+      color: var(--primary-green);
+      margin-bottom: 12px;
+    }
+
+    .main-heading .highlight {
+      color: var(--accent-yellow);
+    }
+
+    .sub-heading {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--body-grey);
+      font-weight: 400;
+      max-width: 680px;
+    }
+
+    /* Cards grid with compact width */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 980px;
+    }
+
+    .initiative-card {
+      position: relative;
+      height: 410px;
+      border-radius: 16px;
+      background-color: var(--light-grey);
+      border: 1px solid var(--border-grey);
+      overflow: hidden;
+      cursor: pointer;
+      isolation: isolate;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .initiative-card:hover,
+    .initiative-card.is-active {
+      border-color: #cbd5e1;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    /* Clean Image layer with zero green tint */
+    .card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .initiative-card:hover .card-img,
+    .initiative-card.is-active .card-img {
+      transform: scale(1.04);
+    }
+
+    /* Neutral black/dark scrim for pure legibility (NO green overlay) */
+    .card-scrim {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 32%,
+        rgba(15, 23, 42, 0.65) 68%,
+        rgba(15, 23, 42, 0.94) 100%
+      );
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+
+    .card-details-box {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 22px 20px;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      margin: 0;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Description drawer: hidden initially, slides up cleanly on hover */
+    .card-expand-body {
+      display: grid;
+      grid-template-rows: 0fr;
+      opacity: 0;
+      transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.35s ease;
+    }
+
+    .card-expand-inner {
+      overflow: hidden;
+    }
+
+    .card-text {
+      font-size: 13px;
+      line-height: 1.55;
+      color: #f1f5f9;
+      padding-top: 10px;
+      margin-bottom: 14px;
+      font-weight: 400;
+    }
+
+    /* Read more button */
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--white);
+      text-decoration: none;
+      width: fit-content;
+      transition: gap 0.2s ease, color 0.2s ease;
+    }
+
+    .read-more-btn:hover {
+      gap: 12px;
+      color: var(--accent-yellow);
+    }
+
+    .arrow-icon-circle {
+      width: 28px;
+      height: 28px;
+      background-color: var(--accent-yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .arrow-icon-circle svg {
+      width: 13px;
+      height: 13px;
+      fill: none;
+      stroke: #0f172a;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .read-more-btn:hover .arrow-icon-circle {
+      transform: translateX(3px);
+      background-color: #ffb833;
+    }
+
+    /* On hover / tap: open description drawer */
+    .initiative-card:hover .card-expand-body,
+    .initiative-card.is-active .card-expand-body {
+      grid-template-rows: 1fr;
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+
+      .initiative-card:last-child {
+        grid-column: span 2;
+        max-width: 440px;
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 35px 16px;
+      }
+
+      .main-heading {
+        font-size: 28px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .initiative-card,
+      .initiative-card:last-child {
+        height: 380px;
+        grid-column: span 1;
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section-wrapper">
+
+    <!-- Header Section -->
+    <header class="header-content">
+      <span class="eyebrow">Our Commitment & Initiatives</span>
+      <h1 class="main-heading">
+        Building knowledge.<br>
+        Creating <span class="highlight">opportunity.</span>
+      </h1>
+      <p class="sub-heading">
+        The knowledge that shapes our technology also drives our commitment to education, skill development, entrepreneurship and community progress.
+      </p>
+    </header>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+
+      <!-- CARD 1: Brain Trust Society -->
+      <article class="initiative-card" tabindex="0">
+        <!-- Direct image tag: Replace src with your image path (e.g., images/bts.jpg) -->
+        <img 
+          src="BTS.png" 
+          alt="Brain Trust Society" 
+          class="card-img"
+          loading="lazy"
+        >
+        <div class="card-scrim"></div>
+
+        <div class="card-details-box">
+          <h2 class="card-title">Brain Trust Society</h2>
+          
+          <div class="card-expand-body">
+            <div class="card-expand-inner">
+              <p class="card-text">
+                Established in 1992, Brains Trust Society (BTS) works in education, community development, and cultural initiatives, supporting rural development through training, workshops, and grassroots programs.
+              </p>
+              <a href="#" class="read-more-btn" aria-label="Read more about Brain Trust Society">
+                <!-- <span>Read more</span> -->
+                <!-- <span class="arrow-icon-circle">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 2: Choyal School of Milling Technology -->
+      <article class="initiative-card" tabindex="0">
+        <!-- Direct image tag: Replace src with your image path (e.g., images/csmt.jpg) -->
+        <img 
+          src="CSMT.png" 
+          alt="Choyal School of Milling Technology" 
+          class="card-img"
+          loading="lazy"
+        >
+        <div class="card-scrim"></div>
+
+        <div class="card-details-box">
+          <h2 class="card-title">Choyal School of Milling Technology</h2>
+          
+          <div class="card-expand-body">
+            <div class="card-expand-inner">
+              <p class="card-text">
+                Choyal School of Milling Technology (CSMT) provides practical training in flour milling and grain processing, combining technical education with hands-on exposure to modern milling technologies.
+              </p>
+              <a href="#" class="read-more-btn" aria-label="Read more about Choyal School of Milling Technology">
+                <!-- <span>Read more</span> -->
+                <!-- <span class="arrow-icon-circle">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CARD 3: CHARGE -->
+      <article class="initiative-card" tabindex="0">
+        <!-- Direct image tag: Replace src with your image path (e.g., images/charge.jpg) -->
+        <img 
+          src="charge.png" 
+          alt="CHARGE" 
+          class="card-img"
+          loading="lazy"
+        >
+        <div class="card-scrim"></div>
+
+        <div class="card-details-box">
+          <h2 class="card-title">CHARGE</h2>
+          
+          <div class="card-expand-body">
+            <div class="card-expand-inner">
+              <p class="card-text">
+                CHARGE (Choyal Hub for Agribusiness, Research, Growth & Entrepreneurship) builds on CSMT to support skill development, research, entrepreneurship, and agribusiness innovation through training, workshops, and incubation.
+              </p>
+              <a href="#" class="read-more-btn" aria-label="Read more about CHARGE">
+                <!-- <span>Read more</span> -->
+                <!-- <span class="arrow-icon-circle">
+                  <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <script>
+    // Tap to open on mobile touchscreens
+    document.querySelectorAll('.initiative-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        if (e.target.closest('.read-more-btn')) return;
+        const isCurrentActive = this.classList.contains('is-active');
+        document.querySelectorAll('.initiative-card').forEach(c => c.classList.remove('is-active'));
+        if (!isCurrentActive) {
+          this.classList.add('is-active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

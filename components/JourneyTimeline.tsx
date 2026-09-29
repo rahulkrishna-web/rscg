@@ -1,0 +1,467 @@
+"use client";
+
+import React, { useState, useEffect, useRef, useCallback } from "react";
+
+export interface Milestone {
+  year: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const milestones: Milestone[] = [
+  {
+    year: "1960",
+    title: "Foundation of Choyal Group",
+    description:
+      "B.M. Choyal along with R.D. Sharma lays the foundation of our legacy by starting the company with a vision to revolutionize the grain milling industry in India.",
+    image: "/images/about/timeline/Journey/1960.png",
+  },
+  {
+    year: "1965",
+    title: "Our Journey Begins",
+    description:
+      'The company is formally incorporated as "Shri Vishvakarma Industries", marking the beginning of a new chapter in industrial excellence and innovation.',
+    image: "/images/about/timeline/Journey/1965.png",
+  },
+  {
+    year: "1970",
+    title: "International Outreach",
+    description:
+      'Became the first company from India in the grain milling sector to export emery stone globally. Our commitment to quality earned multiple accolades.',
+    image: "/images/about/timeline/Journey/1970.png",
+  },
+  {
+    year: "1978",
+    title: "Inauguration of First Factory Unit",
+    description:
+      "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, marking a key milestone in our industrial footprint.",
+    image: "/images/about/timeline/Journey/1978.png",
+  },
+  {
+    year: "2000",
+    title: "Fully Automated Emery Stone Plant",
+    description:
+      "We launched our automatic modeling workshop, kickstarting an era of high-precision manufacturing, consistency, and operational scale.",
+    image: "/images/about/timeline/Journey/2000.png",
+  },
+  {
+    year: "2010",
+    title: "World's First Patented Digital Flour Mill",
+    description:
+      "Developed the world's first fully automatic digital stone mill, redefining precision and setting global benchmarks for stone milling.",
+    image: "/images/about/timeline/Journey/2010.png",
+  },
+  {
+    year: "2011",
+    title: "Turnkey Solutions for Every Need",
+    description:
+      "Launched end-to-end milling turnkey solutions. To date, we have successfully engineered and delivered 265+ turnkey plants globally.",
+    image: "/images/about/timeline/Journey/2011.png",
+  },
+  {
+    year: "2013",
+    title: "Patented Emery Stone Dressing Machine",
+    description:
+      "Introduced a patented stone dressing mechanism, combining automation and precision to revolutionize stone maintenance.",
+    image: "/images/about/timeline/Journey/2013.png",
+  },
+  {
+    year: "2018",
+    title: "Venturing into Groceries",
+    description:
+      "Diversified into the grocery retail segment, gaining critical consumer insights that continue to sharpen our end-to-end food processing expertise.",
+    image: "/images/about/timeline/Journey/2018.png",
+  },
+  {
+    year: "2021",
+    title: "World's 1st Patented Digital Fresh Flour Grinder",
+    description:
+      "Introduced a smart digital grinder designed to make fresh, nutrient-dense flour easily accessible across community touchpoints.",
+    image: "/images/about/timeline/Journey/2021.png",
+  },
+  {
+    year: "2025",
+    title: "A New Chapter Begins",
+    description:
+      "The Choyal legacy evolves into specialized entities, launching Choyal Grinding Solutions Pvt. Ltd. dedicated to cutting-edge grinding technologies.",
+    image: "/images/about/timeline/Journey/2025.png",
+  },
+  {
+    year: "2026",
+    title: "Launch of Promiller",
+    description:
+      "Introducing Promiller, expanding our technology footprint to deliver next-generation, high-performance milling solutions for modern operations.",
+    image: "/images/about/timeline/Journey/2026.png",
+  },
+];
+
+// Single Digit with 3D Flip Animation
+function DigitSlot({ char }: { char: string }) {
+  const [displayChar, setDisplayChar] = useState(char);
+  const [animClass, setAnimClass] = useState<"" | "flip-out" | "flip-in">("");
+  const prevCharRef = useRef(char);
+
+  useEffect(() => {
+    if (prevCharRef.current !== char) {
+      prevCharRef.current = char;
+      setAnimClass("flip-out");
+
+      const t1 = setTimeout(() => {
+        setDisplayChar(char);
+        setAnimClass("flip-in");
+
+        const t2 = setTimeout(() => {
+          setAnimClass("");
+        }, 450);
+
+        return () => clearTimeout(t2);
+      }, 260);
+
+      return () => clearTimeout(t1);
+    }
+  }, [char]);
+
+  return (
+    <span className={`digit-slot ${animClass}`}>
+      <span>{displayChar}</span>
+    </span>
+  );
+}
+
+export default function JourneyTimeline() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [displayedItem, setDisplayedItem] = useState(milestones[0]);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isFadingIn, setIsFadingIn] = useState(false);
+  const [isImageChanging, setIsImageChanging] = useState(false);
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const yearNavRef = useRef<HTMLDivElement>(null);
+  const btnRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const isManualClickRef = useRef(false);
+  const isAnimatingRef = useRef(false);
+  const currentIndexRef = useRef(0);
+
+  // Transition to a specific milestone
+  const goToMilestone = useCallback((index: number, animate: boolean = true) => {
+    if (index < 0) index = 0;
+    if (index > milestones.length - 1) index = milestones.length - 1;
+    if (index === currentIndexRef.current && animate) return;
+
+    currentIndexRef.current = index;
+    setCurrentIndex(index);
+
+    const targetItem = milestones[index];
+
+    if (animate) {
+      isAnimatingRef.current = true;
+      setIsFadingOut(true);
+      setIsImageChanging(true);
+
+      setTimeout(() => {
+        setDisplayedItem(targetItem);
+        setIsFadingOut(false);
+        setIsFadingIn(true);
+
+        setTimeout(() => {
+          setIsImageChanging(false);
+        }, 70);
+
+        setTimeout(() => {
+          setIsFadingIn(false);
+          isAnimatingRef.current = false;
+        }, 600);
+      }, 200);
+    } else {
+      setDisplayedItem(targetItem);
+    }
+
+    // Scroll active button into view on mobile
+    if (typeof window !== "undefined" && window.innerWidth <= 768 && btnRefs.current[index]) {
+      btnRefs.current[index]?.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center",
+      });
+    }
+  }, []);
+
+  // Handle year click
+  const handleClickYear = (index: number) => {
+    if (index === currentIndexRef.current) return;
+    isManualClickRef.current = true;
+    goToMilestone(index, true);
+
+    if (typeof window !== "undefined" && window.innerWidth > 768 && trackRef.current) {
+      const track = trackRef.current;
+      const trackRect = track.getBoundingClientRect();
+      const trackTop = window.scrollY + trackRect.top;
+      const totalDist = track.offsetHeight - window.innerHeight;
+      const stickyOffset = 148;
+      const targetScroll =
+        trackTop - stickyOffset + (index / (milestones.length - 1)) * totalDist;
+
+      window.scrollTo({
+        top: Math.max(0, targetScroll),
+        behavior: "smooth",
+      });
+    }
+
+    setTimeout(() => {
+      isManualClickRef.current = false;
+    }, 900);
+  };
+
+  // Scroll Synchronization
+  useEffect(() => {
+    const handleScroll = () => {
+      if (typeof window === "undefined" || window.innerWidth <= 768 || isManualClickRef.current)
+        return;
+      const track = trackRef.current;
+      if (!track) return;
+
+      const trackRect = track.getBoundingClientRect();
+      const totalDist = track.offsetHeight - window.innerHeight;
+      if (totalDist <= 0) return;
+
+      const stickyOffset = 148;
+      const scrolled = stickyOffset - trackRect.top;
+      const progress = Math.min(Math.max(scrolled / totalDist, 0), 1);
+      const targetIndex = Math.min(
+        milestones.length - 1,
+        Math.max(0, Math.floor(progress * (milestones.length - 1) + 0.5))
+      );
+
+      if (targetIndex !== currentIndexRef.current) {
+        goToMilestone(targetIndex, true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [goToMilestone]);
+
+  // Keyboard navigation when timeline is in view
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (["INPUT", "TEXTAREA"].includes((document.activeElement as HTMLElement)?.tagName)) return;
+
+      if (trackRef.current) {
+        const rect = trackRef.current.getBoundingClientRect();
+        if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+      }
+
+      if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+        e.preventDefault();
+        handleClickYear(Math.min(milestones.length - 1, currentIndexRef.current + 1));
+      }
+      if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+        e.preventDefault();
+        handleClickYear(Math.max(0, currentIndexRef.current - 1));
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  return (
+    <>
+      <style jsx global>{`
+        .digit-slot {
+          display: inline-block;
+          position: relative;
+          transform-style: preserve-3d;
+        }
+
+        .digit-slot span {
+          display: inline-block;
+          backface-visibility: hidden;
+          transform-origin: center center;
+          will-change: transform, opacity, filter;
+        }
+
+        .digit-slot.flip-out span {
+          animation: flipOutDigit 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+        }
+
+        .digit-slot.flip-in span {
+          animation: flipInDigit 0.45s cubic-bezier(0, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes flipOutDigit {
+          0% {
+            transform: rotateY(0deg);
+            opacity: 1;
+            filter: blur(0px);
+          }
+          100% {
+            transform: rotateY(-90deg);
+            opacity: 0.1;
+            filter: blur(3px);
+          }
+        }
+
+        @keyframes flipInDigit {
+          0% {
+            transform: rotateY(90deg);
+            opacity: 0.1;
+            filter: blur(3px);
+          }
+          100% {
+            transform: rotateY(0deg);
+            opacity: 1;
+            filter: blur(0px);
+          }
+        }
+
+        @keyframes pureFadeIn {
+          0% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
+
+        .animate-pure-fade-in {
+          animation: pureFadeIn 0.8s ease-in-out forwards;
+        }
+      `}</style>
+
+      {/* Outer Track with 380vh scroll space on desktop */}
+      <div
+        id="journey"
+        ref={trackRef}
+        className="relative w-full lg:h-[380vh] bg-[#F6F6EE] scroll-mt-36"
+      >
+        {/* Sticky Viewport Stage */}
+        <section className="relative lg:sticky lg:top-[148px] w-full lg:h-[calc(100vh-148px)] lg:min-h-[580px] lg:max-h-[880px] bg-[#F6F6EE] flex items-center overflow-hidden py-12 lg:py-6">
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center h-full">
+            {/* Header: Eyebrow + Title + Subtitle */}
+            <div className="w-full mb-8 lg:mb-10">
+              <span className="inline-block text-xs font-bold tracking-[0.16em] uppercase text-[#0B2C1C] mb-2.5">
+                Our Heritage &amp; Legacy
+              </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-black tracking-tight leading-[1.15] text-[#0B2C1C] mb-3">
+                Six Decades of Innovation.{" "}
+                <br className="hidden sm:inline" />
+                One Continuous <span className="text-[#FFAA17]">Milling Evolution.</span>
+              </h2>
+              <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+                Our journey has never been about replacing tradition. It has been about building
+                upon it, one innovation, one generation, and one breakthrough at a time.
+              </p>
+            </div>
+
+            {/* Timeline Stage Grid */}
+            <div className="w-full grid grid-cols-1 lg:grid-cols-[140px_minmax(0,1fr)] gap-8 lg:gap-16 items-center">
+              {/* Left Column: Year Navigation */}
+              <nav
+                ref={yearNavRef}
+                aria-label="Milestone Years"
+                className="relative flex flex-row lg:flex-col justify-start lg:justify-center gap-2 lg:gap-3.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-none border-b lg:border-b-0 border-slate-200/70"
+              >
+                {/* Desktop subtle vertical timeline line */}
+                <div className="hidden lg:block absolute left-[6px] top-[4%] bottom-[4%] w-[1px] bg-slate-300" />
+
+                {milestones.map((m, idx) => {
+                  const isActive = idx === currentIndex;
+                  return (
+                    <button
+                      key={m.year}
+                      ref={(el) => {
+                        btnRefs.current[idx] = el;
+                      }}
+                      onClick={() => handleClickYear(idx)}
+                      className={`relative z-10 text-left cursor-pointer transition-all duration-300 flex items-center shrink-0 ${
+                        isActive
+                          ? "text-[#0B2C1C] font-bold text-sm lg:translate-x-1.5"
+                          : "text-slate-400 hover:text-[#0B2C1C] font-medium text-xs lg:text-[13px]"
+                      } px-3 py-1.5 lg:px-0 lg:py-1 lg:pl-7 rounded-full lg:rounded-none ${
+                        isActive ? "bg-white shadow-2xs lg:shadow-none lg:bg-transparent" : "bg-transparent"
+                      }`}
+                    >
+                      {/* Year Indicator Dot (Desktop) */}
+                      <span
+                        className={`hidden lg:block absolute left-[2px] top-1/2 -translate-y-1/2 w-[9px] h-[9px] rounded-full transition-all duration-300 ${
+                          isActive
+                            ? "bg-[#FFAA17] border-[#FFAA17] scale-125 shadow-xs"
+                            : "bg-[#F6F6EE] border border-slate-300"
+                        }`}
+                      />
+                      <span>{m.year}</span>
+                    </button>
+                  );
+                })}
+              </nav>
+
+              {/* Right Column: Timeline Content Card */}
+              <div className="relative w-full min-h-[380px] lg:min-h-[440px] flex items-center">
+                {/* Subtle blueprint grid overlay */}
+                <div
+                  className="absolute inset-0 pointer-events-none opacity-25 select-none"
+                  style={{
+                    backgroundImage: `linear-gradient(to right, #CBD5E1 1px, transparent 1px), linear-gradient(to bottom, #CBD5E1 1px, transparent 1px)`,
+                    backgroundSize: "85px 85px",
+                    maskImage: "linear-gradient(to right, black 0%, black 50%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, black 0%, black 50%, transparent 100%)",
+                  }}
+                />
+
+                <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-14 items-center">
+                  {/* Left inside card: Year Digits + Title + Description */}
+                  <div className="space-y-4 lg:pr-4">
+                    {/* Big Year with 3D Flip */}
+                    <div
+                      className="text-[64px] sm:text-[76px] lg:text-[96px] xl:text-[110px] font-semibold text-[#0B2C1C] leading-[0.85] tracking-[-0.06em] select-none inline-flex"
+                      style={{ perspective: "800px" }}
+                      aria-label={milestones[currentIndex].year}
+                    >
+                      {milestones[currentIndex].year.split("").map((digitChar, dIdx) => (
+                        <DigitSlot key={dIdx} char={digitChar} />
+                      ))}
+                    </div>
+
+                    {/* Milestone Title & Description with Pure Fade */}
+                    <div
+                      className={`space-y-3 transition-opacity duration-200 ${
+                        isFadingOut
+                          ? "opacity-0"
+                          : isFadingIn
+                          ? "animate-pure-fade-in"
+                          : "opacity-100"
+                      }`}
+                    >
+                      <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-slate-900 tracking-tight leading-[1.2]">
+                        {displayedItem.title}
+                      </h3>
+                      <p className="text-sm sm:text-[15px] lg:text-base text-slate-600 leading-relaxed max-w-xl">
+                        {displayedItem.description}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Right inside card: Visual Milestone Image Frame */}
+                  <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] xl:h-[420px] rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90">
+                    <img
+                      src={displayedItem.image}
+                      alt={`${displayedItem.year} — ${displayedItem.title}`}
+                      className={`w-full h-full object-cover select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        isImageChanging
+                          ? "opacity-0 scale-105"
+                          : "opacity-100 scale-100"
+                      }`}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </>
+  );
+}

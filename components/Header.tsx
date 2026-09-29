@@ -63,16 +63,16 @@ export default function Header({ onRequestCallback }: HeaderProps) {
   };
 
   const aboutItems = [
-    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/about#about-us", icon: Info },
-    { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/about#leadership", icon: Users },
-    { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/about#mission-vision", icon: Eye },
-    { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/about#philosophy", icon: Heart },
-    { name: "Research & Development", desc: "Advanced metallurgy labs and automation test divisions.", href: "/about#research-development", icon: Milestone },
-    { name: "Social Responsibility", desc: "Community empowerment and ecological sustainability.", href: "/about#social-responsibility", icon: Landmark },
-    { name: "Why RSC Group", desc: "Trusted by commercial mill owners across 20+ countries.", href: "/about#why-rsc", icon: HelpCircle },
-    { name: "Our Network", desc: "Worldwide sales office, AMCs, and distribution network.", href: "/about#network", icon: Network },
-    { name: "Our Infrastructure", desc: "Two heavy engineering works facilities at Ajmer.", href: "/about#infrastructure", icon: Building },
-    { name: "Our Innovations", desc: "Digital systems, computerized chakkis, and IoT solutions.", href: "/about#innovations", icon: Lightbulb },
+    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/about#about-us", icon: Info, imgIcon: "/images/about/about-navbar-icons/about.png" },
+    { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/about#leadership", icon: Users, imgIcon: "/images/about/about-navbar-icons/leadership.png" },
+    { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/about#mission-vision", icon: Eye, imgIcon: "/images/about/about-navbar-icons/vision-and-mission.png" },
+    { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/about#philosophy", icon: Heart, imgIcon: "/images/about/about-navbar-icons/philosophy.png" },
+    { name: "Research & Development", desc: "Advanced metallurgy labs and automation test divisions.", href: "/about#research-development", icon: Milestone, imgIcon: "/images/about/about-navbar-icons/research.png" },
+    { name: "Social Responsibility", desc: "Community empowerment and ecological sustainability.", href: "/about#social-responsibility", icon: Landmark, imgIcon: "/images/about/about-navbar-icons/social-responsibility.png" },
+    { name: "Why RSC Group", desc: "Trusted by commercial mill owners across 20+ countries.", href: "/about#why-rsc", icon: HelpCircle, imgIcon: "/images/about/about-navbar-icons/why-rsc.png" },
+    { name: "Our Network", desc: "Worldwide sales office, AMCs, and distribution network.", href: "/about#network", icon: Network, imgIcon: "/images/about/about-navbar-icons/our-network.png" },
+    { name: "Our Infrastructure", desc: "Two heavy engineering works facilities at Ajmer.", href: "/about#infrastructure", icon: Building, imgIcon: "/images/about/about-navbar-icons/infrastructure.png" },
+    { name: "Our Innovations", desc: "Digital systems, computerized chakkis, and IoT solutions.", href: "/about#innovations", icon: Lightbulb, imgIcon: "/images/about/about-navbar-icons/innovations.png" },
   ];
 
   const productCategories = [
@@ -141,8 +141,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                           href={item.href}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
-                          <div className="p-2.5 rounded-lg bg-brand-primary/10 text-brand-primary group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300 flex-shrink-0">
-                            <Icon className="h-5 w-5" />
+                          <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
+                            {item.imgIcon ? (
+                              <img src={item.imgIcon} alt={item.name} className="h-8 w-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
+                            ) : (
+                              <Icon className="h-6 w-6 text-brand-primary group-hover:text-white transition-colors duration-300" />
+                            )}
                           </div>
                           <div>
                             <h4 className="font-bold text-slate-800 text-sm group-hover:text-brand-primary transition-colors">
@@ -339,9 +343,15 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         key={item.name}
                         href={item.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
-                        <Icon className="h-4 w-4 text-brand-primary" />
+                        <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
+                          {item.imgIcon ? (
+                            <img src={item.imgIcon} alt={item.name} className="h-6 w-6 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300" />
+                          ) : (
+                            <Icon className="h-5 w-5 text-brand-primary group-hover:text-white" />
+                          )}
+                        </div>
                         <span>{item.name}</span>
                       </Link>
                     );

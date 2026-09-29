@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choyal - Leadership, Vision & Mission</title>
+  
+  <!-- Geist Font CDN -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================
+       CSS VARIABLES & THEME TOKENS
+       ========================================== */
+    :root {
+      --color-primary-green: #0E3321;
+      --color-dark-green: #09271A;
+      --color-accent-yellow: #FFAA17;
+      --color-heading-black: #0F172A;
+      --color-body-grey: #475569;
+      --color-muted-grey: #94A3B8;
+      --color-light-grey: #F3F4F2;
+      --color-border-grey: #E2E8F0;
+      --color-white: #FFFFFF;
+
+      --font-family: "Geist", "Geist Fallback", Arial, sans-serif;
+      --font-heading: 36px;
+      --font-subheading: 32px;
+      --font-text: 15.5px;
+      --font-numbers: 13.5px;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: #F3F4F2;
+      color: var(--color-body-grey);
+      font-size: var(--font-text);
+      line-height: 1.65;
+      padding: 60px 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* ==========================================
+       SECTION 1: LEADERSHIP & HERITAGE
+       ========================================== */
+    .leadership-header {
+      max-width: 760px;
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      color: var(--color-primary-green);
+      font-size: var(--font-numbers);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .main-heading {
+      font-size: var(--font-heading);
+      font-weight: 900;
+      color: var(--color-primary-green);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+    }
+
+    .main-heading .highlight {
+      color: var(--color-accent-yellow);
+    }
+
+    .leadership-description {
+      margin-top: 16px;
+      font-size: var(--font-text);
+      color: var(--color-body-grey);
+      line-height: 1.6;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 72px;
+    }
+
+    .card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border-grey);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 30px -8px rgba(14, 51, 33, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    .card-image-wrap {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(180deg, #E7ECE9 0%, #CFDDD4 100%);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      mix-blend-multiply: multiply;
+      opacity: 0.92;
+      display: block;
+    }
+
+    .card-body {
+      padding: 24px 24px 16px 24px;
+    }
+
+    .card-tag {
+      font-size: var(--font-numbers);
+      font-weight: 700;
+      color: var(--color-accent-yellow);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-heading-black);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    .card-text {
+      font-size: var(--font-text);
+      color: var(--color-body-grey);
+      line-height: 1.6;
+    }
+
+    .card-footer {
+      padding: 0 24px 24px 24px;
+    }
+
+    .cta-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-primary-green);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .cta-link svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+      transition: transform 0.25s ease;
+    }
+
+    .cta-link:hover {
+      color: var(--color-accent-yellow);
+    }
+
+    .cta-link:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================
+       SECTION 2: OUR VISION & MISSION
+       ========================================== */
+    .vision-mission-section {
+      border-top: 1px solid var(--color-border-grey);
+      padding-top: 56px;
+    }
+
+    .section-title-left {
+      font-size: var(--font-subheading);
+      font-weight: 800;
+      color: var(--color-primary-green);
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .vm-card {
+      background-color: var(--color-white);
+      border: 1px solid var(--color-border-grey);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      min-height: 230px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .vm-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 30px -8px rgba(14, 51, 33, 0.08);
+    }
+
+    .vm-card-left {
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2;
+      flex: 1;
+    }
+
+    .vm-header-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .vm-icon-badge {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background-color: #17422C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #FFFFFF;
+      box-shadow: 0 0 0 5px #E6EFEA;
+    }
+
+    .vm-icon-badge svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .vm-label-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--color-accent-yellow);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .vm-card-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--color-primary-green);
+      line-height: 1.25;
+    }
+
+    .vm-card-text {
+      font-size: 14.5px;
+      color: var(--color-body-grey);
+      line-height: 1.6;
+      max-width: 320px;
+    }
+
+    /* Graphic Area & Effects */
+    .vm-graphic-box {
+      width: 210px;
+      position: relative;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+
+    /* Shared organic rings */
+    .vm-bg-rings {
+      position: absolute;
+      top: -30px;
+      right: -50px;
+      width: 290px;
+      height: 290px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Vision Theme Gradients (Soft Greens) */
+    .vm-card-vision .ring-outer {
+      fill: #EAF0EC;
+    }
+    .vm-card-vision .ring-mid {
+      fill: #D3E2D8;
+    }
+    .vm-card-vision .ring-inner {
+      fill: #B9D2C2;
+    }
+
+    /* Mission Theme Gradients (Warm Wheat & Beige Tones) */
+    .vm-card-mission .ring-outer {
+      fill: #F4EFE7;
+    }
+    .vm-card-mission .ring-mid {
+      fill: #EAE1D2;
+    }
+    .vm-card-mission .ring-inner {
+      fill: #DECDB8;
+    }
+
+    /* Image Container space reserved for user assets */
+    .vm-image-slot {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      pointer-events: none;
+    }
+
+    .vm-image-slot img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08));
+    }
+
+    /* ==========================================
+       RESPONSIVENESS
+       ========================================== */
+    @media (max-width: 1024px) {
+      .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 40px 16px;
+      }
+      
+      .cards-grid,
+      .vm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .main-heading {
+        font-size: 30px;
+      }
+
+      .section-title-left {
+        font-size: 26px;
+      }
+
+      .vm-card {
+        flex-direction: column;
+      }
+
+      .vm-graphic-box {
+        width: 100%;
+        height: 140px;
+      }
+
+      .vm-bg-rings {
+        top: -60px;
+        right: -30px;
+      }
+
+      .vm-card-text {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- LEADERSHIP & HERITAGE SECTION -->
+    <section>
+      <div class="leadership-header">
+        <p class="eyebrow">Our Leadership &amp; Heritage</p>
+        <h2 class="main-heading">
+          A legacy that <br>
+          keeps <span class="highlight">moving forward.</span>
+        </h2>
+        <p class="leadership-description">
+          From the founders who established the foundation to the leadership shaping modern milling systems, each generation has expanded what Choyal can build, solve and deliver.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Card 01 -->
+        <div class="card">
+          <div>
+            <div class="card-image-wrap">
+              <img src="B.M Choyal.jpg" alt="Late Mr. B. M. Choyal">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">CO-FOUNDER &amp; EX-CHAIRMAN</div>
+              <h3 class="card-title">Late Mr. B. M. Choyal</h3>
+              <p class="card-text">
+                One of the founders who helped establish Choyal’s early foundation in indigenous emery stone and milling technology, setting the direction for generations of engineering.
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="#story-bm-choyal" class="cta-link">
+              <span>Read Story</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="card">
+          <div>
+            <div class="card-image-wrap">
+              <img src="R.D Sharma.jpg" alt="Late Shri R. D. Sharma">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">CO-FOUNDER &amp; EX-MANAGING DIRECTOR</div>
+              <h3 class="card-title">Late Shri R. D. Sharma</h3>
+              <p class="card-text">
+                A founding force behind the company’s growth, helping transform early manufacturing capabilities into a disciplined industrial enterprise.
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="#story-rd-sharma" class="cta-link">
+              <span>Read Story</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="card">
+          <div>
+            <div class="card-image-wrap">
+              <img src="RS Choyal.jpg" alt="Mr. R. S. Choyal">
+            </div>
+            <div class="card-body">
+              <div class="card-tag">CHAIRMAN &amp; MANAGING DIRECTOR</div>
+              <h3 class="card-title">Mr. R. S. Choyal</h3>
+              <p class="card-text">
+                Carrying the legacy into a new era through advanced machinery, patented innovations, complete plants and digitally connected milling systems.
+              </p>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="#story-rs-choyal" class="cta-link">
+              <span>Read Story</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- VISION & MISSION SECTION -->
+    <section class="vision-mission-section">
+      <h2 class="section-title-left">Our Vision &amp; Mission</h2>
+      
+      <div class="vm-grid">
+        <!-- Vision Card -->
+        <div class="vm-card vm-card-vision">
+          <div class="vm-card-left">
+            <div>
+              <div class="vm-header-wrap">
+                <div class="vm-icon-badge">
+                  <!-- Eye Icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="vm-label-tag">OUR VISION</div>
+                  <h3 class="vm-card-title">Aiming for a smarter,<br>stronger tomorrow.</h3>
+                </div>
+              </div>
+            </div>
+            <p class="vm-card-text">
+              To combine engineering excellence, innovation and efficiency to create practical solutions that deliver consistent value for our customers.
+            </p>
+          </div>
+          
+          <!-- Organic Layer Graphic + Image Space -->
+          <div class="vm-graphic-box">
+            <svg class="vm-bg-rings" viewBox="0 0 300 300">
+              <circle cx="150" cy="150" r="145" class="ring-outer" opacity="0.6"/>
+              <circle cx="150" cy="150" r="105" class="ring-mid" opacity="0.75"/>
+              <circle cx="150" cy="150" r="65" class="ring-inner" opacity="0.85"/>
+            </svg>
+            <!-- Image Space (Transparent PNG/JPG can be placed here) -->
+            <div class="vm-image-slot">
+              <!-- <img src="silo-graphic.png" alt="Vision Silo Graphic"> -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Mission Card -->
+        <div class="vm-card vm-card-mission">
+          <div class="vm-card-left">
+            <div>
+              <div class="vm-header-wrap">
+                <div class="vm-icon-badge">
+                  <!-- Target/Bullseye Icon -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <circle cx="12" cy="12" r="6"></circle>
+                    <circle cx="12" cy="12" r="2"></circle>
+                  </svg>
+                </div>
+                <div>
+                  <div class="vm-label-tag">OUR MISSION</div>
+                  <h3 class="vm-card-title">Building solutions<br>for a better future.</h3>
+                </div>
+              </div>
+            </div>
+            <p class="vm-card-text">
+              To advance milling through intelligent, efficient and sustainable technologies—combining experience, experimentation and continuous improvement to build solutions for the future.
+            </p>
+          </div>
+          
+          <!-- Organic Layer Graphic + Image Space -->
+          <div class="vm-graphic-box">
+            <svg class="vm-bg-rings" viewBox="0 0 300 300">
+              <circle cx="150" cy="150" r="145" class="ring-outer" opacity="0.6"/>
+              <circle cx="150" cy="150" r="105" class="ring-mid" opacity="0.75"/>
+              <circle cx="150" cy="150" r="65" class="ring-inner" opacity="0.85"/>
+            </svg>
+            <!-- Image Space (Transparent PNG/JPG can be placed here) -->
+            <div class="vm-image-slot">
+              <!-- <img src="wheat-graphic.png" alt="Mission Wheat Graphic"> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>

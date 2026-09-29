@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Philosophy - Values That Shape How We Work</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              navy: '#131e3d',
+              orange: '#f59e0b',
+              amberAccent: '#e07a14',
+              greenAccent: '#16a34a',
+              blueAccent: '#1e68d7'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Card Hover micro-interactions */
+    .value-card {
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+      border-color: #cbd5e1;
+    }
+    .value-card:hover .card-icon {
+      transform: scale(1.06);
+      transition: transform 0.25s ease;
+    }
+  </style>
+</head>
+<body class="bg-[#fcfdfd] text-slate-800 font-sans antialiased min-h-screen py-12 md:py-20 px-4 sm:px-6 lg:px-8">
+
+  <main class="max-w-7xl mx-auto">
+    
+    <!-- Header Section -->
+    <header class="max-w-3xl mb-12 sm:mb-16">
+      <p class="text-sm sm:text-base font-bold text-slate-600 tracking-wide uppercase mb-3">
+        Our Philosophy
+      </p>
+      
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight mb-4">
+        Values That Shape<br class="hidden sm:inline" />
+        <span class="text-[#f59e0b]">How We Work</span>
+      </h1>
+      
+      <p class="text-slate-500 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
+        At R.S. Choyal Group, engineering discipline, operational excellence and ethical business practices shape how we work turning generations of experience and trust into lasting value for our customers, partners and communities.
+      </p>
+    </header>
+
+    <!-- Grid Layout: 3 Columns on lg, 2 Columns on md, 1 on mobile -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+      
+      <!-- Card 01: Responsibility (Orange/Amber) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#f59e0b] tracking-wider block">01</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Responsibility</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Commitment & Trust</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Shield Checkmark Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#f59e0b]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M24 6s14-2 14 10c0 14-14 24-14 26C24 40 10 30 10 16 10 4 24 6 24 6z"/>
+            <path d="M18 23l4 4 8-8"/>
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 02: Integrity (Emerald Green) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#16a34a] tracking-wider block">02</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Integrity</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Ethics & Conduct</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Scales of Justice Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#16a34a]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="24" y1="8" x2="24" y2="40" />
+            <line x1="16" y1="40" x2="32" y2="40" />
+            <line x1="10" y1="16" x2="38" y2="16" />
+            <polygon points="24,8 20,16 28,16" />
+            <!-- Left Pan -->
+            <path d="M10 16l-5 14h10z" />
+            <!-- Right Pan -->
+            <path d="M38 16l-5 14h10z" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 03: Innovation (Blue) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#2563eb] tracking-wider block">03</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Innovation</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">R&D & Tech</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Lightbulb with Cog Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#2563eb]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 19a8 8 0 1 1 16 0c0 4-3 7-4 9v4h-8v-4c-1-2-4-5-4-9z" />
+            <path d="M20 36h8" />
+            <path d="M22 40h4" />
+            <!-- Gear inside bulb -->
+            <circle cx="24" cy="19" r="2.5" />
+            <path d="M24 14v2m0 6v2m-5-5h2m6 0h2" />
+            <!-- Rays -->
+            <line x1="24" y1="4" x2="24" y2="7" />
+            <line x1="12" y1="9" x2="14.5" y2="11.5" />
+            <line x1="36" y1="9" x2="33.5" y2="11.5" />
+            <line x1="7" y1="21" x2="10" y2="21" />
+            <line x1="41" y1="21" x2="38" y2="21" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 04: Empowerment (Orange/Amber) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#f59e0b] tracking-wider block">04</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Empowerment</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Made in India</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- People / Group Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#f59e0b]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Center Leader -->
+            <circle cx="24" cy="17" r="5" />
+            <path d="M16 33c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+            <!-- Left Person -->
+            <circle cx="12" cy="20" r="3.5" />
+            <path d="M6 33c0-3.3 2.7-6 6-6 1.2 0 2.3.4 3.2 1" />
+            <!-- Right Person -->
+            <circle cx="36" cy="20" r="3.5" />
+            <path d="M32.8 28c.9-.6 2-1 3.2-1 3.3 0 6 2.7 6 6" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 05: Community (Emerald Green) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#16a34a] tracking-wider block">05</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Community</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Social Impact</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Leaves / Sprout Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#16a34a]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 38c0-8 6-16 16-16 0 10-8 16-16 16z" />
+            <path d="M22 38C22 26 12 18 6 20c-1 12 6 18 16 18z" />
+            <path d="M12 28c4 4 10 10 10 10" />
+            <path d="M30 28c-3 4-8 10-8 10" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 06: Fairness (Blue) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#2563eb] tracking-wider block">06</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Fairness</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Equal Opportunity</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Handshake Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#2563eb]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 21l8-8 10 10-5 5" />
+            <path d="M38 21l-8-8-4 4" />
+            <path d="M19 28l5 5 4-4" />
+            <path d="M24 33l4-4 4 4" />
+            <path d="M6 25l6-6" />
+            <path d="M42 25l-6-6" />
+            <path d="M8 27l4 4-2 2-6-6 4-4" />
+            <path d="M40 27l-4 4 2 2 6-6-4-4" />
+          </svg>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Bottom Row (2 Cards, structured identically to the reference image) -->
+    <div class="mt-5 lg:mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 lg:w-[66.1%]">
+      
+      <!-- Card 07: Growth (Orange/Amber) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#f59e0b] tracking-wider block">07</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Growth</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Sustainable Progress</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Trending Up Bar Chart Icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#f59e0b]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Bars -->
+            <rect x="8" y="28" width="6" height="12" rx="1.5" />
+            <rect x="18" y="22" width="6" height="18" rx="1.5" />
+            <rect x="28" y="16" width="6" height="24" rx="1.5" />
+            <!-- Upward Arrow Line -->
+            <path d="M12 24l9-7 9 4 10-10" />
+            <polyline points="32 11 40 11 40 19" />
+          </svg>
+        </div>
+      </article>
+
+      <!-- Card 08: Service (Emerald Green) -->
+      <article class="value-card bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] flex items-center justify-between">
+        <div class="space-y-1.5 pr-3">
+          <span class="text-xs sm:text-sm font-bold text-[#16a34a] tracking-wider block">08</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight">Service</h2>
+          <p class="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">Lifelong Partnership</p>
+        </div>
+        <div class="card-icon shrink-0 pl-2">
+          <!-- Hand holding gear icon -->
+          <svg class="w-12 h-12 sm:w-14 sm:h-14 text-[#16a34a]" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Hand palm -->
+            <path d="M8 35c4 0 9-3 14-3h6c3 0 7-3 8-7-3 1-6 0-9-1l-5-2-4 2c-3 1-7 4-10 11z" />
+            <path d="M12 39c6-1 12-1 18-3l7-5" />
+            <!-- Gear above hand -->
+            <circle cx="28" cy="16" r="4" />
+            <path d="M28 8v3m0 10v3m-8-8h3m10 0h3m-6.8-5.8l2.1 2.1m5.7 5.7l2.1 2.1m-9.9 0l2.1-2.1m5.7-5.7l2.1-2.1" />
+          </svg>
+        </div>
+      </article>
+
+    </div>
+
+  </main>
+</body>
+</html>

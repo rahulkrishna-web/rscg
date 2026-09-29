@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disciplines Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-green: #0E3321;
+      --accent-orange: #FFAA17;
+      --body-grey: #24303E;
+      --border-grey: #E2E8F0;
+      --white: #FFFFFF;
+      --font-main: "Geist", "Geist Fallback", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--white);
+      color: var(--primary-green);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Section ko right shift karne ke liye left padding badhayi gayi hai */
+    .disciplines-section {
+      width: 100%;
+      padding: 80px 24px 80px 96px; 
+      display: flex;
+      justify-content: flex-start;
+      background-color: var(--white);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0;
+    }
+
+    .section-header {
+      margin-bottom: 48px;
+      max-width: 720px;
+      text-align: left;
+    }
+
+    /* text-transform: uppercase hata diya gaya hai */
+    .eyebrow {
+      display: inline-block;
+      color: var(--primary-green);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      margin-bottom: 14px;
+    }
+
+    .main-heading {
+      font-size: 38px;
+      line-height: 1.25;
+      font-weight: 800;
+      color: var(--primary-green);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .main-heading .highlight {
+      color: var(--accent-orange);
+    }
+
+    .sub-heading {
+      font-size: 16px;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #556980;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border: 1px solid var(--border-grey);
+      background-color: var(--border-grey);
+      gap: 1px;
+    }
+
+    .card {
+      position: relative;
+      background-color: var(--white);
+      padding: 48px 40px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .card-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transform: scale(1.05);
+      transition: opacity 0.4s ease, transform 0.5s ease;
+      z-index: 1;
+    }
+
+    .card-bg::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 255, 255, 0.45) 100%
+      );
+    }
+
+    .card:hover .card-bg {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .card-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-tag {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748B;
+      margin-bottom: 18px;
+    }
+
+    .card-num {
+      color: var(--accent-orange);
+      font-weight: 800;
+      margin-right: 4px;
+    }
+
+    .card-title {
+      font-size: 26px;
+      line-height: 1.3;
+      font-weight: 700;
+      color: var(--primary-green);
+      letter-spacing: -0.015em;
+      margin-bottom: 14px;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.85);
+    }
+
+    .card-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--body-grey);
+      font-weight: 500;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9);
+    }
+
+    @media (max-width: 800px) {
+      .disciplines-section {
+        padding: 60px 20px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 32px 24px;
+      }
+
+      .main-heading {
+        font-size: 30px;
+      }
+
+      .card-title {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="disciplines-section">
+    <div class="container">
+      
+      <div class="section-header">
+        <span class="eyebrow">Disciplines &amp; Process</span>
+        <h2 class="main-heading">
+          Four distinct disciplines.<br />
+          One <span class="highlight">connected way</span> of working.
+        </h2>
+        <p class="sub-heading">From material science to plant operations, specialized expertise connects together to create milling systems that work as one.</p>
+      </div>
+
+      <div class="cards-grid">
+        
+        <!-- Card 01 -->
+        <div class="card">
+          <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-content">
+            <div class="card-tag"><span class="card-num">01</span> · THE MATERIAL</div>
+            <h3 class="card-title">Stone &amp; Abrasive Science</h3>
+            <p class="card-desc">Understanding the grinding surface at its core — from emery composition and profiles to dressing, groove geometry, wear and flour interaction.</p>
+          </div>
+        </div>
+
+        <!-- Card 02 -->
+        <div class="card">
+          <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-content">
+            <div class="card-tag"><span class="card-num">02</span> · THE MACHINE</div>
+            <h3 class="card-title">Machine &amp; Plant Engineering</h3>
+            <p class="card-desc">Machines, cleaners, sifters, conveyors, silos and plant structures designed around process flow, performance and practical operation.</p>
+          </div>
+        </div>
+
+        <!-- Card 03 -->
+        <div class="card">
+          <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-content">
+            <div class="card-tag"><span class="card-num">03</span> · THE CONTROL</div>
+            <h3 class="card-title">Automation &amp; Process Intelligence</h3>
+            <p class="card-desc">PLC controls, intelligent feeding, recipe management, power monitoring and plant data that bring consistency and visibility to every operation.</p>
+          </div>
+        </div>
+
+        <!-- Card 04 -->
+        <div class="card">
+          <div class="card-bg" style="background-image: url('https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1200&q=80');"></div>
+          <div class="card-content">
+            <div class="card-tag"><span class="card-num">04</span> · THE PRACTICE</div>
+            <h3 class="card-title">Operating Capability</h3>
+            <p class="card-desc">Trials, commissioning, diagnostics, training and knowledge transfer that turn engineered systems into capabilities plant teams can operate and improve.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

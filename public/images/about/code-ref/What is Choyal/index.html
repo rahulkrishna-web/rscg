@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is Choyal — Single Viewport Section</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              green: '#113d29',      // Deep forest green from title
+              subtleGreen: '#1b4a34',// Tag color
+              orange: '#f29602',     // Bright amber/golden-orange
+              amber: '#f29602',      // Step number color
+              textMuted: '#5b6863',  // Refined muted body text
+              bgLight: '#fbfbf9',    // Natural warm off-white
+              borderMuted: '#e8ecea' // Subtle divider line
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* Strictly prevent scrolling on viewport */
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #fbfbf9;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Soft sky/horizon atmosphere behind factory cutout */
+    .sky-gradient-backdrop {
+      background: linear-gradient(180deg, rgba(251, 251, 249, 0) 0%, rgba(237, 245, 248, 0.45) 40%, rgba(230, 242, 247, 0.6) 100%);
+    }
+
+    /* 2-line title fluid typography clamp */
+    .hero-title {
+      font-size: clamp(1.65rem, 2.7vw, 2.75rem);
+      line-height: 1.15;
+    }
+  </style>
+</head>
+<body class="h-screen w-screen flex flex-col justify-between selection:bg-amber-100 selection:text-amber-900 bg-[#fbfbf9]">
+
+  <!-- Main Viewport Wrapper: flex column split between text content (top) and cutout image (bottom) -->
+  <main class="w-full h-full flex flex-col justify-between overflow-hidden relative">
+
+    <!-- ================= TOP CONTENT SECTION ================= -->
+    <div class="w-full max-w-[1340px] mx-auto px-6 sm:px-10 lg:px-14 pt-4 sm:pt-6 md:pt-8 flex-shrink-0 z-10">
+      
+      <!-- 2-Column Responsive Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-14 xl:gap-16 items-start">
+        
+        <!-- LEFT COLUMN (Heading in strictly 2 lines & Intro Paragraphs) -->
+        <div class="lg:col-span-6 flex flex-col justify-between space-y-2.5 sm:space-y-3.5">
+          <!-- Small Sub-tag -->
+          <div>
+            <span class="text-[13px] sm:text-[14px] font-bold text-brand-green tracking-normal inline-block">
+              What is Choyal
+            </span>
+          </div>
+
+          <!-- Main Heading: Strictly 2 lines -->
+          <h1 class="hero-title font-extrabold tracking-[-0.025em]">
+            <span class="text-brand-green whitespace-nowrap block">A milling company that grew</span>
+            <span class="text-brand-orange whitespace-nowrap block mt-0.5 sm:mt-1">beyond the mill.</span>
+          </h1>
+
+          <!-- Body Paragraphs -->
+          <div class="space-y-2 sm:space-y-2.5 pt-1 text-[12.5px] sm:text-[13.5px] lg:text-[14px] leading-[1.58] text-brand-textMuted max-w-[530px]">
+            <p>
+              The journey began by challenging India’s dependence on imported abrasive products and flour-milling technology. Stones led to machines, machines to complete plants, and plants to everything around them such as silos, PEB structures, controls, testing, training and service.
+            </p>
+            <p>
+              What emerged was not a collection of separate capabilities, but one connected approach to making grain processing perform better.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (3 Key Pillars with Horizontal Dividers) -->
+        <div class="lg:col-span-6 flex flex-col justify-start divide-y divide-brand-borderMuted">
+          
+          <!-- ITEM 01 -->
+          <div class="flex items-start gap-4 sm:gap-5 pb-2.5 sm:pb-3.5">
+            <span class="text-[14px] sm:text-[15px] font-bold text-brand-amber min-w-[24px] tracking-tight pt-[1px]">
+              01
+            </span>
+            <div class="space-y-0.5 sm:space-y-1">
+              <h2 class="text-[14px] sm:text-[15px] lg:text-[16px] font-bold text-brand-green leading-snug">
+                Flour quality is a system outcome.
+              </h2>
+              <p class="text-[12px] sm:text-[13px] lg:text-[13.5px] text-brand-textMuted leading-[1.52] max-w-[520px]">
+                Consistent flour does not come from a single machine. It depends on how storage, cleaning, conditioning, milling, handling, controls and people work together.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 02 -->
+          <div class="flex items-start gap-4 sm:gap-5 py-2.5 sm:py-3.5">
+            <span class="text-[14px] sm:text-[15px] font-bold text-brand-amber min-w-[24px] tracking-tight pt-[1px]">
+              02
+            </span>
+            <div class="space-y-0.5 sm:space-y-1">
+              <h2 class="text-[14px] sm:text-[15px] lg:text-[16px] font-bold text-brand-green leading-snug">
+                Technology must work for the operator.
+              </h2>
+              <p class="text-[12px] sm:text-[13px] lg:text-[13.5px] text-brand-textMuted leading-[1.52] max-w-[520px]">
+                Engineering matters when it simplifies production, improves consistency and gives operators greater clarity and control over the mill.
+              </p>
+            </div>
+          </div>
+
+          <!-- ITEM 03 -->
+          <div class="flex items-start gap-4 sm:gap-5 pt-2.5 sm:pt-3.5">
+            <span class="text-[14px] sm:text-[15px] font-bold text-brand-amber min-w-[28px] tracking-tight pt-[1px]">
+              03
+            </span>
+            <div class="space-y-0.5 sm:space-y-1">
+              <h2 class="text-[14px] sm:text-[15px] lg:text-[16px] font-bold text-brand-green leading-snug">
+                Reliability begins after handover.
+              </h2>
+              <p class="text-[12px] sm:text-[13px] lg:text-[13.5px] text-brand-textMuted leading-[1.52] max-w-[520px]">
+                A system proves its value on the shop floor — across shifts, seasons, maintenance cycles and changing business requirements. Performance is built to last, not simply delivered.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ================= BOTTOM ANCHORED CUTOUT AREA ================= -->
+    <div class="relative w-full flex-1 flex flex-col justify-end min-h-0 sky-gradient-backdrop overflow-hidden">
+      
+      <!-- Top soft blend gradient overlay -->
+      <div class="pointer-events-none absolute inset-x-0 top-0 h-10 sm:h-14 bg-gradient-to-b from-[#fbfbf9] to-transparent z-10"></div>
+      
+      <!-- Cutout Image Wrapper: Spanning 100% edge-to-edge with ZERO margins or side padding -->
+      <div class="relative w-screen min-w-full h-full flex justify-center items-end p-0 m-0 overflow-hidden">
+        
+        <!-- Factory Cutout Image: Strict full-width edge-to-edge stretch, anchored to bottom with no side empty space -->
+        <img 
+          id="cutoutImage"
+          src="img.png" 
+          alt="Choyal Factory Plant Infrastructure Cutout" 
+          class="w-screen min-w-full h-full max-h-[50vh] object-cover object-bottom drop-shadow-sm select-none pointer-events-none block"
+          onerror="this.src='https://placehold.co/1920x600/e8eee9/113d29?text=Insert+Your+Full-Width+Cutout+Here'"
+        />
+
+        <!-- Floating Live Cutout Upload / Test Button -->
+        <div class="absolute bottom-3 right-4 sm:bottom-4 sm:right-6 bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg rounded-xl px-3 py-2 flex items-center gap-3 text-xs text-slate-700 z-20 transition-all hover:shadow-xl">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+          <!-- <div class="hidden sm:block text-left">
+            <p class="font-bold text-brand-green leading-tight text-[11px]">Factory Cutout</p>
+            <p class="text-slate-400 text-[10px] leading-tight">Full-width previewer</p>
+          </div> -->
+          <!-- <label class="cursor-pointer bg-brand-green hover:bg-[#0c2e1f] text-white px-2.5 py-1.5 rounded-lg font-medium transition text-[11px] sm:text-xs flex items-center gap-1.5 shadow-sm active:scale-95">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+            </svg> -->
+            <!-- <span>Upload Cutout</span> -->
+            <!-- <input type="file" id="cutoutUploader" accept="image/*" class="hidden"> -->
+          <!-- </label> -->
+        </div>
+
+      </div>
+
+      <!-- Subtle bottom ground base line -->
+      <div class="w-full h-1 bg-black/5"></div>
+    </div>
+
+  </main>
+
+  <script>
+    // Live preview functionality for your factory PNG cutout
+    const uploader = document.getElementById('cutoutUploader');
+    const cutoutImg = document.getElementById('cutoutImage');
+
+    uploader.addEventListener('change', function(e) {
+      const file = e.target.files && e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          cutoutImg.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+</body>
+</html>
