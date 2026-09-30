@@ -74,23 +74,24 @@ export default function GrainStorageHandlingPage() {
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full max-w-2xl">
-            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
-              Silos Division
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
-              Silos.
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              SILOS DIVISION
+            </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Storage & <br />
+              <span className="text-white">Handling Silos</span>
             </h1>
-            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Storage and handling silos engineered for reliable material flow, controlled conditioning, and efficient plant performance. Explore bran, atta, conditioning, and grain silos designed for smooth mill operations.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="pt-2 sm:pt-4">
               <Link 
                 href="#products" 
-                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Explore Silos</span>
-                <ArrowRight className="h-4 w-4" />
+                EXPLORE SILOS <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

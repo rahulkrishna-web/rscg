@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronRight, Settings, CheckCircle2, Factory, MonitorSmartphone, TrendingUp, DollarSign, Database, Settings2, ShieldCheck, Zap } from "lucide-react";
+import { ArrowRight, ChevronRight, Settings, CheckCircle2, Factory, MonitorSmartphone, TrendingUp, DollarSign, Database, Settings2, ShieldCheck, Zap } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -46,23 +46,24 @@ export default function AutomationPage() {
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full max-w-2xl">
-            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
-              Automation
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
-              Advanced control systems for modern mill operations
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              AUTOMATION DIVISION
+            </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Advanced <br />
+              <span className="text-white">Control Systems</span>
             </h1>
-            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
-              Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance.
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+              Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance across modern operations.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="pt-2 sm:pt-4">
               <Link 
                 href="/contact"
-                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Enquire Now</span>
-                <ChevronRight className="w-4 h-4" />
+                ENQUIRE NOW <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

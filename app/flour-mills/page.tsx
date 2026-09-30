@@ -97,25 +97,25 @@ export default function FlourMills() {
         </div>
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full max-w-2xl">
-            <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
-              Commercial Milling
-            </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              COMMERCIAL MILLING
+            </div>
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
               Flour Mills & <br className="hidden sm:block" />
-              Grinding Plants
+              <span className="text-white">Grinding Plants</span>
             </h1>
-            <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-10 leading-relaxed font-light max-w-xl">
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Advanced stone milling technology engineered for high-capacity continuous production, uniform flour quality, and long-term reliability.
             </p>
             
-            <div className="flex flex-wrap gap-4">
+            <div className="pt-2 sm:pt-4">
               <button 
                 onClick={() => productsSectionRef.current?.scrollIntoView({ behavior: "smooth" })}
-                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Explore Products</span>
-                <ArrowRight className="h-4 w-4" />
+                EXPLORE PRODUCTS <ArrowRight className="w-4 h-4" />
               </button>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default function FlourMills() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
             <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
@@ -147,7 +147,7 @@ export default function FlourMills() {
 
       {/* Mobile Key Proof Points Bar (In Document Flow - Prevents Overlapping Next Section) */}
       <div className="block md:hidden relative z-30 px-5 -mt-10 w-full mx-auto max-w-xl">
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
           
           <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
             <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Digital Mills</h3>

@@ -46,37 +46,35 @@ export default function EmeryStones() {
         </div>
         
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-8">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
             
             {/* Eyebrow */}
-            <div className="flex items-center gap-4">
-              <span className="text-[#cba460] font-bold text-xs tracking-[0.2em] uppercase">
-                Emery Stones Division
-              </span>
-              <div className="h-px w-12 bg-[#cba460]/40"></div>
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              EMERY STONES DIVISION
             </div>
 
             {/* Title */}
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white tracking-tight leading-none">
-              Emery Stones.
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Emery <br />
+              <span className="text-white">Stones</span>
             </h1>
             
             {/* Supporting Text */}
-            <p className="text-base sm:text-lg text-slate-300 font-medium leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               High-performance emery stones engineered for precision grinding, consistent flour quality, and long service life across commercial stone mills.
             </p>
 
             {/* CTA */}
-            <div className="pt-2">
+            <div className="pt-2 sm:pt-4">
               <button 
                 onClick={(e) => {
                   e.preventDefault();
                   document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-3.5 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center gap-2 cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Explore Emery Stones</span>
-                <ArrowRight className="h-4 w-4" />
+                EXPLORE EMERY STONES <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
@@ -86,7 +84,7 @@ export default function EmeryStones() {
 
       {/* Key Proof Points Bar */}
       <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision Grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>

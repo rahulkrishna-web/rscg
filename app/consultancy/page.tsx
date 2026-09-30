@@ -109,37 +109,35 @@ export default function ConsultancyPage() {
           </div>
 
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
-            <div className="max-w-2xl space-y-6 pt-12 md:pt-0">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 border border-amber-400/50 text-amber-300 text-xs font-bold tracking-widest uppercase backdrop-blur-md">
-                <Sparkles className="h-3.5 w-3.5 text-amber-400" />
-                <span>Services</span>
-              </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-[1.15] drop-shadow-md">
-                Consultancy <span className="font-normal text-slate-300">for</span> <br className="hidden sm:inline" />
-                <span className="text-[#D3994B]">Flour Milling</span> <span className="font-normal text-slate-300">Success</span>
-              </h1>
-
-              <div className="text-base sm:text-lg text-slate-200 leading-relaxed font-medium space-y-2 max-w-xl">
-                <p>Expert guidance to help you enter, scale, and excel in the flour milling industry.</p>
-                <p className="text-slate-300 text-sm sm:text-base">From concept to continuous improvement, we are your strategic partner at every step.</p>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#D99B26] hover:bg-[#c4891e] text-slate-950 rounded-full text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-[0_0_30px_rgba(217,155,38,0.7)] hover:scale-[1.02] transition-all duration-300 cursor-pointer"
-                >
-                  <span>Explore Consultancy</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
+          <div className="max-w-2xl space-y-4 sm:space-y-6 pt-12 md:pt-0">
+            {/* Standard Eyebrow */}
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              SERVICES
             </div>
 
-            {/* Desktop Proof Points White Container - Full Width Overlapping Hero Bottom */}
-            <div className="hidden md:block absolute bottom-0 left-0 right-0 w-full px-6 sm:px-12 lg:px-16 xl:px-24 z-30 translate-y-1/2">
-              <div className="w-full bg-white rounded-2xl shadow-2xl p-4 sm:p-5 lg:p-6 border border-slate-100/90">
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Flour Milling <br />
+              <span className="text-white">Consultancy</span>
+            </h1>
+
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+              Expert guidance to help you enter, scale, and excel in the flour milling industry. Strategic partnership from concept to continuous improvement.
+            </p>
+
+            <div className="pt-2 sm:pt-4">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+              >
+                EXPLORE CONSULTANCY <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          {/* Desktop Proof Points White Container - Full Width Overlapping Hero Bottom */}
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 w-full px-6 sm:px-12 lg:px-16 xl:px-24 z-30 translate-y-1/2">
+            <div className="w-full bg-white rounded-2xl shadow-xl p-4 sm:p-5 lg:p-6 border border-slate-100">
                 <div className="grid grid-cols-4 divide-x divide-slate-200">
                   {heroProofPoints.map((item, idx) => (
                     <div 

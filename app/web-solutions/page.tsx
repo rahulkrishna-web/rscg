@@ -59,14 +59,15 @@ export default function WebSolutionsPage() {
           <div className="absolute inset-0 bg-[url('/images/web-solutions/banner.jpg')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-slate-900/60" />
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
-            <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Services
-              </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+                <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+                SERVICES
+              </div>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-[1.1]">
                 Web Solutions
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
+              <p className="text-sm sm:text-base text-slate-200 font-medium max-w-xl leading-relaxed">
                 Creating bespoke solutions for your business requirements.
               </p>
             </div>

@@ -106,21 +106,26 @@ export default function ProjectDetailPage() {
 
            {/* Hero content */}
            <div className="relative z-20 h-full flex flex-col items-start justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
-             <div className="max-w-3xl space-y-5 sm:space-y-6">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-tight font-heading">
-                  Transforming Ideas into<br/>Reality
-                </h1>
-                <p className="text-sm sm:text-base lg:text-lg text-white/80 leading-relaxed font-medium max-w-2xl">
-                  From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
-                </p>
-                <div className="pt-2">
-                  <Link
-                    href="/projects"
-                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] px-8 py-3.5 rounded-xl font-black uppercase tracking-widest text-xs transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)]"
-                  >
-                    Explore Projects <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
+             <div className="max-w-2xl space-y-4 sm:space-y-6">
+               <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+                 CASE STUDIES & PROJECTS
+               </div>
+               <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+                 Transforming Ideas <br />
+                 <span className="text-white">Into Reality</span>
+               </h1>
+               <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+                 From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
+               </p>
+               <div className="pt-2 sm:pt-4">
+                 <Link
+                   href="/projects"
+                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+                 >
+                   EXPLORE PROJECTS <ArrowRight className="w-4 h-4" />
+                 </Link>
+               </div>
              </div>
 
              {/* Dot indicators */}

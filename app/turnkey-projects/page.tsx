@@ -209,29 +209,28 @@ export default function TurnkeyProjects() {
 
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
           
-          <div className="max-w-2xl space-y-6">
+          <div className="max-w-2xl space-y-4 sm:space-y-6">
             
-            {/* Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/50 border border-amber-400/50 text-amber-300 text-[11px] font-bold tracking-widest uppercase backdrop-blur-md">
-              <Building className="h-3.5 w-3.5 text-amber-400" />
-              <span>Turnkey Projects Division</span>
+            {/* Standard Eyebrow */}
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+              TURNKEY PROJECTS DIVISION
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-[64px] font-bold tracking-tight leading-[1.1] text-white">
-              Turnkey Projects.
+            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+              Turnkey Projects
             </h1>
             
-            <p className="text-base sm:text-lg text-slate-200 leading-relaxed max-w-xl font-normal">
+            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Customized and automated solutions for grain cleaning, grinding, and sorting plants up to 1000 TPD capacity, delivered end-to-end.
             </p>
             
-            <div className="pt-2">
+            <div className="pt-2 sm:pt-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-[#D99B26] hover:bg-[#c4891e] text-slate-950 rounded-full text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-[0_0_30px_rgba(217,155,38,0.7)] hover:scale-[1.02] transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Request a Project Quote</span>
-                <ArrowRight className="h-4 w-4" />
+                REQUEST A PROJECT QUOTE <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
@@ -239,7 +238,7 @@ export default function TurnkeyProjects() {
 
           {/* Desktop Proof Points White Container - 50/50 Overlapping Hero Bottom */}
           <div className="hidden md:block absolute bottom-0 left-0 right-0 w-full max-w-5xl mx-auto px-6 lg:px-8 z-30 translate-y-1/2">
-            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 lg:p-7 border border-slate-100/80">
+            <div className="bg-white rounded-2xl shadow-xl p-4 sm:p-6 lg:p-7 border border-slate-100">
               <div className="grid grid-cols-3 divide-x divide-slate-200">
                 {statPoints.map((stat, idx) => (
                   <div key={idx} className="p-4 sm:p-5 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 cursor-pointer text-left space-y-1.5">

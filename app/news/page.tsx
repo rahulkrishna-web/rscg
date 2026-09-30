@@ -71,14 +71,16 @@ export default function NewsPage() {
           </div>
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-            <div className="w-full max-w-2xl">
-              <span className="inline-block py-1.5 px-3 rounded-lg bg-[#f7b032] text-[#0B1510] font-black text-xs tracking-widest uppercase mb-4 sm:mb-6 shadow-sm border border-[#f7b032]">
-                News &amp; Updates
-              </span>
-              <h1 className="text-3xl sm:text-5xl lg:text-7xl font-heading font-black text-white leading-tight mb-4 sm:mb-6 tracking-tight">
-                News &amp; Updates
+            <div className="max-w-2xl space-y-4 sm:space-y-6">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+                <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+                LATEST ARTICLES & INSIGHTS
+              </div>
+              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+                News & <br />
+                <span className="text-white">Updates</span>
               </h1>
-              <p className="text-base sm:text-xl text-slate-200 mb-6 sm:mb-8 leading-relaxed font-light max-w-xl">
+              <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 Stay informed with the latest announcements, product launches, industry insights, and milestones from RS Choyal Group.
               </p>
             </div>
