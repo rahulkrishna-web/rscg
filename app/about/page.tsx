@@ -129,8 +129,18 @@ export default function AboutPage() {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 160;
 
+      // If near top of page (hero or intro), active tab is always "about-us"
+      const leadershipElem = document.getElementById("leadership");
+      const leadershipTop = leadershipElem ? leadershipElem.getBoundingClientRect().top + window.scrollY : 1200;
+
+      if (scrollPosition < leadershipTop) {
+        setActiveTab("about-us");
+        return;
+      }
+
       for (let i = aboutSubmenuSections.length - 1; i >= 0; i--) {
         const item = aboutSubmenuSections[i];
+        if (item.id === "about-us") continue;
         const element = document.getElementById(item.id);
         if (element) {
           const top = element.getBoundingClientRect().top + window.scrollY;
@@ -148,9 +158,21 @@ export default function AboutPage() {
   }, []);
 
   const scrollToSection = (id: string) => {
+    if (id === "about-us" || id === "hero" || id === "top") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+      setActiveTab("about-us");
+      if (typeof window !== "undefined" && window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+      return;
+    }
+
     const element = document.getElementById(id);
     if (element) {
-      const offset = 135; // accounting for floating header with submenu
+      const offset = 150; // accounting for floating header with submenu
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -164,26 +186,51 @@ export default function AboutPage() {
     }
   };
 
-  // Handle initial and dynamic hash routing with correct scroll offset
+  // Handle initial mount and dynamic hash routing, ensuring page opens/reloads at top
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    // Prevent browser from restoring scroll position to middle of page on refresh
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
+    let t1: NodeJS.Timeout | undefined;
+    let t2: NodeJS.Timeout | undefined;
+    let timer: NodeJS.Timeout | undefined;
+
+    const hash = window.location.hash.substring(1);
+    if (!hash || hash === "about-us" || hash === "top") {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      if (hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+      t1 = setTimeout(() => window.scrollTo(0, 0), 50);
+      t2 = setTimeout(() => window.scrollTo(0, 0), 150);
+    } else {
+      timer = setTimeout(() => {
+        scrollToSection(hash);
+      }, 150);
+    }
+
     const handleHash = () => {
-      if (typeof window !== "undefined") {
-        const hash = window.location.hash.substring(1);
-        if (hash) {
-          scrollToSection(hash);
-        } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }
+      const currentHash = window.location.hash.substring(1);
+      if (currentHash && currentHash !== "about-us" && currentHash !== "top") {
+        scrollToSection(currentHash);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setActiveTab("about-us");
       }
     };
 
-    if (typeof window !== "undefined" && window.location.hash) {
-      const timer = setTimeout(handleHash, 300);
-      return () => clearTimeout(timer);
-    }
-
     window.addEventListener("hashchange", handleHash);
-    return () => window.removeEventListener("hashchange", handleHash);
+
+    return () => {
+      if (t1) clearTimeout(t1);
+      if (t2) clearTimeout(t2);
+      if (timer) clearTimeout(timer);
+      window.removeEventListener("hashchange", handleHash);
+    };
   }, []);
 
   return (
@@ -224,7 +271,7 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
                   <p>
-                    The journey began by challenging India’s dependence on imported abrasive products and flour-milling technology. Stones became machines. Machines evolved into complete plants. And complete plants brought new requirements — silos, PEB structures, controls, testing, training and service.
+                    The journey began by challenging India’s dependence on imported abrasive products and flour-milling technology. Stones became machines. Machines evolved into complete plants. And complete plants brought new requirements: silos, PEB structures, controls, testing, training and service.
                   </p>
                   <p>
                     Over time, this became more than a collection of capabilities. It became one connected approach to designing, building and supporting grain-processing systems that perform as a whole.
@@ -260,7 +307,7 @@ export default function AboutPage() {
                       Technology must work for the operator.
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                      Good engineering does more than increase capability. It makes production clearer, simpler and more consistent — giving operators the control and confidence to run the mill effectively.
+                      Good engineering does more than increase capability. It makes production clearer, simpler and more consistent, giving operators the control and confidence to run the mill effectively.
                     </p>
                   </div>
                 </div>
@@ -275,7 +322,7 @@ export default function AboutPage() {
                       Reliability begins after handover.
                     </h3>
                     <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                      A system proves its value on the shop floor — across shifts, seasons, maintenance cycles and changing business needs. True performance is not simply delivered; it is built to endure.
+                      A system proves its value on the shop floor, across shifts, seasons, maintenance cycles and changing business needs. True performance is not simply delivered; it is built to endure.
                     </p>
                   </div>
                 </div>

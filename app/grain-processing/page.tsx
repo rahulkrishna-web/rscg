@@ -128,34 +128,34 @@ export default function GrainProcessingPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Filter className="w-6 h-6" />
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Filter className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Cleaner Separation</h4>
-              <p className="text-xs text-slate-500">Advanced separators, destoners, and multistage screening.</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Cleaner Separation</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Advanced separators &amp; multistage screening.</p>
             </div>
           </div>
           
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <TrendingUp className="w-6 h-6" />
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <TrendingUp className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Maximum Yield</h4>
-              <p className="text-xs text-slate-500">Optimized processing to ensure minimal grain loss.</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Maximum Yield</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Optimized processing with minimal grain loss.</p>
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Settings className="w-6 h-6" />
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Settings className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Precision Engineering</h4>
-              <p className="text-xs text-slate-500">Heavy-duty build with automated controls for seamless mill flow.</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Precision Engineering</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Heavy-duty build with automated controls.</p>
             </div>
           </div>
         </div>
@@ -165,32 +165,32 @@ export default function GrainProcessingPage() {
       <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
           <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Filter className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Filter className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Cleaner Separation</h4>
-              <p className="text-xs text-slate-500">Advanced separators, destoners, and multistage screening.</p>
+              <h4 className="text-base font-bold text-slate-900">Cleaner Separation</h4>
+              <p className="text-sm text-slate-600 font-medium">Advanced separators &amp; multistage screening.</p>
             </div>
           </div>
           
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <TrendingUp className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <TrendingUp className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Maximum Yield</h4>
-              <p className="text-xs text-slate-500">Optimized processing to ensure minimal grain loss.</p>
+              <h4 className="text-base font-bold text-slate-900">Maximum Yield</h4>
+              <p className="text-sm text-slate-600 font-medium">Optimized processing with minimal grain loss.</p>
             </div>
           </div>
 
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Settings className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Precision Engineering</h4>
-              <p className="text-xs text-slate-500">Heavy-duty build with automated controls for seamless mill flow.</p>
+              <h4 className="text-base font-bold text-slate-900">Precision Engineering</h4>
+              <p className="text-sm text-slate-600 font-medium">Heavy-duty build with automated controls.</p>
             </div>
           </div>
         </div>

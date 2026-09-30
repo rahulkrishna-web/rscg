@@ -100,32 +100,32 @@ export default function GrainStorageHandlingPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Database className="w-6 h-6" />
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Database className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Bran, Atta &</h4>
-              <p className="text-xs text-slate-500">Conditioning Silos</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Bran, Atta &amp; Grain</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Conditioning Silos</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <RefreshCw className="w-6 h-6" />
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <RefreshCw className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Controlled</h4>
-              <p className="text-xs text-slate-500">Storage & Flow</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Controlled Flow</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Storage &amp; Conveying</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Factory className="w-6 h-6" />
+          <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
+            <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
+              <Factory className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Built for</h4>
-              <p className="text-xs text-slate-500">Milling Plants</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Turnkey Silos</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Built for Milling Plants</p>
             </div>
           </div>
         </div>
@@ -135,30 +135,30 @@ export default function GrainStorageHandlingPage() {
       <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
           <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Database className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Bran, Atta &</h4>
-              <p className="text-xs text-slate-500">Conditioning Silos</p>
+              <h4 className="text-base font-bold text-slate-900">Bran, Atta &amp; Grain</h4>
+              <p className="text-sm text-slate-600 font-medium">Conditioning Silos</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <RefreshCw className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <RefreshCw className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Controlled</h4>
-              <p className="text-xs text-slate-500">Storage & Flow</p>
+              <h4 className="text-base font-bold text-slate-900">Controlled Flow</h4>
+              <p className="text-sm text-slate-600 font-medium">Storage &amp; Conveying</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Factory className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Factory className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Built for</h4>
-              <p className="text-xs text-slate-500">Milling Plants</p>
+              <h4 className="text-base font-bold text-slate-900">Turnkey Silos</h4>
+              <p className="text-sm text-slate-600 font-medium">Built for Milling Plants</p>
             </div>
           </div>
         </div>

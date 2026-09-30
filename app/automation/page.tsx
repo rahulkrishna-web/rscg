@@ -72,41 +72,41 @@ export default function AutomationPage() {
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
       <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-8 flex flex-row items-center justify-between gap-6 divide-x divide-slate-100">
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
+          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Settings2 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Logical Screen</h4>
-              <p className="text-xs text-slate-500">Architecture</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Logical Screen</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Architecture</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Standard HMI</h4>
-              <p className="text-xs text-slate-500">Screen Development</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Standard HMI</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Screen Development</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
               <Database className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Strong Architecture</h4>
-              <p className="text-xs text-slate-500">Scalable & Secure</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Strong Architecture</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Scalable &amp; Secure</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
-            <div className="w-12 h-12 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
+            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Safety Module</h4>
-              <p className="text-xs text-slate-500">Enhanced Protections</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Safety Module</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Enhanced Protections</p>
             </div>
           </div>
         </div>
@@ -116,39 +116,39 @@ export default function AutomationPage() {
       <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
           <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Settings2 className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Settings2 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Logical Screen</h4>
-              <p className="text-xs text-slate-500">Architecture</p>
+              <h4 className="text-base font-bold text-slate-900">Logical Screen</h4>
+              <p className="text-sm text-slate-600 font-medium">Architecture</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <MonitorSmartphone className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Standard HMI</h4>
-              <p className="text-xs text-slate-500">Screen Development</p>
+              <h4 className="text-base font-bold text-slate-900">Standard HMI</h4>
+              <p className="text-sm text-slate-600 font-medium">Screen Development</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Database className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <Database className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Strong Architecture</h4>
-              <p className="text-xs text-slate-500">Scalable & Secure</p>
+              <h4 className="text-base font-bold text-slate-900">Strong Architecture</h4>
+              <p className="text-sm text-slate-600 font-medium">Scalable &amp; Secure</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-10 h-10 rounded-full bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="w-5 h-5" />
+            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
+              <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-slate-800">Safety Module</h4>
-              <p className="text-xs text-slate-500">Enhanced Protections</p>
+              <h4 className="text-base font-bold text-slate-900">Safety Module</h4>
+              <p className="text-sm text-slate-600 font-medium">Enhanced Protections</p>
             </div>
           </div>
         </div>

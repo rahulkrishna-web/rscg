@@ -109,7 +109,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
   ];
 
   const isAnyMenuOpen = isAboutOpen || isProductsOpen || isServicesOpen || mobileMenuOpen || mobileSubmenuOpen;
-  const mbClass = submenu ? "-mb-[120px] sm:-mb-[126px] lg:-mb-[132px]" : "-mb-[94px] sm:-mb-[110px]";
+  const mbClass = submenu ? "-mb-[130px] sm:-mb-[146px] lg:-mb-[148px]" : "-mb-[94px] sm:-mb-[110px]";
 
   useEffect(() => {
     if (!mobileSubmenuOpen) return;
@@ -128,14 +128,14 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
       <div className={`w-full bg-white rounded-t-xl ${isAnyMenuOpen ? "rounded-b-none" : "rounded-b-xl"} shadow-xs border border-slate-200/80 relative pointer-events-auto transition-all`}>
         
         {/* Top Navbar Row */}
-        <div className={`w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center ${submenu ? "h-16 lg:h-18" : "h-20 sm:h-24"}`}>
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-20 sm:h-24 relative">
           {/* Brand Logos */}
           <div className="flex flex-row items-center select-none h-full">
             <Link href="/" className="inline-flex hover:scale-102 transition-transform">
               <img 
                 src="/rscg.png" 
                 alt="RS Choyal Group Logo" 
-                className={submenu ? "h-[46px] sm:h-[52px] lg:h-[58px] w-auto object-contain" : "h-[56px] sm:h-[70px] w-auto object-contain"}
+                className="h-[56px] sm:h-[70px] w-auto object-contain"
               />
             </Link>
           </div>
@@ -149,10 +149,19 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
             onMouseLeave={() => setIsAboutOpen(false)}
             className="h-full flex items-center"
           >
-            <button className="flex items-center gap-1 text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full">
+            <Link 
+              href="/about"
+              onClick={() => {
+                setIsAboutOpen(false);
+                if (typeof window !== "undefined" && window.location.pathname === "/about") {
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              className="flex items-center gap-1 text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full"
+            >
               About Us
               <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isAboutOpen ? "rotate-180" : ""}`} />
-            </button>
+            </Link>
             
             {isAboutOpen && (
               <div 
@@ -360,7 +369,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
       {submenu && (
         <>
           {/* Desktop Submenu Row */}
-          <div className="hidden lg:flex items-center gap-5 xl:gap-7 border-t border-slate-100/90 px-6 sm:px-12 lg:px-16 xl:px-24 h-10 overflow-x-auto no-scrollbar">
+          <div className={`hidden lg:flex items-center gap-5 xl:gap-7 border-t border-slate-100/90 px-6 sm:px-12 lg:px-16 xl:px-24 h-10 overflow-x-auto no-scrollbar transition-opacity duration-200 ${isAboutOpen || isProductsOpen || isServicesOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             {submenu.items.map((item) => {
               const isActive = submenu.activeId === item.id;
               return (

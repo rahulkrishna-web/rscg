@@ -177,8 +177,8 @@ export default function JourneyTimeline() {
       setDisplayedItem(targetItem);
     }
 
-    // Scroll active button into view on mobile
-    if (typeof window !== "undefined" && window.innerWidth <= 768 && btnRefs.current[index]) {
+    // Scroll active button into view on mobile/tablet
+    if (typeof window !== "undefined" && window.innerWidth < 1024 && btnRefs.current[index]) {
       btnRefs.current[index]?.scrollIntoView({
         behavior: "smooth",
         block: "nearest",
@@ -193,7 +193,7 @@ export default function JourneyTimeline() {
     isManualClickRef.current = true;
     goToMilestone(index, true);
 
-    if (typeof window !== "undefined" && window.innerWidth > 768 && trackRef.current) {
+    if (typeof window !== "undefined" && window.innerWidth >= 1024 && trackRef.current) {
       const track = trackRef.current;
       const trackRect = track.getBoundingClientRect();
       const trackTop = window.scrollY + trackRect.top;
@@ -216,7 +216,7 @@ export default function JourneyTimeline() {
   // Scroll Synchronization
   useEffect(() => {
     const handleScroll = () => {
-      if (typeof window === "undefined" || window.innerWidth <= 768 || isManualClickRef.current)
+      if (typeof window === "undefined" || window.innerWidth < 1024 || isManualClickRef.current)
         return;
       const track = trackRef.current;
       if (!track) return;
@@ -337,34 +337,34 @@ export default function JourneyTimeline() {
         className="relative w-full lg:h-[380vh] bg-[#F6F6EE] scroll-mt-36"
       >
         {/* Sticky Viewport Stage */}
-        <section className="relative lg:sticky lg:top-[148px] w-full lg:h-[calc(100vh-148px)] lg:min-h-[580px] lg:max-h-[880px] bg-[#F6F6EE] flex items-center overflow-hidden py-12 lg:py-6">
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center h-full">
+        <section className="relative lg:sticky lg:top-[148px] w-full lg:min-h-[calc(100vh-148px)] lg:max-h-[920px] bg-[#F6F6EE] flex flex-col justify-center py-10 lg:py-4 xl:py-8">
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center my-auto">
             {/* Header: Eyebrow + Title + Subtitle */}
-            <div className="w-full mb-8 lg:mb-10">
-              <span className="inline-block text-xs font-bold tracking-[0.16em] uppercase text-[#0B2C1C] mb-2.5">
+            <div className="w-full mb-5 lg:mb-4 xl:mb-7">
+              <span className="inline-block text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase text-[#0B2C1C] mb-1 xl:mb-2">
                 Our Heritage &amp; Legacy
               </span>
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-black tracking-tight leading-[1.15] text-[#0B2C1C] mb-3">
+              <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[40px] font-heading font-black tracking-tight leading-[1.15] text-[#0B2C1C] mb-1.5 xl:mb-2.5">
                 Six Decades of Innovation.{" "}
                 <br className="hidden sm:inline" />
                 One Continuous <span className="text-[#FFAA17]">Milling Evolution.</span>
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
+              <p className="text-xs sm:text-sm lg:text-[15px] xl:text-base text-slate-600 max-w-2xl leading-relaxed">
                 Our journey has never been about replacing tradition. It has been about building
                 upon it, one innovation, one generation, and one breakthrough at a time.
               </p>
             </div>
 
             {/* Timeline Stage Grid */}
-            <div className="w-full grid grid-cols-1 lg:grid-cols-[140px_minmax(0,1fr)] gap-8 lg:gap-16 items-center">
+            <div className="w-full grid grid-cols-1 lg:grid-cols-[130px_minmax(0,1fr)] xl:grid-cols-[140px_minmax(0,1fr)] gap-6 lg:gap-8 xl:gap-14 items-center">
               {/* Left Column: Year Navigation */}
               <nav
                 ref={yearNavRef}
                 aria-label="Milestone Years"
-                className="relative flex flex-row lg:flex-col justify-start lg:justify-center gap-2 lg:gap-3.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-none border-b lg:border-b-0 border-slate-200/70"
+                className="relative flex flex-row lg:flex-col justify-start lg:justify-center gap-2 lg:gap-1 xl:gap-2.5 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-none border-b lg:border-b-0 border-slate-200/70"
               >
-                {/* Desktop subtle vertical timeline line */}
-                <div className="hidden lg:block absolute left-[6px] top-[4%] bottom-[4%] w-[1px] bg-slate-300" />
+                {/* Desktop subtle vertical timeline line - centered at x=6px */}
+                <div className="hidden lg:block absolute left-[6px] -translate-x-1/2 top-2.5 bottom-2.5 w-[1.5px] bg-slate-300 pointer-events-none" />
 
                 {milestones.map((m, idx) => {
                   const isActive = idx === currentIndex;
@@ -377,23 +377,23 @@ export default function JourneyTimeline() {
                       onClick={() => handleClickYear(idx)}
                       className={`relative z-10 text-left cursor-pointer transition-all duration-300 flex items-center shrink-0 ${
                         isActive
-                          ? "text-[#0B2C1C] font-bold text-sm"
+                          ? "text-[#0B2C1C] font-bold text-xs lg:text-[13px]"
                           : "text-slate-400 hover:text-[#0B2C1C] font-medium text-xs lg:text-[13px]"
-                      } px-3 py-1.5 lg:px-0 lg:py-1 lg:pl-7 rounded-full lg:rounded-none ${
+                      } px-3 py-1.5 lg:px-0 lg:py-0.5 xl:py-1 lg:pl-6 rounded-full lg:rounded-none ${
                         isActive ? "bg-white shadow-2xs lg:shadow-none lg:bg-transparent" : "bg-transparent"
                       }`}
                     >
-                      {/* Year Indicator Dot (Desktop) */}
+                      {/* Year Indicator Dot (Desktop) - centered at x=6px on the line */}
                       <span
-                        className={`hidden lg:block absolute left-[2px] top-1/2 -translate-y-1/2 w-[9px] h-[9px] rounded-full transition-all duration-300 ${
+                        className={`hidden lg:block absolute left-[6px] top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full transition-all duration-300 ${
                           isActive
-                            ? "bg-[#FFAA17] border-[#FFAA17] scale-125 shadow-xs"
-                            : "bg-[#F6F6EE] border border-slate-300"
+                            ? "w-[9px] h-[9px] bg-[#FFAA17] ring-2 ring-[#FFAA17]/40 shadow-xs"
+                            : "w-[7px] h-[7px] bg-[#F6F6EE] border border-slate-300 hover:border-slate-400"
                         }`}
                       />
                       <span
                         className={`transition-transform duration-300 inline-block ${
-                          isActive ? "lg:translate-x-1" : ""
+                          isActive ? "lg:translate-x-1 text-[#0B2C1C]" : ""
                         }`}
                       >
                         {m.year}
@@ -404,7 +404,7 @@ export default function JourneyTimeline() {
               </nav>
 
               {/* Right Column: Timeline Content Card */}
-              <div className="relative w-full min-h-[380px] lg:min-h-[440px] flex items-center">
+              <div className="relative w-full min-h-[280px] lg:min-h-[320px] xl:min-h-[400px] flex items-center">
                 {/* Subtle blueprint grid overlay */}
                 <div
                   className="absolute inset-0 pointer-events-none opacity-25 select-none"
@@ -417,12 +417,12 @@ export default function JourneyTimeline() {
                   }}
                 />
 
-                <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-8 lg:gap-14 items-center">
+                <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-10 xl:gap-14 items-center">
                   {/* Left inside card: Year Digits + Title + Description */}
-                  <div className="space-y-4 lg:pr-4">
+                  <div className="space-y-3 lg:space-y-4 lg:pr-4">
                     {/* Big Year with 3D Flip */}
                     <div
-                      className="text-[64px] sm:text-[76px] lg:text-[96px] xl:text-[110px] font-semibold text-[#0B2C1C] leading-[0.85] tracking-[-0.06em] select-none inline-flex"
+                      className="text-[52px] sm:text-[64px] lg:text-[76px] xl:text-[96px] font-semibold text-[#0B2C1C] leading-[0.85] tracking-[-0.06em] select-none inline-flex"
                       style={{ perspective: "800px" }}
                       aria-label={milestones[currentIndex].year}
                     >
@@ -433,7 +433,7 @@ export default function JourneyTimeline() {
 
                     {/* Milestone Title & Description with Pure Fade */}
                     <div
-                      className={`space-y-3 transition-opacity duration-200 ${
+                      className={`space-y-2 lg:space-y-3 transition-opacity duration-200 ${
                         isFadingOut
                           ? "opacity-0"
                           : isFadingIn
@@ -441,10 +441,10 @@ export default function JourneyTimeline() {
                           : "opacity-100"
                       }`}
                     >
-                      <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-semibold text-slate-900 tracking-tight leading-[1.2]">
+                      <h3 className="text-xl sm:text-2xl lg:text-[26px] xl:text-[32px] font-semibold text-slate-900 tracking-tight leading-[1.2]">
                         {displayedItem.title}
                       </h3>
-                      <p className="text-sm sm:text-[15px] lg:text-base text-slate-600 leading-relaxed max-w-xl">
+                      <p className="text-xs sm:text-sm lg:text-[15px] xl:text-base text-slate-600 leading-relaxed max-w-xl">
                         {displayedItem.description}
                       </p>
                     </div>
@@ -456,7 +456,7 @@ export default function JourneyTimeline() {
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} — ${displayedItem.title}`}
-                        className={`w-auto h-auto max-h-[280px] sm:max-h-[340px] lg:max-h-[390px] xl:max-h-[420px] max-w-full object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`w-auto h-auto max-h-[220px] sm:max-h-[280px] lg:max-h-[290px] xl:max-h-[380px] max-w-full object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"
