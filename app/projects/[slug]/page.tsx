@@ -113,15 +113,6 @@ export default function ProjectDetailPage() {
                <p className="text-sm sm:text-base text-slate-200 font-medium max-w-xl leading-relaxed line-clamp-3">
                  {overviewParagraph || "Discover how RS Choyal engineered and commissioned this high-yield milling installation with advanced technology and dependable automation."}
                </p>
-
-               <div className="pt-2 sm:pt-3">
-                 <Link
-                   href="/projects"
-                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 py-3 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
-                 >
-                   EXPLORE PROJECTS <ArrowRight className="w-4 h-4" />
-                 </Link>
-               </div>
              </div>
            </div>
         </section>
