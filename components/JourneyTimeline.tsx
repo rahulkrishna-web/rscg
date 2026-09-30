@@ -377,7 +377,7 @@ export default function JourneyTimeline() {
                       onClick={() => handleClickYear(idx)}
                       className={`relative z-10 text-left cursor-pointer transition-all duration-300 flex items-center shrink-0 ${
                         isActive
-                          ? "text-[#0B2C1C] font-bold text-sm lg:translate-x-1.5"
+                          ? "text-[#0B2C1C] font-bold text-sm"
                           : "text-slate-400 hover:text-[#0B2C1C] font-medium text-xs lg:text-[13px]"
                       } px-3 py-1.5 lg:px-0 lg:py-1 lg:pl-7 rounded-full lg:rounded-none ${
                         isActive ? "bg-white shadow-2xs lg:shadow-none lg:bg-transparent" : "bg-transparent"
@@ -391,7 +391,13 @@ export default function JourneyTimeline() {
                             : "bg-[#F6F6EE] border border-slate-300"
                         }`}
                       />
-                      <span>{m.year}</span>
+                      <span
+                        className={`transition-transform duration-300 inline-block ${
+                          isActive ? "lg:translate-x-1" : ""
+                        }`}
+                      >
+                        {m.year}
+                      </span>
                     </button>
                   );
                 })}
@@ -445,16 +451,18 @@ export default function JourneyTimeline() {
                   </div>
 
                   {/* Right inside card: Visual Milestone Image Frame */}
-                  <div className="relative w-full h-[280px] sm:h-[350px] lg:h-[400px] xl:h-[420px] rounded-xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90">
-                    <img
-                      src={displayedItem.image}
-                      alt={`${displayedItem.year} — ${displayedItem.title}`}
-                      className={`w-full h-full object-cover select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
-                        isImageChanging
-                          ? "opacity-0 scale-105"
-                          : "opacity-100 scale-100"
-                      }`}
-                    />
+                  <div className="relative flex items-center justify-center lg:justify-end w-full">
+                    <div className="relative rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                      <img
+                        src={displayedItem.image}
+                        alt={`${displayedItem.year} — ${displayedItem.title}`}
+                        className={`w-auto h-auto max-h-[280px] sm:max-h-[340px] lg:max-h-[390px] xl:max-h-[420px] max-w-full object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                          isImageChanging
+                            ? "opacity-0 scale-105"
+                            : "opacity-100 scale-100"
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

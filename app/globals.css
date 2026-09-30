@@ -288,3 +288,16 @@ body {
 .animate-faq-sway {
   animation: faqWheatSway 4.5s ease-in-out infinite 0.3s;
 }
+
+/* Smooth accordion grid transition without max-height snap */
+.faq-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 320ms cubic-bezier(0.4, 0, 0.2, 1), opacity 250ms ease;
+  opacity: 0;
+}
+
+.faq-accordion-content.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}

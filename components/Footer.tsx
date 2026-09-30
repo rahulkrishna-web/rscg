@@ -38,11 +38,7 @@ const certBadges = [
   { name: "ISO 9001:2008 Certified", src: "/images/footer/icons/ISO 9001_2008 certified.png" },
   { name: "Enabled", src: "/images/footer/icons/enabled.png" },
   { name: "ISO 9001:2015", src: "/images/footer/icons/ISO 9001_2015.png" },
-  { 
-    name: "Touch", 
-    src: "/images/footer/icons/touch.png",
-    cardBg: "bg-[#1c2722] border-[#1c2722] shadow-sm",
-  },
+  { name: "Touch", src: "/images/footer/icons/touch-dark.png" },
   { name: "Solar Energy", src: "/images/footer/icons/solar energy.png" },
   { name: "Energy Saver", src: "/images/footer/icons/energy saver.png" },
   { name: "ISO 22000:200", src: "/images/footer/icons/ISO 22000_200.png" },
@@ -245,19 +241,15 @@ export default function Footer() {
           {/* Right: 8 Certification & Feature Badges */}
           <div className="flex flex-wrap items-start justify-start lg:justify-end gap-3 sm:gap-4">
             {certBadges.map((badge) => (
-              <div key={badge.name} className="flex flex-col items-center group w-18 sm:w-20">
-                <div
-                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl border flex items-center justify-center p-2.5 group-hover:shadow-md transition-all duration-200 ${
-                    badge.cardBg || "bg-white border-slate-200/80 shadow-xs group-hover:border-slate-300"
-                  }`}
-                >
+              <div key={badge.name} className="flex flex-col items-center group w-16 sm:w-18">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center p-1 transition-transform duration-200 group-hover:scale-110">
                   <img
                     src={encodeURI(badge.src)}
                     alt={badge.name}
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
-                <span className="text-xs sm:text-sm text-slate-700 font-semibold text-center mt-2 leading-tight line-clamp-2">
+                <span className="text-[11px] sm:text-xs text-slate-700 font-semibold text-center mt-1.5 leading-tight line-clamp-2">
                   {badge.name}
                 </span>
               </div>

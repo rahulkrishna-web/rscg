@@ -62,7 +62,7 @@ interface ClientPartner {
   src: string;
 }
 
-const internationalClientsRow1: ClientPartner[] = [
+const internationalClients: ClientPartner[] = [
   { name: "Square Bangladesh", src: "/images/clients/client-logo-indian/17.png" },
   { name: "Noor Ghazal", src: "/images/clients/client-logo-indian/11.png" },
   { name: "Al Ghurair Foods", src: "/images/clients/client-logo-indian/21.png" },
@@ -74,9 +74,6 @@ const internationalClientsRow1: ClientPartner[] = [
   { name: "Azam", src: "/images/clients/client-logo-indian/4.png" },
   { name: "Bakhresa", src: "/images/clients/client-logo-indian/18.png" },
   { name: "Sam Mills", src: "/images/clients/client-logo-indian/16.png" },
-];
-
-const internationalClientsRow2: ClientPartner[] = [
   { name: "Baker's Dream", src: "/images/clients/client-logo-indian/7.png" },
   { name: "ZAMS Milling", src: "/images/clients/client-logo-indian/14.png" },
   { name: "Coralbell Global", src: "/images/clients/client-logo-indian/15.png" },
@@ -89,7 +86,7 @@ const internationalClientsRow2: ClientPartner[] = [
   { name: "Riverbank Foods", src: "/images/clients/client-logo-indian/13.png" },
 ];
 
-const domesticClientsRow1: ClientPartner[] = [
+const domesticClients: ClientPartner[] = [
   { name: "Rishta", src: "/images/clients/client-logo-international/7.png" },
   { name: "Purity & Trust", src: "/images/clients/client-logo-international/42.png" },
   { name: "Anupama Aahar", src: "/images/clients/client-logo-international/3.png" },
@@ -113,9 +110,6 @@ const domesticClientsRow1: ClientPartner[] = [
   { name: "ITC Limited", src: "/images/clients/itc.jpg" },
   { name: "India Gate", src: "/images/clients/indiagate.jpg" },
   { name: "Shakti Bhog", src: "/images/clients/shaktibhog.jpg" },
-];
-
-const domesticClientsRow2: ClientPartner[] = [
   { name: "Pillsbury", src: "/images/clients/pillsbury.jpg" },
   { name: "Raj Bhog", src: "/images/clients/client-logo-international/8.png" },
   { name: "RSY", src: "/images/clients/client-logo-international/9.png" },
@@ -146,11 +140,11 @@ const domesticClientsRow2: ClientPartner[] = [
 
 function ClientLogoCard({ client }: { client: ClientPartner }) {
   return (
-    <div className="flex items-center justify-center h-[90px] sm:h-[102px] md:h-[114px] w-40 sm:w-52 md:w-56 p-2 sm:p-2.5 bg-white border border-slate-200/80 rounded-xl sm:rounded-2xl shadow-xs shrink-0 select-none hover:shadow-md hover:border-slate-300 transition-all duration-300">
+    <div className="flex items-center justify-center h-[72px] sm:h-[84px] md:h-[96px] w-36 sm:w-44 md:w-52 px-3 sm:px-4 shrink-0 select-none transition-transform duration-300 hover:scale-105">
       <img
         src={encodeURI(client.src)}
         alt={client.name}
-        className="max-h-[66px] sm:max-h-[76px] md:max-h-[86px] max-w-[88%] w-auto object-contain"
+        className="max-h-[58px] sm:max-h-[70px] md:max-h-[82px] max-w-full w-auto object-contain mix-blend-multiply"
         loading="lazy"
       />
     </div>
@@ -369,9 +363,9 @@ export default function Home() {
   };
 
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
-  const [activeExpertise, setActiveExpertise] = useState<number | null>(1);
+  const [activeExpertise, setActiveExpertise] = useState<number | null>(null);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isTestimonialHovered, setIsTestimonialHovered] = useState(false);
 
   const toggleExpertise = (index: number) => {
     setActiveExpertise(activeExpertise === index ? null : index);
@@ -387,51 +381,28 @@ export default function Home() {
     productsData.find(p => p.slug === slug)
   ).filter(Boolean);
 
-  const slides = [
-    {
-      image: "/images/wondermill_internal.webp",
-      tag: "Smart Milling Solutions",
-      title: "Wonder Mill IoT Smart Mills",
-      description: "Experience the world's smartest digital stone mills. Featuring recipe-driven grinding, remote tablet operation, and up to 30% electricity savings.",
-      cta: "Request a Callback"
-    },
-    {
-      image: "/images/atta_plant_150tpd.webp",
-      tag: "Industrial Plants",
-      title: "Turnkey Flour Mill Plants",
-      description: "From engineering design to final on-site commissioning, we manufacture fully automated flour plants from 20 TPD to 150+ TPD.",
-      cta: "Request a Quote"
-    },
-    {
-      image: "/images/stone_dresser_hero.png",
-      tag: "Patented Automation",
-      title: "Emery Stone Dresser",
-      description: "Eliminate manual stone dressing. Our automated solutions increase plant safety, reduce downtime, and guarantee consistent flour texture.",
-      cta: "Get Spec Sheet"
-    },
-    {
-      image: "/images/qatar.webp",
-      tag: "Global Footprint",
-      title: "Trusted in 20+ Countries",
-      description: "Serving flour manufacturers across India, GCC countries, Africa, and South Asia with robust heavy machinery and global AMC support.",
-      cta: "Contact Our Team"
-    }
+  const rotatingPhrases = [
+    "Turnkey Solutions",
+    "Flour Mills",
+    "Grain Storage Silos",
+    "Dampening Machines",
+    "Cleaning Machines",
+    "Automation"
   ];
+  const [displayedHeroIndex, setDisplayedHeroIndex] = useState(0);
+  const [heroAnimPhase, setHeroAnimPhase] = useState<"in" | "out">("in");
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [slides.length]);
+    const interval = setInterval(() => {
+      setHeroAnimPhase("out");
+      setTimeout(() => {
+        setDisplayedHeroIndex((prev) => (prev + 1) % rotatingPhrases.length);
+        setHeroAnimPhase("in");
+      }, 380);
+    }, 3500);
 
-  const handlePrevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
-  const handleNextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
+    return () => clearInterval(interval);
+  }, [rotatingPhrases.length]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -516,6 +487,16 @@ export default function Home() {
     }
   ];
 
+  useEffect(() => {
+    if (isTestimonialHovered) return;
+
+    const timer = setInterval(() => {
+      setActiveTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(timer);
+  }, [isTestimonialHovered, testimonials.length]);
+
   const faqs = [
     {
       q: "What industrial solutions does RS Choyal Group provide?",
@@ -546,100 +527,104 @@ export default function Home() {
       {/* Navigation Header */}
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
-      {/* --- Full Width Corporate Slideshow Section --- */}
-      <main ref={heroRef} className="w-full relative z-10 h-[70vh] sm:h-[80vh] min-h-[500px] overflow-hidden lead-gradient border-b border-[#1c2722]/5">
-        
-        {/* Carousel Background Images with Fade transition */}
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 ${
-              currentSlide === index ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-            }`}
-          >
-            {/* The Image */}
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              fill
-              sizes="100vw"
-              priority={index === 0}
-              className={`object-cover object-center transition-transform duration-[6000ms] ease-out ${
-                currentSlide === index ? "scale-100" : "scale-105"
-              }`}
-            />
-            
-            {/* Gradient Overlay for superior text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-brand-primary/95 via-brand-primary/80 to-transparent pointer-events-none"></div>
-            
-            {/* Content overlay container */}
-            <div className="absolute inset-0 flex items-center px-6 sm:px-12 lg:px-16 xl:px-24">
-              <div className="w-full max-w-[1440px] mx-auto">
-                <div className="max-w-3xl space-y-6 sm:space-y-8 text-white relative z-10">
-                  <span className="inline-flex bg-brand-tertiary/20 text-brand-tertiary border border-brand-tertiary/30 px-3.5 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider animate-fade-in">
-                    {slide.tag}
+      {/* Keyframe styles for text fade-up animation */}
+      <style jsx>{`
+        @keyframes heroTextFadeUpIn {
+          0% {
+            opacity: 0;
+            transform: translateY(28px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        @keyframes heroTextFadeUpOut {
+          0% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          100% {
+            opacity: 0;
+            transform: translateY(-28px);
+          }
+        }
+        .animate-hero-fade-in {
+          animation: heroTextFadeUpIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .animate-hero-fade-out {
+          animation: heroTextFadeUpOut 0.38s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+      `}</style>
+
+      {/* --- Full Width Homepage Hero Section --- */}
+      <main
+        ref={heroRef}
+        className="w-full relative z-10 min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] xl:min-h-[760px] h-[85vh] max-h-[920px] flex flex-col justify-end overflow-hidden pb-12 sm:pb-16 lg:pb-20 border-b border-[#1c2722]/5"
+      >
+        {/* Background Factory Aerial Image */}
+        <Image
+          src="/images/contact/factory.png"
+          alt="RS Choyal Factory & Engineering Complex"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+
+        {/* Balanced Gradient Overlays: Clear landscape & sky on top, smooth dark gradient at bottom for text visibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-45% to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent pointer-events-none" />
+
+        {/* Content Container */}
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-end justify-between">
+            {/* Left Column: Heading with Rotating Text & Subtitle */}
+            <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-5 text-left">
+              <h1 className="text-3xl sm:text-5xl lg:text-[54px] xl:text-[62px] font-black text-white tracking-tight leading-[1.12] font-heading drop-shadow-md">
+                <span className="block text-white">We bring precision to</span>
+                <span className="block h-[1.28em] relative overflow-hidden mt-1 sm:mt-1.5">
+                  <span
+                    key={displayedHeroIndex}
+                    className={`block text-[#f7b032] whitespace-nowrap ${
+                      heroAnimPhase === "in"
+                        ? "animate-hero-fade-in"
+                        : "animate-hero-fade-out"
+                    }`}
+                  >
+                    {rotatingPhrases[displayedHeroIndex]}
                   </span>
+                </span>
+              </h1>
 
-                  <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-[1.1]">
-                    {slide.title}
-                  </h1>
+              <p className="text-sm sm:text-base lg:text-lg text-slate-200/90 leading-relaxed font-normal max-w-xl drop-shadow-sm pt-1">
+                A legacy of engineering excellence, delivering advanced milling technology, turnkey solutions, and industrial systems across global markets.
+              </p>
+            </div>
 
-                  <p className="text-sm sm:text-base lg:text-lg text-slate-200 leading-relaxed max-w-2xl">
-                    {slide.description}
-                  </p>
-
-                  <div className="pt-2 flex flex-col sm:flex-row gap-4">
-                    <Link
-                      href="/contact"
-                      className="bg-brand-tertiary hover:bg-brand-tertiary/90 text-slate-900 font-bold px-7 py-3.5 rounded-xl shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
-                    >
-                      <span>{slide.cta}</span>
-                      <ArrowRight className="h-4 w-4" />
-                    </Link>
-                    <button
-                      onClick={() => {
-                        const section = document.getElementById("brands");
-                        section?.scrollIntoView({ behavior: "smooth" });
-                      }}
-                      className="border border-white/30 bg-white/10 hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 text-sm sm:text-base flex items-center justify-center cursor-pointer w-full sm:w-auto"
-                    >
-                      Explore Divisions
-                    </button>
+            {/* Right Column: 3 Glassmorphism Stat Cards */}
+            <div className="lg:col-span-5 xl:col-span-5 flex lg:justify-end pb-1">
+              <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full sm:w-auto">
+                {[
+                  { number: "60+", label: "Years of Experience" },
+                  { number: "265+", label: "Turnkey Solutions" },
+                  { number: "6+", label: "Patented Technology" },
+                ].map((card, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 lg:p-6 shadow-2xl flex flex-col justify-center min-w-[95px] sm:min-w-[130px] lg:min-w-[145px] hover:bg-white/15 transition-all duration-300"
+                  >
+                    <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-black text-[#f7b032] tracking-tight leading-none mb-1.5 sm:mb-2 drop-shadow-xs">
+                      {card.number}
+                    </span>
+                    <span className="text-xs sm:text-sm text-white/95 font-medium leading-snug">
+                      {card.label}
+                    </span>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
-        ))}
-
-        {/* Slideshow Arrow Navigation */}
-        <button
-          onClick={handlePrevSlide}
-          className="absolute left-4 sm:left-8 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer hover:scale-105"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
-        </button>
-        <button
-          onClick={handleNextSlide}
-          className="absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 z-20 w-10 sm:w-12 h-10 sm:h-12 rounded-full border border-white/20 bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer hover:scale-105"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
-        </button>
-
-        {/* Dot Indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2.5">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-2.5 sm:w-3 h-2.5 sm:h-3 rounded-full transition-all cursor-pointer ${
-                currentSlide === index ? "bg-brand-tertiary w-8" : "bg-white/40 hover:bg-white/60"
-              }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
         </div>
       </main>
 
@@ -916,9 +901,11 @@ export default function Home() {
                 cta: "View Silos & Handling",
                 href: "/grain-storage-handling",
                 svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h36v36H0z" fill="none" />
-                    <path d="M33 6.69c-.18-3.41-9.47-4.33-15-4.33S3 3.29 3 6.78v22.59c0 3.49 9.43 4.43 15 4.43s15-.93 15-4.43zm-2 7.56c-.33.86-5.06 2.45-13 2.45a37.5 37.5 0 0 1-11-1.36v2.08a43.3 43.3 0 0 0 11 1.28c4 0 9.93-.48 13-2v5.17c-.33.86-5.06 2.45-13 2.45a37.5 37.5 0 0 1-11-1.4V25a43.3 43.3 0 0 0 11 1.28c4 0 9.93-.48 13-2v5.1c-.35.86-5.08 2.45-13 2.45S5.3 30.2 5 29.37V6.82c.3-.82 5-.246 13-.246c7.77 0 12.46 1.53 13 2.37c-.52.87-5.21 2.39-13 2.39A37.6 37.6 0 0 1 7 7.76v2.09a43.5 43.5 0 0 0 11 1.27c4 0 9.93-.48 13-2Z" />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
+                    <ellipse cx="24" cy="11.5" rx="15" ry="5.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 11.5v25c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5v-25" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 20c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 28.5c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5" />
                   </svg>
                 )
               },
@@ -949,9 +936,12 @@ export default function Home() {
                 cta: "View Grinding & Sifting",
                 href: "/flour-processing",
                 svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h512v512H0z" fill="none" />
-                    <path d="M275.8 42.39c-18.5.45-46.9 19.85-69 40.34c-4.6 4.26-8.8 8.41-12.7 12.39c56.2 2.45 109.2-.36 161.8-4.21c-5.1-4.92-11-10.33-17.6-15.86c-20.5-17.21-46.6-33.05-62.5-32.66M436 102.9c-100 7.3-198.7 18.6-313.9 4.3c-5.2 5.1-7.9 9.6-8.7 13.3c-.7 3.6-.2 6.9 2.2 11.1c113.5 25.3 227 25.9 327.2-6.6c.5-2.8.1-5.7-1.1-9.4c-1.2-3.8-3.3-8.1-5.7-12.7m-12.5 46.6c-89.1 23.9-186.5 23.7-284.1 5.4c-23.9 92.3-70 175.4-56.93 272.7l1.16 8.6l-8.57 1.5c-9.83 1.6-23.83 10.3-31.95 19.3c-4.07 4.5-6.59 9-7.18 11.5c-.59 2.4-.94 1.4.33 2.2c5.18 3.5 21 5.4 37.83 2.8s34.81-8.9 45.71-15.8l3-1.9l3.5.7c87.2 16.5 166.5 24.8 254 3.6l4.3-1.1l3.5 2.8c5.6 4.6 23.7 8.4 42.4 9c17 .6 33.8-.5 45.2-1c-1.1-3-3.3-7.6-6.6-12.5c-4.2-6-9.5-12.2-14.5-16.9c-5.1-4.7-10.4-7.4-11.1-7.6l-8.9-1.7l1.8-8.9c18.1-89.2 26.5-179.5-12.9-272.7M271 184.9c59.3 0 106.2 54.7 106.2 120.6S330.3 426.1 271 426.1s-106.2-54.7-106.2-120.6S211.7 184.9 271 184.9m0 18c-48.1 0-88.2 45.2-88.2 102.6c0 52.7 33.8 95.1 76.6 101.7l2-39.1c-30.8-6-39.8-39.4-39.9-51.7c9.3 1 30 8.3 41.3 24.8l1.3-24.4c-30.9-5.9-39.9-39.4-40-51.7c9.2 1 30.1 8.3 41.4 25l1.3-24.3c-17.8-7.4-23.3-29.1-23.4-37.5c8 .8 27.4 8.2 33.9 25.5c8.4-16.4 28.3-21.7 36.2-21.7c-.9 8.8-9 30.6-28.8 35.4l-1.2 23.3c12.9-15.3 34.3-20.4 43.7-20.3c-1.5 12.1-13.8 44.5-45.1 47.2l-1.3 24.6c12.9-15.4 34.4-20.5 43.7-20.5c-1.3 12.1-13.7 44.6-45.1 47.2l-2 38.8c45.2-3.8 81.8-47.5 81.8-102.3c0-57.4-40.1-102.6-88.2-102.6" />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17.5 13L13.5 7.5c2.5 1.5 6 2 10.5 2s8-.5 10.5-2L30.5 13" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M16 13.5c2.5 1.8 13.5 1.8 16 0" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17 14C13.5 18 9.5 26 9.5 37c-1.5 1.5-2 3.5 0 4.5s3.5-.5 4.5-2c3 1.5 6.5 2 10 2s7-.5 10-2c1 1.5 2.5 3 4.5 2s1.5-3 0-4.5c0-11-4-19-7.5-23" />
+                    <circle cx="24" cy="27" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                    <path fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" d="M24 22.5v9M24 23.8c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 23.8c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9M24 26.5c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 26.5c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9M24 29.2c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 29.2c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9" />
                   </svg>
                 )
               },
@@ -962,9 +952,18 @@ export default function Home() {
                 cta: "View Packaging Solutions",
                 href: "/vending-machines",
                 svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h16v16H0z" fill="none" />
-                    <path d="M1.5 1c-.277 0-.5.223-.5.5v13c0 .277.223.5.5.5h12c.277 0 .5-.223.5-.5v-13c0-.277-.223-.5-.5-.5zm1 1h8c.277 0 .5.223.5.5v10c0 .277-.223.5-.5.5h-8a.5.5 0 0 1-.5-.5v-10c0-.277.223-.5.5-.5m10 0c.277 0 .5.223.5.5v1a.499.499 0 1 1-1 0v-1c0-.277.223-.5.5-.5m-6 2a.5.5 0 0 0-.465.314s-.257.644-.514 1.477q-.093.305-.183.633l-.033-.057a3.8 3.8 0 0 0-.742-.916c-.276-.238-.61-.427-.998-.447a.5.5 0 0 0-.25.96c.513.206.648.422.738.725c.09.304.072.725.072 1.186s.017 1.01.399 1.463c.31.368.796.576 1.476.64V12h1V9.979c.68-.065 1.166-.273 1.477-.641c.381-.453.398-1.002.398-1.463s-.018-.882.072-1.186s.226-.519.739-.724a.5.5 0 0 0-.25-.961h-.002c-.388.02-.721.209-.996.447c-.291.252-.535.57-.743.916l-.033.057q-.09-.328-.183-.633c-.257-.833-.514-1.477-.514-1.477A.5.5 0 0 0 6.5 4m6 1a.5.5 0 1 1 0 1a.5.5 0 0 1 0-1m0 2a.5.5 0 1 1 0 1a.5.5 0 0 1 0-1m0 2a.5.5 0 1 1 0 1a.5.5 0 0 1 0-1" />
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
+                    <rect x="10" y="5" width="28" height="36" rx="3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M14 41v3M34 41v3" />
+                    <rect x="14" y="9" width="14" height="20" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M14 19h14M17.5 13.5h2.5M22.5 13.5h2.5M17.5 23.5h2.5M22.5 23.5h2.5" />
+                    <rect x="30.5" y="10" width="5" height="3.5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
+                    <line x1="31" y1="16.5" x2="35" y2="16.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+                    <circle cx="33" cy="20.5" r="0.9" fill="currentColor" />
+                    <circle cx="33" cy="24" r="0.9" fill="currentColor" />
+                    <circle cx="33" cy="27.5" r="0.9" fill="currentColor" />
+                    <rect x="14" y="32" width="20" height="6" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                    <line x1="18" y1="35" x2="30" y2="35" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
                   </svg>
                 )
               },
@@ -1041,67 +1040,66 @@ export default function Home() {
           <div className="lg:col-span-7 relative flex items-center justify-center lg:justify-end select-none py-6 lg:py-0">
             
             {/* Desktop Orbital Diagram (visible lg and up) */}
-            <div className="hidden lg:block relative w-[640px] h-[640px]">
+            <div className="hidden lg:block relative w-[760px] h-[760px] xl:w-[780px] xl:h-[780px] scale-[0.82] lg:scale-[0.88] xl:scale-100 origin-center lg:origin-right">
               
               {/* Concentric Golden Orbit Rings & Ambience */}
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[300px] h-[300px] rounded-full bg-amber-200/20 blur-3xl" />
-                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 640 640" fill="none">
+                <div className="w-[380px] h-[380px] rounded-full bg-amber-200/25 blur-3xl" />
+                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 780 780" fill="none">
                   {/* Inner subtle concentric circle */}
-                  <circle cx="320" cy="320" r="100" stroke="#FDE68A" strokeWidth="1.5" strokeOpacity="0.7" />
+                  <circle cx="390" cy="390" r="130" stroke="#FDE68A" strokeWidth="1.5" strokeOpacity="0.7" />
                   
-                  {/* Primary Golden Circular Orbit Path (passes smoothly behind card centers) */}
-                  <circle cx="320" cy="320" r="215" stroke="#E5A93C" strokeWidth="2.5" strokeOpacity="0.95" />
+                  {/* Primary Golden Circular Orbit Path (30% larger, passes smoothly behind card centers) */}
+                  <circle cx="390" cy="390" r="280" stroke="#E5A93C" strokeWidth="2.5" strokeOpacity="0.95" />
                   
                   {/* Outer subtle concentric circle */}
-                  <circle cx="320" cy="320" r="290" stroke="#FDE68A" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="5 5" />
+                  <circle cx="390" cy="390" r="365" stroke="#FDE68A" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="5 5" />
                 </svg>
               </div>
 
-              {/* Central WHY RSC Hub */}
+              {/* Central WHY RSCG Hub */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 xl:w-36 xl:h-36 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-300 shadow-[0_8px_25px_rgba(245,158,11,0.18)] flex flex-col items-center justify-center text-center z-10">
-                <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.25em] uppercase">
-                  WHY RSC
+                <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.22em] uppercase">
+                  WHY RSCG
                 </span>
-                <div className="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full" />
               </div>
 
-              {/* 5 Orbital Cards positioned in a mathematically regular circle */}
+              {/* 5 Orbital Cards positioned in a mathematically regular circle (30% expanded orbit) */}
               {[
                 {
                   title: "Trust",
                   desc: "Trust is indispensable to Choyal. We believe in fair and transparent business, giving our clients peace of mind.",
                   icon: "/images/why-rscg-section/icons/trust.png",
-                  x: 320,
-                  y: 105
+                  x: 390,
+                  y: 110
                 },
                 {
                   title: "Quality",
                   desc: "Quality and excellence define our product range. We provide solutions built to deliver dependable performance.",
                   icon: "/images/why-rscg-section/icons/quality.png",
-                  x: 525,
-                  y: 254
+                  x: 656,
+                  y: 304
                 },
                 {
                   title: "Innovation",
                   desc: "Driven by rigorous R&D, we develop advanced milling solutions for different budgets and industrial scales.",
                   icon: "/images/why-rscg-section/icons/innovation.png",
-                  x: 446,
-                  y: 494
+                  x: 555,
+                  y: 617
                 },
                 {
                   title: "Economical Solutions",
                   desc: "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.",
                   icon: "/images/why-rscg-section/icons/economical-solutions.png",
-                  x: 194,
-                  y: 494
+                  x: 225,
+                  y: 617
                 },
                 {
                   title: "Experience",
                   desc: "With 60+ years of experience, we bring deep milling expertise, proven technology, and skilled teams to every project.",
                   icon: "/images/why-rscg-section/icons/experience.png",
-                  x: 115,
-                  y: 254
+                  x: 124,
+                  y: 304
                 }
               ].map((item, idx) => (
                 <div
@@ -1111,7 +1109,7 @@ export default function Home() {
                     top: `${item.y}px`,
                     transform: "translate(-50%, -50%)"
                   }}
-                  className="absolute w-[180px] xl:w-[190px] z-20 group"
+                  className="absolute w-[195px] xl:w-[215px] z-20 group"
                 >
                   <div className="relative pt-5">
                     {/* Circular Icon Badge centered directly on top border */}
@@ -1126,11 +1124,11 @@ export default function Home() {
                     </div>
 
                     {/* Card Body seamlessly joined under the icon badge */}
-                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl pt-7 pb-3.5 px-3.5 shadow-[0_6px_20px_rgba(0,0,0,0.06)] border border-amber-100/90 text-center flex flex-col items-center hover:shadow-xl hover:border-amber-300 transition-all duration-300">
-                      <h3 className="font-bold text-slate-900 text-xs sm:text-[13px] tracking-tight mb-1">
+                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl pt-7 pb-4.5 px-4 shadow-[0_6px_20px_rgba(0,0,0,0.06)] border border-amber-100/90 text-center flex flex-col items-center hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+                      <h3 className="font-bold text-slate-900 text-[14px] sm:text-[15px] tracking-tight mb-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-slate-500 text-[10.5px] leading-relaxed">
+                      <p className="text-slate-600 text-[12px] xl:text-[12.5px] leading-relaxed">
                         {item.desc}
                       </p>
                     </div>
@@ -1145,9 +1143,8 @@ export default function Home() {
               <div className="flex justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-200 shadow-md flex flex-col items-center justify-center text-center">
                   <span className="text-slate-900 font-extrabold text-xs tracking-[0.2em] uppercase">
-                    WHY RSC
+                    WHY RSCG
                   </span>
-                  <div className="w-8 h-0.5 bg-amber-400 mt-1.5 rounded-full" />
                 </div>
               </div>
 
@@ -1188,8 +1185,8 @@ export default function Home() {
                     <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white shadow-md border border-amber-100 flex items-center justify-center p-2">
                       <Image src={item.icon} alt={item.title} width={24} height={24} className="object-contain" />
                     </div>
-                    <h3 className="font-extrabold text-slate-900 text-sm tracking-tight mb-1">{item.title}</h3>
-                    <p className="text-slate-500 text-xs leading-relaxed">{item.desc}</p>
+                    <h3 className="font-extrabold text-slate-900 text-sm sm:text-[15px] tracking-tight mb-1">{item.title}</h3>
+                    <p className="text-slate-600 text-xs sm:text-[12.5px] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
               </div>
@@ -1346,7 +1343,7 @@ export default function Home() {
 
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between relative">
           
-          {/* Left Column: Heading, Subtitle & Interactive Navigation Controls */}
+          {/* Left Column: Heading & Subtitle */}
           <div className="lg:col-span-5 space-y-6">
             <div className="space-y-3">
               <span className="text-sm font-bold text-[#015435] tracking-wide block">
@@ -1360,40 +1357,14 @@ export default function Home() {
             <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md">
               Experiences shared by our clients who trusted us with their industrial projects and milling solutions.
             </p>
-
-            {/* Slider Navigation Controls */}
-            <div className="flex items-center gap-3 pt-2">
-              <button
-                onClick={() => setActiveTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-                aria-label="Previous testimonial"
-                className="w-11 h-11 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all shadow-xs hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setActiveTestimonial((prev) => (prev + 1) % testimonials.length)}
-                aria-label="Next testimonial"
-                className="w-11 h-11 rounded-full border border-slate-300 bg-white hover:bg-slate-50 text-slate-700 flex items-center justify-center transition-all shadow-xs hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-              <div className="flex gap-2 ml-3">
-                {testimonials.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => setActiveTestimonial(i)}
-                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                      activeTestimonial === i ? "w-7 bg-[#015435]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
-                  />
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Right Column: 3D Stacked Carousel Deck */}
-          <div className="lg:col-span-7 relative w-full flex items-center justify-center lg:justify-end select-none">
+          <div 
+            className="lg:col-span-7 relative w-full flex flex-col items-center justify-center lg:items-end select-none"
+            onMouseEnter={() => setIsTestimonialHovered(true)}
+            onMouseLeave={() => setIsTestimonialHovered(false)}
+          >
             <div className="relative w-full max-w-[580px] lg:max-w-[620px] xl:max-w-[660px] h-[440px] sm:h-[460px] flex items-center justify-center">
             {testimonials.map((t, idx) => {
               const diff = (idx - activeTestimonial + testimonials.length) % testimonials.length;
@@ -1455,6 +1426,20 @@ export default function Home() {
               );
             })}
             </div>
+
+            {/* Pagination Dots below the cards */}
+            <div className="flex items-center justify-center gap-2 pt-3 w-full max-w-[580px] lg:max-w-[620px] xl:max-w-[660px]">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveTestimonial(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    activeTestimonial === i ? "w-7 bg-[#015435]" : "w-2.5 bg-slate-300 hover:bg-slate-400"
+                  }`}
+                  aria-label={`Go to slide ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
 
         </div>
@@ -1462,7 +1447,7 @@ export default function Home() {
 
       {/* --- Accordion FAQ Section --- */}
       <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-white border-t border-slate-100 overflow-hidden">
-        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center justify-between">
+        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start justify-between">
           
           {/* Left Column: Heading & Accordion Items */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
@@ -1476,11 +1461,11 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="space-y-3.5 sm:space-y-4 pt-1">
+            <div className="space-y-3.5 sm:space-y-4 pt-1 min-h-[520px] sm:min-h-[540px] lg:min-h-[560px]">
               {faqs.map((faq, idx) => (
                 <div 
                   key={idx} 
-                  className="bg-white border border-slate-200/90 rounded-2xl sm:rounded-[22px] transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-slate-300 overflow-hidden"
+                  className="bg-white border border-slate-200/90 rounded-2xl sm:rounded-[22px] transition-[box-shadow,border-color] duration-200 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-slate-300 overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
@@ -1489,7 +1474,7 @@ export default function Home() {
                     <span className="text-[#1c2722] font-bold text-base sm:text-lg leading-snug group-hover:text-[#015435] transition-colors">
                       {faq.q}
                     </span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
                       activeFaq === idx 
                         ? "bg-amber-100 text-amber-700 rotate-180" 
                         : "bg-slate-100 text-slate-500 group-hover:bg-slate-200/80"
@@ -1499,12 +1484,14 @@ export default function Home() {
                   </button>
                   
                   <div 
-                    className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                      activeFaq === idx ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                    className={`faq-accordion-content overflow-hidden ${
+                      activeFaq === idx ? "is-open" : ""
                     }`}
                   >
-                    <div className="px-5 sm:px-7 pb-5 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/90">
-                      {faq.a}
+                    <div className="overflow-hidden">
+                      <div className="px-5 sm:px-7 pb-5 pt-1 text-slate-600 text-sm sm:text-base leading-relaxed border-t border-slate-100/90">
+                        {faq.a}
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1581,7 +1568,7 @@ export default function Home() {
             <div className="relative flex flex-col items-center">
               
               {/* Card 1: Top Tilted Plant Image */}
-              <div className="relative z-10 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] -rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:z-30 animate-faq-float-1">
+              <div className="relative z-10 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] -rotate-3 animate-faq-float-1 pointer-events-none">
                 <div className="bg-white p-2.5 sm:p-3 rounded-3xl sm:rounded-[28px] shadow-[0_15px_35px_rgba(0,0,0,0.12)] border border-slate-100/90">
                   <div className="aspect-[4/3] rounded-2xl sm:rounded-[20px] overflow-hidden relative bg-slate-100">
                     <Image
@@ -1597,7 +1584,7 @@ export default function Home() {
               </div>
 
               {/* Card 2: Bottom Tilted Emery Stone Machine Image */}
-              <div className="relative z-20 -mt-16 sm:-mt-20 ml-16 sm:ml-24 md:ml-28 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] rotate-3 transition-transform duration-500 hover:rotate-0 hover:scale-105 hover:z-30 animate-faq-float-2">
+              <div className="relative z-20 -mt-16 sm:-mt-20 ml-16 sm:ml-24 md:ml-28 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] rotate-3 animate-faq-float-2 pointer-events-none">
                 <div className="bg-white p-2.5 sm:p-3 rounded-3xl sm:rounded-[28px] shadow-[0_20px_45px_rgba(0,0,0,0.16)] border border-slate-100/90">
                   <div className="aspect-[4/3] rounded-2xl sm:rounded-[20px] overflow-hidden relative bg-slate-100">
                     <Image
@@ -1727,37 +1714,19 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="space-y-4 sm:space-y-6 marquee-container">
-              {/* Row 1 */}
+            <div className="marquee-container">
               <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
                 <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
 
                 <div className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full">
-                  {internationalClientsRow1.map((client, idx) => (
-                    <ClientLogoCard key={`intl-r1-1-${idx}`} client={client} />
+                  {internationalClients.map((client, idx) => (
+                    <ClientLogoCard key={`intl-1-${idx}`} client={client} />
                   ))}
                 </div>
                 <div className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full" aria-hidden="true">
-                  {internationalClientsRow1.map((client, idx) => (
-                    <ClientLogoCard key={`intl-r1-2-${idx}`} client={client} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Row 2 */}
-              <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-
-                <div className="flex shrink-0 animate-marquee-reverse items-center gap-5 sm:gap-6 min-w-full">
-                  {internationalClientsRow2.map((client, idx) => (
-                    <ClientLogoCard key={`intl-r2-1-${idx}`} client={client} />
-                  ))}
-                </div>
-                <div className="flex shrink-0 animate-marquee-reverse items-center gap-5 sm:gap-6 min-w-full" aria-hidden="true">
-                  {internationalClientsRow2.map((client, idx) => (
-                    <ClientLogoCard key={`intl-r2-2-${idx}`} client={client} />
+                  {internationalClients.map((client, idx) => (
+                    <ClientLogoCard key={`intl-2-${idx}`} client={client} />
                   ))}
                 </div>
               </div>
@@ -1775,37 +1744,26 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="space-y-4 sm:space-y-6 marquee-container">
-              {/* Row 1 */}
+            <div className="marquee-container">
               <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
                 <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
 
-                <div className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full">
-                  {domesticClientsRow1.map((client, idx) => (
-                    <ClientLogoCard key={`dom-r1-1-${idx}`} client={client} />
+                <div 
+                  className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full"
+                  style={{ animationDuration: `${((55 * domesticClients.length) / internationalClients.length).toFixed(1)}s` }}
+                >
+                  {domesticClients.map((client, idx) => (
+                    <ClientLogoCard key={`dom-1-${idx}`} client={client} />
                   ))}
                 </div>
-                <div className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full" aria-hidden="true">
-                  {domesticClientsRow1.map((client, idx) => (
-                    <ClientLogoCard key={`dom-r1-2-${idx}`} client={client} />
-                  ))}
-                </div>
-              </div>
-
-              {/* Row 2 */}
-              <div className="flex overflow-hidden w-full select-none gap-5 sm:gap-6 relative">
-                <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-r from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-36 bg-gradient-to-l from-[#FBFBF9] to-transparent z-20 pointer-events-none" />
-
-                <div className="flex shrink-0 animate-marquee-reverse items-center gap-5 sm:gap-6 min-w-full">
-                  {domesticClientsRow2.map((client, idx) => (
-                    <ClientLogoCard key={`dom-r2-1-${idx}`} client={client} />
-                  ))}
-                </div>
-                <div className="flex shrink-0 animate-marquee-reverse items-center gap-5 sm:gap-6 min-w-full" aria-hidden="true">
-                  {domesticClientsRow2.map((client, idx) => (
-                    <ClientLogoCard key={`dom-r2-2-${idx}`} client={client} />
+                <div 
+                  className="flex shrink-0 animate-marquee items-center gap-5 sm:gap-6 min-w-full"
+                  style={{ animationDuration: `${((55 * domesticClients.length) / internationalClients.length).toFixed(1)}s` }}
+                  aria-hidden="true"
+                >
+                  {domesticClients.map((client, idx) => (
+                    <ClientLogoCard key={`dom-2-${idx}`} client={client} />
                   ))}
                 </div>
               </div>
@@ -1851,20 +1809,21 @@ export default function Home() {
 
       {/* Floating Bottom CTA */}
       <div
-        className="fixed bottom-6 left-1/2 z-40 transition-all duration-500 ease-out flex items-center justify-center"
+        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 transition-all duration-500 ease-out flex items-center justify-center"
         style={{
-          transform: `translateX(-50%) translateY(${showFloatingCTA ? "0px" : "100px"}) scale(${showFloatingCTA ? 1 : 0.9})`,
+          transform: `translateY(${showFloatingCTA ? "0px" : "100px"}) scale(${showFloatingCTA ? 1 : 0.9})`,
           opacity: showFloatingCTA ? 1 : 0,
           pointerEvents: showFloatingCTA ? "auto" : "none",
         }}
       >
-        <div className="relative rounded-full p-[2px] animate-shimmer shadow-xl hover:scale-105 transition-all duration-300">
+        <div className="relative rounded-full p-[2px] animate-shimmer shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300">
           <button
             onClick={() => setIsModalOpen(true)}
-            className="relative bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-3.5 px-8 rounded-full flex items-center gap-2 cursor-pointer whitespace-nowrap text-sm sm:text-base"
+            aria-label="Request a Call"
+            title="Request a Call"
+            className="relative w-14 h-14 bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-brand-primary/40 transition-all duration-200"
           >
-            <span>Request a Call</span>
-            <ArrowRight className="h-4 w-4" />
+            <Phone className="h-6 w-6 stroke-[2.2]" />
           </button>
         </div>
       </div>
