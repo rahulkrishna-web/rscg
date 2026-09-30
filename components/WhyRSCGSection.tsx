@@ -85,7 +85,7 @@ export default function WhyRSCGSection() {
           {whyRSCItems.map((item, idx) => (
             <article
               key={item.number}
-              className={`w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between ${
+              className={`w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between ${
                 idx === 4 ? "md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto" : ""
               }`}
             >

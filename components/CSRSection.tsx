@@ -98,15 +98,19 @@ export default function CSRSection() {
                   </div>
                 </div>
 
-                {/* Dark Gradient Scrim for high-contrast legibility */}
+                {/* Dark Gradient Scrim - only appears on hover or active */}
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/75 via-50% to-transparent pointer-events-none transition-opacity duration-300"
+                  className={`absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/80 via-55% to-transparent pointer-events-none transition-opacity duration-300 ${
+                    isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
                   aria-hidden="true"
                 />
 
                 {/* Bottom Content Layer */}
                 <div className="absolute left-0 right-0 bottom-0 p-6 sm:p-7 z-10 flex flex-col justify-end">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight leading-snug drop-shadow-xs">
+                  <h3 className={`text-xl sm:text-2xl font-bold tracking-tight leading-snug transition-colors duration-300 ${
+                    isActive ? "text-white" : "text-[#0E3321] group-hover:text-white"
+                  }`}>
                     {item.title}
                   </h3>
 

@@ -307,7 +307,7 @@ export default function TurnkeyProjects() {
             {projectCapabilities.map((cap) => (
               <div 
                 key={cap.id} 
-                className="w-[82vw] max-w-[340px] lg:w-auto shrink-0 snap-start bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group"
+                className="w-[82vw] max-w-[340px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group"
               >
                 {/* Image Half */}
                 <div className="w-[40%] relative shrink-0 min-h-[160px]">
@@ -392,7 +392,7 @@ export default function TurnkeyProjects() {
               <Link 
                 key={idx} 
                 href={`/projects/${proj.slug}`}
-                className="w-[82vw] max-w-[340px] md:w-auto shrink-0 snap-start group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="sm:w-[40%] h-48 sm:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
                   <Image 

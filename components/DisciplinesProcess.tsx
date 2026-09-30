@@ -73,7 +73,7 @@ export default function DisciplinesProcess() {
           {disciplines.map((card) => (
             <div
               key={card.num}
-              className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-2xl md:rounded-none p-6 sm:p-8 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors relative border border-slate-200/90 md:border-none shadow-xs md:shadow-none"
+              className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl md:rounded-none p-6 sm:p-8 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors relative border border-slate-200/90 md:border-none shadow-xs md:shadow-none"
             >
               {/* Image Background revealing on Hover */}
               <div

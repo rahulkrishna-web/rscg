@@ -251,7 +251,7 @@ export default function AutomationPage() {
               icon: Settings2
             }
           ].map((benefit, idx) => (
-            <div key={idx} className="w-[78vw] max-w-[325px] sm:w-auto shrink-0 snap-start bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+            <div key={idx} className="w-[78vw] max-w-[325px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
               <div className="relative h-40 w-full">
                 <div className="absolute inset-0 overflow-hidden">
                   <Image src={benefit.img} alt={benefit.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -302,7 +302,7 @@ export default function AutomationPage() {
               icon: Database
             }
           ].map((service, idx) => (
-            <div key={idx} className="w-[80vw] max-w-[335px] lg:w-auto shrink-0 snap-start bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow h-full">
+            <div key={idx} className="w-[80vw] max-w-[335px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow h-full">
               <div className="relative min-h-[200px] xl:min-h-[160px] xl:w-[60%] flex-shrink-0 overflow-hidden">
                 <Image src={service.img} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>

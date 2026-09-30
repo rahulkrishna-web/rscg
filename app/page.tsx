@@ -655,7 +655,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-[24px] sm:rounded-[28px] p-7 sm:p-9 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group min-h-[300px]"
+                className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] sm:rounded-[28px] p-7 sm:p-9 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group min-h-[300px]"
               >
                 <div>
                   <span className="text-xs sm:text-sm font-extrabold text-amber-500 tracking-wider uppercase mb-3 block">
@@ -968,7 +968,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px]"
+                className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px]"
               >
                 {/* Text Content */}
                 <div className="relative z-10 max-w-[68%] sm:max-w-[70%]">
