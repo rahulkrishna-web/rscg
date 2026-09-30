@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Factory, MapPin, Calendar, Box, Cpu, FileText, CheckCircle, ChevronLeft, ChevronRight, Phone } from "lucide-react";
@@ -8,31 +8,19 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { projectsData } from "../projectsData";
 
-const HERO_BANNER_IMAGES = [
-  "/case-studies/herobanner/herobanner.jpg",
-  "/case-studies/herobanner/herobanner.png",
-  "/case-studies/herobanner/herobanner(1).jpg",
-  "/case-studies/herobanner/herobanner(2).jpg",
-];
 
 export default function ProjectDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
   const currentProject = projectsData.find((project) => project.slug === slug);
 
+  // Extract project overview text for hero description
+  const overviewParagraph = currentProject?.content.find(
+    (c) => c.type === "paragraph" && c.text && !c.text.toLowerCase().startsWith("project overview") && !c.text.toLowerCase().startsWith("location:")
+  )?.text;
+
   // Carousel state for project gallery images
   const [activeImageIdx, setActiveImageIdx] = useState(0);
-
-  // Hero slider state
-  const [heroSlide, setHeroSlide] = useState(0);
-
-  // Auto-rotate hero slider
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setHeroSlide((prev) => (prev + 1) % HERO_BANNER_IMAGES.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
 
   if (!currentProject) {
     return (
@@ -89,55 +77,51 @@ export default function ProjectDetailPage() {
         </div>
 
         {/* Hero Section — Full-background image slider */}
-        <section className="w-full relative h-[400px] sm:h-[450px] lg:h-[500px] xl:h-[600px] overflow-hidden bg-[#0B1510]">
-           {/* Slider images with crossfade */}
-           {HERO_BANNER_IMAGES.map((src, idx) => (
-             <div
-               key={src}
-               className="absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out"
-               style={{ opacity: idx === heroSlide ? 1 : 0 }}
-             >
-               <img src={src} alt={`Plant showcase ${idx + 1}`} className="w-full h-full object-cover" />
-             </div>
-           ))}
+        {/* Hero Section — Project's own featured background image */}
+        <section className="w-full relative h-[420px] sm:h-[480px] lg:h-[520px] xl:h-[600px] overflow-hidden bg-[#0B1510]">
+           {/* Project background image */}
+           <div className="absolute inset-0 w-full h-full">
+             <img 
+               src={currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
+               alt={currentProject.title} 
+               className="w-full h-full object-cover object-center" 
+             />
+           </div>
 
-           {/* Dark overlay for text contrast */}
-           <div className="absolute inset-0 bg-[#0B1510]/60 z-10" />
+           {/* Lightened gradient overlay: top transparent, bottom slightly tinted for text contrast */}
+           <div className="absolute inset-0 bg-gradient-to-t from-[#0B1510]/85 via-[#0B1510]/30 to-transparent z-10" />
+           <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/60 via-[#0B1510]/20 to-transparent z-10" />
 
            {/* Hero content */}
            <div className="relative z-20 h-full flex flex-col items-start justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
-             <div className="max-w-2xl space-y-4 sm:space-y-6">
+             <div className="max-w-2xl space-y-3 sm:space-y-4">
                <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
                  <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                 CASE STUDIES & PROJECTS
+                 <span>{currentProject.location ? `CASE STUDY · ${currentProject.location}` : "CASE STUDIES & PROJECTS"}</span>
                </div>
-               <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-                 Transforming Ideas <br />
-                 <span className="text-white">Into Reality</span>
+               
+               <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-black text-white leading-[1.1] tracking-tight">
+                 {currentProject.title}
                </h1>
-               <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-                 From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
+               
+               {currentProject.subtitle && (
+                 <p className="text-base sm:text-xl font-bold text-[#f7b032] tracking-wide">
+                   {currentProject.subtitle}
+                 </p>
+               )}
+
+               <p className="text-sm sm:text-base text-slate-200 font-medium max-w-xl leading-relaxed line-clamp-3">
+                 {overviewParagraph || "Discover how RS Choyal engineered and commissioned this high-yield milling installation with advanced technology and dependable automation."}
                </p>
-               <div className="pt-2 sm:pt-4">
+
+               <div className="pt-2 sm:pt-3">
                  <Link
                    href="/projects"
-                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 py-3 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
                  >
                    EXPLORE PROJECTS <ArrowRight className="w-4 h-4" />
                  </Link>
                </div>
-             </div>
-
-             {/* Dot indicators */}
-             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-               {HERO_BANNER_IMAGES.map((_, idx) => (
-                 <button
-                   key={idx}
-                   onClick={() => setHeroSlide(idx)}
-                   className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${idx === heroSlide ? "bg-[#A6CE39] scale-110" : "bg-white/40 hover:bg-white/60"}`}
-                   aria-label={`Go to slide ${idx + 1}`}
-                 />
-               ))}
              </div>
            </div>
         </section>

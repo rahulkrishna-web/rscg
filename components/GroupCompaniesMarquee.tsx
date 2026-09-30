@@ -68,18 +68,18 @@ export default function GroupCompaniesMarquee() {
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 sm:w-32 z-10 bg-gradient-to-l from-[#FBFBFA] to-transparent" />
 
           {/* Scrolling Rows */}
-          <div className="flex items-center gap-4 sm:gap-6 min-w-full">
+          <div className="flex items-center gap-6 sm:gap-10 md:gap-12 min-w-full">
             {/* Primary Track */}
-            <div className="flex shrink-0 animate-marquee items-center gap-4 sm:gap-6 min-w-full">
+            <div className="flex shrink-0 animate-marquee items-center gap-6 sm:gap-10 md:gap-12 min-w-full">
               {marqueeItems.map((logo, idx) => (
                 <div
                   key={`div-1-${idx}`}
-                  className="w-[170px] sm:w-[210px] md:w-[230px] h-[76px] sm:h-[88px] md:h-[96px] bg-white rounded-2xl border border-slate-100/90 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-slate-200 transition-all duration-300 flex items-center justify-center p-4 sm:p-5 shrink-0 select-none group"
+                  className="w-[150px] sm:w-[180px] md:w-[210px] h-[60px] sm:h-[72px] md:h-[80px] flex items-center justify-center px-3 sm:px-4 shrink-0 select-none"
                 >
                   <img
                     src={logo.src}
                     alt={logo.name}
-                    className="max-h-[36px] sm:max-h-[44px] md:max-h-[48px] max-w-[130px] sm:max-w-[160px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="max-h-[42px] sm:max-h-[50px] md:max-h-[56px] max-w-full w-auto h-auto object-contain mix-blend-multiply transition-transform duration-300 hover:scale-105"
                   />
                 </div>
               ))}
@@ -87,18 +87,18 @@ export default function GroupCompaniesMarquee() {
 
             {/* Duplicated Track for Infinite Loop */}
             <div
-              className="flex shrink-0 animate-marquee items-center gap-4 sm:gap-6 min-w-full"
+              className="flex shrink-0 animate-marquee items-center gap-6 sm:gap-10 md:gap-12 min-w-full"
               aria-hidden="true"
             >
               {marqueeItems.map((logo, idx) => (
                 <div
                   key={`div-2-${idx}`}
-                  className="w-[170px] sm:w-[210px] md:w-[230px] h-[76px] sm:h-[88px] md:h-[96px] bg-white rounded-2xl border border-slate-100/90 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-slate-200 transition-all duration-300 flex items-center justify-center p-4 sm:p-5 shrink-0 select-none group"
+                  className="w-[150px] sm:w-[180px] md:w-[210px] h-[60px] sm:h-[72px] md:h-[80px] flex items-center justify-center px-3 sm:px-4 shrink-0 select-none"
                 >
                   <img
                     src={logo.src}
                     alt={logo.name}
-                    className="max-h-[36px] sm:max-h-[44px] md:max-h-[48px] max-w-[130px] sm:max-w-[160px] w-auto h-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                    className="max-h-[42px] sm:max-h-[50px] md:max-h-[56px] max-w-full w-auto h-auto object-contain mix-blend-multiply transition-transform duration-300 hover:scale-105"
                   />
                 </div>
               ))}
