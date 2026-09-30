@@ -305,17 +305,19 @@ export default function DesignMediaPage() {
 
         {/* Bottom CTA Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-20">
-          <div className="w-full bg-[#0B2C1C] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col md:flex-row items-center justify-between gap-10 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
             
-            <div className="flex items-center gap-6 sm:gap-8 max-w-2xl">
-              <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-[#D3994B] rounded-full flex items-center justify-center text-[#D3994B]">
+            <div className="flex items-center gap-6 sm:gap-8 max-w-2xl relative z-10">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 border-2 border-white/20 bg-white/10 rounded-full flex items-center justify-center text-[#f5a623]">
                 <Headset className="w-8 h-8 sm:w-10 sm:h-10" />
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
                   Let's Build Something Exceptional
                 </h3>
-                <p className="text-base text-slate-200 leading-relaxed font-normal">
+                <p className="text-base text-white/90 leading-relaxed font-normal">
                   From engineering drawings to 3D presentations and packaging, our team can help bring your ideas to life.
                 </p>
               </div>
@@ -323,10 +325,10 @@ export default function DesignMediaPage() {
 
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#D99B26] hover:bg-[#c4891e] text-slate-950 rounded-full text-xs font-black uppercase tracking-wider shadow-lg hover:shadow-[0_0_30px_rgba(217,155,38,0.7)] hover:scale-[1.02] transition-all duration-300 cursor-pointer text-nowrap whitespace-nowrap shrink-0"
+              className="relative z-10 inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f5a623] hover:bg-[#e0961c] text-white rounded-xl text-sm sm:text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-nowrap whitespace-nowrap shrink-0"
             >
-              <span>GET IN TOUCH WITH OUR EXPERTS</span>
-              <ArrowRight className="h-4 w-4" />
+              <span>Get in Touch With Our Experts</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
 
           </div>

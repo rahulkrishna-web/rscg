@@ -499,7 +499,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
         {/* Bottom Banner */}
         <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-8 relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay pointer-events-none"></div>
+          <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none"></div>
           
           <div className="flex items-center gap-6 relative z-10">
             <div className="w-16 h-16 rounded-full bg-[#f5a623] flex items-center justify-center shrink-0 border-4 border-white/20">

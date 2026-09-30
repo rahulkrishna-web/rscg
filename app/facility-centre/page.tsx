@@ -261,8 +261,11 @@ export default function FacilityCentrePage() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-[#0D301F] rounded-3xl p-8 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl border border-white/5">
-            <div className="flex items-center gap-6 max-w-2xl">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-10 lg:p-12 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 shadow-xl border border-white/10">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="flex items-center gap-6 max-w-2xl relative z-10">
               <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20 p-3.5">
                 <img src="/images/services/facility-center/icons/schedule_visit.png" alt="Schedule a Visit" className="w-full h-full object-contain brightness-0 invert" />
               </div>
@@ -270,7 +273,7 @@ export default function FacilityCentrePage() {
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
                   Want to Visit Our Facility Centre?
                 </h3>
-                <p className="text-slate-200 text-base font-normal">
+                <p className="text-white/90 text-sm sm:text-base font-normal">
                   Book a guided visit to explore machinery, evaluate performance, and train your team.
                 </p>
               </div>
@@ -278,8 +281,8 @@ export default function FacilityCentrePage() {
 
             <div className="relative z-10 shrink-0 w-full md:w-auto">
               <Link 
-                href="/contact"
-                className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-widest text-xs px-8 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_20px_rgba(247,176,50,0.4)] flex items-center justify-center gap-2 cursor-pointer w-full md:w-auto"
+                href="/contact" 
+                className="bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer w-full md:w-auto text-sm sm:text-base"
               >
                 <span>Schedule a Visit</span>
                 <ArrowRight className="h-4 w-4" />

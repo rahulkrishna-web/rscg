@@ -320,28 +320,36 @@ export default function AutomationPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="w-full bg-[#0B1510] text-white py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8">
-          <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-6 text-center md:text-left">
-            <div className="w-20 h-20 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 relative">
-              <div className="w-16 h-16 rounded-full border border-white/40 flex items-center justify-center relative">
-                 <Settings className="w-8 h-8 text-[#0a3118] fill-white animate-spin-slow" />
-                 <CheckCircle2 className="w-4 h-4 text-white absolute bg-[#0B1510] rounded-full bottom-2 right-2" />
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+        <div className="w-full mx-auto">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-6 text-center md:text-left relative z-10">
+              <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0">
+                <Settings className="w-8 h-8 text-[#f5a623] animate-spin-slow" />
+              </div>
+              <div className="space-y-1.5 max-w-xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-white leading-tight tracking-tight">
+                  Automate. Monitor. Optimize.
+                </h2>
+                <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed">
+                  Upgrade your mill with intelligent automation for higher efficiency and consistent quality.
+                </p>
               </div>
             </div>
-            <div>
-              <h2 className="text-2xl sm:text-3xl font-heading font-black mb-2">Automate. Monitor. Optimize.</h2>
-              <p className="text-white/80 font-medium text-sm sm:text-base max-w-xl">
-                Upgrade your mill with intelligent automation for higher efficiency and consistent quality.
-              </p>
+
+            <div className="relative z-10 shrink-0">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
+              >
+                <span>Get a Digital Plant</span>
+                <ChevronRight className="w-4 h-4 stroke-[3]" />
+              </Link>
             </div>
           </div>
-          <Link 
-            href="/contact" 
-            className="flex items-center gap-2 bg-[#eab308] hover:bg-[#ca8a04] text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 whitespace-nowrap"
-          >
-            Get a Digital Plant <ChevronRight className="w-5 h-5" />
-          </Link>
         </div>
       </section>
 

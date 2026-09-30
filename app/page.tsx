@@ -543,7 +543,7 @@ export default function Home() {
       {/* --- Full Width Homepage Hero Section --- */}
       <main
         ref={heroRef}
-        className="w-full relative z-10 min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] xl:min-h-[760px] h-[85vh] max-h-[920px] flex flex-col justify-end overflow-hidden pb-12 sm:pb-16 lg:pb-20 border-b border-[#1c2722]/5"
+        className="w-full relative z-10 min-h-[640px] sm:min-h-[700px] lg:min-h-[760px] xl:min-h-[820px] h-[90vh] max-h-[960px] flex flex-col justify-end overflow-hidden pt-28 sm:pt-32 pb-12 sm:pb-16 lg:pb-20 border-b border-[#1c2722]/5"
       >
         {/* Background Factory Aerial Image */}
         <Image
@@ -1763,16 +1763,16 @@ export default function Home() {
       {/* --- Pre-Footer CTA Section --- */}
       <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
         <div className="w-full mx-auto">
-          <div className="w-full bg-[#0B1510] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-emerald-950/60 relative overflow-hidden">
-            {/* Subtle Ambient Glow */}
-            <div className="absolute top-0 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
             {/* Left Content */}
             <div className="max-w-3xl space-y-2.5 relative z-10">
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-white leading-tight tracking-tight">
                 Come and see how the thinking becomes a plant.
               </h2>
-              <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl">
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed max-w-2xl">
                 Visit the factory, workshop, Experience Centre and training facility in Ajmer or bring us the next milling problem worth solving.
               </p>
             </div>
@@ -1781,10 +1781,10 @@ export default function Home() {
             <div className="relative z-10 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-[#e5a024] text-slate-900 font-bold px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
               >
                 <span>Discuss Your Requirement</span>
-                <ChevronRight className="w-4 h-4 stroke-[3]" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

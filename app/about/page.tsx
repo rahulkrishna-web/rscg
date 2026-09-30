@@ -111,56 +111,53 @@ const timelineMilestones = [
 export default function AboutPage() {
   const { setIsDrawerOpen } = useQuote();
   const [activeTab, setActiveTab] = useState("about-us");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const sections = [
-    { id: "about-us", label: "About Us", icon: Info },
-    { id: "journey", label: "Our Journey", icon: Milestone },
-    { id: "disciplines", label: "Disciplines & Process", icon: Workflow },
-    { id: "leadership", label: "Leadership", icon: Users },
-    { id: "mission-vision", label: "Mission and Vision", icon: Eye },
-    { id: "philosophy", label: "Our Philosophy", icon: Heart },
-    { id: "research-development", label: "R&D and Innovation", icon: Lightbulb },
-    { id: "social-responsibility", label: "Social Responsibility", icon: Landmark },
-    { id: "why-rsc", label: "Why RSCG", icon: HelpCircle },
-    { id: "network", label: "Our Network", icon: Network },
-    { id: "infrastructure", label: "Our Infrastructure", icon: Building },
+  const aboutSubmenuSections = [
+    { id: "about-us", label: "About Us" },
+    { id: "leadership", label: "Leadership" },
+    { id: "mission-vision", label: "Mission and Vision" },
+    { id: "philosophy", label: "Our Philosophy" },
+    { id: "research-development", label: "R&D and Innovation" },
+    { id: "social-responsibility", label: "Social Responsibility" },
+    { id: "why-rsc", label: "Why RSCG" },
+    { id: "network", label: "Our Network" },
+    { id: "infrastructure", label: "Infrastructure" },
   ];
 
   // Monitor scroll to set active tab
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      const scrollPosition = window.scrollY + 160;
 
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
+      for (let i = aboutSubmenuSections.length - 1; i >= 0; i--) {
+        const item = aboutSubmenuSections[i];
+        const element = document.getElementById(item.id);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveTab(section.id);
+          const top = element.getBoundingClientRect().top + window.scrollY;
+          if (scrollPosition >= top) {
+            setActiveTab(item.id);
             break;
           }
         }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 180; // accounting for sticky header & tabs dropdown
+      const offset = 135; // accounting for floating header with submenu
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = element.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
-        top: offsetPosition,
+        top: Math.max(0, offsetPosition),
         behavior: "smooth"
       });
       setActiveTab(id);
@@ -189,86 +186,18 @@ export default function AboutPage() {
     return () => window.removeEventListener("hashchange", handleHash);
   }, []);
 
-  // Close TOC dropdown on click outside
-  useEffect(() => {
-    const handleOutsideClick = (e: MouseEvent) => {
-      const container = document.getElementById("toc-dropdown-container");
-      if (container && !container.contains(e.target as Node)) {
-        setIsDropdownOpen(false);
-      }
-    };
-    if (isDropdownOpen) {
-      document.addEventListener("mousedown", handleOutsideClick);
-    }
-    return () => document.removeEventListener("mousedown", handleOutsideClick);
-  }, [isDropdownOpen]);
-
   return (
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans selection:bg-brand-primary selection:text-white">
-      <Header />
+      <Header
+        submenu={{
+          items: aboutSubmenuSections,
+          activeId: activeTab,
+          onItemClick: scrollToSection,
+        }}
+      />
 
       {/* Hero Banner with Slideshow & Running Stats */}
       <AboutHero onScrollToSection={scrollToSection} />
-
-      {/* Sticky Table of Contents Header */}
-      <div className="sticky top-20 sm:top-24 z-30 w-full bg-white border-b border-slate-200 shadow-xs">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-3.5 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-[10px] sm:text-xs font-black text-slate-400 uppercase tracking-widest">On this page:</span>
-            <span className="text-xs sm:text-sm font-extrabold text-brand-primary uppercase tracking-wider">
-              {sections.find(s => s.id === activeTab)?.label || "About Us"}
-            </span>
-          </div>
-
-          {/* Table of Contents Dropdown Button */}
-          <div className="relative" id="toc-dropdown-container">
-            <button
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-extrabold uppercase tracking-wider text-slate-700 bg-slate-50 hover:bg-brand-primary/5 hover:text-brand-primary border border-slate-200 transition-all duration-300 cursor-pointer shadow-2xs"
-            >
-              <Compass className="h-4 w-4 shrink-0 text-brand-primary" />
-              <span className="hidden sm:inline">Jump to section</span>
-              <span className="sm:hidden">Jump</span>
-              <ChevronDown className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
-            </button>
-
-            {/* Dropdown Menu */}
-            {isDropdownOpen && (
-              <div className="absolute right-0 mt-2 w-64 sm:w-72 bg-white border border-slate-200/80 rounded-2xl shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
-                <div className="px-4 py-1.5 border-b border-slate-100 flex items-center justify-between">
-                  <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Sections</span>
-                  <button onClick={() => setIsDropdownOpen(false)} className="text-slate-400 hover:text-slate-600 cursor-pointer">
-                    <X className="h-4 w-4" />
-                  </button>
-                </div>
-                <div className="max-h-[350px] overflow-y-auto px-2 py-1 space-y-0.5">
-                  {sections.map((sec) => {
-                    const IconComponent = sec.icon;
-                    const isActive = activeTab === sec.id;
-                    return (
-                      <button
-                        key={sec.id}
-                        onClick={() => {
-                          scrollToSection(sec.id);
-                          setIsDropdownOpen(false);
-                        }}
-                        className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl text-xs font-extrabold uppercase tracking-wider transition-all duration-200 text-left cursor-pointer ${
-                          isActive
-                            ? "bg-brand-primary text-white"
-                            : "text-slate-600 hover:bg-slate-50 hover:text-brand-primary"
-                        }`}
-                      >
-                        <IconComponent className={`h-4 w-4 shrink-0 ${isActive ? "text-white" : "text-slate-400"}`} />
-                        <span>{sec.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
 
       {/* Main Content Sections */}
       <div className="w-full">
@@ -417,16 +346,16 @@ export default function AboutPage() {
         {/* --- Pre-Footer CTA Section --- */}
         <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
           <div className="w-full mx-auto">
-            <div className="w-full bg-[#0B1510] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-emerald-950/60 relative overflow-hidden">
-              {/* Subtle Ambient Glow */}
-              <div className="absolute top-0 right-1/4 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+              {/* Background Texture matching Wonder Mill */}
+              <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
               {/* Left Content */}
               <div className="max-w-3xl space-y-2.5 relative z-10">
                 <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-white leading-tight tracking-tight">
                   Come and see how the thinking becomes a plant.
                 </h2>
-                <p className="text-sm sm:text-base lg:text-lg text-slate-200 font-normal leading-relaxed max-w-2xl">
+                <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed max-w-2xl">
                   Visit the factory, workshop, Experience Centre and training facility in Ajmer or bring us the next milling problem worth solving.
                 </p>
               </div>
@@ -435,10 +364,10 @@ export default function AboutPage() {
               <div className="relative z-10 shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-[#e5a024] text-slate-900 font-bold px-6 sm:px-7 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base uppercase tracking-wider cursor-pointer whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
                 >
                   <span>Discuss Your Requirement</span>
-                  <ChevronRight className="w-4 h-4 stroke-[3]" />
+                  <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

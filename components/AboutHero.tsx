@@ -100,8 +100,8 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
 
   return (
     <section className="relative w-full overflow-hidden bg-slate-900">
-      {/* 1. HERO SLIDESHOW BANNER */}
-      <div className="relative w-full h-[540px] sm:h-[580px] lg:h-[620px] overflow-hidden flex items-center">
+      {/* 1. HERO SLIDESHOW BANNER - Exactly matches Turnkey / Product hero aspect ratio */}
+      <div className="relative w-full aspect-[1079/1920] md:aspect-[1920/820] overflow-hidden flex items-center">
         {/* Slides Images with smooth cross-fade */}
         {slides.map((slide, idx) => (
           <div
@@ -124,25 +124,8 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-transparent z-10" />
 
         {/* Hero Left Content */}
-        <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 py-12">
-          <div className="max-w-2xl lg:max-w-3xl space-y-6">
-            
-            {/* Choyal Grinding Solution Logo */}
-            <div className="inline-block bg-white/95 backdrop-blur-xs px-4 py-2 rounded-2xl shadow-md border border-white/30">
-              <img
-                src="/images/logos/choyal_grinding_transparent.png"
-                alt="CHOYAL Grinding Solution"
-                className="h-9 sm:h-11 md:h-12 w-auto object-contain"
-              />
-            </div>
-
-            {/* Eyebrow */}
-            <div className="flex items-center gap-2">
-              <span className="w-6 h-[2px] bg-[#f7b032]" />
-              <span className="text-[#f7b032] font-black text-xs sm:text-sm tracking-widest uppercase drop-shadow-xs">
-                Over 60 Years of Experience
-              </span>
-            </div>
+        <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-20 pt-16 sm:pt-20 pb-8">
+          <div className="max-w-2xl lg:max-w-3xl space-y-4 sm:space-y-6">
 
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-heading font-black tracking-tight leading-[1.12]">
@@ -155,13 +138,13 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
             </h1>
 
             {/* CTA Button */}
-            <div className="pt-2">
+            <div className="pt-2 sm:pt-4">
               <button
                 onClick={() => onScrollToSection("about-us")}
-                className="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-[#1B5E3C] hover:bg-[#23784e] text-white font-bold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all group cursor-pointer border border-white/25"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
               >
-                <span>Know More</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <span>KNOW MORE</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
             </div>
 
@@ -185,24 +168,27 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
         </div>
       </div>
 
-      {/* 2. RUNNING STATS BAR (Dark green bar with curved top-left corner) */}
-      <div className="relative w-full bg-gradient-to-r from-[#071E14] via-[#0B2C1C] to-[#0D3823] rounded-tl-[36px] sm:rounded-tl-[48px] shadow-2xl border-t border-white/10 z-20">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-6 sm:py-7">
+      {/* 2. RUNNING STATS BAR (Matches Wonder Mill CTA green pattern & gradient) */}
+      <div className="relative w-full bg-gradient-to-r from-[#17462c] to-[#297a49] shadow-2xl border-t border-white/15 z-20 overflow-hidden">
+        {/* Background Texture matching Wonder Mill */}
+        <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-6 sm:py-7">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8 items-center">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
                 <div key={i} className="flex items-center gap-3.5 group">
                   {/* Circular badge */}
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center text-white/90 group-hover:bg-white/15 group-hover:border-white/40 transition-colors duration-300 shrink-0">
-                    <Icon className="w-5 h-5 sm:w-5 sm:h-5 text-[#f7b032]" />
+                  <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white/90 group-hover:bg-white/20 group-hover:border-white/40 transition-colors duration-300 shrink-0">
+                    <Icon className="w-5 h-5 sm:w-5 sm:h-5 text-[#f5a623]" />
                   </div>
                   {/* Number & label */}
                   <div className="flex flex-col">
                     <span className="text-xl sm:text-2xl font-black text-white tracking-tight leading-none">
                       <RunningCounter end={stat.end} suffix={stat.suffix} />
                     </span>
-                    <span className="text-[11px] sm:text-xs text-white/70 font-medium leading-tight mt-1">
+                    <span className="text-[11px] sm:text-xs text-white/85 font-medium leading-tight mt-1">
                       {stat.label}
                     </span>
                   </div>

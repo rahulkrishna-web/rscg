@@ -283,19 +283,20 @@ export default function ProductDetailsPage() {
 
         {/* CTA Banner */}
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-12">
-           <div className="w-full max-w-6xl mx-auto rounded-xl overflow-hidden bg-gradient-to-r from-[#0a3118] to-[#14532d] flex items-center justify-between p-6 lg:px-12 shadow-xl relative">
-             <div className="absolute inset-0 opacity-10 bg-[url('/images/pattern.png')] bg-cover" />
+           <div className="w-full max-w-6xl mx-auto rounded-2xl overflow-hidden bg-gradient-to-r from-[#17462c] to-[#297a49] flex items-center justify-between p-6 lg:px-12 shadow-xl relative border border-white/10">
+             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
              <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left">
-                <div className="w-12 h-12 rounded-full border-2 border-emerald-500/30 flex items-center justify-center shrink-0">
-                  <Settings className="w-6 h-6 text-[#eab308]" />
+                <div className="w-12 h-12 rounded-full border-2 border-white/20 bg-white/10 flex items-center justify-center shrink-0">
+                  <Settings className="w-6 h-6 text-[#f5a623]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-heading font-black text-white">Smart Milling. Smarter Business.</h3>
-                  <p className="text-emerald-100/80 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
+                  <p className="text-white/85 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
                 </div>
              </div>
-             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#eab308] hover:bg-[#ca8a04] text-[#0a3118] font-bold px-6 py-3 rounded-lg hidden sm:flex items-center gap-2 transition-all hover:scale-105 whitespace-nowrap">
-                Get a Quote <ArrowRight className="w-4 h-4" />
+             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-6 py-3 rounded-xl hidden sm:flex items-center gap-2 transition-all hover:scale-105 whitespace-nowrap shadow-md">
+                <span>Get a Quote</span>
+                <ArrowRight className="w-4 h-4" />
              </button>
            </div>
         </div>

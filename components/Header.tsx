@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   Menu, 
@@ -36,12 +36,23 @@ import {
 } from "lucide-react";
 import { useQuote } from "./QuoteContext";
 
-interface HeaderProps {
-  onRequestCallback?: () => void;
+export interface SubmenuItem {
+  id: string;
+  label: string;
 }
 
-export default function Header({ onRequestCallback }: HeaderProps) {
+interface HeaderProps {
+  onRequestCallback?: () => void;
+  submenu?: {
+    items: SubmenuItem[];
+    activeId?: string;
+    onItemClick: (id: string) => void;
+  };
+}
+
+export default function Header({ onRequestCallback, submenu }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(false);
   
   // Desktop Hover states
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -97,20 +108,37 @@ export default function Header({ onRequestCallback }: HeaderProps) {
     { name: "Design & Media", desc: "Plant 3D modeling, layout architecture, and documentation.", href: "/design-media", icon: Palette, imgIcon: "/icons/services/design_and_media.png" },
   ];
 
+  const isAnyMenuOpen = isAboutOpen || isProductsOpen || isServicesOpen || mobileMenuOpen || mobileSubmenuOpen;
+  const mbClass = submenu ? "-mb-[120px] sm:-mb-[126px] lg:-mb-[132px]" : "-mb-[94px] sm:-mb-[110px]";
+
+  useEffect(() => {
+    if (!mobileSubmenuOpen) return;
+    const handleOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("#mobile-submenu-container")) {
+        setMobileSubmenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, [mobileSubmenuOpen]);
+
   return (
-    <header className="w-full sticky top-0 z-50 bg-white border-b border-slate-200/80 transition-all duration-300 relative">
-      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-20 sm:h-24">
+    <header className={`w-full sticky top-0 z-50 p-[5px] ${mbClass} transition-all duration-300 relative pointer-events-none`}>
+      <div className={`w-full bg-white rounded-t-xl ${isAnyMenuOpen ? "rounded-b-none" : "rounded-b-xl"} shadow-xs border border-slate-200/80 relative pointer-events-auto transition-all`}>
         
-        {/* Brand Logos */}
-        <div className="flex flex-row items-center select-none h-full">
-          <Link href="/" className="inline-flex hover:scale-102 transition-transform">
-            <img 
-              src="/rscg.png" 
-              alt="RS Choyal Group Logo" 
-              className="h-[56px] sm:h-[70px] w-auto object-contain"
-            />
-          </Link>
-        </div>
+        {/* Top Navbar Row */}
+        <div className={`w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center ${submenu ? "h-16 lg:h-18" : "h-20 sm:h-24"}`}>
+          {/* Brand Logos */}
+          <div className="flex flex-row items-center select-none h-full">
+            <Link href="/" className="inline-flex hover:scale-102 transition-transform">
+              <img 
+                src="/rscg.png" 
+                alt="RS Choyal Group Logo" 
+                className={submenu ? "h-[46px] sm:h-[52px] lg:h-[58px] w-auto object-contain" : "h-[56px] sm:h-[70px] w-auto object-contain"}
+              />
+            </Link>
+          </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
@@ -129,7 +157,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
             {isAboutOpen && (
               <div 
                 style={paperTextureStyle}
-                className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
+                className="absolute top-full -left-[1px] -right-[1px] w-[calc(100%+2px)] border-x border-b border-slate-200/80 rounded-b-2xl shadow-2xl z-50 animate-fade-in overflow-hidden"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
                   <div className="col-span-12 grid grid-cols-3 lg:grid-cols-4 gap-6">
@@ -185,7 +213,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
             {isProductsOpen && (
               <div 
                 style={paperTextureStyle}
-                className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
+                className="absolute top-full -left-[1px] -right-[1px] w-[calc(100%+2px)] border-x border-b border-slate-200/80 rounded-b-2xl shadow-2xl z-50 animate-fade-in overflow-hidden"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
                   <div className="col-span-12 grid grid-cols-3 gap-6">
@@ -235,7 +263,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
             {isServicesOpen && (
               <div 
                 style={paperTextureStyle}
-                className="absolute top-full left-0 w-full border-b border-slate-200/80 shadow-2xl z-50 animate-fade-in"
+                className="absolute top-full -left-[1px] -right-[1px] w-[calc(100%+2px)] border-x border-b border-slate-200/80 rounded-b-2xl shadow-2xl z-50 animate-fade-in overflow-hidden"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
                   <div className="col-span-12 grid grid-cols-3 gap-6">
@@ -316,19 +344,116 @@ export default function Header({ onRequestCallback }: HeaderProps) {
           </button>
 
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              setMobileMenuOpen(!mobileMenuOpen);
+              if (!mobileMenuOpen) setMobileSubmenuOpen(false);
+            }}
             className="lg:hidden p-2 text-slate-700 hover:text-brand-primary focus:outline-none cursor-pointer"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
-
       </div>
+
+      {/* Submenu (Desktop Row & Mobile Pill) */}
+      {submenu && (
+        <>
+          {/* Desktop Submenu Row */}
+          <div className="hidden lg:flex items-center gap-5 xl:gap-7 border-t border-slate-100/90 px-6 sm:px-12 lg:px-16 xl:px-24 h-10 overflow-x-auto no-scrollbar">
+            {submenu.items.map((item) => {
+              const isActive = submenu.activeId === item.id;
+              return (
+                <button
+                  key={item.id}
+                  type="button"
+                  onClick={() => submenu.onItemClick(item.id)}
+                  className={`text-[12.5px] xl:text-[13px] tracking-tight transition-all duration-200 whitespace-nowrap cursor-pointer relative py-1.5 ${
+                    isActive
+                      ? "font-bold text-brand-primary"
+                      : "font-semibold text-slate-600 hover:text-slate-900"
+                  }`}
+                >
+                  {item.label}
+                  {isActive && (
+                    <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-brand-primary rounded-full" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Mobile Submenu Pill Bar */}
+          <div
+            id="mobile-submenu-container"
+            className="lg:hidden relative border-t border-slate-100 px-4 sm:px-6 py-1.5 bg-slate-50/70 flex items-center justify-between"
+          >
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="text-[10px] font-black text-slate-400 uppercase tracking-wider shrink-0">Section:</span>
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileSubmenuOpen(!mobileSubmenuOpen);
+                  if (!mobileSubmenuOpen) setMobileMenuOpen(false);
+                }}
+                className="inline-flex items-center gap-1.5 bg-white border border-slate-200/90 shadow-2xs hover:border-brand-primary/40 px-3 py-1 rounded-full text-xs font-bold text-brand-primary cursor-pointer transition-all active:scale-95 min-w-0"
+                aria-label="Toggle section selector"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                <span className="truncate max-w-[170px] sm:max-w-[240px]">
+                  {submenu.items.find((i) => i.id === submenu.activeId)?.label || submenu.items[0]?.label || "Jump to section"}
+                </span>
+                <ChevronDown className={`w-3.5 h-3.5 text-slate-500 transition-transform duration-200 shrink-0 ${mobileSubmenuOpen ? "rotate-180" : ""}`} />
+              </button>
+            </div>
+
+            <span className="text-[10px] font-semibold text-slate-400 shrink-0 ml-2">
+              {(() => {
+                const idx = submenu.items.findIndex((i) => i.id === submenu.activeId);
+                return idx >= 0 ? `${idx + 1} of ${submenu.items.length}` : "";
+              })()}
+            </span>
+
+            {/* Mobile Submenu Dropdown Popover */}
+            {mobileSubmenuOpen && (
+              <div className="absolute top-full left-0 right-0 bg-white border-b border-x border-slate-200 shadow-xl rounded-b-xl z-50 p-2 max-h-64 overflow-y-auto animate-fade-in">
+                <div className="flex flex-col gap-0.5">
+                  {submenu.items.map((item, idx) => {
+                    const isActive = submenu.activeId === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => {
+                          submenu.onItemClick(item.id);
+                          setMobileSubmenuOpen(false);
+                        }}
+                        className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold text-left transition-colors cursor-pointer ${
+                          isActive
+                            ? "bg-brand-primary text-white font-bold"
+                            : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                        }`}
+                      >
+                        <span className="flex items-center gap-2">
+                          <span className={`text-[10px] font-mono ${isActive ? "text-white/80" : "text-slate-400"}`}>
+                            0{idx + 1}
+                          </span>
+                          <span>{item.label}</span>
+                        </span>
+                        {isActive && <span className="w-1.5 h-1.5 rounded-full bg-white" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+        </>
+      )}
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden w-full bg-brand-bg border-b border-slate-200/80 px-6 py-6 absolute top-full left-0 z-40 space-y-4 shadow-lg animate-fade-in max-h-[80vh] overflow-y-auto">
+          <div className="lg:hidden -left-[1px] -right-[1px] w-[calc(100%+2px)] bg-brand-bg border-x border-b border-slate-200/80 rounded-b-2xl px-6 py-6 absolute top-full z-40 space-y-4 shadow-xl animate-fade-in max-h-[80vh] overflow-y-auto pointer-events-auto">
           <nav className="flex flex-col gap-4">
             
             {/* Mobile Accordion for About Us */}
@@ -491,6 +616,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
           </div>
         </div>
       )}
+      </div>
     </header>
   );
 }

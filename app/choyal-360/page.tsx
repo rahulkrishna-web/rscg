@@ -259,18 +259,19 @@ export default function Grain360Page() {
           </div>
 
           {/* Bottom CTA Banner */}
-          <div className="w-full bg-[#0D301F] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="absolute inset-0 bg-[url('/images/services/grain360/grain_hero.jpg')] bg-cover bg-center opacity-10 mix-blend-overlay" />
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-8 border border-white/10 shadow-xl">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
             
             <div className="relative z-10 flex items-center gap-6 max-w-2xl">
               <div className="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center shrink-0 border border-white/20">
-                <Phone className="w-8 h-8 text-white" />
+                <Phone className="w-8 h-8 text-[#f5a623]" />
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
                   Planning to start or upgrade your plant?
                 </h3>
-                <p className="text-slate-200 text-base font-normal">
+                <p className="text-white/90 text-sm sm:text-base font-normal">
                   Talk to our team for end-to-end business, technical, and operational support.
                 </p>
               </div>
@@ -279,9 +280,10 @@ export default function Grain360Page() {
             <div className="relative z-10 shrink-0 w-full md:w-auto">
               <Link 
                 href="/contact"
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-white text-[#133020] hover:bg-slate-100 px-8 py-4 rounded-xl text-sm font-black tracking-wide transition-transform hover:-translate-y-0.5 shadow-lg"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
               >
-                Contact Us <ArrowRight className="w-4 h-4" />
+                <span>Contact Us</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

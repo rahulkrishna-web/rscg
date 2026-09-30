@@ -80,14 +80,12 @@ export default function WhyRSCGSection() {
           </p>
         </header>
 
-        {/* Cards Grid Container (Horizontally swipable on mobile, 2-Col on md) */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
-          {whyRSCItems.map((item, idx) => (
+        {/* Cards Container (Horizontally swipable on mobile, 2-Col Centered Wrap on md+) */}
+        <div className="flex md:flex-wrap md:justify-center gap-4 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          {whyRSCItems.map((item) => (
             <article
               key={item.number}
-              className={`w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between ${
-                idx === 4 ? "md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto" : ""
-              }`}
+              className="w-[78vw] max-w-[325px] md:w-[calc(50%-12px)] md:max-w-none shrink-0 snap-start md:snap-align-none bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between"
             >
               {renderCardContent(item)}
             </article>

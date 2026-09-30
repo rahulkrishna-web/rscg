@@ -271,26 +271,33 @@ export default function FlourMills() {
       </section>
 
       {/* Link to Contact CTA Banner */}
-      <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-16 bg-slate-50 border-t border-slate-200/50 relative z-10 text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-            Get in touch
-          </span>
-          <h2 className="text-3xl font-heading font-extrabold text-slate-850 tracking-tight">
-            Ready to Submit Specifications for a Proposal?
-          </h2>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            Tell us about your processing space, layout constraints, power limits, and capacity requirements. 
-            Our technical sales team will compile a layout and detailed pricing offer.
-          </p>
-          <div className="pt-2">
-            <Link 
-              href="/contact"
-              className="inline-flex bg-brand-primary hover:bg-brand-primary/95 text-white font-bold px-8 py-3.5 rounded-xl shadow-md hover:-translate-y-0.5 transition-all duration-200 text-sm gap-2 items-center"
-            >
-              <span>Contact Sales Team</span>
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+        <div className="w-full mx-auto">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="max-w-2xl space-y-2.5 relative z-10 text-left">
+              <span className="text-xs font-bold text-[#f5a623] tracking-widest uppercase">
+                Get in touch
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-white leading-tight tracking-tight">
+                Ready to Submit Specifications for a Proposal?
+              </h2>
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed">
+                Tell us about your processing space, layout constraints, power limits, and capacity requirements. Our technical sales team will compile a layout and detailed pricing offer.
+              </p>
+            </div>
+
+            <div className="relative z-10 shrink-0">
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
+              >
+                <span>Contact Sales Team</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
           </div>
         </div>
       </section>

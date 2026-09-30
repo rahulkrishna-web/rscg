@@ -358,20 +358,31 @@ export default function PowerSavingPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="w-full bg-[#0a3118] text-white py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-heading font-black mb-2">Save Energy. Save Costs. Increase Efficiency.</h2>
-            <p className="text-white/80 font-medium text-sm sm:text-base max-w-xl">
-              Upgrade your plant with intelligent power-saving solutions from RS Choyal Group.
-            </p>
+      <section className="w-full py-10 sm:py-14 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#f6f6f4] relative z-10">
+        <div className="w-full mx-auto">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-10 lg:p-12 shadow-2xl flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="max-w-2xl space-y-2.5 relative z-10 text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-white leading-tight tracking-tight">
+                Save Energy. Save Costs. Increase Efficiency.
+              </h2>
+              <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed">
+                Upgrade your plant with intelligent power-saving solutions from RS Choyal Group.
+              </p>
+            </div>
+
+            <div className="relative z-10 shrink-0">
+              <Link 
+                href="/contact" 
+                className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
+              >
+                <span>Talk to Our Expert</span>
+                <ChevronRight className="w-4 h-4 stroke-[3]" />
+              </Link>
+            </div>
           </div>
-          <Link 
-            href="/contact" 
-            className="flex items-center gap-2 bg-[#eab308] hover:bg-[#ca8a04] text-slate-900 font-bold px-8 py-4 rounded-xl shadow-lg transition-all hover:scale-105 whitespace-nowrap"
-          >
-            TALK TO OUR EXPERT <ChevronRight className="w-5 h-5" />
-          </Link>
         </div>
       </section>
 
