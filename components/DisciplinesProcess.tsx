@@ -68,12 +68,12 @@ export default function DisciplinesProcess() {
           </p>
         </div>
 
-        {/* 2x2 Connected Disciplines Grid with 1px border separator */}
-        <div className="grid grid-cols-1 md:grid-cols-2 border border-slate-200 bg-slate-200 gap-px rounded-xl overflow-hidden shadow-xs">
+        {/* 2x2 Connected Disciplines Grid (Horizontally swipable on mobile) */}
+        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-px overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0 md:border md:border-slate-200 md:bg-slate-200 md:rounded-xl shadow-xs">
           {disciplines.map((card) => (
             <div
               key={card.num}
-              className="relative bg-white p-8 sm:p-10 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors"
+              className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-2xl md:rounded-none p-6 sm:p-8 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors relative border border-slate-200/90 md:border-none shadow-xs md:shadow-none"
             >
               {/* Image Background revealing on Hover */}
               <div
@@ -104,6 +104,7 @@ export default function DisciplinesProcess() {
               </div>
             </div>
           ))}
+          <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

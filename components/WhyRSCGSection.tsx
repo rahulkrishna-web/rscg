@@ -42,9 +42,6 @@ const whyRSCItems: WhyRSCItem[] = [
 ];
 
 export default function WhyRSCGSection() {
-  const firstFour = whyRSCItems.slice(0, 4);
-  const fifth = whyRSCItems[4];
-
   const renderCardContent = (item: WhyRSCItem) => (
     <>
       <span className="text-xs sm:text-sm font-bold text-[#FFAA17] tracking-wider block mb-3">
@@ -83,24 +80,19 @@ export default function WhyRSCGSection() {
           </p>
         </header>
 
-        {/* Cards Grid Container */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
-          {/* First 4 Cards (Row 1 & Row 2) */}
-          {firstFour.map((item) => (
+        {/* Cards Grid Container (Horizontally swipable on mobile, 2-Col on md) */}
+        <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          {whyRSCItems.map((item, idx) => (
             <article
               key={item.number}
-              className="bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left"
+              className={`w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between ${
+                idx === 4 ? "md:col-span-2 md:w-[calc(50%-0.75rem)] md:mx-auto" : ""
+              }`}
             >
               {renderCardContent(item)}
             </article>
           ))}
-
-          {/* 5th Card: Centered underneath across the 2-column grid */}
-          <div className="md:col-span-2 flex justify-center w-full">
-            <article className="w-full md:w-[calc(50%-0.75rem)] bg-white rounded-2xl border border-slate-200/80 p-8 sm:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left">
-              {renderCardContent(fifth)}
-            </article>
-          </div>
+          <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

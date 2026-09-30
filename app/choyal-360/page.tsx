@@ -189,12 +189,12 @@ export default function Grain360Page() {
               How Grain360 helps
             </h3>
             
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4 lg:gap-8">
+            <div className="flex md:flex-row items-stretch md:items-center justify-start md:justify-center gap-4 sm:gap-6 md:gap-4 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {workflowSteps.map((step, idx) => (
-                <div key={idx} className="flex items-center w-full md:w-auto">
+                <div key={idx} className="flex items-center w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start">
                   
                   {/* Step Card */}
-                  <div className="bg-white rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-sm border border-slate-200/50 flex-1 min-w-[280px] max-w-[340px]">
+                  <div className="bg-white rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-sm border border-slate-200/50 w-full min-h-[160px] md:min-w-[280px] md:max-w-[340px]">
                     <div className={`w-16 h-16 rounded-full ${step.iconBg} flex items-center justify-center shrink-0 p-3 shadow-xs`}>
                       <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                     </div>
@@ -210,15 +210,9 @@ export default function Grain360Page() {
                       <ArrowRight className="w-6 h-6 text-slate-300" />
                     </div>
                   )}
-
-                  {/* Down Arrow for mobile */}
-                  {idx < workflowSteps.length - 1 && (
-                    <div className="flex md:hidden items-center justify-center w-full py-4 shrink-0">
-                      <ArrowRight className="w-6 h-6 text-slate-300 rotate-90" />
-                    </div>
-                  )}
                 </div>
               ))}
+              <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </div>
 
@@ -228,9 +222,9 @@ export default function Grain360Page() {
               Our Core Services
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="bg-white rounded-2xl p-6 sm:p-7 flex items-start gap-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
+                <div key={idx} className="w-[80vw] max-w-[335px] md:w-auto shrink-0 snap-start bg-white rounded-2xl p-6 sm:p-7 flex items-start gap-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
                   <div className={`w-16 h-16 rounded-2xl ${service.iconBg} flex items-center justify-center shrink-0 p-3 shadow-xs`}>
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>
@@ -240,6 +234,7 @@ export default function Grain360Page() {
                   </div>
                 </div>
               ))}
+              <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </div>
 
@@ -250,11 +245,14 @@ export default function Grain360Page() {
             </h3>
             <div className="flex flex-wrap justify-center gap-4">
               {additionalServices.map((service, idx) => (
-                <div key={idx} className="flex items-center gap-3 bg-white pl-4 pr-7 py-3 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors">
+                <div 
+                  key={idx} 
+                  className="flex items-center gap-3.5 bg-white pl-4 pr-6 py-3 rounded-full shadow-sm border border-slate-200/60 hover:bg-slate-50 transition-colors w-full max-w-[335px] sm:w-[335px] shrink-0"
+                >
                   <div className="w-10 h-10 rounded-full bg-[#EAF3EA] flex items-center justify-center p-2 shrink-0 shadow-xs">
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>
-                  <span className="text-sm sm:text-base font-bold text-slate-700">{service.title}</span>
+                  <span className="text-sm sm:text-[15px] font-bold text-slate-700 whitespace-nowrap">{service.title}</span>
                 </div>
               ))}
             </div>

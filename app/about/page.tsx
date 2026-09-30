@@ -167,15 +167,26 @@ export default function AboutPage() {
     }
   };
 
-  // Handle initial hash routing with correct scroll offset on page mount
+  // Handle initial and dynamic hash routing with correct scroll offset
   useEffect(() => {
+    const handleHash = () => {
+      if (typeof window !== "undefined") {
+        const hash = window.location.hash.substring(1);
+        if (hash) {
+          scrollToSection(hash);
+        } else {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+      }
+    };
+
     if (typeof window !== "undefined" && window.location.hash) {
-      const hash = window.location.hash.substring(1);
-      const timer = setTimeout(() => {
-        scrollToSection(hash);
-      }, 300);
+      const timer = setTimeout(handleHash, 300);
       return () => clearTimeout(timer);
     }
+
+    window.addEventListener("hashchange", handleHash);
+    return () => window.removeEventListener("hashchange", handleHash);
   }, []);
 
   // Close TOC dropdown on click outside

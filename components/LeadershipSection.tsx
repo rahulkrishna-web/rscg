@@ -70,12 +70,12 @@ export default function LeadershipSection() {
               className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
               <div>
-                {/* Portrait with Soft Gradient Base */}
-                <div className="w-full aspect-[4/3] bg-gradient-to-b from-[#E7ECE9] to-[#CFDDD4] overflow-hidden relative">
+                {/* Portrait - Natural True Size without Cropping */}
+                <div className="w-full bg-[#EAEAEA] overflow-hidden relative">
                   <img
                     src={leader.image}
                     alt={leader.name}
-                    className="w-full h-full object-cover object-top opacity-95 group-hover:scale-105 transition-transform duration-500 ease-out"
+                    className="w-full h-auto block opacity-95 group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                   />
                 </div>
 

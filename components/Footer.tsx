@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Phone, Mail, Globe, MapPin, Factory } from "lucide-react";
 
 const aboutLinks = [
-  { name: "About Us", href: "/about#about-us" },
+  { name: "About Us", href: "/about" },
   { name: "Leadership", href: "/about#leadership" },
   { name: "Mission & Vision", href: "/about#mission-vision" },
   { name: "Our Philosophy", href: "/about#philosophy" },

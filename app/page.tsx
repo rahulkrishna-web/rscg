@@ -322,9 +322,7 @@ export default function Home() {
   const contactFormRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const infraSliderRef = useRef<HTMLDivElement>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedInfra, setSelectedInfra] = useState<typeof infraSlides[0] | null>(null);
-  const [showFloatingCTA, setShowFloatingCTA] = useState(false);
   const [activeTurnkeyTab, setActiveTurnkeyTab] = useState(0);
   const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
@@ -404,22 +402,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [rotatingPhrases.length]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setShowFloatingCTA(!entry.isIntersecting);
-      },
-      { threshold: 0 }
-    );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
 
 
 
@@ -525,7 +508,7 @@ export default function Home() {
       <div className="absolute top-[40%] right-[30%] w-[30%] aspect-square bg-brand-tertiary/5 rounded-full blur-[100px] pointer-events-none select-none"></div>
 
       {/* Navigation Header */}
-      <Header onRequestCallback={() => setIsModalOpen(true)} />
+      <Header />
 
       {/* Keyframe styles for text fade-up animation */}
       <style jsx>{`
@@ -645,8 +628,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 3 Pillar Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {/* 3 Pillar Cards Grid (Horizontally swipable on mobile) */}
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 tag: "01 · CREATE",
@@ -672,7 +655,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="bg-white rounded-[24px] sm:rounded-[28px] p-8 sm:p-9 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group min-h-[300px]"
+                className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-[24px] sm:rounded-[28px] p-7 sm:p-9 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group min-h-[300px]"
               >
                 <div>
                   <span className="text-xs sm:text-sm font-extrabold text-amber-500 tracking-wider uppercase mb-3 block">
@@ -697,6 +680,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            {/* Trailing space on mobile so last card padding isn't clipped */}
+            <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
           </div>
 
         </div>
@@ -823,8 +808,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 10 Solutions 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile) */}
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 id: "01",
@@ -983,7 +968,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px]"
+                className="w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px]"
               >
                 {/* Text Content */}
                 <div className="relative z-10 max-w-[68%] sm:max-w-[70%]">
@@ -1015,6 +1000,8 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            {/* Trailing space on mobile so last card padding isn't clipped */}
+            <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
           </div>
 
         </div>
@@ -1807,42 +1794,7 @@ export default function Home() {
       {/* --- Footer Component --- */}
       <Footer />
 
-      {/* Floating Bottom CTA */}
-      <div
-        className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 transition-all duration-500 ease-out flex items-center justify-center"
-        style={{
-          transform: `translateY(${showFloatingCTA ? "0px" : "100px"}) scale(${showFloatingCTA ? 1 : 0.9})`,
-          opacity: showFloatingCTA ? 1 : 0,
-          pointerEvents: showFloatingCTA ? "auto" : "none",
-        }}
-      >
-        <div className="relative rounded-full p-[2px] animate-shimmer shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300">
-          <button
-            onClick={() => setIsModalOpen(true)}
-            aria-label="Request a Call"
-            title="Request a Call"
-            className="relative w-14 h-14 bg-gradient-to-r from-brand-primary to-brand-secondary text-white rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:shadow-brand-primary/40 transition-all duration-200"
-          >
-            <Phone className="h-6 w-6 stroke-[2.2]" />
-          </button>
-        </div>
-      </div>
 
-      {/* Popup Form Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#1c2722]/65 backdrop-blur-md animate-fade-in">
-          <div className="relative w-full max-w-md animate-scale-in">
-            <button 
-              onClick={() => setIsModalOpen(false)}
-              className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/80 hover:bg-white text-slate-700 hover:text-slate-900 transition-colors shadow-xs cursor-pointer border border-slate-200/40"
-              aria-label="Close modal"
-            >
-              <X className="h-4 w-4" />
-            </button>
-            <LeadForm className="shadow-black/75 shadow-[0_25px_60px_rgba(0,0,0,0.8)] border border-white/10" />
-          </div>
-        </div>
-      )}
 
       {/* Lightbox Modal for Infrastructure Slider */}
       {selectedInfra && (

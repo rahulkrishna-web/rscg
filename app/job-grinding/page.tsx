@@ -432,7 +432,7 @@ export default function JobGrindingPage() {
             {/* Mobile Gradient */}
             <div className="block md:hidden absolute inset-0 bg-gradient-to-b from-[#0B1510]/95 via-[#0B1510]/80 to-[#0B1510]/40 z-0" />
             
-            <div className="relative z-10 p-8 sm:p-12 lg:p-14 space-y-8 flex flex-col justify-between h-full">
+            <div className="relative z-10 p-6 sm:p-12 lg:p-14 space-y-8 flex flex-col justify-between h-full">
               
               <div className="space-y-4 max-w-2xl">
                 <span className="text-xs sm:text-sm font-black text-[#f7b032] tracking-widest uppercase">
@@ -446,8 +446,8 @@ export default function JobGrindingPage() {
                 </p>
               </div>
 
-              {/* Icons Row */}
-              <div className="flex flex-wrap items-center gap-6 sm:gap-10 pt-2 pb-2">
+              {/* Icons Row - Horizontal swipeable on mobile, flex-wrap on desktop */}
+              <div className="flex items-start gap-4 sm:gap-8 lg:gap-10 overflow-x-auto sm:overflow-visible sm:flex-wrap no-scrollbar -mx-6 px-8 sm:mx-0 sm:px-0 scroll-pl-8 sm:scroll-pl-0 pt-2 pb-2">
                 {[
                   { icon: Beaker, label: "Trial to Bulk\nQuantities" },
                   { icon: Crosshair, label: "Process\nRecommendation" },
@@ -455,13 +455,14 @@ export default function JobGrindingPage() {
                   { icon: Leaf, label: "Hygienic\nHandling" },
                   { icon: HeadphonesIcon, label: "Expert\nSupport" }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex flex-col items-center gap-2 text-center group">
+                  <div key={idx} className="flex flex-col items-center gap-2 text-center group shrink-0 w-[84px] sm:w-auto snap-start">
                     <div className="w-12 h-12 rounded-full border border-[#f7b032]/50 bg-[#f7b032]/10 flex items-center justify-center shadow-xs group-hover:border-[#f7b032] group-hover:scale-105 transition-all">
                       <item.icon className="w-5 h-5 text-[#f7b032]" />
                     </div>
-                    <span className="text-xs font-bold text-slate-200 uppercase leading-tight whitespace-pre-line">{item.label}</span>
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 uppercase leading-tight whitespace-pre-line">{item.label}</span>
                   </div>
                 ))}
+                <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
               </div>
 
               <div className="flex flex-col lg:flex-row lg:items-center gap-6 border-t border-white/10 pt-8 justify-between">
@@ -470,21 +471,21 @@ export default function JobGrindingPage() {
                     href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20your%20Job%20Grinding%20service."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-wider text-xs sm:text-sm px-7 py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(247,176,50,0.6)] flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+                    className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-wide sm:tracking-wider text-xs sm:text-sm px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(247,176,50,0.6)] flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto min-h-[48px] sm:min-h-[52px]"
                   >
-                    <span>DISCUSS YOUR GRINDING REQUIREMENT</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span className="text-center">DISCUSS YOUR GRINDING REQUIREMENT</span>
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </a>
                   <Link
                     href="/contact"
-                    className="bg-black/60 hover:bg-black/80 text-white border border-white/20 hover:border-white/40 px-7 py-4 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto backdrop-blur-sm shadow-sm"
+                    className="bg-black/60 hover:bg-black/80 text-white border border-white/20 hover:border-white/40 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wide sm:tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto backdrop-blur-sm shadow-sm min-h-[48px] sm:min-h-[52px]"
                   >
-                    <span>SCHEDULE A PRODUCT TRIAL</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span className="text-center">SCHEDULE A PRODUCT TRIAL</span>
+                    <ArrowRight className="w-4 h-4 shrink-0" />
                   </Link>
                 </div>
                 
-                <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 max-w-sm">
+                <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 w-full lg:max-w-sm">
                   <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1">
                     Trusted by Businesses Worldwide
                   </p>

@@ -63,7 +63,7 @@ export default function Header({ onRequestCallback }: HeaderProps) {
   };
 
   const aboutItems = [
-    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/about#about-us", icon: Info, imgIcon: "/images/about/about-navbar-icons/about.png" },
+    { name: "About Us", desc: "Our history, milestones, and corporate profile.", href: "/about", icon: Info, imgIcon: "/images/about/about-navbar-icons/about.png" },
     { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/about#leadership", icon: Users, imgIcon: "/images/about/about-navbar-icons/leadership.png" },
     { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/about#mission-vision", icon: Eye, imgIcon: "/images/about/about-navbar-icons/vision-and-mission.png" },
     { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/about#philosophy", icon: Heart, imgIcon: "/images/about/about-navbar-icons/philosophy.png" },
@@ -139,6 +139,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                         <Link 
                           key={item.name} 
                           href={item.href}
+                          onClick={() => {
+                            setIsAboutOpen(false);
+                            if (item.href === "/about" && typeof window !== "undefined" && window.location.pathname === "/about") {
+                              window.scrollTo({ top: 0, behavior: "smooth" });
+                            }
+                          }}
                           className="flex items-start gap-4 p-3 rounded-xl hover:bg-white/60 hover:scale-[1.01] active:scale-[0.99] transition-all duration-200 group border border-transparent hover:border-brand-primary/5"
                         >
                           <div className="w-12 h-12 rounded-xl bg-white border border-slate-200/80 shadow-xs group-hover:bg-brand-primary group-hover:border-brand-primary flex items-center justify-center p-2 transition-colors duration-300 flex-shrink-0">
@@ -342,7 +348,12 @@ export default function Header({ onRequestCallback }: HeaderProps) {
                       <Link
                         key={item.name}
                         href={item.href}
-                        onClick={() => setMobileMenuOpen(false)}
+                        onClick={() => {
+                          setMobileMenuOpen(false);
+                          if (item.href === "/about" && typeof window !== "undefined" && window.location.pathname === "/about") {
+                            window.scrollTo({ top: 0, behavior: "smooth" });
+                          }
+                        }}
                         className="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 text-sm font-semibold text-slate-700 hover:text-brand-primary group"
                       >
                         <div className="w-9 h-9 rounded-lg bg-white border border-slate-200/80 flex items-center justify-center p-1.5 shrink-0 group-hover:bg-brand-primary transition-colors">
@@ -467,7 +478,11 @@ export default function Header({ onRequestCallback }: HeaderProps) {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                if (onRequestCallback) onRequestCallback();
+                if (onRequestCallback) {
+                  onRequestCallback();
+                } else if (typeof window !== "undefined") {
+                  window.dispatchEvent(new CustomEvent("open-callback-modal"));
+                }
               }}
               className="w-full bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-3 px-5 rounded-xl shadow-md text-center text-sm cursor-pointer"
             >

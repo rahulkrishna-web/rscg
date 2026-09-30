@@ -131,15 +131,15 @@ function DownloadsContent() {
           </div>
 
           {/* Filter Tabs Wrapper */}
-          <div className="w-full mb-10 sm:mb-12 flex justify-center">
-            <div className="flex flex-wrap justify-center items-center gap-2.5 sm:gap-3 max-w-[1350px] mx-auto">
+          <div className="w-full mb-8 sm:mb-12">
+            <div className="flex items-center sm:justify-center sm:flex-wrap gap-2.5 sm:gap-3 max-w-[1350px] mx-auto overflow-x-auto sm:overflow-visible no-scrollbar -mx-4 px-6 sm:mx-auto sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-2 sm:pb-0">
               {downloadCategories.map((cat) => {
                 const isActive = activeCategory === cat.id;
                 return (
                   <button
                     key={cat.id}
                     onClick={() => setActiveCategory(cat.id)}
-                    className={`flex-none w-[135px] sm:w-[148px] h-[48px] px-2.5 py-2 rounded-full text-xs font-semibold leading-tight text-center flex flex-col justify-center items-center cursor-pointer transition-all duration-200 select-none ${
+                    className={`flex-none shrink-0 w-[130px] sm:w-[148px] h-[46px] sm:h-[48px] px-2.5 py-1.5 rounded-full text-xs font-semibold leading-tight text-center flex flex-col justify-center items-center cursor-pointer transition-all duration-200 select-none snap-start ${
                       isActive
                         ? "bg-[#0b4627] text-white font-bold shadow-[0_4px_12px_rgba(11,70,39,0.25)] border-[1.5px] border-[#0b4627]"
                         : "bg-white text-[#334155] border-[1.5px] border-[#e2e8f0] hover:border-[#0b4627] hover:text-[#0b4627] hover:-translate-y-0.5 hover:shadow-md"
@@ -153,57 +153,57 @@ function DownloadsContent() {
                   </button>
                 );
               })}
+              <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
             </div>
           </div>
 
-          {/* Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+          {/* Cards Grid - 2 columns on mobile, 3 columns on lg+ */}
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-7">
             {filteredItems.map((item) => {
               const isCardHighlighted = highlightedId === item.id;
               return (
                 <div
                   key={item.id}
                   id={`card-${item.id}`}
-                  className={`group relative flex flex-col rounded-[22px] overflow-hidden bg-white shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(0,0,0,0.16)] transition-all duration-300 min-h-[380px] ${
+                  onClick={() => handleDownload(item)}
+                  className={`group relative flex flex-col rounded-2xl sm:rounded-[22px] overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] sm:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer ${
                     isCardHighlighted
                       ? "ring-4 ring-amber-400 ring-offset-2 scale-[1.02]"
                       : ""
                   }`}
                 >
                   {/* Thumbnail Image */}
-                  <div className="w-full h-[275px] relative overflow-hidden bg-[#e2e8f0] flex-shrink-0">
+                  <div className="w-full aspect-[4/3] sm:aspect-auto sm:h-[275px] relative overflow-hidden bg-[#e2e8f0] flex-shrink-0">
                     <Image
                       src={encodeURI(item.image)}
                       alt={item.title}
                       fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
 
                   {/* Card Bottom Body */}
-                  <div className="flex-1 p-4 sm:p-5 flex flex-col justify-center items-start bg-white">
-                    <span className="text-[11px] font-bold uppercase tracking-[0.6px] text-[#e28838] mb-1 leading-tight line-clamp-1">
+                  <div className="flex-1 p-3 sm:p-5 flex flex-col justify-center items-start bg-white">
+                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.5px] text-[#e28838] mb-0.5 sm:mb-1 leading-tight line-clamp-1">
                       {item.categoryLabel}
                     </span>
                     <h3
-                      className="text-[1.12rem] font-bold text-[#133a25] leading-snug truncate w-full"
+                      className="text-xs sm:text-[1.12rem] font-bold text-[#133a25] leading-snug line-clamp-2 sm:truncate w-full"
                       title={item.title}
                     >
                       {item.title}
                     </h3>
                   </div>
 
-                  {/* Hover Overlay */}
-                  <div className="absolute inset-0 bg-[#073f27]/90 backdrop-blur-[2px] rounded-[22px] flex items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 pointer-events-none group-hover:pointer-events-auto">
-                    <a
-                      href={`/downloads?file=${item.id}`}
-                      onClick={(e) => handleDownload(item, e)}
+                  {/* Hover Overlay (Desktop) */}
+                  <div className="hidden sm:flex absolute inset-0 bg-[#073f27]/90 backdrop-blur-[2px] rounded-[22px] items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 pointer-events-none group-hover:pointer-events-auto">
+                    <span
                       className="inline-flex items-center justify-center gap-2.5 bg-[#e39b27] hover:bg-[#d48c1e] text-white px-7 py-3.5 rounded-xl font-bold text-[14.5px] shadow-[0_8px_20px_rgba(227,90,39,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 text-decoration-none cursor-pointer"
                     >
                       <span>Download Brochure</span>
                       <Download className="w-4.5 h-4.5 stroke-[2.4]" />
-                    </a>
+                    </span>
                   </div>
                 </div>
               );

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { QuoteProvider } from "@/components/QuoteContext";
 import QuoteDrawer from "@/components/QuoteDrawer";
+import FloatingCallCTA from "@/components/FloatingCallCTA";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,6 +34,7 @@ export default function RootLayout({
         <QuoteProvider>
           {children}
           <QuoteDrawer />
+          <FloatingCallCTA />
         </QuoteProvider>
       </body>
     </html>

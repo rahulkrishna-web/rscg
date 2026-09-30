@@ -99,7 +99,7 @@ export default function PhilosophySection() {
       <div
         key={card.number}
         title={card.description}
-        className={`${colClasses} group bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:border-slate-300 hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.08),0_4px_12px_-2px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-between cursor-default`}
+        className={`${colClasses} w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start group bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:border-slate-300 hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.08),0_4px_12px_-2px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-between cursor-default`}
       >
         <div className="space-y-1.5 pr-3">
           <span
@@ -156,9 +156,10 @@ export default function PhilosophySection() {
           </p>
         </div>
 
-        {/* 8 Cards in a 6-Column Grid on lg (3 cols each row, bottom 2 cards centered) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-5 lg:gap-6">
+        {/* 8 Cards (Horizontally swipable on mobile, 6-Column Grid on lg) */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-6 gap-4 sm:gap-5 lg:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {philosophyValues.map((card, idx) => renderCard(card, idx))}
+          <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>
