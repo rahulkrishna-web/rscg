@@ -77,8 +77,8 @@ export default function ConsultancyPage() {
       <div>
         <Header onRequestCallback={() => setIsModalOpen(true)} />
 
-        {/* Hero Section */}
-        <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1080/1920] md:aspect-[1920/820] flex flex-col justify-center">
+        {/* Hero Section - Standardized responsive hero */}
+        <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex flex-col justify-center">
           {/* Full-bleed Background Images */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Desktop Background Image (1920x820) */}
@@ -108,32 +108,31 @@ export default function ConsultancyPage() {
             </div>
           </div>
 
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
-          <div className="max-w-2xl space-y-4 sm:space-y-6 pt-12 md:pt-0">
-            {/* Standard Eyebrow */}
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
-              <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              SERVICES
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+            <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
+              {/* Standard Eyebrow */}
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+                <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
+                SERVICES
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+                Flour Milling Consultancy
+              </h1>
+
+              <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+                Expert guidance to help you enter, scale, and excel in the flour milling industry. Strategic partnership from concept to continuous improvement.
+              </p>
+
+              <div className="pt-2 sm:pt-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+                >
+                  EXPLORE CONSULTANCY <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
             </div>
-
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Flour Milling <br />
-              <span className="text-white">Consultancy</span>
-            </h1>
-
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-              Expert guidance to help you enter, scale, and excel in the flour milling industry. Strategic partnership from concept to continuous improvement.
-            </p>
-
-            <div className="pt-2 sm:pt-4">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
-              >
-                EXPLORE CONSULTANCY <ArrowRight className="w-4 h-4" />
-              </Link>
-            </div>
-          </div>
 
           {/* Desktop Proof Points White Container - Full Width Overlapping Hero Bottom */}
           <div className="hidden md:block absolute bottom-0 left-0 right-0 w-full px-6 sm:px-12 lg:px-16 xl:px-24 z-30 translate-y-1/2">

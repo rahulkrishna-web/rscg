@@ -40,8 +40,8 @@ export default function GrainStorageHandlingPage() {
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
       <Header />
 
-      {/* Hero Banner Section */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+      {/* Hero Banner Section - Standardized responsive hero */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
@@ -73,17 +73,16 @@ export default function GrainStorageHandlingPage() {
           </div>
         </div>
 
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
               SILOS DIVISION
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Storage & <br />
-              <span className="text-white">Handling Silos</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+              Storage & Handling Silos
             </h1>
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Storage and handling silos engineered for reliable material flow, controlled conditioning, and efficient plant performance. Explore bran, atta, conditioning, and grain silos designed for smooth mill operations.
             </p>
             <div className="pt-2 sm:pt-4">
@@ -240,7 +239,7 @@ export default function GrainStorageHandlingPage() {
                   Let’s Design the Right<br className="hidden lg:block"/>Silo for Your Plant.
                 </h2>
                 <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-lg">
-                  From capacity planning to layout, materials and integration—our experts help you build efficient, future-ready storage systems.
+                  From capacity planning to layout, materials and integration - our experts help you build efficient, future-ready storage systems.
                 </p>
               </div>
 

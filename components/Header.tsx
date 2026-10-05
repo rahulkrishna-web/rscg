@@ -78,12 +78,11 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
     { name: "Leadership", desc: "Meet the directors and management driving the vision.", href: "/about#leadership", icon: Users, imgIcon: "/images/about/about-navbar-icons/leadership.png" },
     { name: "Mission & Vision", desc: "Innovating sustainable solutions for global grain milling.", href: "/about#mission-vision", icon: Eye, imgIcon: "/images/about/about-navbar-icons/vision-and-mission.png" },
     { name: "Our Philosophy", desc: "Quality-first abrasive grinding design & production.", href: "/about#philosophy", icon: Heart, imgIcon: "/images/about/about-navbar-icons/philosophy.png" },
-    { name: "Research & Development", desc: "Advanced metallurgy labs and automation test divisions.", href: "/about#research-development", icon: Milestone, imgIcon: "/images/about/about-navbar-icons/research.png" },
+    { name: "R&D and Innovation", desc: "Advanced metallurgy labs, digital automation, and IoT solutions.", href: "/about#research-development", icon: Lightbulb, imgIcon: "/images/about/about-navbar-icons/rnd-and-innovation.png" },
     { name: "Social Responsibility", desc: "Community empowerment and ecological sustainability.", href: "/about#social-responsibility", icon: Landmark, imgIcon: "/images/about/about-navbar-icons/social-responsibility.png" },
     { name: "Why RSC Group", desc: "Trusted by commercial mill owners across 20+ countries.", href: "/about#why-rsc", icon: HelpCircle, imgIcon: "/images/about/about-navbar-icons/why-rsc.png" },
     { name: "Our Network", desc: "Worldwide sales office, AMCs, and distribution network.", href: "/about#network", icon: Network, imgIcon: "/images/about/about-navbar-icons/our-network.png" },
     { name: "Our Infrastructure", desc: "Two heavy engineering works facilities at Ajmer.", href: "/about#infrastructure", icon: Building, imgIcon: "/images/about/about-navbar-icons/infrastructure.png" },
-    { name: "Our Innovations", desc: "Digital systems, computerized chakkis, and IoT solutions.", href: "/about#innovations", icon: Lightbulb, imgIcon: "/images/about/about-navbar-icons/innovations.png" },
   ];
 
   const productCategories = [
@@ -109,7 +108,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
   ];
 
   const isAnyMenuOpen = isAboutOpen || isProductsOpen || isServicesOpen || mobileMenuOpen || mobileSubmenuOpen;
-  const mbClass = submenu ? "-mb-[130px] sm:-mb-[146px] lg:-mb-[148px]" : "-mb-[94px] sm:-mb-[110px]";
+  const mbClass = submenu ? "-mb-[134px] sm:-mb-[146px] lg:-mb-[148px]" : "-mb-[96px] sm:-mb-[108px]";
 
   useEffect(() => {
     if (!mobileSubmenuOpen) return;
@@ -124,18 +123,18 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
   }, [mobileSubmenuOpen]);
 
   return (
-    <header className={`w-full sticky top-0 z-50 p-[5px] ${mbClass} transition-all duration-300 relative pointer-events-none`}>
+    <header className={`w-full sticky top-0 z-50 p-[15px] ${mbClass} transition-all duration-300 relative pointer-events-none`}>
       <div className={`w-full bg-white rounded-t-xl ${isAnyMenuOpen ? "rounded-b-none" : "rounded-b-xl"} shadow-xs border border-slate-200/80 relative pointer-events-auto transition-all`}>
         
         {/* Top Navbar Row */}
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-20 sm:h-24 relative">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-16 sm:h-[76px] relative">
           {/* Brand Logos */}
           <div className="flex flex-row items-center select-none h-full">
             <Link href="/" className="inline-flex hover:scale-102 transition-transform">
               <img 
                 src="/rscg.png" 
                 alt="RS Choyal Group Logo" 
-                className="h-[56px] sm:h-[70px] w-auto object-contain"
+                className="h-[45px] sm:h-[56px] w-auto object-contain"
               />
             </Link>
           </div>
@@ -169,7 +168,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                 className="absolute top-full -left-[1px] -right-[1px] w-[calc(100%+2px)] border-x border-b border-slate-200/80 rounded-b-2xl shadow-2xl z-50 animate-fade-in overflow-hidden"
               >
                 <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-8 grid grid-cols-12 gap-8 max-w-[1440px] mx-auto">
-                  <div className="col-span-12 grid grid-cols-3 lg:grid-cols-4 gap-6">
+                  <div className="col-span-12 grid grid-cols-3 gap-6">
                     {aboutItems.map((item) => {
                       const Icon = item.icon;
                       return (

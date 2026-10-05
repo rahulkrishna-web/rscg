@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowLeft, ShoppingBag, CheckCircle, HelpCircle, ArrowRight } from "lucide-react";
+import { PackageCheck, MessageCircle, CheckCircle, ShieldCheck, HelpCircle, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import EmeryCTASection from "@/components/EmeryCTASection";
@@ -19,22 +18,13 @@ interface StoneSize {
 
 export default function AgateShellerTypeStones() {
   const { addToQuote } = useQuote();
-  const [quantities, setQuantities] = useState<Record<string, number>>({});
 
   const sizes: StoneSize[] = [
     { name: "1200 mm / 30\"", code: "1200MM", thickness: "260 mm", weight: "approx. 495 kg", recommendation: "Large-Scale Soybean Milling" }
   ];
 
-  const handleQtyChange = (key: string, val: number) => {
-    setQuantities(prev => ({
-      ...prev,
-      [key]: Math.max(1, (prev[key] || 1) + val)
-    }));
-  };
-
   const handleAddToQuote = (sizeItem: StoneSize) => {
     const itemKey = `emery-stone-agate-${sizeItem.code.toLowerCase()}`;
-    const qty = quantities[itemKey] || 1;
     
     addToQuote({
       id: itemKey,
@@ -42,13 +32,7 @@ export default function AgateShellerTypeStones() {
       image: "/emery-stone-dresser/agate_emery_stone.png",
       category: "Emery Stones",
       size: sizeItem.code
-    }, qty);
-    
-    // Reset quantity
-    setQuantities(prev => ({
-      ...prev,
-      [itemKey]: 1
-    }));
+    }, 1);
   };
 
   return (
@@ -59,26 +43,11 @@ export default function AgateShellerTypeStones() {
 
       <Header />
 
-      {/* Top Breadcrumb */}
-      <div className="w-full bg-white/50 py-6 relative z-10 border-b border-slate-200/50">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex flex-col sm:flex-row sm:items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest gap-4">
-          <Link href="/emery-stones" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Emery Stones
-          </Link>
-          <div className="flex items-center gap-2">
-            <span>Emery Stones</span>
-            <span className="text-slate-400">/</span>
-            <span className="text-brand-primary">Agate / Sheller Type</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main Content Section */}
-      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16 flex-1 relative z-10">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-16 flex-1 relative z-10">
         
         {/* Hero Product Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mt-8 mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
           
           {/* Left: Images */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-32 h-fit">
@@ -137,11 +106,7 @@ export default function AgateShellerTypeStones() {
               </div>
 
               <div className="space-y-3 max-h-[500px] overflow-y-auto pr-2">
-              {sizes.map((sizeItem) => {
-                const qtyKey = `emery-stone-agate-${sizeItem.code.toLowerCase()}`;
-                const qty = quantities[qtyKey] || 1;
-
-                return (
+              {sizes.map((sizeItem) => (
                   <div 
                     key={sizeItem.code}
                     className="p-4 border border-slate-100 rounded-2xl bg-slate-50/50 flex flex-col sm:flex-row sm:items-center justify-between gap-4"
@@ -153,40 +118,45 @@ export default function AgateShellerTypeStones() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3 w-full sm:w-auto justify-between sm:justify-start">
-                      {/* Qty Selector */}
-                      <div className="flex items-center border border-slate-200 rounded-lg overflow-hidden h-8 bg-white flex-shrink-0">
-                        <button
-                          type="button"
-                          onClick={() => handleQtyChange(qtyKey, -1)}
-                          className="px-2 bg-slate-50 hover:bg-slate-100 text-slate-600 transition-colors h-full text-xs font-black"
-                        >
-                          -
-                        </button>
-                        <span className="w-6 text-center text-xs font-bold text-slate-800">
-                          {qty}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => handleQtyChange(qtyKey, 1)}
-                          className="px-2 bg-slate-50 hover:bg-slate-100 text-slate-600 transition-colors h-full text-xs font-black"
-                        >
-                          +
-                        </button>
-                      </div>
-
-                      {/* Add Button */}
+                    <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
                       <button
                         onClick={() => handleAddToQuote(sizeItem)}
-                        className="bg-brand-primary hover:bg-brand-secondary text-white font-bold px-4 py-2 rounded-xl text-xs transition-colors flex items-center gap-1.5 cursor-pointer flex-shrink-0"
+                        className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-4 py-2.5 rounded-lg text-xs transition-colors flex items-center gap-1.5 cursor-pointer shadow-[0_4px_14px_rgba(247,176,50,0.3)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] whitespace-nowrap"
                       >
-                        <ShoppingBag className="h-3.5 w-3.5" />
+                        <PackageCheck className="h-3.5 w-3.5 text-slate-900" />
                         <span>Add to Quote</span>
                       </button>
                     </div>
                   </div>
-                );
-              })}
+                ))}
+              </div>
+
+              {/* WhatsApp Enquiry Button */}
+              <div className="pt-2">
+                <Link
+                  href={`https://wa.me/919240289259?text=${encodeURIComponent('Hello, I am interested in Horizontal Emery Stones - Agate/Sheller Type and would like to receive more details.')}`}
+                  className="h-12 w-full flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp Enquiry
+                </Link>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-3">
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                </div>
               </div>
             </div>
           </div>

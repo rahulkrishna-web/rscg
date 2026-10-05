@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound, useParams } from "next/navigation";
-import { ChevronRight, ArrowLeft, Box, Info, ShieldCheck, Truck, Headphones, MessageCircle } from "lucide-react";
+import { ChevronRight, Box, Info, ShieldCheck, CheckCircle, MessageCircle, PackageCheck } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
@@ -19,19 +19,17 @@ export default function GrainProcessingProductPage() {
   }
 
   const { addToQuote } = useQuote();
-  const [qty, setQty] = React.useState(1);
   const [activeModelTab, setActiveModelTab] = React.useState(0);
-
-  const handleQtyChange = (delta: number) => {
-    setQty(prev => Math.max(1, prev + delta));
-  };
+  const [addedMessage, setAddedMessage] = React.useState(false);
 
   const handleAddToQuote = () => {
     addToQuote({
       id: product.slug,
       name: product.title,
       image: product.image
-    }, qty);
+    }, 1);
+    setAddedMessage(true);
+    setTimeout(() => setAddedMessage(false), 2000);
   };
 
   return (
@@ -40,25 +38,8 @@ export default function GrainProcessingProductPage() {
 
       <main className="w-full pb-24">
         
-        {/* Top Breadcrumb */}
-        <div className="w-full bg-[#f9fafb] py-6">
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest">
-            <Link href="/grain-processing" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
-              <ArrowLeft className="w-4 h-4" />
-              BACK TO GRAIN PROCESSING
-            </Link>
-            <div className="flex items-center gap-2">
-              <Link href="/" className="hover:text-brand-primary">HOME</Link>
-              <span className="text-slate-400">/</span>
-              <Link href="/grain-processing" className="hover:text-brand-primary">GRAIN PROCESSING</Link>
-              <span className="text-slate-400">/</span>
-              <span className="text-brand-primary">{product.title}</span>
-            </div>
-          </div>
-        </div>
-        
         {/* Main Content Container */}
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-10">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36">
 
         {/* Top Product Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 mb-24">
@@ -109,49 +90,40 @@ export default function GrainProcessingProductPage() {
 
             {/* Actions */}
             <div className="space-y-6 pt-4">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <div className="flex items-center items-stretch border border-slate-200 rounded-lg h-12 bg-white">
-                  <button 
-                    onClick={() => handleQtyChange(-1)}
-                    className="px-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors font-medium rounded-l-lg"
-                  >-</button>
-                  <span className="px-4 text-sm font-bold text-slate-800 border-x border-slate-200 flex items-center justify-center min-w-[3rem]">
-                    {qty}
-                  </span>
-                  <button 
-                    onClick={() => handleQtyChange(1)}
-                    className="px-4 text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors font-medium rounded-r-lg"
-                  >+</button>
-                </div>
-                
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button 
                   onClick={handleAddToQuote}
-                  className="flex-1 sm:flex-none flex items-center justify-center px-8 h-12 bg-[#0B1510] hover:bg-[#1a2f24] text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
-                  <Box className="w-4 h-4 mr-2" />
-                  Add to Quote List
+                  <PackageCheck className="w-4 h-4 text-slate-900" />
+                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
                 </button>
 
-                <Link 
-                  href="https://wa.me/911234567890" target="_blank"
-                  className="flex-1 sm:flex-none flex items-center justify-center px-6 h-12 border-2 border-[#16a34a] text-[#16a34a] hover:bg-[#f0fdf4] font-bold rounded-lg transition-colors"
+                <a 
+                  href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
                 >
-                  <MessageCircle className="w-4 h-4 mr-2" />
+                  <MessageCircle className="w-4 h-4" />
                   WhatsApp Enquiry
-                </Link>
+                </a>
               </div>
               
 
 
-              <div className="flex flex-wrap items-center gap-6 pt-2">
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
-                  <ShieldCheck className="w-4 h-4 text-[#16a34a]" /> 1 Year Warranty
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
-                  <Truck className="w-4 h-4 text-[#16a34a]" /> Worldwide Delivery
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
                 </div>
-                <div className="flex items-center gap-2 text-xs font-bold text-slate-500">
-                  <Headphones className="w-4 h-4 text-[#16a34a]" /> After Sales Support
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
                 </div>
               </div>
             </div>

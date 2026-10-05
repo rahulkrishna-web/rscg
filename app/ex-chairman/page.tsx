@@ -1,29 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, Award, Calendar, GraduationCap, Heart, MapPin } from "lucide-react";
+import { Award, Calendar, GraduationCap, Heart, MapPin } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OtherLeadersSection from "@/components/OtherLeadersSection";
 
 export default function ExChairmanPage() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[240px] sm:h-[300px] overflow-hidden flex items-center bg-slate-900">
-          <div className="absolute inset-0 bg-[url('/images/founders/bm_choyal.jpg')] bg-cover bg-center opacity-20 filter grayscale blur-sm" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
+        <section className="relative w-full bg-gradient-to-r from-[#17462c] to-[#297a49] pt-36 sm:pt-40 lg:pt-44 pb-14 sm:pb-16 lg:pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden border-b border-[#17462c]/30">
+          {/* Background Texture matching Homepage CTA */}
+          <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+          <div className="relative z-10 w-full">
             <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Legacy Founders
-              </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
                 Late Mr. B. M. Choyal
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
+              <p className="mt-2 text-sm sm:text-base lg:text-lg text-white/90 font-normal max-w-2xl leading-relaxed">
                 Co-Founder &amp; Ex-Chairman of Shri Vishvakarma Industries
               </p>
             </div>
@@ -31,63 +29,43 @@ export default function ExChairmanPage() {
         </section>
 
         {/* Main Content */}
-        <section className="w-full py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
-          {/* Breadcrumbs */}
-          <div className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 mb-10">
-            <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/about" className="hover:text-brand-primary transition-colors">About Us</Link>
-            <span>/</span>
-            <Link href="/about#leadership" className="hover:text-brand-primary transition-colors">Leadership</Link>
-            <span>/</span>
-            <span className="text-slate-600">Late Mr. B. M. Choyal</span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Sidebar Card */}
-            <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
-              <div className="bg-white border border-slate-200/60 p-6 rounded-[32px] shadow-sm space-y-6">
-                <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-100 shadow-inner">
-                  <img
-                    src="/images/founders/bm_choyal.jpg"
-                    alt="Late Mr. B. M. Choyal"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="space-y-4">
-                  <div>
-                    <h2 className="text-xl font-heading font-black text-slate-900">Late Mr. B. M. Choyal</h2>
-                    <p className="text-brand-primary text-xs font-bold uppercase tracking-wider mt-1">Co-Founder &amp; Ex-Chairman</p>
-                    <p className="text-slate-400 font-medium text-[11px] mt-0.5">July 28, 1926 – Ex-Chairman</p>
+        <section className="w-full py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+              {/* Left Sidebar Card */}
+              <div className="lg:col-span-4 lg:sticky lg:top-28">
+                <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6">
+                  <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-100 shadow-inner">
+                    <img
+                      src="/images/founders/bm_choyal.jpg"
+                      alt="Late Mr. B. M. Choyal"
+                      className="w-full h-full object-cover"
+                    />
                   </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h2 className="text-xl font-heading font-black text-slate-900">Late Mr. B. M. Choyal</h2>
+                      <p className="text-brand-primary text-xs font-bold uppercase tracking-wider mt-1">Co-Founder &amp; Ex-Chairman</p>
+                    </div>
 
-                  <div className="border-t border-slate-100 pt-4 space-y-3">
-                    <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
-                      <Calendar className="w-4 h-4 text-brand-primary shrink-0" />
-                      <span>Born: July 28, 1926</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
-                      <MapPin className="w-4 h-4 text-brand-primary shrink-0" />
-                      <span>Nava City, Distt. Nagaur, Rajasthan</span>
-                    </div>
-                    <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
-                      <Award className="w-4 h-4 text-brand-primary shrink-0" />
-                      <span>Title: &apos;Bhamashah&apos;</span>
+                    <div className="border-t border-slate-100 pt-4 space-y-3">
+                      <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
+                        <Calendar className="w-4 h-4 text-brand-primary shrink-0" />
+                        <span>Born: July 28, 1926</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
+                        <MapPin className="w-4 h-4 text-brand-primary shrink-0" />
+                        <span>Nava City, Distt. Nagaur, Rajasthan</span>
+                      </div>
+                      <div className="flex items-center gap-2.5 text-xs text-slate-600 font-semibold">
+                        <Award className="w-4 h-4 text-brand-primary shrink-0" />
+                        <span>Title: &apos;Bhamashah&apos;</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <Link
-                href="/about#leadership"
-                className="inline-flex items-center gap-2 text-xs font-black text-slate-500 hover:text-brand-primary uppercase tracking-widest transition-colors pl-2"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Leadership
-              </Link>
-            </div>
-
-            {/* Right Biography Content */}
+              {/* Right Biography Content */}
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-4">
                 <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
@@ -120,29 +98,29 @@ export default function ExChairmanPage() {
               </div>
 
               {/* Pillars of Legacy */}
-              <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-[32px] mt-8">
-                <h4 className="text-lg font-heading font-black text-slate-850 mb-6">
+              <div className="bg-slate-50 border border-slate-200/60 p-6 sm:p-8 rounded-[28px] mt-8">
+                <h4 className="text-lg sm:text-xl font-heading font-black text-slate-900 mb-6">
                   Key Legacy Contributions
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <GraduationCap className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <GraduationCap className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Support for Education</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Support for Education</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Pioneered local educational opportunities, specifically funding schools and scholarships for girls in Rajasthan.
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <Heart className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <Heart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Social Well-being</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Social Well-being</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Established cow shelters (Gau Shalas) and healthcare resources to benefit underprivileged communities.
                       </p>
                     </div>
@@ -152,9 +130,12 @@ export default function ExChairmanPage() {
             </div>
           </div>
         </section>
-      </div>
 
-      <Footer />
+      {/* Leadership Section */}
+      <OtherLeadersSection />
+    </div>
+
+    <Footer />
     </div>
   );
 }

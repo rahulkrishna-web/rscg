@@ -56,7 +56,7 @@ const milestones: Milestone[] = [
     year: "2011",
     title: "Turnkey Solutions for Every Need",
     description:
-      "Launched end-to-end milling turnkey solutions. To date, we have successfully engineered and delivered 265+ turnkey plants globally.",
+      "Launched end-to-end milling turnkey solutions. To date, we have successfully engineered and delivered 275+ turnkey plants globally.",
     image: "/images/about/timeline/Journey/2011.png",
   },
   {
@@ -89,9 +89,9 @@ const milestones: Milestone[] = [
   },
   {
     year: "2026",
-    title: "Launch of Promiller",
+    title: "Digital Milling Evolution",
     description:
-      "Introducing Promiller, expanding our technology footprint to deliver next-generation, high-performance milling solutions for modern operations.",
+      "A new approach to milling, combining technology, performance, and smarter operations for modern flour mills.",
     image: "/images/about/timeline/Journey/2026.png",
   },
 ];
@@ -455,7 +455,7 @@ export default function JourneyTimeline() {
                     <div className="relative rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
                       <img
                         src={displayedItem.image}
-                        alt={`${displayedItem.year} — ${displayedItem.title}`}
+                        alt={`${displayedItem.year} - ${displayedItem.title}`}
                         className={`w-auto h-auto max-h-[220px] sm:max-h-[280px] lg:max-h-[290px] xl:max-h-[380px] max-w-full object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"

@@ -65,8 +65,8 @@ export default function JobGrindingPage() {
       <div>
         <Header />
 
-        {/* Hero Section - Standardized aspect ratio matching site-wide heroes */}
-        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+        {/* Hero Section - Standardized responsive hero */}
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
           {/* Full-bleed Background Images */}
           <div className="absolute inset-0 z-0">
             {/* Desktop Background Image (1920x820) */}
@@ -98,18 +98,17 @@ export default function JobGrindingPage() {
             </div>
           </div>
 
-          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-            <div className="max-w-2xl space-y-4 sm:space-y-6">
+          <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+            <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
               <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
                 SERVICES
               </div>
-              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-                Job <br />
-                <span className="text-white">Grinding</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+                Job Grinding
               </h1>
-              <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-                Flexible contract grinding services for grains, spices, pulses, and food ingredients—delivering consistent particle size, hygienic processing, and dependable commercial output.
+              <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+                Flexible contract grinding services for grains, spices, pulses, and food ingredients - delivering consistent particle size, hygienic processing, and dependable commercial output.
               </p>
               
               <div className="pt-2 sm:pt-4">
@@ -209,13 +208,13 @@ export default function JobGrindingPage() {
                   From understanding your raw material and required particle size to trials, grinding, quality checks, and final dispatch, each stage is planned to deliver consistent results while protecting product quality.
                 </p>
                 <p>
-                  Our <span className="whitespace-nowrap font-bold text-slate-800">40 TPD</span> Flour Milling Facility in Ajmer is more than a plant plain—it's an experience centre designed to help you make confident, informed decisions.
+                  Our <span className="whitespace-nowrap font-bold text-slate-800">40 TPD</span> Flour Milling Facility in Ajmer is more than a plant plain - it's an experience centre designed to help you make confident, informed decisions.
                 </p>
                 <p>
                   See a wide range of milling machines in action, evaluate process performance, conduct R&amp;D, and get practical operator training.
                 </p>
                 <p>
-                  From process trials to skill-building, everything you need to validate the right solution—before you invest.
+                  From process trials to skill-building, everything you need to validate the right solution - before you invest.
                 </p>
               </div>
             </div>
@@ -471,14 +470,14 @@ export default function JobGrindingPage() {
                     href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20your%20Job%20Grinding%20service."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#f7b032] hover:bg-[#ffc254] text-[#0B1510] font-black uppercase tracking-wide sm:tracking-wider text-xs sm:text-sm px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl transition-all duration-300 shadow-md hover:shadow-[0_0_25px_rgba(247,176,50,0.6)] flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto min-h-[48px] sm:min-h-[52px]"
+                    className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold uppercase tracking-wide text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
                   >
                     <span className="text-center">DISCUSS YOUR GRINDING REQUIREMENT</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </a>
                   <Link
                     href="/contact"
-                    className="bg-black/60 hover:bg-black/80 text-white border border-white/20 hover:border-white/40 px-4 sm:px-7 py-3.5 sm:py-4 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wide sm:tracking-wider transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto backdrop-blur-sm shadow-sm min-h-[48px] sm:min-h-[52px]"
+                    className="bg-black/40 hover:bg-black/60 border border-white/20 hover:border-[#f7b032]/50 text-white backdrop-blur-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto shadow-sm"
                   >
                     <span className="text-center">SCHEDULE A PRODUCT TRIAL</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />

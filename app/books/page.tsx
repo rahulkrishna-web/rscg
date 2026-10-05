@@ -37,11 +37,11 @@ export default function BooksPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#133020] text-brand-foreground font-sans">
+    <div className="min-h-screen bg-[#F8F9FA] text-brand-foreground font-sans">
       <Header />
 
-      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+      {/* Hero Section - Standardized responsive hero */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
@@ -74,18 +74,17 @@ export default function BooksPage() {
         </div>
 
         {/* Banner Text Content */}
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
               FLOUR MILLING BOOKS
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Books on <br />
-              <span className="text-[#f7b032]">Flour Milling</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+              Books on <span className="text-[#f7b032]">Flour Milling</span>
             </h1>
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
-              Practical knowledge, technical expertise, and decades of industry insight — authored to help millers, entrepreneurs, and plant teams build better Flour operations.
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+              Practical knowledge, technical expertise, and decades of industry insight - authored to help millers, entrepreneurs, and plant teams build better Flour operations.
             </p>
             <div className="pt-2 sm:pt-4">
               <button 
@@ -188,7 +187,7 @@ export default function BooksPage() {
             {canScrollLeft && (
               <div 
                 onClick={() => scroll('left')}
-                className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full items-center justify-center shadow-xl cursor-pointer hover:bg-slate-50 transition-colors opacity-0 group-hover/slider:opacity-100"
+                className="hidden lg:flex absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full items-center justify-center shadow-lg cursor-pointer hover:bg-slate-50 transition-colors opacity-0 group-hover/slider:opacity-100"
               >
                 <ChevronLeft className="w-6 h-6 text-slate-700" />
               </div>
@@ -197,7 +196,7 @@ export default function BooksPage() {
             {canScrollRight && (
               <div 
                 onClick={() => scroll('right')}
-                className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white rounded-full items-center justify-center shadow-xl cursor-pointer hover:bg-slate-50 transition-colors opacity-0 group-hover/slider:opacity-100"
+                className="hidden lg:flex absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white rounded-full items-center justify-center shadow-lg cursor-pointer hover:bg-slate-50 transition-colors opacity-0 group-hover/slider:opacity-100"
               >
                 <ChevronRight className="w-6 h-6 text-slate-700" />
               </div>
@@ -206,7 +205,7 @@ export default function BooksPage() {
             <div 
               ref={scrollRef}
               onScroll={checkScroll}
-              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-8"
+              className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth -mx-4 px-4 -mt-3 pt-3 pb-10 scroll-pl-4"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style dangerouslySetInnerHTML={{__html: `
@@ -217,7 +216,7 @@ export default function BooksPage() {
                   <Link 
                     key={book.slug}
                     href={`/books/${book.slug}`}
-                    className="group bg-white border border-slate-100 rounded-2xl border-none overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col relative shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] snap-start"
+                    className="group bg-white rounded-2xl overflow-hidden border border-slate-200/80 shadow-[0_4px_16px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.08)] hover:border-amber-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col relative shrink-0 w-[85vw] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] xl:w-[calc(25%-18px)] snap-start"
                   >
                     {/* Sale Tag */}
                     {book.comingSoon ? (
@@ -231,12 +230,11 @@ export default function BooksPage() {
                     )}
 
                     {/* Image Container */}
-                    <div className="aspect-[4/5] w-full flex items-center justify-center p-6 relative overflow-hidden bg-white/50 border-b border-slate-200/50 backdrop-blur-sm">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent z-0"></div>
+                    <div className="aspect-[4/5] w-full flex items-center justify-center p-6 relative overflow-hidden bg-white border-b border-slate-100">
                       <img 
                         src={book.image} 
                         alt={book.title} 
-                        className="object-contain max-h-[85%] max-w-[85%] drop-shadow-xl group-hover:scale-105 transition-transform duration-500 ease-out z-10 relative"
+                        className="object-contain max-h-[88%] max-w-[88%] group-hover:scale-105 transition-transform duration-500 ease-out z-10 relative mix-blend-multiply"
                       />
                     </div>
 

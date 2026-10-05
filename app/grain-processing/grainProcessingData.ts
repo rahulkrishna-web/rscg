@@ -197,7 +197,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
     ],
     models: [
       {
-        name: "Model 12\" × 30\" — High Capacity",
+        name: "Model 12\" × 30\" - High Capacity",
         specs: [
           { parameter: "Capacity", specification: "2–2.5 TPH" },
           { parameter: "Main Motor Power", "specification": "20 HP" },
@@ -206,7 +206,7 @@ export const grainProcessingData: GrainProcessingProduct[] = [
         ]
       },
       {
-        name: "Model 12\" × 30\" — Standard Capacity",
+        name: "Model 12\" × 30\" - Standard Capacity",
         specs: [
           { parameter: "Capacity", specification: "1.5–2 TPH" },
           { parameter: "Main Motor Power", "specification": "15 HP" },

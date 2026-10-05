@@ -41,15 +41,15 @@ export default function OurNetworkSection() {
           </div>
         </header>
 
-        {/* 3D World Map Graphic with Location Pins */}
-        <div className="mt-8 sm:mt-14 w-full flex justify-center">
-          <div className="relative w-full max-w-5xl">
+        {/* 3D World Map Graphic with Location Pins (Enlarged) */}
+        <div className="mt-10 sm:mt-16 w-full flex justify-center">
+          <div className="relative w-full max-w-6xl xl:max-w-7xl">
             <Image
-              src="/images/about/network/map.png"
+              src="/images/about/network/global-map-v2.png"
               alt="RS Choyal Global Reach - Worldwide Network Map"
-              width={1024}
-              height={266}
-              className="w-full h-auto object-contain select-none pointer-events-none"
+              width={1916}
+              height={441}
+              className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_10px_30px_rgba(0,0,0,0.03)]"
               priority
             />
           </div>

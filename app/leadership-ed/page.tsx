@@ -1,29 +1,27 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, Award, Globe, Users, Heart, Sparkles } from "lucide-react";
+import { Award, Globe, Users, Heart, Sparkles } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import OtherLeadersSection from "@/components/OtherLeadersSection";
 
 export default function LeadershipEdPage() {
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header />
 
         {/* Hero Section */}
-        <section className="relative w-full h-[240px] sm:h-[300px] overflow-hidden flex items-center bg-slate-900">
-          <div className="absolute inset-0 bg-[url('/images/founders/rs_choyal.jpg')] bg-cover bg-center opacity-20 filter blur-sm" />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-          <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
+        <section className="relative w-full bg-gradient-to-r from-[#17462c] to-[#297a49] pt-36 sm:pt-40 lg:pt-44 pb-14 sm:pb-16 lg:pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden border-b border-[#17462c]/30">
+          {/* Background Texture matching Homepage CTA */}
+          <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+          <div className="relative z-10 w-full">
             <div className="space-y-2">
-              <span className="text-[10px] font-black text-brand-tertiary tracking-widest uppercase">
-                Leadership Profile
-              </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white tracking-tight">
                 Mr. R. S. Choyal
               </h1>
-              <p className="text-sm sm:text-base text-slate-300 max-w-xl">
+              <p className="mt-2 text-sm sm:text-base lg:text-lg text-white/90 font-normal max-w-2xl leading-relaxed">
                 Chairman &amp; Managing Director of Choyal Grinding Solution
               </p>
             </div>
@@ -31,22 +29,11 @@ export default function LeadershipEdPage() {
         </section>
 
         {/* Main Content */}
-        <section className="w-full py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
-          {/* Breadcrumbs */}
-          <div className="text-xs font-semibold text-slate-400 flex items-center gap-1.5 mb-10">
-            <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
-            <span>/</span>
-            <Link href="/about" className="hover:text-brand-primary transition-colors">About Us</Link>
-            <span>/</span>
-            <Link href="/about#leadership" className="hover:text-brand-primary transition-colors">Leadership</Link>
-            <span>/</span>
-            <span className="text-slate-600">Mr. R. S. Choyal</span>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            {/* Left Sidebar Card */}
-            <div className="lg:col-span-4 lg:sticky lg:top-28 space-y-6">
-              <div className="bg-white border border-slate-200/60 p-6 rounded-[32px] shadow-sm space-y-6">
+        <section className="w-full py-12 sm:py-16 lg:py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
+              {/* Left Sidebar Card */}
+              <div className="lg:col-span-4 lg:sticky lg:top-28">
+                <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6">
                 <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-100 shadow-inner">
                   <img
                     src="/images/founders/rs_choyal.jpg"
@@ -88,14 +75,6 @@ export default function LeadershipEdPage() {
                   </div>
                 </div>
               </div>
-
-              <Link
-                href="/about#leadership"
-                className="inline-flex items-center gap-2 text-xs font-black text-slate-500 hover:text-brand-primary uppercase tracking-widest transition-colors pl-2"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Back to Leadership
-              </Link>
             </div>
 
             {/* Right Biography Content */}
@@ -128,51 +107,51 @@ export default function LeadershipEdPage() {
               </div>
 
               {/* Pillars of Leadership */}
-              <div className="bg-slate-50 border border-slate-200/60 p-8 rounded-[32px] mt-8">
-                <h4 className="text-lg font-heading font-black text-slate-850 mb-6">
+              <div className="bg-slate-50 border border-slate-200/60 p-6 sm:p-8 rounded-[28px] mt-8">
+                <h4 className="text-lg sm:text-xl font-heading font-black text-slate-900 mb-6">
                   Key Focus Areas
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <Globe className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <Globe className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Global Milling Solutions</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Global Milling Solutions</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Pioneering the export of high-capacity automated chakki mills and turnkey solutions to over 20 nations.
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <Sparkles className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <Sparkles className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Nutrition &amp; Innovation</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Nutrition &amp; Innovation</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Championing stone-ground milling techniques to preserve natural wheat nutrients and flour freshness.
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <Users className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <Users className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Emotional Intelligence</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Emotional Intelligence</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Promoting mindfulness, leadership ethics, and community upliftment through the Brains Trust Society.
                       </p>
                     </div>
                   </div>
-                  <div className="flex gap-3">
-                    <div className="w-8 h-8 bg-brand-primary/10 rounded-lg flex items-center justify-center text-brand-primary shrink-0">
-                      <Heart className="w-4 h-4" />
+                  <div className="flex gap-3.5">
+                    <div className="w-10 h-10 bg-brand-primary/10 rounded-xl flex items-center justify-center text-brand-primary shrink-0">
+                      <Heart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-sm font-extrabold text-slate-800">Traditional Chakki Revival</h5>
-                      <p className="text-xs text-slate-500 font-semibold mt-1">
+                      <h5 className="text-base font-bold text-slate-900">Traditional Chakki Revival</h5>
+                      <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Re-engineering traditional grinding methods with modern automated controls for maximum yield and quality.
                       </p>
                     </div>
@@ -182,9 +161,12 @@ export default function LeadershipEdPage() {
             </div>
           </div>
         </section>
-      </div>
 
-      <Footer />
+      {/* Leadership Section */}
+      <OtherLeadersSection />
+    </div>
+
+    <Footer />
     </div>
   );
 }

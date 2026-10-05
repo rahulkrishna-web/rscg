@@ -1,9 +1,54 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
+interface InfrastructureItem {
+  id: string;
+  eyebrow: string;
+  heading: string;
+  description: string;
+  image: string;
+}
+
+const infrastructureItems: InfrastructureItem[] = [
+  {
+    id: "factory-unit",
+    eyebrow: "Factory Unit",
+    heading: "Where engineering takes physical form.",
+    description:
+      "Our heavy engineering facility brings together fabrication, emery-stone manufacturing, silos, PEB components and specialised milling equipment turning engineered concepts into production-ready systems.",
+    image: "/images/infrastructure/factory_unit.jpg",
+  },
+  {
+    id: "digital-pilot-plant",
+    eyebrow: "Digital Pilot Plant",
+    heading: "Where technology meets the real mill.",
+    description:
+      "A full-scale environment for live demonstrations, milling trials, diagnostics and automation development giving new technologies a real production setting to perform, adapt and improve.",
+    image: "/images/infrastructure/pilot_plant.jpg",
+  },
+  {
+    id: "corporate-headquarters",
+    eyebrow: "Choyal Tower · Corporate Headquarters",
+    heading: "Where the Group moves as one.",
+    description:
+      "Our corporate headquarters brings Marketing, Sales, IT, Media and Finance together connecting people, decisions and ideas that support the Group's operations and growth.",
+    image: "/images/infrastructure/corporate_office.jpg",
+  },
+  {
+    id: "workshop-advanced-manufacturing",
+    eyebrow: "Workshop · Advanced Manufacturing",
+    heading: "Where precision becomes production.",
+    description:
+      "A 46,000 sq. ft. manufacturing facility with CNC machining, welding, design, R&D and warehousing capabilities supporting precision engineering from development through production.",
+    image: "/images/infrastructure/precision_workshop.jpg",
+  },
+];
+
 export default function WalkthroughSection() {
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
   return (
     <section
       id="infrastructure"
@@ -12,158 +57,87 @@ export default function WalkthroughSection() {
       <div className="w-full mx-auto space-y-12">
         {/* Header */}
         <div className="max-w-4xl space-y-3">
-          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight text-[#133a25] leading-[1.15]">
+          <p className="text-xs sm:text-sm font-bold text-[#133a25] tracking-wider uppercase">
+            Our Infrastructure
+          </p>
+          <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight text-[#133a25] leading-[1.15] font-heading">
             A company you can <br className="hidden sm:block" />
-            <span className="text-[#f7b032]">walk through.</span>
+            <span className="text-[#FFAA17]">walk through.</span>
           </h2>
-          <p className="text-slate-700 text-base sm:text-lg leading-relaxed max-w-3xl pt-1">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-3xl pt-1 font-normal">
             Manufacturing, testing, operations and learning happen within one
-            connected ecosystem. Ideas move from the drawing board to the workshop
-            and into working plants — gaining insight at every stage and
+            connected ecosystem. Ideas move from the drawing board to the
+            workshop and into working plants gaining insight at every stage and
             returning stronger.
           </p>
         </div>
 
-        {/* Bento Grid */}
-        <div className="space-y-6">
-          {/* Top Row: Factory Unit (wide) & Digital Pilot Plant */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            {/* Card 1: Factory Unit (col-span-8) */}
-            <div className="lg:col-span-8 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] group shadow-md hover:shadow-xl transition-all duration-300 bg-slate-900">
-              <Image
-                src="/images/infrastructure/factory_unit.jpg"
-                alt="Factory Unit"
-                fill
-                sizes="(max-width: 1024px) 100vw, 66vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/15 transition-opacity duration-300" />
-              <div className="absolute inset-0 p-6 sm:p-8 lg:p-10 flex flex-col justify-end z-10 text-white">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#f7b032] mb-2 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#f7b032]" />
-                  Factory Unit
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
-                  Where engineering takes physical form.
-                </h3>
-                <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal max-w-2xl">
-                  Our heavy engineering facility brings together fabrication,
-                  emery-stone manufacturing, silos, PEB components and
-                  specialised milling equipment — turning engineered concepts into
-                  production-ready systems.
-                </p>
-              </div>
-            </div>
+        {/* 4 Cards in 2x2 Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 lg:gap-8">
+          {infrastructureItems.map((item, idx) => {
+            const isActive = activeCard === idx;
 
-            {/* Card 2: Digital Pilot Plant (col-span-4) */}
-            <div className="lg:col-span-4 relative rounded-3xl overflow-hidden min-h-[380px] sm:min-h-[420px] lg:min-h-[460px] group shadow-md hover:shadow-xl transition-all duration-300 bg-slate-900">
-              <Image
-                src="/images/infrastructure/pilot_plant.jpg"
-                alt="Digital Pilot Plant"
-                fill
-                sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/15 transition-opacity duration-300" />
-              <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end z-10 text-white">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#f7b032] mb-2 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#f7b032]" />
-                  Digital Pilot Plant
-                </span>
-                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight mb-3">
-                  Where technology meets the real mill.
-                </h3>
-                <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-                  A full-scale environment for live demonstrations, milling
-                  trials, diagnostics and automation development — giving new
-                  technologies a real production setting to perform, adapt and
-                  improve.
-                </p>
-              </div>
-            </div>
-          </div>
+            return (
+              <article
+                key={item.id}
+                tabIndex={0}
+                onClick={() => setActiveCard(isActive ? null : idx)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setActiveCard(isActive ? null : idx);
+                  }
+                }}
+                className={`relative h-[380px] sm:h-[420px] lg:h-[450px] rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#133a25]/20 bg-slate-900 ${
+                  isActive ? "shadow-2xl -translate-y-1" : ""
+                }`}
+              >
+                {/* Background Image with smooth hover scale */}
+                <Image
+                  src={item.image}
+                  alt={item.heading}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                />
 
-          {/* Bottom Row: 3 Equal Columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Card 3: CHARGE · Training */}
-            <div className="relative rounded-3xl overflow-hidden min-h-[360px] sm:min-h-[400px] lg:min-h-[420px] group shadow-md hover:shadow-xl transition-all duration-300 bg-slate-900">
-              <Image
-                src="/images/infrastructure/charge_institute.jpg"
-                alt="CHARGE · Training"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/15 transition-opacity duration-300" />
-              <div className="absolute inset-0 p-6 sm:p-7 flex flex-col justify-end z-10 text-white">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#f7b032] mb-2 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#f7b032]" />
-                  CHARGE · Training
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug mb-2.5">
-                  Where experience becomes expertise.
-                </h3>
-                <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-                  A hands-on learning environment for mill owners, operators,
-                  entrepreneurs and plant teams — building the practical knowledge
-                  needed to operate and manage modern milling systems.
-                </p>
-              </div>
-            </div>
+                {/* Dark Gradient Scrim - only appears on hover or active */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 via-45% to-transparent pointer-events-none transition-opacity duration-500 ease-out ${
+                    isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                  }`}
+                  aria-hidden="true"
+                />
 
-            {/* Card 4: Choyal Tower · Corporate Headquarters */}
-            <div className="relative rounded-3xl overflow-hidden min-h-[360px] sm:min-h-[400px] lg:min-h-[420px] group shadow-md hover:shadow-xl transition-all duration-300 bg-slate-900">
-              <Image
-                src="/images/infrastructure/corporate_office.jpg"
-                alt="Choyal Tower · Corporate Headquarters"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/15 transition-opacity duration-300" />
-              <div className="absolute inset-0 p-6 sm:p-7 flex flex-col justify-end z-10 text-white">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#f7b032] mb-2 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#f7b032]" />
-                  Choyal Tower · Corporate Headquarters
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug mb-2.5">
-                  Where the Group moves as one.
-                </h3>
-                <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-                  Our corporate headquarters brings Marketing, Sales, IT, Media
-                  and Finance together — connecting people, decisions and ideas
-                  that support the Group&apos;s operations and growth.
-                </p>
-              </div>
-            </div>
+                {/* Content Layer (initially shows eyebrow & heading, reveals description on hover) */}
+                <div className="absolute inset-0 p-6 sm:p-8 lg:p-9 flex flex-col justify-end z-10 text-white pointer-events-none">
+                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FFAA17] mb-2 flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+                    <span className="w-2 h-2 rounded-full bg-[#FFAA17]" />
+                    {item.eyebrow}
+                  </span>
 
-            {/* Card 5: Workshop · Advanced Manufacturing */}
-            <div className="relative rounded-3xl overflow-hidden min-h-[360px] sm:min-h-[400px] lg:min-h-[420px] group shadow-md hover:shadow-xl transition-all duration-300 bg-slate-900">
-              <Image
-                src="/images/infrastructure/precision_workshop.jpg"
-                alt="Workshop · Advanced Manufacturing"
-                fill
-                sizes="(max-width: 768px) 100vw, 33vw"
-                className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/15 transition-opacity duration-300" />
-              <div className="absolute inset-0 p-6 sm:p-7 flex flex-col justify-end z-10 text-white">
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#f7b032] mb-2 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-[#f7b032]" />
-                  Workshop · Advanced Manufacturing
-                </span>
-                <h3 className="text-xl sm:text-2xl font-bold text-white leading-snug mb-2.5">
-                  Where precision becomes production.
-                </h3>
-                <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
-                  A 46,000 sq. ft. manufacturing facility with CNC machining,
-                  welding, design, R&amp;D and warehousing capabilities —
-                  supporting precision engineering from development through
-                  production.
-                </p>
-              </div>
-            </div>
-          </div>
+                  <h3 className="text-xl sm:text-2xl lg:text-[26px] font-bold text-white leading-snug drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)]">
+                    {item.heading}
+                  </h3>
+
+                  {/* Expandable Drawer: opens on hover on desktop, or tap on mobile */}
+                  <div
+                    className={`grid transition-[grid-template-rows,opacity] duration-500 ease-out ${
+                      isActive
+                        ? "grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0 group-hover:grid-rows-[1fr] group-hover:opacity-100"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-sm sm:text-[15px] text-slate-200 leading-relaxed font-normal pt-3 max-w-2xl drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

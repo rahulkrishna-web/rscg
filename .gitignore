@@ -43,5 +43,7 @@ next-env.d.ts
 # memory
 memory.md
 
-/scratch
+# scratch
+scratch/
+/scratch/
 /scratch/*

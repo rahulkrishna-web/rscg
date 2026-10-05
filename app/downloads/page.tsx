@@ -97,22 +97,18 @@ function DownloadsContent() {
       <Header />
 
       {/* ================= HERO BANNER ================= */}
-      <section className="relative w-full bg-gradient-to-b from-[#06180f] via-[#0b281b] to-[#082015] py-16 sm:py-24 lg:py-28 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden border-b border-emerald-950/40">
-        {/* Subtle Ambient Glow */}
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative w-full bg-gradient-to-r from-[#17462c] to-[#297a49] pt-36 sm:pt-40 lg:pt-44 pb-14 sm:pb-16 lg:pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden border-b border-[#17462c]/30">
+        {/* Background Texture matching Homepage CTA */}
+        <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
         <div className="relative z-10 max-w-[1440px] mx-auto">
-          {/* Accent Line */}
-          <div className="w-12 h-1 bg-[#c58a2d] rounded-full mb-4" />
-
           {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-black text-white tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-heading font-black text-white tracking-tight leading-tight">
             Downloads
           </h1>
 
           {/* Subtitle */}
-          <p className="mt-3 text-sm sm:text-base lg:text-lg text-emerald-100/80 font-normal max-w-2xl leading-relaxed">
+          <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/90 font-normal max-w-2xl leading-relaxed">
             Explore our brochures to discover more about our milling technologies
           </p>
         </div>

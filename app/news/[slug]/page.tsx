@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, Calendar, ArrowRight, BookOpen } from "lucide-react";
+import { Calendar, ArrowRight, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { newsData } from "../newsData";
@@ -33,7 +33,7 @@ export default function NewsDetailPage() {
             <BookOpen className="h-12 w-12 text-slate-300" />
             <h2 className="text-2xl font-bold">Article Not Found</h2>
             <p className="text-slate-500">The news article you are looking for does not exist or has been moved.</p>
-            <Link href="/news" className="bg-brand-primary hover:bg-brand-primary/95 text-white px-6 py-2.5 rounded-xl font-bold transition-colors shadow-sm text-sm">
+            <Link href="/news" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
               Back to News
             </Link>
           </div>
@@ -51,24 +51,8 @@ export default function NewsDetailPage() {
       <div>
         <Header />
 
-        {/* Breadcrumb Row */}
-        <div className="w-full bg-white/50 border-b border-slate-200/50 py-4 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full flex items-center justify-between">
-            <Link
-              href="/news"
-              className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-brand-primary transition-colors cursor-pointer"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to News
-            </Link>
-            <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider hidden sm:block max-w-xs truncate">
-              News / {currentPost.title}
-            </div>
-          </div>
-        </div>
-
         {/* Article Body Section */}
-        <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24">
+        <section className="w-full pt-28 sm:pt-32 md:pt-36 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
             
             {/* Title (Mobile: Top, Desktop: Left Col Row 1) */}

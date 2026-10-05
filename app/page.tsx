@@ -42,6 +42,7 @@ import {
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
+import MillingSolutionsSection from "@/components/MillingSolutionsSection";
 import { productsData, categoriesData } from "@/app/catalog/productsData";
 
 
@@ -318,6 +319,157 @@ const galleryMedia = [
   { src: "/images/stone_dresser_cutter.png", title: "Precision Emery Stone Dresser & Cutter" }
 ];
 
+function WhyRSCGOrbital() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [scale, setScale] = useState<number | null>(null);
+
+  useEffect(() => {
+    const updateSize = () => {
+      if (containerRef.current) {
+        const width = containerRef.current.clientWidth;
+        if (width > 0) {
+          // 780px is base canvas size. Keep a cushion so the rightmost card ("Quality") never touches edge
+          const targetSize = Math.min(780, width - 12);
+          setScale(Math.max(0.58, Math.min(1, targetSize / 780)));
+        }
+      }
+    };
+
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
+
+  const scaledWidth = scale !== null ? Math.round(780 * scale) : undefined;
+  const scaledHeight = scale !== null ? Math.round(710 * scale) : undefined;
+
+  return (
+    <div ref={containerRef} className="hidden lg:flex items-center justify-center lg:justify-end w-full">
+      <div 
+        style={
+          scaledWidth && scaledHeight 
+            ? { width: `${scaledWidth}px`, height: `${scaledHeight}px` } 
+            : undefined
+        }
+        className={`relative shrink-0 transition-all duration-150 ease-out ${
+          scale === null ? "w-[520px] h-[475px] xl:w-[650px] xl:h-[590px] 2xl:w-[780px] 2xl:h-[710px]" : ""
+        }`}
+      >
+        <div
+          style={
+            scale !== null
+              ? { 
+                  width: "780px", 
+                  height: "780px", 
+                  transform: `scale(${scale}) translateY(-15px)`, 
+                  transformOrigin: "top left" 
+                }
+              : { width: "780px", height: "780px" }
+          }
+          className={`absolute top-0 left-0 ${
+            scale === null ? "scale-[0.667] -translate-y-2.5 xl:scale-[0.833] 2xl:scale-100 origin-top-left" : ""
+          }`}
+        >
+          {/* Concentric Golden Orbit Rings & Ambience */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="w-[380px] h-[380px] rounded-full bg-amber-200/25 blur-3xl" />
+            <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 780 780" fill="none">
+              {/* Inner subtle concentric circle */}
+              <circle cx="390" cy="390" r="130" stroke="#FDE68A" strokeWidth="1.5" strokeOpacity="0.7" />
+              
+              {/* Primary Golden Circular Orbit Path (passes smoothly behind card centers) */}
+              <circle cx="390" cy="390" r="280" stroke="#E5A93C" strokeWidth="2.5" strokeOpacity="0.95" />
+              
+              {/* Outer subtle concentric circle */}
+              <circle cx="390" cy="390" r="365" stroke="#FDE68A" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="5 5" />
+            </svg>
+          </div>
+
+          {/* Central WHY RSCG Hub */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 xl:w-36 xl:h-36 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-300 shadow-[0_8px_25px_rgba(245,158,11,0.18)] flex flex-col items-center justify-center text-center z-10">
+            <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.22em] uppercase">
+              WHY RSCG
+            </span>
+          </div>
+
+          {/* 5 Orbital Cards positioned in a mathematically regular circle */}
+          {[
+            {
+              title: "Trust",
+              desc: "Trust is indispensable to Choyal. We believe in fair and transparent business, giving our clients peace of mind.",
+              icon: "/images/why-rscg-section/icons/trust.png",
+              x: 390,
+              y: 110
+            },
+            {
+              title: "Quality",
+              desc: "Quality and excellence define our product range. We provide solutions built to deliver dependable performance.",
+              icon: "/images/why-rscg-section/icons/quality.png",
+              x: 656,
+              y: 304
+            },
+            {
+              title: "Innovation",
+              desc: "Driven by rigorous R&D, we develop advanced milling solutions for different budgets and industrial scales.",
+              icon: "/images/why-rscg-section/icons/innovation.png",
+              x: 555,
+              y: 617
+            },
+            {
+              title: "Economical Solutions",
+              desc: "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.",
+              icon: "/images/why-rscg-section/icons/economical-solutions.png",
+              x: 225,
+              y: 617
+            },
+            {
+              title: "Experience",
+              desc: "With 60+ years of experience, we bring deep milling expertise, proven technology, and skilled teams to every project.",
+              icon: "/images/why-rscg-section/icons/experience.png",
+              x: 124,
+              y: 304
+            }
+          ].map((item, idx) => (
+            <div
+              key={idx}
+              style={{
+                left: `${item.x}px`,
+                top: `${item.y}px`,
+                transform: "translate(-50%, -50%)"
+              }}
+              className="absolute w-[210px] z-20 group"
+            >
+              <div className="relative pt-5">
+                {/* Circular Icon Badge centered directly on top border */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white shadow-md border-2 border-amber-300 flex items-center justify-center p-2 z-10 group-hover:scale-110 transition-transform duration-300">
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={24}
+                    height={24}
+                    className="object-contain"
+                  />
+                </div>
+
+                {/* Card Body seamlessly joined under the icon badge */}
+                <div className="bg-white/95 backdrop-blur-sm rounded-2xl pt-7 pb-4.5 px-4 shadow-[0_6px_20px_rgba(0,0,0,0.06)] border border-amber-100/90 text-center flex flex-col items-center hover:shadow-xl hover:border-amber-300 transition-all duration-300">
+                  <h3 className="font-bold text-slate-900 text-[14.5px] tracking-tight mb-1.5">
+                    {item.title}
+                  </h3>
+                  <p className="text-slate-600 text-[12px] leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const contactFormRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -545,15 +697,17 @@ export default function Home() {
         ref={heroRef}
         className="w-full relative z-10 min-h-[640px] sm:min-h-[700px] lg:min-h-[760px] xl:min-h-[820px] h-[90vh] max-h-[960px] flex flex-col justify-end overflow-hidden pt-28 sm:pt-32 pb-12 sm:pb-16 lg:pb-20 border-b border-[#1c2722]/5"
       >
-        {/* Background Factory Aerial Image */}
-        <Image
-          src="/images/contact/factory.png"
-          alt="RS Choyal Factory & Engineering Complex"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        {/* Background Factory Aerial Drone Video with Instant Poster Fallback */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster="/images/contact/factory.png"
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
+        >
+          <source src="/hero/homepage/hero.mp4" type="video/mp4" />
+        </video>
 
         {/* Balanced Gradient Overlays: Clear landscape & sky on top, smooth dark gradient at bottom for text visibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 via-45% to-transparent pointer-events-none" />
@@ -590,7 +744,7 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full sm:w-auto">
                 {[
                   { number: "60+", label: "Years of Experience" },
-                  { number: "265+", label: "Turnkey Solutions" },
+                  { number: "275+", label: "Turnkey Solutions Delivered" },
                   { number: "6+", label: "Patented Technology" },
                 ].map((card, idx) => (
                   <div
@@ -611,81 +765,8 @@ export default function Home() {
         </div>
       </main>
 
-      {/* --- End-to-End Milling Solutions Section --- */}
-      <section id="end-to-end-solutions" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-[#FAF9F5] border-t border-slate-200/60 overflow-hidden">
-        <div className="w-full mx-auto space-y-12 sm:space-y-14">
-          
-          {/* Header */}
-          <div className="space-y-3 max-w-3xl">
-            <span className="text-sm font-bold text-[#015435] tracking-wide block">
-              End-to-End Milling Solutions
-            </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
-              Solutions for<br className="hidden sm:inline" /> Every Stage of <span className="text-amber-500">Your Mill</span>
-            </h2>
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed pt-1">
-              From setting up a new plant to upgrading a single process, choose the machinery and technology that fits your operation today and its growth tomorrow.
-            </p>
-          </div>
-
-          {/* 3 Pillar Cards Grid (Horizontally swipable on mobile) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
-            {[
-              {
-                tag: "01 · CREATE",
-                heading: "Build a Complete Flour Plant",
-                desc: "From planning and layout to installation and commissioning, we build your complete milling plant with one experienced team.",
-                cta: "Explore Turnkey Solutions",
-                href: "/turnkey-projects"
-              },
-              {
-                tag: "02 · EXPAND",
-                heading: "Upgrade What You Already Have",
-                desc: "Improve capacity and efficiency by upgrading individual processes without rebuilding your entire plant.",
-                cta: "See Systems by Section",
-                href: "/flour-processing"
-              },
-              {
-                tag: "03 · SOLVE",
-                heading: "Find the Right Technology",
-                desc: "Choose the right milling solutions for your process, capacity and production needs from individual equipment to complete systems.",
-                cta: "Explore The Product Range",
-                href: "/catalog"
-              }
-            ].map((card, idx) => (
-              <div 
-                key={idx}
-                className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] sm:rounded-[28px] p-7 sm:p-9 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between group min-h-[300px]"
-              >
-                <div>
-                  <span className="text-xs sm:text-sm font-extrabold text-amber-500 tracking-wider uppercase mb-3 block">
-                    {card.tag}
-                  </span>
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-[#1c2722] tracking-tight leading-snug mb-3 group-hover:text-[#015435] transition-colors">
-                    {card.heading}
-                  </h3>
-                  <p className="text-slate-600 text-sm sm:text-[15px] leading-relaxed mb-8">
-                    {card.desc}
-                  </p>
-                </div>
-
-                <div className="pt-2">
-                  <Link 
-                    href={card.href}
-                    className="inline-flex items-center gap-2 text-sm sm:text-base font-bold text-slate-900 group-hover:text-amber-600 transition-colors"
-                  >
-                    <span>{card.cta}</span>
-                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-            {/* Trailing space on mobile so last card padding isn't clipped */}
-            <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
-          </div>
-
-        </div>
-      </section>
+      {/* --- End-to-End Milling Solutions & The Choyal Core Section --- */}
+      <MillingSolutionsSection />
 
       {/* --- Our Expertise & Capabilities Section --- */}
       <section id="our-expertise" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-white border-t border-slate-200/60 overflow-hidden">
@@ -808,8 +889,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          {/* 10 Solutions 3-Column Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full">
             {[
               {
                 id: "01",
@@ -817,82 +898,47 @@ export default function Home() {
                 desc: "End-to-end milling solutions covering planning, engineering, machinery, installation, automation, and commissioning.",
                 cta: "View Solutions",
                 href: "/turnkey-projects",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h16v16H0z" fill="none" />
-                    <path d="M1.463 2.442A1.5 1.5 0 0 1 2.963 1h1.075a1.5 1.5 0 0 1 1.499 1.442l.423 11A1.5 1.5 0 0 1 4.46 15H2.54a1.5 1.5 0 0 1-1.5-1.558zM2.963 2a.5.5 0 0 0-.5.48l-.424 11a.5.5 0 0 0 .5.52h1.922a.5.5 0 0 0 .5-.52l-.424-11a.5.5 0 0 0-.5-.48zM13.5 15a1.5 1.5 0 0 0 1.5-1.5v-9a.5.5 0 0 0-.854-.354L11 7.293V4.5a.5.5 0 0 0-.832-.374L6.72 7.191l.05 1.294L10 5.613V8.5a.5.5 0 0 0 .854.354L14 5.707V13.5a.5.5 0 0 1-.5.5H13v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3H6.91a2.5 2.5 0 0 1-.45 1zM9 14v-3h3v3z" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/turnkey-solutions.png"
               },
               {
                 id: "02",
                 title: "Flour Mills",
-                desc: "Complete flour milling systems designed for consistent quality, efficient production, and reliable performance across different capacities.",
+                desc: "Complete flour milling systems designed for consistent quality, efficient production across different capacities.",
                 cta: "View Flour Mills",
                 href: "/flour-mills",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full text-[#bfac24]">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M14.35 9.65L3 21M19.67 8.586c-2.128 2.128-5.32 1.064-5.32 1.064s-1.064-3.192 1.064-5.32c1.389-1.389 3.231-1.418 4.343-1.27a1.36 1.36 0 0 1 1.184 1.183c.147 1.112.118 2.954-1.271 4.343m-3.902 7.094c-2.837 0-4.256-2.837-4.256-2.837s1.419-2.837 4.256-2.837c1.82 0 3.056 1.166 3.709 2.003a1.34 1.34 0 0 1 0 1.668c-.653.837-1.89 2.003-3.709 2.003M8.32 8.232c0 2.838 2.838 4.256 2.838 4.256s2.837-1.418 2.837-4.256c0-1.819-1.166-3.055-2.004-3.708a1.34 1.34 0 0 0-1.667 0c-.837.653-2.004 1.89-2.004 3.708m2.838 12.058c-2.838 0-4.257-2.837-4.257-2.837s1.42-2.837 4.257-2.837c1.819 0 3.055 1.166 3.708 2.003a1.34 1.34 0 0 1 0 1.668c-.653.837-1.89 2.003-3.708 2.003m-7.449-7.447c0 2.837 2.838 4.255 2.838 4.255s2.837-1.418 2.837-4.255c0-1.82-1.166-3.056-2.004-3.709a1.34 1.34 0 0 0-1.667 0c-.837.653-2.004 1.89-2.004 3.708" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/flour-mill.png"
               },
               {
                 id: "03",
                 title: "Emery Stones & Dressing",
-                desc: "Precision-made emery stones and professional dressing solutions engineered for consistent grinding performance and long service life.",
+                desc: "Precision-made emery stones and professional dressing solutions consistent grinding performance and long service life.",
                 cta: "View Stones & Dressers",
                 href: "/emery-stones",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h24v24H0z" fill="none" />
-                    <path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10s10-4.49 10-10S17.51 2 12 2m0 13c-1.65 0-3-1.35-3-3s1.35-3 3-3s3 1.35 3 3s-1.35 3-3 3m2.75-7.17A4.9 4.9 0 0 0 13 7.1V4.07c1.46.18 2.79.76 3.9 1.62l-2.14 2.14ZM11 7.1c-.64.13-1.23.38-1.75.73L7.11 5.69a7.94 7.94 0 0 1 3.9-1.62V7.1ZM7.83 9.25c-.35.52-.6 1.12-.73 1.75H4.07c.18-1.46.76-2.79 1.62-3.9zM7.1 13c.13.64.38 1.23.73 1.75L5.69 16.9A7.94 7.94 0 0 1 4.07 13zm2.15 3.17c.52.35 1.12.6 1.75.73v3.03a7.94 7.94 0 0 1-3.9-1.62l2.14-2.14Zm3.75.73c.64-.13 1.23-.38 1.75-.73l2.14 2.14a7.94 7.94 0 0 1-3.9 1.62V16.9Zm3.17-2.15c.35-.52.6-1.12.73-1.75h3.03a7.94 7.94 0 0 1-1.62 3.9zM16.9 11c-.13-.64-.38-1.23-.73-1.75l2.14-2.15a7.94 7.94 0 0 1 1.62 3.9z" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/emery-stones.png"
               },
               {
                 id: "04",
                 title: "Power Saving",
-                desc: "Energy-efficient solutions designed to reduce power consumption, optimise plant performance, and improve overall operating efficiency.",
+                desc: "Energy-efficient solutions designed to reduce power consumption, and improve overall operating efficiency.",
                 cta: "View Power Systems",
                 href: "/power-saving",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <path d="M0 0h48v48H0z" fill="none" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M26.92 38.382h10.218m-5.108-5.109V43.49m-19.692.01L37.14 18.698H25.76L36.903 4.5H24.33c-1.25 0-2.405.667-3.03 1.75L10.86 24.333h8.94z" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/power-save.png"
               },
               {
                 id: "05",
                 title: "Automation",
-                desc: "Smart automation and control systems that connect machinery, processes, and plant operations for greater control and visibility.",
+                desc: "Smart automation and control systems that connect machinery and plant operations for greater control and visibility.",
                 cta: "View Automation",
                 href: "/automation",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <path d="M0 0h48v48H0z" fill="none" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19.77a11 11 0 0 0-2.26.94l.26 4.53L5.44 25a11 11 0 0 0-.94 2.26l3.37 3.05l-3.37 3a10.7 10.7 0 0 0 .94 2.26l4.56-.18l-.23 4.54a11 11 0 0 0 2.26.93l3.05-3.37l3 3.37a10.6 10.6 0 0 0 2.26-.93l-.23-4.54l4.54.23a10.6 10.6 0 0 0 .93-2.26l-3.37-3l3.37-3.05a11 11 0 0 0-.92-2.31l-4.54.23l.23-4.53a10.7 10.7 0 0 0-2.26-.94l-3 3.37Z" />
-                    <circle cx="15.05" cy="30.32" r="3.96" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M29.91 7.14a11 11 0 0 0-2.27.93l.24 4.54l-4.54-.23a10.6 10.6 0 0 0-.93 2.26l3.36 3l-3.36 3.05a11 11 0 0 0 .93 2.31l4.54-.23l-.24 4.53a11 11 0 0 0 2.27.94l3-3.37l3 3.37a11 11 0 0 0 2.26-.94L38 22.76l4.53.23a11 11 0 0 0 .94-2.26l-3.37-3.05l3.37-3a10.7 10.7 0 0 0-.94-2.26l-4.53.19l.23-4.54A11 11 0 0 0 36 7.14l-3 3.37Z" />
-                    <circle cx="32.95" cy="17.68" r="3.96" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/automation.png"
               },
               {
                 id: "06",
                 title: "Grain Storage & Handling Systems",
-                desc: "Integrated silos, conveyors, elevators, and handling systems for safe storage and smooth movement of grain throughout the plant.",
+                desc: "Integrated silos and handling systems for safe storage and smooth movement of grain throughout the plant.",
                 cta: "View Silos & Handling",
                 href: "/grain-storage-handling",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <ellipse cx="24" cy="11.5" rx="15" ry="5.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 11.5v25c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5v-25" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 20c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M9 28.5c0 3.04 6.72 5.5 15 5.5s15-2.46 15-5.5" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/grain-storage.png"
               },
               {
                 id: "07",
@@ -900,19 +946,7 @@ export default function Home() {
                 desc: "Complete grain-processing solutions covering cleaning, grading, conditioning, and preparation for efficient milling.",
                 cta: "View Processing",
                 href: "/grain-processing",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 12c-2 2-3 5-1 7s5 1 7-1 3-5 1-7-5-1-7 1zm2 1.5c1.5 1.5 2.5 3.5 2 4.5" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M22 8c-1.8 1.8-2.6 4.5-.9 6.2s4.4.9 6.2-.9 2.6-4.5.9-6.2-4.4-.9-6.2.9zm1.7 1.3c1.3 1.3 2.2 3.1 1.8 4" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M18 20c-1.8 1.8-2.6 4.5-.9 6.2s4.4.9 6.2-.9 2.6-4.5.9-6.2-4.4-.9-6.2.9zm1.7 1.3c1.3 1.3 2.2 3.1 1.8 4" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M30 14c-1.8 1.8-2.6 4.5-.9 6.2s4.4.9 6.2-.9 2.6-4.5.9-6.2-4.4-.9-6.2.9zm1.7 1.3c1.3 1.3 2.2 3.1 1.8 4" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 34c0-3.3 9-6 20-6s20 2.7 20 6-9 6-20 6-20-2.7-20-6z" />
-                    <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M6 34v4c0 3.3 9 6 20 6s20-2.7 20-6v-4" />
-                    <circle cx="18" cy="34" r="1.2" fill="currentColor" />
-                    <circle cx="26" cy="33" r="1.2" fill="currentColor" />
-                    <circle cx="34" cy="35" r="1.2" fill="currentColor" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/grain-process.png"
               },
               {
                 id: "08",
@@ -920,210 +954,105 @@ export default function Home() {
                 desc: "Advanced grinding, sifting, separation, and refining solutions for consistent flour quality and controlled particle size.",
                 cta: "View Grinding & Sifting",
                 href: "/flour-processing",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17.5 13L13.5 7.5c2.5 1.5 6 2 10.5 2s8-.5 10.5-2L30.5 13" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M16 13.5c2.5 1.8 13.5 1.8 16 0" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M17 14C13.5 18 9.5 26 9.5 37c-1.5 1.5-2 3.5 0 4.5s3.5-.5 4.5-2c3 1.5 6.5 2 10 2s7-.5 10-2c1 1.5 2.5 3 4.5 2s1.5-3 0-4.5c0-11-4-19-7.5-23" />
-                    <circle cx="24" cy="27" r="7" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                    <path fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" d="M24 22.5v9M24 23.8c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 23.8c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9M24 26.5c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 26.5c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9M24 29.2c-1.4-.4-2.2-1.3-2.2-1.3s.1 1.5 1.2 1.9M24 29.2c1.4-.4 2.2-1.3 2.2-1.3s-.1 1.5-1.2 1.9" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/flour-process.png"
               },
               {
                 id: "09",
-                title: "Packaging & Vending Machines",
-                desc: "Efficient packaging and vending solutions that take freshly processed flour from production to convenient distribution and sale.",
-                cta: "View Packaging Solutions",
+                title: "Vending Machine",
+                desc: "Efficient vending solutions that take freshly processed flour from production to convenient distribution and sale.",
+                cta: "View Vending Machines",
                 href: "/vending-machines",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" className="w-full h-full text-[#bfac24]">
-                    <rect x="10" y="5" width="28" height="36" rx="3" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    <path fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" d="M14 41v3M34 41v3" />
-                    <rect x="14" y="9" width="14" height="20" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    <path fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" d="M14 19h14M17.5 13.5h2.5M22.5 13.5h2.5M17.5 23.5h2.5M22.5 23.5h2.5" />
-                    <rect x="30.5" y="10" width="5" height="3.5" rx="0.5" fill="none" stroke="currentColor" strokeWidth="1.4" />
-                    <line x1="31" y1="16.5" x2="35" y2="16.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                    <circle cx="33" cy="20.5" r="0.9" fill="currentColor" />
-                    <circle cx="33" cy="24" r="0.9" fill="currentColor" />
-                    <circle cx="33" cy="27.5" r="0.9" fill="currentColor" />
-                    <rect x="14" y="32" width="20" height="6" rx="1.5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    <line x1="18" y1="35" x2="30" y2="35" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/vending-machine.png"
               },
               {
                 id: "10",
                 title: "Books",
-                desc: "Practical knowledge and resources covering flour milling, grain processing, technology, entrepreneurship, and the craft behind the industry.",
+                desc: "Practical knowledge and resources covering flour milling, grain processing and the craft behind the industry.",
                 cta: "View Publications",
                 href: "/books",
-                svg: (
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-full h-full text-[#bfac24] fill-current">
-                    <path d="M0 0h32v32H0z" fill="none" />
-                    <path d="M3.5 23A1.5 1.5 0 0 1 2 21.5V6a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1h4a2 2 0 0 1 2 2v2h5a2 2 0 0 1 2 2v15H16.5a.5.5 0 0 0 0 1h13.415a1.5 1.5 0 0 1-1.415 1h-12a1.5 1.5 0 0 1-1.5-1.5V26H9.5A1.5 1.5 0 0 1 8 24.5V23zm13.415-1a1.5 1.5 0 0 1-1.415 1H22V9a1 1 0 0 0-1-1h-4v13H3.5a.5.5 0 0 0 0 1zM9 23h.5q-.264.001-.5.085zm7-3V6a1 1 0 0 0-1-1H5v15zm0 6v1.085q.236-.084.5-.085H29V13a1 1 0 0 0-1-1h-5v12H9.5a.5.5 0 0 0 0 1h13.415a1.5 1.5 0 0 1-1.415 1z" />
-                  </svg>
-                )
+                icon: "/images/industrial-solutions/books.png"
               }
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] sm:rounded-[28px] p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-amber-300 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px]"
+                className={`w-full bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-6 sm:p-7 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[240px] ${idx === 9 ? "lg:col-start-2" : ""}`}
               >
-                {/* Text Content */}
-                <div className="relative z-10 max-w-[68%] sm:max-w-[70%]">
-                  <span className="text-xs font-black text-amber-500 tracking-wider block mb-1.5">
-                    {card.id}
-                  </span>
-                  <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 tracking-tight leading-snug mb-2 group-hover:text-[#015435] transition-colors">
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-500 text-xs sm:text-[13px] leading-relaxed line-clamp-3">
-                    {card.desc}
-                  </p>
-                </div>
+                <div className="flex flex-row items-stretch justify-between gap-4 h-full">
+                  {/* Text Content */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between">
+                    <div>
+                      <span className="text-xs font-bold text-amber-500 tracking-wider block mb-1.5">
+                        {card.id}
+                      </span>
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug mb-2 group-hover:text-[#015435] transition-colors">
+                        {card.title}
+                      </h3>
+                      <p className="text-slate-600 text-sm sm:text-[14.5px] lg:text-[15px] leading-relaxed">
+                        {card.desc}
+                      </p>
+                    </div>
 
-                {/* Bottom CTA Link */}
-                <div className="relative z-10 pt-5">
-                  <Link 
-                    href={card.href}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-slate-900 group-hover:text-amber-600 transition-colors"
-                  >
-                    <span>{card.cta}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </Link>
-                </div>
+                    {/* Bottom CTA Link */}
+                    <div className="pt-4 mt-auto">
+                      <Link 
+                        href={card.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-amber-600 transition-colors"
+                      >
+                        <span>{card.cta}</span>
+                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </Link>
+                    </div>
+                  </div>
 
-                {/* Right Decorative SVG Art */}
-                <div className="absolute right-3.5 bottom-3.5 sm:right-5 sm:bottom-5 w-20 h-20 sm:w-24 sm:h-24 opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 pointer-events-none flex items-center justify-center">
-                  {card.svg}
+                  {/* Right Icon Illustration with Gradient Wash-out Effect */}
+                  <div className="w-24 sm:w-28 lg:w-32 xl:w-36 h-24 sm:h-28 lg:h-32 xl:h-36 shrink-0 relative flex items-center justify-end select-none pointer-events-none self-center">
+                    <div 
+                      className="relative w-full h-full transition-transform duration-500 group-hover:scale-105"
+                      style={{
+                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.32) 28%, rgba(0,0,0,0.85) 70%, #000 100%)',
+                        maskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.32) 28%, rgba(0,0,0,0.85) 70%, #000 100%)'
+                      }}
+                    >
+                      <Image
+                        src={card.icon}
+                        alt={card.title}
+                        fill
+                        className="object-contain object-right"
+                        sizes="(max-width: 640px) 96px, (max-width: 1024px) 120px, 144px"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
-            {/* Trailing space on mobile so last card padding isn't clipped */}
-            <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
           </div>
 
         </div>
       </section>
 
       {/* --- Rooted in Tradition / Why RSC Section --- */}
-      <section id="why-rsc" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-[#FAF8F5] border-t border-slate-200/50 overflow-hidden">
+      <section id="why-rsc" className="w-full px-6 sm:px-12 lg:px-16 xl:px-20 2xl:px-24 py-8 sm:py-10 lg:py-12 relative z-10 bg-[#FAF8F5] border-t border-slate-200/50 overflow-hidden">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center justify-between">
           
           {/* Left Column: Heading and Subtitle */}
-          <div className="lg:col-span-5 space-y-5">
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] xl:text-[54px] font-extrabold tracking-tight text-[#1c2722] leading-[1.12]">
-              Rooted in tradition,<br />
-              driven by<br />
-              <span className="text-amber-500">modern innovation.</span>
+          <div className="lg:col-span-5 space-y-4">
+            <span className="text-sm font-bold text-[#015435] tracking-wide block">
+              Our Core Values
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[46px] 2xl:text-[54px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
+              Experience that endures.<br />
+              <span className="text-amber-500">Innovation that evolves.</span>
             </h2>
-            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md pt-2">
-              Delivering precision, endurance, and customer trust across every milestone of our engineering journey.
+            <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-lg pt-1">
+              Built on decades of engineering knowledge and industry experience, RSCG combines deep-rooted milling expertise with modern technology to create dependable solutions. Every system is designed around practical performance, efficiency, and long-term value.
             </p>
           </div>
 
           {/* Right Column: Orbital Circular Diagram */}
-          <div className="lg:col-span-7 relative flex items-center justify-center lg:justify-end select-none py-6 lg:py-0">
+          <div className="lg:col-span-7 relative flex items-center justify-center lg:justify-end select-none py-6 lg:py-0 min-w-0 w-full">
             
             {/* Desktop Orbital Diagram (visible lg and up) */}
-            <div className="hidden lg:block relative w-[760px] h-[760px] xl:w-[780px] xl:h-[780px] scale-[0.82] lg:scale-[0.88] xl:scale-100 origin-center lg:origin-right">
-              
-              {/* Concentric Golden Orbit Rings & Ambience */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="w-[380px] h-[380px] rounded-full bg-amber-200/25 blur-3xl" />
-                <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" viewBox="0 0 780 780" fill="none">
-                  {/* Inner subtle concentric circle */}
-                  <circle cx="390" cy="390" r="130" stroke="#FDE68A" strokeWidth="1.5" strokeOpacity="0.7" />
-                  
-                  {/* Primary Golden Circular Orbit Path (30% larger, passes smoothly behind card centers) */}
-                  <circle cx="390" cy="390" r="280" stroke="#E5A93C" strokeWidth="2.5" strokeOpacity="0.95" />
-                  
-                  {/* Outer subtle concentric circle */}
-                  <circle cx="390" cy="390" r="365" stroke="#FDE68A" strokeWidth="1.2" strokeOpacity="0.5" strokeDasharray="5 5" />
-                </svg>
-              </div>
-
-              {/* Central WHY RSCG Hub */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 xl:w-36 xl:h-36 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-300 shadow-[0_8px_25px_rgba(245,158,11,0.18)] flex flex-col items-center justify-center text-center z-10">
-                <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.22em] uppercase">
-                  WHY RSCG
-                </span>
-              </div>
-
-              {/* 5 Orbital Cards positioned in a mathematically regular circle (30% expanded orbit) */}
-              {[
-                {
-                  title: "Trust",
-                  desc: "Trust is indispensable to Choyal. We believe in fair and transparent business, giving our clients peace of mind.",
-                  icon: "/images/why-rscg-section/icons/trust.png",
-                  x: 390,
-                  y: 110
-                },
-                {
-                  title: "Quality",
-                  desc: "Quality and excellence define our product range. We provide solutions built to deliver dependable performance.",
-                  icon: "/images/why-rscg-section/icons/quality.png",
-                  x: 656,
-                  y: 304
-                },
-                {
-                  title: "Innovation",
-                  desc: "Driven by rigorous R&D, we develop advanced milling solutions for different budgets and industrial scales.",
-                  icon: "/images/why-rscg-section/icons/innovation.png",
-                  x: 555,
-                  y: 617
-                },
-                {
-                  title: "Economical Solutions",
-                  desc: "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.",
-                  icon: "/images/why-rscg-section/icons/economical-solutions.png",
-                  x: 225,
-                  y: 617
-                },
-                {
-                  title: "Experience",
-                  desc: "With 60+ years of experience, we bring deep milling expertise, proven technology, and skilled teams to every project.",
-                  icon: "/images/why-rscg-section/icons/experience.png",
-                  x: 124,
-                  y: 304
-                }
-              ].map((item, idx) => (
-                <div
-                  key={idx}
-                  style={{
-                    left: `${item.x}px`,
-                    top: `${item.y}px`,
-                    transform: "translate(-50%, -50%)"
-                  }}
-                  className="absolute w-[195px] xl:w-[215px] z-20 group"
-                >
-                  <div className="relative pt-5">
-                    {/* Circular Icon Badge centered directly on top border */}
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-11 h-11 rounded-full bg-white shadow-md border-2 border-amber-300 flex items-center justify-center p-2 z-10 group-hover:scale-110 transition-transform duration-300">
-                      <Image
-                        src={item.icon}
-                        alt={item.title}
-                        width={24}
-                        height={24}
-                        className="object-contain"
-                      />
-                    </div>
-
-                    {/* Card Body seamlessly joined under the icon badge */}
-                    <div className="bg-white/95 backdrop-blur-sm rounded-2xl pt-7 pb-4.5 px-4 shadow-[0_6px_20px_rgba(0,0,0,0.06)] border border-amber-100/90 text-center flex flex-col items-center hover:shadow-xl hover:border-amber-300 transition-all duration-300">
-                      <h3 className="font-bold text-slate-900 text-[14px] sm:text-[15px] tracking-tight mb-1.5">
-                        {item.title}
-                      </h3>
-                      <p className="text-slate-600 text-[12px] xl:text-[12.5px] leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-
-            </div>
+            <WhyRSCGOrbital />
 
             {/* Mobile / Tablet View (grid format for optimal responsiveness) */}
             <div className="block lg:hidden w-full space-y-6">
@@ -1198,7 +1127,7 @@ export default function Home() {
               From vision to a mill<br className="hidden sm:inline" /> in <span className="text-amber-500">action.</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
-              Completed turnkey projects shaped from the ground up—from the first concept to a fully operational mill.
+              Completed turnkey projects shaped from the ground up - from the first concept to a fully operational mill.
             </p>
           </div>
 
@@ -1233,9 +1162,9 @@ export default function Home() {
                 <div>
                   <Link 
                     href="/projects/carrs-flour" 
-                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-sm sm:text-base transition-all duration-300 shadow-md hover:shadow-lg hover:gap-3 group/btn"
+                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-3 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer group/btn"
                   >
-                    <span>Explore Project</span>
+                    <span>EXPLORE PROJECT</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                   </Link>
                 </div>
@@ -1272,9 +1201,9 @@ export default function Home() {
                   <div>
                     <Link 
                       href="/projects/al-ghurair-foods" 
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:gap-2.5 group/btn"
+                      className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-5 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wide cursor-pointer group/btn"
                     >
-                      <span>Explore Project</span>
+                      <span>EXPLORE PROJECT</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                     </Link>
                   </div>
@@ -1308,9 +1237,9 @@ export default function Home() {
                   <div>
                     <Link 
                       href="/projects/patanjali-ayurveda" 
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-400 hover:bg-amber-500 text-slate-950 font-bold text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:gap-2.5 group/btn"
+                      className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-5 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs uppercase tracking-wide cursor-pointer group/btn"
                     >
-                      <span>Explore Project</span>
+                      <span>EXPLORE PROJECT</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
                     </Link>
                   </div>
@@ -1781,7 +1710,7 @@ export default function Home() {
             <div className="relative z-10 shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 text-sm sm:text-base cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >
                 <span>Discuss Your Requirement</span>
                 <ArrowRight className="w-4 h-4" />

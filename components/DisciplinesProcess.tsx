@@ -14,9 +14,9 @@ const disciplines: DisciplineCard[] = [
   {
     num: "01",
     tag: "THE MATERIAL",
-    title: "Stone & Abrasive Science",
+    title: "Stone and Milling Science",
     description:
-      "Understanding the grinding surface at its core — from emery composition and profiles to dressing, groove geometry, wear and flour interaction.",
+      "Understanding the grinding surface at its core from emery composition and profiles to dressing, groove geometry, wear and flour interaction.",
     image: "/images/about/process/image/Emery%20stones.png",
   },
   {

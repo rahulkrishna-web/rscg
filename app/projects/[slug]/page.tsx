@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Factory, MapPin, Calendar, Box, Cpu, FileText, CheckCircle, ChevronLeft, ChevronRight, Phone } from "lucide-react";
+import { ArrowRight, Factory, MapPin, Calendar, Box, Cpu, FileText, CheckCircle, ChevronLeft, ChevronRight, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { projectsData } from "../projectsData";
@@ -14,10 +14,7 @@ export default function ProjectDetailPage() {
   const slug = params.slug as string;
   const currentProject = projectsData.find((project) => project.slug === slug);
 
-  // Extract project overview text for hero description
-  const overviewParagraph = currentProject?.content.find(
-    (c) => c.type === "paragraph" && c.text && !c.text.toLowerCase().startsWith("project overview") && !c.text.toLowerCase().startsWith("location:")
-  )?.text;
+
 
   // Carousel state for project gallery images
   const [activeImageIdx, setActiveImageIdx] = useState(0);
@@ -31,7 +28,7 @@ export default function ProjectDetailPage() {
             <Factory className="h-12 w-12 text-slate-300" />
             <h2 className="text-2xl font-bold">Project Case Study Not Found</h2>
             <p className="text-slate-500">The project case study you are looking for does not exist or has been moved.</p>
-            <Link href="/projects" className="bg-brand-primary hover:bg-brand-primary/95 text-white px-6 py-2.5 rounded-xl font-bold transition-colors shadow-sm text-sm">
+            <Link href="/projects" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
               Back to Projects
             </Link>
           </div>
@@ -60,25 +57,8 @@ export default function ProjectDetailPage() {
       <div>
         <Header />
 
-        {/* Breadcrumb Row */}
-        <div className="w-full bg-white/50 border-b border-slate-200/50 py-4 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full flex items-center justify-between">
-            <Link
-              href="/projects"
-              className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-brand-primary transition-colors cursor-pointer"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to Our Projects
-            </Link>
-            <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider hidden sm:block max-w-xs truncate">
-              Projects / {currentProject.title}
-            </div>
-          </div>
-        </div>
-
-        {/* Hero Section — Full-background image slider */}
-        {/* Hero Section — Project's own featured background image */}
-        <section className="w-full relative h-[420px] sm:h-[480px] lg:h-[520px] xl:h-[600px] overflow-hidden bg-[#0B1510]">
+        {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
+        <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden bg-[#0B1510]">
            {/* Project background image */}
            <div className="absolute inset-0 w-full h-full">
              <img 
@@ -93,31 +73,28 @@ export default function ProjectDetailPage() {
            <div className="absolute inset-0 bg-gradient-to-r from-[#0B1510]/60 via-[#0B1510]/20 to-transparent z-10" />
 
            {/* Hero content */}
-           <div className="relative z-20 h-full flex flex-col items-start justify-center px-6 sm:px-12 lg:px-16 xl:px-24">
+           <div className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
              <div className="max-w-2xl space-y-3 sm:space-y-4">
                <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
                  <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                 <span>{currentProject.location ? `CASE STUDY · ${currentProject.location}` : "CASE STUDIES & PROJECTS"}</span>
+                 CASE STUDY
                </div>
                
                <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-black text-white leading-[1.1] tracking-tight">
                  {currentProject.title}
                </h1>
                
-               {currentProject.subtitle && (
+               {currentProject.location && (
                  <p className="text-base sm:text-xl font-bold text-[#f7b032] tracking-wide">
-                   {currentProject.subtitle}
+                   {currentProject.location}
                  </p>
                )}
 
-               <p className="text-sm sm:text-base text-slate-200 font-medium max-w-xl leading-relaxed line-clamp-3">
-                 {overviewParagraph || "Discover how RS Choyal engineered and commissioned this high-yield milling installation with advanced technology and dependable automation."}
-               </p>
              </div>
            </div>
         </section>
 
-        {/* Quick Facts Bar — straddles hero boundary 50/50 */}
+        {/* Quick Facts Bar - straddles hero boundary 50/50 */}
         <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="bg-white rounded-3xl shadow-xl border border-slate-100 p-6 sm:p-8">
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-100">
@@ -171,19 +148,24 @@ export default function ProjectDetailPage() {
                 </div>
                 
                 <div className="space-y-6">
-                  {currentProject.content.map((block, idx) => {
-                    if (block.type === 'heading') {
-                      return <h3 key={idx} className="text-xl font-heading font-black text-[#133020] mt-8 mb-4">{block.text}</h3>;
-                    }
-                    if (block.type === 'list') {
-                      return (
-                        <ul key={idx} className="list-disc pl-5 space-y-2.5 text-[15px] sm:text-base text-slate-700 font-medium">
-                          {block.items?.map((item, i) => <li key={i} dangerouslySetInnerHTML={{ __html: item.replace(/^([^:]+):/, '<strong>$1:</strong>') }}></li>)}
-                        </ul>
-                      );
-                    }
-                    return <p key={idx} className="text-[15px] sm:text-base text-slate-700 leading-relaxed font-medium">{block.text}</p>;
-                  })}
+                  {currentProject.content
+                    .filter((block) => {
+                      const txt = block.text?.toLowerCase().trim() || "";
+                      return txt.replace(/:$/, '') !== 'project overview' && !txt.startsWith('location:') && !txt.startsWith('heading:');
+                    })
+                    .map((block, idx) => {
+                      if (block.type === 'heading') {
+                        return <h3 key={idx} className="text-xl font-heading font-black text-[#133020] mt-8 mb-4">{block.text}</h3>;
+                      }
+                      if (block.type === 'list') {
+                        return (
+                          <ul key={idx} className="list-disc pl-5 space-y-2.5 text-[15px] sm:text-base text-slate-700 font-medium">
+                            {block.items?.map((item, i) => <li key={i} dangerouslySetInnerHTML={{ __html: item.replace(/^([^:]+):/, '<strong>$1:</strong>') }}></li>)}
+                          </ul>
+                        );
+                      }
+                      return <p key={idx} className="text-[15px] sm:text-base text-slate-700 leading-relaxed font-medium">{block.text}</p>;
+                    })}
                 </div>
 
              </div>
@@ -216,40 +198,51 @@ export default function ProjectDetailPage() {
 
         {/* Bottom CTA */}
         <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 py-12 pb-24">
-          <div className="bg-[#0b2917] rounded-[32px] p-8 sm:p-12 text-white relative overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10 pb-10 border-b border-white/10">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[28px] sm:rounded-[32px] p-8 sm:p-12 text-white relative overflow-hidden border border-white/10 shadow-2xl">
+            {/* Background Texture matching Homepage CTA */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10 pb-10 border-b border-white/10 relative z-10">
               <div className="space-y-3 z-10 text-center md:text-left">
                 <h2 className="text-2xl sm:text-3xl font-black text-white font-heading">Want to Start Your Plant?</h2>
                 <p className="text-white/80 font-medium text-sm sm:text-base">Let's build your next successful milling plant together.</p>
               </div>
-              <Link href="/contact" className="z-10 bg-[#f7b032] hover:bg-[#ffc254] text-[#0b2917] px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs transition-colors flex items-center gap-2 whitespace-nowrap shadow-md">
+              <Link href="/contact" className="z-10 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 font-bold uppercase tracking-wide text-xs sm:text-sm transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer">
                 Contact Us <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-xs font-bold text-white/90 z-10 relative">
-               <div className="flex flex-col items-center gap-3">
-                 <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
-                   <CheckCircle className="text-[#f7b032] w-5 h-5" />
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center z-10 relative pt-2">
+               <div className="flex flex-col items-center gap-3.5 group">
+                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-[#f7b032]/40 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                   <CheckCircle className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
-                 <span>60+ Years of<br/>Engineering Excellence</span>
+                 <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
+                   60+ Years of<br/><span className="whitespace-nowrap">Engineering Excellence</span>
+                 </span>
                </div>
-               <div className="flex flex-col items-center gap-3">
-                 <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
-                   <Factory className="text-[#f7b032] w-5 h-5" />
+               <div className="flex flex-col items-center gap-3.5 group">
+                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-[#f7b032]/40 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                   <Factory className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
-                 <span>1200+ Digital<br/>Mills Installed</span>
+                 <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
+                   1200+ Digital<br/><span className="whitespace-nowrap">Mills Installed</span>
+                 </span>
                </div>
-               <div className="flex flex-col items-center gap-3">
-                 <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
-                   <MapPin className="text-[#f7b032] w-5 h-5" />
+               <div className="flex flex-col items-center gap-3.5 group">
+                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-[#f7b032]/40 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                   <MapPin className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
-                 <span>25+ Countries<br/>Covered</span>
+                 <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
+                   25+ Countries<br/><span className="whitespace-nowrap">Covered</span>
+                 </span>
                </div>
-               <div className="flex flex-col items-center gap-3">
-                 <div className="w-12 h-12 border border-[#f7b032]/30 rounded-full flex items-center justify-center">
-                   <Box className="text-[#f7b032] w-5 h-5" />
+               <div className="flex flex-col items-center gap-3.5 group">
+                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 border border-[#f7b032]/40 backdrop-blur-sm flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                   <Box className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
-                 <span>End-to-End<br/>Turnkey Support</span>
+                 <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
+                   End-to-End<br/><span className="whitespace-nowrap">Turnkey Support</span>
+                 </span>
                </div>
             </div>
           </div>

@@ -12,9 +12,9 @@ From material science to plant operations, Choyal brings specialised expertise t
 
 **01 · THE MATERIAL**
 
-### Stone &amp; Abrasive Science
+### Stone and Milling Science
 
-Understanding the grinding surface at its core — from emery composition and profiles to dressing, groove geometry, wear and flour interaction\.
+Understanding the grinding surface at its core from emery composition and profiles to dressing, groove geometry, wear and flour interaction\.
 
 **02 · THE MACHINE**
 

@@ -206,7 +206,7 @@ export default function CatalogPage() {
       <Header />
 
       {/* Header Banner */}
-      <section className="relative w-full h-[200px] sm:h-[240px] overflow-hidden flex items-center bg-slate-900">
+      <section className="relative w-full min-h-[220px] sm:min-h-[260px] pt-28 sm:pt-32 pb-8 overflow-hidden flex items-center bg-slate-900">
         <div className="absolute inset-0 bg-[url('/images/plants/dsc_4263.webp')] bg-cover bg-center opacity-45" />
         <div className="absolute inset-0 bg-slate-900/60" />
         <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">

@@ -12,8 +12,8 @@ export default function EmeryStones() {
       
       <Header />
 
-      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+      {/* Hero Section - Standardized responsive hero */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
@@ -45,8 +45,8 @@ export default function EmeryStones() {
           </div>
         </div>
         
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             
             {/* Eyebrow */}
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
@@ -55,13 +55,12 @@ export default function EmeryStones() {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Emery <br />
-              <span className="text-white">Stones</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+              Emery Stones
             </h1>
             
             {/* Supporting Text */}
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               High-performance emery stones engineered for precision grinding, consistent flour quality, and long service life across commercial stone mills.
             </p>
 

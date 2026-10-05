@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useParams, notFound } from "next/navigation";
-import { ArrowLeft, CheckCircle2, ShieldCheck, MessageCircle, Settings2, Replace, LayoutTemplate, Box, Maximize, TrendingUp, Anchor } from "lucide-react";
+import { CheckCircle2, CheckCircle, ShieldCheck, MessageCircle, Settings2, Replace, LayoutTemplate, Box, PackageCheck, Maximize, TrendingUp, Anchor } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
@@ -28,51 +28,25 @@ export default function SiloDetailPage() {
   const product = silosData.find((p) => p.slug === slug);
   const { addToQuote } = useQuote();
 
-  // State to track quantities for each capacity row (using model string as key)
-  const [quantities, setQuantities] = useState<Record<string, number>>({});
   const [activeTab, setActiveTab] = useState(0);
 
   if (!product) {
     notFound();
   }
 
-  const handleQuantityChange = (model: string, delta: number) => {
-    setQuantities(prev => ({
-      ...prev,
-      [model]: Math.max(1, (prev[model] || 1) + delta)
-    }));
-  };
-
   const handleAddToQuote = (capacity: SiloCapacity) => {
-    const q = quantities[capacity.model] || 1;
-    // Add logic here to addToQuote...
     addToQuote({
       id: capacity.model,
       name: `${product.title} - ${capacity.model} (${capacity.capacity})`,
       image: product.image
-    }, q);
+    }, 1);
   };
 
   return (
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans selection:bg-brand-primary/20">
       <Header />
 
-      {/* Top Breadcrumb */}
-      <div className="w-full bg-[#f9fafb] py-6">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest">
-          <Link href="/grain-storage-handling" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Silos
-          </Link>
-          <div className="flex items-center gap-2">
-            <span>Silos</span>
-            <span className="text-slate-400">/</span>
-            <span className="text-brand-primary">{product.title}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto py-12">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12">
         {/* Top Product Details */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
           <div className="relative w-full h-[350px] lg:h-[450px] bg-slate-50 rounded-2xl flex items-center justify-center p-8 overflow-hidden group">
@@ -105,16 +79,31 @@ export default function SiloDetailPage() {
               dangerouslySetInnerHTML={{ __html: product.description.replace(/\n/g, '<br/>') }}
             />
 
-            <div className="pt-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <Link
-                href="https://wa.me/910000000000"
-                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold px-6 py-3 rounded-md transition-colors"
+                href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}`)}`}
+                className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
                 target="_blank"
                 rel="noreferrer"
               >
-                <MessageCircle className="w-5 h-5" />
+                <MessageCircle className="w-4 h-4" />
                 WhatsApp Enquiry
               </Link>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-3">
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+              </div>
             </div>
           </div>
         </div>
@@ -188,25 +177,12 @@ export default function SiloDetailPage() {
                       )}
                     </div>
 
-                    <div className="flex items-center gap-4 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
-                      <div className="flex items-center border border-slate-200 rounded-md">
-                        <button 
-                          onClick={() => handleQuantityChange(cap.model, -1)}
-                          className="px-3 py-1.5 text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors"
-                        >-</button>
-                        <span className="px-3 py-1.5 text-sm font-bold text-slate-800 min-w-[2rem] text-center border-x border-slate-200">
-                          {quantities[cap.model] || 1}
-                        </span>
-                        <button 
-                          onClick={() => handleQuantityChange(cap.model, 1)}
-                          className="px-3 py-1.5 text-slate-500 hover:bg-slate-50 hover:text-slate-800 transition-colors"
-                        >+</button>
-                      </div>
+                    <div className="flex items-center gap-3 w-full md:w-auto border-t md:border-t-0 pt-4 md:pt-0 border-slate-100">
                       <button 
                         onClick={() => handleAddToQuote(cap)}
-                        className="flex items-center px-4 bg-[#0f2e1a] hover:bg-[#1a4a2a] text-white font-bold h-9 rounded-md transition-colors"
+                        className="h-10 px-5 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded-lg text-sm flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all whitespace-nowrap cursor-pointer"
                       >
-                        <Box className="w-4 h-4 mr-2" /> Add to Quote
+                        <PackageCheck className="w-4 h-4 text-slate-900" /> Add to Quote
                       </button>
                     </div>
                   </div>

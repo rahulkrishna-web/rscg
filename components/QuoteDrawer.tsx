@@ -203,7 +203,7 @@ export default function QuoteDrawer() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer mt-6 disabled:opacity-75 disabled:cursor-not-allowed"
+                  className="w-full py-4 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer mt-6 disabled:opacity-75 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     <span>Submitting Request...</span>

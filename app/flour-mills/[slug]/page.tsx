@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { 
-  ArrowLeft, 
   CheckCircle,
   ShoppingBag,
   FileText,
@@ -16,7 +15,9 @@ import {
   Settings,
   Info,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  PackageCheck,
+  MessageCircle
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -33,9 +34,9 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
     notFound();
   }
 
-  const [quantity, setQuantity] = useState(1);
   const [activeImage, setActiveImage] = useState(product.heroImage);
   const [selectedModelIndex, setSelectedModelIndex] = useState(0);
+  const [addedMessage, setAddedMessage] = useState(false);
 
   const handleAddToQuote = () => {
     // Add the selected model variant to the quote
@@ -46,7 +47,9 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       name: `${product.title}${product.models.length > 1 ? ` - ${model.name}` : ''}`,
       category: product.category,
       image: model?.image || product.heroImage,
-    }, quantity);
+    }, 1);
+    setAddedMessage(true);
+    setTimeout(() => setAddedMessage(false), 2000);
   };
 
   const tagColors = [
@@ -60,22 +63,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
     <main className="min-h-screen bg-[#f9fafb] selection:bg-brand-primary/20 flex flex-col">
       <Header />
 
-      {/* Top Breadcrumb */}
-      <div className="w-full bg-[#f9fafb] py-6">
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-widest">
-          <Link href={product.parentUrl || (product.category === "Accessories" ? "/emery-stones" : "/flour-mills")} className="flex items-center gap-2 hover:text-brand-primary transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Catalog
-          </Link>
-          <div className="flex items-center gap-2">
-            <span>{product.parentName || (product.category === "Accessories" ? "Emery Stones" : "Flour Mills")}</span>
-            <span className="text-slate-400">/</span>
-            <span className="text-brand-primary">{product.title}</span>
-          </div>
-        </div>
-      </div>
-
-      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pb-12 flex-1">
+      <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12 flex-1">
         
         {/* Hero Product Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
@@ -255,46 +243,24 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
 
             {/* Action Area */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 mb-6">
-              <div className="flex flex-col w-full sm:w-auto">
-                <span className="text-xs text-slate-500 font-bold mb-1.5 ml-1">Quantity</span>
-                <div className="flex items-center bg-white border border-slate-200 rounded-xl h-[46px] overflow-hidden shrink-0 w-[120px]">
-                  <button 
-                    onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="w-10 h-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors"
-                  >
-                    <Minus className="w-4 h-4" />
-                  </button>
-                  <span className="flex-1 text-center text-sm font-bold text-slate-800">
-                    {quantity}
-                  </span>
-                  <button 
-                    onClick={() => setQuantity(quantity + 1)}
-                    className="w-10 h-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition-colors"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-end gap-4 w-full sm:flex-1 h-full pt-5">
-                <button
-                  onClick={handleAddToQuote}
-                  className="flex-1 h-[46px] bg-[#0a4c2a] hover:bg-[#083a20] text-white font-bold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-md"
-                >
-                  <FileText className="h-4 w-4" />
-                  <span>Add to Quote List</span>
-                </button>
-                <button
-                  onClick={() => window.open("#", "_blank")}
-                  className="flex-1 h-[46px] bg-[#1eb557] hover:bg-[#189346] text-white font-bold rounded-xl text-sm transition-colors flex items-center justify-center gap-2 shadow-md"
-                >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                  </svg>
-                  <span>WhatsApp Enquiry</span>
-                </button>
-              </div>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 pt-2">
+              <button
+                onClick={handleAddToQuote}
+                className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+              >
+                <PackageCheck className="w-4 h-4 text-slate-900" />
+                <span>{addedMessage ? "Added to Quote!" : "Add to Quote List"}</span>
+              </button>
+              
+              <a
+                href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp Enquiry</span>
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4 pt-4">
@@ -515,7 +481,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             </div>
           </div>
 
-          <Link href="/contact" className="relative z-10 whitespace-nowrap bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-8 py-4 rounded-xl transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2">
+          <Link href="/contact" className="relative z-10 whitespace-nowrap bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded transition-all shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide flex items-center gap-2 cursor-pointer">
             Get a Quote <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

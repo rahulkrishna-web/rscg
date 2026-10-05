@@ -27,7 +27,7 @@ The polishing intensity can be adjusted externally through a slide\-control mech
 
 # Available Models
 
-## Model 12" × 30" — High Capacity
+## Model 12" × 30" - High Capacity
 
 *[Table view](https://miro.com/app/board/uXjVH-0TUEU=/?moveToWidget=3458764681942150472&cot=14)*
 
@@ -38,7 +38,7 @@ The polishing intensity can be adjusted externally through a slide\-control mech
 | Auxiliary Motor Power | 3 HP |
 | Machine Size | 12" × 30" |
 
-# Model 12" × 30" — Standard Capacity
+# Model 12" × 30" - Standard Capacity
 
 *[Table view](https://miro.com/app/board/uXjVH-0TUEU=/?moveToWidget=3458764681942150473&cot=14)*
 

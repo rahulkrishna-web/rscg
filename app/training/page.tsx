@@ -62,7 +62,7 @@ export default function TrainingPage() {
   const trainingPrograms = [
     {
       title: "Understand the Milling Process",
-      desc: "Build a clear understanding of grain, flour, and the complete milling workflow—from cleaning and conditioning to grinding and packing.",
+      desc: "Build a clear understanding of grain, flour, and the complete milling workflow - from cleaning and conditioning to grinding and packing.",
       icon: "/training/training-program-helps-you/understand-milling-process.png"
     },
     {
@@ -108,8 +108,8 @@ export default function TrainingPage() {
       <div>
         <Header onRequestCallback={() => setIsModalOpen(true)} />
 
-        {/* Hero Section */}
-        <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1080/1920] md:aspect-[1920/820] flex flex-col justify-center">
+        {/* Hero Section - Standardized responsive hero */}
+        <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex flex-col justify-center">
           {/* Full-bleed Background Images */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             {/* Desktop Background Image (1920x820) */}
@@ -139,20 +139,19 @@ export default function TrainingPage() {
             </div>
           </div>
 
-          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
-            <div className="max-w-2xl space-y-4 sm:space-y-6 pt-12 md:pt-0">
+          <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+            <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
               {/* Standard Eyebrow */}
               <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
                 TRAINING & EDUCATION
               </div>
 
-              <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-                Build Skills for <br className="hidden sm:inline" />
-                <span className="text-white">Modern Flour Milling</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+                Build Skills for Modern Flour Milling
               </h1>
 
-              <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+              <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 Industry-focused training for professionals, freshers, and mill owners. CHARGE offers hands-on practical exposure, technical knowledge, and real-world milling expertise.
               </p>
 
@@ -226,7 +225,7 @@ export default function TrainingPage() {
               
               <div className="text-slate-600 font-medium space-y-4 text-base sm:text-lg leading-relaxed">
                 <p>
-                  CHARGE—Choyal Hub for Agribusiness, Research, Growth and Entrepreneurship—is a CSR initiative of RS Choyal Group and the next chapter in the legacy of Choyal School of Milling Technology.
+                  CHARGE - Choyal Hub for Agribusiness, Research, Growth and Entrepreneurship - is a CSR initiative of RS Choyal Group and the next chapter in the legacy of Choyal School of Milling Technology.
                 </p>
                 <p>
                   We offer practical training for professionals, freshers, and local youth. CHARGE operates on a no-profit, no-loss basis and combines classroom learning with hands-on exposure to real milling machinery and processes.
@@ -438,7 +437,7 @@ export default function TrainingPage() {
 
             <Link
               href="/contact"
-              className="relative z-10 inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f5a623] hover:bg-[#e0961c] text-white rounded-xl text-sm sm:text-base font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200 cursor-pointer text-nowrap whitespace-nowrap shrink-0"
+              className="relative z-10 inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide font-bold transition-all duration-200 cursor-pointer text-nowrap whitespace-nowrap shrink-0"
             >
               <span>Enquire About Training</span>
               <ChevronRight className="w-4 h-4" />

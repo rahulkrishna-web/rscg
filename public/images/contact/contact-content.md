@@ -30,16 +30,16 @@ Choyal Grinding Solution Pvt\. Ltd\.,Arjunpura – Khalsa,Distt\. Ajmer \(Raj\.\
 
 “Tell us a little about your requirement and our team will get back to you shortly\.” 
 
-- Name — Your name
-- Company — Company name
-- Email — Your email
-- Phone — Phone number
-- Subject — Select enquiry type
+- Name - Your name
+- Company - Company name
+- Email - Your email
+- Phone - Phone number
+- Subject - Select enquiry type
     - New flour mill setup
     - Plant upgrade or improvement
     - Flour Mill Automation
     - Consultancy Services
-- Message — Tell us about your requirement\.\.\.
+- Message - Tell us about your requirement\.\.\.
 
 **CTA Button:** Send message 
 

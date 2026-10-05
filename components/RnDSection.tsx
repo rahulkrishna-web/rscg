@@ -11,7 +11,7 @@ interface RnDItem {
 const rndCapabilities: RnDItem[] = [
   {
     number: "01",
-    title: "Abrasive & Material Testing",
+    title: "Stone Engineering & Material Testing",
     description:
       "Studying wear, strength, surface behaviour and material performance for demanding grinding applications.",
   },

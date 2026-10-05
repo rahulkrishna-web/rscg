@@ -52,7 +52,7 @@ export default function ThankYou() {
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             <Link 
               href="/"
-              className="flex-1 py-3 px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
+              className="flex-1 py-3 px-6 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded text-xs sm:text-sm uppercase tracking-wide transition-colors flex items-center justify-center gap-2 cursor-pointer"
             >
               <Home className="w-4 h-4" />
               <span>Return Home</span>
@@ -60,7 +60,7 @@ export default function ThankYou() {
             
             <Link 
               href="/flour-mills"
-              className="flex-1 py-3 px-6 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold rounded-xl text-sm shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2"
+              className="flex-1 py-3 px-6 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide transition-all flex items-center justify-center gap-2 cursor-pointer"
             >
               <span>Explore More Mills</span>
               <ArrowRight className="w-4 h-4" />

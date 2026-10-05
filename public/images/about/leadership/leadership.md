@@ -52,5 +52,5 @@ To combine engineering excellence, innovation and efficiency to create practical
 
 ### Our Mission
 
-To advance milling through intelligent, efficient and sustainable technologies—combining experience, experimentation and continuous improvement to build solutions for the future\.
+To advance milling through intelligent, efficient and sustainable technologies - combining experience, experimentation and continuous improvement to build solutions for the future\.
 

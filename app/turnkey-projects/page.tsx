@@ -174,8 +174,8 @@ export default function TurnkeyProjects() {
       {/* Header */}
       <Header onRequestCallback={() => setIsModalOpen(true)} />
 
-      {/* Hero Section - Exactly matches image aspect ratio so images are never cropped */}
-      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[1079/1920] md:aspect-[1920/820] flex flex-col justify-center">
+      {/* Hero Section - Standardized responsive hero */}
+      <section className="w-full relative z-10 bg-[#0B1510] text-white aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex flex-col justify-center">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0 overflow-hidden">
           {/* Desktop Background Image (1920x820) */}
@@ -207,9 +207,9 @@ export default function TurnkeyProjects() {
           </div>
         </div>
 
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center">
+        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             
             {/* Standard Eyebrow */}
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
@@ -217,11 +217,11 @@ export default function TurnkeyProjects() {
               TURNKEY PROJECTS DIVISION
             </div>
             
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
               Turnkey Projects
             </h1>
             
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Customized and automated solutions for grain cleaning, grinding, and sorting plants up to 1000 TPD capacity, delivered end-to-end.
             </p>
             
@@ -356,11 +356,11 @@ export default function TurnkeyProjects() {
             </p>
           </div>
 
-          <div className="flex sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="flex sm:flex-wrap sm:justify-center gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
             {turnkeySolutions.map((sol, idx) => (
               <div 
                 key={idx} 
-                className="w-[72vw] max-w-[280px] sm:w-auto shrink-0 snap-start flex items-center p-4 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md hover:border-brand-primary/20 transition-all duration-200"
+                className="w-[72vw] max-w-[280px] sm:w-[calc(50%-9px)] md:w-[calc(33.333%-11px)] lg:w-[calc(25%-13px)] xl:w-[calc(20%-13px)] shrink-0 snap-start flex items-center p-4 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md hover:border-brand-primary/20 transition-all duration-200"
               >
                 <div className="w-16 h-16 relative flex-shrink-0 mr-4 rounded-full overflow-hidden border border-slate-100 shadow-sm">
                   <Image src={sol.image} alt={sol.title} fill className="object-cover" />

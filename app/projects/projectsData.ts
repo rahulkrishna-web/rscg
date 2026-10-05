@@ -42,10 +42,6 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview:"
-      },
-      {
-        "type": "paragraph",
         "text": "Al Ghurair Foods, one of the premier food manufacturing giants in the Middle East, has further elevated its industrial milling capacity with the commissioning of a modern 14-Chakki Digital Whole Wheat Flour Mill Plant at its main production facility in Dubai, UAE."
       },
       {
@@ -53,7 +49,8 @@ export const projectsData: ProjectItem[] = [
         "text": "Designed for high throughput and supreme flour quality, this 120 TPD (Tonnes Per Day) facility integrates Choyal\u2019s cutting-edge Wondermills Technology. The project highlights a joint commitment to innovation, process precision, and global food safety standards."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "level": 3,
         "text": "Smart Automation & Technical Features"
       },
       {
@@ -72,7 +69,7 @@ export const projectsData: ProjectItem[] = [
     "title": "Bakhresa Group",
     "subtitle": "40 TPD Atta Plant",
     "client": "Bakhresa Group",
-    "location": "",
+    "location": "Tanzania, East Africa",
     "capacity": "40 TPD Atta Plant",
     "projectType": "Flour milling plant",
     "commissioned": "",
@@ -80,15 +77,6 @@ export const projectsData: ProjectItem[] = [
       "/images/projects/case_studies/bakhresa-group/mainimg.jpg"
     ],
     "content": [
-      {
-        "type": "paragraph",
-        "text": "Location:Tanzania,East Africa"
-      },
-      {
-        "type": "heading",
-        "level": 3,
-        "text": "Project Overview"
-      },
       {
         "type": "paragraph",
         "text": "Bakhresa Group is one of East Africa\u2019s largest industrial conglomerates, with a turnover exceeding USD 800 Million and operations spanning Tanzania, Kenya, Uganda, Rwanda, and beyond. Its flagship enterprise, Said Salim Bakhresa & Co Ltd (SSB), commands over 60% market share in Tanzania and stands as the region's leading producer and exporter of premium wheat and grain products."
@@ -119,10 +107,10 @@ export const projectsData: ProjectItem[] = [
   },
   {
     "slug": "carrs-flour",
-    "title": "Carr's Flour Green Meldon",
+    "title": "Carr's Flour",
     "subtitle": "40 TPD Atta plant",
-    "client": "Carr's Flour Green Meldon",
-    "location": "UK",
+    "client": "Carr's Flour (UK)",
+    "location": "Maldon, UK",
     "capacity": "40 TPD Atta plant",
     "projectType": "Flour milling plant",
     "commissioned": "",
@@ -136,22 +124,11 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview"
-      },
-      {
-        "type": "paragraph",
-        "text": "heading:Carr's Flour UK"
-      },
-      {
-        "type": "paragraph",
-        "text": "Carr's Flour UK"
-      },
-      {
-        "type": "paragraph",
         "text": "With a 180-year legacy and an annual milling capacity exceeding 300,000 tonnes, Carr\u2019s Flour (UK) partnered with Choyal to meet the growing demand for authentic Chakki Atta. To achieve their high quality standards, Carr\u2019s selected Choyal\u2019s fully automated, ultra-modern, and hygienic stone-milling solution."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "level": 3,
         "text": "Smart Automation & Technical Features"
       },
       {
@@ -185,10 +162,6 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview:"
-      },
-      {
-        "type": "paragraph",
         "text": "Eminent Group, Australia commissioned a 40 TPD Fully Automatic Atta & Besan Plant to cater to the increasing demand for premium-quality stone-ground whole wheat flour and gram flour (besan) across the Australian market. Designed and supplied by Choyal Group, the plant incorporates advanced milling technology to deliver superior product quality, enhanced operational efficiency, and sustainable performance."
       },
       {
@@ -219,7 +192,7 @@ export const projectsData: ProjectItem[] = [
     "title": "Patanjali Ayurved Ltd",
     "subtitle": "200 TPD Multi-Grain Atta | 50 TPD Wheat & Multi-Grain Daliya | 30 TPD Pulse & Besan plant | 20 TPD Spice plant",
     "client": "Patanjali Ayurved Ltd",
-    "location": "Haridwar,Uttarakhand, India",
+    "location": "Haridwar, Uttarakhand, India",
     "capacity": "200 TPD Multi-Grain Atta | 50 TPD Wheat & Multi-Grain Daliya | 30 TPD Pulse & Besan plant | 20 TPD Spice plant",
     "projectType": "Flour Milling & Food Processing Plant",
     "commissioned": "",
@@ -233,14 +206,11 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview"
-      },
-      {
-        "type": "paragraph",
         "text": "Patanjali Ayurved Limited, one of India's leading FMCG and Ayurvedic product manufacturers, established a state-of-the-art integrated flour milling and food processing facility at its Haridwar manufacturing campus under the Mega Food Park initiative. The project was envisioned to develop a technologically advanced processing infrastructure capable of producing high-quality multi-grain flour, daliya, pulses, besan, and spices through digitally controlled operations."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "level": 3,
         "text": "Mega Food Park"
       },
       {
@@ -252,8 +222,9 @@ export const projectsData: ProjectItem[] = [
         "text": "The Mega Food Park provides centralized processing, storage, and logistics infrastructure, enabling efficient utilization of raw materials while supporting employment generation, rural development, and sustainable growth in the food processing sector."
       },
       {
-        "type": "paragraph",
-        "text": "The scope of work"
+        "type": "heading",
+        "level": 3,
+        "text": "The Scope of Work"
       },
       {
         "type": "list",
@@ -346,10 +317,6 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview:"
-      },
-      {
-        "type": "paragraph",
         "text": "Prima Group is one of South Asia's leading manufacturers of wheat-based food products, with its flagship flour milling complex located at Trincomalee, Sri Lanka. The integrated facility is recognized as one of the region's most advanced flour milling operations, featuring modern port infrastructure, large-scale grain storage, and world-class logistics connectivity through road, rail, and sea."
       },
       {
@@ -396,10 +363,6 @@ export const projectsData: ProjectItem[] = [
     "content": [
       {
         "type": "paragraph",
-        "text": "Project Overview:"
-      },
-      {
-        "type": "paragraph",
         "text": "Qatar Flour Mills Co. is one of the leading flour milling companies in the State of Qatar, supplying high-quality wheat flour and related products to the domestic market. As part of its product diversification and capacity enhancement initiatives, the company commissioned a 40 TPD Fully Automatic Chakki Atta Plant to produce premium-quality whole wheat flour using advanced milling technology."
       },
       {
@@ -407,7 +370,8 @@ export const projectsData: ProjectItem[] = [
         "text": "The project was designed to integrate seamlessly with the existing flour milling infrastructure, ensuring efficient operations, consistent product quality, and reliable production. The plant incorporates modern automation and process control systems to achieve high operational efficiency while maintaining stringent food quality standards."
       },
       {
-        "type": "paragraph",
+        "type": "heading",
+        "level": 3,
         "text": "Technical Features"
       },
       {
@@ -427,7 +391,7 @@ export const projectsData: ProjectItem[] = [
     "slug": "winnies-pure-health",
     "title": "Winnie's Pure Health",
     "subtitle": "40 TPD Atta plant",
-    "client": "Winnie's pure heath",
+    "client": "Winnie's Pure Health",
     "location": "Kenya, East Africa",
     "capacity": "40 TPD Atta plant",
     "projectType": "Flour Milling plant",

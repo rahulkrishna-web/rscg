@@ -63,8 +63,8 @@ export default function FlourMills() {
     <main className="min-h-screen bg-white selection:bg-brand-primary/20">
       <Header />
 
-      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+      {/* Hero Section - Standardized responsive hero */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
@@ -96,17 +96,16 @@ export default function FlourMills() {
           </div>
         </div>
 
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
               COMMERCIAL MILLING
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Flour Mills & <br className="hidden sm:block" />
-              <span className="text-white">Grinding Plants</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+              Flour Mills & Grinding Plants
             </h1>
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Advanced stone milling technology engineered for high-capacity continuous production, uniform flour quality, and long-term reliability.
             </p>
             
@@ -230,12 +229,12 @@ export default function FlourMills() {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 pt-4">
+          <div className="flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 w-full">
             {filteredProducts.map((prod) => (
               <Link
                 key={prod.id}
                 href={`/flour-mills/${prod.id}`}
-                className="group flex flex-col bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className="group flex flex-col w-full md:w-[calc(50%-12.5px)] lg:w-[calc(33.333%-21.5px)] bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100">
                   <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black uppercase text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">

@@ -17,8 +17,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "01",
     title: "Responsibility",
     subtitle: "COMMITMENT & TRUST",
-    color: "#f59e0b",
-    icon: "/images/about/philosophy/icons/trimmed/responsibility.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/responsibility.png",
     description:
       "We take ownership of our commitments and recognise the trust our customers, partners and stakeholders place in us.",
   },
@@ -26,17 +26,17 @@ const philosophyValues: PhilosophyItem[] = [
     number: "02",
     title: "Integrity",
     subtitle: "ETHICS & CONDUCT",
-    color: "#16a34a",
-    icon: "/images/about/philosophy/icons/trimmed/integrity.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/integrity.png",
     description:
-      "We believe in doing business with honesty, transparency and ethical principles — without compromise.",
+      "We believe in doing business with honesty, transparency and ethical principles - without compromise.",
   },
   {
     number: "03",
     title: "Innovation",
     subtitle: "R&D & TECH",
-    color: "#2563eb",
-    icon: "/images/about/philosophy/icons/trimmed/innovation.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/innovation.png",
     description:
       "Continuous research and development drives our progress, helping us create better, smarter and more efficient milling solutions.",
   },
@@ -44,8 +44,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "04",
     title: "Empowerment",
     subtitle: "MADE IN INDIA",
-    color: "#f59e0b",
-    icon: "/images/about/philosophy/icons/trimmed/empowerment.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/empowerment.png",
     description:
       "We believe in strengthening Indian manufacturing and taking the quality of “Made in India” to global standards.",
   },
@@ -53,8 +53,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "05",
     title: "Community",
     subtitle: "SOCIAL IMPACT",
-    color: "#16a34a",
-    icon: "/images/about/philosophy/icons/trimmed/community.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/community.png",
     description:
       "We remain committed to creating meaningful economic and social value for the communities around us.",
   },
@@ -62,8 +62,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "06",
     title: "Fairness",
     subtitle: "EQUAL OPPORTUNITY",
-    color: "#2563eb",
-    icon: "/images/about/philosophy/icons/trimmed/fairness.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/fairness.png",
     description:
       "We believe in fair dealing, transparent relationships and opportunities that support sustainable, ethical growth.",
   },
@@ -71,8 +71,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "07",
     title: "Growth",
     subtitle: "SUSTAINABLE PROGRESS",
-    color: "#f59e0b",
-    icon: "/images/about/philosophy/icons/trimmed/growth.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/growth.png",
     description:
       "We pursue responsible growth by creating long-term value for our customers, partners, employees and stakeholders.",
   },
@@ -80,8 +80,8 @@ const philosophyValues: PhilosophyItem[] = [
     number: "08",
     title: "Service",
     subtitle: "LIFELONG PARTNERSHIP",
-    color: "#16a34a",
-    icon: "/images/about/philosophy/icons/trimmed/service.png",
+    color: "#063831",
+    icon: "/images/about/philosophy/icons/v2/service.png",
     description:
       "We combine quality, responsiveness and dependable support to deliver a better experience throughout the customer journey.",
   },
@@ -143,9 +143,9 @@ export default function PhilosophySection() {
           </p>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight mb-4 font-heading">
-            Values That Shape
-            <br className="hidden sm:inline" /> How{" "}
-            <span className="text-[#FFAA17]">We Work</span>
+            Values that shape
+            <br className="hidden sm:inline" /> how{" "}
+            <span className="text-[#FFAA17]">we work</span>
           </h2>
 
           <p className="text-slate-500 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">

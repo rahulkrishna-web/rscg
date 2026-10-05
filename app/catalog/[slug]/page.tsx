@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Check, Plus, Minus, Send, ChevronLeft, ChevronRight, CheckCircle2, Factory, Wheat, Headset, Settings } from "lucide-react";
+import { ArrowRight, Check, PackageCheck, MessageCircle, ChevronLeft, ChevronRight, CheckCircle2, Factory, Wheat, Headset, Settings, ShieldCheck, CheckCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useQuote } from "@/components/QuoteContext";
@@ -58,7 +58,6 @@ export default function ProductDetailsPage() {
   const product = productsData.find((p) => p.slug === slug);
 
   const [selectedVariantIndex, setSelectedVariantIndex] = useState<number>(0);
-  const [quantity, setQuantity] = useState<number>(1);
   const [addedMessage, setAddedMessage] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'description' | 'additionalInfo'>('description');
 
@@ -76,7 +75,6 @@ export default function ProductDetailsPage() {
 
   useEffect(() => {
     setSelectedVariantIndex(0);
-    setQuantity(1);
     setAddedMessage(false);
     setActiveTab('description');
   }, [slug]);
@@ -85,10 +83,10 @@ export default function ProductDetailsPage() {
     return (
       <div className="min-h-screen bg-brand-bg text-slate-800 flex flex-col">
         <Header />
-        <div className="flex-1 flex flex-col items-center justify-center p-8 space-y-4">
+        <div className="flex-1 flex flex-col items-center justify-center p-8 pt-32 space-y-4">
           <h2 className="text-2xl font-bold">Product Not Found</h2>
           <p className="text-slate-500">The product you are looking for does not exist in our sitemap catalog.</p>
-          <Link href="/catalog" className="btn btn-primary bg-brand-primary text-white px-6 py-2.5 rounded-xl font-bold">
+          <Link href="/catalog" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
             Back to Catalog
           </Link>
         </div>
@@ -96,10 +94,6 @@ export default function ProductDetailsPage() {
       </div>
     );
   }
-
-  const handleQtyChange = (val: number) => {
-    setQuantity((prev) => Math.max(1, prev + val));
-  };
 
   const handleAddToQuote = () => {
     const variant = product.variants[selectedVariantIndex] || { name: product.title, size: "Standard" };
@@ -110,7 +104,7 @@ export default function ProductDetailsPage() {
       image: variant.image || product.image,
       category: categoriesData[product.category as keyof typeof categoriesData]?.name || "Products",
       size: variant.size
-    }, quantity);
+    }, 1);
 
     setAddedMessage(true);
     setTimeout(() => {
@@ -137,18 +131,12 @@ export default function ProductDetailsPage() {
       <div className="min-h-screen bg-[#F7F9F6] text-brand-foreground font-sans">
         <Header />
 
-        {/* Breadcrumb Area */}
-        <div className="w-full py-6 px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="w-full max-w-6xl mx-auto flex items-center justify-between border-b border-slate-300 pb-4">
+        {/* Title Area */}
+        <div className="w-full pt-28 sm:pt-32 md:pt-36 pb-6 px-6 sm:px-12 lg:px-16 xl:px-24">
+          <div className="w-full max-w-6xl mx-auto border-b border-slate-300 pb-4">
             <h1 className="text-3xl font-heading font-black text-[#134e4a]">
               {product.title}
             </h1>
-            <div className="text-xs font-bold text-slate-500 uppercase tracking-wider hidden sm:flex items-center gap-2">
-              <Link href="/" className="hover:text-brand-primary">Home</Link> /
-              <Link href="/catalog" className="hover:text-brand-primary">Products</Link> /
-              <Link href="/catalog" className="hover:text-brand-primary">{activeCategory?.name}</Link> /
-              <span className="text-[#134e4a]">{product.title}</span>
-            </div>
           </div>
         </div>
 
@@ -189,13 +177,20 @@ export default function ProductDetailsPage() {
         </div>
 
         {/* Middle Banner */}
-        <div className="w-full py-6 mt-8">
-          <div className="w-full max-w-6xl mx-auto border-t border-b border-slate-300 py-4 flex flex-col sm:flex-row items-center justify-end gap-6 text-xs font-bold text-slate-700 uppercase tracking-wider">
-             <div className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-emerald-600" /> 1-Year Warranty</div>
-             <div className="hidden sm:block text-slate-300">|</div>
-             <div className="flex items-center gap-2"><Factory className="w-4 h-4 text-emerald-600" /> Worldwide Delivery</div>
-             <div className="hidden sm:block text-slate-300">|</div>
-             <div className="flex items-center gap-2"><Headset className="w-4 h-4 text-emerald-600" /> After Sales Support</div>
+        <div className="w-full py-4 mt-6">
+          <div className="w-full max-w-6xl mx-auto flex flex-wrap items-center justify-end gap-3">
+             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+               <ShieldCheck className="w-5 h-5 text-[#1eb557]" />
+               <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+             </div>
+             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+               <CheckCircle className="w-5 h-5 text-[#1eb557]" />
+               <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+             </div>
+             <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+               <CheckCircle className="w-5 h-5 text-[#1eb557]" />
+               <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+             </div>
           </div>
         </div>
 
@@ -255,26 +250,36 @@ export default function ProductDetailsPage() {
                 </div>
               )}
 
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-4 border-t border-slate-200">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-4 border-t border-slate-200">
                 <button 
                   onClick={handleAddToQuote}
-                  className={`px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-all w-full sm:w-auto ${
-                    addedMessage 
-                      ? "bg-brand-secondary text-white scale-[0.98]" 
-                      : "bg-[#134e4a] hover:bg-[#0f3d3a] text-white hover:scale-105"
-                  }`}
+                  className="h-12 flex-1 w-full sm:w-auto flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
-                  {addedMessage ? (
-                     <>
-                       <Check className="h-4 w-4" /> Added!
-                     </>
-                   ) : (
-                     "Request Quote"
-                   )}
+                  <PackageCheck className="w-4 h-4 text-slate-900" />
+                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
                 </button>
-                <button className="bg-slate-400 hover:bg-slate-500 text-white px-6 py-3 rounded-full text-sm font-bold flex items-center justify-center gap-2 transition-all hover:scale-105 w-full sm:w-auto">
-                  Download Data Sheet
+                <button
+                  onClick={handleWhatsAppEnquiry}
+                  className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  WhatsApp Enquiry
                 </button>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-2">
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                </div>
               </div>
             </div>
 
@@ -287,14 +292,14 @@ export default function ProductDetailsPage() {
              <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
              <div className="flex flex-col sm:flex-row items-center gap-6 relative z-10 text-center sm:text-left">
                 <div className="w-12 h-12 rounded-full border-2 border-white/20 bg-white/10 flex items-center justify-center shrink-0">
-                  <Settings className="w-6 h-6 text-[#f5a623]" />
+                  <Settings className="w-6 h-6 text-[#f7b032]" />
                 </div>
                 <div>
                   <h3 className="text-xl font-heading font-black text-white">Smart Milling. Smarter Business.</h3>
                   <p className="text-white/85 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
                 </div>
              </div>
-             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-6 py-3 rounded-xl hidden sm:flex items-center gap-2 transition-all hover:scale-105 whitespace-nowrap shadow-md">
+             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 hidden sm:flex items-center gap-2 transition-all whitespace-nowrap text-xs sm:text-sm uppercase tracking-wide cursor-pointer">
                 <span>Get a Quote</span>
                 <ArrowRight className="w-4 h-4" />
              </button>
@@ -310,24 +315,8 @@ export default function ProductDetailsPage() {
     <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans">
       <Header />
 
-      {/* Breadcrumb Area */}
-      <div className="w-full bg-white/50 border-b border-slate-200/50 py-4 px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="w-full mx-auto flex items-center justify-between">
-          <Link 
-            href="/catalog" 
-            className="flex items-center gap-2 text-xs font-bold text-slate-500 hover:text-brand-primary transition-colors cursor-pointer"
-          >
-            <ArrowLeft className="h-4 w-4" />
-            Back to Catalog
-          </Link>
-          <div className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider hidden sm:block">
-            {activeCategory?.name} / {product.title}
-          </div>
-        </div>
-      </div>
-
       {/* Main Details Section */}
-      <section className="w-full py-12 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-28 sm:pt-32 md:pt-36 pb-12 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Product Image (col-span-5) */}
@@ -395,72 +384,39 @@ export default function ProductDetailsPage() {
               </div>
             )}
 
-             {/* Add to Quote Box */}
-             <div className="bg-white rounded-3xl border border-slate-200/60 p-6 sm:p-8 shadow-xs flex flex-col lg:flex-row gap-6 items-center justify-between">
-               
-               {/* Quantity */}
-               <div className="flex flex-col gap-2 items-center lg:items-start shrink-0">
-                 <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                   Quantity
-                 </span>
-                 <div className="flex items-center gap-1 border border-slate-200 rounded-xl p-1 bg-slate-50">
-                   <button 
-                     onClick={() => handleQtyChange(-1)}
-                     className="p-2 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-white transition-colors cursor-pointer"
-                   >
-                     <Minus className="h-4 w-4" />
-                   </button>
-                   <span className="w-12 text-center text-sm font-black text-slate-800">
-                     {quantity}
-                   </span>
-                   <button 
-                     onClick={() => handleQtyChange(1)}
-                     className="p-2 text-slate-500 hover:text-slate-800 rounded-lg hover:bg-white transition-colors cursor-pointer"
-                   >
-                     <Plus className="h-4 w-4" />
-                   </button>
-                 </div>
-               </div>
- 
-               {/* Action Buttons Grid */}
-               <div className="w-full lg:flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 lg:pl-6">
-                 <button
-                   onClick={handleAddToQuote}
-                   className={`w-full py-4 rounded-2xl font-bold transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer shadow-md text-sm sm:text-base ${
-                     addedMessage 
-                       ? "bg-brand-secondary text-white scale-[0.98]" 
-                       : "bg-brand-primary text-white hover:bg-brand-primary/95 hover:-translate-y-0.5"
-                   }`}
-                 >
-                   {addedMessage ? (
-                     <>
-                       <Check className="h-5 w-5" />
-                       <span>Added to Quote!</span>
-                     </>
-                   ) : (
-                     <>
-                       <Send className="h-4 w-4 rotate-45" />
-                       <span>Add to Quote List</span>
-                     </>
-                   )}
-                 </button>
+            {/* Actions: Add to Quote List & WhatsApp Enquiry (1.png style) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <button
+                onClick={handleAddToQuote}
+                className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+              >
+                <PackageCheck className="w-4 h-4 text-slate-900" />
+                {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+              </button>
 
-                 <button
-                   onClick={handleWhatsAppEnquiry}
-                   className="w-full py-4 rounded-2xl font-bold transition-all duration-300 text-center flex items-center justify-center gap-2 cursor-pointer shadow-md text-sm sm:text-base bg-emerald-600 hover:bg-emerald-500 text-white hover:-translate-y-0.5"
-                 >
-                   <svg 
-                     className="h-5 w-5 fill-current" 
-                     viewBox="0 0 24 24"
-                     xmlns="http://www.w3.org/2000/svg"
-                   >
-                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.458L0 24zm6.26-3.411a9.78 9.78 0 0 0 5.753 1.822c5.626 0 10.201-4.542 10.204-10.126.002-2.707-1.048-5.253-2.956-7.164C17.41 3.21 14.86 2.16 12.012 2.16c-5.635 0-10.21 4.542-10.213 10.128a9.73 9.73 0 0 0 1.517 5.163l-.995 3.635 3.734-.972zm11.393-7.793c-.31-.155-1.838-.901-2.11-.999-.271-.099-.469-.149-.667.148-.198.298-.766.999-.94 1.198-.173.198-.347.222-.657.067-.31-.156-1.309-.48-2.493-1.532-.92-.816-1.541-1.826-1.72-2.133-.18-.306-.019-.472.136-.626.14-.139.31-.36.465-.54.155-.18.207-.306.31-.51.103-.204.052-.382-.026-.54-.077-.156-.667-1.606-.914-2.201-.24-.579-.487-.5-.667-.51-.173-.008-.371-.01-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.838-.752 2.097-1.442.259-.69.259-1.282.182-1.402-.077-.12-.272-.194-.583-.349z"/>
-                   </svg>
-                   <span>WhatsApp Enquiry</span>
-                 </button>
-               </div>
- 
-             </div>
+              <button
+                onClick={handleWhatsAppEnquiry}
+                className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp Enquiry
+              </button>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+              </div>
+              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+              </div>
+            </div>
 
             {/* Tabs Section: Description & Additional Information */}
             <div className="border border-slate-200/60 rounded-[32px] bg-white overflow-hidden shadow-xs">

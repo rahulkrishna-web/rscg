@@ -43,10 +43,10 @@ function RunningCounter({ end, duration = 2000, suffix = "" }: { end: number; du
 
 export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
   const slides = [
-    { src: "/images/about/hero/img1.png", alt: "Golden wheat harvest under sun" },
-    { src: "/images/about/hero/img2.png", alt: "Flour milling online training program" },
-    { src: "/images/about/hero/img3.png", alt: "Digital flour milling machinery in facility" },
-    { src: "/images/about/hero/img4.png", alt: "Complete turnkey milling plant installation" },
+    { src: "/images/about/hero/img1.png", alt: "Golden wheat harvest field" },
+    { src: "/images/about/hero/img2.png", alt: "Commercial flour mills row installation" },
+    { src: "/images/about/hero/img3.png", alt: "Milling processing platform and machinery" },
+    { src: "/images/about/hero/img4.png", alt: "Complete turnkey milling plant installation facility" },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);

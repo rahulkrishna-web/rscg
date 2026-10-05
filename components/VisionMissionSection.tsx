@@ -19,99 +19,127 @@ export default function VisionMissionSection() {
           {/* 2 Vision & Mission Cards */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-8">
             {/* Vision Card */}
-            <div className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden relative flex flex-col sm:flex-row justify-between min-h-[240px] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-              <div className="p-7 sm:p-8 flex flex-col justify-between z-10 flex-1">
+            <div className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-3xl overflow-hidden relative flex flex-col sm:flex-row justify-between min-h-[250px] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="p-7 sm:p-8 lg:p-9 flex flex-col justify-between z-10 flex-1">
                 <div>
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-11 h-11 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_5px_#E6EFEA]">
-                      <Eye className="w-5 h-5" />
+                  <div className="flex items-start gap-4 sm:gap-5 mb-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_5px_#E6EFEA]">
+                      <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-0.5">
+                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-1">
                         Our Vision
                       </span>
-                      <h3 className="text-lg sm:text-xl font-extrabold text-[#0B2C1C] leading-snug">
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
                         Aiming for a smarter,
                         <br className="hidden sm:inline" /> stronger tomorrow.
                       </h3>
+                      <div className="w-10 h-[2.5px] bg-[#FFAA17] mt-3 sm:mt-3.5 mb-4 rounded-full" />
                     </div>
                   </div>
                 </div>
-                <p className="text-sm sm:text-[14.5px] text-slate-600 leading-relaxed font-normal max-w-sm">
+                <p className="text-[15px] sm:text-base text-slate-600 leading-relaxed font-normal">
                   To combine engineering excellence, innovation and efficiency to create practical
                   solutions that deliver consistent value for our customers.
                 </p>
               </div>
 
-              {/* Graphic Graphic Box with Organic Rings & Cutout */}
-              <div className="w-full sm:w-[220px] h-[160px] sm:h-auto relative shrink-0 overflow-hidden flex items-end justify-end">
-                {/* Organic Rings Background */}
+              {/* Graphic Box with 2 Background Circle Arcs & Left-Arced Image */}
+              <div className="w-full sm:w-[240px] md:w-[260px] lg:w-[270px] xl:w-[290px] h-[220px] sm:h-auto min-h-[220px] sm:min-h-full relative shrink-0 overflow-hidden flex items-center justify-end select-none">
                 <svg
-                  className="absolute -top-10 -right-12 w-64 h-64 pointer-events-none"
-                  viewBox="0 0 300 300"
+                  viewBox="0 0 260 280"
+                  className="w-full h-full min-h-[220px] pointer-events-none"
+                  preserveAspectRatio="xMidYMid slice"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <circle cx="150" cy="150" r="145" fill="#EAF0EC" opacity="0.6" />
-                  <circle cx="150" cy="150" r="105" fill="#D3E2D8" opacity="0.75" />
-                  <circle cx="150" cy="150" r="65" fill="#B9D2C2" opacity="0.85" />
-                </svg>
+                  <defs>
+                    <clipPath id="vision-image-clip">
+                      <path d="M 260,0 C 25,60 20,200 75,280 L 260,280 Z" />
+                    </clipPath>
+                  </defs>
 
-                {/* Silo Image Frame with Organic Arch */}
-                <div className="absolute right-0 bottom-0 w-[170px] sm:w-[190px] h-[140px] sm:h-[180px] rounded-tl-[70px] overflow-hidden shadow-sm z-10">
-                  <img
-                    src="/images/about/leadership/silo-graphic.png"
-                    alt="Vision Silo"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                </div>
+                  {/* 2 Soft Sage Background Circle Arcs (top & bottom) */}
+                  <circle cx="180" cy="20" r="110" fill="#E4EEE6" />
+                  <circle cx="170" cy="255" r="115" fill="#E4EEE6" />
+
+                  {/* Image with smooth hover scale (bottom-right uncut) */}
+                  <g clipPath="url(#vision-image-clip)">
+                    <image
+                      href="/images/about/mission-vision/vision.png"
+                      x="0"
+                      y="0"
+                      width="260"
+                      height="280"
+                      preserveAspectRatio="xMidYMid slice"
+                      className="transition-transform duration-700 ease-out group-hover:scale-105"
+                      style={{ transformOrigin: "center" }}
+                    />
+                  </g>
+                </svg>
               </div>
             </div>
 
             {/* Mission Card */}
-            <div className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden relative flex flex-col sm:flex-row justify-between min-h-[240px] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
-              <div className="p-7 sm:p-8 flex flex-col justify-between z-10 flex-1">
+            <div className="bg-white border border-slate-200/80 rounded-2xl sm:rounded-3xl overflow-hidden relative flex flex-col sm:flex-row justify-between min-h-[250px] shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+              <div className="p-7 sm:p-8 lg:p-9 flex flex-col justify-between z-10 flex-1">
                 <div>
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="w-11 h-11 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_5px_#E6EFEA]">
-                      <Target className="w-5 h-5" />
+                  <div className="flex items-start gap-4 sm:gap-5 mb-4">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#17422C] flex items-center justify-center shrink-0 text-white shadow-[0_0_0_5px_#E6EFEA]">
+                      <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-0.5">
+                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-1">
                         Our Mission
                       </span>
-                      <h3 className="text-lg sm:text-xl font-extrabold text-[#0B2C1C] leading-snug">
+                      <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
                         Building solutions
                         <br className="hidden sm:inline" /> for a better future.
                       </h3>
+                      <div className="w-10 h-[2.5px] bg-[#FFAA17] mt-3 sm:mt-3.5 mb-4 rounded-full" />
                     </div>
                   </div>
                 </div>
-                <p className="text-sm sm:text-[14.5px] text-slate-600 leading-relaxed font-normal max-w-sm">
+                <p className="text-[15px] sm:text-base text-slate-600 leading-relaxed font-normal">
                   To advance milling through intelligent, efficient and sustainable
-                  technologies—combining experience, experimentation and continuous improvement to
+                  technologies combining experience, experimentation and continuous improvement to
                   build solutions for the future.
                 </p>
               </div>
 
-              {/* Graphic Graphic Box with Warm Organic Rings & Wheat Cutout */}
-              <div className="w-full sm:w-[220px] h-[160px] sm:h-auto relative shrink-0 overflow-hidden flex items-end justify-end">
-                {/* Organic Rings Background */}
+              {/* Graphic Box with 2 Background Circle Arcs & Left-Arced Image */}
+              <div className="w-full sm:w-[240px] md:w-[260px] lg:w-[270px] xl:w-[290px] h-[220px] sm:h-auto min-h-[220px] sm:min-h-full relative shrink-0 overflow-hidden flex items-center justify-end select-none">
                 <svg
-                  className="absolute -top-10 -right-12 w-64 h-64 pointer-events-none"
-                  viewBox="0 0 300 300"
+                  viewBox="0 0 260 280"
+                  className="w-full h-full min-h-[220px] pointer-events-none"
+                  preserveAspectRatio="xMidYMid slice"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <circle cx="150" cy="150" r="145" fill="#F4EFE7" opacity="0.6" />
-                  <circle cx="150" cy="150" r="105" fill="#EAE1D2" opacity="0.75" />
-                  <circle cx="150" cy="150" r="65" fill="#DECDB8" opacity="0.85" />
-                </svg>
+                  <defs>
+                    <clipPath id="mission-image-clip">
+                      <path d="M 260,0 C 25,60 20,200 75,280 L 260,280 Z" />
+                    </clipPath>
+                  </defs>
 
-                {/* Wheat Image Frame with Organic Arch */}
-                <div className="absolute right-0 bottom-0 w-[170px] sm:w-[190px] h-[140px] sm:h-[180px] rounded-tl-[70px] overflow-hidden shadow-sm z-10">
-                  <img
-                    src="/images/about/leadership/wheat-graphic.jpg"
-                    alt="Mission Wheat"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
-                </div>
+                  {/* 2 Soft Sage Background Circle Arcs (top & bottom) */}
+                  <circle cx="180" cy="20" r="110" fill="#E4EEE6" />
+                  <circle cx="170" cy="255" r="115" fill="#E4EEE6" />
+
+                  {/* Image with smooth hover scale (bottom-right uncut) */}
+                  <g clipPath="url(#mission-image-clip)">
+                    <image
+                      href="/images/about/mission-vision/mission.png"
+                      x="0"
+                      y="0"
+                      width="260"
+                      height="280"
+                      preserveAspectRatio="xMidYMid slice"
+                      className="transition-transform duration-700 ease-out group-hover:scale-105"
+                      style={{ transformOrigin: "center" }}
+                    />
+                  </g>
+                </svg>
               </div>
             </div>
           </div>

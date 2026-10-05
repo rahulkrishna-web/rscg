@@ -21,11 +21,12 @@ import {
   PackageCheck,
   Zap,
   Info,
-  Target, Minus, Plus, CheckCircle2, MessageCircle,
+  Target, Minus, Plus, CheckCircle, CheckCircle2, MessageCircle,
   ListFilter
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useQuote } from "@/components/QuoteContext";
 
 // Data Structure
 const modelsData = {
@@ -125,8 +126,10 @@ type ModelKey = keyof typeof modelsData;
 type VariantKey = "Eco" | "Auto";
 
 export default function BatchProductionPage() {
+  const { addToQuote } = useQuote();
   const [activeModel, setActiveModel] = useState<ModelKey>("V400");
   const [activeVariant, setActiveVariant] = useState<VariantKey>("Eco");
+  const [addedMessage, setAddedMessage] = useState(false);
 
   const currentModelData = modelsData[activeModel];
   const currentVariantData = currentModelData.variants[activeVariant];
@@ -139,8 +142,8 @@ export default function BatchProductionPage() {
     <div className="min-h-screen bg-[#F8F9FA] text-brand-foreground font-sans">
       <Header />
 
-      {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
-      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden">
+      {/* Hero Section - Standardized responsive hero */}
+      <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] min-h-[580px] sm:min-h-[620px] md:min-h-[660px] lg:min-h-[700px] flex items-center overflow-hidden">
         {/* Full-bleed Background Images */}
         <div className="absolute inset-0 z-0">
           {/* Desktop Background Image (1920x820) */}
@@ -172,17 +175,16 @@ export default function BatchProductionPage() {
           </div>
         </div>
 
-        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
-          <div className="max-w-2xl space-y-4 sm:space-y-6">
+        <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
+          <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
               BATCH PRODUCTION
             </div>
-            <h1 className="text-3xl sm:text-5xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-              Batch Production <br />
-              <span className="text-[#f7b032]">Systems</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
+              Batch Production <span className="text-[#f7b032]">Systems</span>
             </h1>
-            <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Engineered solutions for efficient, hygienic, and scalable batch processing in modern flour and food operations.
             </p>
             <div className="pt-2 sm:pt-4">
@@ -404,40 +406,50 @@ export default function BatchProductionPage() {
             
             {/* Actions */}
             <div className="space-y-6 pt-4">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <div className="flex items-center items-stretch border border-slate-200 rounded-lg h-12 bg-white">
-                  <button 
-                    type="button"
-                    className="w-10 sm:w-12 flex items-center justify-center text-slate-500 hover:text-brand-primary hover:bg-slate-50 rounded-l-lg transition-colors border-r border-slate-200"
-                  >
-                    <Minus className="w-4 h-4" />
-                  </button>
-                  <div className="w-12 sm:w-16 flex items-center justify-center font-black text-slate-800 text-sm">
-                    1
-                  </div>
-                  <button 
-                    type="button"
-                    className="w-10 sm:w-12 flex items-center justify-center text-slate-500 hover:text-brand-primary hover:bg-slate-50 rounded-r-lg transition-colors border-l border-slate-200"
-                  >
-                    <Plus className="w-4 h-4" />
-                  </button>
-                </div>
-                
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button 
                   type="button"
-                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#0B1510] hover:bg-[#1a2e23] text-white px-6 sm:px-8 rounded-lg font-bold text-sm shadow-md hover:shadow-lg transition-all"
+                  onClick={() => {
+                    addToQuote({
+                      id: `floura-${activeModel.toLowerCase()}-${activeVariant.toLowerCase()}`,
+                      name: `Floura ${activeModel} (${activeVariant})`,
+                      image: currentVariantData.image,
+                      category: "Vending Machines",
+                      size: `${activeModel} · ${activeVariant} · ${currentModelData.capacity}`
+                    }, 1);
+                    setAddedMessage(true);
+                    setTimeout(() => setAddedMessage(false), 2000);
+                  }}
+                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
-                  <PackageCheck className="w-4 h-4" />
-                  Add to Quote List
+                  <PackageCheck className="w-4 h-4 text-slate-900" />
+                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
                 </button>
                 
-                <button 
-                  type="button"
+                <a 
+                  href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about Floura ${activeModel} (${activeVariant}).`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
                 >
                   <MessageCircle className="w-4 h-4" />
                   WhatsApp Enquiry
-                </button>
+                </a>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-3 pt-3">
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                </div>
+                <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
+                  <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
+                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                </div>
               </div>
             </div>
           </div>

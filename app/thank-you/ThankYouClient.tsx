@@ -34,7 +34,7 @@ export default function ThankYouClient() {
         </p>
         <Link
           href="/"
-          className="bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-3.5 px-8 rounded-full shadow-xl hover:shadow-2xl hover:shadow-black/20 transition-all flex items-center gap-2 w-full justify-center sm:w-auto hover:scale-105"
+          className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide transition-all flex items-center gap-2 w-full justify-center sm:w-auto cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Home

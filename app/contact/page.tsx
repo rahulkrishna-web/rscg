@@ -33,13 +33,14 @@ export default function ContactPage() {
       <Header />
 
       {/* Hero Banner Section */}
-      <section className="relative w-full pt-20 sm:pt-28 pb-44 sm:pb-56 overflow-hidden flex flex-col items-center justify-center text-center">
+      <section className="relative w-full pt-32 sm:pt-36 pb-52 sm:pb-64 lg:pb-72 overflow-hidden flex flex-col items-center justify-center text-center">
         {/* Background Image */}
         <Image
           src="/images/contact/factory.png"
           alt="RS Choyal Factory Facility"
           fill
           priority
+          sizes="100vw"
           className="object-cover object-center"
         />
         {/* Dark Tint Overlay */}
@@ -58,7 +59,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Overlapping Card Section */}
-      <section className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-36 sm:-mt-44 pb-20 sm:pb-28 flex-1">
+      <section className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto -mt-16 sm:-mt-20 lg:-mt-24 pb-20 sm:pb-28 flex-1">
         <div className="w-full max-w-[1240px] mx-auto bg-white rounded-[28px] sm:rounded-[36px] shadow-2xl border border-slate-200/80 p-8 sm:p-12 lg:p-14">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Contact Details & Map */}
@@ -80,15 +81,15 @@ export default function ContactPage() {
               <div className="space-y-6">
                 {/* Corporate Headquarters */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <MapPin className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
                       Corporate Headquarters
                     </span>
                     <p className="text-sm font-semibold text-slate-800 leading-snug">
-                      Choyal Tower, 1180/28, Shalimar Colony, Adarsh Nagar Ajmer –
+                      Choyal Tower, 1180/28, Shalimar Colony, Adarsh Nagar Ajmer -
                       305 008, Rajasthan, India
                     </p>
                   </div>
@@ -96,15 +97,15 @@ export default function ContactPage() {
 
                 {/* Factory Unit */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <MapPin className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <MapPin className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
                       Factory Unit
                     </span>
                     <p className="text-sm font-semibold text-slate-800 leading-snug">
-                      Choyal Grinding Solution Pvt. Ltd. Arjunpura – Khalsa,
+                      Choyal Grinding Solution Pvt. Ltd. Arjunpura - Khalsa,
                       Distt. Ajmer (Raj.) - 305203, India
                     </p>
                   </div>
@@ -112,8 +113,8 @@ export default function ContactPage() {
 
                 {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <Mail className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Mail className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
@@ -130,8 +131,8 @@ export default function ContactPage() {
 
                 {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-[#133a25] text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
-                    <Phone className="w-5 h-5 text-white" />
+                  <div className="w-10 h-10 rounded-full bg-[#f7b032] text-slate-900 flex items-center justify-center shrink-0 mt-0.5 shadow-sm">
+                    <Phone className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
                     <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
@@ -311,7 +312,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-[#133a25] hover:bg-[#0c2417] text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
+                  className="w-full bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-4 rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
                 >
                   <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                 </button>

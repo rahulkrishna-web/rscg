@@ -4,33 +4,33 @@ import Link from "next/link";
 import { Phone, Mail, Globe, MapPin, Factory } from "lucide-react";
 
 const aboutLinks = [
-  { name: "About Us", href: "/about" },
+  { name: "About us", href: "/about" },
   { name: "Leadership", href: "/about#leadership" },
-  { name: "Mission & Vision", href: "/about#mission-vision" },
-  { name: "Our Philosophy", href: "/about#philosophy" },
-  { name: "Research & Development", href: "/about#research-development" },
-  { name: "Social Responsibility", href: "/about#social-responsibility" },
+  { name: "Mission and vision", href: "/about#mission-vision" },
+  { name: "Our philosophy", href: "/about#philosophy" },
+  { name: "R&D and innovation", href: "/about#research-development" },
+  { name: "Social responsibility", href: "/about#social-responsibility" },
+  { name: "Why RSC", href: "/about#why-rsc" },
   { name: "Our Network", href: "/about#network" },
 ];
 
 const productLinks = [
   { name: "Turnkey Solutions", href: "/turnkey-projects" },
   { name: "Flour Mills", href: "/flour-mills" },
-  { name: "Automations", href: "/automation" },
+  { name: "Automation", href: "/automation" },
   { name: "Power Saving", href: "/power-saving" },
   { name: "Emery Stones", href: "/emery-stones" },
   { name: "Grain Storage & Handling", href: "/grain-storage-handling" },
   { name: "Grain Processing", href: "/grain-processing" },
-  { name: "Abrasive Tools", href: "/emery-stones" },
 ];
 
 const serviceLinks = [
-  { name: "Choyal 360", href: "/choyal-360" },
-  { name: "Facility Centre", href: "/facility-centre" },
-  { name: "Job Grinding", href: "/job-grinding" },
+  { name: "Grain 360", href: "/choyal-360" },
+  { name: "Facility center", href: "/facility-centre" },
+  { name: "Job grinding", href: "/job-grinding" },
   { name: "Consultancy", href: "/consultancy" },
   { name: "Training", href: "/training" },
-  { name: "Web Solutions", href: "/web-solutions" },
+  { name: "Design and Media", href: "/design-media" },
 ];
 
 const certBadges = [
@@ -124,7 +124,7 @@ export default function Footer() {
                 <div>
                   <span className="font-bold text-[#1c2722] text-sm sm:text-base block">Factory Unit</span>
                   <span className="text-slate-600 leading-relaxed text-sm">
-                    Arjunpura – Khalsa, NH 58, District Ajmer, Rajasthan ,India
+                    Choyal Grinding Solution Pvt. Ltd., Arjunpura – Khalsa, District Ajmer-305203, Rajasthan, India
                   </span>
                 </div>
               </div>
@@ -225,11 +225,6 @@ export default function Footer() {
           
           {/* Left: Copyright & Tagline */}
           <div className="space-y-1.5">
-            <div className="flex items-center gap-2 text-sm font-bold text-slate-700 tracking-wider">
-              <Link href="/contact" className="hover:text-brand-primary transition-colors">FAQS</Link>
-              <span>•</span>
-              <Link href="/contact" className="hover:text-brand-primary transition-colors">CONTACT US</Link>
-            </div>
             <p className="text-sm sm:text-base font-bold text-slate-800">
               Copyright 2026 © RS Choyal Group
             </p>
