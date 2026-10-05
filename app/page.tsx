@@ -889,8 +889,8 @@ export default function Home() {
             </p>
           </div>
 
-          {/* 10 Solutions 3-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full">
+          {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile, grid on md+) */}
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 id: "01",
@@ -975,7 +975,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className={`w-full bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-6 sm:p-7 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[240px] ${idx === 9 ? "lg:col-start-2" : ""}`}
+                className={`w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-6 sm:p-7 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[240px] ${idx === 9 ? "lg:col-start-2" : ""}`}
               >
                 <div className="flex flex-row items-stretch justify-between gap-4 h-full">
                   {/* Text Content */}
@@ -1025,6 +1025,7 @@ export default function Home() {
                 </div>
               </div>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
 
         </div>
