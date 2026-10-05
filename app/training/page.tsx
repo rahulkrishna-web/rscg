@@ -28,32 +28,32 @@ export default function TrainingPage() {
 
   const whyChargeFeatures = [
     {
-      title: "First-Mover in Chakki Milling Education",
+      title: "First-mover in chakki milling education",
       desc: "One of India's earliest focused training initiatives dedicated to practical chakki and stone-milling knowledge.",
       icon: "/training/why-charge/first_mover_in_chakki_milling.png"
     },
     {
-      title: "60+ Years of Industry Backing",
+      title: "60+ years of industry backing",
       desc: "Programs supported by decades of experience in flour-mill engineering, emery-stone manufacturing, and plant operations.",
       icon: "/training/why-charge/60-years.png"
     },
     {
-      title: "World-Class Machinery Access",
+      title: "World-class machinery access",
       desc: "Learn around real equipment, live systems, modern plant infrastructure, and industrial milling processes.",
       icon: "/training/why-charge/world_class_machinery.png"
     },
     {
-      title: "Research-Led Learning",
+      title: "Research-led learning",
       desc: "Training shaped by continuous research, product development, process trials, and practical plant insights.",
       icon: "/training/why-charge/research_led_learning.png"
     },
     {
-      title: "Integrity in Assessment",
+      title: "Integrity in assessment",
       desc: "Structured learning with emphasis on safety, discipline, technical understanding, and practical competence.",
       icon: "/training/why-charge/integrity_in_assessment.png"
     },
     {
-      title: "Skilled Faculty & Industry Exposure",
+      title: "Skilled faculty & industry exposure",
       desc: "Learn from experienced professionals with direct knowledge of machinery, production, quality, and plant operations.",
       icon: "/training/why-charge/skilled_faculty.png"
     }
@@ -61,22 +61,22 @@ export default function TrainingPage() {
 
   const trainingPrograms = [
     {
-      title: "Understand the Milling Process",
+      title: "Understand the milling process",
       desc: "Build a clear understanding of grain, flour, and the complete milling workflow - from cleaning and conditioning to grinding and packing.",
       icon: "/training/training-program-helps-you/understand-milling-process.png"
     },
     {
-      title: "Make Better Technical Decisions",
+      title: "Make better technical decisions",
       desc: "Develop the confidence to evaluate equipment, understand process challenges, solve problems, and improve milling operations.",
       icon: "/training/training-program-helps-you/make-better-decisions.png"
     },
     {
-      title: "Communicate with Suppliers & Customers",
+      title: "Communicate with suppliers & customers",
       desc: "Learn the technical language and industry context required for clearer discussions with machinery suppliers, plant teams, and customers.",
       icon: "/training/training-program-helps-you/communicate-with-suppliers.png"
     },
     {
-      title: "Apply Learning at Work",
+      title: "Apply learning at work",
       desc: "Translate training into better job performance, stronger process awareness, and practical improvement opportunities.",
       icon: "/training/training-program-helps-you/apply-learning-at-work.png"
     }
@@ -84,19 +84,19 @@ export default function TrainingPage() {
 
   const trainingExperiences = [
     {
-      title: "Classroom Learning",
+      title: "Classroom learning",
       desc: "Understand concepts, operating principles, process flow, quality parameters, and industry best practices through expert-led sessions.",
       image: "/images/training-page/training-experience/classroom-learning.png",
       icon: "/training/training-experience/classroom_training.png"
     },
     {
-      title: "Live Plant Demonstrations",
+      title: "Live plant demonstrations",
       desc: "See machinery in action and understand real production processes, controls, material flow, and plant operation.",
       image: "/images/training-page/training-experience/live-plant-demo.png",
       icon: "/training/training-experience/live_plant_demo.png"
     },
     {
-      title: "Career-Ready Skill Building",
+      title: "Career-ready skill building",
       desc: "Build practical confidence, technical capability, and work-ready skills for roles across flour milling and grain processing.",
       image: "/images/training-page/training-experience/career-ready-skill-building-(1).png",
       icon: "/training/training-experience/career-ready_skill_building.png"
@@ -142,13 +142,13 @@ export default function TrainingPage() {
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
               {/* Standard Eyebrow */}
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                TRAINING & EDUCATION
+                Training & education
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-                Build Skills for Modern Flour Milling
+                Build skills for modern flour milling
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
@@ -249,9 +249,9 @@ export default function TrainingPage() {
               {/* Key Facts with Enlarged Clean Icons */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 bg-white p-5 rounded-2xl shadow-sm border border-slate-100">
                 {[
-                  { icon: "/training/learn-with-charge/csr_initiative.png", text: "CSR Initiative of RS Choyal Group" },
+                  { icon: "/training/learn-with-charge/csr_initiative.png", text: "CSR initiative of RS Choyal Group" },
                   { icon: "/training/learn-with-charge/legacy.png", text: "Legacy of CSMT" },
-                  { icon: "/training/learn-with-charge/training_professionals.png", text: "Training Professionals, Freshers & Youth" }
+                  { icon: "/training/learn-with-charge/training_professionals.png", text: "Training professionals, freshers & youth" }
                 ].map((fact, idx) => (
                   <div key={idx} className="flex items-center gap-3.5">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10">
@@ -319,7 +319,7 @@ export default function TrainingPage() {
         <section id="programs" className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
-              Our <span className="text-[#0B2C1C]">Training Program</span> Helps You
+              Our <span className="text-[#0B2C1C]">training program</span> helps you
             </h2>
             <div className="flex items-center justify-center gap-1">
               <div className="w-8 h-px bg-[#D3994B]" />
@@ -365,7 +365,7 @@ export default function TrainingPage() {
         <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 pb-20">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
-              Training Experience
+              Training experience
             </h2>
             <div className="flex items-center justify-center gap-1">
               <div className="w-8 h-px bg-[#D3994B]" />
@@ -427,7 +427,7 @@ export default function TrainingPage() {
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
-                  Ready to Build Your Milling Expertise?
+                  Ready to build your milling expertise?
                 </h3>
                 <p className="text-base text-white/90 leading-relaxed font-normal">
                   Join CHARGE training programs to gain practical knowledge, plant exposure, and the confidence to build a stronger future in flour milling.

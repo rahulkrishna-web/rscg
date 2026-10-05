@@ -1,34 +1,174 @@
 "use client";
 
-import { useState, useEffect, Suspense, useRef } from "react";
+import { useState, useEffect, useMemo, Suspense, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Download, CheckCircle2 } from "lucide-react";
+import Link from "next/link";
+import { 
+  Download, 
+  CheckCircle, 
+  Search, 
+  X, 
+  Menu, 
+  ArrowRight,
+  ArrowUpDown
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { downloadCategories, downloadsData, DownloadItem } from "./downloadsData";
+import { 
+  downloadCategories, 
+  downloadsData, 
+  DownloadItem, 
+  CategoryFilter 
+} from "./downloadsData";
+
+function CategoryIcon({ id, className = "w-4 h-4 shrink-0" }: { id: string; className?: string }) {
+  switch (id) {
+    case "all":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <rect x="3" y="3" width="7" height="7" rx="1" />
+          <rect x="14" y="3" width="7" height="7" rx="1" />
+          <rect x="3" y="14" width="7" height="7" rx="1" />
+          <rect x="14" y="14" width="7" height="7" rx="1" />
+        </svg>
+      );
+    case "about-company":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M3 21h18M5 21V5l7-3 7 3v16M9 8h.01M15 8h.01M9 12h.01M15 12h.01M10 21v-5h4v5" />
+        </svg>
+      );
+    case "turnkey-projects":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM14 2v6h6M8 13h8M8 17h8" />
+        </svg>
+      );
+    case "training":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22zM4 4.5v15A2.5 2.5 0 0 1 6.5 17H20M8 6h8M8 10h8" />
+        </svg>
+      );
+    case "digital-flour-mill":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM14 2v6h6M8 13h8M8 17h8" />
+        </svg>
+      );
+    case "semi-automatic-flour-mill":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="3" />
+          <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2z" />
+        </svg>
+      );
+    case "horizontal-flour-mill":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+        </svg>
+      );
+    case "flour-processing":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h5" />
+          <circle cx="17" cy="17" r="2.5" />
+        </svg>
+      );
+    case "conveying-system":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+        </svg>
+      );
+    case "emery-stone-dresser":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="8" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 4v5M20 12h-5M12 20v-5M4 12h5" />
+        </svg>
+      );
+    case "vending-machine":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h3M15 15h1" />
+        </svg>
+      );
+    case "automatic-machines":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="12" r="3" />
+          <path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2z" />
+        </svg>
+      );
+    case "semi-automatic-machines":
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+        </svg>
+      );
+    default:
+      return (
+        <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zM14 2v6h6M8 13h8M8 17h8" />
+        </svg>
+      );
+  }
+}
 
 function DownloadsContent() {
   const searchParams = useSearchParams();
   const fileQuery = searchParams.get("file");
 
   const [activeCategory, setActiveCategory] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [sortBy, setSortBy] = useState<"default" | "az">("default");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const [toastMessage, setToastMessage] = useState<{ title: string; show: boolean } | null>(null);
   const initialTriggerRef = useRef(false);
 
-  // Filter items based on active category
-  const filteredItems = activeCategory === "all"
-    ? downloadsData
-    : downloadsData.filter((item) => item.category === activeCategory);
+  // Filter & sort resources
+  const filteredItems = useMemo(() => {
+    const q = searchQuery.trim().toLowerCase();
+
+    let list = downloadsData.filter((item) => {
+      const matchesCategory =
+        activeCategory === "all" || item.category === activeCategory;
+
+      const matchesSearch =
+        q === "" ||
+        item.title.toLowerCase().includes(q) ||
+        item.desc.toLowerCase().includes(q) ||
+        item.categoryLabel.toLowerCase().includes(q);
+
+      return matchesCategory && matchesSearch;
+    });
+
+    if (sortBy === "az") {
+      list = [...list].sort((a, b) => a.title.localeCompare(b.title));
+    }
+
+    return list;
+  }, [activeCategory, searchQuery, sortBy]);
+
+  // Active Category Name
+  const activeCategoryObj = useMemo(() => {
+    return downloadCategories.find((c) => c.id === activeCategory);
+  }, [activeCategory]);
+
+  const activeCategoryLabel = activeCategory === "all" ? "All Resources" : activeCategoryObj?.name || "Resources";
 
   // Function to track and trigger download
   const handleDownload = (item: DownloadItem, e?: React.MouseEvent) => {
     if (e) {
-      e.preventDefault();
+      e.stopPropagation();
     }
 
-    // 1. Update browser URL cleanly to /downloads?file=[id] without reloading
+    // 1. Update URL cleanly without reload
     const newUrl = `/downloads?file=${item.id}`;
     window.history.pushState({ path: newUrl }, "", newUrl);
 
@@ -40,7 +180,6 @@ function DownloadsContent() {
         body: JSON.stringify({ fileId: item.id, title: item.title }),
       }).catch((err) => console.error("Tracking error:", err));
 
-      // Also track in Google Analytics if configured
       if (typeof window !== "undefined" && (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag) {
         (window as unknown as { gtag: (...args: unknown[]) => void }).gtag("event", "download_brochure", {
           file_id: item.id,
@@ -59,7 +198,7 @@ function DownloadsContent() {
     }, 4500);
 
     // 4. Trigger direct browser download
-    const targetUrl = item.fileUrl || item.driveUrl || `/downloads/files/${item.id}.pdf`;
+    const targetUrl = item.fileUrl || item.driveUrl;
     const link = document.createElement("a");
     link.href = targetUrl;
     link.download = `${item.title}.pdf`;
@@ -80,19 +219,16 @@ function DownloadsContent() {
     );
 
     if (matchedItem) {
-      setTimeout(() => {
-        // Set category to 'all' so the card is visible
-        setActiveCategory("all");
-        setHighlightedId(matchedItem.id);
+      setActiveCategory("all");
+      setHighlightedId(matchedItem.id);
 
-        // Smooth scroll to card
+      setTimeout(() => {
         const el = document.getElementById(`card-${matchedItem.id}`);
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "center" });
         }
-      }, 50);
+      }, 150);
 
-      // Remove highlight after 5 seconds
       setTimeout(() => {
         setHighlightedId(null);
       }, 5000);
@@ -100,140 +236,304 @@ function DownloadsContent() {
   }, [fileQuery]);
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans flex flex-col">
+    <div className="min-h-screen bg-white text-slate-900 font-sans flex flex-col selection:bg-[#EAF0EB] selection:text-[#0E3321]">
       <Header />
 
-      {/* ================= HERO BANNER ================= */}
-      <section className="relative w-full bg-gradient-to-r from-[#17462c] to-[#297a49] pt-36 sm:pt-40 lg:pt-44 pb-14 sm:pb-16 lg:pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 overflow-hidden border-b border-[#17462c]/30">
-        {/* Background Texture matching Homepage CTA */}
-        <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
-
-        <div className="relative z-10 max-w-[1440px] mx-auto">
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[56px] font-heading font-black text-white tracking-tight leading-tight">
-            Downloads
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mt-3 text-sm sm:text-base lg:text-lg text-white/90 font-normal max-w-2xl leading-relaxed">
-            Explore our brochures to discover more about our milling technologies
-          </p>
-        </div>
-      </section>
-
-      {/* ================= MAIN CONTENT ================= */}
-      <main className="flex-1 w-full py-12 sm:py-16 px-4 sm:px-8 lg:px-12 xl:px-16">
-        <div className="max-w-[1440px] mx-auto">
+      {/* Main 2-Column Layout */}
+      <div className="w-full flex-1 border-t border-[#E2E8F0] relative px-6 sm:px-12 lg:px-16 xl:px-24 pt-32 sm:pt-36 md:pt-40 pb-16 sm:pb-20">
+        <div className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-[250px_minmax(0,1fr)] xl:grid-cols-[270px_minmax(0,1fr)] gap-8 lg:gap-12 xl:gap-14">
           
-          {/* Section Header */}
-          <div className="text-center mb-9 sm:mb-11">
-            <h2 className="text-2xl sm:text-3xl lg:text-[2.2rem] font-extrabold text-[#133a25] tracking-tight relative inline-block pb-3">
-              Select Category
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#e35a27] rounded-full" />
-            </h2>
-          </div>
+          {/* ================= DESKTOP SIDEBAR ================= */}
+          <aside className="hidden lg:flex flex-col justify-between bg-white border-r border-[#E2E8F0] pr-6 xl:pr-8 py-1 sticky top-[125px] h-[calc(100vh-150px)] overflow-hidden">
+            <div className="flex flex-col min-h-0 flex-1">
+              {/* Category Label */}
+              <div className="px-3.5 mb-4 text-xs font-extrabold tracking-[0.14em] text-[#015435] select-none uppercase">
+                Resource Library
+              </div>
 
-          {/* Filter Tabs Wrapper */}
-          <div className="w-full mb-8 sm:mb-12">
-            <div className="flex items-center sm:justify-center sm:flex-wrap gap-2.5 sm:gap-3 max-w-[1350px] mx-auto overflow-x-auto sm:overflow-visible no-scrollbar -mx-4 px-6 sm:mx-auto sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-2 sm:pb-0">
-              {downloadCategories.map((cat) => {
-                const isActive = activeCategory === cat.id;
-                return (
-                  <button
-                    key={cat.id}
-                    onClick={() => setActiveCategory(cat.id)}
-                    className={`flex-none shrink-0 w-[130px] sm:w-[148px] h-[46px] sm:h-[48px] px-2.5 py-1.5 rounded-full text-xs font-semibold leading-tight text-center flex flex-col justify-center items-center cursor-pointer transition-all duration-200 select-none snap-start ${
-                      isActive
-                        ? "bg-[#0b4627] text-white font-bold shadow-[0_4px_12px_rgba(11,70,39,0.25)] border-[1.5px] border-[#0b4627]"
-                        : "bg-white text-[#334155] border-[1.5px] border-[#e2e8f0] hover:border-[#0b4627] hover:text-[#0b4627] hover:-translate-y-0.5 hover:shadow-md"
-                    }`}
-                  >
-                    {cat.lines.map((line, idx) => (
-                      <span key={idx} className="block truncate w-full">
-                        {line}
-                      </span>
-                    ))}
-                  </button>
-                );
-              })}
-              <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
+              {/* Side Nav */}
+              <nav 
+                className="flex-1 overflow-y-auto pr-1 space-y-1 overscroll-contain scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent"
+                aria-label="Download categories"
+              >
+                {downloadCategories.map((cat) => {
+                  const isActive = activeCategory === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setActiveCategory(cat.id)}
+                      className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] text-sm text-left transition-all duration-200 group cursor-pointer ${
+                        isActive
+                          ? "bg-gradient-to-r from-[#EAF0EB] to-[#F3F4F2] text-[#0E3321] font-bold shadow-[inset_3px_0_0_#FFAA17]"
+                          : "text-slate-600 hover:bg-[#F3F4F2] hover:text-[#0E3321] font-medium"
+                      }`}
+                    >
+                      <CategoryIcon 
+                        id={cat.id} 
+                        className={`w-[18px] h-[18px] transition-colors shrink-0 ${
+                          isActive ? "text-[#0E3321]" : "text-slate-400 group-hover:text-[#0E3321]"
+                        }`} 
+                      />
+                      <span className="truncate">{cat.name}</span>
+                    </button>
+                  );
+                })}
+              </nav>
             </div>
-          </div>
 
-          {/* Cards Grid - 2 columns on mobile, 3 columns on lg+ */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 lg:gap-7">
-            {filteredItems.map((item) => {
-              const isCardHighlighted = highlightedId === item.id;
-              return (
-                <div
-                  key={item.id}
-                  id={`card-${item.id}`}
-                  onClick={() => handleDownload(item)}
-                  className={`group relative flex flex-col rounded-2xl sm:rounded-[22px] overflow-hidden bg-white shadow-[0_4px_16px_rgba(0,0,0,0.06)] sm:shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:-translate-y-1.5 hover:shadow-[0_18px_36px_rgba(0,0,0,0.16)] transition-all duration-300 cursor-pointer ${
-                    isCardHighlighted
-                      ? "ring-4 ring-amber-400 ring-offset-2 scale-[1.02]"
-                      : ""
-                  }`}
-                >
-                  {/* Thumbnail Image */}
-                  <div className="w-full aspect-[4/3] sm:aspect-auto sm:h-[275px] relative overflow-hidden bg-[#e2e8f0] flex-shrink-0">
-                    <Image
-                      src={encodeURI(item.image)}
-                      alt={item.title}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-
-                  {/* Card Bottom Body */}
-                  <div className="flex-1 p-3 sm:p-5 flex flex-col justify-center items-start bg-white">
-                    <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.5px] text-[#e28838] mb-0.5 sm:mb-1 leading-tight line-clamp-1">
-                      {item.categoryLabel}
-                    </span>
-                    <h3
-                      className="text-xs sm:text-[1.12rem] font-bold text-[#133a25] leading-snug line-clamp-2 sm:truncate w-full"
-                      title={item.title}
-                    >
-                      {item.title}
-                    </h3>
-                  </div>
-
-                  {/* Hover Overlay (Desktop) */}
-                  <div className="hidden sm:flex absolute inset-0 bg-[#073f27]/90 backdrop-blur-[2px] rounded-[22px] items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 pointer-events-none group-hover:pointer-events-auto">
-                    <span
-                      className="inline-flex items-center justify-center gap-2.5 bg-[#e39b27] hover:bg-[#d48c1e] text-white px-7 py-3.5 rounded-xl font-bold text-[14.5px] shadow-[0_8px_20px_rgba(227,90,39,0.4)] hover:scale-105 active:scale-95 transition-all duration-200 text-decoration-none cursor-pointer"
-                    >
-                      <span>Download Brochure</span>
-                      <Download className="w-4.5 h-4.5 stroke-[2.4]" />
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Empty State */}
-          {filteredItems.length === 0 && (
-            <div className="py-20 text-center">
-              <p className="text-slate-500 text-base font-medium">
-                No brochures found in this category.
+            {/* Need Help Box */}
+            <div className="pt-5 mt-4 border-t border-[#E2E8F0] px-3.5">
+              <div className="text-xs font-extrabold tracking-[0.14em] text-[#015435] mb-2 uppercase">
+                Need Help?
+              </div>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+                Looking for a specific document or product resource?
               </p>
+              <Link 
+                href="/contact" 
+                className="text-xs sm:text-sm font-bold text-[#0E3321] hover:text-[#FFAA17] inline-flex items-center gap-1.5 transition-colors group"
+              >
+                <span>Contact our team</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </aside>
+
+          {/* ================= MOBILE DRAWER ================= */}
+          {mobileMenuOpen && (
+            <div 
+              className="lg:hidden fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <div 
+                className="w-[280px] sm:w-[320px] bg-white h-full shadow-2xl flex flex-col p-6 overflow-y-auto animate-fade-in"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="flex items-center justify-between pb-4 border-b border-[#E2E8F0] mb-4">
+                  <div className="text-xs font-extrabold tracking-[0.14em] text-[#0E3321] uppercase">
+                    Resource Library
+                  </div>
+                  <button 
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-1 rounded-md text-slate-400 hover:text-slate-600 hover:bg-slate-100"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                <nav className="space-y-1 flex-1">
+                  {downloadCategories.map((cat) => {
+                    const isActive = activeCategory === cat.id;
+                    return (
+                      <button
+                        key={cat.id}
+                        onClick={() => {
+                          setActiveCategory(cat.id);
+                          setMobileMenuOpen(false);
+                        }}
+                        className={`w-full flex items-center gap-3 px-3.5 py-2.5 rounded-[10px] text-sm text-left transition-all ${
+                          isActive
+                            ? "bg-[#EAF0EB] text-[#0E3321] font-bold shadow-[inset_3px_0_0_#FFAA17]"
+                            : "text-slate-600 hover:bg-[#F3F4F2] hover:text-[#0E3321]"
+                        }`}
+                      >
+                        <CategoryIcon id={cat.id} className="w-4 h-4 text-slate-400" />
+                        <span className="truncate">{cat.name}</span>
+                      </button>
+                    );
+                  })}
+                </nav>
+
+                <div className="pt-5 mt-6 border-t border-[#E2E8F0]">
+                  <div className="text-xs font-extrabold tracking-[0.14em] text-[#0E3321] mb-1.5 uppercase">
+                    Need Help?
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-3">
+                    Looking for a specific document or product resource?
+                  </p>
+                  <Link 
+                    href="/contact" 
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-xs sm:text-sm font-bold text-[#0E3321] inline-flex items-center gap-1.5"
+                  >
+                    <span>Contact our team</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
             </div>
           )}
 
+          {/* ================= MAIN CONTENT ================= */}
+          <main className="min-w-0 py-1">
+            
+            {/* Mobile Category Toggle Button */}
+            <div className="lg:hidden mb-6 flex items-center justify-between bg-white border border-[#E2E8F0] rounded-xl p-3.5 shadow-xs">
+              <button
+                onClick={() => setMobileMenuOpen(true)}
+                className="inline-flex items-center gap-2 text-sm font-bold text-[#0E3321]"
+              >
+                <Menu className="w-4 h-4 text-[#FFAA17]" />
+                <span>Categories:</span>
+                <span className="text-slate-600 font-semibold">{activeCategoryObj?.name || "All"}</span>
+              </button>
+              <span className="text-xs sm:text-sm text-slate-500 font-medium">
+                {filteredItems.length} items
+              </span>
+            </div>
+
+            {/* Intro Section */}
+            <section className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+              <div>
+                <span className="text-xs sm:text-sm font-bold text-[#015435] tracking-wide block mb-2 select-none">
+                  Resource Centre
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-black text-[#0F172A] tracking-tight leading-tight">
+                  Downloads &amp; <span className="text-[#FFAA17]">Resources</span>
+                </h1>
+                <div className="w-12 h-1 bg-[#FFAA17] rounded-full my-4" />
+                <p className="text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed font-normal">
+                  Explore our brochures, product catalogues and technical resources to learn more about our milling solutions.
+                </p>
+              </div>
+
+              <div className="text-sm sm:text-base text-slate-600 font-semibold whitespace-nowrap self-start sm:self-end pb-1">
+                {String(filteredItems.length).padStart(2, "0")} resources
+              </div>
+            </section>
+
+            {/* Search Input Bar */}
+            <div className="relative mb-7">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 pointer-events-none" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search documents..."
+                aria-label="Search documents"
+                className="w-full h-13 pl-12 pr-10 bg-white border border-[#E2E8F0] rounded-xl text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:border-[#0E3321] focus:ring-3 focus:ring-[#0E3321]/10 transition-all duration-200"
+              />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 p-1"
+                  aria-label="Clear search"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              )}
+            </div>
+
+            {/* Section Heading & Sorting Row */}
+            <div className="flex items-center justify-between mb-5 pb-3 border-b border-slate-100">
+              <h2 className="text-lg sm:text-xl font-extrabold text-[#0E3321] tracking-tight">
+                {activeCategoryLabel}
+              </h2>
+
+              <div className="flex items-center gap-2">
+                <ArrowUpDown className="w-4 h-4 text-slate-500" />
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as "default" | "az")}
+                  aria-label="Sort resources"
+                  className="bg-transparent text-sm text-slate-600 font-semibold outline-none cursor-pointer hover:text-slate-900 transition-colors py-1"
+                >
+                  <option value="default">Sort: Featured</option>
+                  <option value="az">Name: A to Z</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Resource Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-5 sm:gap-6" aria-live="polite">
+              {filteredItems.map((item) => {
+                const isCardHighlighted = highlightedId === item.id;
+                return (
+                  <article
+                    key={item.id}
+                    id={`card-${item.id}`}
+                    onClick={() => handleDownload(item)}
+                    className={`bg-white border rounded-[16px] p-4 flex flex-col transition-all duration-300 hover:-translate-y-1.5 cursor-pointer group ${
+                      isCardHighlighted
+                        ? "border-[#FFAA17] ring-4 ring-[#FFAA17]/30 shadow-lg scale-[1.02]"
+                        : "border-[#E2E8F0] hover:border-[#0E3321]/30 hover:shadow-[0_20px_40px_rgba(9,39,26,0.12)]"
+                    }`}
+                  >
+                    {/* Cover Thumbnail */}
+                    <div className="h-[155px] sm:h-[165px] rounded-[12px] relative overflow-hidden mb-4 bg-[#F3F4F2]">
+                      <span className="absolute left-2.5 top-2.5 bg-white/95 backdrop-blur-sm border border-white/60 rounded-md px-2 py-0.5 text-[10px] font-extrabold tracking-wider text-[#0E3321] z-10 shadow-xs">
+                        {item.format}
+                      </span>
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                      />
+                    </div>
+
+                    {/* Card Content */}
+                    <h3 className="text-base sm:text-[17px] font-bold text-[#0F172A] leading-snug mb-2 line-clamp-1 group-hover:text-[#0E5A36] transition-colors" title={item.title}>
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed line-clamp-2 min-h-[38px] mb-2 font-normal">
+                      {item.desc}
+                    </p>
+
+                    {/* Card Bottom Meta & Download Button (Revealed on hover on desktop, always visible on mobile touch) */}
+                    <div className="mt-auto pt-3 border-t border-[#E2E8F0] flex items-center justify-between gap-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200">
+                      <span className="text-xs text-[#64748B] font-semibold whitespace-nowrap">
+                        {item.format} · {item.size}
+                      </span>
+
+                      <button
+                        onClick={(e) => handleDownload(item, e)}
+                        className="inline-flex items-center gap-1.5 bg-[#0E5A36] hover:bg-[#176B43] text-white text-xs font-bold px-3.5 py-2 rounded-lg shadow-[0_4px_10px_rgba(14,90,54,0.14)] hover:shadow-[0_8px_18px_rgba(14,51,33,0.18)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer group/btn"
+                        title={`Download ${item.title}`}
+                      >
+                        <Download className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-y-0.5" />
+                        <span>Download</span>
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
+
+              {/* Empty State */}
+              {filteredItems.length === 0 && (
+                <div className="col-span-full py-16 px-6 text-center bg-white border border-dashed border-slate-300 rounded-xl text-slate-500 text-sm">
+                  <p className="font-semibold text-slate-700 mb-1">No documents found</p>
+                  <p className="text-xs text-slate-500">
+                    Try another search keyword or switch to another category.
+                  </p>
+                  {(searchQuery || activeCategory !== "all") && (
+                    <button
+                      onClick={() => {
+                        setSearchQuery("");
+                        setActiveCategory("all");
+                      }}
+                      className="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-[#0E5A36] hover:underline"
+                    >
+                      Reset filters
+                    </button>
+                  )}
+                </div>
+              )}
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
 
       {/* Floating Download Toast Feedback */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#0d2e1f] text-white px-5 py-4 rounded-2xl shadow-2xl border border-emerald-500/30 flex items-center gap-3.5 animate-bounce-short">
-          <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-          <div>
-            <p className="text-xs text-emerald-300 font-semibold uppercase tracking-wider">
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0E3321] text-white px-5 py-3.5 rounded-xl shadow-2xl border border-emerald-500/30 flex items-center gap-3 animate-fade-in">
+          <CheckCircle className="w-5 h-5 text-emerald-400 shrink-0" />
+          <div className="text-left">
+            <p className="text-[11px] text-emerald-300 font-semibold uppercase tracking-wider">
               Downloading Brochure
             </p>
-            <p className="text-sm font-bold text-white max-w-xs truncate">
+            <p className="text-xs font-bold text-white max-w-xs truncate">
               {toastMessage.title}
             </p>
           </div>
@@ -247,7 +547,7 @@ function DownloadsContent() {
 
 export default function DownloadsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#f8fafc]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-white" />}>
       <DownloadsContent />
     </Suspense>
   );

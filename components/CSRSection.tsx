@@ -49,8 +49,8 @@ export default function CSRSection() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Header Section */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <p className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider uppercase mb-3">
-            Our Commitment &amp; Initiatives
+          <p className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider mb-3">
+            Our commitment &amp; initiatives
           </p>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0E3321] tracking-tight leading-[1.18] mb-4 font-heading">

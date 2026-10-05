@@ -74,12 +74,12 @@ export default function FlourProcessingPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              PRODUCT OVERVIEW
+              Product overview
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Flour Processing
+              Flour processing
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Explore the full journey of flour processing, from raw wheat fields to finished, high-quality flour. Our solutions cover every step for optimal results.
@@ -104,7 +104,7 @@ export default function FlourProcessingPage() {
               <Shield className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Hygienic Grain Control</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Hygienic grain control</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Maximum safety and sanitation.</p>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default function FlourProcessingPage() {
               <Layers className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Multi-Pass Precision Grading</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Multi-pass precision grading</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Perfectly uniform separation.</p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function FlourProcessingPage() {
               <Settings className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">High Throughput &amp; Yield</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">High throughput &amp; yield</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Unmatched production capacity.</p>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default function FlourProcessingPage() {
               <Shield className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Hygienic Grain Control</h4>
+              <h4 className="text-base font-bold text-slate-900">Hygienic grain control</h4>
               <p className="text-sm text-slate-600 font-medium">Maximum safety and sanitation.</p>
             </div>
           </div>
@@ -149,7 +149,7 @@ export default function FlourProcessingPage() {
               <Layers className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Multi-Pass Precision Grading</h4>
+              <h4 className="text-base font-bold text-slate-900">Multi-pass precision grading</h4>
               <p className="text-sm text-slate-600 font-medium">Perfectly uniform separation.</p>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function FlourProcessingPage() {
               <Settings className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">High Throughput &amp; Yield</h4>
+              <h4 className="text-base font-bold text-slate-900">High throughput &amp; yield</h4>
               <p className="text-sm text-slate-600 font-medium">Unmatched production capacity.</p>
             </div>
           </div>
@@ -172,7 +172,7 @@ export default function FlourProcessingPage() {
           
           <div className="text-center space-y-2">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900">
-              Our Advanced Flour Processing Products
+              Our advanced flour processing products
             </h2>
             <p className="text-slate-600 font-medium">
               Engineered flour processing solutions that maximize yield, preserve natural nutrition, and deliver uniform flour quality with efficient, reliable performance.
@@ -208,7 +208,7 @@ export default function FlourProcessingPage() {
                       href={`/flour-processing/${product.slug}`} 
                       className="text-xs font-bold text-slate-800 hover:text-brand-primary flex items-center gap-1 transition-colors"
                     >
-                      View Details <ArrowRight className="w-3 h-3 -rotate-45" />
+                      View details <ArrowRight className="w-3 h-3 -rotate-45" />
                     </Link>
                     <button 
                       onClick={() => addToQuote({ 
@@ -219,7 +219,7 @@ export default function FlourProcessingPage() {
                       className="flex items-center gap-1.5 text-xs font-bold border border-slate-300 text-slate-700 px-3 py-1.5 rounded-full hover:bg-slate-50 transition-colors"
                     >
                       <ShoppingCart className="w-3.5 h-3.5 text-[#eab308]" />
-                      Add to Quote
+                      Add to quote
                     </button>
                   </div>
                 </div>
@@ -235,13 +235,13 @@ export default function FlourProcessingPage() {
         <div className="absolute inset-0 bg-slate-900/45" />
         <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10 flex flex-col items-center text-center space-y-4">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-extrabold text-white tracking-tight">
-            Need a Customized Flour Processing Setup?
+            Need a customized flour processing setup?
           </h2>
           <Link 
             href="/contact"
             className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
           >
-            <span>Discuss Your Requirement</span>
+            <span>Discuss your requirement</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

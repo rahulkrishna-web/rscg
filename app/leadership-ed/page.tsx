@@ -44,11 +44,11 @@ export default function LeadershipEdPage() {
                 <div className="space-y-4">
                   <div>
                     <h2 className="text-xl font-heading font-black text-slate-900">Mr. R. S. Choyal</h2>
-                    <p className="text-brand-primary text-xs font-bold uppercase tracking-wider mt-1">Chairman &amp; Managing Director</p>
+                    <p className="text-brand-primary text-xs font-bold tracking-wider mt-1">Chairman &amp; Managing Director</p>
                   </div>
 
                   <div className="border-t border-slate-100 pt-4">
-                    <p className="text-xs font-extrabold text-slate-500 uppercase tracking-wider mb-3">Connect With CMD</p>
+                    <p className="text-xs font-extrabold text-slate-500 tracking-wider mb-3">Connect with CMD</p>
                     {/* Social Links */}
                     <div className="flex gap-3">
                       <a href="https://www.facebook.com/radhey.choyal.2025" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 text-slate-400 hover:text-brand-primary hover:border-brand-primary flex items-center justify-center transition-all hover:scale-105">
@@ -80,11 +80,11 @@ export default function LeadershipEdPage() {
             {/* Right Biography Content */}
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-4">
-                <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
-                  Current Leadership
+                <span className="text-xs font-extrabold text-brand-primary tracking-wider">
+                  Current leadership
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-slate-950 leading-tight">
-                  Driving Global Milling Innovation
+                  Driving global milling innovation
                 </h3>
               </div>
 
@@ -109,7 +109,7 @@ export default function LeadershipEdPage() {
               {/* Pillars of Leadership */}
               <div className="bg-slate-50 border border-slate-200/60 p-6 sm:p-8 rounded-[28px] mt-8">
                 <h4 className="text-lg sm:text-xl font-heading font-black text-slate-900 mb-6">
-                  Key Focus Areas
+                  Key focus areas
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex gap-3.5">
@@ -117,7 +117,7 @@ export default function LeadershipEdPage() {
                       <Globe className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Global Milling Solutions</h5>
+                      <h5 className="text-base font-bold text-slate-900">Global milling solutions</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Pioneering the export of high-capacity automated chakki mills and turnkey solutions to over 20 nations.
                       </p>
@@ -128,7 +128,7 @@ export default function LeadershipEdPage() {
                       <Sparkles className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Nutrition &amp; Innovation</h5>
+                      <h5 className="text-base font-bold text-slate-900">Nutrition &amp; innovation</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Championing stone-ground milling techniques to preserve natural wheat nutrients and flour freshness.
                       </p>
@@ -139,7 +139,7 @@ export default function LeadershipEdPage() {
                       <Users className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Emotional Intelligence</h5>
+                      <h5 className="text-base font-bold text-slate-900">Emotional intelligence</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Promoting mindfulness, leadership ethics, and community upliftment through the Brains Trust Society.
                       </p>
@@ -150,7 +150,7 @@ export default function LeadershipEdPage() {
                       <Heart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Traditional Chakki Revival</h5>
+                      <h5 className="text-base font-bold text-slate-900">Traditional chakki revival</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Re-engineering traditional grinding methods with modern automated controls for maximum yield and quality.
                       </p>

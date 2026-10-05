@@ -19,77 +19,77 @@ const milestones: Milestone[] = [
   },
   {
     year: "1965",
-    title: "Our Journey Begins",
+    title: "Our journey begins",
     description:
       'The company is formally incorporated as "Shri Vishvakarma Industries", marking the beginning of a new chapter in industrial excellence and innovation.',
     image: "/images/about/timeline/Journey/1965.png",
   },
   {
     year: "1970",
-    title: "International Outreach",
+    title: "International outreach",
     description:
       'Became the first company from India in the grain milling sector to export emery stone globally. Our commitment to quality earned multiple accolades.',
     image: "/images/about/timeline/Journey/1970.png",
   },
   {
     year: "1978",
-    title: "Inauguration of First Factory Unit",
+    title: "Inauguration of first factory unit",
     description:
       "We set up our first manufacturing unit at Saradhana in Ajmer under our Pvt. Ltd. company, marking a key milestone in our industrial footprint.",
     image: "/images/about/timeline/Journey/1978.png",
   },
   {
     year: "2000",
-    title: "Fully Automated Emery Stone Plant",
+    title: "Fully automated emery stone plant",
     description:
       "We launched our automatic modeling workshop, kickstarting an era of high-precision manufacturing, consistency, and operational scale.",
     image: "/images/about/timeline/Journey/2000.png",
   },
   {
     year: "2010",
-    title: "World's First Patented Digital Flour Mill",
+    title: "World's first patented digital flour mill",
     description:
       "Developed the world's first fully automatic digital stone mill, redefining precision and setting global benchmarks for stone milling.",
     image: "/images/about/timeline/Journey/2010.png",
   },
   {
     year: "2011",
-    title: "Turnkey Solutions for Every Need",
+    title: "Turnkey solutions for every need",
     description:
       "Launched end-to-end milling turnkey solutions. To date, we have successfully engineered and delivered 275+ turnkey plants globally.",
     image: "/images/about/timeline/Journey/2011.png",
   },
   {
     year: "2013",
-    title: "Patented Emery Stone Dressing Machine",
+    title: "Patented emery stone dressing machine",
     description:
       "Introduced a patented stone dressing mechanism, combining automation and precision to revolutionize stone maintenance.",
     image: "/images/about/timeline/Journey/2013.png",
   },
   {
     year: "2018",
-    title: "Venturing into Groceries",
+    title: "Venturing into groceries",
     description:
       "Diversified into the grocery retail segment, gaining critical consumer insights that continue to sharpen our end-to-end food processing expertise.",
     image: "/images/about/timeline/Journey/2018.png",
   },
   {
     year: "2021",
-    title: "World's 1st Patented Digital Fresh Flour Grinder",
+    title: "World's 1st patented digital fresh flour grinder",
     description:
       "Introduced a smart digital grinder designed to make fresh, nutrient-dense flour easily accessible across community touchpoints.",
     image: "/images/about/timeline/Journey/2021.png",
   },
   {
     year: "2025",
-    title: "A New Chapter Begins",
+    title: "A new chapter begins",
     description:
       "The Choyal legacy evolves into specialized entities, launching Choyal Grinding Solutions Pvt. Ltd. dedicated to cutting-edge grinding technologies.",
     image: "/images/about/timeline/Journey/2025.png",
   },
   {
     year: "2026",
-    title: "Digital Milling Evolution",
+    title: "Digital milling evolution",
     description:
       "A new approach to milling, combining technology, performance, and smarter operations for modern flour mills.",
     image: "/images/about/timeline/Journey/2026.png",
@@ -341,13 +341,13 @@ export default function JourneyTimeline() {
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto flex flex-col justify-center my-auto">
             {/* Header: Eyebrow + Title + Subtitle */}
             <div className="w-full mb-5 lg:mb-4 xl:mb-7">
-              <span className="inline-block text-[11px] sm:text-xs font-bold tracking-[0.16em] uppercase text-[#0B2C1C] mb-1 xl:mb-2">
-                Our Heritage &amp; Legacy
+              <span className="inline-block text-[11px] sm:text-xs font-bold tracking-[0.16em] text-[#0B2C1C] mb-1 xl:mb-2">
+                Our heritage &amp; legacy
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-[32px] xl:text-[40px] font-heading font-black tracking-tight leading-[1.15] text-[#0B2C1C] mb-1.5 xl:mb-2.5">
-                Six Decades of Innovation.{" "}
+                Six decades of innovation.{" "}
                 <br className="hidden sm:inline" />
-                One Continuous <span className="text-[#FFAA17]">Milling Evolution.</span>
+                One continuous <span className="text-[#FFAA17]">milling evolution.</span>
               </h2>
               <p className="text-xs sm:text-sm lg:text-[15px] xl:text-base text-slate-600 max-w-2xl leading-relaxed">
                 Our journey has never been about replacing tradition. It has been about building

@@ -12,14 +12,14 @@ export default function OurNetworkSection() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto text-left">
         {/* Header Section */}
         <header className="max-w-3xl mb-8 sm:mb-12 text-left">
-          <span className="block text-[#0E3321] font-bold text-[13px] sm:text-[14px] tracking-[0.16em] uppercase mb-3 text-left">
-            Global Network
+          <span className="block text-[#0E3321] font-bold text-[13px] sm:text-[14px] tracking-[0.16em] mb-3 text-left">
+            Global network
           </span>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#0E3321] leading-[1.15] font-heading mb-5 text-left">
-            Global Reach
+            Global reach
             <br />
-            Trusted <span className="text-[#FFAA17]">Worldwide</span>
+            Trusted <span className="text-[#FFAA17]">worldwide</span>
           </h2>
 
           <div className="space-y-4 text-slate-600 text-sm sm:text-base leading-relaxed font-normal max-w-2xl">

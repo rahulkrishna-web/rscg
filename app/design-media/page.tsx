@@ -13,15 +13,15 @@ export default function DesignMediaPage() {
 
   const heroProofPoints = [
     {
-      title: "Technical Design",
+      title: "Technical design",
       desc: "Precision engineering layouts, schematic drafting"
     },
     {
-      title: "Design for Manufacturing",
+      title: "Design for manufacturing",
       desc: "Optimizing component geometries for cost effective production"
     },
     {
-      title: "Packaging Design",
+      title: "Packaging design",
       desc: "Structural packaging, creative branding and production-ready artwork"
     }
   ];
@@ -65,13 +65,13 @@ export default function DesignMediaPage() {
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
               {/* Standard Eyebrow */}
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                DESIGN & MEDIA STUDIO
+                Design & media studio
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-                Ideas Engineered. Stories Crafted.
+                Ideas engineered. Stories crafted.
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
@@ -228,7 +228,7 @@ export default function DesignMediaPage() {
                   </div>
                   <div>
                     <h4 className="text-2xl sm:text-3xl font-black font-heading text-[#133020]">275+</h4>
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wide leading-tight mt-0.5">Turnkey Projects<br/>Designed & Delivered</p>
+                    <p className="text-xs font-bold text-slate-500 tracking-wide leading-tight mt-0.5">Turnkey projects<br/>designed & delivered</p>
                   </div>
                 </div>
 
@@ -238,7 +238,7 @@ export default function DesignMediaPage() {
                   </div>
                   <div>
                     <h4 className="text-2xl sm:text-3xl font-black font-heading text-[#133020]">42+</h4>
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-wide leading-tight mt-0.5">Innovations<br/>Developed</p>
+                    <p className="text-xs font-bold text-slate-500 tracking-wide leading-tight mt-0.5">Innovations<br/>developed</p>
                   </div>
                 </div>
               </div>
@@ -274,7 +274,7 @@ export default function DesignMediaPage() {
                 </div>
                 <div>
                   <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-black text-[#133020]">
-                    Packaging Design
+                    Packaging design
                   </h2>
                   <div className="w-12 h-1 bg-[#D3994B] mt-2" />
                 </div>
@@ -314,7 +314,7 @@ export default function DesignMediaPage() {
               </div>
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white">
-                  Let's Build Something Exceptional
+                  Let's build something exceptional
                 </h3>
                 <p className="text-base text-white/90 leading-relaxed font-normal">
                   From engineering drawings to 3D presentations and packaging, our team can help bring your ideas to life.

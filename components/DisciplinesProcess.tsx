@@ -13,32 +13,32 @@ interface DisciplineCard {
 const disciplines: DisciplineCard[] = [
   {
     num: "01",
-    tag: "THE MATERIAL",
-    title: "Stone and Milling Science",
+    tag: "The material",
+    title: "Stone and milling science",
     description:
       "Understanding the grinding surface at its core from emery composition and profiles to dressing, groove geometry, wear and flour interaction.",
     image: "/images/about/process/image/Emery%20stones.png",
   },
   {
     num: "02",
-    tag: "THE MACHINE",
-    title: "Machine & Plant Engineering",
+    tag: "The machine",
+    title: "Machine & plant engineering",
     description:
       "Machines, cleaners, sifters, conveyors, silos and plant structures designed around process flow, performance and practical operation.",
     image: "/images/about/process/image/Emery%20stones%20(2).png",
   },
   {
     num: "03",
-    tag: "THE CONTROL",
-    title: "Automation & Process Intelligence",
+    tag: "The control",
+    title: "Automation & process intelligence",
     description:
       "PLC controls, intelligent feeding, recipe management, power monitoring and plant data that bring consistency and visibility to every operation.",
     image: "/images/about/process/image/Automation.png",
   },
   {
     num: "04",
-    tag: "THE PRACTICE",
-    title: "Operating Capability",
+    tag: "The practice",
+    title: "Operating capability",
     description:
       "Trials, commissioning, diagnostics, training and knowledge transfer that turn engineered systems into capabilities plant teams can operate and improve.",
     image: "/images/about/process/image/Operation.png",
@@ -54,8 +54,8 @@ export default function DisciplinesProcess() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-14">
-          <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#0B2C1C] mb-3">
-            Disciplines &amp; Process
+          <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.08em] text-[#0B2C1C] mb-3">
+            Disciplines &amp; process
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-heading font-black tracking-tight text-[#0B2C1C] leading-[1.2] mb-4">
             Four distinct disciplines.
@@ -87,7 +87,7 @@ export default function DisciplinesProcess() {
               {/* Card Content */}
               <div className="relative z-10">
                 {/* Category Pill Tag */}
-                <div className="text-xs sm:text-[13px] font-bold tracking-[0.08em] uppercase text-slate-500 mb-4 flex items-center">
+                <div className="text-xs sm:text-[13px] font-bold tracking-[0.08em] text-slate-500 mb-4 flex items-center">
                   <span className="text-[#FFAA17] font-black mr-1">{card.num}</span>
                   <span>· {card.tag}</span>
                 </div>

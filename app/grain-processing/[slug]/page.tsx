@@ -81,7 +81,7 @@ export default function GrainProcessingProductPage() {
               <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                 {product.stats.map((stat, idx) => (
                   <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== (product.stats?.length ?? 0) - 1 ? 'border-r border-slate-100' : ''}`}>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-widest">{stat.label}</span>
                     <span className="text-sm font-black text-[#0B1510]">{stat.value}</span>
                   </div>
                 ))}
@@ -96,7 +96,7 @@ export default function GrainProcessingProductPage() {
                   className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
                   <PackageCheck className="w-4 h-4 text-slate-900" />
-                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+                  {addedMessage ? "Added to quote!" : "Add to quote list"}
                 </button>
 
                 <a 
@@ -106,7 +106,7 @@ export default function GrainProcessingProductPage() {
                   className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  WhatsApp Enquiry
+                  WhatsApp enquiry
                 </a>
               </div>
               
@@ -115,15 +115,15 @@ export default function GrainProcessingProductPage() {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
                 </div>
               </div>
             </div>
@@ -135,15 +135,15 @@ export default function GrainProcessingProductPage() {
         {product.keyFeatures && product.keyFeatures.length > 0 && (
           <div className="mb-24">
             <div className="text-center space-y-2 mb-12">
-              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Key Features</h3>
+              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Key features</h3>
               <p className="text-slate-500 font-medium">Built for continuous, high efficiency processing</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {product.keyFeatures.map((feature, idx) => {
                 const Icon = require("lucide-react")[feature.icon] || Box;
                 return (
-                  <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={idx} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 bg-[#f0fdf4] text-[#16a34a] rounded-lg flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -162,7 +162,7 @@ export default function GrainProcessingProductPage() {
         {product.models && product.models.length > 0 && (
           <div className="mb-24 max-w-4xl mx-auto">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 pb-4 border-b border-slate-100">
-              <h3 className="text-2xl font-heading font-black text-[#0B1510]">Available Models</h3>
+              <h3 className="text-2xl font-heading font-black text-[#0B1510]">Available models</h3>
               
               <div className="flex p-1 bg-slate-50 rounded-lg border border-slate-200 self-stretch md:self-auto shrink-0 overflow-x-auto">
                 {product.models.map((model, mIdx) => (
@@ -183,17 +183,13 @@ export default function GrainProcessingProductPage() {
                   <h4 className="font-bold text-slate-800 text-lg">{product.models[activeModelTab]?.name}</h4>
                   <p className="text-xs text-slate-500 mt-1">Compact and efficient milling model</p>
                 </div>
-                <div className="flex items-center gap-1.5 text-xs font-bold text-[#0a4c2a] bg-green-50 px-3 py-1.5 rounded-full border border-green-100">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#0a4c2a]"></div>
-                  Available Model
-                </div>
               </div>
               <table className="w-full text-left text-sm">
-                <thead className="bg-white border-b border-slate-50 text-slate-500 uppercase tracking-widest text-[10px] font-black">
+                <thead className="bg-white border-b border-slate-50 text-slate-500 tracking-widest text-[10px] font-black">
                   <tr>
                     <th className="px-6 py-4 w-16 text-center">#</th>
-                    <th className="px-6 py-4">PARAMETER</th>
-                    <th className="px-6 py-4">SPECIFICATION</th>
+                    <th className="px-6 py-4">Parameter</th>
+                    <th className="px-6 py-4">Specification</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-50">
@@ -214,22 +210,22 @@ export default function GrainProcessingProductPage() {
         {product.specs && product.specs.length > 0 && (
           <div className="mb-24 max-w-4xl mx-auto">
             <div className="text-center space-y-2 mb-10">
-              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Technical Specifications</h3>
+              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Technical specifications</h3>
               <p className="text-slate-500 font-medium">Standard engineering configuration and parameters</p>
             </div>
             
             <div className="bg-white border border-slate-100 rounded-2xl shadow-sm overflow-hidden">
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm">
-                  <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 uppercase tracking-widest text-[10px] font-black">
+                  <thead className="bg-slate-50 border-b border-slate-100 text-slate-500 tracking-widest text-[10px] font-black">
                     <tr>
                       <th className="px-6 py-4 w-16 text-center">#</th>
-                      <th className="px-6 py-4">PARAMETER</th>
+                      <th className="px-6 py-4">Parameter</th>
                       <th className="px-6 py-4">
-                        {product.slug === 'drum-sieve' ? 'DIA 700 MM' : 'SPECIFICATION'}
+                        {product.slug === 'drum-sieve' ? 'Dia 700 mm' : 'Specification'}
                       </th>
                       {product.slug === 'drum-sieve' && (
-                        <th className="px-6 py-4">DIA 900 MM</th>
+                        <th className="px-6 py-4">Dia 900 mm</th>
                       )}
                     </tr>
                   </thead>
@@ -267,7 +263,7 @@ export default function GrainProcessingProductPage() {
                     <div className="text-[#f7b032] group-hover:scale-110 transition-transform">
                       <AppIcon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-600 text-center uppercase tracking-wide leading-snug">
+                    <span className="text-[11px] font-bold text-slate-600 text-center tracking-wide leading-snug">
                       {app.label}
                     </span>
                   </div>

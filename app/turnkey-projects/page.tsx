@@ -35,7 +35,7 @@ export default function TurnkeyProjects() {
 
   const statPoints = [
     {
-      title: "From Concept to Commissioning",
+      title: "From concept to commissioning",
       desc: "Complete project support from initial planning through installation and plant start-up."
     },
     {
@@ -43,7 +43,7 @@ export default function TurnkeyProjects() {
       desc: "Scalable plant solutions designed for a wide range of production capacities."
     },
     {
-      title: "End-to-End Plant Solutions",
+      title: "End-to-end plant solutions",
       desc: "Integrated engineering, fabrication, automation, installation, and commissioning."
     }
   ];
@@ -58,14 +58,14 @@ export default function TurnkeyProjects() {
     },
     {
       id: 2,
-      title: "Field Layout Design",
+      title: "Field layout design",
       desc: "3D plant layouts optimized for grain flow, space use, utility routing, and maintainability.",
       image: "/images/turnkey/scope/field layout design.jpg",
       icon: <Workflow className="h-5 w-5" />
     },
     {
       id: 3,
-      title: "Engineering Design",
+      title: "Engineering design",
       desc: "Mechanical, structural, utility, and process engineering for reliable plant execution.",
       image: "/images/turnkey/scope/engineering design.jpg",
       icon: <Settings className="h-5 w-5" />
@@ -79,7 +79,7 @@ export default function TurnkeyProjects() {
     },
     {
       id: 5,
-      title: "Erection & Commissioning",
+      title: "Erection & commissioning",
       desc: "On-site erection, dry runs, testing, and commissioning support for smooth plant start-up.",
       image: "/images/turnkey/scope/Erection & commissioning.jpg",
       icon: <CheckCircle className="h-5 w-5" />
@@ -100,14 +100,14 @@ export default function TurnkeyProjects() {
     },
     {
       id: 8,
-      title: "Retro-Fitting",
+      title: "Retro-fitting",
       desc: "Upgrade legacy mills with digital mills, VFD drives, digital monitoring, and smarter controls.",
       image: "/images/turnkey/scope/retro fitting.jpg",
       icon: <RefreshCw className="h-5 w-5" />
     },
     {
       id: 9,
-      title: "Product Development",
+      title: "Product development",
       desc: "Product and recipe development support with process optimization and quality improvement.",
       image: "/images/turnkey/scope/product development.jpg",
       icon: <Sparkles className="h-5 w-5" />
@@ -115,23 +115,23 @@ export default function TurnkeyProjects() {
   ];
 
   const turnkeySolutions = [
-    { title: "Whole Wheat Atta Plant", image: "/images/turnkey/capabilities/atta plant.jpg" },
-    { title: "Gram Flour (Besan) Plant", image: "/images/turnkey/capabilities/GRAM FLOUR.jpg" },
-    { title: "Soya Pulse Plant", image: "/images/turnkey/capabilities/SOYA PULSE.jpg" },
-    { title: "Multi Grain Flour Grinding Plant", image: "/images/turnkey/capabilities/MULTIGRAIN Flour.jpg" },
-    { title: "Spices & Herbal Grinding Plant", image: "/images/turnkey/capabilities/spices & herbs.jpg" },
-    { title: "Pulse Plant", image: "/images/turnkey/capabilities/pulses.jpg" },
-    { title: "Flour & Spice Blending System", image: "/images/turnkey/capabilities/flour & spice bending.jpg" },
-    { title: "Quinoa Plant", image: "/images/turnkey/capabilities/quinoa.jpg" },
-    { title: "Semolina Plant", image: "/images/turnkey/capabilities/semolina.jpg" },
-    { title: "Teff Plant", image: "/images/turnkey/capabilities/teff.jpg" },
-    { title: "Maida Plant", image: "/images/turnkey/capabilities/maida.jpg" },
-    { title: "Psyllium Husk Plant", image: "/images/turnkey/capabilities/psyillum husk.jpg" }
+    { title: "Whole wheat atta plant", image: "/images/turnkey/capabilities/atta plant.jpg" },
+    { title: "Gram flour (besan) plant", image: "/images/turnkey/capabilities/GRAM FLOUR.jpg" },
+    { title: "Soya pulse plant", image: "/images/turnkey/capabilities/SOYA PULSE.jpg" },
+    { title: "Multi grain flour grinding plant", image: "/images/turnkey/capabilities/MULTIGRAIN Flour.jpg" },
+    { title: "Spices & herbal grinding plant", image: "/images/turnkey/capabilities/spices & herbs.jpg" },
+    { title: "Pulse plant", image: "/images/turnkey/capabilities/pulses.jpg" },
+    { title: "Flour & spice blending system", image: "/images/turnkey/capabilities/flour & spice bending.jpg" },
+    { title: "Quinoa plant", image: "/images/turnkey/capabilities/quinoa.jpg" },
+    { title: "Semolina plant", image: "/images/turnkey/capabilities/semolina.jpg" },
+    { title: "Teff plant", image: "/images/turnkey/capabilities/teff.jpg" },
+    { title: "Maida plant", image: "/images/turnkey/capabilities/maida.jpg" },
+    { title: "Psyllium husk plant", image: "/images/turnkey/capabilities/psyillum husk.jpg" }
   ];
 
   const highlightedProjects = [
     {
-      title: "Carr's Flour Green Maldon",
+      title: "Carr's Flour",
       desc: "40 TPD atta plant",
       location: "United Kingdom",
       image: "/images/projects/case_studies/thumbnails/carr_flourmill.jpg",
@@ -212,13 +212,13 @@ export default function TurnkeyProjects() {
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             
             {/* Standard Eyebrow */}
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              TURNKEY PROJECTS DIVISION
+              Turnkey projects division
             </div>
             
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Turnkey Projects
+              Turnkey projects
             </h1>
             
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
@@ -292,11 +292,11 @@ export default function TurnkeyProjects() {
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
+            <span className="text-xs font-bold text-brand-primary tracking-widest">
               Services
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              End-to-End Project Capabilities
+              End-to-end project capabilities
             </h2>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
               From concept to commissioning, we deliver turnkey grain processing and flour milling solutions built for performance, efficiency, and long-term reliability.
@@ -345,11 +345,11 @@ export default function TurnkeyProjects() {
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
-              Versatile Capabilities
+            <span className="text-xs font-bold text-brand-primary tracking-widest">
+              Versatile capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              Turnkey Solutions Available For
+              Turnkey solutions available for
             </h2>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
               We design and build plants for a wide range of agricultural and industrial applications.
@@ -379,11 +379,11 @@ export default function TurnkeyProjects() {
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
-            <span className="text-xs font-bold text-brand-primary tracking-widest uppercase">
+            <span className="text-xs font-bold text-brand-primary tracking-widest">
               Our completed installations
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#1c2722] leading-tight">
-              Our Turnkey Projects
+              Our turnkey projects
             </h2>
           </div>
 

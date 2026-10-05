@@ -30,37 +30,37 @@ const workflowSteps = [
 
 const coreServices = [
   {
-    title: "Project Development",
+    title: "Project development",
     desc: "Concept development, plant planning, layout support, feasibility, and project execution guidance.",
     iconPath: "/images/services/grain360/new_icons/our core services/project_deveopment.png",
     iconBg: "bg-[#EAF3EA]"
   },
   {
-    title: "Design & Engineering",
+    title: "Design & engineering",
     desc: "Plant layouts, technical detailing, system planning, and engineering coordination.",
     iconPath: "/images/services/grain360/new_icons/our core services/design_and_engineering-removebg-previe.png",
     iconBg: "bg-[#E8F1F5]"
   },
   {
-    title: "Licensing & Certifications",
+    title: "Licensing & certifications",
     desc: "Support for registrations, approvals, certifications, and statutory compliance.",
     iconPath: "/images/services/grain360/new_icons/our core services/licensing.png",
     iconBg: "bg-[#FEF5E7]"
   },
   {
-    title: "Operations & Consultancy",
+    title: "Operations & consultancy",
     desc: "Support for process optimization, quality improvement, and day-to-day plant operations.",
     iconPath: "/images/services/grain360/new_icons/our core services/operation.png",
     iconBg: "bg-[#EAF3EA]"
   },
   {
-    title: "Staff & Operator Training",
+    title: "Staff & operator training",
     desc: "Hands-on training for teams operating, managing, and maintaining the plant.",
     iconPath: "/images/services/grain360/new_icons/our core services/staff_and_operator_training.png",
     iconBg: "bg-[#FEF5E7]"
   },
   {
-    title: "Technology Upgradation",
+    title: "Technology upgradation",
     desc: "Modernization of existing plants with improved systems, automation, and digital capabilities.",
     iconPath: "/images/services/grain360/new_icons/our core services/technology_upgrade.png",
     iconBg: "bg-[#E8F1F5]"
@@ -68,10 +68,10 @@ const coreServices = [
 ];
 
 const additionalServices = [
-  { title: "Government Registrations", iconPath: "/images/services/grain360/new_icons/additional services/governmentregister.png" },
-  { title: "Project & Bankable Reports", iconPath: "/images/services/grain360/new_icons/additional services/project report.png" },
-  { title: "Subsidies & Policies Guidance", iconPath: "/images/services/grain360/new_icons/additional services/subsidaries.png" },
-  { title: "Process Automation", iconPath: "/images/services/grain360/new_icons/additional services/process automation.png" },
+  { title: "Government registrations", iconPath: "/images/services/grain360/new_icons/additional services/governmentregister.png" },
+  { title: "Project & bankable reports", iconPath: "/images/services/grain360/new_icons/additional services/project report.png" },
+  { title: "Subsidies & policies guidance", iconPath: "/images/services/grain360/new_icons/additional services/subsidaries.png" },
+  { title: "Process automation", iconPath: "/images/services/grain360/new_icons/additional services/process automation.png" },
 ];
 
 export default function Grain360Page() {
@@ -115,12 +115,12 @@ export default function Grain360Page() {
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                SERVICES & SOLUTIONS
+                Services & solutions
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-                Grain360 Services & Solutions
+                Grain360 services & solutions
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 End-to-end services to help you plan, launch, and grow your grain or flour processing business under one roof.
@@ -220,7 +220,7 @@ export default function Grain360Page() {
           {/* Core Services Section */}
           <div className="mb-24">
             <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-12">
-              Our Core Services
+              Our core services
             </h3>
             
             <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">

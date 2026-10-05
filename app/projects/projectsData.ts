@@ -110,7 +110,7 @@ export const projectsData: ProjectItem[] = [
     "title": "Carr's Flour",
     "subtitle": "40 TPD Atta plant",
     "client": "Carr's Flour (UK)",
-    "location": "Maldon, UK",
+    "location": "Meldon, UK",
     "capacity": "40 TPD Atta plant",
     "projectType": "Flour milling plant",
     "commissioned": "",

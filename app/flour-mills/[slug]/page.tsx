@@ -71,7 +71,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
           {/* Left: Images */}
           <div className="flex flex-col gap-6">
             <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8">
-              <span className="absolute top-0 left-0 z-10 bg-slate-100 text-[10px] font-black uppercase text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
+              <span className="absolute top-0 left-0 z-10 bg-slate-100 text-[10px] font-black text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
               <img 
@@ -142,7 +142,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
             {product.keyHighlights && product.keyHighlights.length > 0 && (
               <div className="mb-8">
-                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product Highlights</h3>
+                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product highlights</h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
                   {product.keyHighlights.map((highlight, idx) => (
                     <li key={idx} className="pl-1">{highlight}</li>
@@ -153,7 +153,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
             {product.technicalSpecs && Object.keys(product.technicalSpecs).length > 0 && (
               <div className="mb-10">
-                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Key Specifications</h3>
+                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Key specifications</h3>
                 <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
                   {Object.entries(product.technicalSpecs).map(([key, val], idx) => (
                     <li key={idx} className="pl-1"><span className="font-semibold text-slate-800">{key}:</span> {val}</li>
@@ -163,12 +163,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             )}
 
             {/* Capacity Stats Grid */}
-            <div className={`grid gap-4 mb-10 ${product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
+            <div className={`grid gap-4 mb-10 ${product.id === 'emery-stone-dresser' ? 'grid-cols-2' : product.heroStats.length === 4 || product.heroStats.length === 8 ? 'grid-cols-2 sm:grid-cols-4' : 'grid-cols-2 sm:grid-cols-3'}`}>
               {product.heroStats.map((stat, idx) => (
                 <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
                   {stat.topLabel && (
                     <div className="pb-3 mb-3 border-b border-slate-100">
-                      <p className="text-[10px] sm:text-[11px] text-slate-500 font-bold uppercase tracking-wider">{stat.topLabel}</p>
+                      <p className="text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-wider">{stat.topLabel}</p>
                     </div>
                   )}
                   <div className="flex flex-col items-center justify-center flex-1">
@@ -191,7 +191,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             {/* Variant Selector */}
             {product.models && product.models.length > 1 && (
               <div className="mb-8 border-b border-slate-100 pb-8">
-                <h4 className="text-sm font-bold text-slate-800 mb-3">Select Model</h4>
+                <h4 className="text-sm font-bold text-slate-800 mb-3">Select model</h4>
                 <div className="flex flex-col gap-3">
                   {product.models.map((mod, idx) => (
                     <button
@@ -266,15 +266,15 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4 pt-4">
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
               </div>
             </div>
             
@@ -284,7 +284,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {/* Core Capabilities */}
         {product.coreCapabilities.length > 0 && (
           <div className="mb-16">
-            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">Core Capabilities</h3>
+            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">Core capabilities</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {product.coreCapabilities.map((cap, idx) => {
                 const colors = [
@@ -321,7 +321,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {/* Key Components */}
         {product.keyComponents.length > 0 && (
           <div className="mb-16">
-            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.componentsTitle || "Key Components"}</h3>
+            <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">{product.componentsTitle || "Key components"}</h3>
             <div className={`grid grid-cols-2 gap-4 ${
               product.keyComponents.length === 1 ? 'lg:grid-cols-1 max-w-sm' :
               product.keyComponents.length === 2 ? 'lg:grid-cols-2 max-w-2xl' :
@@ -353,7 +353,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {product.showDetailedModels !== false && product.models.length > 0 && (
           <div className="mb-16">
             {product.detailedModelsTitle && (
-              <h3 className={`text-2xl font-heading font-extrabold mb-8 tracking-tight ${product.modelsLayout === 'zigzag' ? 'text-center uppercase text-slate-900 tracking-wider' : 'text-[#0a4c2a]'}`}>{product.detailedModelsTitle}</h3>
+              <h3 className={`text-2xl font-heading font-extrabold mb-8 tracking-tight ${product.modelsLayout === 'zigzag' ? 'text-center text-slate-900 tracking-wider' : 'text-[#0a4c2a]'}`}>{product.detailedModelsTitle}</h3>
             )}
             <div className={`grid gap-6 ${
               product.models.length === 1 ? 'grid-cols-1 max-w-3xl mx-auto' :
@@ -473,7 +473,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             </div>
             <div>
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-white tracking-tight mb-1">
-                Smart Milling. Smarter Business.
+                Smart milling. Smarter business.
               </h3>
               <p className="text-white/80 font-medium text-sm sm:text-base">
                 Save power. Increase production. Deliver consistent quality.

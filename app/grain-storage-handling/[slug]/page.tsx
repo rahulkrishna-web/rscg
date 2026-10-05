@@ -29,10 +29,22 @@ export default function SiloDetailPage() {
   const { addToQuote } = useQuote();
 
   const [activeTab, setActiveTab] = useState(0);
+  const [addedHeroQuote, setAddedHeroQuote] = useState(false);
+  const [addedModel, setAddedModel] = useState<string | null>(null);
 
   if (!product) {
     notFound();
   }
+
+  const handleHeroAddToQuote = () => {
+    addToQuote({
+      id: product.slug,
+      name: product.title,
+      image: product.image
+    }, 1);
+    setAddedHeroQuote(true);
+    setTimeout(() => setAddedHeroQuote(false), 2000);
+  };
 
   const handleAddToQuote = (capacity: SiloCapacity) => {
     addToQuote({
@@ -40,6 +52,8 @@ export default function SiloDetailPage() {
       name: `${product.title} - ${capacity.model} (${capacity.capacity})`,
       image: product.image
     }, 1);
+    setAddedModel(capacity.model);
+    setTimeout(() => setAddedModel(null), 2000);
   };
 
   return (
@@ -60,7 +74,7 @@ export default function SiloDetailPage() {
 
           <div className="flex flex-col justify-center space-y-6">
             <div className="inline-flex">
-              <span className="text-xs font-black uppercase tracking-widest text-[#eab308] bg-amber-50 px-3 py-1 rounded-md">
+              <span className="text-xs font-black tracking-widest text-[#eab308] bg-amber-50 px-3 py-1 rounded-md">
                 {product.category}
               </span>
             </div>
@@ -80,6 +94,14 @@ export default function SiloDetailPage() {
             />
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <button
+                onClick={handleHeroAddToQuote}
+                className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+              >
+                <PackageCheck className="w-4 h-4 text-slate-900" />
+                <span>{addedHeroQuote ? "Added to quote!" : "Add to quote list"}</span>
+              </button>
+
               <Link
                 href={`https://wa.me/919240289259?text=${encodeURIComponent(`Hi, I would like to enquire about ${product.title}`)}`}
                 className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
@@ -87,22 +109,22 @@ export default function SiloDetailPage() {
                 rel="noreferrer"
               >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp Enquiry
+                WhatsApp enquiry
               </Link>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-3">
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
               </div>
             </div>
           </div>
@@ -111,15 +133,15 @@ export default function SiloDetailPage() {
         {/* Key Features Section */}
         <div className="mb-16">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <h2 className="text-2xl font-black text-[#0B1510] mb-2">Key Features</h2>
+            <h2 className="text-2xl font-black text-[#0B1510] mb-2">Key features</h2>
             <p className="text-slate-500">Engineered for high-efficiency plant integration and low-residue handling</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {product.keyFeatures.map((feature, idx) => {
               const Icon = IconMap[feature.icon] || CheckCircle2;
               return (
-                <div key={idx} className="bg-white border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-[#16a34a] mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
@@ -135,7 +157,7 @@ export default function SiloDetailPage() {
         <div className="space-y-6 mb-16">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-6 border-b border-slate-100">
             <div>
-              <h2 className="text-2xl font-black text-[#0B1510] mb-2">Available Capacities</h2>
+              <h2 className="text-2xl font-black text-[#0B1510] mb-2">Available capacities</h2>
               <p className="text-sm text-slate-500">Select your required material line and model capacity to add to your quote enquiry.</p>
             </div>
             
@@ -156,9 +178,6 @@ export default function SiloDetailPage() {
                 )})}
               </div>
             )}
-            {product.capacitySections.length === 1 && (
-              <h3 className="text-lg font-bold text-slate-700">{product.capacitySections[0].title}</h3>
-            )}
           </div>
           
           <div className="space-y-4">
@@ -171,8 +190,8 @@ export default function SiloDetailPage() {
                         <span className="text-xs font-medium text-slate-500 bg-slate-100 px-2 py-1 rounded">Material: {cap.material}</span>
                       </div>
                       {cap.bestFor && (
-                        <div className="text-[10px] font-bold text-[#16a34a] uppercase tracking-widest">
-                          BEST FOR: {cap.bestFor}
+                        <div className="text-[10px] font-bold text-[#16a34a] tracking-widest">
+                          Best for: {cap.bestFor}
                         </div>
                       )}
                     </div>
@@ -182,7 +201,7 @@ export default function SiloDetailPage() {
                         onClick={() => handleAddToQuote(cap)}
                         className="h-10 px-5 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded-lg text-sm flex items-center justify-center gap-2 shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all whitespace-nowrap cursor-pointer"
                       >
-                        <PackageCheck className="w-4 h-4 text-slate-900" /> Add to Quote
+                        <PackageCheck className="w-4 h-4 text-slate-900" /> {addedModel === cap.model ? "Added to quote!" : "Add to quote"}
                       </button>
                     </div>
                   </div>

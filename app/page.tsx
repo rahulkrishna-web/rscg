@@ -387,8 +387,8 @@ function WhyRSCGOrbital() {
 
           {/* Central WHY RSCG Hub */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 xl:w-36 xl:h-36 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-300 shadow-[0_8px_25px_rgba(245,158,11,0.18)] flex flex-col items-center justify-center text-center z-10">
-            <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.22em] uppercase">
-              WHY RSCG
+            <span className="text-slate-900 font-extrabold text-xs xl:text-sm tracking-[0.22em]">
+              Why RSCG
             </span>
           </div>
 
@@ -416,7 +416,7 @@ function WhyRSCGOrbital() {
               y: 617
             },
             {
-              title: "Economical Solutions",
+              title: "Economical solutions",
               desc: "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.",
               icon: "/images/why-rscg-section/icons/economical-solutions.png",
               x: 225,
@@ -647,7 +647,7 @@ export default function Home() {
     },
     {
       q: "Where are the manufacturing facilities located?",
-      a: "The heavy engineering and grinding stone manufacturing facilities are located at Arjunpura-Khalsa, Ajmer, Rajasthan, with corporate and city offices at Choyal Tower, Shalimar Colony, Ajmer."
+      a: "The heavy engineering and grinding stone manufacturing facilities are located at Arjunpura – Khalsa, District Ajmer-305203, Rajasthan, India"
     }
   ];
 
@@ -743,9 +743,9 @@ export default function Home() {
             <div className="lg:col-span-5 xl:col-span-5 flex lg:justify-end pb-1">
               <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full sm:w-auto">
                 {[
-                  { number: "60+", label: "Years of Experience" },
-                  { number: "275+", label: "Turnkey Solutions Delivered" },
-                  { number: "6+", label: "Patented Technology" },
+                  { number: "60+", label: "Years of experience" },
+                  { number: "275+", label: "Turnkey solutions delivered" },
+                  { number: "6+", label: "Patented technology" },
                 ].map((card, idx) => (
                   <div
                     key={idx}
@@ -775,11 +775,11 @@ export default function Home() {
           {/* Left Column: Heading, Eyebrow & Subtitle */}
           <div className="lg:col-span-5 space-y-5 lg:sticky lg:top-32">
             <span className="text-sm font-bold text-[#015435] tracking-wide block">
-              Our Expertise & Capabilities
+              Our expertise & capabilities
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-extrabold tracking-tight text-[#1c2722] leading-[1.12]">
-              Solutions Built Around<br />
-              <span className="text-amber-500">Milling Needs.</span>
+              Solutions built around<br />
+              <span className="text-amber-500">milling needs.</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed max-w-md pt-1">
               Complete end-to-end execution, consultancy, plant engineering, and strategic regulatory compliance tailored to your scale.
@@ -791,32 +791,32 @@ export default function Home() {
             {[
               {
                 id: "01",
-                title: "PROJECT PLANNING & DEVELOPMENT",
+                title: "Project planning & development",
                 desc: "Complete project development, land appraisal, conceptual planning, DPR preparation, techno-economic studies, commissioning, and handover."
               },
               {
                 id: "02",
-                title: "PLANT OPERATIONS & ENGINEERING",
+                title: "Plant operations & engineering",
                 desc: "Operational consultancy, production optimisation, bottleneck resolution, plant layouts, structural design, electrical and civil engineering, and load assessments."
               },
               {
                 id: "03",
-                title: "AUTOMATION & TECHNOLOGY",
+                title: "Automation & technology",
                 desc: "SCADA, PLCs, smart telemetry, custom automation, modern machinery, energy-efficient drives, and IoT-based upgrades for existing plants."
               },
               {
                 id: "04",
-                title: "TRAINING & COMPLIANCE",
+                title: "Training & compliance",
                 desc: "Hands-on staff training, SOPs, safety practices, factory registrations, environmental permissions, and statutory compliance."
               },
               {
                 id: "05",
-                title: "SUBSIDIES & POLICY ADVISORY",
+                title: "Subsidies & policy advisory",
                 desc: "Guidance on central and state incentives, capital subsidies, government schemes, grants, and applicable industrial policies."
               },
               {
                 id: "06",
-                title: "QUALITY & MAINTENANCE",
+                title: "Quality & maintenance",
                 desc: "Quality-control systems, preventive audits, ISO alignment, breakdown support, preventive servicing, and Annual Maintenance Contracts."
               }
             ].map((item, idx) => {
@@ -833,7 +833,7 @@ export default function Home() {
                       <span className="text-sm sm:text-base font-extrabold text-amber-500 tracking-wider w-7 sm:w-9 shrink-0">
                         {item.id}
                       </span>
-                      <h3 className={`text-sm sm:text-[15px] lg:text-base font-extrabold tracking-wide uppercase transition-colors ${
+                      <h3 className={`text-sm sm:text-[15px] lg:text-base font-extrabold tracking-wide transition-colors ${
                         isOpen ? "text-[#1c2722]" : "text-[#1c2722] group-hover:text-[#015435]"
                       }`}>
                         {item.title}
@@ -873,16 +873,16 @@ export default function Home() {
       </section>
 
       {/* --- Industrial Solutions Section --- */}
-      <section id="industrial-solutions" className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-[#FAF9F5] border-t border-slate-200/60 overflow-hidden">
+      <section id="industrial-solutions" className="w-full px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 py-16 sm:py-20 lg:py-28 relative z-10 bg-[#FAF9F5] border-t border-slate-200/60 overflow-hidden">
         <div className="w-full mx-auto space-y-12 sm:space-y-16">
           
           {/* Header */}
           <div className="space-y-3 max-w-3xl">
             <span className="text-sm font-bold text-[#015435] tracking-wide block">
-              Industrial Solutions
+              Industrial solutions
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
-              Comprehensive Milling<br className="hidden sm:inline" /> & Grain <span className="text-amber-500">Solutions</span>
+              Comprehensive milling<br className="hidden sm:inline" /> & grain <span className="text-amber-500">solutions</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
               Precision engineering for maximum flour yield, efficient energy use, and dependable industrial performance.
@@ -890,11 +890,11 @@ export default function Home() {
           </div>
 
           {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile, grid on md+) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6 w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 scroll-pl-4 sm:scroll-pl-8 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 id: "01",
-                title: "Turnkey Solutions",
+                title: "Turnkey solutions",
                 desc: "End-to-end milling solutions covering planning, engineering, machinery, installation, automation, and commissioning.",
                 cta: "View Solutions",
                 href: "/turnkey-projects",
@@ -902,7 +902,7 @@ export default function Home() {
               },
               {
                 id: "02",
-                title: "Flour Mills",
+                title: "Flour mills",
                 desc: "Complete flour milling systems designed for consistent quality, efficient production across different capacities.",
                 cta: "View Flour Mills",
                 href: "/flour-mills",
@@ -910,7 +910,7 @@ export default function Home() {
               },
               {
                 id: "03",
-                title: "Emery Stones & Dressing",
+                title: "Emery stones & dressing",
                 desc: "Precision-made emery stones and professional dressing solutions consistent grinding performance and long service life.",
                 cta: "View Stones & Dressers",
                 href: "/emery-stones",
@@ -918,7 +918,7 @@ export default function Home() {
               },
               {
                 id: "04",
-                title: "Power Saving",
+                title: "Power saving",
                 desc: "Energy-efficient solutions designed to reduce power consumption, and improve overall operating efficiency.",
                 cta: "View Power Systems",
                 href: "/power-saving",
@@ -934,7 +934,7 @@ export default function Home() {
               },
               {
                 id: "06",
-                title: "Grain Storage & Handling Systems",
+                title: "Grain storage & handling systems",
                 desc: "Integrated silos and handling systems for safe storage and smooth movement of grain throughout the plant.",
                 cta: "View Silos & Handling",
                 href: "/grain-storage-handling",
@@ -942,7 +942,7 @@ export default function Home() {
               },
               {
                 id: "07",
-                title: "Grain Processing",
+                title: "Grain processing",
                 desc: "Complete grain-processing solutions covering cleaning, grading, conditioning, and preparation for efficient milling.",
                 cta: "View Processing",
                 href: "/grain-processing",
@@ -950,7 +950,7 @@ export default function Home() {
               },
               {
                 id: "08",
-                title: "Flour Processing",
+                title: "Flour processing",
                 desc: "Advanced grinding, sifting, separation, and refining solutions for consistent flour quality and controlled particle size.",
                 cta: "View Grinding & Sifting",
                 href: "/flour-processing",
@@ -958,7 +958,7 @@ export default function Home() {
               },
               {
                 id: "09",
-                title: "Vending Machine",
+                title: "Vending machine",
                 desc: "Efficient vending solutions that take freshly processed flour from production to convenient distribution and sale.",
                 cta: "View Vending Machines",
                 href: "/vending-machines",
@@ -975,42 +975,42 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className={`w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-6 sm:p-7 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[220px] sm:min-h-[240px] ${idx === 9 ? "lg:col-start-2" : ""}`}
+                className={`w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-4.5 sm:p-5 xl:p-6 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[195px] sm:min-h-[205px] xl:min-h-[220px] ${idx === 9 ? "lg:col-start-2" : ""}`}
               >
-                <div className="flex flex-row items-stretch justify-between gap-4 h-full">
-                  {/* Text Content */}
-                  <div className="flex-1 min-w-0 flex flex-col justify-between">
+                <div className="flex flex-row items-stretch justify-between gap-3 sm:gap-4 h-full">
+                  {/* Left: Text Content */}
+                  <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
                     <div>
-                      <span className="text-xs font-bold text-amber-500 tracking-wider block mb-1.5">
+                      <span className="text-[11px] sm:text-xs font-bold text-amber-500 tracking-wider block mb-1">
                         {card.id}
                       </span>
-                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-snug mb-2 group-hover:text-[#015435] transition-colors">
+                      <h3 className="text-base sm:text-[17px] xl:text-lg font-bold text-slate-900 tracking-tight leading-snug mb-1.5 group-hover:text-[#015435] transition-colors">
                         {card.title}
                       </h3>
-                      <p className="text-slate-600 text-sm sm:text-[14.5px] lg:text-[15px] leading-relaxed">
+                      <p className="text-slate-600 text-[12.5px] sm:text-[13px] xl:text-[13.5px] 2xl:text-[14px] leading-relaxed">
                         {card.desc}
                       </p>
                     </div>
 
                     {/* Bottom CTA Link */}
-                    <div className="pt-4 mt-auto">
+                    <div className="pt-3 xl:pt-4 mt-auto">
                       <Link 
                         href={card.href}
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-900 group-hover:text-amber-600 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-[12.5px] sm:text-[13px] xl:text-sm font-semibold text-slate-900 group-hover:text-amber-600 transition-colors whitespace-nowrap"
                       >
                         <span>{card.cta}</span>
-                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        <ArrowRight className="w-3.5 h-3.5 xl:w-4 xl:h-4 transition-transform duration-300 group-hover:translate-x-1" />
                       </Link>
                     </div>
                   </div>
 
-                  {/* Right Icon Illustration with Gradient Wash-out Effect */}
-                  <div className="w-24 sm:w-28 lg:w-32 xl:w-36 h-24 sm:h-28 lg:h-32 xl:h-36 shrink-0 relative flex items-center justify-end select-none pointer-events-none self-center">
+                  {/* Right: Icon Illustration with Gradient Wash Effect */}
+                  <div className="w-[84px] sm:w-[96px] lg:w-[92px] xl:w-[110px] 2xl:w-[124px] h-[84px] sm:h-[96px] lg:h-[92px] xl:h-[110px] 2xl:h-[124px] shrink-0 relative flex items-center justify-end select-none pointer-events-none self-center">
                     <div 
                       className="relative w-full h-full transition-transform duration-500 group-hover:scale-105"
                       style={{
-                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.32) 28%, rgba(0,0,0,0.85) 70%, #000 100%)',
-                        maskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.32) 28%, rgba(0,0,0,0.85) 70%, #000 100%)'
+                        WebkitMaskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.38) 22%, #000 65%)',
+                        maskImage: 'linear-gradient(to right, rgba(0,0,0,0.12) 0%, rgba(0,0,0,0.38) 22%, #000 65%)'
                       }}
                     >
                       <Image
@@ -1018,7 +1018,7 @@ export default function Home() {
                         alt={card.title}
                         fill
                         className="object-contain object-right"
-                        sizes="(max-width: 640px) 96px, (max-width: 1024px) 120px, 144px"
+                        sizes="(max-width: 640px) 84px, (max-width: 1024px) 96px, 124px"
                       />
                     </div>
                   </div>
@@ -1038,7 +1038,7 @@ export default function Home() {
           {/* Left Column: Heading and Subtitle */}
           <div className="lg:col-span-5 space-y-4">
             <span className="text-sm font-bold text-[#015435] tracking-wide block">
-              Our Core Values
+              Our core values
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[38px] xl:text-[46px] 2xl:text-[54px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
               Experience that endures.<br />
@@ -1059,8 +1059,8 @@ export default function Home() {
             <div className="block lg:hidden w-full space-y-6">
               <div className="flex justify-center">
                 <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#FFFDF8] via-[#FFF9ED] to-[#FEF3C7] border-2 border-amber-200 shadow-md flex flex-col items-center justify-center text-center">
-                  <span className="text-slate-900 font-extrabold text-xs tracking-[0.2em] uppercase">
-                    WHY RSCG
+                  <span className="text-slate-900 font-extrabold text-xs tracking-[0.2em]">
+                    Why RSCG
                   </span>
                 </div>
               </div>
@@ -1084,7 +1084,7 @@ export default function Home() {
                   },
                   {
                     icon: "/images/why-rscg-section/icons/economical-solutions.png",
-                    title: "Economical Solutions",
+                    title: "Economical solutions",
                     desc: "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth."
                   },
                   {
@@ -1122,7 +1122,7 @@ export default function Home() {
           {/* Header */}
           <div className="space-y-3 max-w-3xl">
             <span className="text-sm font-bold text-[#015435] tracking-wide block">
-              Turnkey Solutions
+              Turnkey solutions
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-extrabold tracking-tight text-[#1c2722] leading-[1.15]">
               From vision to a mill<br className="hidden sm:inline" /> in <span className="text-amber-500">action.</span>
@@ -1135,11 +1135,11 @@ export default function Home() {
           {/* Bento Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-7">
             
-            {/* Left Tall Feature Card: Carr's green Flour Mill */}
+            {/* Left Tall Feature Card: Carr's Flour */}
             <div className="relative rounded-[28px] sm:rounded-[32px] overflow-hidden group shadow-lg min-h-[460px] sm:min-h-[520px] lg:min-h-[580px] xl:min-h-[640px] flex flex-col justify-between p-6 sm:p-8 bg-slate-900 border border-slate-100">
               <Image 
                 src="/images/turnkey-section/carrs-flour-mill.png" 
-                alt="Carr's green Flour Mill" 
+                alt="Carr's Flour" 
                 fill 
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -1151,14 +1151,14 @@ export default function Home() {
               <div className="relative z-20 flex justify-end">
                 <div className="bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-full flex items-center gap-1.5 shadow-md">
                   <MapPin className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />
-                  <span className="text-xs sm:text-sm font-bold text-slate-800">Maldon, UK</span>
+                  <span className="text-xs sm:text-sm font-bold text-slate-800">Meldon, UK</span>
                 </div>
               </div>
 
               {/* Bottom Content */}
               <div className="relative z-20 space-y-4 pt-12">
                 <h3 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight">
-                  Carr's green <span className="text-amber-400">Flour Mill</span>
+                  Carr's Flour
                 </h3>
                 <div>
                   <Link 
@@ -1481,38 +1481,45 @@ export default function Home() {
               </svg>
             </div>
 
-            {/* Floating Overlapping Image Cards */}
-            <div className="relative flex flex-col items-center">
+            {/* Image Collage Grid */}
+            <div className="relative z-10 w-full max-w-[360px] sm:max-w-[440px] lg:max-w-[480px] xl:max-w-[500px] grid grid-cols-2 gap-3 sm:gap-4 items-stretch">
               
-              {/* Card 1: Top Tilted Plant Image */}
-              <div className="relative z-10 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] -rotate-3 animate-faq-float-1 pointer-events-none">
-                <div className="bg-white p-2.5 sm:p-3 rounded-3xl sm:rounded-[28px] shadow-[0_15px_35px_rgba(0,0,0,0.12)] border border-slate-100/90">
-                  <div className="aspect-[4/3] rounded-2xl sm:rounded-[20px] overflow-hidden relative bg-slate-100">
-                    <Image
-                      src="/images/faq/img1.png"
-                      alt="Modern Milling Plant & Engineering"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 280px, 330px"
-                      priority
-                    />
-                  </div>
+              {/* Left Column: 2 Stacked Cards */}
+              <div className="flex flex-col gap-3 sm:gap-4">
+                {/* Card 1: Engineer with Tablet */}
+                <div className="relative aspect-square rounded-2xl sm:rounded-[22px] overflow-hidden bg-slate-100 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-white/80">
+                  <Image
+                    src="/images/faq/img3.png"
+                    alt="Digital Plant Automation & Control"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 180px, 250px"
+                    priority
+                  />
+                </div>
+
+                {/* Card 2: Emery Stone Machine */}
+                <div className="relative aspect-square rounded-2xl sm:rounded-[22px] overflow-hidden bg-slate-100 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-white/80">
+                  <Image
+                    src="/images/faq/img2.png"
+                    alt="Emery Stone Dressing Precision Engineering"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 180px, 250px"
+                  />
                 </div>
               </div>
 
-              {/* Card 2: Bottom Tilted Emery Stone Machine Image */}
-              <div className="relative z-20 -mt-16 sm:-mt-20 ml-16 sm:ml-24 md:ml-28 w-[240px] sm:w-[280px] lg:w-[310px] xl:w-[330px] rotate-3 animate-faq-float-2 pointer-events-none">
-                <div className="bg-white p-2.5 sm:p-3 rounded-3xl sm:rounded-[28px] shadow-[0_20px_45px_rgba(0,0,0,0.16)] border border-slate-100/90">
-                  <div className="aspect-[4/3] rounded-2xl sm:rounded-[20px] overflow-hidden relative bg-slate-100">
-                    <Image
-                      src="/images/faq/img2.png"
-                      alt="Emery Stone Dressing Precision Engineering"
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 280px, 330px"
-                    />
-                  </div>
-                </div>
+              {/* Right Column: 1 Tall Card Spanning Both Rows */}
+              <div className="relative h-full min-h-[220px] rounded-2xl sm:rounded-[22px] overflow-hidden bg-slate-100 shadow-[0_10px_25px_rgba(0,0,0,0.08)] border border-white/80">
+                <Image
+                  src="/images/faq/img1.png"
+                  alt="Modern Milling Plant & Engineering"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 200px, 260px"
+                  priority
+                />
               </div>
 
             </div>
@@ -1623,11 +1630,11 @@ export default function Home() {
           {/* Subsection 1: International Markets */}
           <div className="space-y-6 sm:space-y-8">
             <div className="text-center px-6 sm:px-12 space-y-1.5">
-              <span className="text-xs sm:text-sm font-black tracking-widest text-[#015435] uppercase block">
-                International Markets
+              <span className="text-xs sm:text-sm font-black tracking-widest text-[#015435] block">
+                International markets
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#133a25] tracking-tight">
-                Global Network Partners
+                Global Clients
               </h2>
             </div>
 
@@ -1653,11 +1660,11 @@ export default function Home() {
           {/* Subsection 2: Domestic Markets */}
           <div className="space-y-6 sm:space-y-8">
             <div className="text-center px-6 sm:px-12 space-y-1.5">
-              <span className="text-xs sm:text-sm font-black tracking-widest text-[#015435] uppercase block">
-                Domestic Markets
+              <span className="text-xs sm:text-sm font-black tracking-widest text-[#015435] block">
+                Domestic markets
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#133a25] tracking-tight">
-                National &amp; Regional Partners
+                National &amp; regional Clients
               </h2>
             </div>
 

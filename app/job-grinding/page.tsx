@@ -9,52 +9,52 @@ import Footer from "@/components/Footer";
 const timelineSteps = [
   {
     number: 1,
-    title: "WHEAT TESTING",
+    title: "Wheat testing",
     desc: "Raw wheat is thoroughly tested for moisture, impurities, protein, and overall quality. Only premium-grade wheat is selected to ensure consistent flour performance."
   },
   {
     number: 2,
-    title: "PRE CLEANING",
+    title: "Pre cleaning",
     desc: "Large impurities such as stones, straw, dust, and foreign materials are removed. This initial cleaning protects equipment and prepares the wheat for processing."
   },
   {
     number: 3,
-    title: "FIRST CLEANING",
+    title: "First cleaning",
     desc: "Advanced cleaning machines eliminate finer impurities and unwanted particles. This step enhances wheat purity before conditioning."
   },
   {
     number: 4,
-    title: "FINAL CLEANING",
+    title: "Final cleaning",
     desc: "A final purification process removes any remaining contaminants. It ensures the wheat is completely clean and ready for milling."
   },
   {
     number: 5,
-    title: "CONDITIONING",
+    title: "Conditioning",
     desc: "Water is added to the wheat and allowed to rest for optimal moisture balance. This improves bran separation and enhances flour quality during milling."
   },
   {
     number: 6,
-    title: "GRINDING",
+    title: "Grinding",
     desc: "Conditioned wheat is carefully ground using precision roller mills. The process produces fine flour while preserving its natural quality."
   },
   {
     number: 7,
-    title: "SIEVING",
+    title: "Sieving",
     desc: "Ground material is separated into flour, bran, and semolina using fine sieves. This ensures uniform particle size and consistent product quality."
   },
   {
     number: 8,
-    title: "REDRESSING",
+    title: "Redressing",
     desc: "The flour undergoes additional refining to improve texture and purity. This step delivers a smoother, cleaner, and more consistent final product."
   },
   {
     number: 9,
-    title: "LAB TESTING",
+    title: "Lab testing",
     desc: "Finished flour is tested for quality, safety, and compliance with industry standards. Every batch is verified to ensure consistent performance and customer satisfaction."
   },
   {
     number: 10,
-    title: "PACKING",
+    title: "Packing",
     desc: "The finished flour is hygienically packed in food-grade packaging. Secure packaging preserves freshness, quality, and shelf life during storage and transport."
   }
 ];
@@ -100,9 +100,9 @@ export default function JobGrindingPage() {
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                SERVICES
+                Services
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
                 Job Grinding
@@ -114,9 +114,9 @@ export default function JobGrindingPage() {
               <div className="pt-2 sm:pt-4">
                 <button 
                   onClick={() => document.getElementById('job-grinding-overview')?.scrollIntoView({ behavior: "smooth" })}
-                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
+                  className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm tracking-wide cursor-pointer"
                 >
-                  EXPLORE JOB GRINDING <ArrowRight className="w-4 h-4" />
+                  Explore job grinding <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -129,28 +129,28 @@ export default function JobGrindingPage() {
             
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
-                Custom Batch Sizes
+                Custom batch sizes
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-                Flexible Processing
+                Flexible processing
               </p>
             </div>
 
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
-                Consistent Grinding
+                Consistent grinding
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-                Reliable Particle Control
+                Reliable particle control
               </p>
             </div>
 
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">
-                Fast Turnaround
+                Fast turnaround
               </h3>
               <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">
-                Commercial-Scale Support
+                Commercial-scale support
               </p>
             </div>
 
@@ -162,18 +162,18 @@ export default function JobGrindingPage() {
           <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
             
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Custom Batch Sizes</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">Flexible Processing</p>
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Custom batch sizes</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Flexible processing</p>
             </div>
 
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Consistent Grinding</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">Reliable Particle Control</p>
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Consistent grinding</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Reliable particle control</p>
             </div>
 
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Fast Turnaround</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">Commercial-Scale Support</p>
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Fast turnaround</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Commercial-scale support</p>
             </div>
 
           </div>
@@ -199,8 +199,8 @@ export default function JobGrindingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start relative z-10">
             {/* Left Column: Heading & Content Paragraphs */}
             <div className="lg:col-span-5 xl:col-span-5 space-y-6">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#133020] leading-tight uppercase">
-                OUR JOB GRINDING PROCESS IS DESIGNED TO MAKE EVERY BATCH CLEAR, CONTROLLED, AND DEPENDABLE.
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#133020] leading-tight">
+                Our job grinding process is designed to make every batch clear, controlled, and dependable.
               </h2>
               <div className="h-1 w-16 bg-[#D3994B]"></div>
               <div className="text-slate-600 space-y-5 text-base sm:text-lg leading-relaxed font-normal">
@@ -227,7 +227,7 @@ export default function JobGrindingPage() {
                   <div className="w-10 h-10 rounded-xl bg-[#e6f4ea] flex items-center justify-center shrink-0">
                     <Building2 className="w-5 h-5 text-[#307954]" />
                   </div>
-                  <h3 className="font-heading font-black text-[#133020] text-lg sm:text-xl">Facility Details</h3>
+                  <h3 className="font-heading font-black text-[#133020] text-lg sm:text-xl">Facility details</h3>
                 </div>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:divide-x sm:divide-slate-100">
@@ -236,7 +236,7 @@ export default function JobGrindingPage() {
                       <img src="/images/job-grinding/facility-details/capacity-clean.png" alt="Capacity" className="w-full h-full object-contain" />
                     </div>
                     <div>
-                      <span className="text-xs uppercase font-bold text-slate-500 tracking-wider block mb-1">CAPACITY:</span>
+                      <span className="text-xs font-bold text-slate-500 tracking-wider block mb-1">Capacity:</span>
                       <p className="font-black text-[#133020] text-xl sm:text-2xl whitespace-nowrap">40 TPD</p>
                     </div>
                   </div>
@@ -246,8 +246,8 @@ export default function JobGrindingPage() {
                       <img src="/images/job-grinding/facility-details/location-clean.png" alt="Location" className="w-full h-full object-contain" />
                     </div>
                     <div>
-                      <span className="text-xs uppercase font-bold text-slate-500 tracking-wider block mb-1">LOCATION:</span>
-                      <p className="font-black text-[#133020] text-base sm:text-lg whitespace-nowrap">AJMER, RAJASTHAN</p>
+                      <span className="text-xs font-bold text-slate-500 tracking-wider block mb-1">Location:</span>
+                      <p className="font-black text-[#133020] text-base sm:text-lg whitespace-nowrap">Ajmer, Rajasthan</p>
                     </div>
                   </div>
                 </div>
@@ -257,17 +257,17 @@ export default function JobGrindingPage() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {[
                   {
-                    title: "JOB GRINDING",
+                    title: "Job grinding",
                     desc: "From understanding your raw material particle size to trials, grinding product.",
                     icon: "/images/job-grinding/facility-services/job-grinding-clean.png"
                   },
                   {
-                    title: "CUSTOM RECIPE DESIGN",
+                    title: "Custom recipe design",
                     desc: "We adjust dampening and sifting streams to achieve exact gluten.",
                     icon: "/images/job-grinding/facility-services/custom-recipe-design-clean.png"
                   },
                   {
-                    title: "COMPLIANT FACILITY",
+                    title: "Compliant facility",
                     desc: "Our plant is fully solar-powered, dust-free, and high test of quality standards.",
                     icon: "/images/job-grinding/facility-services/compliant-facility-clean.png"
                   }
@@ -276,7 +276,7 @@ export default function JobGrindingPage() {
                     <div className="w-14 h-14 sm:w-16 sm:h-16 mb-4 flex items-center justify-center">
                       <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
                     </div>
-                    <h4 className="font-heading font-black text-[#133020] text-sm sm:text-base mb-2.5 leading-snug uppercase tracking-tight">{service.title}</h4>
+                    <h4 className="font-heading font-black text-[#133020] text-sm sm:text-base mb-2.5 leading-snug tracking-tight">{service.title}</h4>
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">{service.desc}</p>
                   </div>
                 ))}
@@ -289,11 +289,11 @@ export default function JobGrindingPage() {
         {/* The Flour Milling Process */}
         <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-xl mx-auto space-y-2 mb-16 sm:mb-20">
-            <span className="text-xs font-black text-slate-500 uppercase tracking-widest">
-              Milling Process
+            <span className="text-xs font-black text-slate-500 tracking-widest">
+              Milling process
             </span>
             <h3 className="text-3xl sm:text-4xl font-heading font-black text-slate-900">
-              The Flour Milling Process
+              The flour milling process
             </h3>
           </div>
 
@@ -321,7 +321,7 @@ export default function JobGrindingPage() {
                     <div className={`hidden md:block w-1/2 pr-10 lg:pr-14 ${isLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                       {isLeft && (
                         <div className="w-full flex flex-col items-start">
-                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg uppercase tracking-wide mb-1 pl-4">
+                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg tracking-wide mb-1 pl-4">
                             {step.title}
                           </h4>
                           <div className="flex items-center w-full my-1">
@@ -339,7 +339,7 @@ export default function JobGrindingPage() {
                     <div className={`hidden md:block w-1/2 pl-10 lg:pl-14 ${!isLeft ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
                       {!isLeft && (
                         <div className="w-full flex flex-col items-start">
-                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg uppercase tracking-wide mb-1">
+                          <h4 className="font-heading font-black text-[#133020] text-base sm:text-lg tracking-wide mb-1">
                             {step.title}
                           </h4>
                           <div className="flex items-center w-full my-1">
@@ -355,7 +355,7 @@ export default function JobGrindingPage() {
 
                     {/* Mobile View (All steps on right of spine) */}
                     <div className="block md:hidden w-full pl-16 pr-2">
-                      <h4 className="font-heading font-black text-[#133020] text-base uppercase tracking-wide mb-1">
+                      <h4 className="font-heading font-black text-[#133020] text-base tracking-wide mb-1">
                         {step.title}
                       </h4>
                       <div className="flex items-center w-full my-1">
@@ -378,7 +378,7 @@ export default function JobGrindingPage() {
         <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-xl mx-auto space-y-2 mb-16">
             <h3 className="text-3xl font-heading font-black text-slate-900">
-              Services Offered
+              Services offered
             </h3>
             <p className="text-base text-slate-600 font-medium">
               Explore setup options, mill training courses, and product trial runs.
@@ -388,17 +388,17 @@ export default function JobGrindingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Job Grinding Setup",
+                title: "Job grinding setup",
                 desc: "With zero machinery investment, get your atta brand setup easily. Receive freshly milled premium flour packed in your custom sacks.",
                 imgPath: "/images/job-grinding/services-offered/jobgrinding_setup.png"
               },
               {
-                title: "Product Trials",
+                title: "Product trials",
                 desc: "We determine parameters, evaluate yield, quality, and consistency to find the best outcome.",
                 imgPath: "/images/job-grinding/services-offered/product-trials.png"
               },
               {
-                title: "Training Facility",
+                title: "Training facility",
                 desc: "We offer world-class practical courses on flour milling technology for operators. Full plant audit to ensure peak performance and compliance.",
                 imgPath: "/images/job-grinding/services-offered/training-facility.png"
               }
@@ -434,11 +434,11 @@ export default function JobGrindingPage() {
             <div className="relative z-10 p-6 sm:p-12 lg:p-14 space-y-8 flex flex-col justify-between h-full">
               
               <div className="space-y-4 max-w-2xl">
-                <span className="text-xs sm:text-sm font-black text-[#f7b032] tracking-widest uppercase">
-                  JOB GRINDING SERVICES
+                <span className="text-xs sm:text-sm font-black text-[#f7b032] tracking-widest">
+                  Job grinding services
                 </span>
                 <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-heading font-black text-white leading-tight">
-                  Have a Product You Need Ground?
+                  Have a product you need ground?
                 </h2>
                 <p className="text-base text-slate-200 max-w-xl font-normal leading-relaxed">
                   Share your raw material, required particle size, batch quantity, and quality specifications with our team. We will help you identify the right grinding process for trial production or commercial-scale requirements.
@@ -448,17 +448,17 @@ export default function JobGrindingPage() {
               {/* Icons Row - Horizontal swipeable on mobile, flex-wrap on desktop */}
               <div className="flex items-start gap-4 sm:gap-8 lg:gap-10 overflow-x-auto sm:overflow-visible sm:flex-wrap no-scrollbar -mx-6 px-8 sm:mx-0 sm:px-0 scroll-pl-8 sm:scroll-pl-0 pt-2 pb-2">
                 {[
-                  { icon: Beaker, label: "Trial to Bulk\nQuantities" },
-                  { icon: Crosshair, label: "Process\nRecommendation" },
-                  { icon: ShieldCheck, label: "Consistent\nQuality" },
-                  { icon: Leaf, label: "Hygienic\nHandling" },
-                  { icon: HeadphonesIcon, label: "Expert\nSupport" }
+                  { icon: Beaker, label: "Trial to bulk\nquantities" },
+                  { icon: Crosshair, label: "Process\nrecommendation" },
+                  { icon: ShieldCheck, label: "Consistent\nquality" },
+                  { icon: Leaf, label: "Hygienic\nhandling" },
+                  { icon: HeadphonesIcon, label: "Expert\nsupport" }
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col items-center gap-2 text-center group shrink-0 w-[84px] sm:w-auto snap-start">
                     <div className="w-12 h-12 rounded-full border border-[#f7b032]/50 bg-[#f7b032]/10 flex items-center justify-center shadow-xs group-hover:border-[#f7b032] group-hover:scale-105 transition-all">
                       <item.icon className="w-5 h-5 text-[#f7b032]" />
                     </div>
-                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 uppercase leading-tight whitespace-pre-line">{item.label}</span>
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 leading-tight whitespace-pre-line">{item.label}</span>
                   </div>
                 ))}
                 <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
@@ -470,23 +470,23 @@ export default function JobGrindingPage() {
                     href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20your%20Job%20Grinding%20service."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold uppercase tracking-wide text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+                    className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold tracking-wide text-xs sm:text-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
                   >
-                    <span className="text-center">DISCUSS YOUR GRINDING REQUIREMENT</span>
+                    <span className="text-center">Discuss your grinding requirement</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </a>
                   <Link
                     href="/contact"
-                    className="bg-black/40 hover:bg-black/60 border border-white/20 hover:border-[#f7b032]/50 text-white backdrop-blur-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded text-xs sm:text-sm font-bold uppercase tracking-wide transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto shadow-sm"
+                    className="bg-black/40 hover:bg-black/60 border border-white/20 hover:border-[#f7b032]/50 text-white backdrop-blur-sm px-6 sm:px-8 py-3.5 sm:py-4 rounded text-xs sm:text-sm font-bold tracking-wide transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto shadow-sm"
                   >
-                    <span className="text-center">SCHEDULE A PRODUCT TRIAL</span>
+                    <span className="text-center">Schedule a product trial</span>
                     <ArrowRight className="w-4 h-4 shrink-0" />
                   </Link>
                 </div>
                 
                 <div className="bg-black/40 backdrop-blur-md rounded-2xl p-4 sm:p-5 border border-white/10 w-full lg:max-w-sm">
                   <p className="text-white font-bold text-xs sm:text-sm leading-tight mb-1">
-                    Trusted by Businesses Worldwide
+                    Trusted by businesses worldwide
                   </p>
                   <p className="text-slate-300 text-[11px] sm:text-xs leading-relaxed font-normal">
                     Delivering dependable grinding solutions with quality, consistency, reliability, and confidentiality

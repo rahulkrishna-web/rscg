@@ -29,7 +29,7 @@ const whyRSCItems: WhyRSCItem[] = [
   },
   {
     number: "04",
-    title: "Economical Solutions",
+    title: "Economical solutions",
     description:
       "We provide cost-effective solutions designed to maximise operational efficiency and support profitable growth.",
   },
@@ -64,7 +64,7 @@ export default function WhyRSCGSection() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto text-left">
         {/* Left-aligned Header Section */}
         <header className="mb-10 sm:mb-14 text-left max-w-3xl">
-          <span className="block text-[#0E3321] font-bold text-[13px] sm:text-[14px] tracking-[0.16em] uppercase mb-3 text-left">
+          <span className="block text-[#0E3321] font-bold text-[13px] sm:text-[14px] tracking-[0.16em] mb-3 text-left">
             Why RSCG
           </span>
 

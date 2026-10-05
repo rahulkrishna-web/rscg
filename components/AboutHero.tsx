@@ -63,37 +63,37 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
     {
       end: 60,
       suffix: "+",
-      label: "Years of Expertise",
+      label: "Years of expertise",
       icon: Award,
     },
     {
       end: 275,
       suffix: "+",
-      label: "Projects in 10 Years",
+      label: "Projects in 10 years",
       icon: Cog,
     },
     {
       end: 1200,
       suffix: "+",
-      label: "Digital Mills Installed",
+      label: "Digital mills installed",
       icon: Building,
     },
     {
       end: 6,
       suffix: "+",
-      label: "Patented Technologies",
+      label: "Patented technologies",
       icon: ShieldCheck,
     },
     {
       end: 44,
       suffix: "+",
-      label: "Innovative Products",
+      label: "Innovative products",
       icon: Lightbulb,
     },
     {
       end: 10,
       suffix: "+",
-      label: "Years Export Excellence",
+      label: "Years export excellence",
       icon: Globe,
     },
   ];
@@ -129,11 +129,11 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
 
             {/* Main Heading */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-heading font-black tracking-tight leading-[1.12]">
-              <span className="text-white block uppercase drop-shadow-md">
-                Shaping Stone &amp; Building Trust
+              <span className="text-white block drop-shadow-md">
+                Shaping stone &amp; building trust
               </span>
-              <span className="text-slate-100 text-lg sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wide block mt-2 drop-shadow-sm">
-                For Six Decades and Beyond.
+              <span className="text-slate-100 text-lg sm:text-2xl md:text-3xl font-extrabold tracking-wide block mt-2 drop-shadow-sm">
+                for six decades and beyond.
               </span>
             </h1>
 

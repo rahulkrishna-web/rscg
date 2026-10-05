@@ -14,7 +14,7 @@ interface InfrastructureItem {
 const infrastructureItems: InfrastructureItem[] = [
   {
     id: "factory-unit",
-    eyebrow: "Factory Unit",
+    eyebrow: "Factory unit",
     heading: "Where engineering takes physical form.",
     description:
       "Our heavy engineering facility brings together fabrication, emery-stone manufacturing, silos, PEB components and specialised milling equipment turning engineered concepts into production-ready systems.",
@@ -22,7 +22,7 @@ const infrastructureItems: InfrastructureItem[] = [
   },
   {
     id: "digital-pilot-plant",
-    eyebrow: "Digital Pilot Plant",
+    eyebrow: "Digital pilot plant",
     heading: "Where technology meets the real mill.",
     description:
       "A full-scale environment for live demonstrations, milling trials, diagnostics and automation development giving new technologies a real production setting to perform, adapt and improve.",
@@ -30,7 +30,7 @@ const infrastructureItems: InfrastructureItem[] = [
   },
   {
     id: "corporate-headquarters",
-    eyebrow: "Choyal Tower · Corporate Headquarters",
+    eyebrow: "Choyal Tower · Corporate headquarters",
     heading: "Where the Group moves as one.",
     description:
       "Our corporate headquarters brings Marketing, Sales, IT, Media and Finance together connecting people, decisions and ideas that support the Group's operations and growth.",
@@ -38,7 +38,7 @@ const infrastructureItems: InfrastructureItem[] = [
   },
   {
     id: "workshop-advanced-manufacturing",
-    eyebrow: "Workshop · Advanced Manufacturing",
+    eyebrow: "Workshop · Advanced manufacturing",
     heading: "Where precision becomes production.",
     description:
       "A 46,000 sq. ft. manufacturing facility with CNC machining, welding, design, R&D and warehousing capabilities supporting precision engineering from development through production.",
@@ -57,8 +57,8 @@ export default function WalkthroughSection() {
       <div className="w-full mx-auto space-y-12">
         {/* Header */}
         <div className="max-w-4xl space-y-3">
-          <p className="text-xs sm:text-sm font-bold text-[#133a25] tracking-wider uppercase">
-            Our Infrastructure
+          <p className="text-xs sm:text-sm font-bold text-[#133a25] tracking-wider">
+            Our infrastructure
           </p>
           <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-black tracking-tight text-[#133a25] leading-[1.15] font-heading">
             A company you can <br className="hidden sm:block" />
@@ -111,7 +111,7 @@ export default function WalkthroughSection() {
 
                 {/* Content Layer (initially shows eyebrow & heading, reveals description on hover) */}
                 <div className="absolute inset-0 p-6 sm:p-8 lg:p-9 flex flex-col justify-end z-10 text-white pointer-events-none">
-                  <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-[#FFAA17] mb-2 flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+                  <span className="text-xs sm:text-sm font-bold tracking-wider text-[#FFAA17] mb-2 flex items-center gap-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
                     <span className="w-2 h-2 rounded-full bg-[#FFAA17]" />
                     {item.eyebrow}
                   </span>

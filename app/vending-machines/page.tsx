@@ -37,7 +37,7 @@ const modelsData = {
     variants: {
       Eco: {
         name: "Eco",
-        subtitle: "Manual Feeding",
+        subtitle: "Manual feeding",
         image: "/images/vending-machines/floura_eco.png",
         specs: [
           { label: "Size (L X W X H)", value: "8'-1'' x 3' x 7'-5\"", icon: Box },
@@ -56,7 +56,7 @@ const modelsData = {
       },
       Auto: {
         name: "Auto",
-        subtitle: "Automatic Feeding",
+        subtitle: "Automatic feeding",
         image: "/images/vending-machines/floura_prime.jpg", // Fallback image for Auto since specific one wasn't provided, or assume prime is Auto
         specs: [
           { label: "Size (L X W X H)", value: '10\' x 3\'-4" x 9\'-2"', icon: Box },
@@ -82,7 +82,7 @@ const modelsData = {
     variants: {
       Eco: {
         name: "Eco",
-        subtitle: "Manual Feeding",
+        subtitle: "Manual feeding",
         image: "/images/vending-machines/floura_eco.png", 
         specs: [
           { label: "Size (L X W X H)", value: '10\' x 3\'-4" x 9\'-2"', icon: Box },
@@ -101,7 +101,7 @@ const modelsData = {
       },
       Auto: {
         name: "Auto",
-        subtitle: "Automatic Feeding",
+        subtitle: "Automatic feeding",
         image: "/images/vending-machines/floura_prime.jpg",
         specs: [
           { label: "Size (L X W X H)", value: '10\' x 3\'-4" x 9\'-2"', icon: Box },
@@ -177,12 +177,12 @@ export default function BatchProductionPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              BATCH PRODUCTION
+              Batch production
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Batch Production <span className="text-[#f7b032]">Systems</span>
+              Batch production <span className="text-[#f7b032]">systems</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Engineered solutions for efficient, hygienic, and scalable batch processing in modern flour and food operations.
@@ -210,7 +210,7 @@ export default function BatchProductionPage() {
               <BarChart3 className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Consistent Batch Output</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Consistent batch output</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Uncompromised quality.</p>
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function BatchProductionPage() {
               <ShieldCheck className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Hygienic Processing</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Hygienic processing</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Sanitary design standards.</p>
             </div>
           </div>
@@ -230,7 +230,7 @@ export default function BatchProductionPage() {
               <Settings className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Commercial Grade</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Commercial grade</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Robust and dependable.</p>
             </div>
           </div>
@@ -245,7 +245,7 @@ export default function BatchProductionPage() {
               <BarChart3 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Consistent Batch Output</h4>
+              <h4 className="text-base font-bold text-slate-900">Consistent batch output</h4>
               <p className="text-sm text-slate-600 font-medium">Uncompromised quality.</p>
             </div>
           </div>
@@ -255,7 +255,7 @@ export default function BatchProductionPage() {
               <ShieldCheck className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Hygienic Processing</h4>
+              <h4 className="text-base font-bold text-slate-900">Hygienic processing</h4>
               <p className="text-sm text-slate-600 font-medium">Sanitary design standards.</p>
             </div>
           </div>
@@ -265,7 +265,7 @@ export default function BatchProductionPage() {
               <Settings className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Commercial Grade</h4>
+              <h4 className="text-base font-bold text-slate-900">Commercial grade</h4>
               <p className="text-sm text-slate-600 font-medium">Robust and dependable.</p>
             </div>
           </div>
@@ -319,7 +319,7 @@ export default function BatchProductionPage() {
                 <div className="w-8 h-8 rounded border border-slate-200 flex items-center justify-center bg-white shadow-sm">
                   <Archive className="w-4 h-4 text-slate-600" />
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900">1. Choose Model</h3>
+                <h3 className="text-lg font-extrabold text-slate-900">1. Choose model</h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -365,7 +365,7 @@ export default function BatchProductionPage() {
                 <div className="w-8 h-8 rounded border border-slate-200 flex items-center justify-center bg-white shadow-sm">
                   <ListFilter className="w-4 h-4 text-slate-600" />
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-900">2. Choose Variant</h3>
+                <h3 className="text-lg font-extrabold text-slate-900">2. Choose variant</h3>
               </div>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -386,7 +386,7 @@ export default function BatchProductionPage() {
                       <div className="flex flex-col flex-1">
                         <span className="font-black text-xl">{vari}</span>
                         <span className={`text-sm mt-1 font-medium ${isActive ? "text-[#C1C9C3]" : "text-slate-500"}`}>
-                          {vari === "Eco" ? "Manual Feeding" : "Automatic Feeding"}
+                          {vari === "Eco" ? "Manual feeding" : "Automatic feeding"}
                         </span>
                       </div>
                       <div className={`p-3 rounded-xl ${isActive ? "bg-white/10" : "bg-slate-100 group-hover:bg-[#154627]/5"}`}>
@@ -440,15 +440,15 @@ export default function BatchProductionPage() {
               <div className="flex flex-wrap items-center gap-3 pt-3">
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
                 </div>
               </div>
             </div>
@@ -467,9 +467,6 @@ export default function BatchProductionPage() {
                 ( {activeModel} {activeVariant} )
               </span>
             </h3>
-            <button className="flex items-center gap-2 text-sm font-bold text-[#154627] border border-[#154627]/20 hover:bg-[#154627]/5 px-4 py-2.5 rounded-xl transition-colors cursor-pointer bg-white">
-              <RotateCw className="w-4 h-4" /> Compare Variants
-            </button>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-0">

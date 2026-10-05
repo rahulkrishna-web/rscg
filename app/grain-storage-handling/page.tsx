@@ -11,25 +11,25 @@ const handlingCards = [
     title: "Atta Flour Silo",
     slug: "atta-flour-silo",
     image: "/images/silos/atta-silo.png",
-    sub: "Flour Storage Silo"
+    sub: "Flour storage silo"
   },
   {
     title: "Bran / Refraction Silo",
     slug: "bran-refraction-silo",
     image: "/images/silos/bran-silo.png",
-    sub: "Mild-Steel Storage Silo"
+    sub: "Mild-steel storage silo"
   },
   {
     title: "Conditioning Silo",
     slug: "conditioning-silo",
     image: "/images/silos/conditioning-silo.png",
-    sub: "Conditioned Grain Holding"
+    sub: "Conditioned grain holding"
   },
   {
     title: "Grain Silo - MS",
     slug: "grain-silo-ms",
     image: "/images/silos/grain-silo.png",
-    sub: "Heavy-Duty Storage Silo"
+    sub: "Heavy-duty storage silo"
   }
 ];
 
@@ -75,12 +75,12 @@ export default function GrainStorageHandlingPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              SILOS DIVISION
+              Silos division
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Storage & Handling Silos
+              Storage & handling silos
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Storage and handling silos engineered for reliable material flow, controlled conditioning, and efficient plant performance. Explore bran, atta, conditioning, and grain silos designed for smooth mill operations.
@@ -105,8 +105,8 @@ export default function GrainStorageHandlingPage() {
               <Database className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Bran, Atta &amp; Grain</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Conditioning Silos</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Bran, atta &amp; grain</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Conditioning silos</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
@@ -114,8 +114,8 @@ export default function GrainStorageHandlingPage() {
               <RefreshCw className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Controlled Flow</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Storage &amp; Conveying</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Controlled flow</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Storage &amp; conveying</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
@@ -123,8 +123,8 @@ export default function GrainStorageHandlingPage() {
               <Factory className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Turnkey Silos</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Built for Milling Plants</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Turnkey silos</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Built for milling plants</p>
             </div>
           </div>
         </div>
@@ -138,8 +138,8 @@ export default function GrainStorageHandlingPage() {
               <Database className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Bran, Atta &amp; Grain</h4>
-              <p className="text-sm text-slate-600 font-medium">Conditioning Silos</p>
+              <h4 className="text-base font-bold text-slate-900">Bran, atta &amp; grain</h4>
+              <p className="text-sm text-slate-600 font-medium">Conditioning silos</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
@@ -147,8 +147,8 @@ export default function GrainStorageHandlingPage() {
               <RefreshCw className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Controlled Flow</h4>
-              <p className="text-sm text-slate-600 font-medium">Storage &amp; Conveying</p>
+              <h4 className="text-base font-bold text-slate-900">Controlled flow</h4>
+              <p className="text-sm text-slate-600 font-medium">Storage &amp; conveying</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
@@ -156,8 +156,8 @@ export default function GrainStorageHandlingPage() {
               <Factory className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Turnkey Silos</h4>
-              <p className="text-sm text-slate-600 font-medium">Built for Milling Plants</p>
+              <h4 className="text-base font-bold text-slate-900">Turnkey silos</h4>
+              <p className="text-sm text-slate-600 font-medium">Built for milling plants</p>
             </div>
           </div>
         </div>
@@ -205,13 +205,13 @@ export default function GrainStorageHandlingPage() {
                     <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-lg transition-colors leading-snug">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-slate-400 font-bold uppercase tracking-wider">
+                    <p className="text-xs text-slate-400 font-bold tracking-wider">
                       {card.sub}
                     </p>
                   </div>
 
                   <div className="flex items-center text-xs font-bold text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto">
-                    <span>View Specifications</span>
+                    <span>View specifications</span>
                     <ArrowRight className="h-3 w-3" />
                   </div>
                 </div>
@@ -231,12 +231,12 @@ export default function GrainStorageHandlingPage() {
             {/* Left Content */}
             <div className="flex-1 flex flex-col justify-center space-y-8 p-8 lg:p-16">
               <div className="space-y-4">
-                <div className="flex items-center gap-3 text-sm font-bold text-[#eab308] uppercase tracking-widest">
+                <div className="flex items-center gap-3 text-sm font-bold text-[#eab308] tracking-widest">
                   <span className="w-10 h-[3px] bg-[#eab308]"></span>
-                  SILO SOLUTIONS
+                  Silo solutions
                 </div>
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-black text-[#0a3118] leading-[1.1] tracking-tight">
-                  Let’s Design the Right<br className="hidden lg:block"/>Silo for Your Plant.
+                  Let’s design the right<br className="hidden lg:block"/>silo for your plant.
                 </h2>
                 <p className="text-slate-600 font-medium leading-relaxed max-w-xl text-lg">
                   From capacity planning to layout, materials and integration - our experts help you build efficient, future-ready storage systems.
@@ -249,28 +249,28 @@ export default function GrainStorageHandlingPage() {
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <Headset className="w-6 h-6" />
                   </div>
-                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Expert<br/>Consultation</h4>
+                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Expert<br/>consultation</h4>
                   <p className="text-xs text-slate-500 font-medium">Get recommendations tailored to your process and capacity.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <LayoutTemplate className="w-6 h-6" />
                   </div>
-                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Custom<br/>Design & Layout</h4>
+                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Custom<br/>design & layout</h4>
                   <p className="text-xs text-slate-500 font-medium">Optimized designs that fit your plant and operations.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
-                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Reliable<br/>Performance</h4>
+                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">Reliable<br/>performance</h4>
                   <p className="text-xs text-slate-500 font-medium">Engineered for safety, smooth flow and long-lasting use.</p>
                 </div>
                 <div className="space-y-3">
                   <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center text-slate-700">
                     <Settings2 className="w-6 h-6" />
                   </div>
-                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">End-to-End<br/>Support</h4>
+                  <h4 className="font-extrabold text-[#0a3118] text-sm leading-tight">End-to-end<br/>support</h4>
                   <p className="text-xs text-slate-500 font-medium">From selection to installation and after-sales service.</p>
                 </div>
               </div>
@@ -302,7 +302,7 @@ export default function GrainStorageHandlingPage() {
                    href="/contact"
                    className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
                  >
-                   <span>Discuss Your Requirement</span>
+                   <span>Discuss your requirement</span>
                    <ArrowRight className="w-4 h-4" />
                  </Link>
                </div>
@@ -318,7 +318,7 @@ export default function GrainStorageHandlingPage() {
                    <Phone className="w-5 h-5" />
                  </div>
                  <div>
-                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Call Us</p>
+                   <p className="text-xs text-slate-500 font-bold tracking-wider">Call us</p>
                    <p className="text-sm font-extrabold text-[#0a3118]">+91 91161 44665</p>
                  </div>
                </div>
@@ -328,7 +328,7 @@ export default function GrainStorageHandlingPage() {
                    <Mail className="w-5 h-5" />
                  </div>
                  <div>
-                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Email Us</p>
+                   <p className="text-xs text-slate-500 font-bold tracking-wider">Email us</p>
                    <p className="text-sm font-extrabold text-[#0a3118]">info@rschoyalgroup.com</p>
                  </div>
                </div>
@@ -338,7 +338,7 @@ export default function GrainStorageHandlingPage() {
                    <MessageCircle className="w-5 h-5" />
                  </div>
                  <div>
-                   <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Chat on WhatsApp</p>
+                   <p className="text-xs text-slate-500 font-bold tracking-wider">Chat on WhatsApp</p>
                    <p className="text-sm font-extrabold text-[#0a3118]">+91 91161 44665</p>
                  </div>
                </div>

@@ -14,7 +14,7 @@ interface LeaderCard {
 
 const leaders: LeaderCard[] = [
   {
-    tag: "CO-FOUNDER & EX-CHAIRMAN",
+    tag: "Co-founder & ex-chairman",
     name: "Late Mr. B. M. Choyal",
     description:
       "One of the founders who helped establish Choyal’s early foundation in indigenous emery stone and milling technology, setting the direction for generations of engineering.",
@@ -22,7 +22,7 @@ const leaders: LeaderCard[] = [
     link: "/ex-chairman",
   },
   {
-    tag: "CO-FOUNDER & EX-MANAGING DIRECTOR",
+    tag: "Co-founder & ex-managing director",
     name: "Late Shri R. D. Sharma",
     description:
       "A founding force behind the company’s growth, helping transform early manufacturing capabilities into a disciplined industrial enterprise.",
@@ -30,7 +30,7 @@ const leaders: LeaderCard[] = [
     link: "/ex-md",
   },
   {
-    tag: "CHAIRMAN & MANAGING DIRECTOR",
+    tag: "Chairman & managing director",
     name: "Mr. R. S. Choyal",
     description:
       "Carrying the legacy into a new era through advanced machinery, patented innovations, complete plants and digitally connected milling systems.",
@@ -48,8 +48,8 @@ export default function LeadershipSection() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Section Header */}
         <div className="max-w-3xl mb-12 sm:mb-14">
-          <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.08em] uppercase text-[#0B2C1C] mb-3">
-            Our Leadership &amp; Heritage
+          <span className="inline-block text-xs sm:text-sm font-bold tracking-[0.08em] text-[#0B2C1C] mb-3">
+            Our leadership &amp; heritage
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-heading font-black tracking-tight text-[#0B2C1C] leading-[1.2] mb-4">
             A legacy that{" "}
@@ -81,7 +81,7 @@ export default function LeadershipSection() {
 
                 {/* Card Text Content */}
                 <div className="p-6 sm:p-7 pb-4">
-                  <div className="text-xs font-bold text-[#FFAA17] tracking-[0.06em] uppercase mb-2">
+                  <div className="text-xs font-bold text-[#FFAA17] tracking-[0.06em] mb-2">
                     {leader.tag}
                   </div>
                   <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 leading-snug mb-3">

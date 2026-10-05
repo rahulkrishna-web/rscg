@@ -49,9 +49,9 @@ export default function EmeryStones() {
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
             
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              EMERY STONES DIVISION
+              Emery stones division
             </div>
 
             {/* Title */}
@@ -85,15 +85,15 @@ export default function EmeryStones() {
       <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision Grinding</h3>
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
           </div>
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Consistent Finish</h3>
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Consistent finish</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Consistent flour quality across commercial stone mills.</p>
           </div>
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Long-Lasting Performance</h3>
+            <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Long-lasting performance</h3>
             <p className="text-xs text-slate-500 leading-relaxed">Long service life across commercial stone mills.</p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function EmeryStones() {
         <div className="w-full max-w-[1440px] mx-auto space-y-16">
           <div className="text-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-slate-900 tracking-tight">
-              Select your Category
+              Select your category
             </h2>
             <div className="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded-full"></div>
           </div>
@@ -133,7 +133,7 @@ export default function EmeryStones() {
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
-                  Horizontal Emery Stones - Daniya Type
+                  Horizontal emery stones - Daniya type
                 </h3>
                 <p className="text-xs text-slate-400 mt-2 font-medium">
                   Designed and manufactured with premium abrasives to maintain natural wheat aroma & taste.
@@ -155,7 +155,7 @@ export default function EmeryStones() {
               </div>
               <div className="p-6 text-center">
                 <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
-                  Horizontal Emery Stones - Agate/Sheller Type
+                  Horizontal emery stones - Agate/sheller type
                 </h3>
                 <p className="text-xs text-slate-400 mt-2 font-medium">
                   Agate shelling stones optimized for de-husking, pulse splitting, and industrial mill pre-cleaning.
@@ -178,7 +178,7 @@ export default function EmeryStones() {
               <div className="p-6 text-center flex flex-col h-full justify-between">
                 <div>
                   <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
-                    Emery Stone Dresser
+                    Emery stone dresser
                   </h3>
                   <p className="text-xs text-slate-400 mt-2 font-medium">
                     Engineered to restore and maintain the cutting profile of emery stones for consistent performance.

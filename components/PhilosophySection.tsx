@@ -16,7 +16,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "01",
     title: "Responsibility",
-    subtitle: "COMMITMENT & TRUST",
+    subtitle: "Commitment & trust",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/responsibility.png",
     description:
@@ -25,7 +25,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "02",
     title: "Integrity",
-    subtitle: "ETHICS & CONDUCT",
+    subtitle: "Ethics & conduct",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/integrity.png",
     description:
@@ -34,7 +34,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "03",
     title: "Innovation",
-    subtitle: "R&D & TECH",
+    subtitle: "R&D & tech",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/innovation.png",
     description:
@@ -43,7 +43,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "04",
     title: "Empowerment",
-    subtitle: "MADE IN INDIA",
+    subtitle: "Made in India",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/empowerment.png",
     description:
@@ -52,7 +52,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "05",
     title: "Community",
-    subtitle: "SOCIAL IMPACT",
+    subtitle: "Social impact",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/community.png",
     description:
@@ -61,7 +61,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "06",
     title: "Fairness",
-    subtitle: "EQUAL OPPORTUNITY",
+    subtitle: "Equal opportunity",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/fairness.png",
     description:
@@ -70,7 +70,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "07",
     title: "Growth",
-    subtitle: "SUSTAINABLE PROGRESS",
+    subtitle: "Sustainable progress",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/growth.png",
     description:
@@ -79,7 +79,7 @@ const philosophyValues: PhilosophyItem[] = [
   {
     number: "08",
     title: "Service",
-    subtitle: "LIFELONG PARTNERSHIP",
+    subtitle: "Lifelong partnership",
     color: "#063831",
     icon: "/images/about/philosophy/icons/v2/service.png",
     description:
@@ -111,7 +111,7 @@ export default function PhilosophySection() {
           <h3 className="text-xl sm:text-2xl font-bold text-[#111827] tracking-tight group-hover:text-slate-900 transition-colors">
             {card.title}
           </h3>
-          <p className="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest uppercase">
+          <p className="text-[11px] sm:text-xs font-semibold text-slate-400 tracking-widest">
             {card.subtitle}
           </p>
         </div>
@@ -138,8 +138,8 @@ export default function PhilosophySection() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         {/* Header Section */}
         <div className="max-w-3xl mb-12 sm:mb-16">
-          <p className="text-sm sm:text-base font-bold text-slate-600 tracking-wide uppercase mb-3">
-            Our Philosophy
+          <p className="text-sm sm:text-base font-bold text-slate-600 tracking-wide mb-3">
+            Our philosophy
           </p>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight leading-tight mb-4 font-heading">

@@ -49,7 +49,7 @@ export default function ContactPage() {
         {/* Banner Text Content */}
         <div className="relative z-10 px-6 sm:px-12 max-w-3xl mx-auto space-y-3 pb-6">
           <h1 className="text-3xl sm:text-4xl lg:text-[46px] font-black text-white tracking-tight leading-tight font-heading">
-            Contact Us
+            Contact us
           </h1>
           <p className="text-slate-100 text-sm sm:text-base lg:text-lg leading-relaxed font-normal max-w-2xl mx-auto">
             Have a question, project or milling requirement? Our team is here to
@@ -65,7 +65,7 @@ export default function ContactPage() {
             {/* Left Column: Contact Details & Map */}
             <div className="lg:col-span-5 space-y-8">
               <div>
-                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider uppercase block mb-1">
+                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider block mb-1">
                   Contact
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
@@ -85,8 +85,8 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
-                      Corporate Headquarters
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
+                      Corporate headquarters
                     </span>
                     <p className="text-sm font-semibold text-slate-800 leading-snug">
                       Choyal Tower, 1180/28, Shalimar Colony, Adarsh Nagar Ajmer -
@@ -101,8 +101,8 @@ export default function ContactPage() {
                     <MapPin className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
-                      Factory Unit
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
+                      Factory unit
                     </span>
                     <p className="text-sm font-semibold text-slate-800 leading-snug">
                       Choyal Grinding Solution Pvt. Ltd. Arjunpura - Khalsa,
@@ -117,7 +117,7 @@ export default function ContactPage() {
                     <Mail className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
                       Email
                     </span>
                     <a
@@ -135,7 +135,7 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-slate-900" />
                   </div>
                   <div className="space-y-0.5">
-                    <span className="text-[11px] font-bold text-slate-400 tracking-wider uppercase block">
+                    <span className="text-[11px] font-bold text-slate-400 tracking-wider block">
                       Phone
                     </span>
                     <a
@@ -176,7 +176,7 @@ export default function ContactPage() {
             {/* Right Column: Enquiry Form */}
             <div className="lg:col-span-7 space-y-6 lg:pl-6">
               <div>
-                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider uppercase block mb-1">
+                <span className="text-xs sm:text-sm font-bold text-[#0E3321] tracking-wider block mb-1">
                   Enquiry
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mb-2">
@@ -282,10 +282,10 @@ export default function ContactPage() {
                         Plant upgrade or improvement
                       </option>
                       <option value="Flour Mill Automation">
-                        Flour Mill Automation
+                        Flour mill automation
                       </option>
                       <option value="Consultancy Services">
-                        Consultancy Services
+                        Consultancy services
                       </option>
                     </select>
                     <ChevronDown className="w-4 h-4 text-slate-400 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
@@ -314,7 +314,7 @@ export default function ContactPage() {
                   disabled={isSubmitting}
                   className="w-full bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-4 rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 text-sm sm:text-base cursor-pointer hover:scale-[1.005] active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
                 >
-                  <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                  <span>{isSubmitting ? "Sending..." : "Send message"}</span>
                 </button>
 
                 <p className="text-xs text-slate-400 text-center pt-1 font-normal">

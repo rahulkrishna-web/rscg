@@ -84,10 +84,10 @@ export default function ProductDetailsPage() {
       <div className="min-h-screen bg-brand-bg text-slate-800 flex flex-col">
         <Header />
         <div className="flex-1 flex flex-col items-center justify-center p-8 pt-32 space-y-4">
-          <h2 className="text-2xl font-bold">Product Not Found</h2>
+          <h2 className="text-2xl font-bold">Product not found</h2>
           <p className="text-slate-500">The product you are looking for does not exist in our sitemap catalog.</p>
           <Link href="/catalog" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
-            Back to Catalog
+            Back to catalog
           </Link>
         </div>
         <Footer />
@@ -155,7 +155,7 @@ export default function ProductDetailsPage() {
 
               {product.features && product.features.length > 0 && (
                 <div className="space-y-4">
-                  <h2 className="text-2xl font-heading font-bold text-[#134e4a]">Key Features</h2>
+                  <h2 className="text-2xl font-heading font-bold text-[#134e4a]">Key features</h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3">
                     {product.features.map((f, idx) => (
                       <div key={idx} className="flex items-start gap-2">
@@ -181,15 +181,15 @@ export default function ProductDetailsPage() {
           <div className="w-full max-w-6xl mx-auto flex flex-wrap items-center justify-end gap-3">
              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                <ShieldCheck className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+               <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
              </div>
              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                <CheckCircle className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+               <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
              </div>
              <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                <CheckCircle className="w-5 h-5 text-[#1eb557]" />
-               <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+               <span className="text-[13px] font-bold text-slate-700">After sales support</span>
              </div>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function ProductDetailsPage() {
             {/* Left: Technical Specs Table */}
             <div className="lg:col-span-7 space-y-4">
               <div className="flex items-center border-b border-slate-300 pb-2">
-                 <h2 className="text-2xl font-heading font-bold text-[#134e4a] pr-4 bg-[#F7F9F6]">Technical Specifications</h2>
+                 <h2 className="text-2xl font-heading font-bold text-[#134e4a] pr-4 bg-[#F7F9F6]">Technical specifications</h2>
               </div>
               <div className="bg-slate-100/50 rounded-xl overflow-hidden border border-slate-200">
                 <table className="w-full text-sm">
@@ -256,29 +256,29 @@ export default function ProductDetailsPage() {
                   className="h-12 flex-1 w-full sm:w-auto flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
                   <PackageCheck className="w-4 h-4 text-slate-900" />
-                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+                  {addedMessage ? "Added to quote!" : "Add to quote list"}
                 </button>
                 <button
                   onClick={handleWhatsAppEnquiry}
                   className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  WhatsApp Enquiry
+                  WhatsApp enquiry
                 </button>
               </div>
 
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
                 </div>
               </div>
             </div>
@@ -295,12 +295,12 @@ export default function ProductDetailsPage() {
                   <Settings className="w-6 h-6 text-[#f7b032]" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-heading font-black text-white">Smart Milling. Smarter Business.</h3>
+                  <h3 className="text-xl font-heading font-black text-white">Smart milling. Smarter business.</h3>
                   <p className="text-white/85 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
                 </div>
              </div>
              <button onClick={() => router.push('/contact')} className="relative z-10 inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 hidden sm:flex transition-all duration-200 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wide cursor-pointer">
-                <span>Discuss Your Requirement</span>
+                <span>Discuss your requirement</span>
                 <ArrowRight className="w-4 h-4" />
              </button>
            </div>
@@ -327,7 +327,7 @@ export default function ProductDetailsPage() {
                 alt={product.title}
                 className="object-contain max-h-full max-w-full hover:scale-105 transition-transform duration-300"
               />
-              <span className="absolute top-6 left-6 bg-brand-primary/10 text-brand-primary border border-brand-primary/15 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider">
+              <span className="absolute top-6 left-6 bg-brand-primary/10 text-brand-primary border border-brand-primary/15 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider">
                 {activeCategory?.name}
               </span>
             </div>
@@ -349,8 +349,8 @@ export default function ProductDetailsPage() {
             {/* Variants Selection */}
             {product.variants && product.variants.length > 0 && (
               <div className="space-y-4">
-                <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
-                  Available Models & Specifications
+                <h3 className="text-xs font-bold text-slate-400 tracking-widest">
+                  Available models & specifications
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {product.variants.map((v, idx) => (
@@ -391,7 +391,7 @@ export default function ProductDetailsPage() {
                 className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
               >
                 <PackageCheck className="w-4 h-4 text-slate-900" />
-                {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+                {addedMessage ? "Added to quote!" : "Add to quote list"}
               </button>
 
               <button
@@ -399,22 +399,22 @@ export default function ProductDetailsPage() {
                 className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4" />
-                WhatsApp Enquiry
+                WhatsApp enquiry
               </button>
             </div>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
               </div>
               <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                 <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                <span className="text-[13px] font-bold text-slate-700">After sales support</span>
               </div>
             </div>
 
@@ -424,7 +424,7 @@ export default function ProductDetailsPage() {
               <div className="flex border-b border-slate-100 bg-slate-50/50">
                 <button
                   onClick={() => setActiveTab("description")}
-                  className={`px-6 sm:px-8 py-5 text-xs sm:text-sm font-black uppercase tracking-widest transition-all cursor-pointer border-b-2 ${
+                  className={`px-6 sm:px-8 py-5 text-xs sm:text-sm font-bold tracking-widest transition-all cursor-pointer border-b-2 ${
                     activeTab === "description"
                       ? "border-brand-primary text-brand-primary bg-white"
                       : "border-transparent text-slate-400 hover:text-slate-600"
@@ -434,13 +434,13 @@ export default function ProductDetailsPage() {
                 </button>
                 <button
                   onClick={() => setActiveTab("additionalInfo")}
-                  className={`px-6 sm:px-8 py-5 text-xs sm:text-sm font-black uppercase tracking-widest transition-all cursor-pointer border-b-2 ${
+                  className={`px-6 sm:px-8 py-5 text-xs sm:text-sm font-bold tracking-widest transition-all cursor-pointer border-b-2 ${
                     activeTab === "additionalInfo"
                       ? "border-brand-primary text-brand-primary bg-white"
                       : "border-transparent text-slate-400 hover:text-slate-600"
                   }`}
                 >
-                  Additional Information
+                  Additional information
                 </button>
               </div>
 
@@ -464,7 +464,7 @@ export default function ProductDetailsPage() {
                           <tbody>
                             {Object.entries(product.additionalInfo).map(([key, value]) => (
                               <tr key={key} className="border-b border-slate-100 last:border-0 hover:bg-slate-50/50 transition-colors">
-                                <td className="bg-slate-50/60 px-4 sm:px-6 py-4 text-xs sm:text-sm font-black text-slate-500 uppercase tracking-wider w-1/3 border-r border-slate-100">
+                                <td className="bg-slate-50/60 px-4 sm:px-6 py-4 text-xs sm:text-sm font-bold text-slate-500 tracking-wider w-1/3 border-r border-slate-100">
                                   {key}
                                 </td>
                                 <td className="px-4 sm:px-6 py-4 text-xs sm:text-sm text-slate-600 font-semibold">
@@ -506,7 +506,7 @@ export default function ProductDetailsPage() {
           {/* Header Row */}
           <div className="flex items-center justify-between">
             <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-900 tracking-tight">
-              Related Products
+              Related products
             </h2>
             <div className="flex items-center gap-2">
               <button 
@@ -554,12 +554,12 @@ export default function ProductDetailsPage() {
                         <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-base transition-colors leading-snug">
                           {p.title}
                         </h3>
-                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-wider">
+                        <p className="text-[10px] text-slate-400 font-bold tracking-wider">
                           {cat?.name || "Products"}
                         </p>
                       </div>
                       <div className="flex items-center text-xs font-bold text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto">
-                        <span>View Product</span>
+                        <span>View product</span>
                         <ArrowRight className="h-3 w-3" />
                       </div>
                     </div>

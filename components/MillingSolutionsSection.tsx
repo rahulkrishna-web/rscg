@@ -10,22 +10,22 @@ export default function MillingSolutionsSection() {
 
   const topCards = [
     {
-      tag: "01 · CREATE",
-      heading: "Build a Complete Flour Plant",
+      tag: "01 · Create",
+      heading: "Build a complete flour plant",
       desc: "From planning and layout to installation and commissioning, we build your complete milling plant with one experienced team.",
       cta: "Explore Turnkey Solutions",
       href: "/turnkey-projects"
     },
     {
-      tag: "02 · EXPAND",
-      heading: "Upgrade What You Already Have",
+      tag: "02 · Expand",
+      heading: "Upgrade what you already have",
       desc: "Improve capacity and efficiency by upgrading individual processes without rebuilding your entire plant.",
       cta: "See Systems by Section",
       href: "/flour-processing"
     },
     {
-      tag: "03 · SOLVE",
-      heading: "Discover the Right Milling Solution",
+      tag: "03 · Solve",
+      heading: "Discover the right milling solution",
       desc: "Choose the right milling solutions for your process, capacity and production needs from individual equipment to complete systems.",
       cta: "Explore The Product Range",
       href: "/catalog"
@@ -37,7 +37,7 @@ export default function MillingSolutionsSection() {
       num: "01",
       heading: "Stone milling is our foundation.",
       desc: "Choyal built its expertise in emery stones, milling geometry, grain flow and grinding conditions, understanding the fundamentals that shape flour quality and milling performance.",
-      img: "/images/stone-milling/emery-stones.png",
+      img: "/images/stone-milling/emery-stones-v2.png",
       alt: "Emery stones milling foundation",
       href: "/emery-stones"
     },
@@ -45,7 +45,7 @@ export default function MillingSolutionsSection() {
       num: "02",
       heading: "Innovation brought stone milling into the digital age.",
       desc: "The expertise led to WonderMill, the world's first digital stone mill, combining traditional stone milling with digital control, automation and intelligent monitoring.",
-      img: "/images/stone-milling/wondermill.png",
+      img: "/images/stone-milling/digital-era-v2.png",
       alt: "Digital stone mill innovation",
       href: "/flour-mills"
     },
@@ -53,7 +53,7 @@ export default function MillingSolutionsSection() {
       num: "03",
       heading: "Experience evolved into engineered solutions.",
       desc: "As milling needs evolved, Choyal expanded into precision flour mills, advanced machinery and turnkey solutions, combining engineering, process knowledge and decades of mill-floor experience.",
-      img: "/images/stone-milling/turnkey.png",
+      img: "/images/stone-milling/turnkey-solution-v2.png",
       alt: "Engineered milling solutions",
       href: "/turnkey-projects"
     }
@@ -142,10 +142,16 @@ export default function MillingSolutionsSection() {
 
       {/* Traditional Millstone Assembly (Floating on the right side) */}
       <div 
-        className="hidden lg:block absolute -right-[80px] xl:-right-[20px] 2xl:right-[40px] -bottom-[30px] xl:bottom-[10px] 2xl:bottom-[20px] w-[540px] xl:w-[640px] 2xl:w-[720px] h-[540px] xl:h-[640px] 2xl:h-[720px] pointer-events-none select-none z-0"
+        className="hidden lg:block absolute -right-[100px] xl:-right-[40px] 2xl:right-[20px] -bottom-[30px] xl:bottom-[10px] 2xl:bottom-[20px] w-[560px] xl:w-[660px] 2xl:w-[740px] h-[560px] xl:h-[660px] 2xl:h-[740px] pointer-events-none select-none z-0"
         aria-hidden="true"
       >
-        <div className="relative w-full h-full">
+        <div 
+          className="relative w-full h-full"
+          style={{
+            WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 16%, rgba(0,0,0,0.55) 36%, #000 64%)',
+            maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 16%, rgba(0,0,0,0.55) 36%, #000 64%)',
+          }}
+        >
           <Image
             src="/images/stone-milling/stone-milling-section-bg.png"
             alt="Traditional Stone Millstone Assembly"
@@ -154,6 +160,16 @@ export default function MillingSolutionsSection() {
             priority={false}
           />
         </div>
+
+        {/* Soft luminous white gradient & glow overlay directly washing over the chakki */}
+        <div 
+          className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#FAF9F5] via-[#FAF9F5]/70 to-transparent" 
+          aria-hidden="true"
+        />
+        <div 
+          className="absolute -left-20 top-1/4 w-[360px] h-[360px] rounded-full bg-white/75 blur-3xl pointer-events-none" 
+          aria-hidden="true"
+        />
       </div>
 
       {/* =========================================================
@@ -168,7 +184,7 @@ export default function MillingSolutionsSection() {
           {/* Section Header */}
           <div className="space-y-3 max-w-3xl">
             <span className="text-sm font-semibold text-[#0E3321] tracking-wide block">
-              End-to-End Milling Solutions
+              End-to-end milling solutions
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-heading font-black tracking-tight text-[#0F172A] leading-[1.2]">
               Solutions for <br className="hidden sm:inline" />
@@ -193,7 +209,7 @@ export default function MillingSolutionsSection() {
                 />
 
                 <div>
-                  <span className="text-xs font-semibold text-[#FFAA17] tracking-[0.08em] uppercase block mb-3.5">
+                  <span className="text-xs font-semibold text-[#FFAA17] tracking-[0.08em] block mb-3.5">
                     {card.tag}
                   </span>
                   <h3 className="text-xl sm:text-[21px] font-bold text-[#0F172A] tracking-tight leading-[1.25] mb-3 group-hover:text-[#0E3321] transition-colors">
@@ -227,7 +243,7 @@ export default function MillingSolutionsSection() {
           {/* Header */}
           <div className="space-y-3 max-w-2xl">
             <span className="text-sm font-semibold text-[#0E3321] tracking-wide block">
-              The Choyal Core
+              The Choyal core
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-heading font-black tracking-tight text-[#0F172A] leading-[1.2]">
               From stone milling to <br className="hidden sm:inline" />
@@ -237,7 +253,7 @@ export default function MillingSolutionsSection() {
 
           {/* Feature Cards: Interactive Expandable on Desktop */}
           <div 
-            className="hidden lg:flex flex-row gap-5.5 w-full lg:max-w-[62%] xl:max-w-[65%] 2xl:max-w-[68%] h-[360px] mt-12 sm:mt-14"
+            className="hidden lg:flex flex-row gap-4 xl:gap-5.5 w-full lg:max-w-[740px] xl:max-w-[830px] 2xl:max-w-[880px] h-[295px] xl:h-[310px] 2xl:h-[325px] mt-11 sm:mt-13"
             onMouseLeave={() => setHoveredFeature(null)}
           >
             {coreFeatures.map((feat, idx) => {
@@ -249,11 +265,11 @@ export default function MillingSolutionsSection() {
                   key={idx}
                   href={feat.href}
                   onMouseEnter={() => setHoveredFeature(idx)}
-                  className={`relative flex flex-row p-6 rounded-[18px] border transition-all duration-500 ease-[cubic-bezier(0.22,0.8,0.2,1)] overflow-hidden cursor-pointer backdrop-blur-xs select-none ${
+                  className={`relative flex flex-row p-5 xl:p-6 rounded-[20px] border transition-all duration-500 ease-[cubic-bezier(0.22,0.8,0.2,1)] overflow-hidden cursor-pointer backdrop-blur-xs select-none ${
                     isHovered
-                      ? "flex-[2.6] bg-white border-[#FFAA17] shadow-[0_20px_45px_rgba(14,51,33,0.10)] -translate-y-1"
+                      ? "flex-[2.4] xl:flex-[2.6] bg-white border-[#FFAA17] shadow-[0_20px_45px_rgba(14,51,33,0.10)] -translate-y-1"
                       : hasHover
-                      ? "flex-[0.55] bg-white/90 border-[#E2E8F0] shadow-[0_10px_25px_rgba(15,23,42,0.03)]"
+                      ? "flex-[0.6] bg-white/90 border-[#E2E8F0] shadow-[0_10px_25px_rgba(15,23,42,0.03)]"
                       : "flex-1 bg-white/90 border-[#E2E8F0] shadow-[0_14px_35px_rgba(15,23,42,0.045)] hover:border-slate-300"
                   }`}
                 >
@@ -261,59 +277,59 @@ export default function MillingSolutionsSection() {
                   <div className="flex-1 min-w-0 flex flex-col justify-between h-full">
                     <div>
                       {/* Number */}
-                      <span className="text-sm font-bold text-[#FFAA17] tracking-[0.08em] block transition-transform duration-300">
+                      <span className="text-xs xl:text-sm font-bold text-[#FFAA17] tracking-[0.08em] block transition-transform duration-300">
                         {feat.num}
                       </span>
 
                       {/* Heading */}
-                      <h4 className={`font-bold text-[#0F172A] tracking-tight leading-[1.25] mt-4 transition-all duration-300 ${
+                      <h4 className={`font-bold text-[#0F172A] tracking-tight leading-[1.25] mt-3.5 xl:mt-4 transition-all duration-300 ${
                         isHovered 
-                          ? "text-[21px] max-w-[280px]" 
+                          ? "text-[18px] xl:text-[20px] 2xl:text-[21px] max-w-[280px]" 
                           : hasHover 
-                          ? "text-[17px] line-clamp-3" 
-                          : "text-[20px]"
+                          ? "text-[15px] xl:text-[16px] line-clamp-3" 
+                          : "text-[17px] xl:text-[18px] 2xl:text-[19px]"
                       }`}>
                         {feat.heading}
                       </h4>
 
                       {/* Revealable Description */}
                       <div className={`overflow-hidden transition-all duration-400 ease-out ${
-                        isHovered ? "max-h-48 opacity-100 mt-3.5" : "max-h-0 opacity-0 mt-0"
+                        isHovered ? "max-h-48 opacity-100 mt-2.5 xl:mt-3" : "max-h-0 opacity-0 mt-0"
                       }`}>
-                        <p className="text-[14.5px] xl:text-[15px] text-[#475569] leading-relaxed max-w-[260px] font-normal">
+                        <p className="text-[13px] xl:text-[14px] text-[#475569] leading-relaxed max-w-[240px] xl:max-w-[270px] font-normal">
                           {feat.desc}
                         </p>
                       </div>
                     </div>
 
                     {/* Bottom Space placeholder */}
-                    <div className="h-8" />
+                    <div className="h-6" />
                   </div>
 
                   {/* Inner Image Thumbnail (Reveals on Hover) */}
                   <div className={`transition-all duration-500 ease-[cubic-bezier(0.22,0.8,0.2,1)] overflow-hidden flex items-stretch shrink-0 ${
                     isHovered 
-                      ? "w-[44%] opacity-100 ml-4 scale-100" 
+                      ? "w-[40%] xl:w-[44%] opacity-100 ml-3.5 xl:ml-4 scale-100" 
                       : "w-0 opacity-0 ml-0 scale-95 pointer-events-none"
                   }`}>
-                    <div className="w-full h-full min-w-[220px] bg-[#F3F4F2] rounded-[14px] overflow-hidden relative shadow-inner">
+                    <div className="w-full h-full min-w-[160px] xl:min-w-[200px] bg-[#F3F4F2] rounded-[14px] overflow-hidden relative shadow-inner">
                       <Image
                         src={feat.img}
                         alt={feat.alt}
                         fill
                         className="object-cover object-center"
-                        sizes="(max-width: 1200px) 250px, 300px"
+                        sizes="(max-width: 1280px) 200px, 280px"
                       />
                     </div>
                   </div>
 
                   {/* Circle Arrow Button (Bottom-Right) */}
-                  <div className={`absolute right-5 bottom-5 w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 ${
+                  <div className={`absolute right-4 bottom-4 xl:right-5 xl:bottom-5 w-9 h-9 xl:w-10 xl:h-10 rounded-full flex items-center justify-center border transition-all duration-300 ${
                     isHovered
                       ? "bg-[#F3F8F5] border-[#0E3321] text-[#0E3321] translate-x-0.5 shadow-sm"
                       : "bg-transparent border-[#8fb89d]/70 text-[#0E3321]"
                   }`}>
-                    <ArrowRight className="w-4.5 h-4.5" />
+                    <ArrowRight className="w-4 h-4 xl:w-4.5 xl:h-4.5" />
                   </div>
                 </Link>
               );

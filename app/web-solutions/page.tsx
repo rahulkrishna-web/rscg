@@ -14,7 +14,7 @@ interface SolutionCard {
 
 const solutionCards: SolutionCard[] = [
   {
-    title: "Website Development",
+    title: "Website development",
     desc: "Build a powerful, responsive digital presence tailored to represent your brand. From corporate identity landing pages to sophisticated multi-tier web portals.",
     imagePath: "/images/web-solutions/code.png",
     features: [
@@ -25,7 +25,7 @@ const solutionCards: SolutionCard[] = [
     ]
   },
   {
-    title: "E-Commerce Solutions",
+    title: "E-commerce solutions",
     desc: "Turn your business into an online retail powerhouse. We develop secure, scalable, and conversion-optimized storefronts that streamline inventory and sales.",
     imagePath: "/images/web-solutions/ecom.png",
     features: [
@@ -36,7 +36,7 @@ const solutionCards: SolutionCard[] = [
     ]
   },
   {
-    title: "CMS Development",
+    title: "CMS development",
     desc: "Empower your team with intuitive content management frameworks. Update pages, upload media, publish news posts, and structure your catalog without writing code.",
     imagePath: "/images/web-solutions/cms.png",
     features: [
@@ -60,9 +60,9 @@ export default function WebSolutionsPage() {
           <div className="absolute inset-0 bg-slate-900/60" />
           <div className="relative w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto z-10">
             <div className="space-y-4">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                SERVICES
+                Services
               </div>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-heading font-black text-white tracking-tight leading-[1.1]">
                 Web Solutions
@@ -89,11 +89,11 @@ export default function WebSolutionsPage() {
           {/* Intro Section */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
             <div className="lg:col-span-7 space-y-6">
-              <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
-                Digital Presence & Telemetry
+              <span className="text-xs font-extrabold text-brand-primary tracking-wider">
+                Digital presence & telemetry
               </span>
               <h2 className="text-2xl sm:text-3xl font-heading font-black text-slate-950 leading-tight">
-                Establish Your Brand & Empower Your Operations Online
+                Establish your brand & empower your operations online
               </h2>
               <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed">
                 If you want to turn your small business into a big one, at some point you’re going to need to go digital. 
@@ -103,9 +103,9 @@ export default function WebSolutionsPage() {
               <div className="pt-2">
                 <Link 
                   href="/contact" 
-                  className="inline-flex items-center gap-2 bg-[#004d26] hover:bg-[#003c1e] text-white text-xs font-black uppercase tracking-wider px-6 py-3 transition-colors"
+                  className="inline-flex items-center gap-2 bg-[#004d26] hover:bg-[#003c1e] text-white text-xs font-black tracking-wider px-6 py-3 transition-colors"
                 >
-                  <span>Discuss Your Project</span>
+                  <span>Discuss your project</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -123,8 +123,8 @@ export default function WebSolutionsPage() {
           {/* Services Grid */}
           <div className="space-y-12 mb-24">
             <div className="text-center max-w-xl mx-auto space-y-2">
-              <h3 className="text-2xl font-heading font-black text-slate-900 uppercase tracking-wider">
-                Services Offered
+              <h3 className="text-2xl font-heading font-black text-slate-900 tracking-wider">
+                Services offered
               </h3>
               <p className="text-sm text-slate-500 font-semibold">
                 Comprehensive digital platforms designed to drive business efficiency and online engagement.
@@ -176,7 +176,7 @@ export default function WebSolutionsPage() {
         {/* CTA Section */}
         <section className="w-full bg-slate-950 text-white py-16 px-6 sm:px-12 lg:px-16 xl:px-24 text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black tracking-tight max-w-xl mx-auto leading-tight">
-            Build Your Digital Presence
+            Build your digital presence
           </h2>
           <p className="text-sm sm:text-base text-slate-400 max-w-lg mx-auto font-medium">
             We develop custom websites, e-commerce stores, content management platforms, and web telemetry systems.
@@ -186,16 +186,16 @@ export default function WebSolutionsPage() {
               href="https://wa.me/919240289259?text=Hello%2C%20I%20am%20interested%20in%20discussing%20a%20web%20solutions%20project."
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-brand-secondary text-brand-foreground hover:bg-brand-secondary/90 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
+              className="flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-8 py-3.5 rounded-lg text-sm font-bold shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer w-full sm:w-auto text-center"
             >
               <Phone className="w-4 h-4" />
               Discuss via WhatsApp
             </a>
             <Link
               href="/contact"
-              className="flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 px-8 py-3.5 rounded-2xl text-xs font-black uppercase tracking-wider transition-colors cursor-pointer w-full sm:w-auto text-center"
+              className="flex items-center justify-center gap-1.5 bg-white/10 hover:bg-white/15 text-white border border-white/20 px-8 py-3.5 rounded-lg text-sm font-bold transition-all cursor-pointer w-full sm:w-auto text-center"
             >
-              Contact Developer
+              Contact developer
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

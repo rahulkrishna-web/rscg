@@ -31,10 +31,10 @@ export default function NewsDetailPage() {
           <Header />
           <div className="flex-1 flex flex-col items-center justify-center p-16 space-y-4 max-w-lg mx-auto text-center">
             <BookOpen className="h-12 w-12 text-slate-300" />
-            <h2 className="text-2xl font-bold">Article Not Found</h2>
+            <h2 className="text-2xl font-bold">Article not found</h2>
             <p className="text-slate-500">The news article you are looking for does not exist or has been moved.</p>
-            <Link href="/news" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
-              Back to News
+            <Link href="/news" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm tracking-wide">
+              Back to news
             </Link>
           </div>
         </div>
@@ -56,7 +56,7 @@ export default function NewsDetailPage() {
           <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
             
             {/* Title (Mobile: Top, Desktop: Left Col Row 1) */}
-            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-1">
+            <div className="lg:col-span-7 xl:col-span-8 lg:col-start-1 lg:row-start-1">
               <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-3">
                 <Calendar className="w-3.5 h-3.5 text-brand-primary" />
                 <span>{currentPost.displayDate || formatDate(currentPost.date)}</span>
@@ -69,8 +69,8 @@ export default function NewsDetailPage() {
 
             {/* Featured Image (Mobile: Middle, Desktop: Right Col Row 1 & 2) */}
             {currentPost.images.length > 0 && (
-              <div className="lg:col-span-7 lg:col-start-6 lg:row-start-1 lg:row-span-2">
-                <div className="rounded-[24px] overflow-hidden bg-slate-100 relative w-full h-full min-h-[300px]">
+              <div className="lg:col-span-5 xl:col-span-4 lg:col-start-8 xl:col-start-9 lg:row-start-1 lg:row-span-2">
+                <div className="rounded-[24px] overflow-hidden bg-slate-100 relative w-full aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] shadow-md border border-slate-200/60 lg:sticky lg:top-36">
                   <img
                     src={currentPost.images[0].local_path}
                     alt={currentPost.title}
@@ -81,7 +81,7 @@ export default function NewsDetailPage() {
             )}
 
             {/* Structured Content Block (Mobile: Bottom, Desktop: Left Col Row 2) */}
-            <div className="lg:col-span-5 lg:col-start-1 lg:row-start-2">
+            <div className="lg:col-span-7 xl:col-span-8 lg:col-start-1 lg:row-start-2">
               <div className="space-y-6 pt-4 lg:pt-0">
                 {currentPost.content.map((block, idx) => {
                   if (block.type === 'heading') {
@@ -128,7 +128,7 @@ export default function NewsDetailPage() {
           <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 border-t border-slate-200/50 bg-slate-50/20 overflow-hidden">
             <div className="w-full space-y-8">
               <h2 className="text-2xl font-heading font-black text-slate-900 tracking-tight">
-                Read Other Articles
+                Read other articles
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -156,8 +156,8 @@ export default function NewsDetailPage() {
                             {p.title}
                           </h3>
                         </div>
-                        <div className="flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto uppercase tracking-wider">
-                          <span>Read Story</span>
+                        <div className="flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto tracking-wider">
+                          <span>Read story</span>
                           <ArrowRight className="h-3.5 w-3.5" />
                         </div>
                       </div>

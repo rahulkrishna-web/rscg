@@ -52,8 +52,8 @@ export default function AgateShellerTypeStones() {
           {/* Left: Images */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-32 h-fit">
             <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8 border border-slate-100 shadow-xs">
-              <span className="absolute top-6 left-6 z-10 bg-slate-100 text-[10px] font-black uppercase text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
-                Emery Stones
+              <span className="absolute top-6 left-6 z-10 bg-slate-100 text-[10px] font-bold text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
+                Emery stones
               </span>
               <img 
                 src="/emery-stone-dresser/agate_emery_stone.png" 
@@ -66,10 +66,10 @@ export default function AgateShellerTypeStones() {
           {/* Right: Info */}
           <div className="flex flex-col justify-start">
             <h1 className="text-4xl sm:text-5xl font-heading font-black text-[#0a4c2a] tracking-tight mb-2">
-              Horizontal Emery Stones
+              Horizontal emery stones
             </h1>
             <h2 className="text-xl sm:text-2xl font-bold text-[#14663a] mb-6">
-              Agate / Sheller Type
+              Agate / sheller type
             </h2>
             <p className="text-slate-600 leading-relaxed mb-10 text-sm sm:text-base font-medium">
               These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products. Choyal Emery Stones are designed and manufactured with high quality emery & grain to maintain aroma & taste of the flour. Our Emery stones are made on an automatic casting plant to maintain standards and quality. Our high quality emery stones are globally accepted and have been exported to over 20 countries for five decades.
@@ -77,8 +77,8 @@ export default function AgateShellerTypeStones() {
 
             {/* Key Performance Advantages */}
             <div className="space-y-4 mb-10 pb-10 border-b border-slate-200/60">
-              <h3 className="text-xs font-black text-slate-400 uppercase tracking-widest">
-                Key Performance Advantages
+              <h3 className="text-xs font-bold text-slate-400 tracking-widest">
+                Key performance advantages
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 {[
@@ -98,7 +98,7 @@ export default function AgateShellerTypeStones() {
             <div className="space-y-6">
               <div>
                 <h2 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800">
-                  Select Size & Options
+                  Select size & options
                 </h2>
                 <p className="text-xs text-slate-400 mt-1 font-medium">
                   Select your required sheller stone size parameters to add to your enquiry list.
@@ -113,8 +113,8 @@ export default function AgateShellerTypeStones() {
                   >
                     <div className="space-y-1">
                       <h4 className="text-xs sm:text-sm font-bold text-slate-800">{sizeItem.name} Sheller Pair</h4>
-                      <span className="text-[10px] text-brand-primary font-black uppercase tracking-wider block pt-0.5">
-                        Best For: {sizeItem.recommendation}
+                      <span className="text-[10px] text-brand-primary font-bold tracking-wider block pt-0.5">
+                        Best for: {sizeItem.recommendation}
                       </span>
                     </div>
 
@@ -124,7 +124,7 @@ export default function AgateShellerTypeStones() {
                         className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-4 py-2.5 rounded-lg text-xs transition-colors flex items-center gap-1.5 cursor-pointer shadow-[0_4px_14px_rgba(247,176,50,0.3)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] whitespace-nowrap"
                       >
                         <PackageCheck className="h-3.5 w-3.5 text-slate-900" />
-                        <span>Add to Quote</span>
+                        <span>Add to quote</span>
                       </button>
                     </div>
                   </div>
@@ -140,22 +140,22 @@ export default function AgateShellerTypeStones() {
                   rel="noreferrer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  WhatsApp Enquiry
+                  WhatsApp enquiry
                 </Link>
               </div>
 
               <div className="flex flex-wrap items-center gap-3 pt-3">
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
                 </div>
               </div>
             </div>

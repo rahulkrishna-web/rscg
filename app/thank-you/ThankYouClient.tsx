@@ -23,21 +23,21 @@ export default function ThankYouClient() {
       
       <div className="relative rounded-3xl p-8 sm:p-12 shadow-2xl flex flex-col items-center justify-center text-center max-w-lg w-full border border-brand-primary/15 bg-white/60 backdrop-blur-xl z-10 animate-scale-in">
         <div className="absolute -top-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white text-[10px] sm:text-xs font-extrabold tracking-wider px-4 py-1.5 rounded-full shadow-md">
-          INQUIRY RECEIVED
+          Inquiry received
         </div>
         <div className="w-20 h-20 rounded-full bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center mb-6 animate-pulse">
           <CheckCircle2 className="h-10 w-10 text-brand-primary" />
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Thank You!</h1>
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Thank you!</h1>
         <p className="text-slate-600 text-base sm:text-lg mb-8 leading-relaxed">
           An RS Choyal Group representative or engineer will review your inquiry and contact you within 24 hours.
         </p>
         <Link
           href="/"
-          className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide transition-all flex items-center gap-2 w-full justify-center sm:w-auto cursor-pointer"
+          className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold py-3.5 px-8 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm tracking-wide transition-all flex items-center gap-2 w-full justify-center sm:w-auto cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
-          Back to Home
+          Back to home
         </Link>
       </div>
     </main>

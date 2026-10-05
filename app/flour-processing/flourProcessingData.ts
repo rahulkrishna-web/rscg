@@ -42,18 +42,18 @@ export const flourProcessingData: FlourProcessingProduct[] = [
   {
     slug: "entoleter",
     title: "Entoleter",
-    subtitle: "High-Impact Insect Control for Grain and Flour",
+    subtitle: "High-impact insect control for grain and flour",
     description: "The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing. Its high-speed impact action helps improve hygiene, protect product quality, and reduce the risk of infestation in downstream storage and packing.\n\nBuilt for reliable continuous operation, it is suitable for flour mills, grain-processing plants, and food-production lines where consistent sanitation and product safety are essential.",
     image: "/images/flour-processing/entoleter.png",
     keyFeatures: [
-      { title: "Eliminates insects at all stages", icon: "ShieldCheck" },
+      { title: "Eliminates insects at all stages of lifecycle", icon: "ShieldCheck" },
       { title: "Removes eggs, larvae, and adult insects", icon: "Replace" },
       { title: "Supports hygienic processing", icon: "CheckCircle2" },
       { title: "Improves food safety and quality", icon: "Heart" },
       { title: "Reduces downstream infestation risk", icon: "TrendingUp" },
       { title: "Continuous commercial operation", icon: "RotateCw" },
       { title: "Dependable, high-speed performance", icon: "Zap" },
-      { title: "Integrates easily into lines", icon: "LayoutTemplate" }
+      { title: "Integrates easily into processing lines", icon: "LayoutTemplate" }
     ],
     productBenefits: [
       { title: "Improved product hygiene", icon: "Shield" },
@@ -76,7 +76,7 @@ export const flourProcessingData: FlourProcessingProduct[] = [
   {
     slug: "vibro-sifter",
     title: "Vibro Sifter",
-    subtitle: "Efficient Screening and Grading",
+    subtitle: "Efficient screening and grading",
     description: "Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.",
     image: "/images/flour-processing/vibrosifter.png",
     keyFeatures: [
@@ -103,7 +103,7 @@ export const flourProcessingData: FlourProcessingProduct[] = [
   {
     slug: "plan-sifter",
     title: "Plan Sifter",
-    subtitle: "Precision Sieving and Classification",
+    subtitle: "Precision sieving and classification",
     description: "Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials. It ensures uniform particle size, high screening efficiency, and consistent product quality for modern flour milling operations.",
     image: "/images/flour-processing/plansifter.png",
     keyFeatures: [

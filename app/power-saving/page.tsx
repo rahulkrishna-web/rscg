@@ -101,12 +101,12 @@ export default function PowerSavingPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              POWER SAVING
+              Power saving
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Energy Saving Solutions
+              Energy saving solutions
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Engineered systems and intelligent controls that reduce power consumption, improve efficiency, and lower operating costs across the complete milling plant.
@@ -131,8 +131,8 @@ export default function PowerSavingPage() {
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Smart Systems</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Intelligent Controls</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Smart systems</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Intelligent controls</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
@@ -140,8 +140,8 @@ export default function PowerSavingPage() {
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Lower Consumption</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Up to 30% Savings</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Lower consumption</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Up to 30% savings</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
@@ -149,8 +149,8 @@ export default function PowerSavingPage() {
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Higher Performance</h4>
-              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Maximized Output</p>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Higher performance</h4>
+              <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Maximized output</p>
             </div>
           </div>
         </div>
@@ -164,8 +164,8 @@ export default function PowerSavingPage() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Smart Systems</h4>
-              <p className="text-sm text-slate-600 font-medium">Intelligent Controls</p>
+              <h4 className="text-base font-bold text-slate-900">Smart systems</h4>
+              <p className="text-sm text-slate-600 font-medium">Intelligent controls</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
@@ -173,8 +173,8 @@ export default function PowerSavingPage() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Lower Consumption</h4>
-              <p className="text-sm text-slate-600 font-medium">Up to 30% Savings</p>
+              <h4 className="text-base font-bold text-slate-900">Lower consumption</h4>
+              <p className="text-sm text-slate-600 font-medium">Up to 30% savings</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
@@ -182,8 +182,8 @@ export default function PowerSavingPage() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Higher Performance</h4>
-              <p className="text-sm text-slate-600 font-medium">Maximized Output</p>
+              <h4 className="text-base font-bold text-slate-900">Higher performance</h4>
+              <p className="text-sm text-slate-600 font-medium">Maximized output</p>
             </div>
           </div>
         </div>
@@ -196,7 +196,7 @@ export default function PowerSavingPage() {
           {/* Content Left */}
           <div className="lg:col-span-8 space-y-6">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118]">
-              Optimize Energy Consumption
+              Optimize energy consumption
             </h2>
             <div className="w-16 h-1 bg-[#eab308] mb-6"></div>
             
@@ -217,15 +217,15 @@ export default function PowerSavingPage() {
           <div className="lg:col-span-4">
             <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
               <h3 className="text-xl font-heading font-extrabold text-[#0a3118] mb-6">
-                Quick Links
+                Quick links
               </h3>
               <ul className="space-y-4">
                 {[
                   { label: "About us", href: "/about" },
-                  { label: "Products", href: "/products" },
-                  { label: "Turnkey Solutions", href: "/turnkey-projects" },
-                  { label: "Power Saving", href: "/power-saving" },
-                  { label: "Flour Mill", href: "/flour-mills" }
+                  { label: "Products", href: "/catalog" },
+                  { label: "Turnkey solutions", href: "/turnkey-projects" },
+                  { label: "Power saving", href: "/power-saving" },
+                  { label: "Flour mill", href: "/flour-mills" }
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link href={link.href} className="flex items-center gap-3 text-slate-700 hover:text-[#0a3118] font-bold transition-colors group">
@@ -246,7 +246,7 @@ export default function PowerSavingPage() {
       <section id="products" className="w-full py-20 bg-slate-50 border-t border-slate-200/60 px-6 sm:px-12 lg:px-16 xl:px-24 scroll-mt-24">
         <div className="w-full text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118] mb-4">
-            Our Advanced Milling Products
+            Our advanced milling products
           </h2>
           <p className="text-slate-500 font-medium max-w-2xl mx-auto">
             Optimized and Automated solutions for your milling needs.
@@ -316,7 +316,7 @@ export default function PowerSavingPage() {
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px w-12 bg-green-500"></div>
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118]">
-              Benefits of Power Saving Setup
+              Benefits of power saving setup
             </h2>
             <div className="h-px w-12 bg-green-500"></div>
           </div>
@@ -328,17 +328,17 @@ export default function PowerSavingPage() {
         <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              title: "Improved Yield",
+              title: "Improved yield",
               desc: "Stable and optimized grinding preserves grain structure, leading to higher recovery rates and less heat-related waste.",
               icon: "/images/power-saving/Improved_Efficiency.png" 
             },
             {
-              title: "Improved Lifetime",
+              title: "Improved lifetime",
               desc: "Balanced loads reduce thermal stress and mechanical vibration on key components, extending equipment life.",
               icon: "/images/power-saving/improved_lifetime.png"
             },
             {
-              title: "Reduced Operational Cost",
+              title: "Reduced operational cost",
               desc: "Intelligent load control limits spikes and optimizes power factor, saving up to 30-40% on monthly electricity bills.",
               icon: "/images/power-saving/reduced_operation_cost.png"
             }
@@ -365,7 +365,7 @@ export default function PowerSavingPage() {
 
             <div className="max-w-2xl space-y-2.5 relative z-10 text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-white leading-tight tracking-tight">
-                Save Energy. Save Costs. Increase Efficiency.
+                Save energy. Save costs. Increase efficiency.
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed">
                 Upgrade your plant with intelligent power-saving solutions from RS Choyal Group.

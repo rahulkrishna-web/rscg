@@ -15,36 +15,36 @@ const facilitySpecs = [
 ];
 
 const capabilities = [
-  { title: "Machinery in Action", desc: "See a wide range of milling machines running live.", iconPath: "/images/services/facility-center/icons/machinery_demo.png" },
-  { title: "Research & Development", desc: "Conduct trials, optimize processes, and innovate with our expertise.", iconPath: "/images/services/facility-center/icons/research_and_development.png" },
-  { title: "Operator Training", desc: "Hands-on training to build skills and improve operational excellence.", iconPath: "/images/services/facility-center/icons/operator_training.png" },
-  { title: "Process Evaluation", desc: "Evaluate performance and economics to make the right investment decision.", iconPath: "/images/services/facility-center/icons/process_evaluation.png" },
+  { title: "Machinery in action", desc: "See a wide range of milling machines running live.", iconPath: "/images/services/facility-center/icons/machinery_demo.png" },
+  { title: "Research & development", desc: "Conduct trials, optimize processes, and innovate with our expertise.", iconPath: "/images/services/facility-center/icons/research_and_development.png" },
+  { title: "Operator training", desc: "Hands-on training to build skills and improve operational excellence.", iconPath: "/images/services/facility-center/icons/operator_training.png" },
+  { title: "Process evaluation", desc: "Evaluate performance and economics to make the right investment decision.", iconPath: "/images/services/facility-center/icons/process_evaluation.png" },
 ];
 
 const supports = [
   {
-    title: "Machinery\nDemonstration",
+    title: "Machinery\ndemonstration",
     desc: "See different flour milling machines in operation and understand their real-world performance.",
     imgPath: "/images/facility-centre/facility-support/machinery-demonstration.png"
   },
   {
-    title: "R&D &\nProduct Trials",
+    title: "R&D &\nproduct trials",
     desc: "Test process parameters, evaluate yield, quality, and consistency to find the best outcome.",
     imgPath: "/images/facility-centre/facility-support/randd-and-product-trials.png"
   },
   {
-    title: "Training &\nAuditing",
+    title: "Training &\nauditing",
     desc: "Practical operator training and plant audits to ensure peak performance and compliance.",
     imgPath: "/images/facility-centre/facility-support/training-and-auditing.png"
   }
 ];
 
 const gallery = [
-  { title: "Advanced Control & Monitoring", imgPath: "/images/facility-centre/inside-facility/advanced-control-and-monitoring.png" },
-  { title: "State-of-the-Art Infrastructure", imgPath: "/images/facility-centre/inside-facility/state-of-the-art-infrastructure.png" },
-  { title: "Expert Team & Training", imgPath: "/images/facility-centre/inside-facility/expert-team-and-training.png" },
-  { title: "Sustainable & Green Operations", imgPath: "/images/facility-centre/inside-facility/sustainable-operations.png" },
-  { title: "Modern Milling Technology", imgPath: "/images/facility-centre/inside-facility/modern-milling-technology.png" }
+  { title: "Advanced control & monitoring", imgPath: "/images/facility-centre/inside-facility/advanced-control-and-monitoring.png" },
+  { title: "State-of-the-art infrastructure", imgPath: "/images/facility-centre/inside-facility/state-of-the-art-infrastructure.png" },
+  { title: "Expert team & training", imgPath: "/images/facility-centre/inside-facility/expert-team-and-training.png" },
+  { title: "Sustainable & green operations", imgPath: "/images/facility-centre/inside-facility/sustainable-operations.png" },
+  { title: "Modern milling technology", imgPath: "/images/facility-centre/inside-facility/modern-milling-technology.png" }
 ];
 
 export default function FacilityCentrePage() {
@@ -88,12 +88,12 @@ export default function FacilityCentrePage() {
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                FACILITY CENTRE
+                Facility centre
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-                40 TPD Flour Milling Facility Centre
+                40 TPD flour milling facility centre
               </h1>
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 A hands-on experience centre where you can see machinery in action, validate solutions, conduct R&amp;D, and build operator capability through practical training.
@@ -117,17 +117,17 @@ export default function FacilityCentrePage() {
             
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">40 TPD</h3>
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Pilot Plant Capacity</p>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Pilot plant capacity</p>
             </div>
 
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Machinery in Action</h3>
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Live Machine Demonstrations</p>
+              <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Machinery in action</h3>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">Live machine demonstrations</p>
             </div>
 
             <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
               <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-1.5">Train. Test. Validate.</h3>
-              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">All In One Place</p>
+              <p className="text-sm sm:text-base text-slate-600 font-medium leading-relaxed">All in one place</p>
             </div>
 
           </div>
@@ -139,17 +139,17 @@ export default function FacilityCentrePage() {
             
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
               <h3 className="font-heading font-black text-xl text-slate-800 mb-1">40 TPD</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">Pilot Plant Capacity</p>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Pilot plant capacity</p>
             </div>
 
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Machinery in Action</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">Live Machine Demonstrations</p>
+              <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Machinery in action</h3>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">Live machine demonstrations</p>
             </div>
 
             <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
               <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Train. Test. Validate.</h3>
-              <p className="text-sm text-slate-600 font-medium leading-relaxed">All In One Place</p>
+              <p className="text-sm text-slate-600 font-medium leading-relaxed">All in one place</p>
             </div>
 
           </div>
@@ -161,7 +161,7 @@ export default function FacilityCentrePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mb-16">
             <div className="space-y-6">
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-[#133020] leading-tight pb-4 border-b-2 border-[#D3994B]/30 inline-block">
-                See, Test & Learn Before You Invest
+                See, test & learn before you invest
               </h2>
               <div className="text-slate-600 space-y-5 text-base sm:text-lg leading-relaxed font-normal">
                 <p>
@@ -193,16 +193,19 @@ export default function FacilityCentrePage() {
           </div>
 
           {/* Capabilities Highlight Banner */}
-          <div className="w-full bg-[#0D301F] rounded-[32px] p-6 sm:p-8 lg:p-10 mb-16 shadow-lg border border-white/5">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[32px] p-6 sm:p-8 lg:p-10 mb-16 shadow-xl border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Wonder Mill */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
               {capabilities.map((cap, idx) => (
                 <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "pt-6 sm:pt-0 sm:pl-5 lg:pl-6" : ""}`}>
-                  <div className="w-14 h-14 rounded-full bg-[#16442F] border border-[#f7b032]/40 flex items-center justify-center p-3 shrink-0 shadow-sm">
+                  <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-3 shrink-0 shadow-sm">
                     <img src={cap.iconPath} alt={cap.title} className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h4 className="text-white font-bold text-sm sm:text-base mb-1 leading-tight">{cap.title}</h4>
-                    <p className="text-xs sm:text-sm text-white/80 leading-relaxed font-normal">{cap.desc}</p>
+                    <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal">{cap.desc}</p>
                   </div>
                 </div>
               ))}
@@ -213,8 +216,8 @@ export default function FacilityCentrePage() {
           <div className="mb-20">
             <div className="flex items-center justify-center gap-4 mb-10">
               <div className="h-px w-16 bg-[#D3994B]/30"></div>
-              <h3 className="text-xs font-black tracking-[0.15em] text-[#D3994B] uppercase text-center">
-                HOW THE FACILITY SUPPORTS YOU
+              <h3 className="text-xs font-black tracking-[0.15em] text-[#D3994B] text-center">
+                How the facility supports you
               </h3>
               <div className="h-px w-16 bg-[#D3994B]/30"></div>
             </div>
@@ -232,7 +235,6 @@ export default function FacilityCentrePage() {
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
                       {item.desc}
                     </p>
-                    <ArrowRight className="w-4 h-4 text-[#D3994B] group-hover:translate-x-1 transition-transform mt-2" />
                   </div>
                 </div>
               ))}
@@ -242,7 +244,7 @@ export default function FacilityCentrePage() {
           {/* Inside the Facility */}
           <div className="mb-20">
             <h3 className="text-xl sm:text-2xl font-heading font-black text-[#133020] mb-8">
-              Inside the Facility
+              Inside the facility
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
               {gallery.map((item, idx) => (
@@ -270,7 +272,7 @@ export default function FacilityCentrePage() {
               </div>
               <div className="space-y-1">
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-white leading-tight">
-                  Want to Visit Our Facility Centre?
+                  Want to visit our facility centre?
                 </h3>
                 <p className="text-white/90 text-sm sm:text-base font-normal">
                   Book a guided visit to explore machinery, evaluate performance, and train your team.
@@ -281,9 +283,9 @@ export default function FacilityCentrePage() {
             <div className="relative z-10 shrink-0 w-full md:w-auto">
               <Link 
                 href="/contact" 
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm tracking-wide cursor-pointer whitespace-nowrap"
               >
-                <span>Discuss Your Requirement</span>
+                <span>Discuss your requirement</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

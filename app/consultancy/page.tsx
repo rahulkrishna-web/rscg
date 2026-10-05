@@ -13,63 +13,63 @@ export default function ConsultancyPage() {
 
   const heroProofPoints = [
     { 
-      title: "Industry Expertise", 
+      title: "Industry expertise", 
       desc: "Decades of experience in flour milling" 
     },
     { 
-      title: "Data Driven Approach", 
+      title: "Data driven approach", 
       desc: "Practical solutions backed by analysis" 
     },
     { 
-      title: "End-to-End Support", 
+      title: "End-to-end support", 
       desc: "From planning to performance improvement" 
     },
     { 
-      title: "Sustainable Growth", 
+      title: "Sustainable growth", 
       desc: "Build efficient, future-ready milling businesses" 
     }
   ];
 
   const valueServices = [
     {
-      title: "Market Entry Strategy",
+      title: "Market entry strategy",
       desc: "Assess opportunities, demand, competition and regulations to build a winning entry strategy.",
       icon: "/consultancy/how-we-add-value/market_entry_and_strategy-clean.png"
     },
     {
-      title: "Plant Planning & Design",
+      title: "Plant planning & design",
       desc: "Optimize plant layout, capacity, machinery selection and material flow for maximum efficiency.",
       icon: "/consultancy/how-we-add-value/Plant_Planning___Design-clean.png"
     },
     {
-      title: "Process Optimization",
+      title: "Process optimization",
       desc: "Improve yield, quality, capacity and energy efficiency through process improvements.",
       icon: "/consultancy/how-we-add-value/Process_Optimization-clean.png"
     },
     {
-      title: "Raw Material & Sourcing",
+      title: "Raw material & sourcing",
       desc: "Guidance on wheat quality, sourcing strategy and inventory management for consistent production.",
       icon: "/consultancy/how-we-add-value/raw_material-clean.png"
     },
     {
-      title: "Cost & Financial Management",
+      title: "Cost & financial management",
       desc: "Control costs, reduce wastage and improve profitability with smart financial planning.",
       icon: "/consultancy/how-we-add-value/sustainable_growth-clean.png"
     },
     {
-      title: "Operations & People",
+      title: "Operations & people",
       desc: "Streamline operations, SOPs and workforce management for higher productivity.",
       icon: "/consultancy/how-we-add-value/Operations___People-clean.png"
     }
   ];
 
   const clientTypes = [
-    { label: "New Entrants", icon: "/consultancy/who-we-work-with/data_driven_approach-clean.png" },
-    { label: "Existing Millers", icon: "/consultancy/who-we-work-with/existing_flour_mill_owner-clean.png" },
+    { label: "New entrants", icon: "/consultancy/who-we-work-with/data_driven_approach-clean.png" },
+    { label: "Existing millers", icon: "/consultancy/who-we-work-with/existing_flour_mill_owner-clean.png" },
     { label: "Investors", icon: "/consultancy/who-we-work-with/investors_and_entrpreneurs-clean.png" },
     { label: "Cooperatives", icon: "/consultancy/who-we-work-with/farmers_and_groups-clean.png" },
-    { label: "Agri Businesses", icon: "/consultancy/who-we-work-with/agribusinesses-clean.png" },
-    { label: "Food Brands", icon: "/consultancy/who-we-work-with/food_brands-clean.png" }
+    { label: "Agri businesses", icon: "/consultancy/who-we-work-with/agribusinesses-clean.png" },
+    { label: "Food brands", icon: "/consultancy/who-we-work-with/food_brands-clean.png" }
   ];
 
   return (
@@ -111,13 +111,13 @@ export default function ConsultancyPage() {
           <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 relative z-20 flex-1 flex flex-col justify-center pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
               {/* Standard Eyebrow */}
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                SERVICES
+                Services
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-                Flour Milling Consultancy
+                Flour milling consultancy
               </h1>
 
               <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
@@ -180,7 +180,7 @@ export default function ConsultancyPage() {
         <section className="w-full pt-12 sm:pt-16 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
-              How We Add Value
+              How we add value
             </h2>
             <div className="flex items-center justify-center gap-1">
               <div className="w-8 h-px bg-[#D3994B]" />
@@ -229,7 +229,7 @@ export default function ConsultancyPage() {
 
             <div className="lg:w-1/2 space-y-4 text-center lg:text-left relative z-10">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight">
-                Why Work With Us?
+                Why work with us?
               </h3>
               <p className="text-base sm:text-lg text-white/90 leading-relaxed font-normal">
                 We combine our deep domain knowledge with hands-on industry experience to deliver practical, result-oriented solutions tailored to your business goals.
@@ -242,7 +242,7 @@ export default function ConsultancyPage() {
                   60+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Years Milling and engineering experience
+                  Years milling and engineering experience
                 </span>
               </div>
               <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
@@ -250,7 +250,7 @@ export default function ConsultancyPage() {
                   25+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Countries International market exposure
+                  Countries international market exposure
                 </span>
               </div>
               <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
@@ -258,7 +258,7 @@ export default function ConsultancyPage() {
                   200+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
-                  Projects Plants delivered
+                  Projects plants delivered
                 </span>
               </div>
             </div>
@@ -271,7 +271,7 @@ export default function ConsultancyPage() {
             
             <div className="md:w-1/2 p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
-                From Vision to Value
+                From vision to value
               </h3>
               <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed">
                 Whether you are setting up your first mill, expanding capacity, or looking to improve performance, our consultancy helps you make the right decisions and achieve measurable results.
@@ -305,7 +305,7 @@ export default function ConsultancyPage() {
           <div className="w-full bg-[#F0F4F2] rounded-[24px] p-8 sm:p-12 lg:p-14 border border-[#E1EAE5]">
             <div className="text-center mb-10 space-y-2">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-[#133020]">
-                Who We Work With
+                Who we work with
               </h3>
               <p className="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
                 Partnering with organizations across the grain and milling value chain.

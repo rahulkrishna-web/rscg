@@ -11,17 +11,17 @@ const aboutLinks = [
   { name: "R&D and innovation", href: "/about#research-development" },
   { name: "Social responsibility", href: "/about#social-responsibility" },
   { name: "Why RSC", href: "/about#why-rsc" },
-  { name: "Our Network", href: "/about#network" },
+  { name: "Our network", href: "/about#network" },
 ];
 
 const productLinks = [
-  { name: "Turnkey Solutions", href: "/turnkey-projects" },
-  { name: "Flour Mills", href: "/flour-mills" },
+  { name: "Turnkey solutions", href: "/turnkey-projects" },
+  { name: "Flour mills", href: "/flour-mills" },
   { name: "Automation", href: "/automation" },
-  { name: "Power Saving", href: "/power-saving" },
-  { name: "Emery Stones", href: "/emery-stones" },
-  { name: "Grain Storage & Handling", href: "/grain-storage-handling" },
-  { name: "Grain Processing", href: "/grain-processing" },
+  { name: "Power saving", href: "/power-saving" },
+  { name: "Emery stones", href: "/emery-stones" },
+  { name: "Grain storage & handling", href: "/grain-storage-handling" },
+  { name: "Grain processing", href: "/grain-processing" },
 ];
 
 const serviceLinks = [
@@ -30,7 +30,7 @@ const serviceLinks = [
   { name: "Job grinding", href: "/job-grinding" },
   { name: "Consultancy", href: "/consultancy" },
   { name: "Training", href: "/training" },
-  { name: "Design and Media", href: "/design-media" },
+  { name: "Design and media", href: "/design-media" },
 ];
 
 const certBadges = [
@@ -54,8 +54,8 @@ export default function Footer() {
           
           {/* Col 1: About Us (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
-              About Us
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
+              About us
             </h4>
             <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
               {aboutLinks.map((link) => (
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Col 2: Products (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Products
             </h4>
             <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
@@ -86,7 +86,7 @@ export default function Footer() {
 
           {/* Col 3: Services (2 cols) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
               Services
             </h4>
             <ul className="space-y-2.5 text-sm sm:text-[15px] font-medium text-slate-600">
@@ -102,8 +102,8 @@ export default function Footer() {
 
           {/* Col 4: Locations & Contact (3.5 cols) */}
           <div className="lg:col-span-3 xl:col-span-3 space-y-4">
-            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
-              Locations &amp; Contact
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
+              Locations &amp; contact
             </h4>
             
             <div className="space-y-4 text-sm font-medium text-slate-600">
@@ -155,8 +155,8 @@ export default function Footer() {
 
           {/* Col 5: Social Media (2.5 cols) */}
           <div className="lg:col-span-3 xl:col-span-3 space-y-4">
-            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider uppercase">
-              Social Media
+            <h4 className="text-sm sm:text-base font-black text-[#133a25] tracking-wider">
+              Social media
             </h4>
             <p className="text-sm text-slate-600 font-medium">
               Connect with us on official channels:

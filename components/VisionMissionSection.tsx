@@ -13,7 +13,7 @@ export default function VisionMissionSection() {
         <div>
           {/* Header */}
           <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-[#0B2C1C] tracking-tight mb-8 sm:mb-10 text-left">
-            Our Vision &amp; Mission
+            Our vision &amp; mission
           </h2>
 
           {/* 2 Vision & Mission Cards */}
@@ -27,8 +27,8 @@ export default function VisionMissionSection() {
                       <Eye className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-1">
-                        Our Vision
+                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] block mb-1">
+                        Our vision
                       </span>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
                         Aiming for a smarter,
@@ -89,8 +89,8 @@ export default function VisionMissionSection() {
                       <Target className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
                     <div>
-                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] uppercase block mb-1">
-                        Our Mission
+                      <span className="text-xs font-bold text-[#FFAA17] tracking-[0.08em] block mb-1">
+                        Our mission
                       </span>
                       <h3 className="text-xl sm:text-2xl font-extrabold text-[#0B2C1C] leading-snug">
                         Building solutions

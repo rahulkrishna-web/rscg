@@ -76,12 +76,12 @@ export default function BooksPage() {
         {/* Banner Text Content */}
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              FLOUR MILLING BOOKS
+              Flour milling books
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Books on <span className="text-[#f7b032]">Flour Milling</span>
+              Books on <span className="text-[#f7b032]">flour milling</span>
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Practical knowledge, technical expertise, and decades of industry insight - authored to help millers, entrepreneurs, and plant teams build better Flour operations.
@@ -109,7 +109,7 @@ export default function BooksPage() {
               <GraduationCap className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Technical Expertise</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Technical expertise</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Deep industry knowledge.</p>
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function BooksPage() {
               <BookMarked className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Practical Guidance</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Practical guidance</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Actionable insights.</p>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function BooksPage() {
               <Award className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Industry Legacy</h4>
+              <h4 className="text-base lg:text-lg font-bold text-slate-900 leading-snug">Industry legacy</h4>
               <p className="text-sm lg:text-[15px] text-slate-600 font-medium mt-0.5">Decades of experience.</p>
             </div>
           </div>
@@ -144,7 +144,7 @@ export default function BooksPage() {
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Technical Expertise</h4>
+              <h4 className="text-base font-bold text-slate-900">Technical expertise</h4>
               <p className="text-sm text-slate-600 font-medium">Deep industry knowledge.</p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function BooksPage() {
               <BookMarked className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Practical Guidance</h4>
+              <h4 className="text-base font-bold text-slate-900">Practical guidance</h4>
               <p className="text-sm text-slate-600 font-medium">Actionable insights.</p>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function BooksPage() {
               <Award className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Industry Legacy</h4>
+              <h4 className="text-base font-bold text-slate-900">Industry legacy</h4>
               <p className="text-sm text-slate-600 font-medium">Decades of experience.</p>
             </div>
           </div>
@@ -176,8 +176,8 @@ export default function BooksPage() {
         <div className="w-full mx-auto space-y-12">
           
           <div className="text-center w-full flex items-center justify-center">
-            <h2 className="text-3xl sm:text-4xl font-heading font-black text-slate-900 capitalize">
-              Order Books
+            <h2 className="text-3xl sm:text-4xl font-heading font-black text-slate-900">
+              Order books
             </h2>
           </div>
 
@@ -220,12 +220,12 @@ export default function BooksPage() {
                   >
                     {/* Sale Tag */}
                     {book.comingSoon ? (
-                      <span className="absolute top-4 right-4 z-10 bg-slate-800 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 shadow-sm rounded-sm">
-                        COMING SOON
+                      <span className="absolute top-4 right-4 z-10 bg-slate-800 text-white text-[11px] font-black tracking-wider px-3 py-1 shadow-sm rounded-sm">
+                        Coming soon
                       </span>
                     ) : (
-                      <span className="absolute top-4 right-4 z-10 bg-[#D3994B] text-[#133020] text-[11px] font-black uppercase tracking-wider px-3 py-1 shadow-sm rounded-sm">
-                        SALE
+                      <span className="absolute top-4 right-4 z-10 bg-[#D3994B] text-[#133020] text-[11px] font-black tracking-wider px-3 py-1 shadow-sm rounded-sm">
+                        Sale
                       </span>
                     )}
 
@@ -244,24 +244,28 @@ export default function BooksPage() {
                         <h3 className="font-heading font-bold text-slate-800 text-lg leading-snug line-clamp-2 min-h-[50px]">
                           {book.title}
                         </h3>
-                        <p className="text-[10px] text-slate-500 font-extrabold uppercase tracking-widest mt-2 mb-1">
-                          PUBLICATIONS
+                        <p className="text-[10px] text-slate-500 font-extrabold tracking-widest mt-2 mb-1">
+                          Publications
                         </p>
                         {/* Price Section */}
-                        <div className="flex items-center gap-2 pt-1">
+                        <div className="flex flex-col gap-0.5 pt-1">
                           {book.comingSoon ? (
                             <span className="text-base text-slate-500 font-bold italic">Coming Soon</span>
                           ) : (
                             <>
-                              <span className="text-sm text-slate-500 line-through font-semibold">₹{book.originalPrice.toLocaleString('en-IN')}.00</span>
-                              <span className="text-base text-slate-900 font-black">₹{book.salePrice.toLocaleString('en-IN')}.00</span>
+                              <span className="text-xs text-slate-600 font-medium">
+                                MRP: <strong className="font-bold text-slate-800">₹{book.originalPrice.toLocaleString('en-IN')}.00</strong>
+                              </span>
+                              <span className="text-sm text-slate-800 font-medium">
+                                Best Price: <strong className="font-black text-slate-900">₹{book.salePrice.toLocaleString('en-IN')}.00</strong>
+                              </span>
                             </>
                           )}
                         </div>
                       </div>
 
                       <div className="flex items-center text-xs font-bold text-slate-800 group-hover:text-[#D3994B] group-hover:translate-x-1 transition-all duration-300 gap-1 mt-auto pt-2">
-                        <span>Read Summary</span>
+                        <span>Read summary</span>
                         <ArrowRight className="h-3 w-3" />
                       </div>
                     </div>

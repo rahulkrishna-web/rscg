@@ -88,13 +88,13 @@ export default function ProjectsPage() {
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
             <div className="max-w-2xl space-y-4 sm:space-y-6">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                CASE STUDIES & PROJECTS
+                Case studies & projects
               </div>
               <h1 className="text-4xl sm:text-6xl lg:text-[68px] font-heading font-black text-white leading-[1.1] tracking-tight">
-                Transforming Ideas <br />
-                <span className="text-white">Into Reality</span>
+                Transforming ideas <br />
+                <span className="text-white">into reality</span>
               </h1>
               <p className="text-sm sm:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
                 From concept to completion, discover the projects we&apos;ve successfully executed with precision and expertise.
@@ -110,7 +110,7 @@ export default function ProjectsPage() {
             <div className="text-sm font-medium text-slate-500 flex items-center gap-2">
               <Link href="/" className="hover:text-brand-primary transition-colors">Home</Link>
               <span className="text-slate-400">/</span>
-              <span className="text-slate-800 font-semibold">Our Projects</span>
+              <span className="text-slate-800 font-semibold">Our projects</span>
             </div>
 
             {/* Search Input */}
@@ -161,7 +161,7 @@ export default function ProjectsPage() {
                     {/* Metadata and Content */}
                     <div className="flex-1 flex flex-col justify-between space-y-4">
                       <div className="space-y-3.5">
-                        <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-wider">
+                        <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-500 tracking-wider">
                           <MapPin className="h-4 w-4 text-brand-primary" />
                           <span>{project.location || "Global"}</span>
                         </div>
@@ -179,8 +179,8 @@ export default function ProjectsPage() {
                         </p>
                       </div>
 
-                      <div className="pt-3 flex items-center gap-2 text-sm font-black text-brand-primary group-hover:text-[#D3994B] transition-colors uppercase tracking-widest">
-                        <span>View Case Study</span>
+                      <div className="pt-3 flex items-center gap-2 text-sm font-black text-brand-primary group-hover:text-[#D3994B] transition-colors tracking-widest">
+                        <span>View case study</span>
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>

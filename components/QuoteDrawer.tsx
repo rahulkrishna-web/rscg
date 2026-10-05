@@ -51,7 +51,7 @@ export default function QuoteDrawer() {
         {/* Header */}
         <div className="p-6 border-b border-slate-100 flex items-center justify-between bg-brand-primary text-white">
           <div>
-            <h2 className="text-xl font-bold font-heading">Enquiry Quote List</h2>
+            <h2 className="text-xl font-bold font-heading">Enquiry quote list</h2>
             <p className="text-xs text-slate-200 mt-1">Review items to submit for a custom proposal</p>
           </div>
           <button 
@@ -70,7 +70,7 @@ export default function QuoteDrawer() {
               <div className="w-16 h-16 rounded-full bg-slate-100 flex items-center justify-center mx-auto text-slate-400">
                 📋
               </div>
-              <h3 className="font-bold text-slate-800 text-lg">Your Quote List is Empty</h3>
+              <h3 className="font-bold text-slate-800 text-lg">Your quote list is empty</h3>
               <p className="text-sm text-slate-500 max-w-xs mx-auto">
                 Explore our flour mills and products catalog to add items to your quote list.
               </p>
@@ -78,15 +78,15 @@ export default function QuoteDrawer() {
                 onClick={() => setIsDrawerOpen(false)}
                 className="mt-4 px-6 py-2.5 bg-brand-primary text-white rounded-xl text-sm font-semibold hover:bg-brand-secondary transition-colors"
               >
-                Browse Products
+                Browse products
               </button>
             </div>
           ) : (
             <>
               {/* Items List */}
               <div className="space-y-4">
-                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider">
-                  Selected Items ({totalItems})
+                <h3 className="text-sm font-bold text-slate-400 tracking-wider">
+                  Selected items ({totalItems})
                 </h3>
                 <div className="divide-y divide-slate-100">
                   {quoteItems.map((item) => (
@@ -147,8 +147,8 @@ export default function QuoteDrawer() {
 
               {/* Enquiry Form */}
               <form onSubmit={handleSubmit} className="space-y-4 pt-6 border-t border-slate-100">
-                <h3 className="text-sm font-bold text-slate-400 uppercase tracking-wider">
-                  Contact Information
+                <h3 className="text-sm font-bold text-slate-400 tracking-wider">
+                  Contact information
                 </h3>
                 
                 <div className="space-y-3">
@@ -157,7 +157,7 @@ export default function QuoteDrawer() {
                     <input 
                       type="text"
                       required
-                      placeholder="Your Full Name"
+                      placeholder="Your full name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none text-sm text-slate-800"
@@ -169,7 +169,7 @@ export default function QuoteDrawer() {
                     <input 
                       type="email"
                       required
-                      placeholder="Email Address"
+                      placeholder="Email address"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none text-sm text-slate-800"
@@ -181,7 +181,7 @@ export default function QuoteDrawer() {
                     <input 
                       type="tel"
                       required
-                      placeholder="Phone/WhatsApp Number"
+                      placeholder="Phone/WhatsApp number"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full pl-11 pr-4 py-3 border border-slate-200 rounded-xl focus:border-brand-primary focus:ring-1 focus:ring-brand-primary outline-none text-sm text-slate-800"
@@ -206,10 +206,10 @@ export default function QuoteDrawer() {
                   className="w-full py-4 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold rounded-xl shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer mt-6 disabled:opacity-75 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
-                    <span>Submitting Request...</span>
+                    <span>Submitting request...</span>
                   ) : (
                     <>
-                      <span>Submit Quote Request</span>
+                      <span>Submit quote request</span>
                       <span>→</span>
                     </>
                   )}

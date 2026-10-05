@@ -24,7 +24,7 @@ export default function LeadForm({
   const router = useRouter();
 
   const requirements = [
-    { value: "", label: "Select Business Area" },
+    { value: "", label: "Select business area" },
     { value: "wondermill", label: "Wonder Mill IoT Smart Mills" },
     { value: "stone_dresser", label: "Emery Stone Dresser Solutions" },
     { value: "turnkey_mill", label: "Turnkey Flour Mill Plants (20-150+ TPD)" },
@@ -63,13 +63,13 @@ export default function LeadForm({
   return (
     <div className={`relative glass-panel rounded-3xl p-8 shadow-2xl ${className || "shadow-slate-900/10"} transition-all duration-300`}>
       {/* Shimmer top badge */}
-      <div className="absolute -top-3.5 left-8 animate-shimmer text-white text-[10px] font-extrabold tracking-widest px-3.5 py-1.5 rounded-lg shadow-md select-none uppercase">
-        CONNECT WITH US
+      <div className="absolute -top-3.5 left-8 animate-shimmer text-white text-[10px] font-extrabold tracking-widest px-3.5 py-1.5 rounded-lg shadow-md select-none">
+        Connect with us
       </div>
 
       <div className="mb-6">
         <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-          Request a Consultation
+          Request a consultation
         </h3>
         <p className="text-sm sm:text-base text-slate-500 mt-2 leading-relaxed">
           Submit your requirements and an RS Choyal engineer or representative will contact you within one business day.
@@ -79,8 +79,8 @@ export default function LeadForm({
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name Field */}
         <div>
-          <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
-            Full Name <span className="text-brand-primary">*</span>
+          <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
+            Full name <span className="text-brand-primary">*</span>
           </label>
           <input
             type="text"
@@ -99,8 +99,8 @@ export default function LeadForm({
         {/* Phone & Email (Grid) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
-              Phone Number <span className="text-brand-primary">*</span>
+            <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
+              Phone number <span className="text-brand-primary">*</span>
             </label>
             <input
               type="tel"
@@ -117,8 +117,8 @@ export default function LeadForm({
           </div>
 
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
-              Email Address <span className="text-slate-400 font-normal lowercase">(optional)</span>
+            <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
+              Email address <span className="text-slate-400 font-normal lowercase">(optional)</span>
             </label>
             <input
               type="email"
@@ -138,7 +138,7 @@ export default function LeadForm({
         {/* City & Country (Grid) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
+            <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
               City <span className="text-brand-primary">*</span>
             </label>
             <input
@@ -156,7 +156,7 @@ export default function LeadForm({
           </div>
 
           <div>
-            <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
+            <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
               Country <span className="text-brand-primary">*</span>
             </label>
             <input
@@ -176,8 +176,8 @@ export default function LeadForm({
 
         {/* Business Area Dropdown */}
         <div>
-          <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
-            Area of Interest <span className="text-brand-primary">*</span>
+          <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
+            Area of interest <span className="text-brand-primary">*</span>
           </label>
           <div className="relative">
             <select
@@ -206,8 +206,8 @@ export default function LeadForm({
 
         {/* Message Field */}
         <div>
-          <label className="block text-[11px] font-bold text-slate-700 tracking-wider uppercase mb-1.5">
-            Brief Message <span className="text-slate-400 font-normal lowercase">(optional)</span>
+          <label className="block text-[11px] font-bold text-slate-700 tracking-wider mb-1.5">
+            Brief message <span className="text-slate-400 font-normal lowercase">(optional)</span>
           </label>
           <textarea
             placeholder="Tell us about your project or inquiry..."
@@ -225,10 +225,10 @@ export default function LeadForm({
           className="w-full mt-4 bg-gradient-to-r from-brand-primary to-brand-secondary text-white font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed group cursor-pointer"
         >
           {isSubmitting ? (
-            <span>Sending Inquiry...</span>
+            <span>Sending inquiry...</span>
           ) : (
             <>
-              <span>Submit Request</span>
+              <span>Submit request</span>
               <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </>
           )}

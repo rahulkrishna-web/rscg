@@ -14,7 +14,7 @@ interface LeaderCard {
 
 const leaders: LeaderCard[] = [
   {
-    tag: "CO-FOUNDER & EX-CHAIRMAN",
+    tag: "Co-founder & ex-chairman",
     name: "Late Mr. B. M. Choyal",
     description:
       "One of the founders who helped establish Choyal’s early foundation in indigenous emery stone and milling technology, setting the direction for generations of engineering.",
@@ -22,7 +22,7 @@ const leaders: LeaderCard[] = [
     link: "/ex-chairman",
   },
   {
-    tag: "CO-FOUNDER & EX-MANAGING DIRECTOR",
+    tag: "Co-founder & ex-managing director",
     name: "Late Shri R. D. Sharma",
     description:
       "A founding force behind the company’s growth, helping transform early manufacturing capabilities into a disciplined industrial enterprise.",
@@ -30,7 +30,7 @@ const leaders: LeaderCard[] = [
     link: "/ex-md",
   },
   {
-    tag: "CHAIRMAN & MANAGING DIRECTOR",
+    tag: "Chairman & managing director",
     name: "Mr. R. S. Choyal",
     description:
       "Carrying the legacy into a new era through advanced machinery, patented innovations, complete plants and digitally connected milling systems.",
@@ -46,7 +46,7 @@ export default function OtherLeadersSection() {
         {/* Section Header */}
         <div className="mb-10 sm:mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-heading font-black tracking-tight text-[#0B2C1C] leading-[1.2]">
-            Our Leadership
+            Our leadership
           </h2>
         </div>
 
@@ -69,7 +69,7 @@ export default function OtherLeadersSection() {
 
                 {/* Card Text Content */}
                 <div className="p-6 sm:p-7 pb-4">
-                  <div className="text-xs font-bold text-[#FFAA17] tracking-[0.06em] uppercase mb-2">
+                  <div className="text-xs font-bold text-[#FFAA17] tracking-[0.06em] mb-2">
                     {leader.tag}
                   </div>
                   <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 leading-snug mb-3">
@@ -87,7 +87,7 @@ export default function OtherLeadersSection() {
                   href={leader.link}
                   className="inline-flex items-center gap-2 text-sm font-bold text-[#0B2C1C] group-hover:text-[#FFAA17] transition-colors"
                 >
-                  <span>Read Story</span>
+                  <span>Read story</span>
                   <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </Link>
               </div>

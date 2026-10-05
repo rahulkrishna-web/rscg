@@ -20,9 +20,9 @@ export default function EmeryCTASection() {
 
       <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto">
         <div className="max-w-2xl">
-          <p className="text-[#f7b032] text-xs font-bold tracking-widest uppercase mb-4">Emery Stone Expertise</p>
+          <p className="text-[#f7b032] text-xs font-bold tracking-widest mb-4">Emery stone expertise</p>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white tracking-tight mb-6">
-            Built for Consistent Performance.
+            Built for consistent performance.
           </h2>
           <p className="text-base sm:text-lg text-slate-200 mb-12 font-medium leading-relaxed">
             Engineered for precise grinding, dependable flour quality, and long-lasting durability.
@@ -78,7 +78,7 @@ export default function EmeryCTASection() {
 
       {/* Floating Trust Box (Bottom Right) */}
       <div className="hidden md:flex absolute bottom-8 right-8 lg:bottom-12 lg:right-12 z-20 bg-black/60 backdrop-blur-md border border-white/10 p-6 rounded-xl max-w-sm flex-col gap-2 shadow-2xl">
-        <h4 className="text-white font-bold text-sm uppercase tracking-wider">Trusted Worldwide</h4>
+        <h4 className="text-white font-bold text-sm tracking-wider">Trusted worldwide</h4>
         <p className="text-slate-300 text-xs leading-relaxed">
           Delivering unparalleled grinding conditions with quality, consistency, and reliability.
         </p>

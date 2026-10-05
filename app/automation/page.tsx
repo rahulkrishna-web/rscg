@@ -47,12 +47,12 @@ export default function AutomationPage() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              AUTOMATION DIVISION
+              Automation
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Advanced Control Systems
+              Advanced control systems
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Intelligent automation that ensures consistent quality, real-time monitoring, and efficient mill performance across modern operations.
@@ -74,38 +74,29 @@ export default function AutomationPage() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <Settings2 className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Logical Screen</h4>
-              <p className="text-sm text-slate-600 font-medium mt-0.5">Architecture</p>
-            </div>
-          </div>
-          <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
-            <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Standard HMI</h4>
-              <p className="text-sm text-slate-600 font-medium mt-0.5">Screen Development</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Centralized Control</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Complete mill operation from single control panel.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <Database className="w-6 h-6" />
+              <Settings2 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Strong Architecture</h4>
-              <p className="text-sm text-slate-600 font-medium mt-0.5">Scalable &amp; Secure</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">PLC-Based Automation</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Reliable control across every milling stage.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 px-3 group hover:bg-[#eaf1ec] p-3.5 rounded-xl transition-colors cursor-default">
             <div className="w-13 h-13 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
-              <ShieldCheck className="w-6 h-6" />
+              <Zap className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Safety Module</h4>
-              <p className="text-sm text-slate-600 font-medium mt-0.5">Enhanced Protections</p>
+              <h4 className="text-base lg:text-[17px] font-bold text-slate-900 leading-snug">Flexible Upgradation</h4>
+              <p className="text-sm text-slate-600 font-medium mt-0.5">Modernize existing mills without complete rebuilding.</p>
             </div>
           </div>
         </div>
@@ -116,38 +107,29 @@ export default function AutomationPage() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
           <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Settings2 className="w-6 h-6" />
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-slate-900">Logical Screen</h4>
-              <p className="text-sm text-slate-600 font-medium">Architecture</p>
-            </div>
-          </div>
-          <div className="w-full flex items-center gap-4 pt-3 group">
-            <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Standard HMI</h4>
-              <p className="text-sm text-slate-600 font-medium">Screen Development</p>
+              <h4 className="text-base font-bold text-slate-900">Centralized Control</h4>
+              <p className="text-sm text-slate-600 font-medium">Complete mill operation from single control panel.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <Database className="w-6 h-6" />
+              <Settings2 className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Strong Architecture</h4>
-              <p className="text-sm text-slate-600 font-medium">Scalable &amp; Secure</p>
+              <h4 className="text-base font-bold text-slate-900">PLC-Based Automation</h4>
+              <p className="text-sm text-slate-600 font-medium">Reliable control across every milling stage.</p>
             </div>
           </div>
           <div className="w-full flex items-center gap-4 pt-3 group">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+              <Zap className="w-6 h-6" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900">Safety Module</h4>
-              <p className="text-sm text-slate-600 font-medium">Enhanced Protections</p>
+              <h4 className="text-base font-bold text-slate-900">Flexible Upgradation</h4>
+              <p className="text-sm text-slate-600 font-medium">Modernize existing mills without complete rebuilding.</p>
             </div>
           </div>
         </div>
@@ -160,19 +142,19 @@ export default function AutomationPage() {
           {/* Content Left */}
           <div className="lg:col-span-8 space-y-6">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118]">
-              Future-Proof Flour Milling
+              Smarter Control for Every Milling Stage
             </h2>
             <div className="w-16 h-1 bg-[#f97316] mb-6"></div>
             
             <div className="space-y-5 text-slate-600 font-medium leading-relaxed">
               <p>
-                Automation brings every stage of a milling plant into one connected, intelligent system - from grain intake, cleaning, conditioning, grinding, sifting, and material handling to storage and packing.
+                RS Choyal Group designs and delivers complete automation solutions for flour mills, supporting both new turnkey plants and the modernization of existing milling facilities. Our solutions are designed to bring greater control, consistency and operational efficiency across the entire milling process.
               </p>
               <p>
-                RS Choyal Group designs complete plant-automation solutions that monitor production flow, machine performance, energy consumption, process parameters, and operational conditions in real time. Using PLC controls, sensors, load cells, VFDs, automated interlocks, and intelligent software, the system coordinates equipment across the plant to maintain consistent output, reduce manual intervention, and prevent operational bottlenecks.
+                PLC-based automation system connects and coordinates the different stages of the mill, allowing operators to monitor and control the complete plant from a single control room. This centralized approach provides better process visibility, simplifies day-to-day operations and helps maintain consistent milling performance.
               </p>
               <p>
-                Our automation solutions can be integrated into existing plants or delivered as part of a complete turnkey project. Operators gain centralized HMI touchscreen control, automated alarms and safety systems, real-time data logging, performance dashboards, and remote monitoring through compatible mobile and web platforms.
+                For new plants, we provide complete automation as part of the turnkey setup. For existing mills, we offer step-by-step automation and upgradation, allowing key systems and processes to be modernized without requiring a complete plant rebuild.
               </p>
             </div>
           </div>
@@ -181,15 +163,15 @@ export default function AutomationPage() {
           <div className="lg:col-span-4">
             <div className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm">
               <h3 className="text-xl font-heading font-extrabold text-[#0a3118] mb-6">
-                Quick Links
+                Quick links
               </h3>
               <ul className="space-y-4">
                 {[
                   { label: "About us", href: "/about" },
-                  { label: "Products", href: "/products" },
-                  { label: "Turnkey Solutions", href: "/turnkey-projects" },
-                  { label: "Power Saving", href: "/services" },
-                  { label: "Flour Mill", href: "/flour-mills" }
+                  { label: "Products", href: "/catalog" },
+                  { label: "Turnkey solutions", href: "/turnkey-projects" },
+                  { label: "Power saving", href: "/power-saving" },
+                  { label: "Flour mill", href: "/flour-mills" }
                 ].map((link, idx) => (
                   <li key={idx}>
                     <Link href={link.href} className="flex items-center gap-3 text-slate-700 hover:text-[#0a3118] font-bold transition-colors group">
@@ -210,7 +192,7 @@ export default function AutomationPage() {
       <section className="w-full py-20 bg-slate-50 border-y border-slate-200/60 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118] mb-4">
-            Benefits of Automation
+            Benefits of automation
           </h2>
           <p className="text-slate-500 font-medium max-w-2xl mx-auto">
             Transforming traditional grinding with intelligent software systems.
@@ -220,31 +202,31 @@ export default function AutomationPage() {
         <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
           {[
             { 
-              title: "Increased Yield", 
+              title: "Increased yield", 
               desc: "Auto-pressure adjustments ensure steady grinding quality irrespective of grain variety, hardness, or raw input density.",
               img: "/images/automation/increased_yield.png",
               icon: TrendingUp
             },
             { 
-              title: "Reliable Engineering", 
+              title: "Reliable engineering", 
               desc: "Robust PLC panels, industrial-grade sensors, and automated safety interlocks ensure continuous, trouble-free plant operation.",
               img: "/images/automation/reliable_engineering.png",
               icon: ShieldCheck
             },
             { 
-              title: "Reduced Operation Cost", 
+              title: "Reduced operation cost", 
               desc: "Minimizes manual oversight requirements and stone dressing downtime by automatically compensating for stone surface wear.",
               img: "/images/automation/reduce_cost.png",
               icon: DollarSign
             },
             { 
-              title: "Data-Driven Decisions", 
+              title: "Data-driven decisions", 
               desc: "Live dashboards, performance logs, and production insights help teams make faster and smarter operational decisions.",
               img: "/images/automation/datadriven_decision.png",
               icon: Database
             },
             { 
-              title: "Improved Performance", 
+              title: "Improved performance", 
               desc: "Continuous monitoring and intelligent controls enhance stability, flour consistency, and overall plant output.",
               img: "/images/automation/improve_performance.png",
               icon: Settings2
@@ -273,7 +255,7 @@ export default function AutomationPage() {
       <section className="w-full py-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white">
         <div className="w-full text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#0a3118] mb-4">
-            Services Offered
+            Services offered
           </h2>
           <p className="text-slate-500 font-medium max-w-2xl mx-auto">
             Expert systems engineering to retrofit or scale your operations.
@@ -283,19 +265,19 @@ export default function AutomationPage() {
         <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
           {[
             {
-              title: "Digital Plant",
+              title: "Digital plant",
               desc: "Control your entire mill from a single, centralized PLC dashboard featuring automation, data logging, and performance tracking.",
               img: "/images/automation/Digital_Plant.png",
               icon: MonitorSmartphone
             },
             {
-              title: "Choyal Remote Support",
+              title: "Choyal remote support",
               desc: "Instant cloud troubleshooting, remote diagnostics, alerts, and online support by our automation experts anywhere, anytime.",
               img: "/images/automation/Choyal_Remote_Support.png",
               icon: Zap
             },
             {
-              title: "MIS Development",
+              title: "MIS development",
               desc: "Custom MIS dashboards and reports for production, efficiency, maintenance, and energy usage to support better decision-making.",
               img: "/images/automation/MIS_Development.png",
               icon: Database

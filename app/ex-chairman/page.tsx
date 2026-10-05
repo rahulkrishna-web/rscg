@@ -44,7 +44,7 @@ export default function ExChairmanPage() {
                   <div className="space-y-4">
                     <div>
                       <h2 className="text-xl font-heading font-black text-slate-900">Late Mr. B. M. Choyal</h2>
-                      <p className="text-brand-primary text-xs font-bold uppercase tracking-wider mt-1">Co-Founder &amp; Ex-Chairman</p>
+                      <p className="text-brand-primary text-xs font-bold tracking-wider mt-1">Co-Founder &amp; Ex-Chairman</p>
                     </div>
 
                     <div className="border-t border-slate-100 pt-4 space-y-3">
@@ -68,11 +68,11 @@ export default function ExChairmanPage() {
               {/* Right Biography Content */}
             <div className="lg:col-span-8 space-y-8">
               <div className="space-y-4">
-                <span className="text-xs font-extrabold text-brand-primary tracking-wider uppercase">
-                  Legacy &amp; Heritage
+                <span className="text-xs font-extrabold text-brand-primary tracking-wider">
+                  Legacy &amp; heritage
                 </span>
                 <h3 className="text-2xl sm:text-3xl font-heading font-black text-slate-950 leading-tight">
-                  A Pioneer in Milling Engineering
+                  A pioneer in milling engineering
                 </h3>
               </div>
 
@@ -100,7 +100,7 @@ export default function ExChairmanPage() {
               {/* Pillars of Legacy */}
               <div className="bg-slate-50 border border-slate-200/60 p-6 sm:p-8 rounded-[28px] mt-8">
                 <h4 className="text-lg sm:text-xl font-heading font-black text-slate-900 mb-6">
-                  Key Legacy Contributions
+                  Key legacy contributions
                 </h4>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="flex gap-3.5">
@@ -108,7 +108,7 @@ export default function ExChairmanPage() {
                       <GraduationCap className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Support for Education</h5>
+                      <h5 className="text-base font-bold text-slate-900">Support for education</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Pioneered local educational opportunities, specifically funding schools and scholarships for girls in Rajasthan.
                       </p>
@@ -119,7 +119,7 @@ export default function ExChairmanPage() {
                       <Heart className="w-5 h-5" />
                     </div>
                     <div>
-                      <h5 className="text-base font-bold text-slate-900">Social Well-being</h5>
+                      <h5 className="text-base font-bold text-slate-900">Social well-being</h5>
                       <p className="text-sm sm:text-[15px] text-slate-600 font-normal leading-relaxed mt-1">
                         Established cow shelters (Gau Shalas) and healthcare resources to benefit underprivileged communities.
                       </p>

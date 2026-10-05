@@ -80,7 +80,7 @@ export default function FlourProcessingProductPage() {
               <div className="flex items-center justify-between bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
                 {product.stats.map((stat, idx) => (
                   <div key={idx} className={`flex-1 flex flex-col items-center text-center space-y-1 ${idx !== (product.stats?.length ?? 0) - 1 ? 'border-r border-slate-100' : ''}`}>
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{stat.label}</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-widest">{stat.label}</span>
                     <span className="text-sm font-black text-[#0B1510]">{stat.value}</span>
                   </div>
                 ))}
@@ -95,7 +95,7 @@ export default function FlourProcessingProductPage() {
                   className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
                   <PackageCheck className="w-4 h-4 text-slate-900" />
-                  {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+                  {addedMessage ? "Added to quote!" : "Add to quote list"}
                 </button>
 
                 <a 
@@ -105,7 +105,7 @@ export default function FlourProcessingProductPage() {
                   className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4" />
-                  WhatsApp Enquiry
+                  WhatsApp enquiry
                 </a>
               </div>
               
@@ -114,15 +114,15 @@ export default function FlourProcessingProductPage() {
               <div className="flex flex-wrap items-center gap-3 pt-2">
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <ShieldCheck className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">1 Year Warranty</span>
+                  <span className="text-[13px] font-bold text-slate-700">1 year warranty</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">Worldwide Delivery</span>
+                  <span className="text-[13px] font-bold text-slate-700">Worldwide delivery</span>
                 </div>
                 <div className="flex items-center gap-2 bg-[#1eb557]/10 border border-[#1eb557]/20 px-3.5 py-2 rounded-xl">
                   <CheckCircle className="w-5 h-5 text-[#1eb557]" /> 
-                  <span className="text-[13px] font-bold text-slate-700">After Sales Support</span>
+                  <span className="text-[13px] font-bold text-slate-700">After sales support</span>
                 </div>
               </div>
             </div>
@@ -134,15 +134,15 @@ export default function FlourProcessingProductPage() {
         {product.keyFeatures && product.keyFeatures.length > 0 && (
           <div className="mb-24">
             <div className="text-center space-y-2 mb-12">
-              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Key Features</h3>
+              <h3 className="text-2xl font-heading font-black text-[#0a4c2a]">Key features</h3>
               <p className="text-slate-500 font-medium">Built for continuous, high efficiency processing</p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="flex flex-wrap justify-center gap-6">
               {product.keyFeatures.map((feature, idx) => {
                 const Icon = require("lucide-react")[feature.icon] || Box;
                 return (
-                  <div key={idx} className="bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={idx} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 bg-[#f0fdf4] text-[#16a34a] rounded-lg flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -162,41 +162,37 @@ export default function FlourProcessingProductPage() {
           <div className="mb-24 max-w-5xl mx-auto">
             <div className="mb-6">
               <h3 className="text-2xl sm:text-3xl font-heading font-black text-[#0a4c2a]">
-                Technical Specifications
+                Technical specifications
               </h3>
             </div>
             
             <div className="bg-white border border-slate-200/80 rounded-2xl shadow-sm overflow-hidden">
               <div className="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
                 <h4 className="font-bold text-slate-900 text-base sm:text-lg">
-                  {product.title} Specifications
+                  {product.title} specifications
                 </h4>
-                <div className="flex items-center gap-1.5 text-xs font-semibold text-[#0a4c2a] bg-[#f0fdf4] px-3 py-1.5 rounded-full border border-green-200">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#16a34a]"></div>
-                  Available Models
-                </div>
               </div>
 
               <div className="overflow-x-auto">
                 <table className="w-full text-left text-sm whitespace-nowrap">
-                  <thead className="bg-white border-b border-slate-100 text-slate-400 uppercase tracking-wider text-[11px] font-bold">
+                  <thead className="bg-white border-b border-slate-100 text-slate-400 tracking-wider text-[11px] font-bold">
                     <tr>
                       <th className="px-6 py-4 w-12 text-center">#</th>
                       <th className="px-6 py-4">
-                        {product.slug === 'vibro-sifter' ? 'VIBRO SIFTER SIZE' : 
-                         product.slug === 'plan-sifter' ? 'PLAN SIFTER SIZE' : 'PARAMETER'}
+                        {product.slug === 'vibro-sifter' ? 'Vibro sifter size' : 
+                         product.slug === 'plan-sifter' ? 'Plan sifter size' : 'Parameter'}
                       </th>
                       <th className="px-6 py-4">
-                        {product.slug === 'vibro-sifter' ? 'CAPACITY' : 
-                         product.slug === 'plan-sifter' ? 'LENGTH' : 'SPECIFICATION'}
+                        {product.slug === 'vibro-sifter' ? 'Capacity' : 
+                         product.slug === 'plan-sifter' ? 'Length' : 'Specification'}
                       </th>
-                      {product.slug === 'vibro-sifter' && <th className="px-6 py-4">DECK TYPE</th>}
+                      {product.slug === 'vibro-sifter' && <th className="px-6 py-4">Deck type</th>}
                       {product.slug === 'plan-sifter' && (
                         <>
-                          <th className="px-6 py-4">WIDTH</th>
-                          <th className="px-6 py-4">HEIGHT</th>
-                          <th className="px-6 py-4">CAPACITY</th>
-                          <th className="px-6 py-4">POWER</th>
+                          <th className="px-6 py-4">Width</th>
+                          <th className="px-6 py-4">Height</th>
+                          <th className="px-6 py-4">Capacity</th>
+                          <th className="px-6 py-4">Power</th>
                         </>
                       )}
                     </tr>
@@ -241,7 +237,7 @@ export default function FlourProcessingProductPage() {
                     <div className="text-[#f7b032] group-hover:scale-110 transition-transform">
                       <AppIcon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-bold text-slate-600 text-center uppercase tracking-wide leading-snug">
+                    <span className="text-[11px] font-bold text-slate-600 text-center tracking-wide leading-snug">
                       {app.label}
                     </span>
                   </div>

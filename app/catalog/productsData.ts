@@ -1,4 +1,4 @@
-// Auto-generated products data with full description and additional information
+// Product Catalog Data - Strictly synchronized with live website product landing pages & subpages
 export interface ProductVariant {
   name: string;
   size: string;
@@ -7,2136 +7,968 @@ export interface ProductVariant {
 }
 
 export interface ProductItem {
-  overview?: string;
-  features?: string[];
-  applications?: string[];
-  specifications?: Record<string, string>;
   slug: string;
   title: string;
   subtitle?: string;
-  description: string; // Can contain HTML tags
-  shortDescription: string; // Plain text short description for search, cards, and SEO
+  overview?: string;
+  description: string;
+  shortDescription: string;
   image: string;
   category: string;
-  url?: string;
+  categoryLabel: string;
+  url: string;
+  badge?: string;
+  features?: string[];
+  applications?: string[];
+  specifications?: Record<string, string>;
   variants: ProductVariant[];
   additionalInfo?: Record<string, string>;
 }
 
-export const categoriesData = {
-  "smart": {
-    "name": "Smart & Automated",
-    "icon": "Cpu"
-  },
-  "chakki": {
-    "name": "Chakki & Horizontal Mills",
-    "icon": "Workflow"
-  },
-  "controls": {
-    "name": "Controllers & Smart Feeders",
-    "icon": "Settings"
-  },
-  "cleaning": {
-    "name": "Cleaning & Separation",
-    "icon": "Filter"
-  },
-  "processing": {
-    "name": "Processing & Finishing",
-    "icon": "Activity"
-  },
-  "stones": {
-    "name": "Emery Stones & Dressers",
-    "icon": "Layers"
-  },
-  "handling": {
-    "name": "Handling & Silos",
-    "icon": "Database"
-  },
-  "books": {
-    "name": "Publications & Books",
-    "icon": "BookOpen"
-  }
+export interface CatalogCategory {
+  id: string;
+  name: string;
+  icon?: string;
+  desc?: string;
+}
+
+export const catalogCategories: CatalogCategory[] = [
+  { id: "all", name: "All Products" },
+  { id: "flour-mills", name: "Flour Mills" },
+  { id: "emery-stones", name: "Emery Stones" },
+  { id: "grain-processing", name: "Grain Processing" },
+  { id: "flour-processing", name: "Flour Processing" },
+  { id: "grain-storage-handling", name: "Grain Storage & Silos" },
+  { id: "power-saving", name: "Automation & Power Saving" },
+  { id: "vending-machines", name: "Vending Machines" },
+  { id: "turnkey-projects", name: "Turnkey Solutions" },
+  { id: "books", name: "Publications & Books" }
+];
+
+export const categoriesData: Record<string, { name: string; icon: string }> = {
+  "flour-mills": { name: "Flour Mills", icon: "Workflow" },
+  "emery-stones": { name: "Emery Stones", icon: "Layers" },
+  "grain-processing": { name: "Grain Processing", icon: "Filter" },
+  "flour-processing": { name: "Flour Processing", icon: "Workflow" },
+  "grain-storage-handling": { name: "Grain Storage & Silos", icon: "Database" },
+  "power-saving": { name: "Automation & Power Saving", icon: "Cpu" },
+  "vending-machines": { name: "Vending Machines", icon: "ShoppingBag" },
+  "turnkey-projects": { name: "Turnkey Solutions", icon: "Factory" },
+  "books": { name: "Publications & Books", icon: "BookOpen" },
+  // Compatibility aliases
+  "smart": { name: "Smart & Automated", icon: "Cpu" },
+  "chakki": { name: "Chakki & Horizontal Mills", icon: "Workflow" },
+  "controls": { name: "Automation & Power Saving", icon: "Settings" },
+  "cleaning": { name: "Grain Processing", icon: "Filter" },
+  "processing": { name: "Flour Processing", icon: "Activity" },
+  "stones": { name: "Emery Stones", icon: "Layers" },
+  "handling": { name: "Grain Storage & Silos", icon: "Database" }
 };
 
 export const productsData: ProductItem[] = [
+  // ================= 1. FLOUR MILLS =================
   {
-    "slug": "vibro-sifter",
-    "title": "Vibro Sifter",
-    "subtitle": "",
-    "overview": "Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.",
-    "features": ["High-precision screening and grading", "Compact and hygienic design", "Low noise and vibration operation", "Quick screen changing and easy maintenance", "Suitable for continuous industrial operation"],
-    "applications": ["Flour mills", "Food processing", "Spice & powder screening", "Grain processing", "Chemical & pharmaceutical industries"],
-    "specifications": {"900 MM": "300-500 kg/hr  500-800 kg/hr", "1200 MM": "600-900 kg/hr", "1500 MM": "1000-1200 kg/hr"},
-    "category": "processing",
-    "image": "/images/flour-processing/vibrosifter.png",
-    "description": "<p>Vibro Sifter is an efficient screening machine used for grading and separating flour, powders, and granular materials with high accuracy and consistent performance.</p>",
-    "shortDescription": "Efficient screening machine used for grading and separating flour.",
-    "variants": [],
+    slug: "wonder-mill",
+    title: "Wonder Mill",
+    subtitle: "Digital Stone Flour Mill",
+    overview: "Wonder Mill is a patented automated stone flour mill with Wonder Miller control technology. Built for efficient commercial grinding, it helps save up to 30% power, improve flour quality, and increase production with intelligent automation.",
+    features: [
+      "WiFi Enabled & Data Logging",
+      "Up to 30% Power Saving",
+      "32 Built-in Recipes",
+      "Touchscreen PLC Control",
+      "Android & iOS Connectivity"
+    ],
+    applications: ["Commercial flour mills", "Atta processing plants", "Modern whole-grain milling"],
+    specifications: {
+      "Grinding Capacity (24\")": "200–250 Kg/Hr",
+      "Grinding Capacity (30\")": "450–500 Kg/Hr",
+      "Grinding Capacity (48\")": "650–700 Kg/Hr",
+      "Power Load": "15 / 25 / 40 HP"
+    },
+    category: "flour-mills",
+    categoryLabel: "Flour Mills",
+    badge: "Patented",
+    image: "/images/plants/flour-mills/products/Wonder mill/wondermill with wondermiller.png",
+    description: "Patented automated digital stone flour mill featuring Wonder Miller PLC controls, data logging, and energy optimization.",
+    shortDescription: "Patented automated digital stone flour mill with Wonder Miller PLC controls, data logging, and energy optimization.",
+    url: "/flour-mills/wonder-mill",
+    variants: []
   },
   {
-    "slug": "entoleter",
-    "title": "Entoleter",
-    "subtitle": "High-Impact Insect Control for Grain and Flour",
-    "overview": "The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing. Its high-speed impact action helps improve hygiene, protect product quality, and reduce the risk of infestation in downstream storage and packing.\nBuilt for reliable continuous operation, it is suitable for flour mills, grain-processing plants, and food-production lines where consistent sanitation and product safety are essential.",
-    "features": ["Eliminates insects at all stages of the life cycle", "Helps remove eggs, larvae, and adult insects", "Supports hygienic grain and flour processing", "Improves food safety and product quality", "Reduces the risk of downstream infestation", "Suitable for continuous commercial operation", "Engineered for dependable, high-speed performance", "Integrates easily into processing lines", "Improved product hygiene", "Better protection during storage", "Reduced infestation risk", "Consistent flour quality", "Lower product rejection and contamination risk", "Reliable continuous performance"],
-    "applications": ["Flour-milling plants", "Grain-processing facilities", "Finished-flour treatment lines", "Pre-packing flour sanitation", "Storage and infestation-control systems", "Food-processing plants"],
-    "specifications": {},
-    "category": "processing",
-    "image": "/images/flour-processing/entoleter.png",
-    "description": "<p>The Entoleter is designed to eliminate insects, larvae, and eggs from grain and flour during processing.</p>",
-    "shortDescription": "High-Impact Insect Control for Grain and Flour.",
-    "variants": [],
+    slug: "iquadra-mill",
+    title: "iQuadra Mill",
+    subtitle: "Automated Stone Flour Mill",
+    overview: "iQuadra is an automated stone flour mill engineered with advanced quadra grinding technology, delivering superior flour quality, precision grain feeding, and high production efficiency.",
+    features: [
+      "Quadra grinding technology",
+      "Precision automated grain feeding",
+      "Integrated control panel",
+      "Consistent low-temperature milling"
+    ],
+    applications: ["Commercial atta production", "Multi-grain milling", "Industrial food units"],
+    specifications: {
+      "Technology": "Quadra Grinding",
+      "Milling Type": "Stone Ground Cold Milling",
+      "Efficiency": "High Output / Low Heat"
+    },
+    category: "flour-mills",
+    categoryLabel: "Flour Mills",
+    badge: "Energy Saving",
+    image: "/images/plants/flour-mills/products/iQuadra/iquadra_mainimg.png",
+    description: "Automated stone flour mill with quadra grinding technology delivering superior flour quality and energy savings.",
+    shortDescription: "Automated stone flour mill with quadra grinding technology delivering superior flour quality and energy savings.",
+    url: "/flour-mills/iquadra-mill",
+    variants: []
   },
   {
-    "slug": "plan-sifter",
-    "title": "Plan Sifter",
-    "subtitle": "",
-    "overview": "Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials. It ensures uniform particle size, high screening efficiency, and consistent product quality for modern flour milling operations.",
-    "features": ["High screening efficiency with accurate particle separation", "Precision gyratory motion for uniform material distribution", "Heavy-duty, industrial-grade construction", "Smooth and low-vibration operation", "Easy maintenance with long service life"],
-    "applications": ["Flour mills", "Wheat, rice & maize flour processing", "Grain grading", "Powder classification", "Food processing industries"],
-    "specifications": {"2x12": "1800 MM", "4x12": "2000 MM", "4x16": "2000 MM", "8x16": "2400 MM", "8x20": "2400 MM"},
-    "category": "processing",
-    "image": "/images/flour-processing/plansifter.png",
-    "description": "<p>Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour and powdered materials.</p>",
-    "shortDescription": "Precision sieving machine designed for efficient grading.",
-    "variants": [],
+    slug: "atta-expert",
+    title: "Atta Expert",
+    subtitle: "Vertical Stone Flour Mill",
+    overview: "Atta Expert is a robust vertical stone flour mill built for continuous commercial operation. Engineered to produce high-quality stone-ground atta with natural aroma, flavor, and texture.",
+    features: [
+      "Heavy-duty vertical stone design",
+      "Continuous commercial duty cycle",
+      "Consistent grain feeding mechanism",
+      "Long-life precision emery stones"
+    ],
+    applications: ["Commercial chakki plants", "Regional wheat flour mills", "Contract grinding units"],
+    specifications: {
+      "Orientation": "Vertical",
+      "Milling Mechanism": "Abrasive Emery Stones",
+      "Duty Cycle": "Continuous Commercial"
+    },
+    category: "flour-mills",
+    categoryLabel: "Flour Mills",
+    badge: "Commercial",
+    image: "/images/plants/flour-mills/products/semi automatic/pneumatic_expert.png",
+    description: "Vertical stone flour mill designed for continuous commercial atta production with superior aroma and texture.",
+    shortDescription: "Vertical stone flour mill designed for continuous commercial atta production with superior aroma and texture.",
+    url: "/flour-mills/atta-expert",
+    variants: []
+  },
+  {
+    slug: "horizontal-mill",
+    title: "Horizontal Mill",
+    subtitle: "Heavy-Duty Horizontal Flour Mill",
+    overview: "A proven, heavy-duty horizontal stone mill built for demanding milling applications across grains, pulses, and spices. Features high-tensile bearings and balanced emery stones.",
+    features: [
+      "Heavy-duty cast and fabricated frame",
+      "Dynamic balanced emery stones",
+      "Multi-grain and spice milling capability",
+      "Low maintenance and long operational lifespan"
+    ],
+    applications: ["Grain milling", "Spice grinding", "Pulse splitting & flour"],
+    specifications: {
+      "Orientation": "Horizontal",
+      "Construction": "Heavy Duty Steel / Cast Frame",
+      "Suitability": "Wheat, Maize, Pulses, Spices"
+    },
+    category: "flour-mills",
+    categoryLabel: "Flour Mills",
+    badge: "Chakki Mill",
+    image: "/horizontal-mills/squaremagnet_supplementalimg.png",
+    description: "Heavy-duty horizontal stone mill built for reliable multi-grain, pulse, and spice grinding.",
+    shortDescription: "Heavy-duty horizontal stone mill built for reliable multi-grain, pulse, and spice grinding.",
+    url: "/flour-mills/horizontal-mill",
+    variants: []
+  },
+  {
+    slug: "ultra-mini-horizontal-mill",
+    title: "Ultra Mini Horizontal Mill",
+    subtitle: "Compact Horizontal Stone Mill",
+    overview: "A compact horizontal stone mill designed for small-scale commercial operations, test batches, specialty flours, and culinary research centers requiring authentic stone grinding.",
+    features: [
+      "Compact footprint for limited spaces",
+      "Precision micro-adjustment of stone gap",
+      "Energy efficient motor drive",
+      "Authentic cold stone milling performance"
+    ],
+    applications: ["Specialty grain laboratories", "Small commercial bakeries", "Artisan flour milling"],
+    specifications: {
+      "Footprint": "Compact / Space-Saving",
+      "Feed Control": "Precision Manual Hopper",
+      "Stone Type": "Natural / Synthetic Emery Composition"
+    },
+    category: "flour-mills",
+    categoryLabel: "Flour Mills",
+    badge: "Compact",
+    image: "/horizontal-mills/ultramini/ultramini_supplementalimg.png",
+    description: "Compact horizontal stone mill engineered for small-batch specialty grinding, trial laboratories, and artisan flour.",
+    shortDescription: "Compact horizontal stone mill engineered for small-batch specialty grinding, trial laboratories, and artisan flour.",
+    url: "/flour-mills/ultra-mini-horizontal-mill",
+    variants: []
   },
 
+  // ================= 2. EMERY STONES =================
   {
-    "slug": "wonder-mill-with-wonder-miller",
-    "title": "Wonder Mill with Wonder Miller",
-    "description": "<p>Wonder Mill with Wonder Miller is the World’s first fully automated touch screen integrated flour mill. Wonder Mill with Wonder Miller is a Milling Machine which is designed to Save Power, to Increase production and to improve the quality as well. Wonder Mill also integrates many other good features like Easy Operation, very Less requirement for human interface, high engraving precision, advanced performance, benchmarked Data and so on.</p> <p>You can operate Wonder Mill with the single touch. Wonder Mill has the Heart of State of the Art PLC system with Genius Brain software which is known as “Wonder Miller” Now the commercial production of Whole Wheat Flour will be a sensation for the grinding world, any reasonably trained person will be able to operate the whole plant.</p> <p>Features:</p> <ul> <li>Production cost savings – up to 40%</li> <li>Reduced labor dependence &amp; Cost</li> <li>Digitally assisted operation and quality control</li> <li>Benchmarked data collection and reporting</li> <li>Tilt-able conical hopper, screw feeder, PBL make geared motor and grain level sensor.</li> <li>Stainless steel stone cover</li> <li>Heavy duty spiral bevel gear suitable for above mill 90 degree input 25 HP 960 RPM 1:2.2 ratio, hollow output.</li> <li>Complete with Coupling and Main Shaft</li> <li>25 HP 960 RPM Bharat Bijlee make Electric Motor.</li> <li>Double bearing</li> <li>8″X8″ hopper magnet</li> <li>Motor Stand</li> <li>Power pack with accessory and Auto Pressure System</li> <li>Compatible to be digitally operated</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/wonder-mill-with-wonder-miller/",
-    "variants": [
-      {
-        "name": "Wonder Mill - 600 mm (24\")",
-        "size": "600 MM",
-        "specs": "Available with Hydraulic/Pneumatic Pressure System",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
-      },
-      {
-        "name": "Wonder Mill - 750 mm (30\")",
-        "size": "750MM",
-        "specs": "Available with Hydraulic Pressure System",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
-      },
-      {
-        "name": "Wonder Mill - 1200 mm (48\")",
-        "size": "1200MM",
-        "specs": "Available with Hydraulic/Pneumatic Pressure System",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/wnder-mill-with-miller-510x510.jpg"
-      }
+    slug: "horizontal-emery-stone-daniya-type",
+    title: "Horizontal Emery Stones - Daniya Type",
+    subtitle: "Natural Aroma Preservation Stones",
+    overview: "Designed and manufactured with premium abrasives to maintain natural wheat aroma and taste. Precision-balanced for high grinding efficiency, smooth running, and minimal stone wear.",
+    features: [
+      "Natural wheat aroma retention",
+      "Uniform grain reduction without overheating",
+      "High abrasive density for extended stone life",
+      "Dynamically balanced for smooth operation"
     ],
-    "additionalInfo": {
-      "Size": "1200MM, 600 MM, 750MM"
+    applications: ["Commercial stone chakki mills", "Whole wheat atta plants", "Traditional milling lines"],
+    specifications: {
+      "Type": "Daniya Pattern",
+      "Application": "Wheat Atta Grinding",
+      "Balancing": "Dynamic Factory Balanced"
     },
-    "shortDescription": "Wonder Mill with Wonder Miller is the World’s first fully automated touch screen integrated flour mill."
+    category: "emery-stones",
+    categoryLabel: "Emery Stones",
+    badge: "Abrasives",
+    image: "/emery-stone-dresser/daniya_emery_stone.png",
+    description: "Manufactured with premium abrasives to preserve natural wheat aroma, taste, and maximum stone life.",
+    shortDescription: "Manufactured with premium abrasives to preserve natural wheat aroma, taste, and maximum stone life.",
+    url: "/emery-stones/daniya-type",
+    variants: []
   },
   {
-    "slug": "wonder-mill-neo",
-    "title": "Wonder Mill Neo",
-    "description": "<p>Wonder Mill with Wonder Miller is the World’s first fully automated touch screen integrated flour mill. Wonder Mill with Wonder Miller is a Milling Machine which is designed to Save Power, to Increase production and to improve the quality as well. Wonder Mill also integrates many other good features like Easy Operation, very Less requirement for human interface, high engraving precision, advanced performance, benchmarked Data and so on.</p> <p>You can operate Wonder Mill with the single touch. Wonder Mill has the Heart of State of the Art PLC system with Genius Brain software which is known as “Wonder Miller” Now the commercial production of Whole Wheat Flour will be a sensation for the grinding world, any reasonably trained person will be able to operate the whole plant.</p> <p>Features:</p> <ul> <li>Production cost savings – up to 40%</li> <li>Reduced labor dependence &amp; Cost</li> <li>Digitally assisted operation and quality control</li> <li>Benchmarked data collection and reporting</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-Mill-Neo.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/wonder-mill-neo/",
-    "variants": [
-      {
-        "name": "750 mm (30\")",
-        "size": "750MM",
-        "specs": "Available with Pneumatic Pressure System",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-Mill-Neo-510x510.jpg"
-      }
+    slug: "horizontal-emery-stone-agate-type",
+    title: "Horizontal Emery Stones - Agate / Sheller Type",
+    subtitle: "De-Husking & Pulse Shelling Stones",
+    overview: "Agate shelling stones optimized for efficient de-husking, pulse splitting, and industrial mill pre-cleaning. Engineered with specialized hardness grading for abrasive hull removal.",
+    features: [
+      "Optimized for pulse shelling and grain de-husking",
+      "High resistance to premature surface glazing",
+      "Consistent furrow depth and grinding face",
+      "Available across multiple industrial diameters"
     ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Dal mills", "Pulse processing plants", "Industrial de-husking units"],
+    specifications: {
+      "Type": "Agate / Sheller Composition",
+      "Hardness": "Industrial Heavy-Duty",
+      "Application": "De-Husking, Hulling & Splitting"
     },
-    "shortDescription": "Wonder Mill with Wonder Miller is the World’s first fully automated touch screen integrated flour mill."
+    category: "emery-stones",
+    categoryLabel: "Emery Stones",
+    badge: "Abrasives",
+    image: "/emery-stone-dresser/agate_emery_stone.png",
+    description: "Agate shelling stones optimized for efficient de-husking, pulse splitting, and industrial mill pre-cleaning.",
+    shortDescription: "Agate shelling stones optimized for efficient de-husking, pulse splitting, and industrial mill pre-cleaning.",
+    url: "/emery-stones/agate-sheller-type",
+    variants: []
   },
   {
-    "slug": "drum-sieves",
-    "title": "Drum Sieves",
-    "description": "<p>Drum Sieves is a premium industrial solution designed for cleaning & separation. Built with high-grade components and advanced engineering, it ensures peak performance, long durability, and optimal efficiency in commercial operations.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/01/Drum-Sieve.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/drum-sieves/",
-    "variants": [
-      {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
-      },
-      {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
-      }
+    slug: "emery-stone-dresser",
+    title: "Emery Stone Dresser",
+    subtitle: "Precision Stone Dressing Machine",
+    overview: "A precision stone dressing machine engineered to restore and maintain the cutting profile of emery stones. Dresses grooves in just 3-4 minutes per groove, cutting maintenance downtime significantly.",
+    features: [
+      "Restores grinding grooves in 3-4 minutes",
+      "Dramatically extends emery stone operational life",
+      "Eliminates manual chisel errors and uneven dress",
+      "Reduces plant downtime and labor requirements"
     ],
-    "shortDescription": "Drum Sieves is a premium industrial solution designed for cleaning & separation."
-  },
-  {
-    "slug": "traditional-chakki-mill-square-frame-mill-with-traditional-hopper",
-    "title": "Traditional Chakki Mill",
-    "description": "<ul> <li>750 mm Square Frame Horizontal Mill with Motor &amp;Traditional Hopper.</li> <li>Heavy Duty Long Frame – 1 Meter base height with Emery Stone.</li> <li>Double Bearing –No. 6312 and Lower Bearing SKF No. 6209</li> <li>Motor Stand with Safety Guard</li> <li>Supplied with Bharat Bijali make 25 HP 960 RPM IE2 Motor</li> <li>With Pulley and V-Belts</li> <li>Manual Pressure System</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-TRADITIONAL-HOPPER.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-traditional-hopper/",
-    "variants": [
-      {
-        "name": "750 mm (30\") - Square frame mill with Traditional Hopper - with V-belt pulley and manual presuure system",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-TRADITIONAL-HOPPER-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Flour mill workshops", "Maintenance centers", "Commercial milling facilities"],
+    specifications: {
+      "Dressing Time": "3-4 min per groove",
+      "Operation": "Precision Guided Dressing",
+      "Compatibility": "Horizontal & Vertical Chakki Stones"
     },
-    "shortDescription": "750 mm Square Frame Horizontal Mill with Motor &Traditional Hopper."
+    category: "emery-stones",
+    categoryLabel: "Emery Stones",
+    badge: "Maintenance Tool",
+    image: "/emery-stone-dresser/emery_stone_dresser.png",
+    description: "Precision stone dressing machine engineered to restore and maintain cutting profiles in 3-4 minutes per groove.",
+    shortDescription: "Precision stone dressing machine engineered to restore and maintain cutting profiles in 3-4 minutes per groove.",
+    url: "/emery-stones/emery-stone-dresser",
+    variants: []
   },
+
+  // ================= 3. GRAIN PROCESSING =================
   {
-    "slug": "traditional-chakki-mill-square-frame-mill-with-magnet",
-    "title": "Traditional Chakki Mill",
-    "description": "<ul> <li> 750 mm Square Frame Horizontal Mill with Motor &amp; Magnet.</li> <li>Heavy Duty Long Frame – 1 Meter base height with Emery Stone.</li> <li> Magnet Glass with Integrated Magnet.</li> <li> Double Bearing –No. 6312 and Lower Bearing SKF No. 6209</li> <li> Motor Stand with Safety Guard</li> <li> Supplied with Bharat Bijali make 25 HP 960 RPM IE2 Motor With Pulley and V-Belts</li> <li> Manual Pressure System</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-MAGNET.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-magnet/",
-    "variants": [
-      {
-        "name": "750 mm (30\") - Square frame mill with magnet with V-belt pulley and manual pressure system",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-MAGNET-510x510.jpg"
-      }
+    slug: "magnetic-separator",
+    title: "Magnetic Separator",
+    subtitle: "Permanent Drum-Type Magnetic Separator",
+    overview: "Designed to remove tramp iron and ferrous contamination from free-flowing grain, flour, and bulk food products. High-intensity magnetic drum reaches up to 10,000 gauss to safeguard downstream equipment.",
+    features: [
+      "Magnetic field strength up to 10,000 gauss",
+      "High-intensity permanent magnetic drum",
+      "Vibratory hopper for controlled continuous feeding",
+      "Protects downstream mills and rollers from metal damage"
     ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Grain cleaning sections", "Flour intake lines", "Bulk material handling"],
+    specifications: {
+      "Magnetic Roll Size": "100 mm × 1000 mm",
+      "Magnetic Strength": "Up to 10,000 Gauss",
+      "Feeding System": "Vibratory Hopper"
     },
-    "shortDescription": "750 mm Square Frame Horizontal Mill with Motor & Magnet. Heavy Duty Long Frame – 1 Meter base height with Emery Stone."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "10,000 Gauss",
+    image: "/images/grain-processing/magnetic-separator.png",
+    description: "High-intensity permanent magnetic drum separator removing ferrous contamination to protect downstream machinery.",
+    shortDescription: "High-intensity permanent magnetic drum separator removing ferrous contamination to protect downstream machinery.",
+    url: "/grain-processing/magnetic-separator",
+    variants: []
   },
   {
-    "slug": "traditional-chakki-mill-square-frame-mill-with-feeding-conveyor-hopper",
-    "title": "Traditional Chakki Mill",
-    "description": "<ul> <li>750 mm Square Frame Horizontal Mill with Motor &amp; Magnet.</li> <li>Heavy Duty Long Frame – 1 Meter base height with Emery Stone.</li> <li>Conical Hopper with Integrated Magnet, VFD Controlled Screw Feeder</li> <li>Grain Level Sensor and Alarm with Control Panel (for Grain Feeder Only)</li> <li>Double Bearing –No. 6312 and Lower Bearing SKF No. 6209</li> <li>Motor Stand with Safety Guard</li> <li>Supplied with Bharat Bijali make 25 HP 960 RPM IE2 Motor</li> <li>With Pulley and V-Belts</li> <li>Manual Pressure System</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-FEEDING-HOPPER.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/traditional-chakki-mill-square-frame-mill-with-feeding-conveyor-hopper/",
-    "variants": [
-      {
-        "name": "Square frame mill with Feeding Conveyor hopper",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/SQUARE-FRAM-MILL-WITH-FEEDING-HOPPER-510x510.jpg"
-      }
+    slug: "intensive-dampener",
+    title: "Intensive Dampener",
+    subtitle: "High-Efficiency Moisture Conditioning",
+    overview: "Engineered for precise water addition and intensive grain dampening to ensure uniform moisture penetration before milling. Ensures optimal bran toughness and clean endosperm separation.",
+    features: [
+      "Uniform moisture distribution inside grain kernels",
+      "High-speed mixing rotor with angled wear-resistant paddles",
+      "Self-cleaning housing design",
+      "Precise water flow meter regulation"
     ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Wheat conditioning sections", "Multi-grain conditioning", "Flour mill cleaning houses"],
+    specifications: {
+      "Operation": "Continuous Intensive Mixing",
+      "Wear Protection": "Abrasion-Resistant Blades",
+      "Moisture Control": "Fine Regulating Flow Meter"
     },
-    "shortDescription": "750 mm Square Frame Horizontal Mill with Motor & Magnet. Heavy Duty Long Frame – 1 Meter base height with Emery Stone."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "Conditioning",
+    image: "/images/grain-processing/intensive-dampener.png",
+    description: "High-efficiency grain conditioning and moisture addition unit ensuring uniform water penetration before milling.",
+    shortDescription: "High-efficiency grain conditioning and moisture addition unit ensuring uniform water penetration before milling.",
+    url: "/grain-processing/intensive-dampener",
+    variants: []
   },
   {
-    "slug": "mini-ultra-advance-horizontal-chakki",
-    "title": "Mini Ultra Advance Horizontal Chakki",
-    "description": "<p>Traditional Grain Feeding Hopper With Cover</p> <p>Manual Pressure Wheel System for Coarse, Medium and<br /> Fine Atta Grinding</p> <ul> <li>Pressing System is simple and can be easily operated.</li> <li>Stainless Steel Atta Collecting Hopper</li> <li>ON &amp; OFF MCB Button</li> <li>Fitted with 2 HP 1440 RPM ISI Mark Motor with 1 year<br /> warranty</li> <li>Open-able cabinet for Easy Cleaning</li> <li>Fully covered Cabinet design for good sanitation</li> <li>Hassle Free Grinding Operation</li> <li>Best Segment Chakki in Domestic &amp; Commercial flour<br /> mills.</li> <li>New edge CNC technology for maximum saving and<br /> production cost cutting.</li> <li>3D Computer Aided Design for batter efficiency and less<br /> vibration.</li> <li>The shaft prepared form the best quality EN8 steel to give<br /> longer life and better service.</li> <li>Fitted with best quality “SKF” Bearings.</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Mini-Ultra-Advance-Horizontal-Chakki.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/mini-ultra-advance-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "350 mm (14\") With Covered Cabinet",
-        "size": "350 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Mini-Ultra-Advance-Horizontal-Chakki-510x510.jpg"
-      }
+    slug: "horizontal-scourer",
+    title: "Horizontal Scourer",
+    subtitle: "Grain Surface Cleaning & De-Bearding",
+    overview: "Cleans grain outer surfaces, removes clinging dust, beards, and dirt particles. Significantly improves finished flour brightness, reduces ash content, and enhances microbiological purity.",
+    features: [
+      "Intensive surface scouring action",
+      "Removes clinging soil, beard, and crease dirt",
+      "Aspiration channel integration for light particle removal",
+      "Hardened beaters and durable screen jackets"
     ],
-    "additionalInfo": {
-      "Size": "350 MM"
+    applications: ["Pre-cleaning sections", "Tempered grain second-stage scouring", "Organic grain cleaning"],
+    specifications: {
+      "Design": "Horizontal Cylindrical Screen",
+      "Beaters": "Hardened Alloy Steel",
+      "Aspiration": "Integrated Dust Aspiration"
     },
-    "shortDescription": "Traditional Grain Feeding Hopper With Cover Manual Pressure Wheel System for Coarse, Medium and Fine Atta Grinding Pressing System is simple and can..."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "Cleaning",
+    image: "/images/grain-processing/horizontal-scourer.png",
+    description: "Cleans grain surfaces, removes clinging dust, beards, and dirt particles to improve flour purity.",
+    shortDescription: "Cleans grain surfaces, removes clinging dust, beards, and dirt particles to improve flour purity.",
+    url: "/grain-processing/horizontal-scourer",
+    variants: []
   },
   {
-    "slug": "mini-horizontal-chakki",
-    "title": "Mini Horizontal Chakki",
-    "description": "<ul> <li>350 mm Horizontal Mill with Motor</li> <li>200mm Emery Stone Thickness</li> <li>SKF Bearing &#8211; Supplied with Godrej make 2 HP Single Phase 600 RPM Motor</li> <li>With Dia.250mm Pulley and V- belts</li> <li>Motor Stand with safety guard</li> <li>Manual Pressure System</li> <li>CNC Technology for maximum saving and production cost cutting.</li> <li>3D Computer Aided Design for better efficiency and less vibration.</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/14-inch-mini.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/mini-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "350 mm (14\")",
-        "size": "350 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/14-inch-mini-510x510.jpg"
-      }
+    slug: "bran-finisher",
+    title: "Bran Finisher",
+    subtitle: "Flour Yield Separation Machine",
+    overview: "Separates adhering endosperm flour particles from bran via high-speed centrifugal impact. Delivers maximum flour extraction yield while keeping power consumption low.",
+    features: [
+      "Centrifugal separation of adhering flour from bran",
+      "Maximizes overall mill flour extraction yields",
+      "Vibration-isolated dynamic rotor assembly",
+      "Easily interchangeable perforated screen baskets"
     ],
-    "additionalInfo": {
-      "Size": "350 MM"
+    applications: ["Flour mill sifting lines", "Bran treatment lines", "Yield recovery stations"],
+    specifications: {
+      "Rotor": "Centrifugal High-Speed Beater",
+      "Screen": "Perforated Mesh Basket",
+      "Yield Benefit": "High Extraction Recovery"
     },
-    "shortDescription": "350 mm Horizontal Mill with Motor 200mm Emery Stone Thickness SKF Bearing &#8211; Supplied with Godrej make 2 HP Single Phase 600 RPM Motor With..."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "Yield Booster",
+    image: "/images/grain-processing/bran-finisher.png",
+    description: "Centrifugal beater system that separates adhering endosperm flour particles from bran to maximize extraction yields.",
+    shortDescription: "Centrifugal beater system that separates adhering endosperm flour particles from bran to maximize extraction yields.",
+    url: "/grain-processing/bran-finisher",
+    variants: []
   },
   {
-    "slug": "mini-ultra-horizontal-chakki",
-    "title": "Mini Ultra Horizontal Chakki",
-    "description": "<ul> <li>350 mm Horizontal Mill with Motor</li> <li>200mm Emery Stone Thickness</li> <li>SKF Bearing &#8211; Supplied with Godrej make 2 HP Single Phase 600 RPM Motor</li> <li>With Dia.250mm Pulley and V- belts</li> <li>Motor Stand with safety guard</li> <li>Manual Pressure System</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/14-inch-mini-1.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/mini-ultra-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "750 mm Standard Chakki",
-        "size": "750MM",
-        "specs": "Double Bearing, SKF Bearings"
-      },
-      {
-        "name": "600 mm Standard Chakki",
-        "size": "600MM",
-        "specs": "Double Bearing, Manual Press"
-      },
-      {
-        "name": "900 mm High-Capacity Chakki",
-        "size": "900MM",
-        "specs": "Heavy-Duty Shaft, 35 HP"
-      }
+    slug: "emery-polisher",
+    title: "Emery Polisher",
+    subtitle: "Abrasive Grain & Pulse Polisher",
+    overview: "A high-performance emery stone polishing cylinder designed for surface finishing, bran scouring, and de-husking pulses, cereals, and specialty grains.",
+    features: [
+      "Abrasive emery stone polishing cylinder",
+      "Adjustable discharge counterweight for polishing intensity",
+      "Uniform grain polish without high breakage",
+      "Heavy-duty industrial bearing support"
     ],
-    "additionalInfo": {
-      "Size": "350 MM"
+    applications: ["Pulse processing", "Dal mills", "Grain finishing lines"],
+    specifications: {
+      "Cylinder": "Abrasive Emery Composition",
+      "Pressure": "Adjustable Weighted Gate",
+      "Application": "Pulse Hulling & Polishing"
     },
-    "shortDescription": "350 mm Horizontal Mill with Motor 200mm Emery Stone Thickness SKF Bearing &#8211; Supplied with Godrej make 2 HP Single Phase 600 RPM Motor With..."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "Finishing",
+    image: "/images/grain-processing/emery-polisher.png",
+    description: "High-speed emery stone polishing cylinder designed for surface finishing, bran scouring, and de-husking pulses.",
+    shortDescription: "High-speed emery stone polishing cylinder designed for surface finishing, bran scouring, and de-husking pulses.",
+    url: "/grain-processing/emery-polisher",
+    variants: []
   },
   {
-    "slug": "standard-horizontal-chakki",
-    "title": "Standard Horizontal Chakki",
-    "description": "<p>HORIZONTAL FLOUR MILL COMPLETE WITH STONE</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/standard-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "400 mm (16\") (without motor)",
-        "size": "400 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") (without motor)",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\") (without motor)",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      },
-      {
-        "name": "500 mm (20\") (without motor)",
-        "size": "500 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      },
-      {
-        "name": "350 mm (14\") (without motor)",
-        "size": "350 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      }
+    slug: "emery-roll",
+    title: "Emery Roll",
+    subtitle: "Grain De-Husking & Hulling Machine",
+    overview: "An abrasive scouring and de-husking roll machine engineered for pulse split milling, grain abrasion, and cereal hull removal.",
+    features: [
+      "High abrasion efficiency",
+      "Even hull removal with minimal grain fracture",
+      "Interchangeable abrasive grit formulations",
+      "Rugged frame built for 24/7 continuous operation"
     ],
-    "additionalInfo": {
-      "Size": "350 MM, 400 MM, 500 MM, 600 MM, 750MM"
+    applications: ["Dal processing plants", "Cereal hulling lines", "Industrial grain conditioning"],
+    specifications: {
+      "Roll Type": "Emery Abrasive Roll",
+      "Operation": "Continuous High-Torque",
+      "Target Grains": "Pulses, Lentils, Cereals"
     },
-    "shortDescription": "HORIZONTAL FLOUR MILL COMPLETE WITH STONE"
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "De-Husking",
+    image: "/images/grain-processing/emery-roll.png",
+    description: "Abrasive scouring and de-husking roll machine designed for pulse split milling, grain abrasion, and cereal hull removal.",
+    shortDescription: "Abrasive scouring and de-husking roll machine designed for pulse split milling, grain abrasion, and cereal hull removal.",
+    url: "/grain-processing/emery-roll",
+    variants: []
   },
   {
-    "slug": "basic-standard-horizontal-chakki",
-    "title": "Basic Standard Horizontal Chakki",
-    "description": "<p>Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones<br /> For Double Bearing &#8211; No. 6312 and Lower Bearing SKF No. 6209,<br /> Motor Stand with safety guard<br /> Bharat bijlee make Electric motor with Pulley and V- belts<br /> (20 HP 960 RPM) (25 HP 960 RPM)</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/basic-standard-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "750 mm (30\") (with 25 HP motor)",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") (with 20 HP motor)",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Standard-Horizontal-Chakki-510x510.jpg"
-      }
+    slug: "drum-sieve",
+    title: "Drum Sieve",
+    subtitle: "Pre-Cleaning & Scalping Sieve",
+    overview: "A rotating cylindrical sieve designed for preliminary grain cleaning, efficiently removing coarse impurities, straw, stalks, strings, and foreign matter from grain intake streams.",
+    features: [
+      "High throughput scalping and pre-cleaning",
+      "Inclined rotating screen drum with self-cleaning brush",
+      "Enclosed dust-tight design with aspiration port",
+      "Protects subsequent processing machines from foreign material"
     ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Grain intake stations", "Silo loading systems", "Raw grain cleaning plants"],
+    specifications: {
+      "Drum Screen": "Perforated Sheet Steel",
+      "Drive": "Geared Motor Direct Drive",
+      "Enclosure": "Dust-Tight Steel Housing"
     },
-    "shortDescription": "Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones For Double Bearing &#8211; No."
+    category: "grain-processing",
+    categoryLabel: "Grain Processing",
+    badge: "Pre-Cleaning",
+    image: "/images/grain-processing/drum-sieve.png",
+    description: "Rotating cylindrical sieve designed for preliminary grain intake cleaning and coarse impurity separation.",
+    shortDescription: "Rotating cylindrical sieve designed for preliminary grain intake cleaning and coarse impurity separation.",
+    url: "/grain-processing/drum-sieve",
+    variants: []
   },
+
+  // ================= 4. FLOUR PROCESSING =================
   {
-    "slug": "regular-horizontal-chakki",
-    "title": "Regular Horizontal Chakki",
-    "description": "<ul> <li>Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones with 1 Meter Base height With Emery Stone</li> <li>For Double Bearing &#8211; No. 6312 and Lower Bearing SKF No. 6209,</li> <li>Motor Stand and Safety Guard</li> <li>25HP 960 RPM IE@ Bharat bijli make Electric motor with Pulley and V- belts</li> <li>Manual Pressure System</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Regular-Horizontal-Chakki.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/regular-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "750 mm (30\")",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Regular-Horizontal-Chakki-510x510.jpg"
-      }
+    slug: "entoleter",
+    title: "Entoleter",
+    subtitle: "High-Impact Insect Destroyer",
+    overview: "The Entoleter eliminates insects, larvae, and eggs from grain and flour via high-velocity mechanical impact. Ensures product safety, hygiene, and extended shelf life in storage and retail.",
+    features: [
+      "Destroys insects, larvae, and eggs mechanically",
+      "Chemical-free sanitation and food safety",
+      "High-speed precision dynamically balanced impact rotor",
+      "Installs directly before packing or bulk storage"
     ],
-    "additionalInfo": {
-      "Size": "750MM"
+    applications: ["Flour mill finishing sections", "Packing line sanitation", "Grain intake infestation control"],
+    specifications: {
+      "Operation": "High-Speed Mechanical Impact",
+      "Destruction Rate": "100% insect and egg elimination",
+      "Construction": "Precision Balanced Stainless / Cast Steel"
     },
-    "shortDescription": "Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones with 1 Meter Base height With Emery Stone For Double Bearing &#8211; No."
+    category: "flour-processing",
+    categoryLabel: "Flour Processing",
+    badge: "Food Safety",
+    image: "/images/flour-processing/entoleter.png",
+    description: "High-speed impact machine designed to eliminate insect eggs, larvae, and adults from flour and grain.",
+    shortDescription: "High-speed impact machine designed to eliminate insect eggs, larvae, and adults from flour and grain.",
+    url: "/flour-processing/entoleter",
+    variants: []
   },
   {
-    "slug": "vertical-flour-mill-danish-type",
-    "title": "Vertical Flour Mill (Danish Type)",
-    "description": "<p><span data-sheets-value=\"{&quot;1&quot;:2,&quot;2&quot;:&quot;Vertical Flour Mill (Danish Type)&quot;}\" data-sheets-userformat=\"{&quot;2&quot;:701,&quot;3&quot;:{&quot;1&quot;:0},&quot;5&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;6&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;7&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;8&quot;:{&quot;1&quot;:[{&quot;1&quot;:2,&quot;2&quot;:0,&quot;5&quot;:{&quot;1&quot;:2,&quot;2&quot;:0}},{&quot;1&quot;:0,&quot;2&quot;:0,&quot;3&quot;:3},{&quot;1&quot;:1,&quot;2&quot;:0,&quot;4&quot;:1}]},&quot;10&quot;:0,&quot;12&quot;:0}\">Vertical Flour Mill (Danish Type)</span></p>",
-    "image": "Danish Type",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/vertical-flour-mill-danish-type/",
-    "variants": [
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t600 mm (24\") (without motor)",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      },
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t500 mm (20\") (without motor)",
-        "size": "500 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      },
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t450 mm (18\") (without motor)",
-        "size": "450 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      },
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t400 mm (16\") (without motor)",
-        "size": "400 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      },
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t350 mm (14\") (without motor)",
-        "size": "350 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      },
-      {
-        "name": "Vertical Flour Mill (Danish Type)\t300 mm (12\") (without motor)",
-        "size": "300 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vertical-Flour-Mill-Danish-Type-510x510.jpg"
-      }
+    slug: "vibro-sifter",
+    title: "Vibro Sifter",
+    subtitle: "Circular Vibratory Grading Screen",
+    overview: "Vibro Sifter is a high-precision screening machine used for grading and separating flour, powders, and granular materials with high accuracy and low noise.",
+    features: [
+      "High-precision circular multi-deck screening",
+      "Quick mesh screen changing and easy sanitization",
+      "Low noise and vibration-isolated suspension",
+      "Suitable for continuous 24/7 industrial flour grading"
     ],
-    "additionalInfo": {
-      "Size": "300 MM, 350 MM, 400 MM, 450 MM, 500 MM, 600 MM"
+    applications: ["Flour grading", "Spice & powder screening", "Food processing lines"],
+    specifications: {
+      "Screen Diameters": "900 mm / 1200 mm / 1500 mm",
+      "Capacity Range": "300 - 1200 kg/hr",
+      "Decks": "Single or Multi-Deck Configurations"
     },
-    "shortDescription": "Vertical Flour Mill (Danish Type)"
+    category: "flour-processing",
+    categoryLabel: "Flour Processing",
+    badge: "Grading",
+    image: "/images/flour-processing/vibrosifter.png",
+    description: "High-precision screening machine used for grading and separating flour, powders, and fine granular materials.",
+    shortDescription: "High-precision screening machine used for grading and separating flour, powders, and fine granular materials.",
+    url: "/flour-processing/vibro-sifter",
+    variants: []
   },
   {
-    "slug": "wonder-drop",
-    "title": "Wonder Drop",
-    "description": "<ul> <li>Import substitute for the high end machineries involved in the process.</li> <li>Integrated volumetric grain flow controller.</li> <li>Easy maintenance.</li> <li>Incredibly economical yet reliable.</li> <li>Available in Semi Auto and Fully Automatic variants.</li> <li>Extensive applicability among all the grains.</li> <li>Plug and play operation.</li> <li>Wi-fi enabled*</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/wonder-drop.jpg",
-    "category": "controls",
-    "url": "https://rschoyalgroup.com/product/wonder-drop/",
-    "variants": [
-      {
-        "name": "Wonder Drop Control Panel",
-        "size": "Standard",
-        "specs": "VFD Screw Feeder Integration"
-      },
-      {
-        "name": "Flow Balancer Set",
-        "size": "Standard",
-        "specs": "Volumetric Flow sensors"
-      }
+    slug: "plan-sifter",
+    title: "Plan Sifter",
+    subtitle: "Multi-Deck Gyratory Sifting Machine",
+    overview: "Plan Sifter is a precision sieving machine designed for efficient grading and classification of flour streams. Ensures uniform particle size, high throughput, and consistent flour quality.",
+    features: [
+      "Gyratory motion for uniform material distribution",
+      "Multi-stream separation across multiple sieve compartments",
+      "Heavy-duty counterbalanced drive mechanism",
+      "High sanitation wooden or composite sieve frames"
     ],
-    "shortDescription": "Import substitute for the high end machineries involved in the process."
-  },
-  {
-    "slug": "flow-balancer",
-    "title": "Flow Balancer",
-    "description": "<p>Evaluate and balance the flow of grains</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Flow-Balancer.jpg",
-    "category": "controls",
-    "url": "https://rschoyalgroup.com/product/flow-balancer/",
-    "variants": [
-      {
-        "name": "Wonder Drop Control Panel",
-        "size": "Standard",
-        "specs": "VFD Screw Feeder Integration"
-      },
-      {
-        "name": "Flow Balancer Set",
-        "size": "Standard",
-        "specs": "Volumetric Flow sensors"
-      }
-    ],
-    "additionalInfo": {
-      "Flow Balancer": "Flow Balancer"
+    applications: ["Commercial wheat flour plants", "Maize & rice flour grading", "Multi-stream classification"],
+    specifications: {
+      "Sieve Section Sizes": "2x12, 4x12, 4x16, 8x16, 8x20",
+      "Frame Material": "High-Grade Hygienic Frames",
+      "Motion": "Smooth Gyratory Sifting"
     },
-    "shortDescription": "Evaluate and balance the flow of grains"
+    category: "flour-processing",
+    categoryLabel: "Flour Processing",
+    badge: "Multi-Deck",
+    image: "/images/flour-processing/plansifter.png",
+    description: "Precision sieving machine designed for high-capacity grading, classification, and uniform particle separation.",
+    shortDescription: "Precision sieving machine designed for high-capacity grading, classification, and uniform particle separation.",
+    url: "/flour-processing/plan-sifter",
+    variants: []
   },
+
+  // ================= 5. GRAIN STORAGE & SILOS =================
   {
-    "slug": "wonder-miller",
-    "title": "Wonder Miller",
-    "description": "<ul> <li>Complete Panel with CPU, HMI Touch Screen, Sensors, Switch Gears, accessory</li> <li>Digital PLC Control system for Wonder Mills</li> <li>Compatible for 2, 4 and 6 Wonder mill sets</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Wonder-miller.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/wonder-miller/",
-    "variants": [
-      {
-        "name": "Digital control system for 6 Wonder Mill",
-        "size": "WMLR-6",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Wonder-miller-510x510.jpg"
-      },
-      {
-        "name": "Digital control system for 4 Wonder Mill",
-        "size": "WMLR-4",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Wonder-miller-510x510.jpg"
-      }
+    slug: "bran-refraction-silo",
+    title: "Bran / Refraction Silo",
+    subtitle: "Mild-Steel Storage Silo",
+    overview: "A durable mild-steel silo designed for the controlled storage and discharge of bran and refraction material in flour milling plants. Features anti-bridging discharge cones and level monitoring.",
+    features: [
+      "Heavy-duty mild-steel welded construction",
+      "Intelligent level sensor monitoring compatibility",
+      "Smooth steep hopper cone for free-flowing discharge",
+      "Modular design for easy capacity expansion"
     ],
-    "additionalInfo": {
-      "Size": "WMLR-2, WMLR-4, WMLR-6"
+    applications: ["Bran collection stations", "Refraction storage", "Byproduct bagging systems"],
+    specifications: {
+      "Available Models": "MS-1 (1 Ton) to MS-15 (15 Ton)",
+      "Material": "Heavy-Duty Mild Steel",
+      "Discharge": "Controlled Cone Discharge"
     },
-    "shortDescription": "Complete Panel with CPU, HMI Touch Screen, Sensors, Switch Gears, accessory Digital PLC Control system for Wonder Mills Compatible for 2, 4 and 6..."
+    category: "grain-storage-handling",
+    categoryLabel: "Grain Storage & Silos",
+    badge: "Storage",
+    image: "/images/silos/bran-silo.png",
+    description: "Durable mild-steel silo designed for controlled storage and discharge of bran and refraction material.",
+    shortDescription: "Durable mild-steel silo designed for controlled storage and discharge of bran and refraction material.",
+    url: "/grain-storage-handling/bran-refraction-silo",
+    variants: []
   },
   {
-    "slug": "pre-cleaner",
-    "title": "Pre Cleaner",
-    "description": "<p>pre-cleaning machine is used for pre-cleaning a wide variety of grain types. On two screen decks arranged one on top of the other, coarse, as well as fine impurities are taken out of the product</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/pre-cleaner/",
-    "variants": [
-      {
-        "name": "1000 mm Single Deck",
-        "size": "1000 mm Single Deck",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
-      },
-      {
-        "name": "1200 mm Single Deck",
-        "size": "1200 mm Single Deck",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
-      },
-      {
-        "name": "1500 mm Double Deck",
-        "size": "1500 mm Double Deck",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
-      },
-      {
-        "name": "1500 mm Single Deck",
-        "size": "1500 mm Single Deck",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Pre-cleaner-510x510.jpg"
-      }
+    slug: "atta-flour-silo",
+    title: "Atta Flour Silo",
+    subtitle: "Sanitary Finished Flour Silo",
+    overview: "Engineered specifically for the bulk sanitary storage and fluidization of finished stone-ground flour. Eliminates material packing and supports smooth feeding into packaging lines.",
+    features: [
+      "Fluidizing discharge system prevents flour compaction",
+      "Food-grade interior coating / stainless contact options",
+      "Complete dust filtration and explosion relief venting",
+      "Direct integration with automated bagging machines"
     ],
-    "additionalInfo": {
-      "Size": "1000 mm Single Deck, 1200 mm Single Deck, 1500 mm Double Deck, 1500 mm Single Deck"
+    applications: ["Finished atta storage", "Bulk packing buffer", "Blending plants"],
+    specifications: {
+      "Construction": "Food-Grade Coated Steel",
+      "Discharge System": "Fluidizing Air Pads / Bin Activator",
+      "Safety": "Overpressure & Explosion Venting"
     },
-    "shortDescription": "pre-cleaning machine is used for pre-cleaning a wide variety of grain types."
+    category: "grain-storage-handling",
+    categoryLabel: "Grain Storage & Silos",
+    badge: "Hygienic",
+    image: "/images/silos/atta-silo.png",
+    description: "Hygienic steel storage silo with fluidization and bin discharge systems for bulk storage of finished stone-ground flour.",
+    shortDescription: "Hygienic steel storage silo with fluidization and bin discharge systems for bulk storage of finished stone-ground flour.",
+    url: "/grain-storage-handling/atta-flour-silo",
+    variants: []
   },
   {
-    "slug": "drum-sieve",
-    "overview": "The **Drum Sieve** is a high\\-performance pre\\-cleaning machine designed to efficiently remove large impurities from raw grains before the milling process. It effectively separates unwanted materials such as straw, sticks, stones, clods, paper, and other oversized foreign particles, ensuring a cleaner and safer grain flow.\nBuilt with a robust rotating cylindrical screen, the Drum Sieve delivers continuous, high\\-capacity operation with minimal maintenance requirements. By eliminating coarse contaminants at the initial stage, it protects downstream milling equipment from damage, reduces wear and tear, and improves overall plant efficiency.",
-    "features": ["Efficient removal of large and coarse impurities", "High cleaning efficiency for multiple grain varieties", "Heavy\\-duty rotating drum with durable perforated screen", "Continuous operation with high throughput capacity", "Low power consumption and minimal maintenance"],
-    "applications": ["Wheat flour milling plants", "Chakki atta processing units", "Rice milling plants", "Maize and corn processing facilities", "Pulses and grain processing industries"],
-    "specifications": {},
-    "title": "Drum Sieve",
-    "description": "<p>Drum sieve is designed to clean raw grains in wheat milling plant, mainly removing the large impurities such as stalk, clods, fragments of a brick and stone so as to ensure the quality of material and prevent the equipment from be damaged or fault, which has high efficiency in cleaning paddy, corn, soybean, wheat, sorghum and other types of grains.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/drum-sieve/",
-    "variants": [
-      {
-        "name": "700 mm Dia Capacity 2 to 4 TPH",
-        "size": "700 mm",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve-510x510.jpg"
-      },
-      {
-        "name": "900 mm Dia - Capacity 4 to 6 TPH",
-        "size": "900 mm",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Drum-Sieve-510x510.jpg"
-      }
+    slug: "conditioning-silo",
+    title: "Conditioning Silo",
+    subtitle: "Grain Resting & Tempering Silo",
+    overview: "Allows uniform moisture distribution throughout grain kernels during tempering to ensure optimal bran toughness and endosperm separation before the milling process.",
+    features: [
+      "Multiple internal discharge points for first-in, first-out flow",
+      "Eliminates dead zones and grain stagnation",
+      "Maintains stable grain temperature and moisture",
+      "Corrosion-resistant steel fabrication"
     ],
-    "additionalInfo": {
-      "Size": "700 mm, 900 mm"
+    applications: ["Wheat tempering sections", "Pre-milling resting bins", "Conditioning plants"],
+    specifications: {
+      "Flow Pattern": "Mass Flow / FIFO Discharge",
+      "Construction": "Structural Carbon Steel",
+      "Function": "Grain Moisture Equalization"
     },
-    "shortDescription": "Drum sieve is designed to clean raw grains in wheat milling plant, mainly removing the large impurities such as stalk, clods, fragments of a brick..."
+    category: "grain-storage-handling",
+    categoryLabel: "Grain Storage & Silos",
+    badge: "Tempering",
+    image: "/images/silos/conditioning-silo.png",
+    description: "Allows uniform moisture distribution throughout grain kernels during tempering to ensure optimal milling yield.",
+    shortDescription: "Allows uniform moisture distribution throughout grain kernels during tempering to ensure optimal milling yield.",
+    url: "/grain-storage-handling/conditioning-silo",
+    variants: []
   },
   {
-    "slug": "vibro-separator-classifier-separator",
-    "title": "Vibro Separator/ Classifier Separator",
-    "description": "<ul> <li>Used to remove large and small size impurities from the grain</li> <li>Machine is known for high capacity output and low power consumption</li> <li>It is easy to change sieve frames and requires minimum attention</li> <li>Available in different model</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-Separator.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/vibro-separator-classifier-separator/",
-    "variants": [
-      {
-        "name": "1000&#215;2000(Double deck) - Capacity 2-3 TPH",
-        "size": "1000x2000(Double deck)",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-Separator-510x510.jpg"
-      },
-      {
-        "name": "700&#215;1400(Double deck) - Capacity 2-3 TPH",
-        "size": "700x1400(Double deck)",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-Separator-510x510.jpg"
-      }
+    slug: "grain-silo-ms",
+    title: "Grain Silo",
+    subtitle: "Bulk Raw Grain Storage Silo",
+    overview: "Heavy-duty steel grain silo engineered for bulk raw wheat storage, complete with level sensing, ventilation, and smooth hopper bottom discharge.",
+    features: [
+      "Engineered for heavy bulk storage of raw wheat and grains",
+      "Complete aeration and level sensor ports",
+      "Self-emptying conical bottom design",
+      "Weather-sealed outdoor roof structure"
     ],
-    "additionalInfo": {
-      "Size": "1000&#215;2000(Double deck), 700&#215;1400(Double deck)"
+    applications: ["Grain intake facilities", "Commercial mill grain terminals", "Raw material storage"],
+    specifications: {
+      "Capacity": "Modular 10 to 100+ Tons",
+      "Bottom": "Hopper Bottom Conical",
+      "Material": "Heavy Gauge Steel with Protective Finish"
     },
-    "shortDescription": "Used to remove large and small size impurities from the grain Machine is known for high capacity output and low power consumption It is easy to..."
+    category: "grain-storage-handling",
+    categoryLabel: "Grain Storage & Silos",
+    badge: "Bulk Silo",
+    image: "/images/silos/grain-silo.png",
+    description: "Heavy-duty steel grain silo engineered for bulk raw wheat storage, complete with level sensing and ventilation.",
+    shortDescription: "Heavy-duty steel grain silo engineered for bulk raw wheat storage, complete with level sensing and ventilation.",
+    url: "/grain-storage-handling/grain-silo-ms",
+    variants: []
   },
+
+  // ================= 6. AUTOMATION & POWER SAVING =================
   {
-    "slug": "destoner-gravity-selector",
-    "title": "Destoner / Gravity Selector",
-    "description": "<ul> <li>Double functioning facility available in the single machine 9Grading +de-stoning)</li> <li>High capacity with low power consumption</li> <li>Easy to adjust control of feed ,Air Flow &amp; Deck elevation</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/De-stoner.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/destoner-gravity-selector/",
-    "variants": [
-      {
-        "name": "900 x 1200 mm - Capacity 4 - 6 TPH",
-        "size": "900x1200",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/De-stoner-510x510.jpg"
-      },
-      {
-        "name": "1100 mm x 1200 mm Capacity 6 - 8 TPH",
-        "size": "1100X1200",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/De-stoner-510x510.jpg"
-      }
+    slug: "wonder-miller",
+    title: "Wonder Miller",
+    subtitle: "Intelligent Mill PLC Controller",
+    overview: "Patented PLC-based automation system that controls stone pressure, motor load, feed rate, and data logging, delivering up to 30% power savings and consistent grinding performance.",
+    features: [
+      "Saves up to 30% electrical power consumption",
+      "Automatic pressure regulation between emery stones",
+      "7\" TFT touchscreen HMI with live telemetry",
+      "Cloud IoT connectivity and mobile app data logging"
     ],
-    "additionalInfo": {
-      "Size": "1100X1200, 900&#215;1200"
+    applications: ["Retrofit onto existing chakki mills", "Wonder Mill installations", "Energy optimization projects"],
+    specifications: {
+      "Energy Savings": "Up to 30%",
+      "Screen": "7\" Color Touchscreen HMI",
+      "Connectivity": "WiFi, IoT Cloud, Android & iOS"
     },
-    "shortDescription": "Double functioning facility available in the single machine 9Grading +de-stoning) High capacity with low power consumption Easy to adjust control of..."
+    category: "power-saving",
+    categoryLabel: "Automation & Power Saving",
+    badge: "Save up to 30%",
+    image: "/images/power-saving/wondermiller.png",
+    description: "Intelligent PLC-based automation system designed to optimize stone milling, save up to 30% power, and ensure consistent quality.",
+    shortDescription: "Intelligent PLC-based automation system designed to optimize stone milling, save up to 30% power, and ensure consistent quality.",
+    url: "/power-saving/wonder-miller",
+    variants: []
   },
   {
-    "slug": "sheller-type-horizontal-flour-mill-with-gear-drive",
-    "title": "Sheller Type Horizontal Flour Mill with Gear Drive",
-    "description": "<ul> <li>Base Plate – Thickness -12 MM</li> <li>Frame (Pedestal) Made of 1st Quality TATA Heavy-duty 130 MM Hollow Pipe &amp; 5”Channels</li> <li>Shaft –EN-8, Hardened Edge with Steel Ball for Longer Life &#8211; 60 MM</li> <li>Upper Bearing Housing- Heavy Duty, Having Double Bearing No. 6312 &amp; 22212.</li> <li>Lower Bearing Housing – Heavy Duty, Hardened &amp;Double Bearing SKF No. 6209,</li> <li>Heavy duty Spiral Bevel Gear Suitable for above mill 90 degree input 15 HP 960 RPM 1:2.2 ratio., hollow output. Complete with Coupling and Main Shaft</li> <li>Conical Hopper, screw feeder, PBL make Geared motor and Grain level Sensor and Alarm with Control Panel (for Grain feeder Only) with VFD controller</li> <li>Bharat Bijali Motor with coupling</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/1200mm-atta-expert.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/sheller-type-horizontal-flour-mill-with-gear-drive/",
-    "variants": [
-      {
-        "name": "Sheller Type Horizontal Flour Mill-1200  mm (48\") with Gear Drive",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/1200mm-atta-expert-510x510.jpg"
-      }
+    slug: "neomatic",
+    title: "Neomatic",
+    subtitle: "Automated Pneumatic Conveying System",
+    overview: "A fully automated pneumatic conveying system designed for efficient material handling, reliable operation, and reduced energy consumption across the complete mill.",
+    features: [
+      "10-30% energy savings over conventional mechanical elevators",
+      "Dust-free, sealed negative pressure conveying",
+      "Self-cleaning cyclone receivers and rotary airlocks",
+      "Minimizes material stagnation and contamination"
     ],
-    "additionalInfo": {
-      "Size": "1200MM"
+    applications: ["Flour conveying", "Grain lifting", "Mill pneumatics"],
+    specifications: {
+      "Power Reduction": "10 - 30%",
+      "Type": "Pneumatic Negative / Positive Pressure",
+      "System": "Fully Automated with Interlocks"
     },
-    "shortDescription": "Base Plate – Thickness -12 MM Frame (Pedestal) Made of 1st Quality TATA Heavy-duty 130 MM Hollow Pipe & 5”Channels Shaft –EN-8, Hardened Edge with..."
+    category: "power-saving",
+    categoryLabel: "Automation & Power Saving",
+    badge: "Save 10-30%",
+    image: "/images/power-saving/neomatic.png",
+    description: "Fully automated pneumatic conveying system designed for efficient material handling and reduced energy consumption.",
+    shortDescription: "Fully automated pneumatic conveying system designed for efficient material handling and reduced energy consumption.",
+    url: "/power-saving/neomatic",
+    variants: []
   },
+
+  // ================= 7. VENDING MACHINES =================
   {
-    "slug": "emery-polisher",
-    "overview": "The Emery Polisher is designed for efficient de\\-hulling and surface polishing of wheat and other grains. It is especially suitable for whole wheat atta plants, where controlled polishing helps improve grain cleanliness, finish, and overall product quality.\nThe polishing intensity can be adjusted externally through a slide\\-control mechanism, allowing operators to fine\\-tune the processing effect according to the grain type and required output.",
-    "features": ["Efficient de\\-hulling of wheat and other grains", "Ideal for whole wheat atta milling plants", "Adjustable polishing intensity", "External slide\\-control mechanism", "Uniform grain finishing", "Improved grain cleanliness and product quality", "Durable construction for commercial operation", "Designed for continuous and consistent performance"],
-    "applications": ["Whole wheat atta plants", "Wheat\\-cleaning and preparation sections", "Grain de\\-hulling systems", "Grain polishing lines", "Commercial flour\\-milling plants", "Better grain surface finish", "Improved flour quality", "Controlled removal of outer layers", "More consistent processing results", "Flexible adjustment for different grains", "Reliable continuous operation"],
-    "specifications": {},
-    "title": "Emery Polisher",
-    "description": "<p>This is an ideal machine used to for de –hulling of wheat &amp; other grains<br /> Highly sophisticated, this machine is mostly used in whole meal Atta plant.<br /> The processing effect of the machine can be adjusted from outside by means of slide control device</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/emery-polisher/",
-    "variants": [
-      {
-        "name": "Capacity - 2-2.5 TPH",
-        "size": "12’’x30’’",
-        "specs": "Power -   20+3 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 1.5-2 TPH",
-        "size": "12’’x30’’",
-        "specs": "Power -  15+3 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Polisher-510x510.jpg"
-      }
+    slug: "floura",
+    title: "Floura V400 - On-Demand Flour Vending Machine",
+    subtitle: "Fresh Stone-Ground Flour Dispenser",
+    overview: "Floura V400 is a compact fresh flour grinding and dispensing machine engineered for retail grocery stores and commercial food hubs. Grinds fresh stone-ground atta right in front of customers.",
+    features: [
+      "Fresh stone grinding on demand (40-60 kg/hr)",
+      "16\" vertical stone mill with mechanical pressure",
+      "Integrated multi-grain storage bins (3 × 180 kg)",
+      "Automatic flour sieving and bag sealing options"
     ],
-    "additionalInfo": {
-      "Size": "12’’x30’’"
+    applications: ["Supermarkets & grocery stores", "Farmer direct outlets", "Organic health food stores"],
+    specifications: {
+      "Grinding Capacity": "40 - 60 kg/hr",
+      "Mill Type": "16\" Vertical Mill",
+      "Bins": "3 Storage Bins (180 kg each)",
+      "Power": "13 HP / 9.7 kW"
     },
-    "shortDescription": "This is an ideal machine used to for de –hulling of wheat & other grains Highly sophisticated, this machine is mostly used in whole meal Atta plant."
+    category: "vending-machines",
+    categoryLabel: "Vending Machines",
+    badge: "On-Demand",
+    image: "/images/vending-machines/floura_eco.png",
+    description: "Fresh stone-ground flour on-demand vending machine with 16\" vertical mill, multi-grain bins, and instant bagging (40-60 kg/hr).",
+    shortDescription: "Fresh stone-ground flour on-demand vending machine with 16\" vertical mill, multi-grain bins, and instant bagging (40-60 kg/hr).",
+    url: "/vending-machines",
+    variants: []
   },
   {
-    "slug": "horizontal-scourer",
-    "overview": "The Horizontal Scourer is designed to remove adhering dust, husk, and surface impurities from grain before further processing.\nIts gentle yet effective scouring action helps reduce bacterial contamination, remove insect fragments, and improve grain hygiene without damaging grain quality. Powered by an electric motor, the machine is built for reliable and continuous operation in commercial grain\\-processing and flour\\-milling plants.",
-    "features": ["Removes adhering dust and husk", "Improves grain surface cleanliness", "Helps reduce bacterial contamination", "Removes insect fragments through gentle scouring", "Preserves grain quality", "Supports consistent downstream processing", "Suitable for continuous commercial operation", "Powered by a high\\-performance electric motor"],
-    "applications": ["Wheat\\-cleaning sections", "Flour\\-milling plants", "Grain\\-processing line", "Pre\\-conditioning grain cleaning", "Commercial grain hygiene systems", "Cleaner grain surface", "Improved grain hygiene", "Reduced dust and husk contamination", "Lower bacterial load", "Better preparation for conditioning and milling", "Reliable continuous performance"],
-    "specifications": {},
-    "title": "Horizontal Scourer",
-    "description": "<p>This high efficiency machine is used to remove adhering dust or husk item to the grain.<br />  Effectively reduces the bacteria content.<br />  Through very gentle scouring it also helps eliminate insect fragments.<br />  with Electric motor</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/horizontal-scourer/",
-    "variants": [
-      {
-        "name": "Capacity - 8-10 TPH",
-        "size": "S-2400",
-        "specs": "Power - 15-20 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 5-6 TPH",
-        "size": "S-1800",
-        "specs": "Power - 10-15 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Scourer-510x510.jpg"
-      }
+    slug: "floura-h500",
+    title: "Floura H500 - Commercial Flour Dispenser",
+    subtitle: "High-Capacity Batch Production Unit",
+    overview: "The H500 series delivers commercial-scale batch production with 20\" horizontal mill technology, hydraulic stone pressure, and automated packaging throughput of 100-120 kg/hr.",
+    features: [
+      "High commercial capacity: 100 - 120 kg/hr",
+      "20\" horizontal mill with hydraulic pressure system",
+      "Automatic grain feeding and electronic weighing",
+      "Integrated pouch sealing and flour sieving"
     ],
-    "additionalInfo": {
-      "Size": "S-1800, S-2400"
+    applications: ["Wholesale grain outlets", "High-volume retail centers", "Commercial batch mills"],
+    specifications: {
+      "Grinding Capacity": "100 - 120 kg/hr",
+      "Mill Type": "20\" Horizontal Mill",
+      "Pressure System": "Hydraulic",
+      "Power": "17 - 19 HP"
     },
-    "shortDescription": "This high efficiency machine is used to remove adhering dust or husk item to the grain."
+    category: "vending-machines",
+    categoryLabel: "Vending Machines",
+    badge: "Commercial Batch",
+    image: "/images/vending-machines/floura_prime.jpg",
+    description: "High-capacity automated fresh flour milling and packaging system with 20\" horizontal mill (100-120 kg/hr).",
+    shortDescription: "High-capacity automated fresh flour milling and packaging system with 20\" horizontal mill (100-120 kg/hr).",
+    url: "/vending-machines",
+    variants: []
   },
+
+  // ================= 8. TURNKEY SOLUTIONS =================
   {
-    "slug": "bin-discharger",
-    "title": "Bin Discharger",
-    "description": "<p>Bin Discharger is used for continuous feeding of material into bins &amp;silos</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bin-discharger.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/bin-discharger/",
-    "variants": [
-      {
-        "name": "SVBD-2-900-MM",
-        "size": "SVBD-2 900 mm",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bin-discharger-510x510.jpg"
-      },
-      {
-        "name": "SVBD-1-600-MM",
-        "size": "SVBD-1 600 mm",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bin-discharger-510x510.jpg"
-      }
+    slug: "turnkey-atta-plant",
+    title: "Whole Wheat Atta Plant",
+    subtitle: "Complete Automated Milling Plant",
+    overview: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing. Tailored for industrial millers seeking premium texture and yield.",
+    features: [
+      "End-to-end turnkey project from civil planning to commissioning",
+      "Patented Wonder Mill and Wonder Miller automated chakki units",
+      "Comprehensive PLC plant automation and data logging",
+      "Capacities engineered from 20 TPD to 200+ TPD"
     ],
-    "additionalInfo": {
-      "Size": "SVBD-1 600 mm, SVBD-2 900 mm"
+    applications: ["Commercial atta production", "Corporate FMCG flour brands", "Regional wheat mills"],
+    specifications: {
+      "Capacity Range": "20 TPD to 200+ TPD",
+      "Automation": "Central PLC SCADA Control",
+      "Scope": "Design, Machinery, Erection & Commissioning"
     },
-    "shortDescription": "Bin Discharger is used for continuous feeding of material into bins &silos"
+    category: "turnkey-projects",
+    categoryLabel: "Turnkey Solutions",
+    badge: "Turnkey",
+    image: "/images/turnkey/capabilities/atta plant.jpg",
+    description: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing.",
+    shortDescription: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing.",
+    url: "/turnkey-projects",
+    variants: []
   },
   {
-    "slug": "entoletor",
-    "title": "Entoletor",
-    "description": "<p>It is an ideal machine for flour mills and grain processing plant to destroy all forms of insects in all stages of<br /> growth contained in cereal grains &amp; flours. This machine is designed and manufactured using the finest<br /> quality raw material and highly developed technology.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Entolater.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/entoletor/",
-    "variants": [
-      {
-        "name": "10 HP",
-        "size": "10 HP",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Entolater-510x510.jpg"
-      },
-      {
-        "name": "7.5 HP",
-        "size": "7.5 HP",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Entolater-510x510.jpg"
-      }
+    slug: "turnkey-besan-plant",
+    title: "Gram Flour (Besan) Plant",
+    subtitle: "Chana Dal Grinding Plant",
+    overview: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving. Preserves natural yellow color, aroma, and silky finish.",
+    features: [
+      "Specialized pulse cleaning and destoning",
+      "High-efficiency de-husking and split polishing",
+      "Cold stone milling to prevent fat oxidation",
+      "Vibro and plan sifting for micro-fine besan grades"
     ],
-    "additionalInfo": {
-      "Size": "10 HP, 7.5 HP"
+    applications: ["Besan manufacturing", "Sweet and snack food producers", "Pulse mills"],
+    specifications: {
+      "Target Grain": "Bengal Gram / Chana Dal",
+      "Grinding": "Cold Stone Abrasive Milling",
+      "Fineness": "Adjustable Ultrafine Mesh"
     },
-    "shortDescription": "It is an ideal machine for flour mills and grain processing plant to destroy all forms of insects in all stages of growth contained in cereal grains & flours."
+    category: "turnkey-projects",
+    categoryLabel: "Turnkey Solutions",
+    badge: "Turnkey",
+    image: "/images/turnkey/capabilities/GRAM FLOUR.jpg",
+    description: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving.",
+    shortDescription: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving.",
+    url: "/turnkey-projects",
+    variants: []
   },
   {
-    "slug": "bran-finisher",
-    "overview": "The Bran Finisher is designed to recover flour particles still adhering to bran after milling. By separating this residual flour from the bran, it helps increase overall flour yield, reduce product loss, and improve milling efficiency.\nSuitable for common wheat, durum wheat, and rye mills, the machine delivers cleaner bran while supporting reliable and continuous plant operation.",
-    "features": ["Recovers adhering flour particles from bran", "Increases overall flour yield", "Reduces flour loss in the bran stream", "Produces cleaner and more uniform bran", "Improves overall milling efficiency", "Suitable for continuous commercial operation", "Designed for dependable, low\\-intervention performance"],
-    "applications": ["Common wheat flour mills", "Durum wheat mills", "Rye mills", "Bran\\-processing sections", "Flour\\-recovery systems", "High\\-capacity milling plants"],
-    "specifications": {},
-    "title": "Bran Finisher",
-    "description": "<p>bran finisher removes adhering flour particles from the bran, thus increasing flour yield at the mill. The bran<br /> finisher&#8217;s field of application covers mills for common wheat, durum and rye.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-finisher.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/bran-finisher/",
-    "variants": [
-      {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
-      },
-      {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
-      }
+    slug: "turnkey-multigrain-plant",
+    title: "Multi Grain Flour Grinding Plant",
+    subtitle: "Specialty Grain Milling Plant",
+    overview: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends. Multi-stage cleaning and stone grinding preserve essential vitamins and dietary fiber.",
+    features: [
+      "Custom recipes for millet, oat, barley, and quinoa blends",
+      "Integrated micro-dosing and precision proportioning",
+      "Low-temperature cold grinding preserving nutrition",
+      "Hygienic dust-free pneumatic conveying"
     ],
-    "shortDescription": "bran finisher removes adhering flour particles from the bran, thus increasing flour yield at the mill."
-  },
-  {
-    "slug": "centrifugal-sifter",
-    "title": "Centrifugal Sifter",
-    "description": "<ul> <li>Centrifugal Sifter is used for sieving and grading of grinded material.</li> <li>Our shifter is available in different size.</li> <li>with imported Bolting Cloth and Suitable Electric Motor</li> <li>Available in capacities ranging from 1 HP to 15 HP</li> <li>Available with different grinding chambers</li> <li>Precisely engineered</li> <li>Customized as per the needs and requirements</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/centrifugal-sifter/",
-    "variants": [
-      {
-        "name": "Capacity - 1000-1200 KGH",
-        "size": "SVPS 36”X192”",
-        "specs": "Power - 12.5-15 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 800-1000 KGH",
-        "size": "SVPS 36”X168”",
-        "specs": "Power - 10-12.5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 700-800  KGH",
-        "size": "SVPS 30”X144”",
-        "specs": "Power - 5-7.5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 600-750  KGH",
-        "size": "SVPS 30”X120”",
-        "specs": "Power - 5HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 400-450 KGH",
-        "size": "SVPS 30”X96”",
-        "specs": "Power - 3-5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 250-300 KGH",
-        "size": "SVPS 30”X72”",
-        "specs": "Power - 1.5 - 2 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 200-250   KGH",
-        "size": "SVPS 30”X48”",
-        "specs": "Power -  1 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/centrifugal-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "SVPS 30”X120”, SVPS 30”X144”, SVPS 30”X48”, SVPS 30”X72”, SVPS 30”X96”, SVPS 36”X168”, SVPS 36”X192”"
+    applications: ["Multi-millet flour plants", "Health cereal brands", "Superfood processing"],
+    specifications: {
+      "Supported Grains": "Ragi, Jowar, Bajra, Oats, Quinoa, Wheat",
+      "Blending": "Automated Multi-Bin Batch Proportioning",
+      "Nutrition": "Cold Grinding Nutrient Retention"
     },
-    "shortDescription": "Centrifugal Sifter is used for sieving and grading of grinded material."
+    category: "turnkey-projects",
+    categoryLabel: "Turnkey Solutions",
+    badge: "Turnkey",
+    image: "/images/turnkey/capabilities/MULTIGRAIN Flour.jpg",
+    description: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends.",
+    shortDescription: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends.",
+    url: "/turnkey-projects",
+    variants: []
   },
   {
-    "slug": "intensive-dampener",
-    "overview": "The Intensive Dampener is engineered for precise and uniform grain conditioning before milling. It ensures consistent water distribution across the grain, helping achieve the required moisture level for improved milling performance and product quality.\nThe machine supports water addition of up to 8% and features a self\\-emptying design that reduces residual material, cleaning requirements, and routine maintenance. A high\\-performance electric motor ensures reliable and continuous operation.",
-    "features": ["Precise and uniform grain dampening", "Consistent water distribution", "Supports moisture addition of up to 8%", "Improves grain conditioning and milling efficiency", "Self\\-emptying design", "Reduced sanitation and maintenance requirements", "Suitable for continuous processing", "Powered by a high\\-performance electric motor"],
-    "applications": ["Wheat\\-conditioning sections", "Flour\\-milling plants", "Grain\\-processing lines", "Pre\\-milling moisture adjustment", "Automated conditioning systems"],
-    "specifications": {},
-    "title": "Intensive Dampener",
-    "description": "<p>This high end machine is used for the uniform dampening of grain.<br />  It ensures extremely uniform water distribution<br />  Large volume of water addition (up to 8% ) is possible<br />  Unique self-emptying system ensures lesser need of sanitation &amp; maintenance.<br />  with Electric motor</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/intensive-dampener/",
-    "variants": [
-      {
-        "name": "Capacity - 6-8 TPH",
-        "size": "SVID -SS-2400",
-        "specs": "Power  12.5 HP/960 RPM",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 4-6 TPH",
-        "size": "SVID -SS- 1800",
-        "specs": "Power -  10 HP/960 RPM",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/INTENSIVE-DAMPENER-510x510.jpg"
-      }
+    slug: "turnkey-spices-plant",
+    title: "Spices & Herbal Grinding Plant",
+    subtitle: "Cold Spice Grinding System",
+    overview: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices such as turmeric, coriander, chili, and herbs.",
+    features: [
+      "Cold stone milling protects natural volatile essential oils",
+      "Heavy magnetic protection against tramp metal",
+      "Multi-deck classification for uniform spice granulation",
+      "Aspiration cooling to prevent spice charring"
     ],
-    "additionalInfo": {
-      "Size": "SVID -SS- 1800, SVID -SS-2400"
+    applications: ["Commercial spice mills", "Herbal powder manufacturing", "Curry powder plants"],
+    specifications: {
+      "Products": "Chili, Turmeric, Coriander, Herbs",
+      "Temperature Control": "Aspiration Air-Cooled Stones",
+      "Quality": "Volatile Oil Retention"
     },
-    "shortDescription": "This high end machine is used for the uniform dampening of grain."
+    category: "turnkey-projects",
+    categoryLabel: "Turnkey Solutions",
+    badge: "Turnkey",
+    image: "/images/turnkey/capabilities/spices & herbs.jpg",
+    description: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices.",
+    shortDescription: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices.",
+    url: "/turnkey-projects",
+    variants: []
   },
+
+  // ================= 9. PUBLICATIONS & BOOKS =================
   {
-    "slug": "magnetic-separator",
-    "overview": "The Permanent Drum\\-Type Magnetic Separator is designed to remove tramp iron and ferrous contamination from free\\-flowing bulk materials such as grain, flour, food products, and other processed materials.\nIt helps improve end\\-product purity, recover valuable metal contaminants, and protect downstream machinery from damage. A vibratory hopper regulates material feeding for consistent flow, while the geared drive supports reliable continuous operation.",
-    "features": ["High\\-intensity permanent magnetic drum", "Magnetic strength up to 10,000 gauss", "Removes tramp iron and ferrous contamination", "Improves product purity", "Protects downstream machinery", "Vibratory hopper for controlled feeding", "Suitable for continuous bulk processing"],
-    "applications": ["Grain cleaning plants", "Flour mills", "Food\\-processing plants", "Seed\\-processing lines", "Bulk\\-material handling systems", "Protection of downstream processing equipment"],
-    "specifications": {"Magnetic Roll Size": "100 mm \u00d7 1000 mm", "Magnetic Strength": "Up to 10,000 Gauss", "Capacity": "2\u20134 TPH", "Drive Motor": "1 HP Geared Motor", "Feeding System": "Vibratory Hopper", "Separator Type": "Permanent Drum\\-Type"},
-    "title": "Magnetic Separator",
-    "description": "<p>Magnetic Roll dia 100mm x 1000mm (10000 Gausse Power). Permanent Drum type Magnetic Separator<br /> is most useful for separating tramp iron from non magnetic material processed in bulk quantity, for the<br /> purity of end products, recovery of metal having commercial value and protection of processing plant<br /> and machinery. These are widely used in all the processing industry for separation of iron<br /> contamination from Food, Flour, Grain and many other products. with Vibrated hopper to control the<br /> free flow of feeding . Machine drive with 1Hp geared Motor.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/MAGNETIC-SEPARATOR.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/magnetic-separator/",
-    "variants": [
-      {
-        "name": "Capacity - 2-4TPH",
-        "size": "100x1000",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/MAGNETIC-SEPARATOR-510x510.jpg"
-      }
+    slug: "basics-of-chakki-milling",
+    title: "Basics of Chakki Milling",
+    subtitle: "By Prof. R.S. Choyal",
+    overview: "Basics of Chakki Milling is a practical and comprehensive guide to traditional stone milling and modern flour milling technology with 22 insightful chapters covering wheat quality, emery stones, automation, and mill management.",
+    features: [
+      "22 comprehensive chapters on chakki milling science",
+      "Detailed analysis of emery stone dressing and metallurgy",
+      "Flour quality parameters, fortification, and baking characteristics",
+      "Mill planning, pneumatic conveying, and digital automation"
     ],
-    "additionalInfo": {
-      "Size": "100&#215;1000"
+    applications: ["Mill owners & operators", "Food technologist reference", "University milling curricula"],
+    specifications: {
+      "Author": "Prof. R.S. Choyal",
+      "Chapters": "22 Technical Chapters",
+      "Formats": "Hardcover / Softcover (English & Hindi)"
     },
-    "shortDescription": "Magnetic Roll dia 100mm x 1000mm (10000 Gausse Power). Permanent Drum type Magnetic Separator is most useful for separating tramp iron from non..."
+    category: "books",
+    categoryLabel: "Publications & Books",
+    badge: "Technical Guide",
+    image: "/images/books/basics_of_chakkimilling.png",
+    description: "Comprehensive 22-chapter technical authority on traditional stone milling, grain quality, modern chakki engineering, and automation.",
+    shortDescription: "Comprehensive 22-chapter technical authority on traditional stone milling, grain quality, modern chakki engineering, and automation.",
+    url: "/books/basics-of-chakki-milling",
+    variants: []
   },
   {
-    "slug": "vibro-purifier",
-    "title": "Vibro Purifier",
-    "description": "<ul> <li>Used for clearing and classification of semolina.</li> <li>Provides more successful process in flour and semolina mill which works with hard wheat classes.</li> <li>Product flow calibrates at the inlet and by the shutter product separately spread on the sieves.</li> <li>brushes always keep meshes of sieves clean.</li> <li> Two vibro motors assembled on the body of purifier and works in opposite direction to each other.</li> <li>Sieve cases are made of aluminum.</li> <li> Sieve covers are easily opened, assembling of sieves is easy and practice.</li> <li>Maximum capacity, easy clearing.</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/VIVRO-PURIFIER.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/vibro-purifier/",
-    "variants": [
-      {
-        "name": "PURIFIER-INDIAN",
-        "size": "PURIFIER – INDIAN",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/VIVRO-PURIFIER-510x510.jpg"
-      },
-      {
-        "name": "PURIFIER-IMPORTED",
-        "size": "PURIFIER – IMPORTED",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/VIVRO-PURIFIER-510x510.jpg"
-      }
+    slug: "wholesome-flour",
+    title: "Wholesome Flour",
+    subtitle: "By Prof. R.S. Choyal",
+    overview: "Wholesome Flour: A Guide to Nourishing & Tasty Flours explores nutritional benefits, stone grinding techniques, and culinary applications of whole wheat, millets, and gluten-free flours.",
+    features: [
+      "Preserving vitamins, minerals, and bran fiber during milling",
+      "Scientific formulation of whole grain and multi-millet flours",
+      "Comparative study between stone milling and roller milling",
+      "Health benefits of cold stone-ground flours"
     ],
-    "additionalInfo": {
-      "Size": "PURIFIER – IMPORTED, PURIFIER – INDIAN"
+    applications: ["Nutritionists & dietitians", "Bakeries & health food brands", "Milling industry professionals"],
+    specifications: {
+      "Author": "Prof. R.S. Choyal",
+      "Focus": "Grain Nutrition & Milling Science",
+      "Audience": "Millers, Food Scientists, Health Enthusiasts"
     },
-    "shortDescription": "Used for clearing and classification of semolina. Provides more successful process in flour and semolina mill which works with hard wheat classes."
+    category: "books",
+    categoryLabel: "Publications & Books",
+    badge: "Nutrition Science",
+    image: "/images/books/wholesome_flour.png",
+    description: "Deep insights into grain nutrition, cold milling techniques, dietary fiber retention, and healthy flour formulation.",
+    shortDescription: "Deep insights into grain nutrition, cold milling techniques, dietary fiber retention, and healthy flour formulation.",
+    url: "/books/wholesome-flour",
+    variants: []
   },
   {
-    "slug": "reel-machine",
-    "title": "Reel Machine",
-    "description": "<ul> <li>Reel machine is an ideal machine for pre cleaning purpose .</li> <li>Available in various sized (2 sievs,3 sieve&amp; 4 sieve with sieve cleaning brush)</li> <li>This machine is used to separate out fine and large size impurities</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine.jpg",
-    "category": "cleaning",
-    "url": "https://rschoyalgroup.com/product/reel-machine/",
-    "variants": [
-      {
-        "name": "4 Sieve - Capacity 8 - 10 TPH",
-        "size": "4 SEIVE",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
-      },
-      {
-        "name": "3 Sieve - Capacity 4 - 6 TPH",
-        "size": "3 SEIVE",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
-      },
-      {
-        "name": "2 Sieve - Capacity 2 - 3  TPH",
-        "size": "2 SEIVE",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/reel-machine-510x510.jpg"
-      }
+    slug: "grain-goodness-healthy-flour-cereal-recipes",
+    title: "Grain Goodness: Healthy Flour & Cereal Recipes",
+    subtitle: "By Prof. R.S. Choyal",
+    overview: "Combines over three decades of milling expertise with the science of healthy nutrition. Features scientifically developed recipes for multigrain atta, diabetic-friendly flour, and high-protein cereal blends.",
+    features: [
+      "Scientifically developed recipes for diabetic and heart-healthy flours",
+      "Techniques for incorporating millets and ancient grains",
+      "Step-by-step guidance on stone grinding at home and commercially",
+      "Practical recipes for whole grain baking and cooking"
     ],
-    "additionalInfo": {
-      "Size": "2 SEIVE, 3 SEIVE, 4 SEIVE"
+    applications: ["Commercial flour developers", "Culinary professionals", "Health conscious households"],
+    specifications: {
+      "Author": "Prof. R.S. Choyal",
+      "Content": "Formulations, Recipes & Milling Science",
+      "Status": "Featured Publication"
     },
-    "shortDescription": "Reel machine is an ideal machine for pre cleaning purpose . Available in various sized (2 sievs,3 sieve& 4 sieve with sieve cleaning brush) This..."
+    category: "books",
+    categoryLabel: "Publications & Books",
+    badge: "Recipes & Science",
+    image: "/images/books/grain_goodness.png",
+    description: "Practical nutritional guide combining 30+ years of milling expertise with healthy recipes for multigrain atta and diet mixes.",
+    shortDescription: "Practical nutritional guide combining 30+ years of milling expertise with healthy recipes for multigrain atta and diet mixes.",
+    url: "/books/grain-goodness-healthy-flour-cereal-recipes",
+    variants: []
   },
   {
-    "slug": "impact-detacher",
-    "title": "Impact Detacher",
-    "description": "<p>Impact detacher is a new type of device in milling plant. When it works, the high-speed rotating wheels can<br /> smash the endosperm into pieces and loosen the flowers, especially make the screening easy. At the same<br /> time, the inspects and ovum’s in the wheat are killed.<br /> Features:<br />  Sterilizer application for wheat.<br />  All metal circular casing with inlet flange, cone-shaped outlet hopper and impact ring.<br />  With flanged motor, mounted onto the impact detacher wheel.<br />  Legs for supporting-or suspending installation. On the top is transparent organic glass tube. The bolts<br /> that support of organic glass is chrome plated.<br />  With triplet on the glass tube.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/IMPACT-DETACHER.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/impact-detacher/",
-    "variants": [
-      {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
-      },
-      {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
-      }
+    slug: "insights-of-flour-milling",
+    title: "Insights of Flour Milling",
+    subtitle: "By Prof. R.S. Choyal",
+    overview: "A masterclass operational guidebook for commercial mill owners and technical managers, covering extraction yield optimization, equipment maintenance, pneumatic balances, and plant profitability.",
+    features: [
+      "In-depth analysis of mill performance and yield optimization",
+      "Troubleshooting guides for stone dress, heat buildup, and flow blockages",
+      "Best practices for energy management and electrical conservation",
+      "Quality assurance protocols and testing laboratory standards"
     ],
-    "additionalInfo": {
-      "IMPACT DETACHER": "0"
+    applications: ["Mill general managers", "Maintenance engineers", "Milling plant investors"],
+    specifications: {
+      "Author": "Prof. R.S. Choyal",
+      "Focus": "Commercial Mill Operations & Engineering",
+      "Languages": "English & Hindi Editions"
     },
-    "shortDescription": "Impact detacher is a new type of device in milling plant. When it works, the high-speed rotating wheels can smash the endosperm into pieces and..."
-  },
-  {
-    "slug": "plan-sifter-with-bolting-clothe-and-motor",
-    "title": "Plan Sifter with bolting clothe and motor",
-    "description": "<p>Plan shifter is used for sieving and grading of grinded material.<br />  Our shifter is available in different size.<br />  2 feed ,4feed,8 feed, and different sieves 10,12,14,16,20 40<br />  with imported Bolting Cloth and Suitable Electric Motor</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/plan-sifter-with-bolting-clothe-and-motor/",
-    "variants": [
-      {
-        "name": "Capacity - 6-8 TPH",
-        "size": "8X20",
-        "specs": "Power - 5 - 7.5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 4-6 TPH",
-        "size": "8X16",
-        "specs": "Power - 5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 4-5 TPH",
-        "size": "4X16",
-        "specs": "Power - 3 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 3-4 TPH",
-        "size": "4X12",
-        "specs": "Power - 3 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 1-2 TPH",
-        "size": "2X12",
-        "specs": "Power - 2 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Plan-sifter-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "2X12, 4X12, 4X16, 8X16, 8X20"
-    },
-    "shortDescription": "Plan shifter is used for sieving and grading of grinded material."
-  },
-  {
-    "slug": "vibro-sifter-with-anti-chocking-system",
-    "title": "Vibro Sifter",
-    "description": "<p>Vibro separators are circular gyratory screens used to separate solids from solids and liquid from<br /> solid. Vibro Sifter consists of Specially Designed Motor mounted vertically at the center of the base<br /> plate of the Screen. The Screen is in between feeding hopper and bowl. The material is fed on to the<br /> center of top screen. The undersize material passes rapidly through the screen during its travel to the<br /> periphery. The oversized material get continuously discharged through a tangential outlet. This is<br /> achieved by specially designed Vibratory Motor along with eccentric Top and Bottom Weights.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter.jpg",
-    "category": "processing",
-    "url": "https://rschoyalgroup.com/product/vibro-sifter-with-anti-chocking-system/",
-    "variants": [
-      {
-        "name": "Double Deck",
-        "size": "SVBS-2 1200",
-        "specs": "Capacity - 2 TPH | Power - 2 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
-      },
-      {
-        "name": "Single Deck",
-        "size": "SVBS-1 1200",
-        "specs": "Capacity - 1.5 TPH | Power -  1.5 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
-      },
-      {
-        "name": "Single Deck 90 mm",
-        "size": "SVBS-1 900",
-        "specs": "Capacity - 800 - 1000 KGH | Power - 1 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
-      },
-      {
-        "name": "Double Deck 90 mm",
-        "size": "SVBS-2 900",
-        "specs": "Capacity - 1 TPH | Power - 1 HP",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Vibro-sifter-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "SVBS-1 1200, SVBS-1 900, SVBS-2 1200, SVBS-2 900"
-    },
-    "shortDescription": "Vibro separators are circular gyratory screens used to separate solids from solids and liquid from solid."
-  },
-  {
-    "slug": "emery-roll",
-    "overview": "The Emery Roll is a high\\-performance de\\-hulling machine designed for efficient removal of bran and outer husk from wheat and other grains. It ensures uniform processing, improves flour quality, and enhances milling efficiency. The machine is widely used in whole wheat atta plants and dal processing units for consistent and reliable grain conditioning.",
-    "features": ["Efficient de\\-hulling of wheat and other grains", "Adjustable processing effect through external slide control", "Heavy\\-duty and durable construction", "High\\-capacity operation with consistent performance", "Suitable for continuous industrial applications"],
-    "applications": ["Wheat de\\-hulling", "Whole Wheat Atta Plants", "Dal Processing Plants", "Grain Cleaning &amp; Conditioning", "Flour Milling Industries"],
-    "specifications": {"Length": "2100 MM", "Width": "750 mm", "Height": "1200 MM", "Capacity": "5\\-6 Ton/hr", "Power": "15\\-20 kW", "Air Qty": "35\\-40 M3/Min", "Size": "16x33\""},
-    "title": "Emery Roll",
-    "description": "<p>This is an ideal machine used to for de –hulling of wheat &amp; other grains  Highly sophisticated ,this machine is mostly used in whole meal Atta plant and Dal plant  The processing effect of the machine can be adjusted from outside by means of slide control device  The processing effect of the machine can be adjusted from outside by means of slide control device.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll.jpg",
-    "category": "stones",
-    "url": "https://rschoyalgroup.com/product/emery-roll/",
-    "variants": [
-      {
-        "name": "Capacity - 3 -3.5 TPH",
-        "size": "16’’X33’’",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll-510x510.jpg"
-      },
-      {
-        "name": "Capacity - 2-2.5 TPH",
-        "size": "14’’X33’’",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Roll-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "14’’X33’’, 16’’X33’’"
-    },
-    "shortDescription": "This is an ideal machine used to for de –hulling of wheat & other grains  Highly sophisticated ,this machine is mostly used in whole meal Atta plant..."
-  },
-  {
-    "slug": "grain-silo",
-    "title": "Grain Silo",
-    "description": "<p>Grain Storage silo</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/grain-silo/",
-    "variants": [
-      {
-        "name": "100-TON",
-        "size": "100 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "80-TON",
-        "size": "80 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "60-TON",
-        "size": "60 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "50-TON",
-        "size": "50 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "40-TON",
-        "size": "40 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "30-TON",
-        "size": "30 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "25-TON",
-        "size": "25 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "20-TON",
-        "size": "20 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "15-TON",
-        "size": "15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "10-TON",
-        "size": "10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      },
-      {
-        "name": "5-TON",
-        "size": "5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Grain-Silo-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "10 TON, 100 TON, 15 TON, 20 TON, 25 TON, 30 TON, 40 TON, 5 TON, 50 TON, 60 TON, 80 TON"
-    },
-    "shortDescription": "Commercial-grade steel silos and grain handling equipment designed for optimal storage and vertical elevator transport."
-  },
-  {
-    "slug": "conditioning-silo",
-    "title": "Conditioning Silo",
-    "description": "<p>conditioning silo for grain storage.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/conditioning-silo/",
-    "variants": [
-      {
-        "name": "SS-100-TON",
-        "size": "SS - 100 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-80-TON",
-        "size": "SS - 80 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-60-TON",
-        "size": "SS - 60 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-50-TON",
-        "size": "SS - 50 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-40-TON",
-        "size": "SS - 40 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-30-TON",
-        "size": "SS - 30 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-25-TON",
-        "size": "SS - 25 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-20-TON",
-        "size": "SS - 20 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-15-TON",
-        "size": "SS - 15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-10-TON",
-        "size": "SS - 10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "SS-5-TON",
-        "size": "SS - 5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-100-TON",
-        "size": "MS - 100 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-80-TON",
-        "size": "MS - 80 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-60-TON",
-        "size": "MS - 60 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-50-TON",
-        "size": "MS - 50 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-40-TON",
-        "size": "MS - 40 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-30-TON",
-        "size": "MS - 30 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-25-TON",
-        "size": "MS - 25 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-20-TON",
-        "size": "MS - 20 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-15-TON",
-        "size": "MS - 15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-10-TON",
-        "size": "MS - 10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      },
-      {
-        "name": "MS-5-TON",
-        "size": "MS - 5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "MS &#8211; 10 TON, MS &#8211; 100 TON, MS &#8211; 15 TON, MS &#8211; 20 TON, MS &#8211; 25 TON, MS &#8211; 30 TON, MS &#8211; 40 TON, MS &#8211; 5 TON, MS &#8211; 50 TON, MS &#8211; 60 TON, MS &#8211; 80 TON, SS &#8211; 10 TON, SS &#8211; 100 TON, SS &#8211; 15 TON, SS &#8211; 20 TON, SS &#8211; 25 TON, SS &#8211; 30 TON, SS &#8211; 40 TON, SS &#8211; 5 TON, SS &#8211; 50 TON, SS &#8211; 60 TON, SS &#8211; 80 TON"
-    },
-    "shortDescription": "conditioning silo for grain storage."
-  },
-  {
-    "slug": "atta-silo",
-    "title": "Atta Silo",
-    "description": "<p>Storage silo for Atta</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/atta-silo/",
-    "variants": [
-      {
-        "name": "SS-50-TON",
-        "size": "SS - 50 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-40-TON",
-        "size": "SS - 40 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-30-TON",
-        "size": "SS - 30 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-25-TON",
-        "size": "SS - 25 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-20-TON",
-        "size": "SS - 20 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-15-TON",
-        "size": "SS - 15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-10-TON",
-        "size": "SS - 10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "SS-5-TON",
-        "size": "SS - 5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-50-TON",
-        "size": "MS - 50 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-40-TON",
-        "size": "MS - 40 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-30-TON",
-        "size": "MS - 30 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-25-TON",
-        "size": "MS - 25 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-20-TON",
-        "size": "MS - 20 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-15-TON",
-        "size": "MS - 15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-10-TON",
-        "size": "MS - 10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      },
-      {
-        "name": "MS-5-TON",
-        "size": "MS - 5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Silo-1-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "MS &#8211; 10 TON, MS &#8211; 15 TON, MS &#8211; 20 TON, MS &#8211; 25 TON, MS &#8211; 30 TON, MS &#8211; 40 TON, MS &#8211; 5 TON, MS &#8211; 50 TON, SS &#8211; 10 TON, SS &#8211; 15 TON, SS &#8211; 20 TON, SS &#8211; 25 TON, SS &#8211; 30 TON, SS &#8211; 40 TON, SS &#8211; 5 TON, SS &#8211; 50 TON"
-    },
-    "shortDescription": "Storage silo for Atta"
-  },
-  {
-    "slug": "sheller-type-horizontal-flour-mill",
-    "title": "Sheller Type Horizontal Flour Mill with Pulley Drive",
-    "description": "<ul> <li>Base Plate – Thickness -12 MM</li> <li>Frame (Pedestal) Made of 1st Quality TATA Heavy-duty 91MM Hollow Pipe &amp; 4”Channels</li> <li>Shaft –EN-8, Hardened Edge with Steel Ball for Longer Life &#8211; 60 MM</li> <li>Upper Bearing Housing- Heavy Duty, Having Double Bearing No. 6312 &amp; 22212.</li> <li>Lower Bearing Housing – Heavy Duty, Hardened &amp;Double Bearing SKF No. 6209,</li> <li>V Belt Pulley &#8211; 16”X4XC Grooves.</li> <li>Hopper with stand, Manual Inlet control and Motor Stands</li> <li> without motor and V- belts</li> <li>with motor and V- belts</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Sheller-Type.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/sheller-type-horizontal-flour-mill/",
-    "variants": [
-      {
-        "name": "Sheller Type Horizontal Flour Mill- 1200  mm (48\") with V-Belt Drive",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Sheller-Type-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM"
-    },
-    "shortDescription": "Base Plate – Thickness -12 MM Frame (Pedestal) Made of 1st Quality TATA Heavy-duty 91MM Hollow Pipe & 4”Channels Shaft –EN-8, Hardened Edge with..."
-  },
-  {
-    "slug": "long-frame-regular-horizontal-chakki-with-feeding-hopper",
-    "title": "Long Frame Regular Horizontal Chakki with feeding hopper",
-    "description": "<ul> <li>Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones with 1 Meter Base height</li> <li>Conical Hopper, VDF controlled Screw feeder, PBL make Geared motor</li> <li>Grain level Sensor and Alarm with Control Panel (for Grain feeder Only)</li> <li>For Double Bearing &#8211; No. 6312 and Lower Bearing SKF No. 6209,</li> <li>Motor Stand and Safety Guard</li> <li>Bharat bijli make Electric motor with Pulley and V- belts</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Long-Frame.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/long-frame-regular-horizontal-chakki-with-feeding-hopper/",
-    "variants": [
-      {
-        "name": "750 mm (30\")",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Long-Frame-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\")",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Long-Frame-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "600 MM, 750MM"
-    },
-    "shortDescription": "Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones with 1 Meter Base height Conical Hopper, VDF controlled Screw feeder, PBL make Geared..."
-  },
-  {
-    "slug": "heavy-duty-standard-horizontal-chakki",
-    "title": "Heavy Duty Standard Horizontal Chakki",
-    "description": "<p>Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones<br /> For Double Bearing &#8211; No. 6312 and Lower Bearing SKF No. 6209,<br /> Long frame with 1 meter base height<br /> Bharat bijlee make Electric motor with Pulley and V- belts with Motor Stand</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Heavy-Duty.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/heavy-duty-standard-horizontal-chakki/",
-    "variants": [
-      {
-        "name": "750 mm (30\")",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Heavy-Duty-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\")",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Heavy-Duty-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "600 MM, 750MM"
-    },
-    "shortDescription": "Daniya Type Horizontal Four Mill (Heavy .Duty) with Stones For Double Bearing &#8211; No."
-  },
-  {
-    "slug": "bran-silo",
-    "title": "Bran Silo",
-    "description": "<p>Storage silo for Bran and Refraction</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/bran-silo/",
-    "variants": [
-      {
-        "name": "MS-15-TON",
-        "size": "MS - 15 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
-      },
-      {
-        "name": "MS-10-TON",
-        "size": "MS - 10 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
-      },
-      {
-        "name": "MS-5-TON",
-        "size": "MS - 5 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
-      },
-      {
-        "name": "MS-2-TON",
-        "size": "MS - 2 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
-      },
-      {
-        "name": "MS-1-TON",
-        "size": "MS - 1 TON",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Bran-Sailo-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "MS &#8211; 1 TON, MS &#8211; 10 TON, MS &#8211; 15 TON, MS &#8211; 2 TON, MS &#8211; 20 TON, MS &#8211; 5 TON"
-    },
-    "shortDescription": "Storage silo for Bran and Refraction"
-  },
-  {
-    "slug": "neo-matic",
-    "title": "Neo Matic",
-    "description": "<ul> <li>Power saving.</li> <li> High loading – less air required for conveying.</li> <li>Lower conveying speed – reduced damage to product.</li> <li>Low conveying speed – reduces or completely eliminates fat deposits in the conveying pipe.</li> <li>Less cleaning required.</li> <li>Minimum environmental loss.</li> <li>Chocking of ducks, cyclones and filters eliminates.</li> <li>Low headroom.</li> <li>Cyclones, filters, airlock, ducts OTS chimney are not required.</li> <li>Covers long distance.</li> <li>Smaller diameter pipes required less air.</li> <li>Fully automated with digital touch screen panel.</li> <li>Low at sound keep your flour mill working condition ergonomic.</li> <li>Flow and batch process control.</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Nio-Matic.jpg",
-    "category": "handling",
-    "url": "https://rschoyalgroup.com/product/neo-matic/",
-    "variants": [
-      {
-        "name": "Standard capacity model (3-5 TPH)",
-        "size": "Standard",
-        "specs": "3 Phase ISI Motor"
-      },
-      {
-        "name": "High capacity model (8-12 TPH)",
-        "size": "High-Cap",
-        "specs": "3 Phase Heavy Duty"
-      }
-    ],
-    "additionalInfo": {
-      "NEO MATIC": "NEO MATIC"
-    },
-    "shortDescription": "Power saving. High loading – less air required for conveying."
-  },
-  {
-    "slug": "iquadra-mill-2",
-    "title": "iQuadra Mill",
-    "description": "<ul> <li>Less space required.</li> <li>Improved Output &amp; Starch Damage</li> <li>Compatible for Advanced Milling Technology</li> <li>Compact design for low Sound &amp; Vibration</li> <li>Data Logging</li> <li>Intelligent Grain Feeding System</li> <li>Integrated Magnet</li> <li>Ethernet Enabled</li> <li>Android Connectivity</li> <li>Hydraulic operated Auto Pressure System</li> <li>Gear drive coupled with horizontally mounted motor for</li> <li>better efficiency</li> <li>Controlled by 7” TFT HMI touch screen panel</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/Quadra-Mill-Sheller-Typre-1200mm.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/iquadra-mill-2/",
-    "variants": [
-      {
-        "name": "1200 mm/48\" Sheller Type",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/Quadra-Mill-Sheller-Typre-1200mm-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM"
-    },
-    "shortDescription": "Less space required. Improved Output & Starch Damage Compatible for Advanced Milling Technology Compact design for low Sound & Vibration Data Logging..."
-  },
-  {
-    "slug": "load-cell-with-silo",
-    "title": "Load Cell with Silo",
-    "description": "<p>Load Cell Module system for weighing material for all types of silos like Grain silo, Conditioning Silo, Atta Silo, Bran Silo, Emery Dust Silo, Refraction Silo, and Packing Silo.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell.jpg",
-    "category": "controls",
-    "url": "https://rschoyalgroup.com/product/load-cell-with-silo/",
-    "variants": [
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 100 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 80 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 70 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 60 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 50 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 40 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 30 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 25 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 20 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 15 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 10 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 5 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      },
-      {
-        "name": "Load Cell with Silo",
-        "size": "Standard",
-        "specs": "Weight: 2 ton",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/04/silo-with-load-cell-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Weight": "10 TON, 100 TON, 15 TON, 2 TON, 20 TON, 25 TON, 30 TON, 40 TON, 5 TON, 50 TON, 60 TON, 70 TON, 80 TON"
-    },
-    "shortDescription": "Load Cell Module system for weighing material for all types of silos like Grain silo, Conditioning Silo, Atta Silo, Bran Silo, Emery Dust Silo,..."
-  },
-  {
-    "slug": "sampoorna-domestic-flour-mill",
-    "title": "Sampoorna Prime",
-    "description": "<p>“Sampoorna” domestic flour mill is a newly added product in Choyal Catalogue. It has a new modern design made by a high specialisation machine, high-quality product. It is made for domestic use, where you can grind all types of dry grains and spices as well. There are 3 models “Premium”, “Prime”, “Gold” each model comes with two sub-model. It is the perfect solution for home grinding, it is easy to use (plug and play) and easy to maintain.</p> <div class=\"page\" title=\"Page 3\"> <div class=\"layoutArea\"> <div class=\"column\"> <div class=\"page\" title=\"Page 3\"> <div class=\"layoutArea\"> <div class=\"column\"> <div class=\"page\" title=\"Page 3\"> <div class=\"layoutArea\"> <div class=\"column\"> <p>Features:</p> <ul> <li>Heavy Duty Turbo Motor</li> <li>Smooth Working in Low Voltage</li> <li>Digital Auto Control System</li> <li>Ply-Laminated Cabinet for Long Life</li> <li>Graded Casting Grinding Chamber</li> <li>Electronic Overload Protection</li> </ul> <p>Electrical Details:</p> <div class=\"page\" title=\"Page 3\"> <div class=\"layoutArea\"> <div class=\"column\"> <ul> <li>Power &#8211; 1 H.P. Single phase motor</li> <li>220/230 V 50 Hz</li> <li>2880 RPM</li> <li>0.75 Unit/Hour (Approx)</li> </ul> <p>Dimensions:</p> <div class=\"page\" title=\"Page 3\"> <div class=\"layoutArea\"> <div class=\"column\"> <ul> <li>Height &#8211; 31 inch</li> <li>Length &#8211; 19 inch</li> <li>Width &#8211; 14 inch</li> </ul> <p>You can download the brochure from our download section to learn more</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/05/DFM-PRIME-TALKY.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/sampoorna-domestic-flour-mill/",
-    "variants": [
-      {
-        "name": "Sampoorna Prime: Fully Automatic Talky",
-        "size": "Standard",
-        "specs": "Article type: dfm talky prime",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/05/DFM-PRIME-TALKY-510x510.jpg"
-      },
-      {
-        "name": "Sampoorna Prime: Fully Automatic",
-        "size": "Standard",
-        "specs": "Article type: dfm prime",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/05/DFM-PRIME-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Weight": "N/A",
-      "Dimensions": "N/A",
-      "Article Type": "DFM- Gold, DFM- Premium, DFM- Talky Gold, DFM- Talky Premium, DFM- Talky Prime, DFM-Prime"
-    },
-    "shortDescription": "“Sampoorna” domestic flour mill is a newly added product in Choyal Catalogue."
-  },
-  {
-    "slug": "miller-lite",
-    "title": "Miller Lite",
-    "description": "<table width=\"1037\"> <tbody> <tr> <td colspan=\"3\" width=\"652\"> <p>We have developed a solution for the automation of Grinding Stone Mills’ plant. The Miller Lite is a automation product which operates the Mill Plant with the help of the combination of software, Hardware, PLC, VFD, Servo Drive, Mechanical device and the electrical panel which is able to operate the entire Whole Wheat Grinding plant, Spice Plant, Pulse Plant, Cereal plant and any other milling plant at the ease of single touch of a finger.Miller Lite controls all process and machines working in a sequence and alarms if any errors occur in operations. Miller Lite also facilitate for the data lodging and the alarm registration.</p> <p>The miller Lite operates the plant in a combination of different type of machinery for grinding and cleaning, Miller Lite controls the level of silos and run the various recipes which require lesser manpower to operate. Whole plant will be operated through Centralized Touch Screen control panel (DCS). In this concept, the wonder mill played a major role which helped to reduce manpower and save energy and on the other side it is quite good in safety norms too. As well as it helps in increasing profits.</p> <p>The commercial production of the plant will be a sensation for the grinding world any trained person will be able to operate the whole plant on the single touch. The desired output can be set and the all machines will take the input accordingly. The cleaning and the mixing of the grains can be done by the single touch, if any errors occur the Miller Lite will inform immediately about the error.</p> <p>The service and installation Team indulged with Miller Lite is fully dedicated towards the projects as they are creating a milestone for their followers.</p> </td> </tr> <tr> <td colspan=\"3\" width=\"652\">Complete Panel with CPU, HMI Touch Screen, Sensors, Switch Gears, accessory</td> </tr> </tbody> </table> <p> </p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/miller-lite.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/miller-lite/",
-    "variants": [
-      {
-        "name": "750 mm Smart Control Set",
-        "size": "750MM",
-        "specs": "IoT Touch Screen, 30 HP Motor"
-      },
-      {
-        "name": "900 mm Smart Control Set",
-        "size": "900MM",
-        "specs": "IoT Touch Screen, 40 HP Motor"
-      }
-    ],
-    "shortDescription": "We have developed a solution for the automation of Grinding Stone Mills’ plant."
-  },
-  {
-    "slug": "atta-expert-mill",
-    "title": "Atta Expert Mill",
-    "description": "<p>Horizontal Mill with Motor, Feeder, Hopper &amp; Emery stones (Heavy .Duty)<br /> Conical Hopper, screw feeder, PBL make Geared motor and Grain level Sensor and Alarm with Control Panel (for Grain feeder Only) with VFD controller<br /> Heavy duty Spiral Bevel Gear Suitable for above mill 90 degree input 15 &amp; 25 HP 960 RPM 1:2.2 ratio., hollow output. Complete with Coupling and Main Shaft<br /> Double Bearing &#8211;</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert.jpg",
-    "category": "chakki",
-    "url": "https://rschoyalgroup.com/product/atta-expert-mill/",
-    "variants": [
-      {
-        "name": "600 mm (24\") - Hydraulic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\") - Pneumatic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Hydraulic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Pneumatic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Hydraulic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Pneumatic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Atta-Expert-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM, 600 MM, 750MM"
-    },
-    "shortDescription": "Horizontal Mill with Motor, Feeder, Hopper & Emery stones (Heavy .Duty) Conical Hopper, screw feeder, PBL make Geared motor and Grain level Sensor..."
-  },
-  {
-    "slug": "iquadra-mill",
-    "title": "iQuadra Mill",
-    "description": "<ul> <li>Less space required.</li> <li>Two way stone gap adjustment for better control</li> <li>Gravity meter for precise control</li> <li>Upto 40 % Power Saving</li> <li>Improved Output &amp; Starch Damage</li> <li>Compatible for Advance Milling Technology</li> <li>Compact design for low Sound &amp; Vibration</li> <li>Data Logging</li> <li>Intelligent Grain Feeding System</li> <li>Integrated Magnet</li> <li>Ethernet Enabled</li> <li>Android Connectivity</li> <li>Hydraulic operated Auto Pressure System</li> <li>Gear drive coupled with horizontally mounted motor for</li> <li>better efficiency</li> <li>Controlled by 7” TFT HMI touch screen panel</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/iquadra-mill/",
-    "variants": [
-      {
-        "name": "600 mm (24\") - Hydraulic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\") - Pneumatic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Hydraulic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Pneumatic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Hydraulic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Pneumatic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/i-Quadra-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM, 600 MM, 750MM"
-    },
-    "shortDescription": "Less space required. Two way stone gap adjustment for better control Gravity meter for precise control Upto 40 % Power Saving Improved Output &..."
-  },
-  {
-    "slug": "wonder-mill",
-    "title": "Wonder Mill",
-    "description": "<ul> <li>750 mm Horizontal Wonder Mill with Stones</li> <li>Tiltable Conical Hopper, screw feeder, PBL make Geared motor and Grain level Sensor.</li> <li>Stainless Steel Stone Cover</li> <li>Heavy duty Spiral Bevel Gear Suitable for above mill 90 degree input 25 HP 960 RPM 1:2.2 ratio., hollow output. Complete with Coupling and Main Shaft</li> <li>25 HP 960 RPM Bharat Bijlee make Electric Motor.</li> <li>Double Bearing</li> <li>8″X8″ Hopper Magnet</li> <li>Motor Stand</li> <li>Power Pack with accessory and Auto Pressure System</li> <li>Compatible to be Digitally Operated</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/wonder-mill/",
-    "variants": [
-      {
-        "name": "600 mm (24\") - Hydraulic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      },
-      {
-        "name": "600 mm (24\") - Pneumatic Pressure System",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Hydraulic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      },
-      {
-        "name": "750 mm (30\") - Pneumatic Pressure System",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Hydraulic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      },
-      {
-        "name": "1200 mm (48\") - Pneumatic Pressure System",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/02/Wonder-mill-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM, 600 MM, 750MM"
-    },
-    "shortDescription": "750 mm Horizontal Wonder Mill with Stones Tiltable Conical Hopper, screw feeder, PBL make Geared motor and Grain level Sensor."
-  },
-  {
-    "slug": "floura",
-    "title": "Floura",
-    "description": "<p>Floura is the world&#8217;s first flour grinding &amp; vending machine. It uses stone ground technology and is specifically designed for grocery stores. It’s size allows it to easily become part of the store.</p> <p>Floura allows customers to see their grain, check quality &amp; experience their flour getting milled right in front of them. Transparency is the name of the game.</p> <p>Download brochure from this <a href=\"http://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-Brochure-.pdf\">link</a></p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/floura.jpg",
-    "category": "smart",
-    "url": "https://rschoyalgroup.com/product/floura/",
-    "variants": [
-      {
-        "name": "Floura Prime H500 uses 20 inch- 500mm horizontal mill. It has auto feeding system.",
-        "size": "Standard",
-        "specs": "Article type: floura prime h500",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
-      },
-      {
-        "name": "Floura Prime V400 uses 16 inch- 400mm vertical mill. It has auto feeding system.",
-        "size": "Standard",
-        "specs": "Article type: floura prime v400",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
-      },
-      {
-        "name": "Floura Gold H500 uses 20inch- 500mm horizontal mill. It has manual feeding system.",
-        "size": "Standard",
-        "specs": "Article type: floura gold h500",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
-      },
-      {
-        "name": "Floura Gold V400 uses 16 inch- 400mm vertical mill. It has manual feeding system.",
-        "size": "Standard",
-        "specs": "Article type: floura gold v400",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/07/Floura-web-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Dimensions": "N/A",
-      "Article Type": "Floura Gold H500, Floura Gold V400, Floura Prime H500, Floura Prime V400"
-    },
-    "shortDescription": "Floura is the world's first flour grinding & vending machine."
-  },
-  {
-    "slug": "horizontal-emery-stone-daniya-type",
-    "title": "Horizontal Emery Stones – Daniya Type",
-    "description": "<p>Choyal Emery Stones are designed and manufactured with high quality emery &amp; grain to maintain aroma &amp; taste of the flour. Our Emery stones are made on automatic plant to maintain standards and quality. Our high quality emery stone are globally accepted and our exported to 20 countries since 5 decades.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya.jpg",
-    "category": "stones",
-    "url": "https://rschoyalgroup.com/product/horizontal-emery-stone-daniya-type/",
-    "variants": [
-      {
-        "name": "Horizontal Emery Stone Daniya Type - 750 mm - 30 inch",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
-      },
-      {
-        "name": "Horizontal Emery Stone Daniya Type - 400 mm - 16 inch",
-        "size": "400 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
-      },
-      {
-        "name": "Horizontal Emery Stone Daniya Type - 450 mm - 18 inch",
-        "size": "450 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
-      },
-      {
-        "name": "Horizontal Emery Stone Daniya Type - 600 mm - 24 inch",
-        "size": "600 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
-      },
-      {
-        "name": "Horizontal Emery Stone Daniya Type - 750 mm - 30 inch",
-        "size": "350 MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/emery-stone-daniya-510x590.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "350 MM, 400 MM, 450 MM, 600 MM, 750MM"
-    },
-    "shortDescription": "Choyal Emery Stones are designed and manufactured with high quality emery & grain to maintain aroma & taste of the flour."
-  },
-  {
-    "slug": "vertical-emery-stones-danish-type",
-    "title": "Horizontal Emery Stones – Agate/Sheller Type",
-    "description": "Premium commercial-grade horizontal emery stones – agate/sheller type designed and manufactured by RS Choyal & Co. Built with heavy-duty components for long operational lifespans and maximum productivity.",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/sheller-emery-stones.jpg",
-    "category": "stones",
-    "url": "https://rschoyalgroup.com/product/vertical-emery-stones-danish-type/",
-    "variants": [
-      {
-        "name": "These stones are primarily used in soybean and oil extraction plants for breaking soybeans and similar products.",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/sheller-emery-stones-510x590.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Weight": "N/A",
-      "Size": "1200MM"
-    },
-    "shortDescription": "Premium commercial-grade horizontal emery stones – agate/sheller type designed and manufactured by RS Choyal & Co."
-  },
-  {
-    "slug": "book-basics-of-chakki-milling",
-    "title": "Basics of Chakki Milling",
-    "description": "<p><b>About the Book</b></p> <p><b><i>Basics of Chakki Milling</i></b><span style=\"font-weight: 400;\"> is a detailed and practical guide that delves into the traditional art and modern science of Chakki (stone) milling. Focused on preserving the nutritional integrity and authentic flavor of flour, this book explores the entire spectrum of flour milling - from </span><b>grain selection to plant management</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">It offers clear insights into:</span></p> <ul> <li style=\"font-weight: 400;\" aria-level=\"1\"><b>Wheat types, grain structure</b><span style=\"font-weight: 400;\">, and </span><b>quality parameters</b></li> <li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">The </span><b>chakki milling process</b><span style=\"font-weight: 400;\"> vs. modern roller milling</span></li> <li style=\"font-weight: 400;\" aria-level=\"1\"><b>Emery stones</b><span style=\"font-weight: 400;\">, mill equipment, and flour testing</span></li> <li style=\"font-weight: 400;\" aria-level=\"1\"><b>Flour types</b><span style=\"font-weight: 400;\">, treatment, fortification, and uses</span></li> <li style=\"font-weight: 400;\" aria-level=\"1\"><span style=\"font-weight: 400;\">Mill plant </span><b>design, automation, and maintenance</b></li> <li style=\"font-weight: 400;\" aria-level=\"1\"><b>Marketing strategies</b><span style=\"font-weight: 400;\"> for flour and allied products</span></li> </ul> <p><span style=\"font-weight: 400;\">With 22 in-depth chapters, this book is a must-read for </span><b>mill operators, food technologists, bakers, and entrepreneurs</b><span style=\"font-weight: 400;\"> looking to master traditional milling with modern efficiencies. It also includes </span><b>baking tips, equipment guides, storage techniques</b><span style=\"font-weight: 400;\">, and real-world case studies - making it an essential reference for both learners and industry professionals.</span></p> <p><b>About the Author</b></p> <p><b>Mr. R.S. Choyal</b><span style=\"font-weight: 400;\"> is a veteran industrialist, visionary innovator, and education advocate with over </span><b>40 years of leadership</b><span style=\"font-weight: 400;\"> in the flour milling industry. As the </span><b>Chairman and Managing Director (CMD) of Choyal Grinding Solution Private Limited</b><span style=\"font-weight: 400;\">, a flagship unit of the </span><b>R.S. Choyal Group</b><span style=\"font-weight: 400;\">, he has been instrumental in redefining traditional milling with </span><b>smart, sustainable, and technology-driven solutions</b><span style=\"font-weight: 400;\"> for the modern era.</span></p> <p><span style=\"font-weight: 400;\">He pioneered </span><b>India’s first fully digital flour mill – the Wonder Mill</b><span style=\"font-weight: 400;\">, a landmark in energy-efficient and intelligent milling technology. Under his leadership, the group has successfully delivered over </span><b>250 turnkey projects</b><span style=\"font-weight: 400;\"> for prestigious clients including </span><b>Patanjali, ITC, Prima Group, Tesco UK, Al Ghurair, Qatar Flour Mill</b><span style=\"font-weight: 400;\">, and </span><b>Bakhresa Group</b><span style=\"font-weight: 400;\">. Among his many achievements is the development of the </span><b>world’s first digitally controlled emery stone-based flour mill</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">Beyond industry innovation, Mr. Choyal is the </span><b>founder of the Choyal School of Milling Technology</b><span style=\"font-weight: 400;\">, an institution dedicated to empowering future food technologists and millers through hands-on learning and industry-relevant training. His contributions have extended across </span><b>25+ countries</b><span style=\"font-weight: 400;\">, earning him a global reputation in the field of </span><b>food processing machinery</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">With a commitment to excellence, sustainability, and knowledge sharing, Mr. R.S. Choyal continues to shape the future of milling technology while inspiring the next generation of innovators.</span></p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/basic-of-chakki-milling-1.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/book-basics-of-chakki-milling/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "About the Book Basics of Chakki Milling is a detailed and practical guide that delves into the traditional art and modern science of Chakki (stone) milling."
-  },
-  {
-    "slug": "whole-some-flour",
-    "title": "Wholesome Flour",
-    "description": "<h3><span style=\"font-weight: 400;\">About the Book</span></h3> <p><b><i>Wholesome Flour:</i></b><i><span style=\"font-weight: 400;\"> A Guide to Nourishing and Tasty Flours</span></i><span style=\"font-weight: 400;\"> is a beautifully crafted journey into the world of nutritious, diverse, and flavorful flours. This comprehensive guide introduces readers to 50 unique flours - from ancient grains and pulses to seeds and innovative multi-grain blends - each with its own nutritional profile, health benefits, and culinary uses.</span></p> <p><span style=\"font-weight: 400;\">More than just a flour catalog, the book empowers readers to understand how freshly stone-ground flours preserve flavor and wellness, how to blend different grains for taste and dietary needs, and how to choose the right flour for gluten-free, diabetic, or high-protein lifestyles. It also offers tips on grain selection, flour storage, and recipe inspiration, making it a versatile resource for home bakers, chefs, nutritionists, and health-conscious individuals.</span></p> <p><span style=\"font-weight: 400;\">From wheat, millet, and rice to quinoa, chia, flaxseed, and beetroot - this book celebrates the wholesome bounty of nature and the culinary possibilities it unlocks.</span></p> <p>&nbsp;</p> <p><b>About the Author</b></p> <p><b>Mr. R.S. Choyal</b><span style=\"font-weight: 400;\"> is a veteran industrialist, visionary innovator, and education advocate with over </span><b>40 years of leadership</b><span style=\"font-weight: 400;\"> in the flour milling industry. As the </span><b>Chairman and Managing Director (CMD) of Choyal Grinding Solution Private Limited</b><span style=\"font-weight: 400;\">, a flagship unit of the </span><b>R.S. Choyal Group</b><span style=\"font-weight: 400;\">, he has been instrumental in redefining traditional milling with </span><b>smart, sustainable, and technology-driven solutions</b><span style=\"font-weight: 400;\"> for the modern era.</span></p> <p><span style=\"font-weight: 400;\">He pioneered </span><b>India’s first fully digital flour mill – the Wonder Mill</b><span style=\"font-weight: 400;\">, a landmark in energy-efficient and intelligent milling technology. Under his leadership, the group has successfully delivered over </span><b>250 turnkey projects</b><span style=\"font-weight: 400;\"> for prestigious clients including </span><b>Patanjali, ITC, Prima Group, Tesco UK, Al Ghurair, Qatar Flour Mill</b><span style=\"font-weight: 400;\">, and </span><b>Bakhresa Group</b><span style=\"font-weight: 400;\">. Among his many achievements is the development of the </span><b>world’s first digitally controlled emery stone-based flour mill</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">Beyond industry innovation, Mr. Choyal is the </span><b>founder of the Choyal School of Milling Technology</b><span style=\"font-weight: 400;\">, an institution dedicated to empowering future food technologists and millers through hands-on learning and industry-relevant training. His contributions have extended across </span><b>25+ countries</b><span style=\"font-weight: 400;\">, earning him a global reputation in the field of </span><b>food processing machinery</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">With a commitment to excellence, sustainability, and knowledge sharing, Mr. R.S. Choyal continues to shape the future of milling technology while inspiring the next generation of innovators.</span></p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/wholesome-flour.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/whole-some-flour/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "About the Book Wholesome Flour: A Guide to Nourishing and Tasty Flours is a beautifully crafted journey into the world of nutritious, diverse, and..."
-  },
-  {
-    "slug": "marvel-treasure",
-    "title": "Marvel Treasure",
-    "description": "<h3><span style=\"font-weight: 400;\">About the Book</span></h3> <p><b><i>Marvel Treasure</i></b><span style=\"font-weight: 400;\"> is a thoughtful collection of timeless wisdom, inspirational ideas, and meaningful reflections designed to help readers navigate the complexities of modern life. In today’s fast-paced world, where managing relationships, responsibilities, and personal growth can feel overwhelming, this book offers a refreshing pause - a chance to reflect, reset, and realign.</span></p> <p><span style=\"font-weight: 400;\">Through a carefully curated blend of proverbs, observations, life suggestions, and moral values, </span><i><span style=\"font-weight: 400;\">Marvel Treasure</span></i><span style=\"font-weight: 400;\"> serves as a daily companion for those seeking personal growth, inner peace, and practical guidance. Each page encourages readers to improve their character, mindset, and attitude, helping them become more compassionate, mindful, and balanced individuals.</span></p> <p><span style=\"font-weight: 400;\">From small, thoughtful habits - like remembering someone’s birthday - to deeper practices such as charity and gratitude, the book reminds us that success is not merely a destination but a way of thinking and living. It gently introduces the idea that spiritual fulfillment and positive influence go hand in hand with a joyful, meaningful life.</span></p> <p><span style=\"font-weight: 400;\">Whether you&#8217;re a student, professional, leader, or simply a seeker of wisdom, </span><i><span style=\"font-weight: 400;\">Marvel Treasure</span></i><span style=\"font-weight: 400;\"> will inspire you to be a better person and to make the world around you a little brighter every day.</span></p> <p><b> </b></p> <p><b>About the Author</b></p> <p><b>Mr. R.S. Choyal</b><span style=\"font-weight: 400;\"> is a veteran industrialist, visionary innovator, and education advocate with over </span><b>40 years of leadership</b><span style=\"font-weight: 400;\"> in the flour milling industry. As the </span><b>Chairman and Managing Director (CMD) of Choyal Grinding Solution Private Limited</b><span style=\"font-weight: 400;\">, a flagship unit of the </span><b>R.S. Choyal Group</b><span style=\"font-weight: 400;\">, he has been instrumental in redefining traditional milling with </span><b>smart, sustainable, and technology-driven solutions</b><span style=\"font-weight: 400;\"> for the modern era.</span></p> <p><span style=\"font-weight: 400;\">He pioneered </span><b>India’s first fully digital flour mill – the Wonder Mill</b><span style=\"font-weight: 400;\">, a landmark in energy-efficient and intelligent milling technology. Under his leadership, the group has successfully delivered over </span><b>250 turnkey projects</b><span style=\"font-weight: 400;\"> for prestigious clients including </span><b>Patanjali, ITC, Prima Group, Tesco UK, Al Ghurair, Qatar Flour Mill</b><span style=\"font-weight: 400;\">, and </span><b>Bakhresa Group</b><span style=\"font-weight: 400;\">. Among his many achievements is the development of the </span><b>world’s first digitally controlled emery stone-based flour mill</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">Beyond industry innovation, Mr. Choyal is the </span><b>founder of the Choyal School of Milling Technology</b><span style=\"font-weight: 400;\">, an institution dedicated to empowering future food technologists and millers through hands-on learning and industry-relevant training. His contributions have extended across </span><b>25+ countries</b><span style=\"font-weight: 400;\">, earning him a global reputation in the field of </span><b>food processing machinery</b><span style=\"font-weight: 400;\">.</span></p> <p><span style=\"font-weight: 400;\">With a commitment to excellence, sustainability, and knowledge sharing, Mr. R.S. Choyal continues to shape the future of milling technology while inspiring the next generation of innovators.</span></p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/marvel-treasure-1.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/marvel-treasure/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "About the Book Marvel Treasure is a thoughtful collection of timeless wisdom, inspirational ideas, and meaningful reflections designed to help..."
-  },
-  {
-    "slug": "emery-stone-dresser",
-    "title": "Emery Stone Dresser",
-    "description": "<ul> <li>Size available 500, 600 &amp; 750 mm stone dressing.</li> <li>Cutting of the width of the grove in a single stoke. (50 &amp; 75 MM)</li> <li>Taper of the groove maintained by machine itself as per company provided grooves.</li> <li>Depth of the grove can be adjust by the machine</li> <li>Very smooth grove cutting</li> <li>Good life of cutting tool</li> <li>Very economical against manual performance</li> <li>Single groove dressed in just 3-4 minutes</li> <li> Dust blower / Duct collection system are optionally provided</li> <li>12 time faster than manual</li> <li>No skilled men power required laymen can operate the machine*</li> <li>440 V 3 Phase, 50 Hz.</li> <li>Electric Control Panel</li> <li>Just Connect the Cable And Run the Operation.</li> <li>Very Easy Operation and Handling.</li> <li>Corrosion resistant epoxy paint finish</li> </ul>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Stone-Dresser.jpg",
-    "category": "stones",
-    "url": "https://rschoyalgroup.com/product/emery-stone-dresser/",
-    "variants": [
-      {
-        "name": "Emery Stone dressing Machine for Groove Making -750 mm",
-        "size": "750MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Stone-Dresser-510x510.jpg"
-      },
-      {
-        "name": "Emery Stone dressing Machine for Groove Making -1200 mm",
-        "size": "1200MM",
-        "specs": "Heavy-Duty Commercial Grade",
-        "image": "https://rschoyalgroup.com/wp-content/uploads/2021/03/Emery-Stone-Dresser-510x510.jpg"
-      }
-    ],
-    "additionalInfo": {
-      "Size": "1200MM, 750MM"
-    },
-    "shortDescription": "Size available 500, 600 & 750 mm stone dressing. Cutting of the width of the grove in a single stoke."
-  },
-  {
-    "slug": "han-tum-ek-vijeta-ho",
-    "title": "Han Tum Ek Vijeta Ho",
-    "description": "<p><strong data-start=\"185\" data-end=\"211\">“<em>Han Tum Ek Vijeta Ho</em>”</strong> is an inspiring exploration of practical wisdom, personal growth, and inner strength. Authored by <strong data-start=\"310\" data-end=\"323\">RS Choyal</strong> - a visionary thinker, inventor, and leading industrialist - this book presents powerful ideas to help readers unlock their potential, overcome limitations, and lead a more focused and purposeful life. Whether you&#8217;re seeking motivation or a fresh perspective, this book offers timeless insights for readers of all ages.</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/haan-tum-ek-vijeta-ho.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/han-tum-ek-vijeta-ho/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "“ Han Tum Ek Vijeta Ho ” is an inspiring exploration of practical wisdom, personal growth, and inner strength."
-  },
-  {
-    "slug": "mai-mera-man-meri-manjil",
-    "title": "Mai Mera Man Meri Manjil",
-    "description": "<p>आर. एस. चोयल &#8211; उद्योगपति | लेखक | प्रेरक, के जीवन के अनुभव पर आधारित कविताओं और आदर्श वाक्यों का एक ऐसा संग्रह जो ना केवल भावनात्मक है साथ ही विचारणीय भी है। लेखक स्वयं, पारिवारिक, सामाजिक और राष्ट्रीय स्तर पर सफल व्यक्ति हैं और इस पुस्तक में उन्होंने अपनी सफलता की यात्रा में आए प्रतिकूल व अनुकूल समय को कविताओं में पिरोया है साथ ही जीवन के उन सिद्धांतों को भी बताया है जिन्हें अपना कर उन्होंने सफलता प्राप्त करी है। यह पुस्तक जीवन के यथार्त का एक संग्रह है।</p>",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/main-mera-man-meri-manzil.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/mai-mera-man-meri-manjil/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "Essential scientific and technical guidebooks on grain milling, processing, and emery stone technology."
-  },
-  {
-    "slug": "book-choti-si-baat",
-    "title": "Choti Si Baat",
-    "description": "<div>“छोटी सी बात” प्रसिद्ध उद्योगपति, प्रेरक वक्ता और युवा मार्गदर्शक श्री आर. एस. चोयल द्वारा लिखित एक प्रेरणादायक पुस्तक है। यह पुस्तक छोटे-छोटे लेकिन गहरे विचारों के माध्यम से जीवन में बड़े बदलाव लाने की दिशा दिखाती है।",
-    "image": "https://rschoyalgroup.com/wp-content/uploads/2025/07/choti-si-baat-1.jpg",
-    "category": "books",
-    "url": "https://rschoyalgroup.com/product/book-choti-si-baat/",
-    "variants": [
-      {
-        "name": "Paperback Edition",
-        "size": "Paperback",
-        "specs": "Standard Printed Book"
-      },
-      {
-        "name": "Collector's Hardcover",
-        "size": "Hardcover",
-        "specs": "Premium Printed Book"
-      }
-    ],
-    "shortDescription": "“छोटी सी बात” प्रसिद्ध उद्योगपति, प्रेरक वक्ता और युवा मार्गदर्शक श्री आर."
+    category: "books",
+    categoryLabel: "Publications & Books",
+    badge: "Industry Guide",
+    image: "/images/books/insights_flourmilling.png",
+    description: "Advanced operational guidebook for commercial mill owners, covering yield optimization, troubleshooting, and plant efficiency.",
+    shortDescription: "Advanced operational guidebook for commercial mill owners, covering yield optimization, troubleshooting, and plant efficiency.",
+    url: "/books/insights-of-flour-milling",
+    variants: []
   }
 ];

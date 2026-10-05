@@ -55,8 +55,8 @@ export default function GroupCompaniesMarquee() {
         {/* Eyebrow with Amber Divider Lines */}
         <div className="flex items-center justify-center gap-3 sm:gap-5 mb-8 sm:mb-12 max-w-xl mx-auto px-6">
           <div className="h-[1.5px] w-8 sm:w-16 bg-[#FFAA17]" />
-          <span className="text-[11px] sm:text-xs font-black tracking-[0.16em] uppercase text-[#0B2C1C] whitespace-nowrap">
-            Our Divisions &amp; Working Ecosystems
+          <span className="text-[11px] sm:text-xs font-black tracking-[0.16em] text-[#0B2C1C] whitespace-nowrap">
+            Our divisions &amp; working ecosystems
           </span>
           <div className="h-[1.5px] w-8 sm:w-16 bg-[#FFAA17]" />
         </div>

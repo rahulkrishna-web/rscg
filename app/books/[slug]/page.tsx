@@ -82,25 +82,23 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                 </h1>
                 {initialBook.comingSoon ? (
                   <p className="text-2xl sm:text-3xl font-bold text-slate-500 italic pt-2">
-                    Coming Soon
+                    Coming soon
                   </p>
                 ) : (
-                  <>
-                    <p className="text-2xl sm:text-3xl font-bold text-slate-800 pt-2">
-                      MRP: ₹{initialBook.salePrice.toLocaleString('en-IN')}
+                  <div className="pt-2 space-y-1">
+                    <p className="text-lg sm:text-xl text-slate-600 font-medium">
+                      MRP: <span className="font-bold text-slate-800">₹{initialBook.originalPrice.toLocaleString('en-IN')}.00</span>
                     </p>
-                    {initialBook.originalPrice > initialBook.salePrice && (
-                      <p className="text-sm text-slate-500 line-through font-semibold">
-                        Original Price: ₹{initialBook.originalPrice.toLocaleString('en-IN')}
-                      </p>
-                    )}
-                  </>
+                    <p className="text-xl sm:text-2xl text-slate-800 font-medium">
+                      Best Price: <span className="font-extrabold text-slate-900">₹{initialBook.salePrice.toLocaleString('en-IN')}.00</span>
+                    </p>
+                  </div>
                 )}
               </div>
 
               {/* About the Book */}
               <div className="space-y-4">
-                <h2 className="text-xl font-bold text-slate-900">About the Book</h2>
+                <h2 className="text-xl font-bold text-slate-900">About the book</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 prose-ul:my-2 prose-li:my-0.5 text-slate-700 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: initialBook.aboutBook.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
@@ -109,7 +107,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
 
               {/* About the Author */}
               <div className="space-y-4 pt-4 border-t border-slate-200/70">
-                <h2 className="text-xl font-bold text-slate-900">About the Author</h2>
+                <h2 className="text-xl font-bold text-slate-900">About the author</h2>
                 <div 
                   className="prose prose-slate prose-sm sm:prose-base prose-strong:text-slate-900 text-slate-700 leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: initialBook.aboutAuthor.replace(/\n/g, '<br/>').replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>') }}
@@ -136,7 +134,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
               <div className="pt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 {initialBook.comingSoon ? (
                   <button disabled className="h-12 flex-1 w-full bg-slate-200 text-slate-500 font-bold px-6 sm:px-8 rounded-lg cursor-not-allowed">
-                    Coming Soon
+                    Coming soon
                   </button>
                 ) : (
                   <>
@@ -145,7 +143,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                       className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                     >
                       <PackageCheck className="w-4 h-4 text-slate-900" />
-                      {addedMessage ? "Added to Quote!" : "Add to Quote List"}
+                      {addedMessage ? "Added to quote!" : "Add to quote"}
                     </button>
 
                     <button
@@ -153,7 +151,7 @@ export default function BookDetailPage({ params }: { params: Promise<{ slug: str
                       className="h-12 w-full sm:w-auto flex items-center justify-center gap-2 bg-white border border-[#22c55e] text-[#16a34a] hover:bg-[#f0fdf4] px-6 rounded-lg font-bold text-sm shadow-sm transition-all whitespace-nowrap"
                     >
                       <MessageCircle className="w-4 h-4" />
-                      WhatsApp Enquiry
+                      WhatsApp enquiry
                     </button>
                   </>
                 )}

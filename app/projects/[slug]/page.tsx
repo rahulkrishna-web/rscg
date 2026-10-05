@@ -26,10 +26,10 @@ export default function ProjectDetailPage() {
           <Header />
           <div className="flex-1 flex flex-col items-center justify-center p-16 space-y-4 max-w-lg mx-auto text-center">
             <Factory className="h-12 w-12 text-slate-300" />
-            <h2 className="text-2xl font-bold">Project Case Study Not Found</h2>
+            <h2 className="text-2xl font-bold">Project case study not found</h2>
             <p className="text-slate-500">The project case study you are looking for does not exist or has been moved.</p>
-            <Link href="/projects" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm uppercase tracking-wide">
-              Back to Projects
+            <Link href="/projects" className="bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-6 py-2.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] text-xs sm:text-sm tracking-wide">
+              Back to projects
             </Link>
           </div>
         </div>
@@ -75,9 +75,9 @@ export default function ProjectDetailPage() {
            {/* Hero content */}
            <div className="relative z-20 w-full px-6 sm:px-12 lg:px-16 xl:px-24">
              <div className="max-w-2xl space-y-3 sm:space-y-4">
-               <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+               <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                  <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                 CASE STUDY
+                 Case study
                </div>
                
                <h1 className="text-3xl sm:text-5xl lg:text-[56px] font-heading font-black text-white leading-[1.1] tracking-tight">
@@ -103,7 +103,7 @@ export default function ProjectDetailPage() {
                     <Factory className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Client</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Client</span>
                     <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.client || "N/A"}</span>
                   </div>
                </div>
@@ -112,7 +112,7 @@ export default function ProjectDetailPage() {
                     <MapPin className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Location</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Location</span>
                     <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.location || "N/A"}</span>
                   </div>
                </div>
@@ -121,7 +121,7 @@ export default function ProjectDetailPage() {
                     <Factory className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Plant Capacity</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Plant capacity</span>
                     <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.capacity || "N/A"}</span>
                   </div>
                </div>
@@ -130,7 +130,7 @@ export default function ProjectDetailPage() {
                     <Box className="w-5 h-5 text-brand-primary" />
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">Project Type</span>
+                    <span className="text-[10px] font-bold text-slate-400 tracking-wider mb-1">Project type</span>
                     <span className="text-[13px] font-black text-slate-800 leading-snug">{currentProject.projectType || "N/A"}</span>
                   </div>
                </div>
@@ -143,7 +143,7 @@ export default function ProjectDetailPage() {
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 lg:gap-16">
              <div className="space-y-6 lg:order-1 order-2">
                 <div className="mb-8">
-                  <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project Overview</h2>
+                  <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project overview</h2>
                   <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
                 </div>
                 
@@ -182,7 +182,7 @@ export default function ProjectDetailPage() {
         {totalImages > 1 && (
           <section className="w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 py-12">
             <div className="mb-8">
-              <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project Gallery</h2>
+              <h2 className="text-2xl sm:text-[32px] font-heading font-black text-[#133020] leading-tight">Project gallery</h2>
               <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
             </div>
             
@@ -204,14 +204,14 @@ export default function ProjectDetailPage() {
 
             <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-10 pb-10 border-b border-white/10 relative z-10">
               <div className="space-y-3 z-10 text-center md:text-left">
-                <h2 className="text-2xl sm:text-3xl font-black text-white font-heading">Want to Start Your Plant?</h2>
+                <h2 className="text-2xl sm:text-3xl font-black text-white font-heading">Want to start your plant?</h2>
                 <p className="text-white/80 font-medium text-sm sm:text-base">Let's build your next successful milling plant together.</p>
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap z-10"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm tracking-wide cursor-pointer whitespace-nowrap z-10"
               >
-                <span>Discuss Your Requirement</span>
+                <span>Discuss your requirement</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -221,7 +221,7 @@ export default function ProjectDetailPage() {
                    <CheckCircle className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
                  <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
-                   60+ Years of<br/><span className="whitespace-nowrap">Engineering Excellence</span>
+                   60+ years of<br/><span className="whitespace-nowrap">engineering excellence</span>
                  </span>
                </div>
                <div className="flex flex-col items-center gap-3.5 group">
@@ -229,7 +229,7 @@ export default function ProjectDetailPage() {
                    <Factory className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
                  <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
-                   1200+ Digital<br/><span className="whitespace-nowrap">Mills Installed</span>
+                   1200+ digital<br/><span className="whitespace-nowrap">mills installed</span>
                  </span>
                </div>
                <div className="flex flex-col items-center gap-3.5 group">
@@ -237,7 +237,7 @@ export default function ProjectDetailPage() {
                    <MapPin className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
                  <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
-                   25+ Countries<br/><span className="whitespace-nowrap">Covered</span>
+                   25+ countries<br/><span className="whitespace-nowrap">covered</span>
                  </span>
                </div>
                <div className="flex flex-col items-center gap-3.5 group">
@@ -245,7 +245,7 @@ export default function ProjectDetailPage() {
                    <Box className="text-[#f7b032] w-7 h-7 sm:w-8 sm:h-8" />
                  </div>
                  <span className="text-sm sm:text-base lg:text-lg font-bold text-white leading-snug">
-                   End-to-End<br/><span className="whitespace-nowrap">Turnkey Support</span>
+                   End-to-end<br/><span className="whitespace-nowrap">turnkey support</span>
                  </span>
                </div>
             </div>
@@ -257,7 +257,7 @@ export default function ProjectDetailPage() {
           <section className="w-full py-16 px-6 sm:px-12 lg:px-16 xl:px-24 border-t border-slate-200/50 bg-slate-50/20 overflow-hidden">
             <div className="w-full space-y-8">
               <h2 className="text-2xl font-heading font-black text-slate-900 tracking-tight">
-                Read Other Case Studies
+                Read other case studies
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -286,8 +286,8 @@ export default function ProjectDetailPage() {
                             {p.title}
                           </h3>
                         </div>
-                        <div className="flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto uppercase tracking-wider">
-                          <span>Read Case Study</span>
+                        <div className="flex items-center text-xs font-black text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto tracking-wider">
+                          <span>Read case study</span>
                           <ArrowRight className="h-3.5 w-3.5" />
                         </div>
                       </div>

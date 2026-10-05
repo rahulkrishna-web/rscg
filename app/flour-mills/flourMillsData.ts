@@ -632,13 +632,11 @@ export const flourMillsProducts: DetailedProduct[] = [
     ],
     heroStats: [
       { value: "3-4 min", label: "Per groove dressed" },
-      { value: "3 Phase 415V 50Hz", label: "Power Load" }
+      { value: "3 Phase 415V 50Hz", label: "Power Load" },
+      { value: "50 / 75 / 100 mm", label: "Groove Width Options" },
+      { value: "500 / 600 / 750 / 1200 mm", label: "Stone Compatibility" }
     ],
-    technicalSpecs: {
-      "Power Supply": "3 Phase, 415V, 50Hz",
-      "Groove Width Options": "50 / 75 / 100 mm",
-      "Stone Compatibility": "500 / 600 / 750 / 1200 mm"
-    },
+    technicalSpecs: {},
     coreCapabilities: [
       {
         title: "Energy Efficiency & Performance",
@@ -817,11 +815,6 @@ export const flourMillsProducts: DetailedProduct[] = [
         description: "Automated gates for seamless conveying."
       }
     ],
-    technicalSpecs: {
-      "Operation": "Digitally operated pneumatic",
-      "Application": "Flour, grains, and dry food products",
-      "Pipeline Size": "Smaller diameter pipelines",
-      "Noise Level": "Low noise operation"
-    }
+    technicalSpecs: {}
   }
 ];

@@ -72,9 +72,9 @@ export default function NewsPage() {
 
           <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
             <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+              <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
                 <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-                LATEST ARTICLES & INSIGHTS
+                Latest articles & insights
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
                 News & Updates
@@ -115,7 +115,7 @@ export default function NewsPage() {
                     <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
                       <div className="space-y-3">
                         <div className="text-xs sm:text-sm font-bold text-slate-500 tracking-wide uppercase">
-                          {item.displayDate || formatDate(item.date)} <span className="mx-1.5 text-slate-300">|</span> Expositions
+                          {item.displayDate || formatDate(item.date)}
                         </div>
                         <h3 className="text-xl sm:text-[22px] font-bold text-slate-900 group-hover:text-brand-primary transition-colors leading-snug line-clamp-2">
                           {item.title}
@@ -127,7 +127,7 @@ export default function NewsPage() {
 
                       <div className="pt-6 mt-auto">
                         <div className="inline-flex items-center gap-1.5 text-sm sm:text-base font-bold text-[#4A7264] hover:text-[#133020] transition-colors border-b border-transparent hover:border-[#133020]">
-                          Read More <ArrowUpRight className="h-4 w-4" />
+                          Read more <ArrowUpRight className="h-4 w-4" />
                         </div>
                       </div>
                     </div>

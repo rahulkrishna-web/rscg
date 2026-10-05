@@ -123,30 +123,30 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
   }, [mobileSubmenuOpen]);
 
   return (
-    <header className={`w-full sticky top-0 z-50 p-[15px] ${mbClass} transition-all duration-300 relative pointer-events-none`}>
+    <header className="w-full fixed top-0 left-0 right-0 z-50 p-[15px] transition-all duration-300 pointer-events-none">
       <div className={`w-full bg-white rounded-t-xl ${isAnyMenuOpen ? "rounded-b-none" : "rounded-b-xl"} shadow-xs border border-slate-200/80 relative pointer-events-auto transition-all`}>
         
         {/* Top Navbar Row */}
-        <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 flex justify-between items-center h-16 sm:h-[76px] relative">
+        <div className="w-full px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 flex justify-between items-center h-16 sm:h-[72px] lg:h-[70px] xl:h-[76px] relative">
           {/* Brand Logos */}
-          <div className="flex flex-row items-center select-none h-full">
+          <div className="flex flex-row items-center select-none h-full shrink-0">
             <Link href="/" className="inline-flex hover:scale-102 transition-transform">
               <img 
                 src="/rscg.png" 
                 alt="RS Choyal Group Logo" 
-                className="h-[45px] sm:h-[56px] w-auto object-contain"
+                className="h-[40px] sm:h-[48px] lg:h-[44px] xl:h-[54px] w-auto object-contain"
               />
             </Link>
           </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 h-full">
+        <nav className="hidden lg:flex items-center gap-2.5 lg:gap-3 xl:gap-5 2xl:gap-7 h-full min-w-0">
           
           {/* ABOUT US Dropdown */}
           <div 
             onMouseEnter={() => setIsAboutOpen(true)}
             onMouseLeave={() => setIsAboutOpen(false)}
-            className="h-full flex items-center"
+            className="h-full flex items-center shrink-0"
           >
             <Link 
               href="/about"
@@ -156,10 +156,10 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
                   window.scrollTo({ top: 0, behavior: "smooth" });
                 }
               }}
-              className="flex items-center gap-1 text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full"
+              className="flex items-center gap-1 text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full whitespace-nowrap"
             >
               About Us
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isAboutOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${isAboutOpen ? "rotate-180" : ""}`} />
             </Link>
             
             {isAboutOpen && (
@@ -211,11 +211,11 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
           <div 
             onMouseEnter={() => setIsProductsOpen(true)}
             onMouseLeave={() => setIsProductsOpen(false)}
-            className="h-full flex items-center"
+            className="h-full flex items-center shrink-0"
           >
-            <button className="flex items-center gap-1 text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full">
+            <button className="flex items-center gap-1 text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full whitespace-nowrap">
               Products
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${isProductsOpen ? "rotate-180" : ""}`} />
             </button>
             
             {isProductsOpen && (
@@ -261,11 +261,11 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
           <div 
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
-            className="h-full flex items-center"
+            className="h-full flex items-center shrink-0"
           >
-            <button className="flex items-center gap-1 text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full">
+            <button className="flex items-center gap-1 text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer focus:outline-none h-full whitespace-nowrap">
               Services
-              <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
+              <ChevronDown className={`h-3.5 w-3.5 xl:h-4 xl:w-4 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""}`} />
             </button>
             
             {isServicesOpen && (
@@ -309,43 +309,43 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
 
           <Link 
             href="/news" 
-            className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
+            className="h-full flex items-center text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             News
           </Link>
           <Link 
             href="/projects" 
-            className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
+            className="h-full flex items-center text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Our Projects
           </Link>
           <Link 
             href="/downloads" 
-            className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
+            className="h-full flex items-center text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Downloads
           </Link>
           <Link 
             href="/contact" 
-            className="h-full flex items-center text-sm font-semibold uppercase text-slate-700 hover:text-brand-primary transition-colors cursor-pointer"
+            className="h-full flex items-center text-[13px] xl:text-[13.5px] 2xl:text-sm font-semibold text-slate-700 hover:text-brand-primary transition-colors cursor-pointer whitespace-nowrap shrink-0"
           >
             Contact Us
           </Link>
         </nav>
 
         {/* Action Button & Mobile Toggle */}
-        <div className="flex items-center gap-3 sm:gap-4 h-full">
+        <div className="flex items-center gap-2 sm:gap-3 xl:gap-4 h-full shrink-0">
           
           {/* Global Quote List Button */}
           <button
             onClick={() => setIsDrawerOpen(true)}
-            className="relative flex items-center gap-2 px-3 sm:px-4 py-2 border border-slate-200 rounded-xl bg-white hover:bg-slate-50 hover:border-brand-primary/30 transition-all duration-200 cursor-pointer text-xs sm:text-sm font-semibold text-slate-700 hover:text-brand-primary"
+            className="relative flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 xl:px-4 py-1.5 sm:py-2 border border-slate-200 rounded-xl bg-white hover:bg-slate-50 hover:border-brand-primary/30 transition-all duration-200 cursor-pointer text-xs xl:text-sm font-semibold text-slate-700 hover:text-brand-primary whitespace-nowrap shrink-0"
             aria-label="Open Quote List"
           >
-            <ShoppingBag className="h-4 w-4 text-brand-primary" />
-            <span className="hidden md:inline">Quote List</span>
+            <ShoppingBag className="h-3.5 w-3.5 xl:h-4 xl:w-4 text-brand-primary shrink-0" />
+            <span className="hidden sm:inline">Quote List</span>
             {totalQuoteItems > 0 && (
-              <span className="flex items-center justify-center bg-brand-tertiary text-slate-900 text-[10px] font-black w-5 h-5 rounded-full shadow-sm animate-scale-in">
+              <span className="flex items-center justify-center bg-brand-tertiary text-slate-900 text-[10px] font-black w-4.5 h-4.5 sm:w-5 sm:h-5 rounded-full shadow-sm animate-scale-in shrink-0">
                 {totalQuoteItems}
               </span>
             )}
@@ -368,7 +368,7 @@ export default function Header({ onRequestCallback, submenu }: HeaderProps) {
       {submenu && (
         <>
           {/* Desktop Submenu Row */}
-          <div className={`hidden lg:flex items-center gap-5 xl:gap-7 border-t border-slate-100/90 px-6 sm:px-12 lg:px-16 xl:px-24 h-10 overflow-x-auto no-scrollbar transition-opacity duration-200 ${isAboutOpen || isProductsOpen || isServicesOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
+          <div className={`hidden lg:flex items-center gap-4 xl:gap-7 border-t border-slate-100/90 px-4 sm:px-8 lg:px-6 xl:px-12 2xl:px-20 h-10 overflow-x-auto no-scrollbar transition-opacity duration-200 ${isAboutOpen || isProductsOpen || isServicesOpen ? "opacity-0 pointer-events-none" : "opacity-100"}`}>
             {submenu.items.map((item) => {
               const isActive = submenu.activeId === item.id;
               return (

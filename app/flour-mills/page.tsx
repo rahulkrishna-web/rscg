@@ -98,12 +98,12 @@ export default function FlourMills() {
 
         <div className="relative z-10 w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-24 sm:pb-28 md:pb-32">
           <div className="max-w-3xl space-y-4 sm:space-y-5 lg:space-y-6">
-            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] uppercase tracking-widest">
+            <div className="flex items-center gap-3 text-xs sm:text-sm font-bold text-[#f7b032] tracking-widest">
               <span className="w-8 sm:w-10 h-[3px] bg-[#f7b032]"></span>
-              COMMERCIAL MILLING
+              Commercial milling
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px] font-heading font-black text-white leading-[1.15] tracking-tight">
-              Flour Mills & Grinding Plants
+              Flour mills & grinding plants
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-200 font-medium max-w-xl leading-relaxed">
               Advanced stone milling technology engineered for high-capacity continuous production, uniform flour quality, and long-term reliability.
@@ -127,17 +127,17 @@ export default function FlourMills() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital Mills</h3>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Digital mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-Automatic & Sheller Mills</h3>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Semi-automatic & sheller mills</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
-            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate From Anywhere</h3>
+            <h3 className="font-heading font-black text-xl sm:text-2xl text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Operate from anywhere</h3>
             <p className="text-sm sm:text-base text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
@@ -149,17 +149,17 @@ export default function FlourMills() {
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
           
           <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Digital Mills</h3>
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Digital mills</h3>
             <p className="text-sm text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
           <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Semi-Automatic & Sheller Mills</h3>
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Semi-automatic & sheller mills</h3>
             <p className="text-sm text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
           <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Operate From Anywhere</h3>
+            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Operate from anywhere</h3>
             <p className="text-sm text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
@@ -171,7 +171,7 @@ export default function FlourMills() {
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-3xl sm:text-4xl font-heading font-extrabold text-slate-850 tracking-tight">
-              Select Your Category
+              Select your category
             </h2>
             <p className="text-slate-500 text-sm sm:text-base leading-relaxed">
               Explore our specific engineering ranges to find the right grinding solution.
@@ -237,7 +237,7 @@ export default function FlourMills() {
                 className="group flex flex-col w-full md:w-[calc(50%-12.5px)] lg:w-[calc(33.333%-21.5px)] bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
                 <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100">
-                  <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black uppercase text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
+                  <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
                     {prod.category}
                   </span>
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
@@ -277,11 +277,11 @@ export default function FlourMills() {
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
             <div className="max-w-2xl space-y-2.5 relative z-10 text-left">
-              <span className="text-xs font-bold text-[#f5a623] tracking-widest uppercase">
+              <span className="text-xs font-bold text-[#f5a623] tracking-widest">
                 Get in touch
               </span>
               <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-heading font-black text-white leading-tight tracking-tight">
-                Ready to Submit Specifications for a Proposal?
+                Ready to submit specifications for a proposal?
               </h2>
               <p className="text-sm sm:text-base lg:text-lg text-white/90 font-normal leading-relaxed">
                 Tell us about your processing space, layout constraints, power limits, and capacity requirements. Our technical sales team will compile a layout and detailed pricing offer.

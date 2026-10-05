@@ -260,7 +260,7 @@ export default function AboutPage() {
               {/* Left Column: Heading & Introduction */}
               <div className="lg:col-span-6 space-y-6 xl:pr-6">
                 <div>
-                  <span className="text-xs font-bold text-[#0B2C1C]/70 tracking-widest uppercase block mb-3">
+                  <span className="text-xs font-bold text-[#0B2C1C]/70 tracking-widest block mb-3">
                     What is Choyal
                   </span>
                   <h2 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-heading font-black tracking-tight leading-[1.16] text-[#0B2C1C]">
