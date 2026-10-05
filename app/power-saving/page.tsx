@@ -377,8 +377,8 @@ export default function PowerSavingPage() {
                 href="/contact" 
                 className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >
-                <span>Talk to Our Expert</span>
-                <ChevronRight className="w-4 h-4 stroke-[3]" />
+                <span>Discuss Your Requirement</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

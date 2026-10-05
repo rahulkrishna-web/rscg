@@ -1,16 +1,15 @@
 "use client";
 
 import { useState, useEffect, Suspense, useRef } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Download, CheckCircle2, ArrowRight } from "lucide-react";
+import { Download, CheckCircle2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { downloadCategories, downloadsData, DownloadItem } from "./downloadsData";
 
 function DownloadsContent() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const fileQuery = searchParams.get("file");
 
   const [activeCategory, setActiveCategory] = useState("all");
@@ -59,8 +58,16 @@ function DownloadsContent() {
       setToastMessage(null);
     }, 4500);
 
-    // 4. Open/Download the file
-    window.open(item.driveUrl, "_blank", "noopener,noreferrer");
+    // 4. Trigger direct browser download
+    const targetUrl = item.fileUrl || item.driveUrl || `/downloads/files/${item.id}.pdf`;
+    const link = document.createElement("a");
+    link.href = targetUrl;
+    link.download = `${item.title}.pdf`;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Handle direct link with ?file=[id] on page mount
@@ -73,17 +80,17 @@ function DownloadsContent() {
     );
 
     if (matchedItem) {
-      // Set category to 'all' or the item's category so the card is visible
-      setActiveCategory("all");
-      setHighlightedId(matchedItem.id);
-
-      // Smooth scroll to card
       setTimeout(() => {
+        // Set category to 'all' so the card is visible
+        setActiveCategory("all");
+        setHighlightedId(matchedItem.id);
+
+        // Smooth scroll to card
         const el = document.getElementById(`card-${matchedItem.id}`);
         if (el) {
           el.scrollIntoView({ behavior: "smooth", block: "center" });
         }
-      }, 300);
+      }, 50);
 
       // Remove highlight after 5 seconds
       setTimeout(() => {
@@ -224,7 +231,7 @@ function DownloadsContent() {
           <CheckCircle2 className="w-5 h-5 text-emerald-400 flex-shrink-0" />
           <div>
             <p className="text-xs text-emerald-300 font-semibold uppercase tracking-wider">
-              Opening Brochure
+              Downloading Brochure
             </p>
             <p className="text-sm font-bold text-white max-w-xs truncate">
               {toastMessage.title}

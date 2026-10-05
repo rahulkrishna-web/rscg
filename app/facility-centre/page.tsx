@@ -281,10 +281,10 @@ export default function FacilityCentrePage() {
             <div className="relative z-10 shrink-0 w-full md:w-auto">
               <Link 
                 href="/contact" 
-                className="bg-[#f5a623] hover:bg-[#e0961c] text-white font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer w-full md:w-auto text-sm sm:text-base"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >
-                <span>Schedule a Visit</span>
-                <ArrowRight className="h-4 w-4" />
+                <span>Discuss Your Requirement</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>

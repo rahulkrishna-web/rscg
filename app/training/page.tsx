@@ -437,10 +437,10 @@ export default function TrainingPage() {
 
             <Link
               href="/contact"
-              className="relative z-10 inline-flex items-center justify-center gap-2 px-7 sm:px-8 py-3.5 sm:py-4 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide font-bold transition-all duration-200 cursor-pointer text-nowrap whitespace-nowrap shrink-0"
+              className="relative z-10 inline-flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer text-nowrap whitespace-nowrap shrink-0"
             >
-              <span>Enquire About Training</span>
-              <ChevronRight className="w-4 h-4" />
+              <span>Discuss Your Requirement</span>
+              <ArrowRight className="w-4 h-4" />
             </Link>
 
           </div>

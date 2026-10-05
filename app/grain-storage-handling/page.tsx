@@ -300,9 +300,10 @@ export default function GrainStorageHandlingPage() {
                  </h3>
                  <Link 
                    href="/contact"
-                   className="inline-flex items-center gap-2 bg-[#eab308] hover:bg-[#ca8a04] text-slate-900 font-black px-6 py-3 rounded-lg shadow-lg transition-all hover:scale-105 uppercase text-sm tracking-wide"
+                   className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
                  >
-                   GET IN TOUCH <ArrowRight className="w-4 h-4" />
+                   <span>Discuss Your Requirement</span>
+                   <ArrowRight className="w-4 h-4" />
                  </Link>
                </div>
                <div className="absolute right-0 bottom-0 opacity-10 translate-x-1/4 translate-y-1/4 pointer-events-none">

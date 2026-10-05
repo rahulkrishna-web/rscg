@@ -207,8 +207,12 @@ export default function ProjectDetailPage() {
                 <h2 className="text-2xl sm:text-3xl font-black text-white font-heading">Want to Start Your Plant?</h2>
                 <p className="text-white/80 font-medium text-sm sm:text-base">Let's build your next successful milling plant together.</p>
               </div>
-              <Link href="/contact" className="z-10 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 font-bold uppercase tracking-wide text-xs sm:text-sm transition-all flex items-center gap-2 whitespace-nowrap cursor-pointer">
-                Contact Us <ArrowRight className="w-4 h-4" />
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap z-10"
+              >
+                <span>Discuss Your Requirement</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center z-10 relative pt-2">

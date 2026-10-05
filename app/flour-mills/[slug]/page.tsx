@@ -481,8 +481,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             </div>
           </div>
 
-          <Link href="/contact" className="relative z-10 whitespace-nowrap bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded transition-all shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide flex items-center gap-2 cursor-pointer">
-            Get a Quote <ArrowRight className="w-4 h-4" />
+          <Link
+            href="/contact"
+            className="relative z-10 whitespace-nowrap bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded transition-all duration-200 shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wide flex items-center gap-2 cursor-pointer"
+          >
+            <span>Discuss Your Requirement</span>
+            <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 

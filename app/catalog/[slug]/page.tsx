@@ -299,8 +299,8 @@ export default function ProductDetailsPage() {
                   <p className="text-white/85 text-sm font-medium">Save power. Increase production. Deliver consistent quality.</p>
                 </div>
              </div>
-             <button onClick={() => router.push('/contact')} className="relative z-10 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 hidden sm:flex items-center gap-2 transition-all whitespace-nowrap text-xs sm:text-sm uppercase tracking-wide cursor-pointer">
-                <span>Get a Quote</span>
+             <button onClick={() => router.push('/contact')} className="relative z-10 inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 hidden sm:flex transition-all duration-200 whitespace-nowrap text-xs sm:text-sm uppercase tracking-wide cursor-pointer">
+                <span>Discuss Your Requirement</span>
                 <ArrowRight className="w-4 h-4" />
              </button>
            </div>

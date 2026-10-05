@@ -223,19 +223,22 @@ export default function ConsultancyPage() {
 
         {/* Why Work With Us Banner */}
         <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pb-16">
-          <div className="w-full bg-[#0B2C1C] rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-10">
-            <div className="lg:w-1/2 space-y-4 text-center lg:text-left">
+          <div className="w-full bg-gradient-to-r from-[#17462c] to-[#297a49] rounded-[24px] sm:rounded-[28px] p-8 sm:p-12 lg:p-14 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10 border border-white/10 relative overflow-hidden">
+            {/* Background Texture matching Homepage CTA */}
+            <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
+
+            <div className="lg:w-1/2 space-y-4 text-center lg:text-left relative z-10">
               <h3 className="text-3xl sm:text-4xl font-heading font-black text-white tracking-tight">
                 Why Work With Us?
               </h3>
-              <p className="text-base sm:text-lg text-slate-200 leading-relaxed font-normal">
+              <p className="text-base sm:text-lg text-white/90 leading-relaxed font-normal">
                 We combine our deep domain knowledge with hands-on industry experience to deliver practical, result-oriented solutions tailored to your business goals.
               </p>
             </div>
             
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 w-full divide-y sm:divide-y-0 sm:divide-x divide-white/20">
+            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 w-full divide-y sm:divide-y-0 sm:divide-x divide-white/20 relative z-10">
               <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#D3994B] font-heading">
+                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   60+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
@@ -243,7 +246,7 @@ export default function ConsultancyPage() {
                 </span>
               </div>
               <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#D3994B] font-heading">
+                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   25+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
@@ -251,7 +254,7 @@ export default function ConsultancyPage() {
                 </span>
               </div>
               <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
-                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#D3994B] font-heading">
+                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   200+
                 </span>
                 <span className="text-white text-sm sm:text-base font-semibold mt-2 leading-snug">
@@ -277,9 +280,9 @@ export default function ConsultancyPage() {
               <div className="pt-2">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-3 bg-[#0B2C1C] hover:bg-[#13422b] text-white px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto cursor-pointer"
+                  className="inline-flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap w-full sm:w-auto"
                 >
-                  <span>DISCUSS YOUR PROJECT</span>
+                  <span>Discuss Your Project</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>

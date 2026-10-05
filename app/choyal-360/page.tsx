@@ -1,5 +1,6 @@
 "use client";
 
+import { Fragment } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Building2, ChevronRight, Phone } from "lucide-react";
@@ -184,34 +185,35 @@ export default function Grain360Page() {
 
           {/* Workflow Section: How Grain360 helps */}
           <div className="mb-24">
-            <h3 className="text-xl sm:text-2xl font-heading font-black text-center text-[#1A3A29] mb-12">
+            <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-black text-center text-[#1A3A29] mb-12 sm:mb-14">
               How Grain360 helps
             </h3>
             
-            <div className="flex md:flex-row items-stretch md:items-center justify-start md:justify-center gap-4 sm:gap-6 md:gap-4 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
-              {workflowSteps.map((step, idx) => (
-                <div key={idx} className="flex items-center w-[78vw] max-w-[325px] md:w-auto shrink-0 snap-start">
-                  
-                  {/* Step Card */}
-                  <div className="bg-white rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 shadow-sm border border-slate-200/50 w-full min-h-[160px] md:min-w-[280px] md:max-w-[340px]">
-                    <div className={`w-16 h-16 rounded-full ${step.iconBg} flex items-center justify-center shrink-0 p-3 shadow-xs`}>
-                      <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
+            <div className="w-full">
+              <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-5 lg:gap-0 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 lg:mx-0 lg:px-0 pb-4 lg:pb-0">
+                {workflowSteps.map((step, idx) => (
+                  <Fragment key={idx}>
+                    {/* Step Card - Equalized with flex-1 across all 3 cards */}
+                    <div className="flex-1 w-[85vw] sm:w-[70vw] max-w-[420px] lg:max-w-none shrink-0 lg:shrink snap-start bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-9 flex items-center gap-5 sm:gap-6 shadow-sm hover:shadow-md border border-slate-200/60 transition-all duration-300 min-h-[150px] sm:min-h-[170px]">
+                      <div className={`w-16 h-16 sm:w-20 sm:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
+                        <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-heading font-black text-xl sm:text-2xl text-slate-800 mb-1.5 leading-snug">{step.title}</h4>
+                        <p className="text-base sm:text-lg text-slate-600 font-normal leading-relaxed">{step.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-heading font-black text-lg text-slate-800 mb-1">{step.title}</h4>
-                      <p className="text-sm text-slate-600 font-normal leading-relaxed">{step.desc}</p>
-                    </div>
-                  </div>
 
-                  {/* Arrow (hidden on mobile, shown between steps on md+) */}
-                  {idx < workflowSteps.length - 1 && (
-                    <div className="hidden md:flex items-center justify-center w-12 shrink-0">
-                      <ArrowRight className="w-6 h-6 text-slate-300" />
-                    </div>
-                  )}
-                </div>
-              ))}
-              <div className="w-4 shrink-0 md:hidden" aria-hidden="true" />
+                    {/* Arrow between steps (shown on lg+) */}
+                    {idx < workflowSteps.length - 1 && (
+                      <div className="hidden lg:flex items-center justify-center w-10 xl:w-16 shrink-0" aria-hidden="true">
+                        <ArrowRight className="w-6 h-6 xl:w-7 xl:h-7 text-slate-300 stroke-[2.5]" />
+                      </div>
+                    )}
+                  </Fragment>
+                ))}
+                <div className="w-4 shrink-0 lg:hidden" aria-hidden="true" />
+              </div>
             </div>
           </div>
 
@@ -279,9 +281,9 @@ export default function Grain360Page() {
             <div className="relative z-10 shrink-0 w-full md:w-auto">
               <Link 
                 href="/contact"
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f5a623] hover:bg-[#e0961c] text-white px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl text-sm sm:text-base font-bold tracking-wide transition-all hover:-translate-y-0.5 shadow-lg hover:shadow-xl"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all duration-200 text-xs sm:text-sm uppercase tracking-wide cursor-pointer whitespace-nowrap"
               >
-                <span>Contact Us</span>
+                <span>Discuss Your Requirement</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

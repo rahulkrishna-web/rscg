@@ -4,7 +4,8 @@ export interface DownloadItem {
   category: string;
   categoryLabel: string;
   image: string;
-  driveUrl: string;
+  fileUrl: string;
+  driveUrl?: string;
 }
 
 export interface CategoryFilter {
@@ -37,7 +38,7 @@ export const downloadsData: DownloadItem[] = [
     category: "about-company",
     categoryLabel: "About Company",
     image: "/images/downloads/thumbnails/Company Profile.png",
-    driveUrl: "https://drive.google.com/drive/folders/1DIpm5ReyK2p_XLT9ckQekQ5jeINGcexD",
+    fileUrl: "/downloads/files/company-profile.pdf",
   },
   // 2. Turnkey Projects
   {
@@ -46,7 +47,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/Turnkey Projects.png",
-    driveUrl: "https://drive.google.com/drive/folders/1WAfqCxQmqMTeM1a-eg4vlH-gRoekCtxx",
+    fileUrl: "/downloads/files/turnkey-solution.pdf",
   },
   {
     id: "10-tpd-mini-chakki-atta-plant",
@@ -54,7 +55,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/10 TPD mini atta chakki palnt.png",
-    driveUrl: "https://drive.google.com/drive/folders/1xMSXJK-xL17uOzt6F8lmRpQkWXcetYpt",
+    fileUrl: "/downloads/files/10-tpd-mini-chakki-atta-plant.pdf",
   },
   {
     id: "10-tpd-chakki-atta-plant",
@@ -62,7 +63,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/10 TPD ATTA CHAKKI PLANT.png",
-    driveUrl: "https://drive.google.com/drive/folders/1SnUsBvK-paw6UWDveCdxVRT_QGXxx0tw",
+    fileUrl: "/downloads/files/10-tpd-chakki-atta-plant.pdf",
   },
   {
     id: "20-tpd-chakki-atta-plant",
@@ -70,7 +71,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/20 TPD Atta Chakki plant.png",
-    driveUrl: "https://drive.google.com/drive/folders/1-oj8rUgK4sP6vvhrINgqp2Psu2IHsKkN",
+    fileUrl: "/downloads/files/20-tpd-chakki-atta-plant.pdf",
   },
   {
     id: "40-tpd-chakki-atta-plant",
@@ -78,7 +79,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/40 TPD Atta Chakki plant.png",
-    driveUrl: "https://drive.google.com/drive/folders/1hRNj0PhNhV7ghJp8dcbdr6DUDB9YXzlf",
+    fileUrl: "/downloads/files/40-tpd-chakki-atta-plant.pdf",
   },
   {
     id: "60-tpd-chakki-atta-plant",
@@ -86,7 +87,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/60 TPD Plant.png",
-    driveUrl: "https://drive.google.com/drive/folders/1yqkHpeibbULk4PkcBqU1GLS6v4FfP-Vf",
+    fileUrl: "/downloads/files/60-tpd-chakki-atta-plant.pdf",
   },
   {
     id: "besan-plant",
@@ -94,7 +95,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/Besan Plant.png",
-    driveUrl: "https://drive.google.com/drive/folders/18S4In5BHtG78uPyseZqjCPxpy-jwVwR4",
+    fileUrl: "/downloads/files/besan-plant.pdf",
   },
   {
     id: "spice-plant",
@@ -102,7 +103,7 @@ export const downloadsData: DownloadItem[] = [
     category: "turnkey",
     categoryLabel: "Turnkey Projects",
     image: "/images/downloads/thumbnails/Spice Plant.png",
-    driveUrl: "https://drive.google.com/drive/folders/1rLnHryyb-3bYn5hVeeNY6CHxLJ4M1o5D",
+    fileUrl: "/downloads/files/spice-plant.pdf",
   },
   // 3. Training
   {
@@ -111,7 +112,7 @@ export const downloadsData: DownloadItem[] = [
     category: "training",
     categoryLabel: "Training",
     image: "/images/downloads/thumbnails/CHARGE.png",
-    driveUrl: "https://drive.google.com/drive/folders/1XM_MVL9iRPgy-CvTBUHJeLjAJfvhk1LO",
+    fileUrl: "/downloads/files/charge.pdf",
   },
   // 4. Digital Flour Mill
   {
@@ -120,7 +121,7 @@ export const downloadsData: DownloadItem[] = [
     category: "digital-flour-mill",
     categoryLabel: "Digital Flour Mill",
     image: "/images/downloads/thumbnails/Wonder Mills.png",
-    driveUrl: "https://drive.google.com/drive/folders/1yBOtkgb-877-cF9sE73wS_D5sgvvAlg9",
+    fileUrl: "/downloads/files/wondermill-with-wondermiller.pdf",
   },
   {
     id: "iquadra",
@@ -128,7 +129,7 @@ export const downloadsData: DownloadItem[] = [
     category: "digital-flour-mill",
     categoryLabel: "Digital Flour Mill",
     image: "/images/downloads/thumbnails/iQuadra.png",
-    driveUrl: "https://drive.google.com/drive/folders/1dUSMrDvQYE0eUghO4_NOpHqo__d01woI",
+    fileUrl: "/downloads/files/iquadra.pdf",
   },
   // 5. Semi Automatic Flour Mill
   {
@@ -137,7 +138,7 @@ export const downloadsData: DownloadItem[] = [
     category: "semi-auto-mill",
     categoryLabel: "Semi Automatic Flour Mill",
     image: "/images/downloads/thumbnails/Atta expert.png",
-    driveUrl: "https://drive.google.com/drive/folders/1fTtVxGlXNhU4OQ8aOP2BVQIjjJQ8YVDo",
+    fileUrl: "/downloads/files/atta-expert.pdf",
   },
   // 6. Horizontal Flour Mill
   {
@@ -146,7 +147,7 @@ export const downloadsData: DownloadItem[] = [
     category: "horizontal-flour-mill",
     categoryLabel: "Horizontal Flour Mill",
     image: "/images/downloads/thumbnails/HORIZONTAL SQUARE TYPE FLOUR MILL.png",
-    driveUrl: "https://drive.google.com/drive/folders/1DpkmOeKDU1pleOkQck33WC2ijTBa8vWW",
+    fileUrl: "/downloads/files/horizontal-square-type-flour-mill.pdf",
   },
   {
     id: "horizontal-flour-mill-mini-ultra-mini",
@@ -154,7 +155,7 @@ export const downloadsData: DownloadItem[] = [
     category: "horizontal-flour-mill",
     categoryLabel: "Horizontal Flour Mill",
     image: "/images/downloads/thumbnails/Mini and ultra mini.png",
-    driveUrl: "https://drive.google.com/drive/folders/1J3QKrFb_EW4rDzkFkVVHucO5cLO6w6y7",
+    fileUrl: "/downloads/files/horizontal-flour-mill-mini-ultra-mini.pdf",
   },
   // 7. Flour Processing
   {
@@ -163,7 +164,7 @@ export const downloadsData: DownloadItem[] = [
     category: "flour-processing",
     categoryLabel: "Flour Processing",
     image: "/images/downloads/thumbnails/Plan Sifter, Vibro Sifter, Centrifugal.png",
-    driveUrl: "https://drive.google.com/drive/folders/1PaVFJiO5SHWCpqJQymm0JK_CNK-xDoYt",
+    fileUrl: "/downloads/files/plan-sifter-vibro-sifter-centrifugal.pdf",
   },
   // 8. Conveying System
   {
@@ -172,7 +173,7 @@ export const downloadsData: DownloadItem[] = [
     category: "conveying-system",
     categoryLabel: "Conveying System",
     image: "/images/downloads/thumbnails/Neomatic.png",
-    driveUrl: "https://drive.google.com/drive/folders/1oUJh4e4fHMTeJzurt6b8m8y4ELofcXCu",
+    fileUrl: "/downloads/files/neomatic.pdf",
   },
   // 9. Emery Stone Dresser
   {
@@ -181,7 +182,7 @@ export const downloadsData: DownloadItem[] = [
     category: "emery-stone",
     categoryLabel: "Emery Stone Dresser",
     image: "/images/downloads/thumbnails/eMERY STONE DRESSER.png",
-    driveUrl: "https://drive.google.com/drive/folders/1UQz-jSriiDJHyR4TGIb42LySzozQcr-P",
+    fileUrl: "/downloads/files/emery-stone-dresser.pdf",
   },
   // 10. Vending Machine
   {
@@ -190,7 +191,7 @@ export const downloadsData: DownloadItem[] = [
     category: "vending-machine",
     categoryLabel: "Vending Machine",
     image: "/images/downloads/thumbnails/Floura.png",
-    driveUrl: "https://drive.google.com/drive/folders/1hj1d16OIflOBHWwBanbLnLbNKGafUuN8",
+    fileUrl: "/downloads/files/floura.pdf",
   },
   // 11. Automatic Machines
   {
@@ -199,7 +200,7 @@ export const downloadsData: DownloadItem[] = [
     category: "automatic-machines",
     categoryLabel: "Automatic Machines",
     image: "/images/downloads/thumbnails/OIL EXTRACTION MACHINE.png",
-    driveUrl: "https://drive.google.com/drive/folders/13u5vnatkL-ThRVcvTrdkXRFRGQ83pIbB",
+    fileUrl: "/downloads/files/oil-extraction-machine.pdf",
   },
   {
     id: "micro-powder-doser",
@@ -207,7 +208,7 @@ export const downloadsData: DownloadItem[] = [
     category: "automatic-machines",
     categoryLabel: "Automatic Machines",
     image: "/images/downloads/thumbnails/micRO POWDER DOSER.png",
-    driveUrl: "https://drive.google.com/drive/folders/1dNmz__tR0QU1bnBhS9bmzz2wScgX2_E1",
+    fileUrl: "/downloads/files/micro-powder-doser.pdf",
   },
   // 12. Semi Automatic Machines
   {
@@ -216,7 +217,7 @@ export const downloadsData: DownloadItem[] = [
     category: "semi-auto-machines",
     categoryLabel: "Semi Automatic Machines",
     image: "/images/downloads/thumbnails/WONDER DROP.png",
-    driveUrl: "https://drive.google.com/drive/folders/1nR2zWFiZNEprnrXW8rMxGwQzx37vkCvC",
+    fileUrl: "/downloads/files/wonder-drop.pdf",
   },
   {
     id: "spice-grinding-machine",
@@ -224,7 +225,7 @@ export const downloadsData: DownloadItem[] = [
     category: "semi-auto-machines",
     categoryLabel: "Semi Automatic Machines",
     image: "/images/downloads/thumbnails/SPICE GRINDING MACHINE.png",
-    driveUrl: "https://drive.google.com/drive/folders/1d62wP3ajM9EY7xA4x3xq5J8C_Am73e32",
+    fileUrl: "/downloads/files/spice-grinding-machine.pdf",
   },
   {
     id: "floura-fresh",
@@ -232,6 +233,6 @@ export const downloadsData: DownloadItem[] = [
     category: "semi-auto-machines",
     categoryLabel: "Semi Automatic Machines",
     image: "/images/downloads/thumbnails/FLOURA FRESH.png",
-    driveUrl: "https://drive.google.com/drive/folders/1DaH7iGKkY1YliVA5ioXxO3vc-dj-tKY8",
+    fileUrl: "/downloads/files/floura-fresh.pdf",
   },
 ];
