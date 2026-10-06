@@ -533,11 +533,8 @@ export default function Home() {
 
   const rotatingPhrases = [
     "Turnkey Solutions",
-    "Flour Mills",
-    "Grain Storage Silos",
-    "Dampening Machines",
-    "Cleaning Machines",
-    "Automation"
+    "Stone Milling",
+    "Mill Digitalization"
   ];
   const [displayedHeroIndex, setDisplayedHeroIndex] = useState(0);
   const [heroAnimPhase, setHeroAnimPhase] = useState<"in" | "out">("in");
