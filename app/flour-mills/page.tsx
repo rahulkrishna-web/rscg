@@ -178,12 +178,12 @@ export default function FlourMills() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 max-w-5xl mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-auto md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
             {categories.map((cat) => (
               <button
                 key={cat.name}
                 onClick={() => handleCategorySelect(cat.filter)}
-                className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/50 shadow-xs hover:shadow-xl hover:border-brand-primary/20 hover:-translate-y-1 transition-all duration-300 text-center cursor-pointer"
+                className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/70 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-xl hover:border-brand-primary/20 hover:-translate-y-1 transition-all duration-300 text-center cursor-pointer"
               >
                 <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100">
                   <Image 
@@ -203,6 +203,7 @@ export default function FlourMills() {
                 </div>
               </button>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
 
         </div>
@@ -229,15 +230,15 @@ export default function FlourMills() {
           </div>
 
           {/* Product Grid */}
-          <div className="flex flex-wrap justify-center gap-6 lg:gap-8 pt-4 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 pt-4 w-full">
             {filteredProducts.map((prod) => (
               <Link
                 key={prod.id}
                 href={`/flour-mills/${prod.id}`}
-                className="group flex flex-col w-full md:w-[calc(50%-12.5px)] lg:w-[calc(33.333%-21.5px)] bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
-                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100">
-                  <span className="absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
+                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+                  <span className="hidden sm:inline-block absolute top-4 left-4 z-10 bg-white/90 backdrop-blur text-[10px] font-black text-brand-primary px-2.5 py-1 rounded-full border border-slate-200/50 shadow-sm">
                     {prod.category}
                   </span>
                   <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
@@ -245,21 +246,23 @@ export default function FlourMills() {
                     src={prod.heroImage} 
                     alt={prod.title} 
                     fill
-                    className="object-contain p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" 
+                    className="object-contain p-3 sm:p-4 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out" 
                   />
                 </div>
 
-                <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                  <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight group-hover:text-brand-primary transition-colors">
-                    {prod.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 mt-3 line-clamp-2 leading-relaxed flex-1">
-                    {prod.desc}
-                  </p>
+                <div className="p-3.5 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-sm sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight leading-snug group-hover:text-brand-primary transition-colors">
+                      {prod.title}
+                    </h3>
+                    <p className="text-xs sm:text-base text-slate-500 mt-1.5 sm:mt-3 line-clamp-2 leading-relaxed font-normal">
+                      {prod.desc}
+                    </p>
+                  </div>
                   
-                  <div className="mt-6 flex items-center justify-between text-brand-primary font-bold text-sm">
+                  <div className="mt-3 sm:mt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
                     <span>View Product</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>

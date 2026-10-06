@@ -254,42 +254,44 @@ export default function PowerSavingPage() {
           </p>
         </div>
 
-        <div className="md:w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
           {products.map((product, idx) => (
-            <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
-              <div className="relative h-[240px] sm:h-[280px] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
-                <Image 
-                  src={product.img} 
-                  alt={product.name} 
-                  fill 
-                  className="object-contain p-6 group-hover:scale-105 transition-transform duration-500" 
+            <Link
+              key={idx}
+              href={product.href}
+              className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+            >
+              {/* Image Area - Clean rounded background matching catalog page */}
+              <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+                <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
+                <img
+                  src={product.img}
+                  alt={product.name}
+                  className="w-full h-full object-contain p-1 sm:p-2 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
+                  loading="lazy"
                 />
               </div>
-              <div className="p-5 sm:p-6 flex-1 flex flex-col">
-                <h4 className="text-lg sm:text-xl font-heading font-extrabold text-[#0a3118] mb-3">{product.name}</h4>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6 flex-1">
-                  {product.desc}
-                </p>
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                  <Link href={product.href} className="text-xs sm:text-sm font-bold text-[#0a3118] hover:text-[#eab308] flex items-center gap-1 transition-colors">
-                    View Details <ArrowRight className="w-4 h-4" />
-                  </Link>
-                  <button 
-                    onClick={() => addToQuote({ 
-                      id: product.code, 
-                      name: product.name, 
-                      image: product.img 
-                    })}
-                    className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold border border-slate-300 text-slate-700 px-3 sm:px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
-                  >
-                    <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#eab308]" />
-                    Add to Quote
-                  </button>
+
+              {/* Card Content - Responsive sizing for 2-col mobile & 3-col desktop */}
+              <div className="p-3.5 sm:p-8 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight leading-snug group-hover:text-brand-primary transition-colors">
+                    {product.name}
+                  </h3>
+
+                  <p className="text-xs sm:text-base text-slate-500 mt-1.5 sm:mt-3 line-clamp-2 leading-relaxed font-normal">
+                    {product.desc}
+                  </p>
+                </div>
+
+                {/* Card Bottom Link */}
+                <div className="mt-3 sm:mt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                  <span>View Product</span>
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
-          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </section>
 

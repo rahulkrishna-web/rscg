@@ -184,36 +184,39 @@ export default function GrainStorageHandlingPage() {
       {/* Products Grid Section */}
       <section id="products" className="w-full py-8 px-6 sm:px-12 lg:px-16 xl:px-24 scroll-mt-24">
         <div className="w-full mx-auto space-y-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
             {handlingCards.map((card) => (
               <Link 
                 key={card.slug}
                 href={`/grain-storage-handling/${card.slug}`}
-                className="group bg-white rounded-[32px] border border-slate-200/60 overflow-hidden shadow-xs hover:shadow-md hover:border-slate-300 transition-all duration-300 flex flex-col"
+                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
-                {/* Image Area */}
-                <div className="aspect-square bg-white flex items-center justify-center relative overflow-hidden p-6">
+                {/* Image Area - Clean rounded background matching catalog page */}
+                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
                   <img 
                     src={card.image} 
                     alt={card.title} 
-                    className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-contain p-1 sm:p-2 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="lazy"
                   />
                 </div>
 
-                {/* Details Area */}
-                <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
-                  <div className="space-y-2">
-                    <h3 className="font-heading font-black text-slate-800 group-hover:text-brand-primary text-lg transition-colors leading-snug">
+                {/* Card Content - Responsive sizing for 2-col mobile & 3-col desktop */}
+                <div className="p-3.5 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-sm sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight leading-snug group-hover:text-brand-primary transition-colors">
                       {card.title}
                     </h3>
-                    <p className="text-xs text-slate-400 font-bold tracking-wider">
+                    <p className="text-xs sm:text-base text-slate-500 mt-1.5 sm:mt-3 line-clamp-2 leading-relaxed font-normal">
                       {card.sub}
                     </p>
                   </div>
 
-                  <div className="flex items-center text-xs font-bold text-brand-primary group-hover:translate-x-1 transition-transform duration-300 gap-1 mt-auto">
-                    <span>View specifications</span>
-                    <ArrowRight className="h-3 w-3" />
+                  {/* Card Bottom Link */}
+                  <div className="mt-3 sm:mt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                    <span>View Product</span>
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               </Link>
@@ -289,9 +292,9 @@ export default function GrainStorageHandlingPage() {
           </div>
 
           {/* Bottom Contact Strip */}
-          <div className="flex flex-col lg:flex-row border-t border-slate-200">
+          <div className="flex flex-col lg:flex-row border-t border-slate-200 bg-slate-50">
             {/* Dark Green CTA box */}
-            <div className="bg-[#0a3118] p-8 lg:p-10 flex flex-col sm:flex-row items-center gap-6 lg:w-[45%] rounded-br-[4rem] lg:rounded-br-[0] lg:rounded-tr-[4rem] relative overflow-hidden">
+            <div className="bg-[#0a3118] p-8 lg:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 lg:w-[45%] rounded-br-[4rem] lg:rounded-br-[0] lg:rounded-tr-[4rem] relative overflow-hidden">
                <div className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center flex-shrink-0 text-white z-10">
                  <Phone className="w-6 h-6" />
                </div>
@@ -313,9 +316,9 @@ export default function GrainStorageHandlingPage() {
             </div>
 
             {/* Quick Contact Info */}
-            <div className="flex-1 bg-slate-50 p-8 lg:p-10 flex flex-col sm:flex-row items-center justify-around gap-8">
+            <div className="flex-1 bg-slate-50 p-8 lg:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-around gap-6 sm:gap-8">
                <div className="flex items-center gap-4">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700">
+                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Phone className="w-5 h-5" />
                  </div>
                  <div>
@@ -325,7 +328,7 @@ export default function GrainStorageHandlingPage() {
                </div>
                
                <div className="flex items-center gap-4">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700">
+                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <Mail className="w-5 h-5" />
                  </div>
                  <div>
@@ -335,7 +338,7 @@ export default function GrainStorageHandlingPage() {
                </div>
                
                <div className="flex items-center gap-4">
-                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700">
+                 <div className="w-12 h-12 rounded-full bg-white shadow-sm border border-slate-200 flex items-center justify-center text-slate-700 shrink-0">
                    <MessageCircle className="w-5 h-5" />
                  </div>
                  <div>

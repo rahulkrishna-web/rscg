@@ -194,11 +194,11 @@ export default function ConsultancyPage() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+          <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
             {valueServices.map((service, idx) => (
               <div 
                 key={idx} 
-                className="bg-white border border-slate-100/90 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 shadow-sm hover:shadow-md hover:border-[#133020]/20 transition-all group"
+                className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-2xl p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md hover:border-[#133020]/20 transition-all group"
               >
                 <div className="w-16 h-16 sm:w-20 sm:h-20 shrink-0 bg-[#F0F7F3] rounded-2xl flex items-center justify-center border border-[#133020]/10 p-3 sm:p-3.5 group-hover:scale-105 group-hover:bg-[#E8F5E9] transition-all duration-300">
                   <Image 
@@ -220,6 +220,7 @@ export default function ConsultancyPage() {
                 </div>
               </div>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
         </section>
 
@@ -238,8 +239,8 @@ export default function ConsultancyPage() {
               </p>
             </div>
             
-            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 w-full divide-y sm:divide-y-0 sm:divide-x divide-white/20 relative z-10">
-              <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+            <div className="lg:w-1/2 grid grid-cols-1 sm:grid-cols-3 gap-7 sm:gap-4 w-full sm:divide-x divide-white/20 relative z-10">
+              <div className="flex flex-col items-center text-center px-4">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   60+
                 </span>
@@ -247,7 +248,7 @@ export default function ConsultancyPage() {
                   Years milling and engineering experience
                 </span>
               </div>
-              <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+              <div className="flex flex-col items-center text-center px-4">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   25+
                 </span>
@@ -255,7 +256,7 @@ export default function ConsultancyPage() {
                   Countries international market exposure
                 </span>
               </div>
-              <div className="flex flex-col items-center text-center px-4 pt-4 sm:pt-0">
+              <div className="flex flex-col items-center text-center px-4">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#f7b032] font-heading">
                   200+
                 </span>

@@ -137,24 +137,24 @@ export default function EmeryStones() {
             <div className="h-1 w-20 bg-brand-primary mx-auto mt-4 rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-8 max-w-7xl mx-auto">
             {/* Category 1: Daniya Type */}
             <Link 
               href="/emery-stones/daniya-type"
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
+              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/daniya_emery_stone.png" 
                   alt="Horizontal Emery Stones - Daniya Type"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
+              <div className="p-3.5 sm:p-6 text-center">
+                <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Daniya type
                 </h3>
-                <p className="text-xs text-slate-400 mt-2 font-medium">
+                <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
                   Designed and manufactured with premium abrasives to maintain natural wheat aroma & taste.
                 </p>
               </div>
@@ -163,20 +163,20 @@ export default function EmeryStones() {
             {/* Category 2: Agate/Sheller Type */}
             <Link 
               href="/emery-stones/agate-sheller-type"
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
+              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/agate_emery_stone.png" 
                   alt="Horizontal Emery Stones - Agate/Sheller Type"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 text-center">
-                <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
+              <div className="p-3.5 sm:p-6 text-center">
+                <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                   Horizontal emery stones - Agate/sheller type
                 </h3>
-                <p className="text-xs text-slate-400 mt-2 font-medium">
+                <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
                   Agate shelling stones optimized for de-husking, pulse splitting, and industrial mill pre-cleaning.
                 </p>
               </div>
@@ -185,21 +185,21 @@ export default function EmeryStones() {
             {/* Category 3: Emery Stone Dresser */}
             <Link 
               href="/emery-stones/emery-stone-dresser"
-              className="group flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              className="col-span-2 lg:col-span-1 w-[calc(50%-0.4375rem)] sm:w-[calc(50%-1rem)] lg:w-full mx-auto group flex flex-col bg-white rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-200/60 shadow-xs hover:shadow-2xl hover:border-brand-primary/20 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
             >
-              <div className="relative w-full aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-6">
+              <div className="relative w-full aspect-square sm:aspect-[4/3] bg-slate-50 border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                 <img 
                   src="/emery-stone-dresser/emery_stone_dresser.png" 
                   alt="Emery Stone Dresser"
                   className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
-              <div className="p-6 text-center flex flex-col h-full justify-between">
+              <div className="p-3.5 sm:p-6 text-center flex flex-col h-full justify-between">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors">
+                  <h3 className="text-sm sm:text-xl font-heading font-extrabold text-slate-800 group-hover:text-brand-primary transition-colors leading-snug">
                     Emery stone dresser
                   </h3>
-                  <p className="text-xs text-slate-400 mt-2 font-medium">
+                  <p className="text-xs text-slate-400 mt-1.5 sm:mt-2 font-medium leading-relaxed">
                     Engineered to restore and maintain the cutting profile of emery stones for consistent performance.
                   </p>
                 </div>

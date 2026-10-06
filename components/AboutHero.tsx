@@ -138,22 +138,6 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
             </h1>
           </div>
         </div>
-
-        {/* Slide Indicator Dots (clickable, no arrows per instructions) */}
-        <div className="absolute bottom-6 right-6 sm:right-12 lg:right-24 z-20 flex items-center gap-2">
-          {slides.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => setCurrentSlide(idx)}
-              aria-label={`Go to slide ${idx + 1}`}
-              className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                idx === currentSlide
-                  ? "w-8 bg-[#f7b032]"
-                  : "w-2.5 bg-white/50 hover:bg-white/80"
-              }`}
-            />
-          ))}
-        </div>
       </div>
 
       {/* 2. RUNNING STATS BAR (Matches Wonder Mill CTA green pattern & gradient) */}

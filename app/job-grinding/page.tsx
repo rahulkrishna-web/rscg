@@ -220,7 +220,7 @@ export default function JobGrindingPage() {
             </div>
 
             {/* Right Column: Facility Details Card + 3 Cards Side-by-Side */}
-            <div className="lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6">
+            <div className="lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 min-w-0">
               {/* Facility Details Card */}
               <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border border-slate-100 p-6 sm:p-8">
                 <div className="flex items-center gap-3 pb-5 border-b border-slate-100 mb-6">
@@ -254,7 +254,7 @@ export default function JobGrindingPage() {
               </div>
 
               {/* 3 Facility Services Cards (Row of 3) */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="flex sm:grid sm:grid-cols-3 gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pt-2 pb-6 sm:py-0">
                 {[
                   {
                     title: "Job grinding",
@@ -272,7 +272,7 @@ export default function JobGrindingPage() {
                     icon: "/images/job-grinding/facility-services/compliant-facility-clean.png"
                   }
                 ].map((service, idx) => (
-                  <div key={idx} className="bg-white rounded-2xl p-6 text-center shadow-sm border border-slate-100 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center">
+                  <div key={idx} className="w-[78vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white rounded-2xl p-6 text-center shadow-[0_4px_14px_rgba(0,0,0,0.05)] border border-slate-200/70 hover:shadow-md hover:border-slate-200 transition-all flex flex-col items-center">
                     <div className="w-14 h-14 sm:w-16 sm:h-16 mb-4 flex items-center justify-center">
                       <img src={service.icon} alt={service.title} className="w-full h-full object-contain" />
                     </div>
@@ -280,6 +280,7 @@ export default function JobGrindingPage() {
                     <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">{service.desc}</p>
                   </div>
                 ))}
+                <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
               </div>
             </div>
           </div>
@@ -385,7 +386,7 @@ export default function JobGrindingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pt-2 pb-6 md:py-0">
             {[
               {
                 title: "Job grinding setup",
@@ -403,7 +404,7 @@ export default function JobGrindingPage() {
                 imgPath: "/images/job-grinding/services-offered/training-facility.png"
               }
             ].map((service, idx) => (
-              <div key={idx} className="bg-white border border-slate-100 rounded-[32px] overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+              <div key={idx} className="w-[78vw] max-w-[300px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/70 rounded-[32px] overflow-hidden shadow-[0_4px_14px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow">
                 <div className="aspect-[4/3] w-full overflow-hidden p-3 pb-0">
                   <div className="w-full h-full rounded-2xl overflow-hidden relative">
                      <img src={service.imgPath} alt={service.title} className="w-full h-full object-cover" />
@@ -416,6 +417,7 @@ export default function JobGrindingPage() {
                 </div>
               </div>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
         </section>
 

@@ -197,9 +197,9 @@ export default function FacilityCentrePage() {
             {/* Background Texture matching Wonder Mill */}
             <div className="absolute inset-0 opacity-20 bg-[url('/patterns/cubes.png')] mix-blend-overlay pointer-events-none" />
 
-            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-4 sm:divide-x divide-white/10">
               {capabilities.map((cap, idx) => (
-                <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "pt-6 sm:pt-0 sm:pl-5 lg:pl-6" : ""}`}>
+                <div key={idx} className={`flex items-center gap-4 ${idx > 0 ? "sm:pl-5 lg:pl-6" : ""}`}>
                   <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center p-3 shrink-0 shadow-sm">
                     <img src={cap.iconPath} alt={cap.title} className="w-full h-full object-contain" />
                   </div>

@@ -181,51 +181,43 @@ export default function FlourProcessingPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8 w-full">
             {advancedProducts.map((product) => (
-              <div 
+              <Link
                 key={product.id}
-                className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col group"
+                href={`/flour-processing/${product.slug}`}
+                className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
               >
-                {/* Image Area */}
-                <div className="aspect-[4/3] bg-white flex items-center justify-center p-6 relative border-b border-slate-100 overflow-hidden">
-                  <img 
-                    src={product.image} 
-                    alt={product.title} 
-                    className="object-contain max-h-full max-w-full group-hover:scale-105 transition-transform duration-300"
+                {/* Image Area - Clean rounded background matching catalog page */}
+                <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
+                  <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-contain p-1 sm:p-2 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="lazy"
                   />
                 </div>
 
-                {/* Details Area */}
-                <div className="p-5 flex-1 flex flex-col space-y-3">
-                  <h3 className="font-heading font-bold text-slate-800 text-[15px] leading-snug">
-                    {product.id}. {product.title}
-                  </h3>
-                  <p className="text-[13px] text-slate-600 flex-1 leading-relaxed">
-                    {product.description}
-                  </p>
+                {/* Card Content - Responsive sizing for 2-col mobile & 3-col desktop */}
+                <div className="p-3.5 sm:p-8 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-sm sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight leading-snug group-hover:text-brand-primary transition-colors">
+                      {product.title}
+                    </h3>
 
-                  <div className="flex items-center justify-between pt-4 gap-2 border-t border-slate-100">
-                    <Link 
-                      href={`/flour-processing/${product.slug}`} 
-                      className="text-xs font-bold text-slate-800 hover:text-brand-primary flex items-center gap-1 transition-colors"
-                    >
-                      View details <ArrowRight className="w-3 h-3 -rotate-45" />
-                    </Link>
-                    <button 
-                      onClick={() => addToQuote({ 
-                        id: product.slug, 
-                        name: product.title, 
-                        image: product.image 
-                      })}
-                      className="flex items-center gap-1.5 text-xs font-bold border border-slate-300 text-slate-700 px-3 py-1.5 rounded-full hover:bg-slate-50 transition-colors"
-                    >
-                      <ShoppingCart className="w-3.5 h-3.5 text-[#eab308]" />
-                      Add to quote
-                    </button>
+                    <p className="text-xs sm:text-base text-slate-500 mt-1.5 sm:mt-3 line-clamp-2 leading-relaxed font-normal">
+                      {product.description}
+                    </p>
+                  </div>
+
+                  {/* Card Bottom Link */}
+                  <div className="mt-3 sm:mt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
+                    <span>View Product</span>
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
