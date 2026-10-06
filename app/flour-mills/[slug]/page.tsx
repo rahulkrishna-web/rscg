@@ -71,7 +71,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
           {/* Left: Images */}
           <div className="flex flex-col gap-6">
             <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8">
-              <span className="absolute top-0 left-0 z-10 bg-slate-100 text-[10px] font-black text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
+              <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
               <img 
@@ -86,12 +86,12 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
               <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <button 
                   onClick={() => setActiveImage(product.heroImage)}
-                  className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
+                  className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[96px] snap-start`}
                 >
                   <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === product.heroImage ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
                     <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain" />
                   </div>
-                  <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
+                  <span className="text-xs text-center font-semibold text-slate-600 leading-tight">
                     {product.title}
                   </span>
                 </button>
@@ -100,7 +100,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   <button 
                     key={idx}
                     onClick={() => comp.image && setActiveImage(comp.image)}
-                    className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[90px] snap-start`}
+                    className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[96px] snap-start`}
                   >
                     <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === comp.image ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
                       {comp.image ? (
@@ -109,7 +109,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         <Settings className="w-6 h-6 text-slate-300" />
                       )}
                     </div>
-                    <span className="text-[10px] text-center font-semibold text-slate-600 leading-tight">
+                    <span className="text-xs text-center font-semibold text-slate-600 leading-tight">
                       {comp.title}
                     </span>
                   </button>
@@ -121,7 +121,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             {product.productDisclaimer && (
               <div className="flex gap-3 bg-[#f8f9fa] rounded-2xl p-5 border border-slate-200 mt-4">
                 <Info className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                <p className="text-[11px] text-slate-600 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                   * {product.productDisclaimer}
                 </p>
               </div>
@@ -136,19 +136,32 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             <h2 className="text-xl sm:text-2xl font-bold text-[#14663a] mb-6">
               {product.subtitle}
             </h2>
-            <p className="text-slate-600 leading-relaxed mb-8 text-sm sm:text-base">
+            <p className="text-slate-600 leading-relaxed mb-8 text-base sm:text-[17px]">
               {product.desc}
             </p>
 
             {product.keyHighlights && product.keyHighlights.length > 0 && (
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product highlights</h3>
-                <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
-                  {product.keyHighlights.map((highlight, idx) => (
-                    <li key={idx} className="pl-1">{highlight}</li>
+              ["wonder-mill", "atta-expert", "horizontal-mill", "iquadra-mill", "ultra-mini-horizontal-mill"].includes(product.id) ? (
+                <div className="flex flex-wrap gap-3 mb-10">
+                  {product.keyHighlights.map((tag, idx) => (
+                    <span
+                      key={idx}
+                      className={`px-4 py-2 ${tagColors[idx % tagColors.length]} text-white text-sm font-bold rounded-lg shadow-sm inline-flex items-center justify-center text-center`}
+                    >
+                      {tag}
+                    </span>
                   ))}
-                </ul>
-              </div>
+                </div>
+              ) : (
+                <div className="mb-8">
+                  <h3 className="text-lg font-bold text-[#0a4c2a] mb-4">Product highlights</h3>
+                  <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base text-slate-700">
+                    {product.keyHighlights.map((highlight, idx) => (
+                      <li key={idx} className="pl-1">{highlight}</li>
+                    ))}
+                  </ul>
+                </div>
+              )
             )}
 
             {product.technicalSpecs && Object.keys(product.technicalSpecs).length > 0 && (
@@ -168,20 +181,20 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 <div key={idx} className="flex flex-col text-center bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 shadow-sm">
                   {stat.topLabel && (
                     <div className="pb-3 mb-3 border-b border-slate-100">
-                      <p className="text-[10px] sm:text-[11px] text-slate-500 font-bold tracking-wider">{stat.topLabel}</p>
+                      <p className="text-xs sm:text-sm text-slate-600 font-bold tracking-wider">{stat.topLabel}</p>
                     </div>
                   )}
                   <div className="flex flex-col items-center justify-center flex-1">
-                    <p className="text-xl sm:text-2xl font-black text-[#0a4c2a]">{stat.value}</p>
-                    <p className="text-[11px] sm:text-xs font-medium text-slate-500 mt-1">{stat.label}</p>
+                    <p className="text-2xl sm:text-[26px] font-black text-[#0a4c2a] leading-tight">{stat.value}</p>
+                    <p className="text-xs sm:text-sm font-semibold text-slate-600 mt-1.5">{stat.label}</p>
                     {stat.sublabel && (
-                      <p className="text-[10px] sm:text-[11px] text-slate-400 mt-1">{stat.sublabel}</p>
+                      <p className="text-xs sm:text-[13px] font-medium text-slate-500 mt-1">{stat.sublabel}</p>
                     )}
                   </div>
                   {(stat.bottomValue || stat.bottomLabel) && (
                     <div className="pt-3 mt-3 border-t border-slate-100 flex flex-col items-center justify-center">
-                      {stat.bottomValue && <p className="text-[15px] sm:text-base font-black text-slate-800">{stat.bottomValue}</p>}
-                      {stat.bottomLabel && <p className="text-[10px] sm:text-[11px] text-slate-500 font-medium mt-0.5">{stat.bottomLabel}</p>}
+                      {stat.bottomValue && <p className="text-base sm:text-lg font-black text-slate-800">{stat.bottomValue}</p>}
+                      {stat.bottomLabel && <p className="text-xs sm:text-sm text-slate-600 font-medium mt-0.5">{stat.bottomLabel}</p>}
                     </div>
                   )}
                 </div>
@@ -191,7 +204,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             {/* Variant Selector */}
             {product.models && product.models.length > 1 && (
               <div className="mb-8 border-b border-slate-100 pb-8">
-                <h4 className="text-sm font-bold text-slate-800 mb-3">Select model</h4>
+                <h4 className="text-base font-bold text-slate-800 mb-3">Select model</h4>
                 <div className="flex flex-col gap-3">
                   {product.models.map((mod, idx) => (
                     <button
@@ -200,38 +213,38 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         setSelectedModelIndex(idx);
                         if (mod.image) setActiveImage(mod.image);
                       }}
-                      className={`text-left p-4 rounded-xl border transition-all flex items-start gap-4 ${
+                      className={`text-left p-4 sm:p-5 rounded-xl border transition-all flex items-start gap-4 ${
                         selectedModelIndex === idx 
                           ? 'border-brand-primary bg-brand-primary/5 ring-1 ring-brand-primary/20 shadow-sm' 
                           : 'border-slate-200 hover:border-slate-300 bg-white'
                       }`}
                     >
-                      <div className={`mt-0.5 shrink-0 w-4 h-4 rounded-full border flex items-center justify-center transition-colors ${selectedModelIndex === idx ? 'border-brand-primary bg-brand-primary' : 'border-slate-300 bg-white'}`}>
-                        {selectedModelIndex === idx && <div className="w-1.5 h-1.5 rounded-full bg-white shadow-sm" />}
+                      <div className={`mt-1 shrink-0 w-5 h-5 rounded-full border flex items-center justify-center transition-colors ${selectedModelIndex === idx ? 'border-brand-primary bg-brand-primary' : 'border-slate-300 bg-white'}`}>
+                        {selectedModelIndex === idx && <div className="w-2 h-2 rounded-full bg-white shadow-sm" />}
                       </div>
                       <div className="flex-1">
-                        <div className={`font-semibold text-sm mb-1.5 ${selectedModelIndex === idx ? 'text-brand-primary' : 'text-slate-800'}`}>
+                        <div className={`font-bold text-base mb-1.5 ${selectedModelIndex === idx ? 'text-brand-primary' : 'text-slate-800'}`}>
                         {mod.name}
                       </div>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-1.5">
                         {mod.tableData && (mod.tableData['Size'] || mod.tableData['Size Available']) && (
-                          <div className="text-[11px] text-slate-500">
-                            <span className="font-semibold text-slate-400">Size:</span> {mod.tableData['Size'] || mod.tableData['Size Available']}
+                          <div className="text-xs sm:text-sm text-slate-600">
+                            <span className="font-semibold text-slate-500">Size:</span> {mod.tableData['Size'] || mod.tableData['Size Available']}
                           </div>
                         )}
                         {mod.tableData && mod.tableData['Capacity'] && !mod.tableData['Hopper Capacity'] && (
-                          <div className="text-[11px] text-slate-500">
-                            <span className="font-semibold text-slate-400">Cap:</span> {mod.tableData['Capacity']}
+                          <div className="text-xs sm:text-sm text-slate-600">
+                            <span className="font-semibold text-slate-500">Cap:</span> {mod.tableData['Capacity']}
                           </div>
                         )}
                         {mod.tableData && mod.tableData['Hopper Capacity'] && (
-                          <div className="text-[11px] text-slate-500">
-                            <span className="font-semibold text-slate-400">Hopper Cap:</span> {mod.tableData['Hopper Capacity']}
+                          <div className="text-xs sm:text-sm text-slate-600">
+                            <span className="font-semibold text-slate-500">Hopper Cap:</span> {mod.tableData['Hopper Capacity']}
                           </div>
                         )}
                         {mod.tableData && (mod.tableData['Power Load'] || (mod.tableData['Power (600 mm)'] && mod.tableData['Power (750 mm)'])) && (
-                          <div className="text-[11px] text-slate-500">
-                            <span className="font-semibold text-slate-400">Power:</span> {mod.tableData['Power Load'] || "15 HP / 25 HP / 40 HP"}
+                          <div className="text-xs sm:text-sm text-slate-600">
+                            <span className="font-semibold text-slate-500">Power:</span> {mod.tableData['Power Load'] || "15 HP / 25 HP / 40 HP"}
                           </div>
                         )}
                       </div>
@@ -246,7 +259,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-6 pt-2">
               <button
                 onClick={handleAddToQuote}
-                className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+                className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
               >
                 <PackageCheck className="w-4 h-4 text-slate-900" />
                 <span>{addedMessage ? "Added to Quote!" : "Add to Quote List"}</span>
@@ -285,7 +298,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
         {product.coreCapabilities.length > 0 && (
           <div className="mb-16">
             <h3 className="text-2xl font-heading font-extrabold text-[#0a4c2a] mb-6 tracking-tight">Core capabilities</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {product.coreCapabilities.map((cap, idx) => {
                 const colors = [
                   { text: "text-[#79c500]", bg: "bg-[#79c500]/10", Icon: Activity },
@@ -296,7 +309,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 const Icon = c.Icon;
 
                 return (
-                  <div key={idx} className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full">
+                  <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm flex flex-col h-full">
                     <div className="flex items-center gap-4 mb-5">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center shrink-0 ${c.bg} ${c.text}`}>
                         <Icon className="w-6 h-6" />
@@ -305,7 +318,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                     </div>
                     <ul className="space-y-3 flex-1 pl-2">
                       {cap.items.map((item, i) => (
-                        <li key={i} className="flex gap-2 items-start text-sm text-slate-700">
+                        <li key={i} className="flex gap-2 items-start text-sm sm:text-[15px] text-slate-700">
                           <span className="text-slate-400 font-bold text-lg leading-none mt-0.5">•</span>
                           <span className="leading-relaxed">{item}</span>
                         </li>
@@ -314,6 +327,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   </div>
                 );
               })}
+              <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </div>
         )}
@@ -421,14 +435,14 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         
                         <div className="flex-1 w-full">
                           {model.description && (
-                            <div className="text-[13px] text-slate-600 mb-4 font-medium leading-relaxed">
+                            <div className="text-sm text-slate-600 mb-4 font-medium leading-relaxed">
                               {model.description}
                             </div>
                           )}
                           {model.tableData && (
                             <div className="flex flex-col border border-slate-200/80 rounded-xl overflow-hidden shadow-xs">
                               {Object.entries(model.tableData).map(([key, val], i) => (
-                                <div key={key} className={`flex items-center justify-between border-b border-slate-200/60 last:border-b-0 px-3.5 py-2.5 text-xs sm:text-[13px] ${i % 2 === 0 ? 'bg-[#f8fafd]' : 'bg-white'}`}>
+                                <div key={key} className={`flex items-center justify-between border-b border-slate-200/60 last:border-b-0 px-3.5 py-2.5 text-sm ${i % 2 === 0 ? 'bg-[#f8fafd]' : 'bg-white'}`}>
                                   <span className="font-medium text-slate-600 pr-2">{key}</span>
                                   <span className="font-semibold text-slate-800 shrink-0 text-right">{val}</span>
                                 </div>
@@ -441,7 +455,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                               {model.featuresList.map((feat, i) => (
                                 <div key={i} className={`flex border-b border-slate-200 last:border-b-0 p-2.5 items-start ${i % 2 === 0 ? 'bg-white' : 'bg-[#f8f9fa]'}`}>
                                   <div className="text-[#0a4c2a] mt-0.5 mr-2">
-                                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>
                                   </div>

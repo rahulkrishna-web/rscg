@@ -303,11 +303,11 @@ export default function TurnkeyProjects() {
             </p>
           </div>
 
-          <div className="flex lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
+          <div className="flex lg:grid lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
             {projectCapabilities.map((cap) => (
               <div 
                 key={cap.id} 
-                className="w-[82vw] max-w-[340px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group"
+                className="w-[74vw] max-w-[290px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-xl overflow-hidden border border-slate-200/60 shadow-sm hover:border-brand-secondary/40 hover:shadow-md transition-all duration-300 flex flex-row group"
               >
                 {/* Image Half */}
                 <div className="w-[40%] relative shrink-0 min-h-[160px]">
@@ -319,8 +319,8 @@ export default function TurnkeyProjects() {
                   />
                 </div>
                 {/* Content Half */}
-                <div className="p-5 flex flex-col justify-center">
-                  <div className="flex items-center gap-3 mb-3">
+                <div className="p-4 sm:p-5 flex flex-col justify-center">
+                  <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-3">
                     <div className="w-8 h-8 rounded-lg bg-brand-primary/10 text-brand-primary flex items-center justify-center flex-shrink-0 transition-colors duration-300">
                       {cap.icon}
                     </div>
@@ -356,11 +356,11 @@ export default function TurnkeyProjects() {
             </p>
           </div>
 
-          <div className="flex sm:flex-wrap sm:justify-center gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="flex sm:flex-wrap sm:justify-center gap-4 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
             {turnkeySolutions.map((sol, idx) => (
               <div 
                 key={idx} 
-                className="w-[72vw] max-w-[280px] sm:w-[calc(50%-9px)] md:w-[calc(33.333%-11px)] lg:w-[calc(25%-13px)] xl:w-[calc(20%-13px)] shrink-0 snap-start flex items-center p-4 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md hover:border-brand-primary/20 transition-all duration-200"
+                className="w-[68vw] max-w-[260px] sm:w-[calc(50%-9px)] md:w-[calc(33.333%-11px)] lg:w-[calc(25%-13px)] xl:w-[calc(20%-13px)] shrink-0 snap-start flex items-center p-4 rounded-2xl bg-white border border-slate-200/60 shadow-sm hover:shadow-md hover:border-brand-primary/20 transition-all duration-200"
               >
                 <div className="w-16 h-16 relative flex-shrink-0 mr-4 rounded-full overflow-hidden border border-slate-100 shadow-sm">
                   <Image src={sol.image} alt={sol.title} fill className="object-cover" />
@@ -387,12 +387,12 @@ export default function TurnkeyProjects() {
             </h2>
           </div>
 
-          <div className="flex md:grid md:grid-cols-2 gap-6 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {highlightedProjects.map((proj, idx) => (
               <Link 
                 key={idx} 
                 href={`/projects/${proj.slug}`}
-                className="w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
+                className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group flex flex-col sm:flex-row bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300"
               >
                 <div className="sm:w-[40%] h-48 sm:h-auto relative overflow-hidden bg-slate-100 flex-shrink-0">
                   <Image 

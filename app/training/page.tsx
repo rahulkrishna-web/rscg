@@ -288,11 +288,11 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="md:w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {whyChargeFeatures.map((feature, idx) => (
               <div 
                 key={idx} 
-                className="bg-white border border-slate-100/90 rounded-[28px] p-8 flex flex-col items-center text-center gap-4 shadow-xs hover:shadow-md hover:border-[#133020]/20 transition-all group"
+                className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-100/90 rounded-[28px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 shadow-xs hover:shadow-md hover:border-[#133020]/20 transition-all group"
               >
                 <div className="w-20 h-20 shrink-0 bg-[#F0F7F3] rounded-2xl flex items-center justify-center p-3.5 border border-[#133020]/10 group-hover:scale-105 group-hover:bg-[#E8F5E9] transition-all duration-300">
                   <Image 
@@ -312,6 +312,7 @@ export default function TrainingPage() {
                 </p>
               </div>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
         </section>
 
@@ -331,11 +332,11 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="sm:w-full flex sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-4 sm:pb-0">
             {trainingPrograms.map((program, idx) => (
               <div 
                 key={idx} 
-                className="group bg-white border border-[#E1EAE5] rounded-[24px] p-6 sm:p-7 shadow-xs hover:shadow-lg hover:border-[#0B2C1C]/30 transition-all duration-300 flex flex-col items-start justify-between"
+                className="w-[74vw] max-w-[290px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group bg-white border border-[#E1EAE5] rounded-[24px] p-6 sm:p-7 shadow-xs hover:shadow-lg hover:border-[#0B2C1C]/30 transition-all duration-300 flex flex-col items-start justify-between"
               >
                 <div>
                   {/* Icon with hover effect: turns white and bg shape turns green */}
@@ -358,6 +359,7 @@ export default function TrainingPage() {
                 </div>
               </div>
             ))}
+            <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
           </div>
         </section>
 
@@ -377,13 +379,13 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="md:w-full flex md:grid md:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {trainingExperiences.map((exp, idx) => (
               <div 
                 key={idx} 
-                className="bg-white rounded-[24px] overflow-hidden shadow-xs hover:shadow-md border border-slate-200/80 transition-all duration-300 flex flex-col group"
+                className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-[24px] overflow-hidden shadow-xs hover:shadow-md border border-slate-200/80 transition-all duration-300 flex flex-col group"
               >
-                <div className="h-56 sm:h-64 lg:h-72 w-full relative overflow-hidden">
+                <div className="h-52 sm:h-64 lg:h-72 w-full relative overflow-hidden">
                   <Image 
                     src={exp.image} 
                     alt={exp.title} 
@@ -391,7 +393,7 @@ export default function TrainingPage() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500" 
                   />
                 </div>
-                <div className="p-6 sm:p-7 lg:p-8 flex items-start gap-4 bg-white flex-1">
+                <div className="p-5 sm:p-7 lg:p-8 flex items-start gap-4 bg-white flex-1">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 shrink-0 bg-[#F0F7F3] rounded-xl flex items-center justify-center p-2.5 border border-[#133020]/10 group-hover:bg-[#E8F5E9] transition-colors">
                     <Image 
                       src={exp.icon} 
@@ -412,6 +414,7 @@ export default function TrainingPage() {
                 </div>
               </div>
             ))}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
         </section>
 

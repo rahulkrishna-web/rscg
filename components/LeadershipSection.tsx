@@ -63,11 +63,11 @@ export default function LeadershipSection() {
         </div>
 
         {/* 3 Leadership Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 lg:gap-8">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {leaders.map((leader, idx) => (
             <div
               key={idx}
-              className="bg-white border border-slate-200/80 rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
+              className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200/80 rounded-2xl overflow-hidden flex flex-col justify-between shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 group"
             >
               <div>
                 {/* Portrait - Natural True Size without Cropping */}
@@ -105,6 +105,7 @@ export default function LeadershipSection() {
               </div>
             </div>
           ))}
+          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

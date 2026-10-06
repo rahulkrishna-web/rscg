@@ -253,10 +253,10 @@ export default function PowerSavingPage() {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="md:w-full flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {products.map((product, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
-              <div className="relative h-[280px] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
+            <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+              <div className="relative h-[240px] sm:h-[280px] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
                 <Image 
                   src={product.img} 
                   alt={product.name} 
@@ -264,13 +264,13 @@ export default function PowerSavingPage() {
                   className="object-contain p-6 group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
-              <div className="p-6 flex-1 flex flex-col">
-                <h4 className="text-xl font-heading font-extrabold text-[#0a3118] mb-3">{product.name}</h4>
+              <div className="p-5 sm:p-6 flex-1 flex flex-col">
+                <h4 className="text-lg sm:text-xl font-heading font-extrabold text-[#0a3118] mb-3">{product.name}</h4>
                 <p className="text-sm text-slate-600 font-medium leading-relaxed mb-6 flex-1">
                   {product.desc}
                 </p>
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100">
-                  <Link href={product.href} className="text-sm font-bold text-[#0a3118] hover:text-[#eab308] flex items-center gap-1 transition-colors">
+                  <Link href={product.href} className="text-xs sm:text-sm font-bold text-[#0a3118] hover:text-[#eab308] flex items-center gap-1 transition-colors">
                     View Details <ArrowRight className="w-4 h-4" />
                   </Link>
                   <button 
@@ -279,15 +279,16 @@ export default function PowerSavingPage() {
                       name: product.name, 
                       image: product.img 
                     })}
-                    className="flex items-center gap-2 text-sm font-bold border border-slate-300 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
+                    className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-bold border border-slate-300 text-slate-700 px-3 sm:px-4 py-2 rounded-lg hover:bg-slate-50 transition-colors"
                   >
-                    <ShoppingCart className="w-4 h-4 text-[#eab308]" />
+                    <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#eab308]" />
                     Add to Quote
                   </button>
                 </div>
               </div>
             </div>
           ))}
+          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </section>
 
@@ -325,7 +326,7 @@ export default function PowerSavingPage() {
           </p>
         </div>
 
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="md:w-full flex md:grid md:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {[
             {
               title: "Improved yield",
@@ -343,16 +344,17 @@ export default function PowerSavingPage() {
               icon: "/images/power-saving/reduced_operation_cost.png"
             }
           ].map((benefit, idx) => (
-            <div key={idx} className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm flex gap-6 hover:shadow-md transition-shadow">
-              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0 relative transform group-hover:-translate-y-2 transition-transform duration-300">
+            <div key={idx} className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm flex gap-4 sm:gap-6 hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0 relative transform group-hover:-translate-y-2 transition-transform duration-300">
                 <Image src={benefit.icon} alt={benefit.title} fill className="object-contain drop-shadow-sm" />
               </div>
               <div>
-                <h4 className="text-lg font-heading font-extrabold text-[#0a3118] mb-3">{benefit.title}</h4>
-                <p className="text-sm text-slate-600 font-medium leading-relaxed">{benefit.desc}</p>
+                <h4 className="text-base sm:text-lg font-heading font-extrabold text-[#0a3118] mb-2 sm:mb-3">{benefit.title}</h4>
+                <p className="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed">{benefit.desc}</p>
               </div>
             </div>
           ))}
+          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </section>
 

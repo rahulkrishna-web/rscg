@@ -232,7 +232,7 @@ export default function AutomationPage() {
               icon: Settings2
             }
           ].map((benefit, idx) => (
-            <div key={idx} className="w-[78vw] max-w-[325px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
+            <div key={idx} className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm flex flex-col group hover:shadow-md transition-shadow">
               <div className="relative h-40 w-full">
                 <div className="absolute inset-0 overflow-hidden">
                   <Image src={benefit.img} alt={benefit.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -262,7 +262,7 @@ export default function AutomationPage() {
           </p>
         </div>
 
-        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
+        <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 lg:pb-0">
           {[
             {
               title: "Digital plant",
@@ -283,7 +283,7 @@ export default function AutomationPage() {
               icon: Database
             }
           ].map((service, idx) => (
-            <div key={idx} className="w-[80vw] max-w-[335px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow h-full">
+            <div key={idx} className="w-[74vw] max-w-[290px] lg:w-full lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm flex flex-col xl:flex-row group hover:shadow-md transition-shadow h-full">
               <div className="relative min-h-[200px] xl:min-h-[160px] xl:w-[60%] flex-shrink-0 overflow-hidden">
                 <Image src={service.img} alt={service.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>

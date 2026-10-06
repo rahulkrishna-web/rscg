@@ -69,11 +69,11 @@ export default function DisciplinesProcess() {
         </div>
 
         {/* 2x2 Connected Disciplines Grid (Horizontally swipable on mobile) */}
-        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-px overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0 md:border md:border-slate-200 md:bg-slate-200 md:rounded-xl shadow-xs">
+        <div className="flex md:grid md:grid-cols-2 gap-4 md:gap-px overflow-x-auto md:overflow-hidden snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0 md:border md:border-slate-200 md:bg-slate-200 md:rounded-xl shadow-xs">
           {disciplines.map((card) => (
             <div
               key={card.num}
-              className="w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl md:rounded-none p-6 sm:p-8 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors relative border border-slate-200/90 md:border-none shadow-xs md:shadow-none"
+              className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl md:rounded-none p-6 sm:p-8 lg:p-12 min-h-[260px] sm:min-h-[290px] flex flex-col justify-between overflow-hidden group cursor-pointer transition-colors relative border border-slate-200/90 md:border-none shadow-xs md:shadow-none"
             >
               {/* Image Background revealing on Hover */}
               <div

@@ -99,7 +99,7 @@ export default function PhilosophySection() {
       <div
         key={card.number}
         title={card.description}
-        className={`${colClasses} w-[78vw] max-w-[325px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:border-slate-300 hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.08),0_4px_12px_-2px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-between cursor-default`}
+        className={`${colClasses} w-[72vw] max-w-[280px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/80 shadow-[0_2px_8px_-2px_rgba(0,0,0,0.04)] hover:border-slate-300 hover:shadow-[0_12px_28px_-6px_rgba(15,23,42,0.08),0_4px_12px_-2px_rgba(15,23,42,0.04)] hover:-translate-y-1 transition-all duration-300 flex items-center justify-between cursor-default`}
       >
         <div className="space-y-1.5 pr-3">
           <span

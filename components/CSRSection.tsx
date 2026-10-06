@@ -67,7 +67,7 @@ export default function CSRSection() {
         </div>
 
         {/* 3 Initiative Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-7 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {csrInitiatives.map((item, idx) => {
             const isActive = activeCard === idx;
 
@@ -82,7 +82,7 @@ export default function CSRSection() {
                     setActiveCard(isActive ? null : idx);
                   }
                 }}
-                className={`relative h-[410px] sm:h-[430px] rounded-2xl bg-white border border-slate-200/90 overflow-hidden cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)] hover:-translate-y-1.5 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#0E3321]/20 ${
+                className={`w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none relative h-[410px] sm:h-[430px] rounded-2xl bg-white border border-slate-200/90 overflow-hidden cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:border-slate-300 hover:shadow-[0_16px_36px_rgba(15,23,42,0.12)] hover:-translate-y-1.5 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#0E3321]/20 ${
                   isActive ? "border-slate-300 shadow-[0_16px_36px_rgba(15,23,42,0.12)] -translate-y-1.5" : ""
                 }`}
               >
@@ -132,6 +132,7 @@ export default function CSRSection() {
               </article>
             );
           })}
+          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

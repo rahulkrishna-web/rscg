@@ -136,18 +136,6 @@ export default function AboutHero({ onScrollToSection }: AboutHeroProps) {
                 for six decades and beyond.
               </span>
             </h1>
-
-            {/* CTA Button */}
-            <div className="pt-2 sm:pt-4">
-              <button
-                onClick={() => onScrollToSection("about-us")}
-                className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer"
-              >
-                <span>KNOW MORE</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-
           </div>
         </div>
 

@@ -73,7 +73,7 @@ export default function WalkthroughSection() {
         </div>
 
         {/* 4 Cards in 2x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 lg:gap-8">
+        <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-7 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {infrastructureItems.map((item, idx) => {
             const isActive = activeCard === idx;
 
@@ -88,7 +88,7 @@ export default function WalkthroughSection() {
                     setActiveCard(isActive ? null : idx);
                   }
                 }}
-                className={`relative h-[380px] sm:h-[420px] lg:h-[450px] rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#133a25]/20 bg-slate-900 ${
+                className={`w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none relative h-[380px] sm:h-[420px] lg:h-[450px] rounded-3xl overflow-hidden cursor-pointer shadow-md hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 group focus:outline-hidden focus:ring-2 focus:ring-[#133a25]/20 bg-slate-900 ${
                   isActive ? "shadow-2xl -translate-y-1" : ""
                 }`}
               >
@@ -138,6 +138,7 @@ export default function WalkthroughSection() {
               </article>
             );
           })}
+          <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
         </div>
       </div>
     </section>

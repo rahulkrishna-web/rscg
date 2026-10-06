@@ -222,13 +222,13 @@ export default function FacilityCentrePage() {
               <div className="h-px w-16 bg-[#D3994B]/30"></div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div className="flex lg:grid lg:grid-cols-3 gap-4 sm:gap-6 overflow-x-auto lg:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 lg:mx-0 lg:px-0 scroll-pl-6 sm:scroll-pl-12 lg:scroll-pl-0 pb-4 lg:pb-0">
               {supports.map((item, idx) => (
-                <div key={idx} className="bg-white rounded-[24px] overflow-hidden flex flex-col sm:flex-row shadow-sm border border-slate-200/50 hover:shadow-md transition-shadow group">
+                <div key={idx} className="w-[74vw] max-w-[290px] lg:w-auto lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-[24px] overflow-hidden flex flex-col sm:flex-row shadow-sm border border-slate-200/50 hover:shadow-md transition-shadow group">
                   <div className="sm:w-2/5 aspect-[4/3] sm:aspect-auto sm:h-full relative overflow-hidden shrink-0">
                     <img src={item.imgPath} alt={item.title.replace('\n', ' ')} className="absolute inset-0 w-full h-full object-cover" />
                   </div>
-                  <div className="p-6 sm:p-5 lg:p-6 flex flex-col justify-center space-y-3 sm:w-3/5">
+                  <div className="p-5 sm:p-5 lg:p-6 flex flex-col justify-center space-y-3 sm:w-3/5">
                     <h4 className="font-heading font-black text-[#133020] text-lg whitespace-pre-line leading-tight">
                       {item.title}
                     </h4>
@@ -238,6 +238,7 @@ export default function FacilityCentrePage() {
                   </div>
                 </div>
               ))}
+              <div className="w-2 shrink-0 lg:hidden" aria-hidden="true" />
             </div>
           </div>
 
@@ -246,9 +247,9 @@ export default function FacilityCentrePage() {
             <h3 className="text-xl sm:text-2xl font-heading font-black text-[#133020] mb-8">
               Inside the facility
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+            <div className="flex md:grid md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {gallery.map((item, idx) => (
-                <div key={idx} className="group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
+                <div key={idx} className="w-[68vw] max-w-[260px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group relative aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 shadow-sm hover:shadow-md transition-all duration-300">
                   <img src={item.imgPath} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
                   <div className="absolute bottom-3 left-4 right-4">
@@ -258,6 +259,7 @@ export default function FacilityCentrePage() {
                   </div>
                 </div>
               ))}
+              <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </div>
 

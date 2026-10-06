@@ -81,11 +81,11 @@ export default function WhyRSCGSection() {
         </header>
 
         {/* Cards Container (Horizontally swipable on mobile, 2-Col Centered Wrap on md+) */}
-        <div className="flex md:flex-wrap md:justify-center gap-4 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-8 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-8 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+        <div className="flex md:flex-wrap md:justify-center gap-4 sm:gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
           {whyRSCItems.map((item) => (
             <article
               key={item.number}
-              className="w-[78vw] max-w-[325px] md:w-[calc(50%-12px)] md:max-w-none shrink-0 snap-start md:snap-align-none bg-white rounded-2xl border border-slate-200/80 p-7 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between"
+              className="w-[74vw] max-w-[290px] md:w-[calc(50%-12px)] md:max-w-none shrink-0 snap-start md:snap-align-none bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-8 md:p-10 shadow-xs transition-all duration-300 hover:shadow-md hover:border-slate-300 hover:-translate-y-1 text-left flex flex-col justify-between"
             >
               {renderCardContent(item)}
             </article>

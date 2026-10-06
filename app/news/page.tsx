@@ -44,7 +44,7 @@ export default function NewsPage() {
             {/* Desktop Background Image (1920x820) */}
             <div className="hidden md:block absolute inset-0">
               <Image 
-                src="/hero/news/news_desktop_cropped.png" 
+                src="/hero/news/news_desktop_v2.png" 
                 alt="News & Updates" 
                 fill
                 className="object-cover object-center"
@@ -58,7 +58,7 @@ export default function NewsPage() {
             {/* Mobile Background Image (1080x1920 -> 9:16) */}
             <div className="block md:hidden absolute inset-0">
               <Image 
-                src="/hero/news/news_mobile.png" 
+                src="/hero/news/news_mobile_v2.png" 
                 alt="News & Updates" 
                 fill
                 className="object-cover object-center"

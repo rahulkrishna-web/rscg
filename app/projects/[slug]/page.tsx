@@ -186,12 +186,13 @@ export default function ProjectDetailPage() {
               <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            <div className="flex md:grid md:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {currentProject.images.slice(1).map((img, idx) => (
-                <div key={idx} className="aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative group cursor-pointer" onClick={() => setActiveImageIdx(idx + 1)}>
+                <div key={idx} className="w-[68vw] max-w-[260px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative group cursor-pointer" onClick={() => setActiveImageIdx(idx + 1)}>
                   <img src={img} alt={`Gallery ${idx + 1}`} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />
                 </div>
               ))}
+              <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
             </div>
           </section>
         )}
@@ -260,14 +261,14 @@ export default function ProjectDetailPage() {
                 Read other case studies
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
                 {otherProjects.map((p) => {
                   const cardCover = p.images.length > 0 ? p.images[0] : "/images/plants/turnkey_solutions.webp";
                   return (
                     <Link
                       key={p.slug}
                       href={`/projects/${p.slug}`}
-                      className="group bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-xs hover:shadow-md hover:border-brand-secondary/35 transition-all duration-300 flex flex-col h-full cursor-pointer"
+                      className="w-[74vw] max-w-[290px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group bg-white rounded-3xl border border-slate-200/60 overflow-hidden shadow-xs hover:shadow-md hover:border-brand-secondary/35 transition-all duration-300 flex flex-col h-full cursor-pointer"
                     >
                       <div className="aspect-[4/3] bg-slate-50 flex items-center justify-center relative border-b border-slate-100 overflow-hidden">
                         <img
@@ -294,6 +295,7 @@ export default function ProjectDetailPage() {
                     </Link>
                   );
                 })}
+                <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
               </div>
             </div>
           </section>

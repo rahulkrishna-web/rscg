@@ -139,7 +139,7 @@ export default function BatchProductionPage() {
   const rightSpecs = currentVariantData.specs.filter((_, i) => i % 2 !== 0);
 
   return (
-    <div className="min-h-screen bg-[#F8F9FA] text-brand-foreground font-sans">
+    <div className="min-h-screen bg-white text-brand-foreground font-sans">
       <Header />
 
       {/* Hero Section - Standardized responsive hero */}
@@ -203,7 +203,7 @@ export default function BatchProductionPage() {
       </section>
 
       {/* Desktop Key Proof Points Bar (50/50 Overlapping Hero Bottom) */}
-      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
+      <div className="hidden md:block relative z-30 -translate-y-1/2 -mb-16 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24 max-w-6xl">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-6 sm:p-7 flex flex-row items-center justify-between gap-4 divide-x divide-slate-100">
           <div className="w-full flex items-center gap-4.5 px-4 group hover:bg-[#eaf1ec] p-4 rounded-xl transition-colors cursor-default">
             <div className="w-14 h-14 rounded-2xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0 shadow-xs">
@@ -238,7 +238,7 @@ export default function BatchProductionPage() {
       </div>
 
       {/* Mobile Key Proof Points Bar (In natural document flow) */}
-      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
+      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-4">
         <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
           <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
@@ -273,7 +273,7 @@ export default function BatchProductionPage() {
       </div>
 
       {/* Main Interactive Configurator Section */}
-      <section id="configurator-section" className="w-full pt-12 md:pt-24 lg:pt-28 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
+      <section id="configurator-section" className="w-full pt-6 md:pt-10 lg:pt-12 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         {/* Breadcrumb equivalent / header */}
         <div className="flex items-center gap-2 text-xs font-bold text-slate-500 uppercase tracking-widest mb-10">
           <span>Home</span> <ArrowRight className="w-3 h-3 text-slate-300" />
@@ -420,7 +420,7 @@ export default function BatchProductionPage() {
                     setAddedMessage(true);
                     setTimeout(() => setAddedMessage(false), 2000);
                   }}
-                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+                  className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
                   <PackageCheck className="w-4 h-4 text-slate-900" />
                   {addedMessage ? "Added to Quote!" : "Add to Quote List"}

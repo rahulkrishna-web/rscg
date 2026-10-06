@@ -890,7 +890,7 @@ export default function Home() {
           </div>
 
           {/* 10 Solutions 3-Column Grid (Horizontally swipable on mobile, grid on md+) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6 w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 scroll-pl-4 sm:scroll-pl-8 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 xl:gap-6 md:w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-4 px-4 sm:-mx-8 sm:px-8 md:mx-0 md:px-0 scroll-pl-4 sm:scroll-pl-8 md:scroll-pl-0 pb-4 md:pb-0">
             {[
               {
                 id: "01",
@@ -975,7 +975,7 @@ export default function Home() {
             ].map((card, idx) => (
               <div 
                 key={idx}
-                className={`w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-4.5 sm:p-5 xl:p-6 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[195px] sm:min-h-[205px] xl:min-h-[220px] ${idx === 9 ? "lg:col-start-2" : ""}`}
+                className={`w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-gradient-to-br from-white via-[#FCFBF8] to-[#F8F5EC] rounded-[22px] sm:rounded-[24px] p-4.5 sm:p-5 xl:p-6 border border-[#f7b032]/45 hover:border-[#f7b032] shadow-[0_2px_12px_rgba(0,0,0,0.03)] hover:shadow-[0_10px_28px_rgba(247,176,50,0.12)] hover:-translate-y-0.5 transition-all duration-300 flex flex-col justify-between relative overflow-hidden group min-h-[195px] sm:min-h-[205px] xl:min-h-[220px] ${idx === 9 ? "lg:col-start-2" : ""}`}
               >
                 <div className="flex flex-row items-stretch justify-between gap-3 sm:gap-4 h-full">
                   {/* Left: Text Content */}
@@ -1065,7 +1065,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              <div className="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-6 pt-6 pb-2 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0">
                 {[
                   {
                     icon: "/images/why-rscg-section/icons/trust.png",
@@ -1095,7 +1095,7 @@ export default function Home() {
                 ].map((item, idx) => (
                   <div 
                     key={idx} 
-                    className={`relative bg-white rounded-2xl pt-7 pb-4 px-4 shadow-sm border border-amber-100/70 text-center flex flex-col items-center ${
+                    className={`w-[72vw] max-w-[280px] sm:w-auto sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none relative bg-white rounded-2xl pt-7 pb-4 px-4 shadow-sm border border-amber-100/70 text-center flex flex-col items-center ${
                       idx === 4 ? "sm:col-span-2 sm:max-w-xs sm:mx-auto" : ""
                     }`}
                   >
@@ -1106,6 +1106,7 @@ export default function Home() {
                     <p className="text-slate-600 text-xs sm:text-[12.5px] leading-relaxed">{item.desc}</p>
                   </div>
                 ))}
+                <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
               </div>
             </div>
 

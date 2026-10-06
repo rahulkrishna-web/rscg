@@ -93,7 +93,7 @@ export default function GrainProcessingProductPage() {
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <button 
                   onClick={handleAddToQuote}
-                  className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+                  className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
                 >
                   <PackageCheck className="w-4 h-4 text-slate-900" />
                   {addedMessage ? "Added to quote!" : "Add to quote list"}
@@ -139,11 +139,11 @@ export default function GrainProcessingProductPage() {
               <p className="text-slate-500 font-medium">Built for continuous, high efficiency processing</p>
             </div>
             
-            <div className="flex flex-wrap justify-center gap-6">
+            <div className="flex sm:flex-wrap sm:justify-center gap-4 sm:gap-6 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:mx-0 sm:px-0 scroll-pl-6 sm:scroll-pl-0 pb-4 sm:pb-0">
               {product.keyFeatures.map((feature, idx) => {
                 const Icon = require("lucide-react")[feature.icon] || Box;
                 return (
-                  <div key={idx} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
+                  <div key={idx} className="w-[72vw] max-w-[280px] sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                     <div className="w-10 h-10 bg-[#f0fdf4] text-[#16a34a] rounded-lg flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5" />
                     </div>
@@ -154,6 +154,7 @@ export default function GrainProcessingProductPage() {
                   </div>
                 );
               })}
+              <div className="w-2 shrink-0 sm:hidden" aria-hidden="true" />
             </div>
           </div>
         )}

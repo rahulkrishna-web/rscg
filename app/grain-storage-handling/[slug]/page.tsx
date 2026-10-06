@@ -96,7 +96,7 @@ export default function SiloDetailPage() {
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <button
                 onClick={handleHeroAddToQuote}
-                className="h-12 flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
+                className="h-12 min-h-[48px] sm:flex-1 w-full flex items-center justify-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 px-6 sm:px-8 rounded-lg font-bold text-sm shadow-[0_4px_14px_rgba(247,176,50,0.35)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.5)] transition-all cursor-pointer"
               >
                 <PackageCheck className="w-4 h-4 text-slate-900" />
                 <span>{addedHeroQuote ? "Added to quote!" : "Add to quote list"}</span>
@@ -137,11 +137,11 @@ export default function SiloDetailPage() {
             <p className="text-slate-500">Engineered for high-efficiency plant integration and low-residue handling</p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex md:flex-wrap md:justify-center gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {product.keyFeatures.map((feature, idx) => {
               const Icon = IconMap[feature.icon] || CheckCircle2;
               return (
-                <div key={idx} className="w-full md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <div key={idx} className="w-[72vw] max-w-[280px] md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none md:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] bg-white border border-slate-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
                   <div className="w-10 h-10 bg-green-50 rounded-full flex items-center justify-center text-[#16a34a] mb-4">
                     <Icon className="w-5 h-5" />
                   </div>
@@ -150,6 +150,7 @@ export default function SiloDetailPage() {
                 </div>
               );
             })}
+            <div className="w-2 shrink-0 md:hidden" aria-hidden="true" />
           </div>
         </div>
 

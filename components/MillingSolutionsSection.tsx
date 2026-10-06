@@ -196,11 +196,11 @@ export default function MillingSolutionsSection() {
           </div>
 
           {/* 3 Pillar Cards Grid (Horizontally swipable on mobile, grid on md+) */}
-          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-7 mt-9 sm:mt-11 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+          <div className="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-7 mt-9 sm:mt-11 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
             {topCards.map((card, idx) => (
               <div 
                 key={idx}
-                className="w-[82vw] max-w-[340px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group relative bg-white rounded-2xl p-7 sm:p-8 border border-[#E2E8F0] shadow-[0_10px_30px_rgba(15,23,42,0.035)] hover:shadow-[0_18px_40px_rgba(14,51,33,0.08)] hover:border-[#0E3321]/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[250px] overflow-hidden"
+                className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none group relative bg-white rounded-2xl p-6 sm:p-8 border border-[#E2E8F0] shadow-[0_10px_30px_rgba(15,23,42,0.035)] hover:shadow-[0_18px_40px_rgba(14,51,33,0.08)] hover:border-[#0E3321]/20 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[250px] overflow-hidden"
               >
                 {/* Top Amber Accent Line on Hover */}
                 <div 
@@ -337,12 +337,12 @@ export default function MillingSolutionsSection() {
           </div>
 
           {/* Feature Cards: Mobile / Tablet Layout (Horizontally swipable on mobile) */}
-          <div className="lg:hidden flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4.5 sm:gap-6 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
+          <div className="lg:hidden flex sm:grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-10 overflow-x-auto sm:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 sm:pb-0">
             {coreFeatures.map((feat, idx) => (
               <Link
                 key={idx}
                 href={feat.href}
-                className="w-[82vw] max-w-[340px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group relative bg-white rounded-2xl p-6 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#FFAA17]/60 transition-all flex flex-col justify-between overflow-hidden"
+                className="w-[74vw] max-w-[290px] sm:w-full sm:max-w-none shrink-0 sm:shrink snap-start sm:snap-align-none group relative bg-white rounded-2xl p-5 sm:p-7 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#FFAA17]/60 transition-all flex flex-col justify-between overflow-hidden"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
