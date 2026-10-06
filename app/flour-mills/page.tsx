@@ -144,29 +144,29 @@ export default function FlourMills() {
         </div>
       </div>
 
-      {/* Mobile Key Proof Points Bar (In Document Flow - Prevents Overlapping Next Section) */}
-      <div className="block md:hidden relative z-30 px-5 -mt-10 w-full mx-auto max-w-xl">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col divide-y divide-slate-100 overflow-hidden">
-          
-          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Digital mills</h3>
-            <p className="text-sm text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 -mt-13 w-full">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Digital mills</h3>
+            <p className="text-xs text-slate-600 font-normal leading-relaxed">Touch screen PLC-driven smart grinders for high capacity and efficiency.</p>
           </div>
 
-          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Semi-automatic & sheller mills</h3>
-            <p className="text-sm text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Semi-automatic &amp; sheller mills</h3>
+            <p className="text-xs text-slate-600 font-normal leading-relaxed">Sensor-controlled modern mill plants engineered for precision grinding.</p>
           </div>
 
-          <div className="p-6 hover:bg-[#e6f4ea] transition-colors text-center">
-            <h3 className="font-heading font-black text-xl text-slate-800 mb-1">Operate from anywhere</h3>
-            <p className="text-sm text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-heading font-black text-lg text-slate-800 leading-snug">Operate from anywhere</h3>
+            <p className="text-xs text-slate-600 font-normal leading-relaxed">Track status and remote working easily with connected milling technology.</p>
           </div>
 
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
-      <section className="pt-10 sm:pt-14 md:pt-16 pb-24 bg-slate-50 relative md:-mt-12 lg:-mt-16">
+      <section className="pt-6 sm:pt-12 md:pt-16 pb-24 bg-slate-50 relative md:-mt-12 lg:-mt-16">
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">

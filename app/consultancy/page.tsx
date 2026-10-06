@@ -158,26 +158,28 @@ export default function ConsultancyPage() {
           </div>
         </section>
 
-        {/* Mobile Proof Points - Document flow */}
-        <div className="block md:hidden relative z-30 px-5 -mt-8 w-full">
-          <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100/90">
-            <div className="grid grid-cols-1 divide-y divide-slate-200">
-              {heroProofPoints.map((item, idx) => (
-                <div key={idx} className="p-4 hover:bg-[#E8F5E9]/70 rounded-xl transition-colors duration-200 text-left space-y-1">
-                  <h3 className="text-base font-bold text-[#0B1510] leading-snug">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-slate-500 leading-relaxed">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+        {/* Mobile Proof Points - Horizontal Swipeable Slider */}
+        <div className="block md:hidden relative z-30 -mt-11 w-full">
+          <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+            {heroProofPoints.map((item, idx) => (
+              <div
+                key={idx}
+                className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5"
+              >
+                <h3 className="text-base font-bold text-[#0B1510] leading-snug">
+                  {item.title}
+                </h3>
+                <p className="text-xs text-slate-500 leading-relaxed">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+            <div className="w-2 shrink-0" aria-hidden="true" />
           </div>
         </div>
 
         {/* How We Add Value Section */}
-        <section className="w-full pt-12 sm:pt-16 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
+        <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-40 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24">
           <div className="text-center max-w-2xl mx-auto space-y-3 mb-16 flex flex-col items-center">
             <h2 className="text-3xl sm:text-4xl font-heading font-black text-[#133020]">
               How we add value

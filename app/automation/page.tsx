@@ -102,41 +102,42 @@ export default function AutomationPage() {
         </div>
       </div>
 
-      {/* Mobile Key Proof Points Bar (In natural document flow) */}
-      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
-          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 w-full -mt-10 mb-2">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <MonitorSmartphone className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Centralized Control</h4>
-              <p className="text-sm text-slate-600 font-medium">Complete mill operation from single control panel.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Complete mill operation from single control panel.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Settings2 className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">PLC-Based Automation</h4>
-              <p className="text-sm text-slate-600 font-medium">Reliable control across every milling stage.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Reliable control across every milling stage.</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Zap className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Flexible Upgradation</h4>
-              <p className="text-sm text-slate-600 font-medium">Modernize existing mills without complete rebuilding.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Modernize existing mills without complete rebuilding.</p>
             </div>
           </div>
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
       {/* Future-Proof Flour Milling */}
-      <section className="w-full pt-12 md:pt-24 lg:pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-4 md:pt-24 lg:pt-28 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}

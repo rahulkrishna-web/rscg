@@ -131,43 +131,45 @@ export default function FlourProcessingPage() {
         </div>
       </div>
 
-      {/* Mobile Key Proof Points Bar (In natural document flow) */}
-      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
-          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 w-full -mt-10 mb-2">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Shield className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Hygienic grain control</h4>
-              <p className="text-sm text-slate-600 font-medium">Maximum safety and sanitation.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Maximum safety and sanitation.</p>
             </div>
           </div>
           
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Layers className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Multi-pass precision grading</h4>
-              <p className="text-sm text-slate-600 font-medium">Perfectly uniform separation.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Perfectly uniform separation.</p>
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Settings className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">High throughput &amp; yield</h4>
-              <p className="text-sm text-slate-600 font-medium">Unmatched production capacity.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Unmatched production capacity.</p>
             </div>
           </div>
+
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
       {/* Products Grid Section */}
-      <section id="products" className="w-full pt-12 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
+      <section id="products" className="w-full pt-4 md:pt-20 lg:pt-24 pb-16 px-6 sm:px-12 lg:px-16 xl:px-24 bg-white relative">
         <div className="w-full mx-auto space-y-10">
           
           <div className="text-center space-y-2">

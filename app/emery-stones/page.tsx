@@ -81,9 +81,9 @@ export default function EmeryStones() {
         </div>
       </section>
 
-      {/* Key Proof Points Bar */}
-      <div className="relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-slate-100 overflow-hidden">
+      {/* Desktop Key Proof Points Bar */}
+      <div className="hidden md:block relative z-30 -translate-y-1/2 w-full mx-auto px-6 sm:px-12 lg:px-16 xl:px-24">
+        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-row divide-x divide-slate-100 overflow-hidden">
           <div className="flex-1 p-6 sm:p-8 hover:bg-[#e6f4ea] transition-colors cursor-pointer group flex flex-col items-center justify-center text-center">
             <h3 className="font-bold text-slate-800 group-hover:text-brand-primary transition-colors mb-2">Precision grinding</h3>
             <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
@@ -99,8 +99,27 @@ export default function EmeryStones() {
         </div>
       </div>
 
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 -mt-13 w-full">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-bold text-base text-slate-800 leading-snug">Precision grinding</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">High-performance emery stones engineered for precise grinding.</p>
+          </div>
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-bold text-base text-slate-800 leading-snug">Consistent finish</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Consistent flour quality across commercial stone mills.</p>
+          </div>
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5">
+            <h3 className="font-bold text-base text-slate-800 leading-snug">Long-lasting performance</h3>
+            <p className="text-xs text-slate-500 leading-relaxed">Long service life across commercial stone mills.</p>
+          </div>
+          <div className="w-2 shrink-0" aria-hidden="true" />
+        </div>
+      </div>
+
       {/* Editorial Quote Section */}
-      <section className="w-full pb-10 pt-4 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 border-b border-slate-200/50 -mt-10 sm:-mt-12 lg:-mt-14 relative z-20">
+      <section className="w-full pb-10 pt-2 md:pt-4 px-6 sm:px-12 lg:px-16 xl:px-24 bg-slate-50 border-b border-slate-200/50 md:-mt-12 lg:-mt-14 relative z-20">
         <div className="w-full max-w-[1440px] mx-auto text-center mt-6">
           <p className="text-slate-600 text-sm sm:text-base md:text-lg max-w-4xl mx-auto leading-relaxed font-medium italic">
             "Your favourite recipe will be made with the great taste of 100% whole grain goodness and all the nutrition from every grain with Our flour mills."

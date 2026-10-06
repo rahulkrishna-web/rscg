@@ -257,26 +257,28 @@ export default function TurnkeyProjects() {
         </div>
       </section>
 
-      {/* Mobile Proof Points - In Document Flow so it NEVER overlaps or messes with the next section text */}
-      <div className="block md:hidden relative z-30 px-5 -mt-10 max-w-5xl mx-auto w-full">
-        <div className="bg-white rounded-2xl shadow-xl p-4 border border-slate-100/80">
-          <div className="grid grid-cols-1 divide-y divide-slate-200">
-            {statPoints.map((stat, idx) => (
-              <div key={idx} className="p-4 hover:bg-[#E8F5E9]/60 rounded-xl transition-colors duration-200 text-left space-y-1">
-                <h3 className="text-base font-bold text-[#0B1510] leading-snug">
-                  {stat.title}
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  {stat.desc}
-                </p>
-              </div>
-            ))}
-          </div>
+      {/* Mobile Proof Points - Horizontal Swipeable Slider with Next-Card Peek */}
+      <div className="block md:hidden relative z-30 -mt-13 w-full">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          {statPoints.map((stat, idx) => (
+            <div
+              key={idx}
+              className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 text-left space-y-1.5"
+            >
+              <h3 className="text-base font-bold text-[#0B1510] leading-snug">
+                {stat.title}
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                {stat.desc}
+              </p>
+            </div>
+          ))}
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
       {/* Intro details */}
-      <section className="w-full pt-10 sm:pt-14 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
+      <section className="w-full pt-6 sm:pt-12 md:pt-36 lg:pt-44 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 relative z-10">
         <div className="w-full max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1c2722]">
             Engineering the Future of Smart Flour Milling

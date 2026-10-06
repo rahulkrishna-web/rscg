@@ -136,43 +136,45 @@ export default function BooksPage() {
         </div>
       </div>
 
-      {/* Mobile Key Proof Points Bar (In natural document flow) */}
-      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
-          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 w-full -mt-10 mb-4">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <GraduationCap className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Technical expertise</h4>
-              <p className="text-sm text-slate-600 font-medium">Deep industry knowledge.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Deep industry knowledge.</p>
             </div>
           </div>
           
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <BookMarked className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Practical guidance</h4>
-              <p className="text-sm text-slate-600 font-medium">Actionable insights.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Actionable insights.</p>
             </div>
           </div>
 
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <Award className="w-6 h-6" />
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Industry legacy</h4>
-              <p className="text-sm text-slate-600 font-medium">Decades of experience.</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Decades of experience.</p>
             </div>
           </div>
+
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
       {/* Main Content Section */}
-      <section id="order-books" className="w-full pt-12 md:pt-24 lg:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#F8F9FA]">
+      <section id="order-books" className="w-full pt-4 md:pt-24 lg:pt-28 pb-20 px-6 sm:px-12 lg:px-16 xl:px-24 bg-[#F8F9FA]">
         <div className="w-full mx-auto space-y-12">
           
           <div className="text-center w-full flex items-center justify-center">

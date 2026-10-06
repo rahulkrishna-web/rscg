@@ -156,41 +156,42 @@ export default function PowerSavingPage() {
         </div>
       </div>
 
-      {/* Mobile Key Proof Points Bar (In natural document flow) */}
-      <div className="block md:hidden relative z-30 w-full px-6 -mt-6 mb-10">
-        <div className="bg-white rounded-2xl shadow-xl border border-slate-100 p-5 flex flex-col gap-4 divide-y divide-slate-100">
-          <div className="w-full flex items-center gap-4 pt-2 first:pt-0 group">
+      {/* Mobile Key Proof Points Bar - Horizontal Swipeable Slider */}
+      <div className="block md:hidden relative z-30 w-full -mt-10 mb-2">
+        <div className="flex gap-3.5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-5 scroll-pl-5 pt-3 pb-7">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Smart systems</h4>
-              <p className="text-sm text-slate-600 font-medium">Intelligent controls</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Intelligent controls</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Lower consumption</h4>
-              <p className="text-sm text-slate-600 font-medium">Up to 30% savings</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Up to 30% savings</p>
             </div>
           </div>
-          <div className="w-full flex items-center gap-4 pt-3 group">
+          <div className="w-[78vw] max-w-[300px] shrink-0 snap-start bg-white rounded-2xl shadow-[0_4px_14px_rgba(0,0,0,0.05)] p-5 border border-slate-200/70 flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-[#f0fdf4] text-[#22c55e] flex items-center justify-center flex-shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
             </div>
             <div>
               <h4 className="text-base font-bold text-slate-900">Higher performance</h4>
-              <p className="text-sm text-slate-600 font-medium">Maximized output</p>
+              <p className="text-xs text-slate-600 font-medium mt-0.5">Maximized output</p>
             </div>
           </div>
+          <div className="w-2 shrink-0" aria-hidden="true" />
         </div>
       </div>
 
       {/* Optimize Energy Consumption */}
-      <section className="w-full pt-12 md:pt-20 lg:pt-24 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
+      <section className="w-full pt-4 md:pt-20 lg:pt-24 pb-20 lg:pb-28 px-6 sm:px-12 lg:px-16 xl:px-24">
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
           
           {/* Content Left */}
