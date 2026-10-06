@@ -21,7 +21,7 @@ export default function ProjectDetailPage() {
 
   if (!currentProject) {
     return (
-      <div className="min-h-screen bg-brand-bg text-slate-800 flex flex-col justify-between">
+      <div className="min-h-screen bg-[#F9FAFB] text-slate-800 flex flex-col justify-between">
         <div>
           <Header />
           <div className="flex-1 flex flex-col items-center justify-center p-16 space-y-4 max-w-lg mx-auto text-center">
@@ -53,7 +53,7 @@ export default function ProjectDetailPage() {
   const currentImage = currentProject.images[activeImageIdx];
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9FAFB] text-brand-foreground font-sans flex flex-col justify-between">
       <div>
         <Header />
 
@@ -186,7 +186,7 @@ export default function ProjectDetailPage() {
               <div className="w-12 h-[3px] bg-[#D3994B] mt-4" />
             </div>
             
-            <div className="flex md:grid md:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
+            <div className={`flex md:grid ${currentProject.images.slice(1).length === 5 ? 'md:grid-cols-3 lg:grid-cols-5' : 'md:grid-cols-4'} gap-4 sm:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0`}>
               {currentProject.images.slice(1).map((img, idx) => (
                 <div key={idx} className="w-[68vw] max-w-[260px] md:w-auto md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none aspect-[4/3] rounded-2xl overflow-hidden bg-slate-100 relative group cursor-pointer" onClick={() => setActiveImageIdx(idx + 1)}>
                   <img src={img} alt={`Gallery ${idx + 1}`} className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" />

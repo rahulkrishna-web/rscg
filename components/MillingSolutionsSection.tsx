@@ -21,7 +21,7 @@ export default function MillingSolutionsSection() {
       heading: "Upgrade what you already have",
       desc: "Improve capacity and efficiency by upgrading individual processes without rebuilding your entire plant.",
       cta: "See Systems by Section",
-      href: "/flour-processing"
+      href: "/flour-mills"
     },
     {
       tag: "03 · Solve",

@@ -58,7 +58,7 @@ export default function ProjectsPage() {
   });
 
   return (
-    <div className="min-h-screen bg-brand-bg text-brand-foreground font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9FAFB] text-brand-foreground font-sans flex flex-col justify-between">
       <div>
         <Header />
 

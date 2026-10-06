@@ -41,19 +41,19 @@ export default function FlourProcessingProductPage() {
         <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36">
 
         {/* Top Product Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 xl:gap-20 mb-24">
           
           {/* Left Column: Image & Note */}
-          <div className="flex flex-col gap-6">
-            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-square">
+          <div className="flex flex-col gap-4 lg:sticky lg:top-28 self-start">
+            <div className="bg-white border border-slate-100 rounded-3xl overflow-hidden flex items-center justify-center relative shadow-sm aspect-square lg:aspect-auto lg:h-[calc(100vh-16rem)] lg:min-h-[260px] lg:max-h-[480px]">
                 <img 
                   src={product.image} 
                   alt={product.title} 
                   className="object-contain w-full h-full p-6"
                 />
             </div>
-            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-5">
-              <Info className="w-5 h-5 text-[#4a5f36] flex-shrink-0 mt-0.5" />
+            <div className="flex items-start gap-3 bg-[#f6f9f1] border border-[#e5eddb] rounded-2xl p-4">
+              <Info className="w-4 h-4 text-[#4a5f36] flex-shrink-0 mt-0.5" />
               <p className="text-xs text-[#4a5f36] leading-relaxed font-medium">
                 * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
               </p>

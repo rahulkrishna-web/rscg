@@ -40,7 +40,7 @@ export default function DaniyaTypeStones() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-bg text-[#1c2722] font-sans relative overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-brand-bg text-[#1c2722] font-sans relative overflow-x-clip">
       
       {/* Background decoration */}
       <div className="absolute top-[-10%] left-[-10%] w-[50%] aspect-square bg-brand-primary/5 rounded-full blur-[120px] pointer-events-none select-none"></div>
@@ -51,11 +51,11 @@ export default function DaniyaTypeStones() {
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 pt-28 sm:pt-32 md:pt-36 pb-16 flex-1 relative z-10">
         
         {/* Hero Product Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
           
           {/* Left: Images */}
-          <div className="flex flex-col gap-6 lg:sticky lg:top-32 h-fit">
-            <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8 border border-slate-100 shadow-xs">
+          <div className="flex flex-col gap-6 lg:sticky lg:top-28 self-start h-fit">
+            <div className="relative w-full aspect-square lg:aspect-auto lg:h-[calc(100vh-11rem)] lg:min-h-[280px] lg:max-h-[480px] bg-white rounded-2xl flex items-center justify-center p-8 border border-slate-100 shadow-xs">
               <span className="absolute top-6 left-6 z-10 bg-slate-100 text-[10px] font-bold text-slate-500 px-3 py-1.5 rounded-full border border-slate-200">
                 Emery stones
               </span>

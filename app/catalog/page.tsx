@@ -351,42 +351,42 @@ function CatalogContent() {
               </div>
             </div>
 
-            {/* Product Cards Grid - 3 columns per row matching product page style */}
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8" aria-live="polite">
+            {/* Product Cards Grid - 2 columns on mobile, 3 columns on desktop */}
+            <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3.5 sm:gap-6 lg:gap-8" aria-live="polite">
               {filteredProducts.map((product) => {
                 return (
                   <Link
                     key={product.slug}
                     href={product.url}
-                    className="group flex flex-col bg-white rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
+                    className="group flex flex-col bg-white rounded-2xl sm:rounded-3xl border border-slate-200/60 overflow-hidden hover:shadow-2xl hover:shadow-brand-primary/10 hover:border-brand-primary/30 transition-all duration-300 text-left cursor-pointer"
                   >
                     {/* Image Area - Clean rounded background, no pill, matching product page */}
-                    <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-6">
+                    <div className="relative aspect-square sm:aspect-[4/3] w-full bg-slate-50 overflow-hidden border-b border-slate-100 flex items-center justify-center p-3 sm:p-6">
                       <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/5 transition-colors z-10 pointer-events-none"></div>
                       <img
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-full object-contain p-2 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-contain p-1 sm:p-2 mix-blend-multiply group-hover:scale-105 transition-transform duration-700 ease-out"
                         loading="lazy"
                       />
                     </div>
 
-                    {/* Card Content - Normal sized, clear legible text */}
-                    <div className="p-6 sm:p-8 flex-1 flex flex-col justify-between">
+                    {/* Card Content - Responsive sizing for 2-col mobile & 3-col desktop */}
+                    <div className="p-3.5 sm:p-8 flex-1 flex flex-col justify-between">
                       <div>
-                        <h3 className="text-xl sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight group-hover:text-brand-primary transition-colors">
+                        <h3 className="text-sm sm:text-2xl font-heading font-extrabold text-slate-850 tracking-tight leading-snug group-hover:text-brand-primary transition-colors">
                           {product.title}
                         </h3>
 
-                        <p className="text-sm sm:text-base text-slate-500 mt-3 line-clamp-2 leading-relaxed font-normal">
+                        <p className="text-xs sm:text-base text-slate-500 mt-1.5 sm:mt-3 line-clamp-2 leading-relaxed font-normal">
                           {product.shortDescription || product.overview || product.description}
                         </p>
                       </div>
 
                       {/* Card Bottom Link */}
-                      <div className="mt-6 flex items-center justify-between text-brand-primary font-bold text-sm sm:text-base">
+                      <div className="mt-3 sm:mt-6 flex items-center justify-between text-brand-primary font-bold text-xs sm:text-base">
                         <span>View Product</span>
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </Link>

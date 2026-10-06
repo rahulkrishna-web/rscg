@@ -104,7 +104,7 @@ export default function TrainingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F9F6F0] text-slate-800 font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9FAFB] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header onRequestCallback={() => setIsModalOpen(true)} />
 

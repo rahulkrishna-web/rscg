@@ -76,7 +76,7 @@ const additionalServices = [
 
 export default function Grain360Page() {
   return (
-    <div className="min-h-screen bg-[#F9F6F0] text-slate-800 font-sans flex flex-col justify-between">
+    <div className="min-h-screen bg-[#F9FAFB] text-slate-800 font-sans flex flex-col justify-between">
       <div>
         <Header />
 
@@ -162,7 +162,7 @@ export default function Grain360Page() {
             </div>
 
             {/* Why Grain360 Card */}
-            <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/60">
+            <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-200/70">
               <h3 className="text-xl font-heading font-black text-slate-800 mb-6">
                 Why Grain360?
               </h3>
@@ -194,7 +194,7 @@ export default function Grain360Page() {
                 {workflowSteps.map((step, idx) => (
                   <Fragment key={idx}>
                     {/* Step Card - Equalized with flex-1 across all 3 cards */}
-                    <div className="lg:flex-1 w-[74vw] max-w-[290px] lg:w-auto lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-9 flex items-center gap-4 sm:gap-6 shadow-sm hover:shadow-md border border-slate-200/60 transition-all duration-300 min-h-[150px] sm:min-h-[170px]">
+                    <div className="lg:flex-1 w-[74vw] max-w-[290px] lg:w-auto lg:max-w-none shrink-0 lg:shrink snap-start lg:snap-align-none bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-9 flex items-center gap-4 sm:gap-6 shadow-sm hover:shadow-md border border-slate-200/70 transition-all duration-300 min-h-[150px] sm:min-h-[170px]">
                       <div className={`w-14 h-14 sm:w-20 sm:h-20 rounded-2xl ${step.iconBg} flex items-center justify-center shrink-0 p-3 sm:p-4 shadow-xs`}>
                         <img src={step.iconPath} alt={step.title} className="w-full h-full object-contain" />
                       </div>
@@ -225,7 +225,7 @@ export default function Grain360Page() {
             
             <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory no-scrollbar -mx-6 px-6 sm:-mx-12 sm:px-12 md:mx-0 md:px-0 scroll-pl-6 sm:scroll-pl-12 md:scroll-pl-0 pb-4 md:pb-0">
               {coreServices.map((service, idx) => (
-                <div key={idx} className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl p-5 sm:p-7 flex items-start gap-4 sm:gap-5 shadow-sm border border-slate-100 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
+                <div key={idx} className="w-[74vw] max-w-[290px] md:w-full md:max-w-none shrink-0 md:shrink snap-start md:snap-align-none bg-white rounded-2xl p-5 sm:p-7 flex items-start gap-4 sm:gap-5 shadow-sm border border-slate-200/70 hover:shadow-md hover:border-[#D3994B]/30 transition-all duration-300">
                   <div className={`w-16 h-16 rounded-2xl ${service.iconBg} flex items-center justify-center shrink-0 p-3 shadow-xs`}>
                     <img src={service.iconPath} alt={service.title} className="w-full h-full object-contain" />
                   </div>

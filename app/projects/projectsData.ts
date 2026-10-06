@@ -34,10 +34,11 @@ export const projectsData: ProjectItem[] = [
     "commissioned": "",
     "images": [
       "/images/projects/case_studies/al-ghurair-foods/mainimg.jpg",
-      "/images/projects/case_studies/al-ghurair-foods/galleryimg1.jpg",
-      "/images/projects/case_studies/al-ghurair-foods/galleryimg2.jpg",
-      "/images/projects/case_studies/al-ghurair-foods/galleryimg3.jpg",
-      "/images/projects/case_studies/al-ghurair-foods/galleryimg.jpg"
+      "/images/projects/case_studies/al-ghurair-foods/gallery1.png",
+      "/images/projects/case_studies/al-ghurair-foods/gallery2.png",
+      "/images/projects/case_studies/al-ghurair-foods/gallery3.png",
+      "/images/projects/case_studies/al-ghurair-foods/gallery4.png",
+      "/images/projects/case_studies/al-ghurair-foods/gallery5.png"
     ],
     "content": [
       {
@@ -116,10 +117,11 @@ export const projectsData: ProjectItem[] = [
     "commissioned": "",
     "images": [
       "/images/projects/case_studies/carrs-flour/mainimg.jpg",
-      "/images/projects/case_studies/carrs-flour/galleryimg1.jpg",
-      "/images/projects/case_studies/carrs-flour/galleryimg2.jpg",
-      "/images/projects/case_studies/carrs-flour/galleryimg3.jpg",
-      "/images/projects/case_studies/carrs-flour/galleryimg.jpg"
+      "/images/projects/case_studies/carrs-flour/gallery1.png",
+      "/images/projects/case_studies/carrs-flour/gallery2.png",
+      "/images/projects/case_studies/carrs-flour/gallery3.png",
+      "/images/projects/case_studies/carrs-flour/gallery4.png",
+      "/images/projects/case_studies/carrs-flour/gallery5.png"
     ],
     "content": [
       {
@@ -153,11 +155,11 @@ export const projectsData: ProjectItem[] = [
     "commissioned": "",
     "images": [
       "/images/projects/case_studies/eminent-group/eminent_mainimg.png",
-      "/images/projects/case_studies/eminent-group/galleryimg1.png",
-      "/images/projects/case_studies/eminent-group/galleryimg2.png",
-      "/images/projects/case_studies/eminent-group/galleryimg3.png",
-      "/images/projects/case_studies/eminent-group/galleryimg4.png",
-      "/images/projects/case_studies/eminent-group/galleryimg5.png"
+      "/images/projects/case_studies/eminent-group/gallery1.png",
+      "/images/projects/case_studies/eminent-group/gallery2.png",
+      "/images/projects/case_studies/eminent-group/gallery3.png",
+      "/images/projects/case_studies/eminent-group/gallery4.png",
+      "/images/projects/case_studies/eminent-group/gallery5.png"
     ],
     "content": [
       {
@@ -198,10 +200,10 @@ export const projectsData: ProjectItem[] = [
     "commissioned": "",
     "images": [
       "/images/projects/case_studies/patanjali-ayurveda/mainimg.jpg",
-      "/images/projects/case_studies/patanjali-ayurveda/galleryimg1.jpg",
-      "/images/projects/case_studies/patanjali-ayurveda/galleryimg2.jpg",
-      "/images/projects/case_studies/patanjali-ayurveda/galleryimg3.jpg",
-      "/images/projects/case_studies/patanjali-ayurveda/galleryimg.jpg"
+      "/images/projects/case_studies/patanjali-ayurveda/gallery1.png",
+      "/images/projects/case_studies/patanjali-ayurveda/gallery2.png",
+      "/images/projects/case_studies/patanjali-ayurveda/gallery3.png",
+      "/images/projects/case_studies/patanjali-ayurveda/gallery4.png"
     ],
     "content": [
       {
@@ -398,10 +400,10 @@ export const projectsData: ProjectItem[] = [
     "commissioned": "",
     "images": [
       "/images/projects/case_studies/winnies-pure-health/mainimg.jpg",
-      "/images/projects/case_studies/winnies-pure-health/galleryimg1.jpg",
-      "/images/projects/case_studies/winnies-pure-health/galleryimg2.jpg",
-      "/images/projects/case_studies/winnies-pure-health/galleryimg3.jpg",
-      "/images/projects/case_studies/winnies-pure-health/galleryimg.jpg"
+      "/images/projects/case_studies/winnies-pure-health/gallery1.png",
+      "/images/projects/case_studies/winnies-pure-health/gallery2.png",
+      "/images/projects/case_studies/winnies-pure-health/gallery3.png",
+      "/images/projects/case_studies/winnies-pure-health/gallery4.png"
     ],
     "content": [
       {

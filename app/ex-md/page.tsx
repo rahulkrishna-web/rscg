@@ -34,11 +34,11 @@ export default function ExMdPage() {
               {/* Left Sidebar Card */}
               <div className="lg:col-span-4 lg:sticky lg:top-28">
                 <div className="bg-white border border-slate-200/80 p-6 rounded-[28px] shadow-sm space-y-6">
-                  <div className="aspect-[3/4] relative rounded-2xl overflow-hidden border border-slate-100 bg-slate-100 shadow-inner">
+                  <div className="w-full relative rounded-2xl overflow-hidden border border-slate-100 bg-[#EAEAEA]">
                     <img
-                      src="/images/founders/rd_sharma.jpg"
+                      src="/images/about/leadership/R.D%20Sharma.jpg"
                       alt="Late Shri R. D. Sharma"
-                      className="w-full h-full object-cover"
+                      className="w-full h-auto block opacity-95"
                     />
                   </div>
                   <div className="space-y-4">

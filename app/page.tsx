@@ -1252,6 +1252,17 @@ export default function Home() {
 
           </div>
 
+          {/* Bottom Center CTA */}
+          <div className="flex justify-center pt-2">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-2 bg-[#f7b032] hover:bg-yellow-500 text-slate-900 font-bold px-8 py-3.5 rounded shadow-[0_4px_14px_rgba(247,176,50,0.4)] hover:shadow-[0_6px_20px_rgba(247,176,50,0.6)] hover:-translate-y-0.5 transition-all text-xs sm:text-sm uppercase tracking-wide cursor-pointer group/btn"
+            >
+              <span>EXPLORE ALL PROJECTS</span>
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/btn:translate-x-0.5" />
+            </Link>
+          </div>
+
         </div>
       </section>
 
@@ -1365,7 +1376,7 @@ export default function Home() {
 
       {/* --- Accordion FAQ Section --- */}
       <section className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 py-20 lg:py-28 relative z-10 bg-white border-t border-slate-100 overflow-hidden">
-        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start justify-between">
+        <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center justify-between">
           
           {/* Left Column: Heading & Accordion Items */}
           <div className="lg:col-span-7 space-y-6 sm:space-y-8">
@@ -1379,7 +1390,7 @@ export default function Home() {
               </h2>
             </div>
 
-            <div className="space-y-3.5 sm:space-y-4 pt-1 min-h-[520px] sm:min-h-[540px] lg:min-h-[560px]">
+            <div className="space-y-3.5 sm:space-y-4 pt-1">
               {faqs.map((faq, idx) => (
                 <div 
                   key={idx} 
@@ -1418,7 +1429,7 @@ export default function Home() {
           </div>
 
           {/* Right Column: Visual Showcase with Blob, Floating Images & Vector Accents */}
-          <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end min-h-[400px] sm:min-h-[460px] lg:min-h-[500px] select-none py-6 lg:py-0">
+          <div className="lg:col-span-5 self-center my-auto relative flex items-center justify-center lg:justify-end min-h-[400px] sm:min-h-[460px] lg:min-h-[500px] select-none py-6 lg:py-0">
             
             {/* Background Organic Amber Blob */}
             <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
@@ -1428,32 +1439,6 @@ export default function Home() {
                 className="absolute w-[360px] sm:w-[440px] lg:w-[480px] h-[360px] sm:h-[420px] text-amber-200/40 fill-current"
               >
                 <path d="M421.5,317.5Q386,385,317.5,422.5Q249,460,183.5,422.5Q118,385,86,317.5Q54,250,86,182.5Q118,115,183.5,78Q249,41,317.5,78Q386,115,421.5,182.5Q457,250,421.5,317.5Z" />
-              </svg>
-            </div>
-
-            {/* Top-Right Vector Accent: Wheat Stalk */}
-            <div className="absolute -top-3 right-2 sm:right-6 lg:-right-1 z-20 pointer-events-none animate-faq-sway">
-              <svg
-                className="w-14 h-24 sm:w-16 sm:h-28 text-amber-500 drop-shadow-xs"
-                viewBox="0 0 60 100"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M28 92 C 28 65, 30 35, 30 8" />
-                <path d="M30 18 C 38 14, 44 8, 44 4 C 38 8, 32 14, 30 18 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 22 C 22 18, 16 12, 16 8 C 22 12, 28 18, 30 22 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 34 C 40 30, 48 24, 48 20 C 40 24, 32 30, 30 34 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 38 C 20 34, 12 28, 12 24 C 20 28, 28 34, 30 38 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 50 C 40 46, 48 40, 48 36 C 40 40, 32 46, 30 50 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 54 C 20 50, 12 44, 12 40 C 20 44, 28 50, 30 54 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 66 C 39 62, 46 57, 46 53 C 39 57, 32 62, 30 66 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <path d="M30 70 C 21 66, 14 61, 14 57 C 21 61, 28 66, 30 70 Z" fill="#F59E0B" fillOpacity="0.15" />
-                <line x1="30" y1="8" x2="30" y2="1" />
-                <line x1="44" y1="4" x2="50" y2="0" />
-                <line x1="16" y1="8" x2="10" y2="4" />
               </svg>
             </div>
 

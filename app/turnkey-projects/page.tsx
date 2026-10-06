@@ -420,11 +420,11 @@ export default function TurnkeyProjects() {
                     </div>
                   </div>
                   
-                  <div className="mt-6 flex items-center justify-between">
-                    <div className="h-16 relative w-48">
+                  <div className="mt-5 flex flex-col items-start gap-3.5">
+                    <div className="h-12 sm:h-14 relative w-40 sm:w-44">
                       <Image src={proj.logo} alt={proj.title} fill className="object-contain object-left" />
                     </div>
-                    <div className="text-xs font-black text-brand-primary uppercase tracking-wider flex items-center gap-1.5 group-hover:text-brand-secondary transition-colors">
+                    <div className="text-xs font-black text-brand-primary uppercase tracking-wider flex items-center gap-1.5 whitespace-nowrap group-hover:text-brand-secondary transition-colors">
                       Learn More <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>

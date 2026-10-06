@@ -320,8 +320,8 @@ export default function ProductDetailsPage() {
         <div className="w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left Column: Product Image (col-span-5) */}
-          <div className="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
-            <div className="bg-white rounded-[32px] border border-slate-200/60 p-8 shadow-xs flex items-center justify-center aspect-square relative overflow-hidden">
+          <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-28">
+            <div className="bg-white rounded-[32px] border border-slate-200/60 p-6 lg:p-8 shadow-xs flex items-center justify-center aspect-square lg:aspect-auto lg:h-[calc(100vh-16rem)] lg:min-h-[260px] lg:max-h-[460px] relative overflow-hidden">
               <img 
                 src={product.variants[selectedVariantIndex]?.image || product.image} 
                 alt={product.title}
@@ -333,7 +333,7 @@ export default function ProductDetailsPage() {
             </div>
             
             {/* Disclaimer card */}
-            <div className="bg-white/40 border border-slate-200/40 rounded-2xl p-5 text-center text-[11px] text-slate-400 font-semibold leading-relaxed">
+            <div className="bg-white/40 border border-slate-200/40 rounded-2xl p-4 text-center text-[11px] text-slate-400 font-semibold leading-relaxed">
               * Dimensions, parameters, and capacities shown are for standard models. Customizable specs are available upon request. Contact our engineering team for personalized setups.
             </div>
           </div>

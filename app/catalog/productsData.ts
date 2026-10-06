@@ -41,7 +41,6 @@ export const catalogCategories: CatalogCategory[] = [
   { id: "grain-storage-handling", name: "Grain Storage & Silos" },
   { id: "power-saving", name: "Automation & Power Saving" },
   { id: "vending-machines", name: "Vending Machines" },
-  { id: "turnkey-projects", name: "Turnkey Solutions" },
   { id: "books", name: "Publications & Books" }
 ];
 
@@ -707,166 +706,44 @@ export const productsData: ProductItem[] = [
   // ================= 7. VENDING MACHINES =================
   {
     slug: "floura",
-    title: "Floura V400 - On-Demand Flour Vending Machine",
-    subtitle: "Fresh Stone-Ground Flour Dispenser",
-    overview: "Floura V400 is a compact fresh flour grinding and dispensing machine engineered for retail grocery stores and commercial food hubs. Grinds fresh stone-ground atta right in front of customers.",
+    title: "Floura",
+    subtitle: "Fresh Stone-Ground Flour Vending & Batch Production System",
+    overview: "Floura is an automated fresh stone-ground flour milling and dispensing system available in V400 (40-60 kg/hr vertical mill) and H500 (100-120 kg/hr horizontal mill) configurations for retail stores and commercial batch production.",
     features: [
-      "Fresh stone grinding on demand (40-60 kg/hr)",
-      "16\" vertical stone mill with mechanical pressure",
-      "Integrated multi-grain storage bins (3 × 180 kg)",
-      "Automatic flour sieving and bag sealing options"
+      "Available in V400 (40-60 kg/hr) and H500 (100-120 kg/hr) models",
+      "Fresh stone grinding on demand with multi-grain storage bins",
+      "Eco and Auto variants with automated weighing, sieving, and sealing",
+      "Compact hygienic design for retail outlets and commercial batch hubs"
     ],
-    applications: ["Supermarkets & grocery stores", "Farmer direct outlets", "Organic health food stores"],
+    applications: ["Supermarkets & grocery stores", "Wholesale grain outlets", "Commercial batch mills"],
     specifications: {
-      "Grinding Capacity": "40 - 60 kg/hr",
-      "Mill Type": "16\" Vertical Mill",
-      "Bins": "3 Storage Bins (180 kg each)",
-      "Power": "13 HP / 9.7 kW"
+      "Available Models": "Floura V400 & Floura H500",
+      "Grinding Capacity": "40 - 120 kg/hr",
+      "Variants": "Eco & Auto",
+      "Bins": "3 Storage Bins"
     },
     category: "vending-machines",
     categoryLabel: "Vending Machines",
     badge: "On-Demand",
     image: "/images/vending-machines/floura_eco.png",
-    description: "Fresh stone-ground flour on-demand vending machine with 16\" vertical mill, multi-grain bins, and instant bagging (40-60 kg/hr).",
-    shortDescription: "Fresh stone-ground flour on-demand vending machine with 16\" vertical mill, multi-grain bins, and instant bagging (40-60 kg/hr).",
+    description: "Automated fresh stone-ground flour milling and dispensing system available in V400 and H500 models with Eco and Auto variants.",
+    shortDescription: "Automated fresh stone-ground flour milling and dispensing system available in V400 and H500 models.",
     url: "/vending-machines",
-    variants: []
-  },
-  {
-    slug: "floura-h500",
-    title: "Floura H500 - Commercial Flour Dispenser",
-    subtitle: "High-Capacity Batch Production Unit",
-    overview: "The H500 series delivers commercial-scale batch production with 20\" horizontal mill technology, hydraulic stone pressure, and automated packaging throughput of 100-120 kg/hr.",
-    features: [
-      "High commercial capacity: 100 - 120 kg/hr",
-      "20\" horizontal mill with hydraulic pressure system",
-      "Automatic grain feeding and electronic weighing",
-      "Integrated pouch sealing and flour sieving"
-    ],
-    applications: ["Wholesale grain outlets", "High-volume retail centers", "Commercial batch mills"],
-    specifications: {
-      "Grinding Capacity": "100 - 120 kg/hr",
-      "Mill Type": "20\" Horizontal Mill",
-      "Pressure System": "Hydraulic",
-      "Power": "17 - 19 HP"
-    },
-    category: "vending-machines",
-    categoryLabel: "Vending Machines",
-    badge: "Commercial Batch",
-    image: "/images/vending-machines/floura_prime.jpg",
-    description: "High-capacity automated fresh flour milling and packaging system with 20\" horizontal mill (100-120 kg/hr).",
-    shortDescription: "High-capacity automated fresh flour milling and packaging system with 20\" horizontal mill (100-120 kg/hr).",
-    url: "/vending-machines",
-    variants: []
+    variants: [
+      {
+        name: "Floura V400",
+        size: "16\" Vertical Mill",
+        specs: "40 - 60 kg/hr | Eco & Auto Variants"
+      },
+      {
+        name: "Floura H500",
+        size: "20\" Horizontal Mill",
+        specs: "100 - 120 kg/hr | Eco & Auto Variants"
+      }
+    ]
   },
 
-  // ================= 8. TURNKEY SOLUTIONS =================
-  {
-    slug: "turnkey-atta-plant",
-    title: "Whole Wheat Atta Plant",
-    subtitle: "Complete Automated Milling Plant",
-    overview: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing. Tailored for industrial millers seeking premium texture and yield.",
-    features: [
-      "End-to-end turnkey project from civil planning to commissioning",
-      "Patented Wonder Mill and Wonder Miller automated chakki units",
-      "Comprehensive PLC plant automation and data logging",
-      "Capacities engineered from 20 TPD to 200+ TPD"
-    ],
-    applications: ["Commercial atta production", "Corporate FMCG flour brands", "Regional wheat mills"],
-    specifications: {
-      "Capacity Range": "20 TPD to 200+ TPD",
-      "Automation": "Central PLC SCADA Control",
-      "Scope": "Design, Machinery, Erection & Commissioning"
-    },
-    category: "turnkey-projects",
-    categoryLabel: "Turnkey Solutions",
-    badge: "Turnkey",
-    image: "/images/turnkey/capabilities/atta plant.jpg",
-    description: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing.",
-    shortDescription: "Custom turnkey chakki atta processing plant engineered from intake, cleaning, dampening, stone milling to finished packing.",
-    url: "/turnkey-projects",
-    variants: []
-  },
-  {
-    slug: "turnkey-besan-plant",
-    title: "Gram Flour (Besan) Plant",
-    subtitle: "Chana Dal Grinding Plant",
-    overview: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving. Preserves natural yellow color, aroma, and silky finish.",
-    features: [
-      "Specialized pulse cleaning and destoning",
-      "High-efficiency de-husking and split polishing",
-      "Cold stone milling to prevent fat oxidation",
-      "Vibro and plan sifting for micro-fine besan grades"
-    ],
-    applications: ["Besan manufacturing", "Sweet and snack food producers", "Pulse mills"],
-    specifications: {
-      "Target Grain": "Bengal Gram / Chana Dal",
-      "Grinding": "Cold Stone Abrasive Milling",
-      "Fineness": "Adjustable Ultrafine Mesh"
-    },
-    category: "turnkey-projects",
-    categoryLabel: "Turnkey Solutions",
-    badge: "Turnkey",
-    image: "/images/turnkey/capabilities/GRAM FLOUR.jpg",
-    description: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving.",
-    shortDescription: "End-to-end turnkey solution for chana dal cleaning, de-husking, cold stone milling, and ultrafine besan sieving.",
-    url: "/turnkey-projects",
-    variants: []
-  },
-  {
-    slug: "turnkey-multigrain-plant",
-    title: "Multi Grain Flour Grinding Plant",
-    subtitle: "Specialty Grain Milling Plant",
-    overview: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends. Multi-stage cleaning and stone grinding preserve essential vitamins and dietary fiber.",
-    features: [
-      "Custom recipes for millet, oat, barley, and quinoa blends",
-      "Integrated micro-dosing and precision proportioning",
-      "Low-temperature cold grinding preserving nutrition",
-      "Hygienic dust-free pneumatic conveying"
-    ],
-    applications: ["Multi-millet flour plants", "Health cereal brands", "Superfood processing"],
-    specifications: {
-      "Supported Grains": "Ragi, Jowar, Bajra, Oats, Quinoa, Wheat",
-      "Blending": "Automated Multi-Bin Batch Proportioning",
-      "Nutrition": "Cold Grinding Nutrient Retention"
-    },
-    category: "turnkey-projects",
-    categoryLabel: "Turnkey Solutions",
-    badge: "Turnkey",
-    image: "/images/turnkey/capabilities/MULTIGRAIN Flour.jpg",
-    description: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends.",
-    shortDescription: "Flexible multi-grain processing facility for millets, oats, barley, quinoa, and composite healthy flour blends.",
-    url: "/turnkey-projects",
-    variants: []
-  },
-  {
-    slug: "turnkey-spices-plant",
-    title: "Spices & Herbal Grinding Plant",
-    subtitle: "Cold Spice Grinding System",
-    overview: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices such as turmeric, coriander, chili, and herbs.",
-    features: [
-      "Cold stone milling protects natural volatile essential oils",
-      "Heavy magnetic protection against tramp metal",
-      "Multi-deck classification for uniform spice granulation",
-      "Aspiration cooling to prevent spice charring"
-    ],
-    applications: ["Commercial spice mills", "Herbal powder manufacturing", "Curry powder plants"],
-    specifications: {
-      "Products": "Chili, Turmeric, Coriander, Herbs",
-      "Temperature Control": "Aspiration Air-Cooled Stones",
-      "Quality": "Volatile Oil Retention"
-    },
-    category: "turnkey-projects",
-    categoryLabel: "Turnkey Solutions",
-    badge: "Turnkey",
-    image: "/images/turnkey/capabilities/spices & herbs.jpg",
-    description: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices.",
-    shortDescription: "Low-temperature abrasive grinding lines designed to retain volatile essential oils, natural color, and aroma in ground spices.",
-    url: "/turnkey-projects",
-    variants: []
-  },
-
-  // ================= 9. PUBLICATIONS & BOOKS =================
+  // ================= 8. PUBLICATIONS & BOOKS =================
   {
     slug: "basics-of-chakki-milling",
     title: "Basics of Chakki Milling",

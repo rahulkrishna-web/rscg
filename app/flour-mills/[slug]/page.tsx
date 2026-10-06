@@ -66,11 +66,11 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
       <div className="w-full px-6 sm:px-12 lg:px-16 xl:px-24 mx-auto pt-28 sm:pt-32 md:pt-36 pb-12 flex-1">
         
         {/* Hero Product Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 lg:items-start gap-12 bg-white p-6 sm:p-10 rounded-3xl border border-slate-200 shadow-sm mb-16">
           
           {/* Left: Images */}
-          <div className="flex flex-col gap-6">
-            <div className="relative w-full aspect-square bg-white rounded-2xl flex items-center justify-center p-8">
+          <div className="flex flex-col gap-4 lg:sticky lg:top-28 self-start">
+            <div className={`relative w-full aspect-square lg:aspect-auto ${product.showThumbnails !== false && product.keyComponents.length > 0 ? 'lg:h-[calc(100vh-22rem)] lg:min-h-[240px] lg:max-h-[440px]' : 'lg:h-[calc(100vh-15rem)] lg:min-h-[260px] lg:max-h-[480px]'} bg-white rounded-2xl flex items-center justify-center p-6 lg:p-8`}>
               <span className="absolute top-0 left-0 z-10 bg-slate-100 text-xs font-bold text-slate-600 px-3.5 py-1.5 rounded-full border border-slate-200">
                 {product.category}
               </span>
@@ -83,15 +83,15 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
             
             {/* Component Thumbnails */}
             {product.showThumbnails !== false && product.keyComponents.length > 0 && (
-              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <button 
                   onClick={() => setActiveImage(product.heroImage)}
-                  className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[96px] snap-start`}
+                  className={`flex flex-col items-center gap-1.5 cursor-pointer group shrink-0 w-[84px] xl:w-[92px] snap-start`}
                 >
                   <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === product.heroImage ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
                     <img src={product.heroImage} alt={product.title} className="w-full h-full object-contain" />
                   </div>
-                  <span className="text-xs text-center font-semibold text-slate-600 leading-tight">
+                  <span className="text-[11px] text-center font-semibold text-slate-600 leading-tight line-clamp-2">
                     {product.title}
                   </span>
                 </button>
@@ -100,7 +100,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                   <button 
                     key={idx}
                     onClick={() => comp.image && setActiveImage(comp.image)}
-                    className={`flex flex-col items-center gap-2 cursor-pointer group shrink-0 w-[96px] snap-start`}
+                    className={`flex flex-col items-center gap-1.5 cursor-pointer group shrink-0 w-[84px] xl:w-[92px] snap-start`}
                   >
                     <div className={`relative aspect-square w-full bg-white rounded-xl border flex items-center justify-center p-2 transition-all ${activeImage === comp.image ? 'border-brand-primary shadow-sm ring-1 ring-brand-primary/50' : 'border-slate-200 hover:border-slate-300'}`}>
                       {comp.image ? (
@@ -109,7 +109,7 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                         <Settings className="w-6 h-6 text-slate-300" />
                       )}
                     </div>
-                    <span className="text-xs text-center font-semibold text-slate-600 leading-tight">
+                    <span className="text-[11px] text-center font-semibold text-slate-600 leading-tight line-clamp-2">
                       {comp.title}
                     </span>
                   </button>
@@ -119,9 +119,9 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
 
             {/* Disclaimer */}
             {product.productDisclaimer && (
-              <div className="flex gap-3 bg-[#f8f9fa] rounded-2xl p-5 border border-slate-200 mt-4">
-                <Info className="w-5 h-5 text-slate-500 shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              <div className="flex gap-3 bg-[#f8f9fa] rounded-2xl p-4 border border-slate-200 mt-1">
+                <Info className="w-4 h-4 text-slate-500 shrink-0 mt-0.5" />
+                <p className="text-xs text-slate-600 leading-relaxed">
                   * {product.productDisclaimer}
                 </p>
               </div>
@@ -417,44 +417,45 @@ export default function ProductDetail({ params }: { params: Promise<{ slug: stri
                 product.models.map((model, idx) => {
                   const isBlue = model.name.toLowerCase().includes("miller");
                   const colorTitle = isBlue ? "text-[#0070f3]" : "text-red-500";
+                  const isThreeCol = product.models.length === 3 || product.models.length > 4;
 
                   return (
-                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-6 sm:p-7">
+                    <div key={idx} className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden flex flex-col h-full p-5 sm:p-6 xl:p-7">
                       <div className="pb-4 text-center">
                         <h4 className={`text-xl sm:text-2xl font-heading font-extrabold tracking-tight ${colorTitle}`}>
                           {model.name}
                         </h4>
                       </div>
-                      <div className="flex-1 flex flex-col sm:flex-row gap-6 sm:gap-8 items-center">
+                      <div className={`flex-1 flex flex-col ${isThreeCol ? 'sm:flex-row lg:flex-col 2xl:flex-row' : 'sm:flex-row'} gap-5 sm:gap-6 items-center`}>
                         
                         {model.image && (
-                          <div className="w-full sm:w-[42%] flex-shrink-0 flex items-center justify-center p-2">
-                            <img src={model.image} alt={model.name} className="w-full max-w-[200px] max-h-[220px] object-contain mix-blend-multiply" />
+                          <div className={`w-full ${isThreeCol ? 'sm:w-[38%] lg:w-full 2xl:w-[36%]' : 'sm:w-[38%]'} flex-shrink-0 flex items-center justify-center p-2`}>
+                            <img src={model.image} alt={model.name} className="w-full max-w-[180px] max-h-[190px] object-contain mix-blend-multiply" />
                           </div>
                         )}
                         
-                        <div className="flex-1 w-full">
+                        <div className="flex-1 w-full min-w-0">
                           {model.description && (
                             <div className="text-sm text-slate-600 mb-4 font-medium leading-relaxed">
                               {model.description}
                             </div>
                           )}
                           {model.tableData && (
-                            <div className="flex flex-col border border-slate-200/80 rounded-xl overflow-hidden shadow-xs">
+                            <div className="flex flex-col border border-slate-200/80 rounded-xl overflow-hidden shadow-xs w-full">
                               {Object.entries(model.tableData).map(([key, val], i) => (
-                                <div key={key} className={`flex items-center justify-between border-b border-slate-200/60 last:border-b-0 px-3.5 py-2.5 text-sm ${i % 2 === 0 ? 'bg-[#f8fafd]' : 'bg-white'}`}>
-                                  <span className="font-medium text-slate-600 pr-2">{key}</span>
-                                  <span className="font-semibold text-slate-800 shrink-0 text-right">{val}</span>
+                                <div key={key} className={`flex items-center justify-between gap-3 border-b border-slate-200/60 last:border-b-0 px-3 sm:px-3.5 py-2.5 text-xs sm:text-[13px] xl:text-sm ${i % 2 === 0 ? 'bg-[#f8fafd]' : 'bg-white'}`}>
+                                  <span className="font-medium text-slate-600 leading-snug">{key}</span>
+                                  <span className="font-semibold text-slate-800 text-right leading-snug">{val}</span>
                                 </div>
                               ))}
                             </div>
                           )}
 
                           {model.featuresList && (
-                            <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white mt-4">
+                            <div className="flex flex-col border border-slate-200 rounded-xl overflow-hidden bg-white w-full">
                               {model.featuresList.map((feat, i) => (
-                                <div key={i} className={`flex border-b border-slate-200 last:border-b-0 p-2.5 items-start ${i % 2 === 0 ? 'bg-white' : 'bg-[#f8f9fa]'}`}>
-                                  <div className="text-[#0a4c2a] mt-0.5 mr-2">
+                                <div key={i} className={`flex border-b border-slate-200 last:border-b-0 px-3 sm:px-3.5 py-2.5 items-start text-xs sm:text-[13px] xl:text-sm ${i % 2 === 0 ? 'bg-white' : 'bg-[#f8f9fa]'}`}>
+                                  <div className="text-[#0a4c2a] mt-0.5 mr-2 shrink-0">
                                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                     </svg>

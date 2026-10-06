@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface Milestone {
   year: string;
@@ -450,18 +451,40 @@ export default function JourneyTimeline() {
                     </div>
                   </div>
 
-                  {/* Right inside card: Visual Milestone Image Frame */}
-                  <div className="relative flex items-center justify-center lg:justify-end w-full">
-                    <div className="relative rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                  {/* Right inside card: Visual Milestone Image Frame + Mobile Arrows */}
+                  <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end w-full gap-4">
+                    <div className="relative w-full lg:w-auto rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
-                        className={`w-auto h-auto max-h-[220px] sm:max-h-[280px] lg:max-h-[290px] xl:max-h-[380px] max-w-full object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`w-full lg:w-auto aspect-[4/3] lg:aspect-auto h-auto lg:max-h-[290px] xl:max-h-[380px] max-w-full object-cover lg:object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"
                         }`}
                       />
+                    </div>
+
+                    {/* Mobile Prev / Next Year Navigation Arrows */}
+                    <div className="flex lg:hidden items-center justify-center gap-3 pt-1 w-full">
+                      <button
+                        type="button"
+                        onClick={() => handleClickYear(Math.max(0, currentIndex - 1))}
+                        disabled={currentIndex === 0}
+                        aria-label="Previous year"
+                        className="w-11 h-11 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-[#0B2C1C] hover:bg-[#0B2C1C] hover:text-white disabled:opacity-35 disabled:pointer-events-none transition-colors cursor-pointer"
+                      >
+                        <ChevronLeft className="w-5 h-5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleClickYear(Math.min(milestones.length - 1, currentIndex + 1))}
+                        disabled={currentIndex === milestones.length - 1}
+                        aria-label="Next year"
+                        className="w-11 h-11 rounded-full bg-white border border-slate-200/90 shadow-xs flex items-center justify-center text-[#0B2C1C] hover:bg-[#0B2C1C] hover:text-white disabled:opacity-35 disabled:pointer-events-none transition-colors cursor-pointer"
+                      >
+                        <ChevronRight className="w-5 h-5" />
+                      </button>
                     </div>
                   </div>
                 </div>
