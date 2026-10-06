@@ -418,7 +418,7 @@ export default function JourneyTimeline() {
                   }}
                 />
 
-                <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.1fr] gap-6 lg:gap-10 xl:gap-14 items-center">
+                <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] xl:grid-cols-[1fr_1.25fr] gap-6 lg:gap-10 xl:gap-12 items-center">
                   {/* Left inside card: Year Digits + Title + Description */}
                   <div className="space-y-3 lg:space-y-4 lg:pr-4">
                     {/* Big Year with 3D Flip */}
@@ -453,11 +453,11 @@ export default function JourneyTimeline() {
 
                   {/* Right inside card: Visual Milestone Image Frame + Mobile Arrows */}
                   <div className="relative flex flex-col items-center justify-center lg:items-end lg:justify-end w-full gap-4">
-                    <div className="relative w-full lg:w-auto rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
+                    <div className="relative w-full lg:max-w-[540px] xl:max-w-[640px] 2xl:max-w-[700px] rounded-2xl overflow-hidden bg-white shadow-xl shadow-slate-900/5 border border-slate-200/90 flex items-center justify-center">
                       <img
                         src={displayedItem.image}
                         alt={`${displayedItem.year} - ${displayedItem.title}`}
-                        className={`w-full lg:w-auto aspect-[4/3] lg:aspect-auto h-auto lg:max-h-[290px] xl:max-h-[380px] max-w-full object-cover lg:object-contain block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
+                        className={`w-full aspect-[4/3] h-auto lg:max-h-[380px] xl:max-h-[460px] 2xl:max-h-[500px] object-cover block select-none transition-all duration-700 cubic-bezier(0.22, 1, 0.36, 1) ${
                           isImageChanging
                             ? "opacity-0 scale-105"
                             : "opacity-100 scale-100"
