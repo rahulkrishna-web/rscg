@@ -59,12 +59,17 @@ export default function ProjectDetailPage() {
 
         {/* Hero Section - Matches exact aspect ratio so images are never cut off */}
         <section className="relative w-full aspect-[9/16] md:aspect-[1920/820] flex items-center overflow-hidden bg-[#0B1510]">
-           {/* Project background image */}
+           {/* Project background image (Desktop & Mobile) */}
            <div className="absolute inset-0 w-full h-full">
              <img 
-               src={currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
+               src={currentProject.heroDesktop || currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
                alt={currentProject.title} 
-               className="w-full h-full object-cover object-center" 
+               className="hidden md:block w-full h-full object-cover object-center" 
+             />
+             <img 
+               src={currentProject.heroMobile || currentProject.images[0] || "/images/turnkey_projects_hero.png"} 
+               alt={currentProject.title} 
+               className="block md:hidden w-full h-full object-cover object-center" 
              />
            </div>
 

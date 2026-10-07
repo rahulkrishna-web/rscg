@@ -141,7 +141,7 @@ export default function VisionMissionSection() {
                   {/* Image with smooth hover scale (bottom-right uncut) */}
                   <g clipPath="url(#mission-image-clip)">
                     <image
-                      href="/images/about/mission-vision/mission.png"
+                      href="/images/about/mission-vision/mission.jpg"
                       x="0"
                       y="0"
                       width="260"

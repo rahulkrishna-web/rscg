@@ -16,6 +16,8 @@ export interface ProjectItem {
   clientLogo?: string;
   technology?: string;
   commissioned?: string;
+  heroDesktop?: string;
+  heroMobile?: string;
   images: string[];
   content: ProjectParagraph[];
   keyFeatures?: string[];
@@ -32,8 +34,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "120 TPD Atta Plant",
     "projectType": "Flour milling plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/al-ghurair-foods/al-ghurair-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/al-ghurair-foods/al-ghurair-mobile.png",
     "images": [
-      "/images/projects/case_studies/al-ghurair-foods/mainimg.jpg",
+      "/images/projects/case_studies/al-ghurair-foods/al-ghurair-desktop.png",
       "/images/projects/case_studies/al-ghurair-foods/gallery1.png",
       "/images/projects/case_studies/al-ghurair-foods/gallery2.png",
       "/images/projects/case_studies/al-ghurair-foods/gallery3.png",
@@ -115,8 +119,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Atta plant",
     "projectType": "Flour milling plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/carrs-flour/carr-flour-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/carrs-flour/carr-flour-mobile.png",
     "images": [
-      "/images/projects/case_studies/carrs-flour/mainimg.jpg",
+      "/images/projects/case_studies/carrs-flour/carr-flour-desktop.png",
       "/images/projects/case_studies/carrs-flour/gallery1.png",
       "/images/projects/case_studies/carrs-flour/gallery2.png",
       "/images/projects/case_studies/carrs-flour/gallery3.png",
@@ -153,8 +159,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Fully Automatic Atta & Besan Plant",
     "projectType": "Atta & Besan Milling Plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/eminent-group/eminent-group-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/eminent-group/eminent-group-mobile.png",
     "images": [
-      "/images/projects/case_studies/eminent-group/eminent_mainimg.png",
+      "/images/projects/case_studies/eminent-group/eminent-group-desktop.png",
       "/images/projects/case_studies/eminent-group/gallery1.png",
       "/images/projects/case_studies/eminent-group/gallery2.png",
       "/images/projects/case_studies/eminent-group/gallery3.png",
@@ -198,8 +206,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "200 TPD Multi-Grain Atta | 50 TPD Wheat & Multi-Grain Daliya | 30 TPD Pulse & Besan plant | 20 TPD Spice plant",
     "projectType": "Flour Milling & Food Processing Plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/patanjali-ayurveda/patanjali-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/patanjali-ayurveda/patanjali-mobile.png",
     "images": [
-      "/images/projects/case_studies/patanjali-ayurveda/mainimg.jpg",
+      "/images/projects/case_studies/patanjali-ayurveda/patanjali-desktop.png",
       "/images/projects/case_studies/patanjali-ayurveda/gallery1.png",
       "/images/projects/case_studies/patanjali-ayurveda/gallery2.png",
       "/images/projects/case_studies/patanjali-ayurveda/gallery3.png",
@@ -311,8 +321,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Fully Automatic Chakki Atta Plant",
     "projectType": "Flour Milling Plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/prima-group/prima-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/prima-group/prima-mobile.png",
     "images": [
-      "/images/projects/case_studies/prima-group/prima_mainimg.jpg",
+      "/images/projects/case_studies/prima-group/prima-desktop.png",
       "/images/projects/case_studies/prima-group/galleryimg1.jpg",
       "/images/projects/case_studies/prima-group/galleryimg.jpg"
     ],
@@ -357,8 +369,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Fully Automatic Chakki Atta Plant",
     "projectType": "Flour Milling Plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/qatar-flour-mills/qatar-mills-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/qatar-flour-mills/qatar-mills-mobile.png",
     "images": [
-      "/images/projects/case_studies/qatar-flour-mills/qatar_mainimg.jpg",
+      "/images/projects/case_studies/qatar-flour-mills/qatar-mills-desktop.png",
       "/images/projects/case_studies/qatar-flour-mills/galleryimg1.jpg",
       "/images/projects/case_studies/qatar-flour-mills/galleryimg.jpg"
     ],
@@ -398,8 +412,10 @@ export const projectsData: ProjectItem[] = [
     "capacity": "40 TPD Atta plant",
     "projectType": "Flour Milling plant",
     "commissioned": "",
+    "heroDesktop": "/images/projects/case_studies/winnies-pure-health/winnie-hero-desktop.png",
+    "heroMobile": "/images/projects/case_studies/winnies-pure-health/winnie-mobile.png",
     "images": [
-      "/images/projects/case_studies/winnies-pure-health/mainimg.jpg",
+      "/images/projects/case_studies/winnies-pure-health/winnie-desktop.png",
       "/images/projects/case_studies/winnies-pure-health/gallery1.png",
       "/images/projects/case_studies/winnies-pure-health/gallery2.png",
       "/images/projects/case_studies/winnies-pure-health/gallery3.png",
